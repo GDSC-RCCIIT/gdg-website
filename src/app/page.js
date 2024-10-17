@@ -1,6 +1,7 @@
 import Footer from "@/components/Global/Footer";
 import { NavigationMenu } from "@/components/Global/Header";
 import Image from "next/image";
+import EventsPage from "./(pages)/Events/Events";
 
 export default function Home() {
   return (
