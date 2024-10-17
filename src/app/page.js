@@ -1,6 +1,7 @@
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import Image from "next/image";
+import EventsPage from "./(pages)/Events/Events";
 
 export default function Home() {
   return (
