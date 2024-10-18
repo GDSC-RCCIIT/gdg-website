@@ -1,3 +1,4 @@
+import Footer from "@/components/Global/Footer";
 import { NavigationMenu } from "@/components/Global/Header";
 
 export default function Home() {
