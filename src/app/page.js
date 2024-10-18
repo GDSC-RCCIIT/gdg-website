@@ -1,6 +1,7 @@
 import Footer from "@/components/Global/Footer";
 import { NavigationMenu } from "@/components/Global/Header";
 import Hero from "@/components/Global/Hero";
+import { NavigationMenu } from "@/components/Global/Header";
 import Image from "next/image";
 import EventsPage from "./(pages)/Events/Events";
 
