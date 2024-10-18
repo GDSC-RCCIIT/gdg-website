@@ -67,11 +67,10 @@ export function NavigationMenu() {
           <div className="text-3xl font-bold">
             <span className="text-red-500">G</span>
             <span className="text-blue-500">D</span>
-            <span className="text-yellow-500">S</span>
-            <span className="text-green-500">C</span>
-            <span className="text-blue-500">-</span>
+            <span className="text-yellow-500">G</span>
+            <span className="text-blue-500"> </span>
             <span className="text-yellow-500">R</span>
-            <span className="text-purple-500">C</span>
+            <span className="text-purple-500">CC</span>
             <span className="text-pink-500">I</span>
             <span className="text-red-500">I</span>
             <span className="text-orange-500">T</span>
