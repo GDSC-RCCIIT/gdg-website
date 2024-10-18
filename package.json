@@ -9,9 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "framer-motion": "^11.11.9",
+    "next": "14.2.13",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.13"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "postcss": "^8",
