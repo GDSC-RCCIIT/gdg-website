@@ -15,25 +15,25 @@ export default function Homepage()
             <div>
                 <div className="text-center text-2xl lg:text-5xl my-4 lg:my-10 font-bold">Our events</div>
                     <div className="grid lg:grid-cols-4 lg:gap-4 grid-cols-2 lg:px-5">
-                        <div className="lg:w-[320px] w-[180px] border-[1px] border-black border-r-2 rounded-md shadow-md shadow-black">
+                        <div className="lg:w-[320px] w-[160px] border-[1px] border-black border-r-2 rounded-md shadow-md shadow-black">
                             <div className="lg:flex justify-center"><Image src={aiImg} className="lg:w-[320px] lg:h-[260px] w-[160px] h-[140px]"/></div><br/>
                             <div className="px-2">Join us for an exciting hands-on workshop of AI! </div>
                             <div className="px-2 py-3"><button className="bg-blue-500 px-6 py-1 rounded-lg">Register</button></div>
                         </div>
 
-                        <div className="lg:w-[320px] w-[180px] border-[1px] border-black border-r-2 rounded-md shadow-md shadow-black">
+                        <div className="lg:w-[320px] w-[160px] border-[1px] border-black border-r-2 rounded-md shadow-md shadow-black">
                             <div className="lg:flex justify-center"><Image src={aiImg} className="lg:w-[320px] lg:h-[260px] w-[160px] h-[140px]"/></div><br/>
                             <div className=" px-2">Join us for an exciting hands-on workshop of AI! </div>
                             <div className="px-2 py-3"><button className="bg-blue-500 px-6 py-1 rounded-lg">Register</button></div>
                         </div>
 
-                        <div className="lg:w-[320px] w-[180px] border-[1px] border-black border-r-2 rounded-md shadow-md shadow-black">
+                        <div className="lg:w-[320px] w-[160px] border-[1px] lg:my-0 my-3 border-black border-r-2 rounded-md shadow-md shadow-black">
                             <div className="lg:flex justify-center"><Image src={aiImg} className="lg:w-[320px] lg:h-[260px] w-[160px] h-[140px]"/></div><br/>
                             <div className=" px-2">Join us for an exciting hands-on workshop of AI! </div>
                             <div className="px-2 py-3"><button className="bg-blue-500 px-6 py-1 rounded-lg">Register</button></div>
                         </div>
 
-                        <div className="lg:w-[320px] w-[180px] border-[1px] border-black border-r-2 rounded-md shadow-md shadow-black">
+                        <div className="lg:w-[320px] w-[160px] border-[1px] lg:my-0 my-3 border-black border-r-2 rounded-md shadow-md shadow-black">
                             <div className="lg:flex justify-center"><Image src={aiImg} className="lg:w-[320px] lg:h-[260px] w-[160px] h-[140px]"/></div><br/>
                             <div className=" px-2">Join us for an exciting hands-on workshop of AI!</div>
                             <div className="px-2  py-3"><button className="bg-blue-500 px-6 py-1 rounded-lg">Register</button></div>
