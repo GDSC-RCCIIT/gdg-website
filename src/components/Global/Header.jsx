@@ -53,135 +53,120 @@ const components = [
     },
 ];
 
-// Renamed the component to avoid conflict with the imported NavigationMenu.
 export function NavigationMenu() {
-    return (
-        <>
-        <div className="flex justify-between items-center p-4 border-b">
-          {/* Left Corner - GDSC-RCIIT */}
-          <div className="text-xl font-bold">GDSC-RCIIT</div>
-  
-          {/* Right-Aligned Menu */}
-          <div className="flex">
-            <UiNavigationMenu>
-              <NavigationMenuList className="flex">
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>Getting Started</NavigationMenuTrigger>
-                  <NavigationMenuContent >
-                    <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                      <li className="row-span-3">
-                        <NavigationMenuLink asChild>
-                          <a
-                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                            href="/"
-                          >
-                            {/* <Icons.logo className="h-6 w-6" /> */}
-                            <div className="mb-2 mt-4 text-lg font-medium">
-                              shadcn/ui
-                            </div>
-                            <p className="text-sm leading-tight text-muted-foreground">
-                              Beautifully designed components built with Radix UI
-                              and Tailwind CSS.
-                            </p>
-                          </a>
-                        </NavigationMenuLink>
-                      </li>
-                      <ListItem href="/docs" title="Introduction">
-                        Re-usable components built using Radix UI and Tailwind
-                        CSS.
-                      </ListItem>
-                      <ListItem href="/docs/installation" title="Installation">
-                        How to install dependencies and structure your app.
-                      </ListItem>
-                      <ListItem
-                        href="/docs/primitives/typography"
-                        title="Typography"
-                      >
-                        Styles for headings, paragraphs, lists...etc
-                      </ListItem>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                      {components.map((component) => (
-                        <ListItem
-                          key={component.title}
-                          title={component.title}
-                          href={component.href}
-                        >
-                          {component.description}
-                        </ListItem>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Link href="/docs" legacyBehavior passHref>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      Documentation
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Link href="/Events" legacyBehavior passHref>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      Events
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Link href="/About" legacyBehavior passHref>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      About GDSC
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Link href="/SignIn" legacyBehavior passHref>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      SignIn
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Link href="/SignUp" legacyBehavior passHref>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      SignUp
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </UiNavigationMenu>
+  return (
+    <>
+      <div className="bg-white shadow-md fixed top-0 left-0 right-0 z-10 text-black flex justify-between items-center p-4 border-b select-none">
+        {/* Left Corner - GDSC-RCIIT with image */}
+        <div className="flex items-center space-x-3">
+          <img
+            src="/Logo.svg"
+            alt="GDSC Logo"
+            className="w-8 h-8 object-contain"
+          />
+          <div className="text-3xl font-bold">
+            <span className="text-red-500">G</span>
+            <span className="text-blue-500">D</span>
+            <span className="text-yellow-500">G</span>
+            <span className="text-blue-500"> </span>
+            <span className="text-yellow-500">R</span>
+            <span className="text-purple-500">CC</span>
+            <span className="text-pink-500">I</span>
+            <span className="text-red-500">I</span>
+            <span className="text-orange-500">T</span>
           </div>
         </div>
-      </>
-    );
+
+
+        {/* Right-Aligned Menu */}
+        <div className="flex">
+          <UiNavigationMenu>
+            <NavigationMenuList className="flex">
+              <NavigationMenuItem>
+                <Link href="/Projects" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Projects
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="/Events" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Events
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="/TeamsGallery" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Teams & Gallery
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="/Subscribe" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Subscribe
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="/About" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    About GDSC
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="/Resources" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Resources
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="/SignIn" legacyBehavior passHref>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-600 transition duration-300')}>
+                    Sign In
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="/SignUp" legacyBehavior passHref>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), 'bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-600 transition duration-300')}>
+                    Sign Up
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </UiNavigationMenu>
+        </div>
+      </div>
+    </>
+  );
 }
 
 const ListItem = React.forwardRef(
-    ({ className, title, children, ...props }, ref) => {
-        return (
-            <li>
-                <NavigationMenuLink asChild>
-                    <a
-                        ref={ref}
-                        className={cn(
-                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-                            className
-                        )}
-                        {...props}
-                    >
-                        <div className="text-sm font-medium leading-none">{title}</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                            {children}
-                        </p>
-                    </a>
-                </NavigationMenuLink>
-            </li>
-        );
-    }
+  ({ className, title, children, ...props }, ref) => {
+    return (
+      <li>
+        <NavigationMenuLink asChild>
+          <a
+            ref={ref}
+            className={cn(
+              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+              className
+            )}
+            {...props}
+          >
+            <div className="text-sm font-medium leading-none">{title}</div>
+            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+              {children}
+            </p>
+          </a>
+        </NavigationMenuLink>
+      </li>
+    );
+  }
 );
 ListItem.displayName = "ListItem";
