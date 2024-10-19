@@ -8,17 +8,19 @@ Welcome to the official repository of the **GDG on Campus RCCIIT** website! This
 
 ## ✨ Tech Stack
 - **Frontend**: Next.js, Tailwind CSS
+
 - **Backend**: Supabase
 - **Cloud Storage**: Cloudinary (for media assets)
 - **Deployment**: Vercel (TBD)
 
 ## 🌟 Features
-- **Responsive Design**: Built using Tailwind CSS to ensure a mobile-first and responsive UI.
-- **Supabase Integration**: Real-time data with a robust backend.
-- **Cloudinary CDN**: For optimized image storage and fast delivery.
-- **Authentication & User Profiles**: (Coming soon!)
-- **Event Management System**: (Coming soon!)
-- **Blog & News Section**: To showcase updates, articles, and news from the GDG community.
+- **Responsive Design**: Built using Tailwind CSS to ensure a mobile-first and responsive UI. 🌐
+
+- **Supabase Integration**: Real-time data with a robust backend. 🛠️
+- **Cloudinary CDN**: For optimized image storage and fast delivery. 📦
+- **Authentication & User Profiles**: (Coming soon!) 🖼️
+- **Event Management System**: (Coming soon!) 🗄️
+- **Blog & News Section**: To showcase updates, articles, and news from the GDG community. 🗃️
 - More to be announced soon
 
 ## 🎨 Screenshots
@@ -31,6 +33,7 @@ We welcome everyone to contribute to the GDG RCCIIT website! Please review our [
 
 ### Prerequisites
 - **Node.js**: Ensure you have Node.js installed.
+
 - **Supabase Key**: Get your Supabase project key and database URL from the Supabase dashboard.
 - **Cloudinary Account**: Sign up on Cloudinary and get your API key.
 
@@ -62,9 +65,19 @@ We welcome everyone to contribute to the GDG RCCIIT website! Please review our [
 
 ## 🛠️ Technologies Used
 - **Next.js**: For server-side rendering (SSR) and static site generation (SSG).
+
 - **Tailwind CSS**: For responsive, utility-first CSS design.
 - **Supabase**: Provides real-time backend services and user authentication.
 - **Cloudinary**: Handles cloud-based image storage and media optimization.
+ 
+
+## 👀 Our Valuable Contributors 💖✨
+
+<div align="center">
+  <a href="https://github.com/GDSC-RCCIIT/gdg-website/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=GDSC-RCCIIT/gdg-website&max=100" />
+  </a>
+</div>
 
 ## 🎉 Happy Coding!
 
