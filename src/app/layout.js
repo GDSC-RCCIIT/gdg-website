@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { NavigationMenu } from "@/components/Global/Header";
 import Footer from "@/components/Global/Footer";
+import ScrollProgressBar from "@/components/ui/progress-bar"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="antialiased">
+        <ScrollProgressBar/>
         <NavigationMenu />
         <main className="mt-16">{children}</main>
         <Footer />
