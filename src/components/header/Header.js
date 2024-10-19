@@ -1,6 +1,6 @@
 import React from "react";
 import { headerLinks } from "@/constant/header/data";
-import logo from "@/assets/logo.png";
+import logo from '../../assests/logo.png';
 import Link from "next/link";
 import Image from "next/image";
 
