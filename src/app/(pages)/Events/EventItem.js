@@ -1,7 +1,9 @@
 // EventItem.js
+import Link from 'next/link';
 import React from 'react';
 
 const EventItem = ({ title, date, description, videoSrc, id }) => {
+
     return (
         <div className="timeline-item" style={{ position: 'relative' }}>
             <div className="timeline-content">
@@ -17,7 +19,9 @@ const EventItem = ({ title, date, description, videoSrc, id }) => {
                 <h2 className="event-title">{title}</h2>
                 <p className="event-date">Date: {date}</p>
                 <p className="event-description">{description}</p>
-                <a href="#" className="event-link">Learn More</a>
+                <Link href={`/SingleEvent/${id}`} passHref className="event-link">
+                    Learn More
+                </Link>
             </div>
             <div className={`line line--${id.includes('2') ? 'right' : 'left'} scroll-animate`} id={id}></div>
         </div>
