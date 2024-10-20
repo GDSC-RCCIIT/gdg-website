@@ -1,125 +1,67 @@
-import Image from "next/image";
-import aiImg from "../../app/images/ai_img.jpg";
-import team from "../../app/images/teamMember.jpg";
-import { SiGooglemeet,SiFirebase ,SiTensorflow,SiFlutter,SiGoogleassistant} from "react-icons/si";
-import { IoLogoAndroid } from "react-icons/io";
-import { AiOutlineKubernetes } from "react-icons/ai";
-import { FaAngular, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
-
-export default function Homepage()
-{
+export default function Homepage() {
     return (
-        <div className="ml-[20px]">
-            
-
-            <div>
-                <div className="text-center text-2xl lg:text-5xl my-4 lg:my-10 font-bold">Our events</div>
-                    <div className="grid lg:grid-cols-4 lg:gap-4 grid-cols-2 lg:px-5">
-                        <div className="lg:w-[320px] w-[160px] border-[1px] border-black border-r-2 rounded-md shadow-md shadow-black">
-                            <div className="lg:flex justify-center"><Image src={aiImg} className="lg:w-[320px] lg:h-[260px] w-[160px] h-[140px]"/></div><br/>
-                            <div className="px-2">Join us for an exciting hands-on workshop of AI! </div>
-                            <div className="px-2 py-3"><button className="bg-blue-500 px-6 py-1 rounded-lg">Register</button></div>
-                        </div>
-
-                        <div className="lg:w-[320px] w-[160px] border-[1px] border-black border-r-2 rounded-md shadow-md shadow-black">
-                            <div className="lg:flex justify-center"><Image src={aiImg} className="lg:w-[320px] lg:h-[260px] w-[160px] h-[140px]"/></div><br/>
-                            <div className=" px-2">Join us for an exciting hands-on workshop of AI! </div>
-                            <div className="px-2 py-3"><button className="bg-blue-500 px-6 py-1 rounded-lg">Register</button></div>
-                        </div>
-
-                        <div className="lg:w-[320px] w-[160px] border-[1px] lg:my-0 my-3 border-black border-r-2 rounded-md shadow-md shadow-black">
-                            <div className="lg:flex justify-center"><Image src={aiImg} className="lg:w-[320px] lg:h-[260px] w-[160px] h-[140px]"/></div><br/>
-                            <div className=" px-2">Join us for an exciting hands-on workshop of AI! </div>
-                            <div className="px-2 py-3"><button className="bg-blue-500 px-6 py-1 rounded-lg">Register</button></div>
-                        </div>
-
-                        <div className="lg:w-[320px] w-[160px] border-[1px] lg:my-0 my-3 border-black border-r-2 rounded-md shadow-md shadow-black">
-                            <div className="lg:flex justify-center"><Image src={aiImg} className="lg:w-[320px] lg:h-[260px] w-[160px] h-[140px]"/></div><br/>
-                            <div className=" px-2">Join us for an exciting hands-on workshop of AI!</div>
-                            <div className="px-2  py-3"><button className="bg-blue-500 px-6 py-1 rounded-lg">Register</button></div>
-                        </div>
-
-                    </div>
-            </div>
-
-            <div>
-                <div className="text-center text-2xl lg:text-5xl my-4 lg:my-20 font-bold">Featured Projects</div>
-                <div className="grid lg:grid-cols-4 lg:gap-4 grid-cols-2 lg:px-5 ">
-                    <div className="lg:w-[350px] w-[160px] bg-black py-5 rounded-lg mb-2">
-                            <div className="flex justify-center"><Image src={aiImg} className="lg:w-[320px] lg:h-[260px] w-[150px] h-[140px]"/></div><br/>
-                                <div className="grid lg:grid-cols-2 grid-col-1">
-                                <div className="text-center text-white font-bold lg:text-2xl">Immersifier</div>
-                                <div className="flex justify-center"><button className="bg-blue-500 lg:px-6 py-1 px-3 rounded-lg">Know more</button></div>
-
-                            </div>
-                    </div>
-                    <div className="lg:w-[350px] w-[160px] bg-black py-5 rounded-lg mb-2">
-                            <div className="flex justify-center"><Image src={aiImg} className="lg:w-[320px] lg:h-[260px] w-[150px] h-[140px]"/></div><br/>
-                                <div className="grid lg:grid-cols-2 grid-col-1">
-                                <div className="text-center text-white font-bold lg:text-2xl">Immersifier</div>
-                                <div className="flex justify-center"><button className="bg-blue-500 lg:px-6 py-1 px-3 rounded-lg">Know more</button></div>
-
-                            </div>
-                    </div>
-                    <div className="lg:w-[350px] w-[160px] bg-black py-5 rounded-lg mb-2">
-                            <div className="flex justify-center"><Image src={aiImg} className="lg:w-[320px] lg:h-[260px] w-[150px] h-[140px]"/></div><br/>
-                                <div className="grid lg:grid-cols-2 grid-col-1">
-                                <div className="text-center text-white font-bold lg:text-2xl">Immersifier</div>
-                                <div className="flex justify-center"><button className="bg-blue-500 lg:px-6 py-1 px-3 rounded-lg">Know more</button></div>
-
-                            </div>
-                    </div>
-                    <div className="lg:w-[350px] w-[160px] bg-black py-5 rounded-lg mb-2">
-                            <div className="flex justify-center"><Image src={aiImg} className="lg:w-[320px] lg:h-[260px] w-[150px] h-[140px]"/></div><br/>
-                                <div className="grid lg:grid-cols-2 grid-col-1">
-                                <div className="text-center text-white font-bold lg:text-2xl">Immersifier</div>
-                                <div className="flex justify-center"><button className="bg-blue-500 lg:px-6 py-1 px-3 lg:rounded-lg rounded-md">Know more</button></div>
-
-                            </div>
-                    </div>
-
+        <div className="bg-white text-gray-900">
+            <section className="py-12 px-6 md:px-16 ml-40 mr-40">
+                <h2 className="text-4xl font-bold text-center mb-12 text-blue-600">Path to Success</h2>
+                <div className="flex flex-col md:flex-row items-center mb-16">
+                    <img
+                        src="/vision.webp"
+                        alt="Vision"
+                        className="w-full md:w-1/2 h-64 object-contain rounded-lg transition-transform duration-300 hover:scale-105"
+                    />
+                    <div className="md:ml-8 text-center md:text-left mt-6 md:mt-0 md:w-1/2">
+                        <h3 className="text-4xl font-semibold text-gray-800 mb-4">Vision</h3>
+                        <p className="text-xl text-gray-600 leading-relaxed">
+                            Our vision is to create a world where technology and innovation lead to the betterment of human lives, driving progress and success.
+                            We aim to bridge gaps and create opportunities through collaboration and forward-thinking strategies that inspire change and growth across all sectors.
+                        </p>
                     </div>
                 </div>
-
-                <div>
-                    <div className="text-center text-2xl lg:text-5xl my-4 lg:mt-20 font-bold">Google Technologies</div>
-                    <div className="my-[20px] text-center">At GDGRCCIIT we use various google Technologies </div>
-                    <div className="grid lg:grid-cols-6 grid-cols-3 ml-8">
-                        <div><SiTensorflow className="lg:w-[100px] lg:h-[100px] w-[50px] h-[50px]"/></div>
-                        <div><SiFirebase className="lg:w-[100px] lg:h-[100px] w-[50px] h-[50px]"/></div>
-                        <div><SiFlutter className="lg:w-[100px] lg:h-[100px] w-[50px] h-[50px]"/></div>
-                        <div><IoLogoAndroid className="lg:w-[100px] lg:h-[100px] w-[50px] h-[50px]"/></div>
-                        <div><AiOutlineKubernetes className="lg:w-[100px] lg:h-[100px] w-[50px] h-[50px]"/></div>
-                        <div><FaAngular className="lg:w-[100px] lg:h-[100px] w-[50px] h-[50px]"/></div>
+                <div className="flex flex-col md:flex-row-reverse items-center mb-16">
+                    <img
+                        src="/mission.webp"
+                        alt="Mission"
+                        className="w-full md:w-1/2 h-64 object-contain rounded-lg transition-transform duration-300 hover:scale-105"
+                    />
+                    <div className="md:mr-8 text-center md:text-left mt-6 md:mt-0 md:w-1/2">
+                        <h3 className="text-4xl font-semibold text-gray-800 mb-4">Mission</h3>
+                        <p className="text-xl text-gray-600 leading-relaxed">
+                            Our mission is to empower individuals and organizations through cutting-edge technological solutions, fostering growth and innovation.
+                            By providing comprehensive support and resources, we strive to cultivate an environment where creativity and technology thrive together.
+                        </p>
                     </div>
                 </div>
-
-                <div className="mb-10">
-                    <div className="text-center text-2xl lg:text-5xl my-7 lg:mt-20 font-bold">What Our Team Members</div>
-                        <div className="grid lg:grid-cols-4 mt-10">
-                            <div className="">
-                                <div className="flex justify-center"><Image src={team} className="lg:w-[250px] w-[150px] rounded-full"/></div>
-                                <div className="text-center mx-5 mt-3">"Working with GDG has been an incredible learning experience. I've grown both as a developer and a community leader."</div>
-                            </div>
-
-                            <div className="">
-                                <div className="flex justify-center"><Image src={team} className="lg:w-[250px] w-[150px] rounded-full"/></div>
-                                <div className="text-center mx-5 mt-3">"Working with GDG has been an incredible learning experience. I've grown both as a developer and a community leader."</div>
-                            </div>
-
-                            <div className="">
-                                <div className="flex justify-center"><Image src={team} className="lg:w-[250px] w-[150px] rounded-full"/></div>
-                                <div className="text-center mx-5 mt-3">"Working with GDG has been an incredible learning experience. I've grown both as a developer and a community leader."</div>
-                            </div>
-
-                            <div className="">
-                                <div className="flex justify-center"><Image src={team} className="lg:w-[250px]  w-[150px] rounded-full"/></div>
-                                <div className="text-center mx-5 mt-3">"Working with GDG has been an incredible learning experience. I've grown both as a developer and a community leader."</div>
-                            </div>
-                        </div>
+                <div className="flex flex-col md:flex-row items-center mb-16">
+                    <img
+                        src="/goal.webp"
+                        alt="Goal"
+                        className="w-full md:w-1/2 h-64 object-contain rounded-lg transition-transform duration-300 hover:scale-105"
+                    />
+                    <div className="md:ml-8 text-center md:text-left mt-6 md:mt-0 md:w-1/2">
+                        <h3 className="text-4xl font-semibold text-gray-800 mb-4">Goal</h3>
+                        <p className="text-xl text-gray-600 leading-relaxed">
+                            Our goal is to continuously push the boundaries of what's possible and lead the way towards a more prosperous, tech-driven future.
+                            We aim to inspire and equip the next generation of innovators to tackle challenges and seize opportunities that arise in a rapidly evolving digital landscape.
+                        </p>
+                    </div>
                 </div>
+            </section>
+            <section className="bg-blue-600 py-16 px-8">
+                <div className="max-w-4xl mx-auto text-center relative bg-white rounded-lg shadow-lg p-12 transform transition-transform duration-500 hover:scale-105">
+                    <div className="absolute inset-0 bg-blue-600 opacity-10 rounded-lg"></div>
 
-            </div>
-    
-    )
+                    <blockquote className="relative text-3xl font-semibold text-gray-800 italic mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 text-blue-600 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 11V9a6 6 0 0112 0v1a6 6 0 01-6 6h-3v2a6 6 0 11-12 0v-1" />
+                        </svg>
+                        "Coming together is a beginning, staying together is progress, and working together is success."
+                    </blockquote>
+
+                    <cite className="relative text-lg font-medium text-gray-700">
+                        - Henry Ford
+                    </cite>
+                </div>
+            </section>
+        </div>
+    );
 }

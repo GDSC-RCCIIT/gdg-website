@@ -1,44 +1,48 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image"
- 
-import { AspectRatio } from "@/components/ui/aspect-ratio"
- 
-
 const Hero = () => {
   return (
-    <section
-      className="relative  bg-cover bg-center bg-no-repeat h-screen flex items-center justify-center"
-      style={{ backgroundImage: "url('../../app/image.png')" }}
-    >
-      <div className="absolute inset-0 bg-white bg-opacity-60"></div>
+    <div className="relative h-[600px] bg-white overflow-hidden border border-gray-300">
+      <div
+        className="absolute inset-0 grid grid-cols-12 gap-4 bg-[length:60px_60px]"
+        style={{
+          backgroundImage: `
+            linear-gradient(270deg, hsla(0, 0%, 100%, 0) 25%, hsla(0, 0%, 100%, 0) 25.1%),
+            linear-gradient(to right, #e2e8f0 0.5px, transparent 3.1px),
+            linear-gradient(to bottom, #e2e8f0 1px, transparent 1px),
+            linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 70%)`
+        }}
+      >
+        <div className="absolute top-[-35px] left-[300px] h-36 w-36 bg-yellow-500 rounded-full"></div>
+        <div className="absolute top-[50px] right-[50px] h-[400px] w-[400px] bg-blue-700 rounded-full"></div>
+        <div className="absolute bottom-10 right-[500px] h-28 w-28 bg-red-500 rounded-full"></div>
+        <div className="absolute bottom-[-60px] left-8 h-[200px] w-[200px] bg-green-500 rounded-full"></div>
+      </div>
 
-      <div className="relative z-10 text-center max-w-4xl mx-auto p-6">
-        {/* Headline */}
-        <h1 className="text-black bg-clip-text text-4xl md:text-6xl font-extrabold mb-4">
-          Welcome to GDSC-RCIIT
+      <div className="relative z-100 flex flex-col items-start justify-center h-full pl-12 text-left">
+        <h1 className="text-5xl font-bold text-black">
+          Bridging The Gap Between
         </h1>
-
-        {/* Subheading */}
-        <p className="text-lg md:text-2xl mb-8">
-          A platform to learn, build, and grow together as a community. Join us for events, projects, and resources that empower your tech journey.
+        <h1 className="text-5xl font-bold text-black mt-4">
+          Theory And Practice.
+        </h1>
+        <p className="mt-4 max-w-lg text-lg text-gray-600">
+          The Google Developer Student Club at RCCIIT is a university-based community group powered by Google Developers. By joining RCCIIT, students gain experience working in a team environment and building technological solutions for their community.
         </p>
-
-        {/* Call to Action Buttons */}
-        <div className="flex justify-center space-x-4">
-          <Button variant="primary" size="lg" className="px-6 py-3">
-            Join Us
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="px-6 py-3 text-white border-black bg-black hover:bg-white hover:text-black"
-            // className="px-6 py-3 bg-gradient-to-r from-red-500 to-blue-500 text-white font-bold hover:bg-white hover:text-black"
+        <div className="mt-8 space-x-4">
+          <a
+            href="#"
+            className="inline-block px-6 py-3 text-white bg-blue-600 rounded-md hover:bg-blue-700"
           >
-            Learn More
-          </Button>
+            Join Us
+          </a>
+          <a
+            href="#"
+            className="inline-block px-6 py-3 text-gray-800 border-2 border-gray-300 rounded-md hover:bg-gray-50 bg-white"
+          >
+            Contact Us
+          </a>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
