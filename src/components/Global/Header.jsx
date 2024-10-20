@@ -118,6 +118,13 @@ export function NavigationMenu() {
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
+                <Link href="/FAQsForum" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    FAQs & Forum
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
                 <Link href="/Resources" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     Resources
