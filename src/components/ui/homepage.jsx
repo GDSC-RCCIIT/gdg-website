@@ -1,6 +1,6 @@
 export default function Homepage() {
     return (
-        <div className="bg-white text-gray-900">
+        <div className="bg-white text-gray-900 select-none">
             <section className="py-12 px-6 md:px-16 ml-40 mr-40">
                 <h2 className="text-4xl font-bold text-center mb-12 text-blue-600">Path to Success</h2>
                 <div className="flex flex-col md:flex-row items-center mb-16">
@@ -10,7 +10,7 @@ export default function Homepage() {
                         className="w-full md:w-1/2 h-64 object-contain rounded-lg transition-transform duration-300 hover:scale-105"
                     />
                     <div className="md:ml-8 text-center md:text-left mt-6 md:mt-0 md:w-1/2">
-                        <h3 className="text-4xl font-semibold text-gray-800 mb-4">Vision</h3>
+                        <h3 className="text-4xl font-semibold text-gray-800 mb-4">🌟 Vision</h3>
                         <p className="text-xl text-gray-600 leading-relaxed">
                             Our vision is to create a world where technology and innovation lead to the betterment of human lives, driving progress and success.
                             We aim to bridge gaps and create opportunities through collaboration and forward-thinking strategies that inspire change and growth across all sectors.
@@ -24,7 +24,7 @@ export default function Homepage() {
                         className="w-full md:w-1/2 h-64 object-contain rounded-lg transition-transform duration-300 hover:scale-105"
                     />
                     <div className="md:mr-8 text-center md:text-left mt-6 md:mt-0 md:w-1/2">
-                        <h3 className="text-4xl font-semibold text-gray-800 mb-4">Mission</h3>
+                        <h3 className="text-4xl font-semibold text-gray-800 mb-4">🎯 Mission</h3>
                         <p className="text-xl text-gray-600 leading-relaxed">
                             Our mission is to empower individuals and organizations through cutting-edge technological solutions, fostering growth and innovation.
                             By providing comprehensive support and resources, we strive to cultivate an environment where creativity and technology thrive together.
@@ -38,7 +38,7 @@ export default function Homepage() {
                         className="w-full md:w-1/2 h-64 object-contain rounded-lg transition-transform duration-300 hover:scale-105"
                     />
                     <div className="md:ml-8 text-center md:text-left mt-6 md:mt-0 md:w-1/2">
-                        <h3 className="text-4xl font-semibold text-gray-800 mb-4">Goal</h3>
+                        <h3 className="text-4xl font-semibold text-gray-800 mb-4">🚀 Goal</h3>
                         <p className="text-xl text-gray-600 leading-relaxed">
                             Our goal is to continuously push the boundaries of what's possible and lead the way towards a more prosperous, tech-driven future.
                             We aim to inspire and equip the next generation of innovators to tackle challenges and seize opportunities that arise in a rapidly evolving digital landscape.
