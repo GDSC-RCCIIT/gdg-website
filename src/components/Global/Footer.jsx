@@ -1,57 +1,181 @@
 import React from "react";
-import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
+import { FaWhatsapp, FaInstagram as Instagram } from "react-icons/fa";
+import { FaLinkedin as Linkedin } from "react-icons/fa";
+import { FaGithub as Github } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-200 text-black py-8">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-        
-        {/* Column 1 - GDSC-RCIIT and Social Media */}
-        <div>
-          <h2 className="text-2xl font-bold mb-4">GDSC-RCIIT</h2>
-          <div className="flex space-x-4">
-            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
-              <FaInstagram className="text-black hover:text-gray-400" size={24} />
-            </a>
-            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
-              <FaLinkedin className="text-black hover:text-gray-400" size={24} />
-            </a>
-            <a href="https://www.github.com/" target="_blank" rel="noreferrer">
-              <FaGithub className="text-black hover:text-gray-400" size={24} />
-            </a>
+    <footer className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 py-12">
+      <div className="mx-auto w-full max-w-7xl px-6">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+          {/* Brand Section */}
+          <div className="lg:col-span-1">
+            <Link href="/" className="flex items-center gap-3 mb-6">
+              <img src="/Logo.svg" className="h-10 w-auto" alt="Logo" />
+              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                GDG-RCCIIT
+              </span>
+            </Link>
+          </div>
+
+          {/* Links Sections */}
+          <div className="lg:col-span-3 grid grid-cols-3 gap-8">
+            {/* Resources */}
+            <div className="flex flex-col items-center">
+              <h2 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-6">
+                Resources
+              </h2>
+              <ul className="space-y-4 text-center">
+                <li>
+                  <a href="https://flowbite.com/" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    Location
+                  </a>
+                </li>
+                <li>
+                  <a href="https://tailwindcss.com/" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    About GDG 
+                  </a>
+                </li>
+                <li>
+                  <Link href="https://tailwindcss.com/" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    How to Apply
+                  </Link>
+                </li>
+                <li>
+                  <Link href="https://tailwindcss.com/" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    Who can apply ?
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Follow us */}
+            <div className="flex flex-col items-center">
+              <h2 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-6">
+                Follow us
+              </h2>
+              <ul className="space-y-4 text-center">
+                <li>
+                  <Link href="https://github.com/" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    Github
+                  </Link>
+                </li>
+                <li>
+                  <Link href="https://instagram.com/" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    Instagram
+                  </Link>
+                </li>
+                <li>
+                  <Link href="https://twitter.com/" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    Twitter
+                  </Link>
+                </li>
+                <li>
+                  <Link href="https://twitter.com/" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    Whatsapp
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Legal */}
+            <div className="flex flex-col items-center">
+              <h2 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-6">
+                Legal
+              </h2>
+              <ul className="space-y-4 text-center">
+                <li>
+                  <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    Terms &amp; Conditions
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    Rules & Regulations
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Newsletter and Social Section */}
+          <div className="lg:col-span-1">
+            <div className="flex flex-col items-center lg:items-start">
+              <h2 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-6">
+                Stay Updated
+              </h2>
+              
+         {/* Newsletter Form */}
+         <div className="flex justify-center w-full">
+  <div className="max-w-sm min-w-[200px] w-full">
+    <div className="relative">
+      <input
+        type="text"
+        className="w-full pl-3 pr-10 py-2 bg-transparent placeholder:text-slate-400 text-slate-600 text-sm border border-slate-200 rounded-md transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+        placeholder="someone@example.com"
+      />
+      {/* SVG Icon */}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="absolute w-5 h-5 top-2.5 right-3 text-black"
+      >
+        <rect width="20" height="16" x="2" y="4" rx="2" />
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+      </svg>
+    </div>
+  </div>
+</div>
+{/* Social Links */}
+              <h2 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mt-6 mb-2">
+                Socials
+              </h2>
+              <div className="flex gap-4">
+                <SocialLink href="https://gmail.com/" icon={<FiMail size={20}  className="hover:text-black" />} />
+                <SocialLink href="https://instagram.com/" icon={<Instagram size={20} className="hover:text-pink-500" />} />
+                <SocialLink href="https://twitter.com/" icon={<FaXTwitter size={20} className="hover:text-black" />} />
+                <SocialLink href="https://linkedin.com/" icon={<Linkedin size={20} className="hover:text-blue-600" />} />
+                <SocialLink href="https://github.com/" icon={<Github size={20} className="hover:text-black" />} />
+                <SocialLink href="https://github.com/" icon={<FaWhatsapp size={20} className="hover:text-green-500" />} />
+              </div>
+            </div>
           </div>
         </div>
-        
-        {/* Column 2 - Links to Pages */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4">Explore</h3>
-          <ul>
-            <li><a href="/" className="hover:underline">Homepage</a></li>
-            <li><a href="/about-us" className="hover:underline">About Us</a></li>
-            <li><a href="/events" className="hover:underline">Events</a></li>
-            <li><a href="/resources" className="hover:underline">Resources</a></li>
-            <li><a href="/blog" className="hover:underline">Blog</a></li>
-            <li><a href="/contact-us" className="hover:underline">Contact Us</a></li>
-            <li><a href="/join-us" className="hover:underline">Join Us</a></li>
-          </ul>
-        </div>
 
-        {/* Column 3 - Legal and Contact Information */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4">Footer Pages</h3>
-          <ul>
-            <li>© {new Date().getFullYear()} GDSC-RCIIT. All rights reserved.</li>
-            <li>Email: <a href="mailto:contact@gdsc-rciit.com" className="hover:underline">contact@gdsc-rciit.com</a></li>
-            <li>Phone: <a href="tel:+123456789" className="hover:underline">+123 456 789</a></li>
-            <li><a href="/privacy-policy" className="hover:underline">Privacy Policy</a></li>
-            <li><a href="/terms-of-service" className="hover:underline">Terms of Service</a></li>
-            <li><a href="/sitemap" className="hover:underline">Sitemap</a></li>
-          </ul>
+        {/* Footer Bottom */}
+        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+          <p className="text-center text-sm text-gray-500 dark:text-gray-400">
+            © 2024 GDG-RCCIIT. All Rights Reserved.
+          </p>
         </div>
-
       </div>
     </footer>
   );
 };
+
+const SocialLink = ({ href, icon }) => (
+  <Link
+    href={href}
+    className="text-gray-500 transition-all duration-200 transform hover:scale-110"
+  >
+    {icon}
+  </Link>
+);
 
 export default Footer;
