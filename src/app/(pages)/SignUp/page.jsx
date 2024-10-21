@@ -73,7 +73,7 @@ function SignUp() {
                             <p className="mt-4 text-gray-600 leading-relaxed">
                                 GDSC leads are passionate about helping their peers learn technology and connect. Leads pursue various degrees within undergraduate and graduate programs.
                             </p>
-                            <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-6 gap-6">
+                            <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-6 gap-6" noValidate>
                                 <div className="col-span-6 sm:col-span-3">
                                     <label htmlFor="FirstName" className="block text-sm font-medium text-gray-700">First Name</label>
                                     <input

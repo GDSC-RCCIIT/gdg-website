@@ -59,7 +59,7 @@ function SignIn() {
                                 GDSC leads are passionate about helping their peers learn technology and connect. Leads pursue various degrees within undergraduate and graduate programs.
                             </p>
 
-                            <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-6 gap-6">
+                            <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-6 gap-6" noValidate>
                                 <div className="col-span-6">
                                     <label htmlFor="Email" className="block text-sm font-medium text-gray-700">Email</label>
                                     <input
