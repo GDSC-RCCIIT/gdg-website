@@ -2,6 +2,8 @@
 import React, { useEffect } from 'react';
 import './Events.css';
 import EventItem from './EventItem';
+import { motion } from 'framer-motion';
+
 
 const EventsPage = () => {
     const events = [
@@ -87,18 +89,36 @@ const EventsPage = () => {
     return (
         <div className="container">
             <div className="text-center pt-10">
-                <h1 className="text-5xl font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+                <motion.h1
+                    className="text-5xl font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text" initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
                     Our Events
-                </h1>
-                <p className="text-gray-600 text-xl mt-4 max-w-3xl mx-auto">
+                </motion.h1>
+
+                <motion.p
+                    className="text-gray-600 text-xl mt-4 max-w-3xl mx-auto"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7 }}
+                >
                     Explore our Events and get involved by contribution/participation in our events!
-                </p>
+                </motion.p>
+
             </div>
-            <div style={{ position: 'relative' }} className="timeline">
-                {events.map((event, index) => (
-                    <EventItem key={index} {...event} />
-                ))}
-            </div>
+            
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                style={{ position: 'relative' }} 
+                className="timeline"
+            >
+                    {events.map((event, index) => (
+                        <EventItem key={index} {...event} />
+                    ))}
+            </motion.div>
         </div>
     );
 };
