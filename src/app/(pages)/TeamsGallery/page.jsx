@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { FaLinkedin } from 'react-icons/fa';
 import { DividerHorizontalIcon } from '@radix-ui/react-icons';
+import { motion } from "framer-motion";
 
 const Teams = () => {
     const teams = [
@@ -149,7 +150,14 @@ const Teams = () => {
                 <div className='bg-white'>
                     {teams.map((team, teamIndex) => (
                         <div key={teamIndex} className='team-section'>
-                            <h2 className='text-4xl font-extrabold text-center mb-8 mt-8'>{team.name}</h2>
+                            <motion.h2
+                                className="text-4xl font-extrabold text-center mb-8 mt-8"
+                                initial={{ opacity: 0, y: -20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                {team.name}
+                            </motion.h2>
                             <div
                                 style={{
                                     display: 'flex',
@@ -159,7 +167,7 @@ const Teams = () => {
                                 }}
                             >
                                 {team.members.map((member, memberIndex) => (
-                                    <div
+                                    <motion.div
                                         key={memberIndex}
                                         style={{
                                             textAlign: 'center',
@@ -172,6 +180,9 @@ const Teams = () => {
                                             backgroundColor: '#f9f9f9',
                                             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
                                         }}
+                                        initial={{ opacity: 0, scale: 0.95 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 0.5, delay: memberIndex * 0.1 }} // staggered animation
                                     >
                                         <Image
                                             src={member.imageSrc}
@@ -197,36 +208,54 @@ const Teams = () => {
                                         >
                                             <FaLinkedin /> LinkedIn
                                         </a>
-                                    </div>
+                                    </motion.div>
                                 ))}
                             </div>
                         </div>
                     ))}
                 </div>
 
-                    <hr className='mt-8'/>
+                <hr className='mt-8' />
 
                 <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
                     <header className="text-center">
-                        <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">Our Gallery</h2>
+                        <motion.h2
+                            className="text-xl font-bold text-gray-900 sm:text-3xl"
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            Our Gallery
+                        </motion.h2>
 
-                        <p className="mx-auto mt-4 max-w-md text-gray-500">
+                        <motion.p
+                            className="mx-auto mt-4 max-w-md text-gray-500"
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.7 }}
+                        >
+
                             Want to know more about US? Then why are you waiting join us today and be a part of these Precious events.
-                        </p>
+
+                        </motion.p>
                     </header>
 
-                    <ul className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3">
+                    {/* <ul className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3">
                         <li>
                             <a href="#" className="group relative block">
-                                <img
+                                <motion.img
                                     src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                     alt=""
-                                    className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                                    className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90" 
+                                    initial={{ opacity: 0, y: -50 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.9 }}
                                 />
+                                    
 
-                                <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
-                                    <h3 className="text-xl font-medium text-white">IPC Conference</h3>
-                                </div>
+                                    <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
+                                        <h3 className="text-xl font-medium text-white">IPC Conference</h3>
+                                    </div>
                             </a>
                         </li>
 
@@ -259,7 +288,82 @@ const Teams = () => {
                                 </div>
                             </a>
                         </li>
+                    </ul> */}
+
+                    <ul className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3">
+                        <li>
+                            <a href="#" className="group relative block">
+                                <motion.img
+                                    src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    alt="IPC Conference"
+                                    className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                                    initial={{ opacity: 0, y: -40 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 1, ease: "easeInOut" }}
+                                />
+
+                                <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
+                                    <motion.h3
+                                        className="text-xl font-medium text-white"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 1, ease: "easeInOut", delay: 0.3 }}
+                                    >
+                                        IPC Conference
+                                    </motion.h3>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" className="group relative block">
+                                <motion.img
+                                    src="https://images.unsplash.com/photo-1523908511403-7fc7b25592f4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    alt="Winter Shorts"
+                                    className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                                    initial={{ opacity: 0, y: -40 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 1, ease: "easeInOut" }}
+                                />
+
+                                <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
+                                    <motion.h3
+                                        className="text-xl font-medium text-white"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 1, ease: "easeInOut", delay: 0.3 }}
+                                    >
+                                        Winter Shorts
+                                    </motion.h3>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li className="lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+                            <a href="#" className="group relative block">
+                                <motion.img
+                                    src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=812&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    alt="Skinny Code Hackathon"
+                                    className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                                    initial={{ opacity: 0, y: -40 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 1, ease: "easeInOut" }}
+                                />
+
+                                <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
+                                    <motion.h3
+                                        className="text-xl font-medium text-white"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 1, ease: "easeInOut", delay: 0.3 }}
+                                    >
+                                        Skinny Code Hackathon
+                                    </motion.h3>
+                                </div>
+                            </a>
+                        </li>
                     </ul>
+
                 </div>
             </section>
         </>
