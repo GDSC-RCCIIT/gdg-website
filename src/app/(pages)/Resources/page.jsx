@@ -1,4 +1,6 @@
+"use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 import resources from './resources';
 
 function Resource() {
@@ -7,16 +9,33 @@ function Resource() {
       <section className="bg-white text-black">
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
           <div className="mx-auto max-w-lg text-center">
-            <h2 className="text-3xl font-bold sm:text-4xl">Kickstart your Development</h2>
-            <p className="mt-4 text-gray-900">Roadmaps for Beginners</p>
+            <motion.h2
+              className="text-3xl font-bold sm:text-4xl"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              Kickstart your Development
+            </motion.h2>
+            <motion.p
+              className="mt-4 text-gray-900"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+            >
+              Roadmaps for Beginners
+            </motion.p>
           </div>
 
           <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {resources.map((resource, index) => (
-              <a
+              <motion.a
                 key={index}
                 className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
                 href={`/Resources/${resource.id}`}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -39,17 +58,20 @@ function Resource() {
 
                 <h2 className="mt-4 text-xl font-bold text-black">{resource.title}</h2>
                 <p className="mt-1 text-sm text-gray-900">{resource.description}</p>
-              </a>
+              </motion.a>
             ))}
           </div>
 
           <div className="mt-12 text-center">
-            <a
+            <motion.a
               href="/signup"
               className="inline-block rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-pink-700 focus:outline-none focus:ring focus:ring-yellow-400"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
             >
               Get Started Today
-            </a>
+            </motion.a>
           </div>
         </div>
       </section>
