@@ -70,7 +70,7 @@
 
 .timeline-content {
     padding: 20px 30px;
-    background-color: #919191;
+    background-color: #e4e4e4;
     position: relative;
     border-radius: 6px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -104,6 +104,7 @@
     color: #333;
     font-size: 24px;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .event-date {
@@ -118,7 +119,7 @@
 
 .event-link {
     display: inline-block;
-    background-color: #333;
+    background-color: #333333;
     color: #fff;
     padding: 8px 15px;
     border-radius: 4px;

@@ -6,7 +6,7 @@ const EventItem = ({ title, date, description, videoSrc, id }) => {
 
     return (
         <div className="timeline-item" style={{ position: 'relative' }}>
-            <div className="timeline-content">
+            <div className="timeline-content ">
                 <div className="banner">
                     <iframe
                         width="100%"
