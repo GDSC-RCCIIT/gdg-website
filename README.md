@@ -6,6 +6,11 @@
 
 Welcome to the official repository of the **GDG on Campus RCCIIT** website! This project is an open-source initiative aimed at building a modern, interactive, and feature-rich platform for our **Google Developer Group (GDG)**. We invite developers, designers, and content creators from all over to contribute and make this project a success!
 
+## 📈 GitHub Repository Stats
+| 🌟 **Stars** | 🍴 **Forks** | 🐛 **Issues** | 🔔 **Open PRs** | 🔕 **Closed PRs** | 🛠️ **Languages** | ✅ **Contributors** |
+|--------------|--------------|---------------|-----------------|------------------|------------------|------------------|
+| ![GitHub stars](https://img.shields.io/github/stars/GDSC-RCCIIT/gdg-website) | ![forks](https://img.shields.io/github/forks/GDSC-RCCIIT/gdg-website) | ![issues](https://img.shields.io/github/issues/GDSC-RCCIIT/gdg-website?color=32CD32) | ![pull requests](https://img.shields.io/github/issues-pr/GDSC-RCCIIT/gdg-website?color=FFFF8F) | ![Closed PRs](https://img.shields.io/github/issues-pr-closed/GDSC-RCCIIT/gdg-website?color=20B2AA) | ![Languages](https://img.shields.io/github/languages/count/GDSC-RCCIIT/gdg-website?color=20B2AA) | ![Contributors](https://img.shields.io/github/contributors/GDSC-RCCIIT/gdg-website?color=00FA9A) |
+
 ## ✨ Tech Stack
 - **Frontend**: Next.js, Tailwind CSS
 
