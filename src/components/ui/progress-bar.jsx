@@ -25,14 +25,13 @@ export default function ScrollProgressBar() {
                 style={{
                     width: `${scrollPercentage}%`,
                     background: `linear-gradient(to right, 
-                        #ff0000, /* Red */
-                        #ff7f00, /* Orange */
-                        #ffff00, /* Yellow */
-                        #0000ff, /* Blue */
-                        #00ff00, /* Green */
-                        #4b0082, /* Indigo */
-                        #8b00ff /* Violet */
-                    )`
+                        #4285F4 0%,  /* Google Blue */
+                        #34A853 25%, /* Google Green */
+                        #FBBC05 50%, /* Google Yellow */
+                        #EA4335 75%  /* Google Red */
+                    )`,
+                    borderRadius: '0px', // Sharp rectangle edges
+                    height: '8px' // Adjust height if needed for better realism
                 }}
             />
         </div>
