@@ -1,7 +1,7 @@
-'use client'
+"use client";
 import React from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
+import resources from './resources';
 
 function Resource() {
   return (
@@ -17,7 +17,6 @@ function Resource() {
             >
               Kickstart your Development
             </motion.h2>
-
             <motion.p
               className="mt-4 text-gray-900"
               initial={{ opacity: 0, y: -20 }}
@@ -29,46 +28,14 @@ function Resource() {
           </div>
 
           <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {/* Card Component */}
-            {[
-              {
-                href: "https://roadmap.sh/frontend",
-                title: "Frontend Development",
-                description: "To learn frontend, follow this roadmap",
-              },
-              {
-                href: "https://roadmap.sh/backend",
-                title: "Backend Development",
-                description: "To learn backend, follow this roadmap",
-              },
-              {
-                href: "https://roadmap.sh/ux-design",
-                title: "UI/UX Development",
-                description: "To learn UX design, follow this roadmap",
-              },
-              {
-                href: "https://roadmap.sh/cpp",
-                title: "C++ Learning Track",
-                description: "To learn C++, follow this roadmap",
-              },
-              {
-                href: "https://roadmap.sh/computer-science",
-                title: "Computer Science Fundamentals",
-                description: "To learn Computer Science, follow this roadmap",
-              },
-              {
-                href: "https://roadmap.sh/datastructures-and-algorithms",
-                title: "Data Structures and Algorithms",
-                description: "To learn DSA, follow this roadmap",
-              },
-            ].map((card, index) => (
+            {resources.map((resource, index) => (
               <motion.a
                 key={index}
                 className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
-                href={card.href}
+                href={`/Resources/${resource.id}`}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }} // staggered animation
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -89,29 +56,22 @@ function Resource() {
                   />
                 </svg>
 
-                <h2 className="mt-4 text-xl font-bold text-black">{card.title}</h2>
-
-                <p className="mt-1 text-sm text-gray-900">
-                  {card.description}
-                </p>
+                <h2 className="mt-4 text-xl font-bold text-black">{resource.title}</h2>
+                <p className="mt-1 text-sm text-gray-900">{resource.description}</p>
               </motion.a>
             ))}
           </div>
 
           <div className="mt-12 text-center">
-          <motion.p
-              className="mt-4 text-gray-900"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.0 }}
-            >
-            <a
+            <motion.a
               href="/signup"
               className="inline-block rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-pink-700 focus:outline-none focus:ring focus:ring-yellow-400"
-              >
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               Get Started Today
-            </a>
-              </motion.p>
+            </motion.a>
           </div>
         </div>
       </section>
