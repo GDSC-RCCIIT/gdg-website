@@ -89,6 +89,11 @@ export function NavigationMenu() {
                     Projects
                   </NavigationMenuLink>
                 </Link>
+                <Link href="/Hackathon" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Hackathons
+                  </NavigationMenuLink>
+                </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/Events" legacyBehavior passHref>
