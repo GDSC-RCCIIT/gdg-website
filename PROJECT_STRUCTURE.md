@@ -27,6 +27,7 @@
 │   ├── spot2.jpg
 │   ├── spot3.jpg
 │   └── vision.webp
+├── repo_structure.txt
 ├── src/
 │   ├── app/
 │   │   ├── (pages)/
