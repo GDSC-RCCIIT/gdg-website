@@ -1,15 +1,14 @@
 'use client'
 import React, { useState } from 'react';
 import Card from './Card.jsx';
-import { projectData } from '../../../lib/Projects';
+import { hackathonProjects } from '../../../lib/Hackathon';
 import { motion } from 'framer-motion';
 
 function ProjectsPage() {
-  // State to handle the search query
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Function to filter projects based on the search query
-  const filteredProjects = projectData.filter((project) =>
+  // Filter projects based on search query
+  const filteredProjects = hackathonProjects.filter((project) =>
     project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     project.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -17,6 +16,7 @@ function ProjectsPage() {
   return (
     <div>
       <div className="flex flex-col mx-4">
+        {/* Heading Section */}
         <div className="text-center pt-10">
           <motion.h1
             className="text-5xl font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
@@ -24,7 +24,7 @@ function ProjectsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Our Projects
+            Girl Hackathon 2024
           </motion.h1>
 
           <motion.p
@@ -33,22 +33,22 @@ function ProjectsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Explore our latest projects and get involved by contributing to open source on GitHub!
+            Girl Hackathon is a program for women students in computer science and allied courses across India.
           </motion.p>
         </div>
 
         {/* Search Bar */}
-        <div className="mt-8 flex justify-center">
+        <div className="flex justify-center mt-8">
           <input
             type="text"
-            className="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg"
-            placeholder="Search projects by title or description..."
+            className="px-4 py-2 border border-gray-300 rounded-lg w-full max-w-lg text-gray-800"
+            placeholder="Search for hackathons..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
 
-        {/* Projects List */}
+        {/* Cards Section */}
         <div className="flex justify-center flex-wrap mt-8">
           {filteredProjects && filteredProjects.length > 0 ? (
             filteredProjects.map((project, index) => (
@@ -69,7 +69,7 @@ function ProjectsPage() {
               </motion.div>
             ))
           ) : (
-            <p>No projects available</p>
+            <p>No projects match your search</p>
           )}
         </div>
       </div>
