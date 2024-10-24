@@ -1,7 +1,3 @@
-## Project Structure ✨
-
-<!-- START_STRUCTURE -->
-```
 ├── LICENSE
 ├── PROJECT_STRUCTURE.md
 ├── README.md
@@ -125,5 +121,3 @@
 │   └── public/
 │       └── GDSC-RCIIT Logo.png
 └── tailwind.config.js
-```
-<!-- END_STRUCTURE -->
