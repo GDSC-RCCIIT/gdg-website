@@ -1,6 +1,10 @@
 import React from "react";
 import { FiMail } from "react-icons/fi";
-import { FaWhatsapp, FaInstagram as Instagram } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaInstagram as Instagram,
+  FaFacebook,
+} from "react-icons/fa";
 import { FaLinkedin as Linkedin } from "react-icons/fa";
 import { FaGithub as Github } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -32,7 +36,7 @@ const Footer = () => {
               <ul className="space-y-4 text-center">
                 <li>
                   <a
-                    href="https://flowbite.com/"
+                    href="https://maps.app.goo.gl/UvxqdDcW2NgdZ6dZ8"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
                     Location
@@ -40,7 +44,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://tailwindcss.com/"
+                    href="/"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
                     About GDG
@@ -48,7 +52,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="https://tailwindcss.com/"
+                    href="/careers"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
                     How to Apply
@@ -56,7 +60,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="https://tailwindcss.com/"
+                    href="/careers"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
                     Who can apply?
@@ -73,7 +77,7 @@ const Footer = () => {
               <ul className="space-y-4 text-center">
                 <li>
                   <Link
-                    href="https://github.com/"
+                    href="https://github.com/GDSC-RCCIIT"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
                     Github
@@ -81,7 +85,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="https://instagram.com/"
+                    href="https://www.instagram.com/gdgoncampus.rcciit"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
                     Instagram
@@ -89,7 +93,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="https://twitter.com/"
+                    href="https://github.com/GDSC-RCCIIT"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
                     Twitter
@@ -97,7 +101,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="https://twitter.com/"
+                    href="https://chat.whatsapp.com/B5XAPwqpfor56TkohzyUuM"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
                     Whatsapp
@@ -182,28 +186,38 @@ const Footer = () => {
               </h2>
               <div className="flex gap-4">
                 <SocialLink
-                  href="https://gmail.com/"
+                  href="mailto:gdscrcciit@gmail.com"
                   icon={<FiMail size={20} className="hover:text-blue-500" />}
                 />
                 <SocialLink
-                  href="https://instagram.com/"
+                  href="https://www.instagram.com/gdgoncampus.rcciit"
                   icon={<Instagram size={20} className="hover:text-pink-500" />}
                 />
                 <SocialLink
-                  href="https://twitter.com/"
-                  icon={<FaXTwitter size={20} className="hover:text-blue-400" />}
+                  href="https://x.com/gdsc_rcciit"
+                  icon={
+                    <FaXTwitter size={20} className="hover:text-blue-400" />
+                  }
                 />
                 <SocialLink
-                  href="https://linkedin.com/"
+                  href="https://www.linkedin.com/company/gdgc-rcciit/"
                   icon={<Linkedin size={20} className="hover:text-blue-600" />}
                 />
                 <SocialLink
-                  href="https://github.com/"
+                  href="https://github.com/GDSC-RCCIIT"
                   icon={<Github size={20} className="hover:text-gray-500" />}
                 />
                 <SocialLink
-                  href="https://github.com/"
-                  icon={<FaWhatsapp size={20} className="hover:text-green-500" />}
+                  href="https://chat.whatsapp.com/B5XAPwqpfor56TkohzyUuM"
+                  icon={
+                    <FaWhatsapp size={20} className="hover:text-green-500" />
+                  }
+                />
+                <SocialLink
+                  href="https://www.facebook.com/people/Gdsc-Rcciit"
+                  icon={
+                    <FaFacebook size={20} className="hover:text-blue-600" />
+                  }
                 />
               </div>
             </div>
