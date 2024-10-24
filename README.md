@@ -6,6 +6,10 @@
 
 Welcome to the official repository of the **GDG on Campus RCCIIT** website! This project is an open-source initiative aimed at building a modern, interactive, and feature-rich platform for our **Google Developer Group (GDG)**. We invite developers, designers, and content creators from all over to contribute and make this project a success!
 
+## Project Structure ✨
+
+Check the project structure here [Project Structure](PROJECT_STRUCTURE.md)
+
 ## ✨ Tech Stack
 - **Frontend**: Next.js, Tailwind CSS
 
