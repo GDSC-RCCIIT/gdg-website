@@ -1,10 +1,19 @@
 'use client'
-import React from 'react';
+import React, { useState } from 'react';
 import Card from './Card.jsx';
 import { projectData } from '../../../lib/Projects';
 import { motion } from 'framer-motion';
 
 function ProjectsPage() {
+  // State to handle the search query
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // Function to filter projects based on the search query
+  const filteredProjects = projectData.filter((project) =>
+    project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    project.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div>
       <div className="flex flex-col mx-4">
@@ -28,9 +37,21 @@ function ProjectsPage() {
           </motion.p>
         </div>
 
+        {/* Search Bar */}
+        <div className="mt-8 flex justify-center">
+          <input
+            type="text"
+            className="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg"
+            placeholder="Search projects by title or description..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
+
+        {/* Projects List */}
         <div className="flex justify-center flex-wrap mt-8">
-          {projectData && projectData.length > 0 ? (
-            projectData.map((project, index) => (
+          {filteredProjects && filteredProjects.length > 0 ? (
+            filteredProjects.map((project, index) => (
               <motion.div
                 key={project.title}
                 whileHover={{ scale: 1.05 }}
@@ -57,4 +78,3 @@ function ProjectsPage() {
 }
 
 export default ProjectsPage;
-
