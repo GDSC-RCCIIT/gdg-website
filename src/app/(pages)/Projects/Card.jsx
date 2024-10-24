@@ -4,9 +4,7 @@ import Image from 'next/image';
 
 function Card(props) {
   return (
-    <div className="max-w-sm rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl m-4 bg-gray-300 flex flex-col justify-between">
-      {/* Card background set to light gray */}
-
+    <div className="max-w-sm w-full h-[450px] rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl m-4 bg-gray-300 flex flex-col justify-between">
       {/* Image Section */}
       <div className="relative h-44 w-full">
         <Image
@@ -20,10 +18,11 @@ function Card(props) {
       {/* Content Section */}
       <div className="px-6 py-4 flex-grow">
         <div className="font-bold text-2xl text-gray-800 mb-3">{props.title}</div>
-        <p className="text-gray-700 text-sm leading-relaxed">{props.description}</p>
+        <p className="text-gray-700 text-sm leading-relaxed overflow-hidden h-full line-clamp-4">
+          {props.description}
+        </p>
       </div>
 
-      {/* Action Button Section: Centered and Positioned at the Bottom */}
       <div className="px-6 py-4 flex justify-center">
         <a
           href={props.link}
