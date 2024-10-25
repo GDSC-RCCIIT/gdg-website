@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Card from './Card.jsx';
 import { hackathonProjects } from '../../../lib/Hackathon';
 import { motion } from 'framer-motion';
+import Link from 'next/link.js';
 
 function ProjectsPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -60,12 +61,23 @@ function ProjectsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
+                <Link
+                  href={{
+                    pathname: `/Hackathon/${project.title}`,
+                    query: {
+                      description: project.description,
+                      image: project.image,
+                      link: project.link,
+                    },
+                  }}
+                >
                 <Card
                   title={project.title}
                   description={project.description}
                   image={project.image}
                   link={project.link}
                 />
+                </Link>
               </motion.div>
             ))
           ) : (
