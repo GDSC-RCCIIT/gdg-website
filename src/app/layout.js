@@ -7,6 +7,7 @@ import ScrollProgressBar from "@/components/ui/progress-bar"
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import GTranslateLoader from "@/components/GTranslateLoader";
+import ChatbotEmbed from "@/components/Chatbot";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
         <ScrollToTop />
         <ToastContainer />
         <GTranslateLoader />
+        <ChatbotEmbed />
       </body>
     </html>
   );
