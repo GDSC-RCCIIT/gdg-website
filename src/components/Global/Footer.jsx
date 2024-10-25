@@ -114,7 +114,7 @@ const Footer = () => {
               <ul className="space-y-4 text-center">
                 <li>
                   <a
-                    href="#"
+                    href="/PrivacyPolicy"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
                     Privacy Policy
