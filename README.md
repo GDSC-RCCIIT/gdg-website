@@ -11,6 +11,10 @@ Welcome to the official repository of the **GDG on Campus RCCIIT** website! This
 |--------------|--------------|---------------|-----------------|------------------|------------------|------------------|
 | ![GitHub stars](https://img.shields.io/github/stars/GDSC-RCCIIT/gdg-website) | ![forks](https://img.shields.io/github/forks/GDSC-RCCIIT/gdg-website) | ![issues](https://img.shields.io/github/issues/GDSC-RCCIIT/gdg-website?color=32CD32) | ![pull requests](https://img.shields.io/github/issues-pr/GDSC-RCCIIT/gdg-website?color=FFFF8F) | ![Closed PRs](https://img.shields.io/github/issues-pr-closed/GDSC-RCCIIT/gdg-website?color=20B2AA) | ![Languages](https://img.shields.io/github/languages/count/GDSC-RCCIIT/gdg-website?color=20B2AA) | ![Contributors](https://img.shields.io/github/contributors/GDSC-RCCIIT/gdg-website?color=00FA9A) |
 
+## Project Structure ✨
+
+Check the project structure here [Project Structure](PROJECT_STRUCTURE.md)
+
 ## ✨ Tech Stack
 - **Frontend**: Next.js, Tailwind CSS
 
