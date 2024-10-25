@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import { FiMail } from "react-icons/fi";
 import { FaWhatsapp, FaInstagram as Instagram } from "react-icons/fa";
 import { FaLinkedin as Linkedin } from "react-icons/fa";
@@ -7,6 +8,31 @@ import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        setMessage('Thank you for subscribing!');
+      } else {
+        const data = await response.json();
+        setMessage(data.message || 'Subscription failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('Subscription error:', error);
+      setMessage('An error occurred. Please try again later.');
+    }
+  };
+
   return (
     <footer className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 py-12">
       <div className="mx-auto w-full max-w-7xl px-6">
@@ -116,31 +142,38 @@ const Footer = () => {
               
          {/* Newsletter Form */}
          <div className="flex justify-center w-full">
-  <div className="max-w-sm min-w-[200px] w-full">
-    <div className="relative">
-      <input
-        type="text"
-        className="w-full pl-3 pr-10 py-2 bg-transparent placeholder:text-slate-400 text-slate-600 text-sm border border-slate-200 rounded-md transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
-        placeholder="someone@example.com"
-      />
-      {/* SVG Icon */}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="absolute w-5 h-5 top-2.5 right-3 text-black"
-      >
-        <rect width="20" height="16" x="2" y="4" rx="2" />
-        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-      </svg>
+         <div className="max-w-sm min-w-[200px] w-full">
+      <form onSubmit={handleSubmit}>
+        <div className="relative">
+          <input
+            type="email"
+            className="w-full pl-3 pr-10 py-2 bg-transparent placeholder:text-slate-400 text-slate-600 text-sm border border-slate-200 rounded-md transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+            placeholder="someone@example.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <button type="submit" className="absolute inset-y-0 right-0 px-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="w-5 h-5 text-black"
+            >
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+          </button>
+        </div>
+      </form>
+      {message && <p className="mt-2 text-sm text-green-600">{message}</p>}
     </div>
-  </div>
 </div>
 {/* Social Links */}
               <h2 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mt-6 mb-2">
