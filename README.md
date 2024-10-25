@@ -6,6 +6,15 @@
 
 Welcome to the official repository of the **GDG on Campus RCCIIT** website! This project is an open-source initiative aimed at building a modern, interactive, and feature-rich platform for our **Google Developer Group (GDG)**. We invite developers, designers, and content creators from all over to contribute and make this project a success!
 
+## 📈 GitHub Repository Stats
+| 🌟 **Stars** | 🍴 **Forks** | 🐛 **Issues** | 🔔 **Open PRs** | 🔕 **Closed PRs** | 🛠️ **Languages** | ✅ **Contributors** |
+|--------------|--------------|---------------|-----------------|------------------|------------------|------------------|
+| ![GitHub stars](https://img.shields.io/github/stars/GDSC-RCCIIT/gdg-website) | ![forks](https://img.shields.io/github/forks/GDSC-RCCIIT/gdg-website) | ![issues](https://img.shields.io/github/issues/GDSC-RCCIIT/gdg-website?color=32CD32) | ![pull requests](https://img.shields.io/github/issues-pr/GDSC-RCCIIT/gdg-website?color=FFFF8F) | ![Closed PRs](https://img.shields.io/github/issues-pr-closed/GDSC-RCCIIT/gdg-website?color=20B2AA) | ![Languages](https://img.shields.io/github/languages/count/GDSC-RCCIIT/gdg-website?color=20B2AA) | ![Contributors](https://img.shields.io/github/contributors/GDSC-RCCIIT/gdg-website?color=00FA9A) |
+
+## Project Structure ✨
+
+Check the project structure here [Project Structure](PROJECT_STRUCTURE.md)
+
 ## ✨ Tech Stack
 - **Frontend**: Next.js, Tailwind CSS
 
@@ -48,13 +57,9 @@ We welcome everyone to contribute to the GDG RCCIIT website! Please review our [
     npm install
     ```
 
-3. **Set Up Environment Variables**:  
-   Create a `.env.local` file and add the following:
-    ```env
-    NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
-    NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
-    NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your-cloudinary-name
-    NEXT_PUBLIC_CLOUDINARY_API_KEY=your-cloudinary-api-key
+3. **Set Up Environment Variables**:
+    ```bash
+    cp .env.example .env.local
     ```
 
 4. **Run the Development Server**:
