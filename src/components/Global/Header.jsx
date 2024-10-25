@@ -64,17 +64,19 @@ export function NavigationMenu() {
             alt="GDSC Logo"
             className="w-8 h-8 object-contain"
           />
-          <div className="text-3xl font-bold">
-            <span className="text-red-500">G</span>
-            <span className="text-blue-500">D</span>
-            <span className="text-yellow-500">G</span>
-            <span className="text-blue-500"> </span>
-            <span className="text-yellow-500">R</span>
-            <span className="text-purple-500">CC</span>
-            <span className="text-pink-500">I</span>
-            <span className="text-red-500">I</span>
-            <span className="text-orange-500">T</span>
-          </div>
+          <Link href="/" legacyBehavior passHref>
+            <div className="text-3xl font-bold cursor-pointer">
+              <span className="text-red-500">G</span>
+              <span className="text-blue-500">D</span>
+              <span className="text-yellow-500">G</span>
+              <span className="text-blue-500"> </span>
+              <span className="text-yellow-500">R</span>
+              <span className="text-purple-500">CC</span>
+              <span className="text-pink-500">I</span>
+              <span className="text-red-500">I</span>
+              <span className="text-orange-500">T</span>
+            </div>
+          </Link>
         </div>
 
         {/* Right-Aligned Menu */}
@@ -85,6 +87,11 @@ export function NavigationMenu() {
                 <Link href="/Projects" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     Projects
+                  </NavigationMenuLink>
+                </Link>
+                <Link href="/Hackathon" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Hackathons
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
@@ -127,6 +134,20 @@ export function NavigationMenu() {
                 <Link href="/Resources" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     Resources
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="/careers" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Careers
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="/localdev" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Connect To Local Dev
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
