@@ -57,9 +57,13 @@ We welcome everyone to contribute to the GDG RCCIIT website! Please review our [
     npm install
     ```
 
-3. **Set Up Environment Variables**:
-    ```bash
-    cp .env.example .env.local
+3. **Set Up Environment Variables**:  
+   Create a `.env.local` file and add the following:
+    ```env
+    NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+    NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your-cloudinary-name
+    NEXT_PUBLIC_CLOUDINARY_API_KEY=your-cloudinary-api-key
     ```
 
 4. **Run the Development Server**:
