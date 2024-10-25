@@ -122,7 +122,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/TermsAndConditions"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
                     Terms &amp; Conditions
