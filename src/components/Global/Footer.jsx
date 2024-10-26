@@ -82,7 +82,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/FAQsForum"
+                    href="/how-apply"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
                     How to Apply
@@ -90,7 +90,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/FAQsForum"
+                    href="/who-apply"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
                     Who can apply?
