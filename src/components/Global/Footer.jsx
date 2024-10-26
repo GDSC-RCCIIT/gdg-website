@@ -123,10 +123,10 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="https://twitter.com/"
+                    href="https://x.com/"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
-                    Twitter
+                    X
                   </Link>
                 </li>
                 <li>
