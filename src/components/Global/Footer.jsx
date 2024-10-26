@@ -6,6 +6,7 @@ import { FaLinkedin as Linkedin } from "react-icons/fa";
 import { FaGithub as Github } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
+import { toast } from "react-toastify";
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -13,6 +14,12 @@ const Footer = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
 
     try {
       const response = await fetch('/api/subscribe', {
@@ -22,14 +29,15 @@ const Footer = () => {
       });
 
       if (response.ok) {
-        setMessage('Thank you for subscribing!');
+        setEmail("");
+        toast.success("Thank you for subscribing!");
       } else {
         const data = await response.json();
-        setMessage(data.message || 'Subscription failed. Please try again.');
+        toast.error(data.message || "Subscription failed. Please try again.");
       }
     } catch (error) {
-      console.error('Subscription error:', error);
-      setMessage('An error occurred. Please try again later.');
+      console.error("Subscription error:", error);
+      toast.error("An error occurred. Please try again later.");
     }
   };
 
@@ -58,7 +66,7 @@ const Footer = () => {
               <ul className="space-y-4 text-center">
                 <li>
                   <a
-                    href="https://flowbite.com/"
+                    href="/"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
                     Location
@@ -66,7 +74,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="https://tailwindcss.com/"
+                    href="/About"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
                     About GDG
@@ -74,7 +82,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="https://tailwindcss.com/"
+                    href="/FAQsForum"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
                     How to Apply
@@ -82,7 +90,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="https://tailwindcss.com/"
+                    href="/FAQsForum"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
                     Who can apply?
@@ -99,7 +107,7 @@ const Footer = () => {
               <ul className="space-y-4 text-center">
                 <li>
                   <Link
-                    href="https://github.com/"
+                    href="https://github.com/GDSC-RCCIIT/gdg-website"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
                     Github
@@ -123,7 +131,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="https://twitter.com/"
+                    href="https://www.linkedin.com/in/rishi-paul04/"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
                     Whatsapp
@@ -151,7 +159,7 @@ const Footer = () => {
                     href="/TermsAndConditions"
                     className="text-gray-300 hover:text-white transition-all duration-200"
                   >
-                    Terms &amp; Conditions
+                    Terms & Conditions
                   </a>
                 </li>
                 <li>
@@ -173,45 +181,45 @@ const Footer = () => {
                 Stay Updated
               </h2>
 
-              
-         {/* Newsletter Form */}
-         <div className="flex justify-center w-full">
-         <div className="max-w-sm min-w-[200px] w-full">
-      <form onSubmit={handleSubmit}>
-        <div className="relative">
-          <input
-            type="email"
-            className="w-full pl-3 pr-10 py-2 bg-transparent placeholder:text-slate-400 text-slate-600 text-sm border border-slate-200 rounded-md transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
-            placeholder="someone@example.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <button type="submit" className="absolute inset-y-0 right-0 px-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-5 h-5 text-black"
+              {/* Newsletter Form */}
+              <div className="flex justify-center w-full">
+      <div className="max-w-sm min-w-[200px] w-full">
+        <form onSubmit={handleSubmit} noValidate>
+          <div className="relative">
+            <input
+              type="email"
+              className="w-full pl-3 pr-10 py-2 bg-transparent placeholder:text-slate-400 text-white text-sm border border-slate-200 rounded-md transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+              placeholder="someone@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button
+              type="submit"
+              className="absolute inset-y-0 right-0 px-2 flex items-center space-x-1 bg-black rounded-md my-[1px] mx-[1px]"
             >
-              <rect width="20" height="16" x="2" y="4" rx="2" />
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-            </svg>
-          </button>
-        </div>
-      </form>
-      {message && <p className="mt-2 text-sm text-green-600">{message}</p>}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-5 h-5 text-white"
+              >
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-</div>
-{/* Social Links */}
-              <h2 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mt-6 mb-2">
-
+              {/* Social Links */}
+              <h2 className="text-sm font-bold text-white dark:text-white uppercase tracking-wider mt-6 mb-2">
                 Socials
               </h2>
               <div className="flex gap-4">
@@ -228,15 +236,15 @@ const Footer = () => {
                   icon={<FaXTwitter size={20} className="hover:text-blue-400" />}
                 />
                 <SocialLink
-                  href="https://linkedin.com/"
+                  href="https://www.linkedin.com/in/rishi-paul04/"
                   icon={<Linkedin size={20} className="hover:text-blue-600" />}
                 />
                 <SocialLink
-                  href="https://github.com/"
+                  href="https://github.com/GDSC-RCCIIT/gdg-website"
                   icon={<Github size={20} className="hover:text-gray-500" />}
                 />
                 <SocialLink
-                  href="https://github.com/"
+                  href="https://www.linkedin.com/in/rishi-paul04/"
                   icon={<FaWhatsapp size={20} className="hover:text-green-500" />}
                 />
               </div>
