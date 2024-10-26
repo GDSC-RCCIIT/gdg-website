@@ -145,6 +145,13 @@ export function NavigationMenu() {
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
+                <Link href="/localdev" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Connect To Local Dev
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
                 <Link href="/SignIn" legacyBehavior passHref>
                   <NavigationMenuLink
                     className={cn(
