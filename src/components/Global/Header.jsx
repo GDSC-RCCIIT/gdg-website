@@ -152,6 +152,13 @@ export function NavigationMenu() {
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
+                <Link href="/GeminiAI" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Gemini AI
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
                 <Link href="/SignIn" legacyBehavior passHref>
                   <NavigationMenuLink
                     className={cn(
