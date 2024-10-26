@@ -9,6 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@google/generative-ai": "^0.21.0",
+    "@mui/icons-material": "^6.1.5",
+    "@mui/material": "^6.1.5",
     "@radix-ui/react-aspect-ratio": "^1.1.0",
     "@radix-ui/react-collapsible": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.2",

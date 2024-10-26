@@ -18,6 +18,13 @@
 │   ├── Newsletter.png
 │   ├── avatar.png
 │   ├── avatar1.png
+│   ├── dev1.jpeg
+│   ├── dev2.jpeg
+│   ├── dev3.jpeg
+│   ├── dev4.jpeg
+│   ├── dev5.jpeg
+│   ├── dev6.jpeg
+│   ├── dev7.jpeg
 │   ├── goal.webp
 │   ├── hack1.jpg
 │   ├── img1.jpg
@@ -44,6 +51,10 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── Hackathon/
 │   │   │   │   ├── Card.jsx
+│   │   │   │   ├── [id]/
+│   │   │   │   │   └── page.jsx
+│   │   │   │   └── page.jsx
+│   │   │   ├── PrivacyPolicy/
 │   │   │   │   └── page.jsx
 │   │   │   ├── Projects/
 │   │   │   │   ├── Card.jsx
@@ -53,6 +64,8 @@
 │   │   │   │   │   └── page.jsx
 │   │   │   │   ├── page.jsx
 │   │   │   │   └── resources.js
+│   │   │   ├── RulesAndRegulations/
+│   │   │   │   └── page.jsx
 │   │   │   ├── SignIn/
 │   │   │   │   └── page.jsx
 │   │   │   ├── SignUp/
@@ -65,8 +78,15 @@
 │   │   │   ├── TeamsGallery/
 │   │   │   │   ├── Teams.js
 │   │   │   │   └── page.jsx
-│   │   │   └── careers/
+│   │   │   ├── TermsAndConditions/
+│   │   │   │   └── page.jsx
+│   │   │   ├── careers/
+│   │   │   │   └── page.jsx
+│   │   │   └── localdev/
 │   │   │       └── page.jsx
+│   │   ├── api/
+│   │   │   └── subscribe/
+│   │   │       └── route.js
 │   │   ├── favicon.ico
 │   │   ├── fonts/
 │   │   │   ├── GeistMonoVF.woff
@@ -79,6 +99,8 @@
 │   │   ├── not-found.jsx
 │   │   └── page.js
 │   ├── components/
+│   │   ├── Chatbot.jsx
+│   │   ├── GTranslateLoader.js
 │   │   ├── Global/
 │   │   │   ├── Footer.jsx
 │   │   │   ├── Header.jsx
