@@ -174,3 +174,61 @@ const CareerPage = () => {
 };
 
 export default CareerPage;
+
+
+import React, { useEffect, useState } from 'react';
+
+const Spotlight = () => {
+  const [spotlightJobs, setSpotlightJobs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const response = await fetch('/api/jobs'); 
+        if (!response.ok) throw new Error('Network response was not ok');
+        const data = await response.json();
+        setSpotlightJobs(data);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchJobs();
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error loading jobs: {error.message}</p>;
+
+  return (
+      <div className="mt-16 flex flex-col items-center">
+        <h2 className="text-3xl font-semibold mb-6">Spotlight</h2>
+        <div className="flex space-x-4 overflow-x-auto pb-4">
+          {spotlightJobs.map((job, index) => (
+              <div key={index} className="bg-white shadow-md rounded-lg p-4 w-72">
+                <img src={job.image} alt={job.title} className="rounded-t-lg w-full h-40 object-cover" />
+                <div className="mt-4">
+                  <h3 className="font-bold text-xl">{job.title}</h3>
+                  <p className="mt-2 text-gray-600">{job.description}</p>
+                  {job.location && (
+                      <div className="mt-4 flex items-center space-x-2 text-gray-500">
+                        <span className="material-icons">laptop_mac</span>
+                        <span>{job.location}</span>
+                      </div>
+                  )}
+                  {job.office && (
+                      <div className="mt-2 flex items-center space-x-2 text-gray-500">
+                        <span className="material-icons">location_on</span>
+                        <span>{job.office}</span>
+                      </div>
+                  )}
+                </div>
+              </div>
+          ))}
+        </div>
+      </div>
+  );
+};
