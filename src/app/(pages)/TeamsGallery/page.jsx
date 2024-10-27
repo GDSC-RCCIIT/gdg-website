@@ -1,16 +1,31 @@
 "use client"
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { FaLinkedin } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { teams } from './Teams';
 
+const Skeleton = ({ className, style }) => (
+    <div className={`animate-pulse bg-gray-300 rounded ${className}`} style={style}></div>
+);
+
 const Teams = () => {
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => setLoading(false), 2000);
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <div>
             <div className="flex flex-col items-center justify-center py-6">
                 <div className="flex flex-wrap justify-center">
-                    {teams.map((team, index) => (
+                    {loading
+                        ? Array.from({ length: 14 }).map((_, index) => (
+                            <Skeleton key={index} className="w-40 h-40 m-8 rounded-full" />
+                        ))
+                        : teams.map((team, index) => (
                         <div key={index} className="flex flex-col items-center justify-center py-8">
                             <motion.h1
                                 className="text-5xl font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
@@ -52,19 +67,28 @@ const Teams = () => {
                         visible: { opacity: 1, scale: 1, transition: { staggerChildren: 0.1 } }
                     }}
                 >
-                    {galleryItems.map((item, index) => (
-                        <GalleryItem key={index} item={item} index={index} />
-                    ))}
+                    {loading
+                        ? Array.from({ length: 3 }).map((_, index) => (
+                            <Skeleton key={index} className="h-48 w-full rounded-xl" />
+                        ))
+                        : galleryItems.map((item, index) => (
+                            <GalleryItem key={index} item={item} index={index} />
+                        ))
+                    }
                 </motion.ul>
             </div>
         </div>
     );
 };
 
-const TeamGroup = ({ team }) => {
+const TeamGroup = ({ team, loading }) => {
     return (
         <>
-            {team.members.map((member, index) => (
+            {loading
+                ? Array.from({ length: team.members.length }).map((_, index) => (
+                    <Skeleton key={index} className="w-40 h-40 m-8 rounded-full" />
+                ))
+                :team.members.map((member, index) => (
                 <TeamMember
                     key={index}
                     index={index}

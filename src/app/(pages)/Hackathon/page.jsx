@@ -1,16 +1,47 @@
-'use client'
-import React, { useState } from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'; // Make sure to import axios
 import Card from './Card.jsx';
-import { hackathonProjects } from '../../../lib/Hackathon';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
-function ProjectsPage() {
+
+export default function ProjectsPage() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [hackathons, setHackathons] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/hackathons")
+      .then((response) => {
+        setHackathons(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
 
   // Filter projects based on search query
-  const filteredProjects = hackathonProjects.filter((project) =>
-    project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    project.description.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredProjects = hackathons.filter((project) =>
+    project.basicInformation.hackathonTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    project?.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const ProjectsSkeleton = () => (
+    <div className="flex justify-center flex-wrap mt-8">
+      {Array.from({ length: 4 }).map((_, index) => (
+        <div key={index} className="w-full max-w-xs mx-2 mb-4 bg-gray-100 border border-gray-300 animate-pulse rounded-lg">
+          <div className="h-32 bg-gray-300 rounded-t-lg" />
+          <div className="p-4">
+            <div className="h-6 w-3/4 bg-gray-300 rounded-md mb-2" />
+            <div className="h-4 w-2/3 bg-gray-300 rounded-md mb-2" />
+            <div className="h-4 w-1/2 bg-gray-300 rounded-md" />
+          </div>
+        </div>
+      ))}
+    </div>
   );
 
   return (
@@ -26,7 +57,6 @@ function ProjectsPage() {
           >
             Girl Hackathon 2024
           </motion.h1>
-
           <motion.p
             className="text-gray-600 text-xl mt-4 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 50 }}
@@ -49,32 +79,40 @@ function ProjectsPage() {
         </div>
 
         {/* Cards Section */}
-        <div className="flex justify-center flex-wrap mt-8">
-          {filteredProjects && filteredProjects.length > 0 ? (
-            filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.title}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-              >
-                <Card
-                  title={project.title}
-                  description={project.description}
-                  image={project.image}
-                  link={project.link}
-                />
-              </motion.div>
-            ))
-          ) : (
-            <p>No projects match your search</p>
-          )}
-        </div>
+        {loading ? (
+          <ProjectsSkeleton />
+        ) : (
+          <div className="flex justify-center flex-wrap mt-8">
+            {hackathons && hackathons.length > 0 ? (
+              hackathons.map((hackathon, index) => (
+                <motion.div
+                  key={hackathon.basicInformation.hackathonTitle}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                >
+                  <Link
+                    href={{
+                      pathname: `/Hackathon/${hackathon.basicInformation.hackathonTitle}`
+                    }}
+                  >
+                    <Card
+                      title={hackathon.basicInformation.hackathonTitle}
+                      description={hackathon.basicInformation.description}
+                      image="/img1.jpg"
+                      registrationDeadline={hackathon.registrationAndParticipation.registrationDeadline} // Display registration deadline
+                    />
+                  </Link>
+                </motion.div>
+              ))
+            ) : (
+              <p>No projects match your search</p>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
 }
-
-export default ProjectsPage;
