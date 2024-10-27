@@ -208,13 +208,29 @@ export function NavigationMenu() {
                 </Link>
               </NavigationMenuItem>
             
-              <NavigationMenuItem>
-                <Link href="/careers" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Careers
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
+              <DropdownMenu className="mr-4">
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline">Career And Support</Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56">
+                  <DropdownMenuGroup>
+                    <DropdownMenuItem asChild>
+                      <Link href="/careers" legacyBehavior passHref>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                          Career
+                        </NavigationMenuLink>
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/Stories-Achievements" legacyBehavior passHref>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                          Stories and Achievements
+                        </NavigationMenuLink>
+                      </Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuGroup>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <NavigationMenuItem>
                 <Link href="/GeminiAI" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
