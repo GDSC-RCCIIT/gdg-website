@@ -95,7 +95,8 @@ export default function ProjectsPage() {
                 >
                   <Link
                     href={{
-                      pathname: `/Hackathon/${hackathon.basicInformation.hackathonTitle}`
+                      pathname: `/Hackathon/${hackathon.basicInformation.hackathonTitle}`,
+                      query: { title: hackathon.id },
                     }}
                   >
                     <Card
