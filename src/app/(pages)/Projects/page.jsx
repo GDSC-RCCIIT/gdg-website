@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Card from './Card.jsx';
 import { projectData } from '../../../lib/Projects';
 import { motion } from 'framer-motion';
+import axios from 'axios';
 
 function ProjectsPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -15,6 +16,20 @@ function ProjectsPage() {
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
+  }, []);
+
+  const [allProjects, setAllProjects] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/projects")
+      .then((response) => {
+        setAllProjects(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
   }, []);
 
   const ProjectsSkeleton = () => (
