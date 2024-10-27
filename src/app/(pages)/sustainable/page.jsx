@@ -1,223 +1,146 @@
-'use client'
-import React, { useState } from 'react';
+"use client";
+import React from 'react';
 import { motion } from "framer-motion";
-import { Calendar, ChevronRight, Award, Users, Target, Code, Video, Star } from 'lucide-react';
+import { ChevronRight, Info } from 'lucide-react';
 
-const TimelinePage = () => {
-    const [activePhase, setActivePhase] = useState('getStarted');
+const goalsData = [
+    {
+        title: "No Poverty",
+        description: "End poverty in all its forms, everywhere.",
+        projects: ["DonationMatch", "OKO Finance", "Solar Freeze"],
+    },
+    {
+        title: "Zero Hunger",
+        description: "End hunger, achieve food security and improved nutrition, and promote sustainable agriculture.",
+        projects: ["IndigoDrones", "SkillLab", "Apic"],
+    },
+    {
+        title: "Good Health and Wellbeing",
+        description: "Ensure healthy lives and promote well-being for all, at all ages.",
+        projects: ["Kindara", "WonderTree", "Wonder"],
+    },
+    {
+        title: "Quality Education",
+        description: "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.",
+        projects: ["DonationMatch", "OKO Finance", "Femunity"],
+    },
+    {
+        title: "Gender Equality",
+        description: "Achieve gender equality and empower all women and girls.",
+        projects: ["DonationMatch", "SkillLab", "Kindara"],
+    },
+    {
+        title: "Clean Water and Sanitation",
+        description: "Ensure availability and sustainable management of water and sanitation for all.",
+        projects: ["Flow", "Remora"],
+    },
+    {
+        title: "Decent Work and Economic Growth",
+        description: "Promote sustained, inclusive, and sustainable economic growth, full and productive employment, and decent work for all.",
+        projects: ["SkillLab", "DonationMatch"],
+    },
+    {
+        title: "Industry, Innovation and Infrastructure",
+        description: "Build resilient infrastructure, promote inclusive and sustainable industrialization, and foster innovation.",
+        projects: ["DonationMatch", "ReVita"],
+    },
+    {
+        title: "Reduced Inequalities",
+        description: "Reduce inequality within and among countries.",
+        projects: ["Wonder Reader", "HearSitter"],
+    },
+    {
+        title: "Sustainable Cities and Communities",
+        description: "Make cities and human settlements inclusive, safe, resilient, and sustainable.",
+        projects: ["OKO Finance", "HeadHome"],
+    },
+    {
+        title: "Responsible Consumption and Production",
+        description: "Ensure sustainable consumption and production patterns.",
+        projects: ["DeCarbonUs", "FarmX"],
+    },
+    {
+        title: "Climate Action",
+        description: "Take urgent action to combat climate change and its impacts.",
+        projects: ["FarmX", "SlugLoop"],
+    },
+    {
+        title: "Partnerships",
+        description: "Strengthen the means of implementation and revitalize the global partnership for sustainable development.",
+        projects: ["BuzzBusters", "Gateway"],
+    },
+    {
+        title: "Life Below Water",
+        description: "Conserve and sustainably use the oceans, seas, and marine resources for sustainable development.",
+        projects: ["Consider submitting to this category!"],
+    },
+    {
+        title: "Life on Land",
+        description: "Protect, restore, and promote sustainable use of terrestrial ecosystems, manage forests, combat desertification and biodiversity loss, and halt and reverse land degradation.",
+        projects: ["Consider submitting to this category!"],
+    },
+    {
+        title: "Peace, Justice and Strong Institutions",
+        description: "Promote peaceful and inclusive societies for sustainable development, provide access to justice for all, and build effective, accountable, and inclusive institutions.",
+        projects: ["Consider submitting to this category!"],
+    },
+    {
+        title: "Affordable and Clean Energy",
+        description: "Ensure access to affordable, reliable, sustainable, and modern energy for all.",
+        projects: ["Consider submitting to this category!"],
+    },
+];
 
-    const timelinePhases = {
-        getStarted: {
-            title: "Get Started",
-            icon: Users,
-            steps: [
-                {
-                    title: "Join a Google Developer Student Club",
-                    content: "If there is no club at your college or university, you can join the closest one through the community event platform."
-                },
-                {
-                    title: "Form a team and register",
-                    content: "Form a 1 to 4 person team, with at least one student who is a member of a Google Developer Student Club at the associated university, and ideally with a varied set of technical and soft skills. Have a conversation early about causes you care about most to identify a problem to potentially solve."
-                },
-                {
-                    title: "Select a UN Sustainable Development Goal",
-                    content: "Select a goal that aligns with personal interests and/or needs in your community that you would like to solve with technology."
-                }
-            ]
-        },
-        learnBuild: {
-            title: "Learn and Build",
-            icon: Code,
-            steps: [
-                {
-                    title: "Identify a solution",
-                    content: "One way to identify a solution is by using a Design Sprint, a flexible framework for solving problems through designing, prototyping, and testing ideas with users over a 5-day sprint."
-                },
-                {
-                    title: "Design the user interface",
-                    content: "This is where your solution's user interface and user experience comes in. Start thinking about how a user will interact with the solution."
-                },
-                {
-                    title: "Design the backend technology",
-                    content: "Follow the learning pathways on the Resources page to help you plan and design the backend."
-                }
-            ]
-        },
-        finalize: {
-            title: "Finalize and Submit",
-            icon: Video,
-            steps: [
-                {
-                    title: "Test your solution",
-                    content: "Collect feedback by showcasing your project to other students, family, and friends."
-                },
-                {
-                    title: "Iterate on your project",
-                    content: "Using the feedback you received, start iterating on your design and technology until it's polished and ready for a final demo."
-                },
-                {
-                    title: "Record a demo video, and submit",
-                    content: "Put your solution into action. Record a video of a successful demo (maximum 2 minutes long) and submit it by February 22, 2024. The submission form will open on January 22, 2024."
-                }
-            ]
-        }
-    };
-
-    const evaluationCriteria = [
-        {
-            title: "Impact",
-            points: 25,
-            criteria: [
-                "Clear challenge using problem statement (5 points)",
-                "Clear explanation of chosen UN SDG goals and targets (5 points)",
-                "User feedback, testing & iteration (5 points)",
-                "Solution addresses identified challenge (5 points)",
-                "Evidence of next steps and scaling plan (5 points)"
-            ]
-        },
-        {
-            title: "Technology",
-            points: 25,
-            criteria: [
-                "Clear architecture and Google technology implementation (5 points)",
-                "Complete technical implementation (5 points)",
-                "Code testing and iteration (5 points)",
-                "Working demonstration (5 points)",
-                "Scalability potential (5 points)"
-            ]
-        }
-    ];
-
-    const decisionTimeline = [
-        {
-            date: "Early April",
-            title: "Top 100 teams selected",
-            description: "After judges review all submissions against the evaluation criteria, the top 100 Solution Challenge teams will be announced."
-        },
-        {
-            date: "April",
-            title: "Mentoring for top 100 teams",
-            description: "The top 100 teams receive mentorship from Google and Google Developer Experts to improve their solution and resubmit it for the top prize."
-        },
-        {
-            date: "Late May",
-            title: "Final 10 announced",
-            description: "Finalist teams will be announced and begin to prepare for the 2024 Solution Challenge Demo Day."
-        },
-        {
-            date: "June",
-            title: "Winning 3 teams announced live on YouTube",
-            description: "Final 10 will showcase their solutions during the 2024 Solution Challenge Demo Day, and the winning 3 teams will be announced!"
-        }
-    ];
-
+const SDGsPage = () => {
     return (
         <div className="min-h-screen bg-gray-50">
-            {/* Hero Section */}
+            {/* Header Section */}
             <motion.div
-                className="bg-gradient-to-r from-blue-600 to-blue-400 text-white py-16"
+                className="relative text-center bg-gradient-to-r from-green-600 to-blue-600 text-white py-20 px-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <div className="container mx-auto px-4">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                        2024 Solution Challenge Timeline
-                    </h1>
-                    <p className="text-xl max-w-3xl">
-                        Watch the Final 10 teams showcase their projects live during Solution Challenge Demo Day on June 27, 2024.
+                <div className="container mx-auto">
+                    <h1 className="text-4xl md:text-6xl font-bold mb-4">The 17 Sustainable Development Goals</h1>
+                    <p className="text-lg max-w-2xl mx-auto mb-6">
+                        Created by the United Nations in 2015, these goals aim to end poverty, ensure prosperity, and protect the planet by 2030.
                     </p>
-                    <button className="mt-6 bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-blue-50 transition-colors">
-                        Learn more
+                    <button className="mt-4 bg-white text-green-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition">
+                        Learn More
                     </button>
                 </div>
             </motion.div>
 
-            {/* Phase Navigation */}
-            <div className="bg-white border-b">
-                <div className="container mx-auto px-4">
-                    <div className="flex space-x-8 overflow-x-auto">
-                        {Object.entries(timelinePhases).map(([key, phase]) => (
-                            <button
-                                key={key}
-                                onClick={() => setActivePhase(key)}
-                                className={`py-4 px-2 border-b-2 transition-colors ${activePhase === key
-                                    ? 'border-blue-500 text-blue-500'
-                                    : 'border-transparent text-gray-600 hover:text-gray-900'
-                                    }`}
-                            >
-                                <phase.icon className="inline-block mr-2" size={20} />
-                                {phase.title}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-            </div>
-
-            {/* Phase Content */}
+            {/* Goals Section */}
             <div className="container mx-auto px-4 py-12">
-                <motion.div
-                    key={activePhase}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-                >
-                    {timelinePhases[activePhase].steps.map((step, index) => (
-                        <div key={index} className="bg-white rounded-lg shadow-md p-6">
-                            <h3 className="text-xl font-semibold mb-4">{step.title}</h3>
-                            <p className="text-gray-600">{step.content}</p>
-                        </div>
-                    ))}
-                </motion.div>
-            </div>
-
-            {/* Evaluation Criteria */}
-            <div className="bg-gray-900 text-white py-16">
-                <div className="container mx-auto px-4">
-                    <h2 className="text-3xl font-bold mb-8">Evaluation Criteria</h2>
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {evaluationCriteria.map((category, index) => (
-                            <div key={index} className="bg-gray-800 rounded-lg p-6">
-                                <div className="flex justify-between items-center mb-4">
-                                    <h3 className="text-xl font-semibold">{category.title}</h3>
-                                    <span className="text-blue-400 font-bold">{category.points} points</span>
-                                </div>
-                                <ul className="space-y-3">
-                                    {category.criteria.map((criterion, idx) => (
-                                        <li key={idx} className="flex items-start">
-                                            <ChevronRight className="text-blue-400 mt-1 mr-2 flex-shrink-0" size={16} />
-                                            <span className="text-gray-300">{criterion}</span>
-                                        </li>
+                <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">Explore the Goals</h2>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {goalsData.map((goal, index) => (
+                        <motion.div
+                            key={index}
+                            className="bg-white rounded-lg shadow-lg p-6 hover:shadow-2xl transition"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * 0.1 }}
+                        >
+                            <div className="flex items-center mb-4">
+                                <Info className="text-blue-500 mr-3 w-6 h-6" />
+                                <h3 className="text-2xl font-semibold text-gray-800">{goal.title}</h3>
+                            </div>
+                            <p className="text-gray-600 mb-4">{goal.description}</p>
+                            <div className="mb-4">
+                                <h4 className="text-lg font-medium text-gray-700 mb-2">Example Projects:</h4>
+                                <ul className="list-disc list-inside space-y-1">
+                                    {goal.projects.map((project, idx) => (
+                                        <li key={idx} className="text-gray-600">{project}</li>
                                     ))}
                                 </ul>
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-
-            {/* Decision Timeline */}
-            <div className="container mx-auto px-4 py-16">
-                <h2 className="text-3xl font-bold mb-12">Decision Timeline</h2>
-                <div className="relative">
-                    {decisionTimeline.map((event, index) => (
-                        <motion.div
-                            key={index}
-                            className="flex mb-8 relative"
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.2 }}
-                        >
-                            <div className="flex flex-col items-center mr-8">
-                                <Calendar className="text-blue-500 mb-2" size={24} />
-                                <div className="h-full w-0.5 bg-blue-200" />
-                            </div>
-                            <div>
-                                <h3 className="text-xl font-semibold text-gray-900">{event.date}</h3>
-                                <h4 className="text-lg font-medium text-blue-600 mb-2">{event.title}</h4>
-                                <p className="text-gray-600">{event.description}</p>
-                            </div>
+                            <button className="text-blue-600 font-medium hover:text-blue-800 transition flex items-center">
+                                <span>Why It Matters</span>
+                                <ChevronRight className="w-5 h-5 ml-1" />
+                            </button>
                         </motion.div>
                     ))}
                 </div>
@@ -226,4 +149,4 @@ const TimelinePage = () => {
     );
 };
 
-export default TimelinePage;
+export default SDGsPage;
