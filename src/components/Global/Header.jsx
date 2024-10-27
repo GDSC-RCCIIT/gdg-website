@@ -79,6 +79,7 @@ export function NavigationMenu() {
           </Link>
         </div>
 
+
         {/* Right-Aligned Menu with Hamburger Icon */}
         <div className="flex items-center">
           <button
@@ -315,6 +316,7 @@ export function NavigationMenu() {
               </UiNavigationMenu>
             </div>
           )}
+
         </div>
       </div>
     </>
