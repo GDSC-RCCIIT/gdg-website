@@ -163,7 +163,7 @@ export function NavigationMenu() {
                               <DropdownMenuItem asChild>
                                 <Link href="/TechToolkits" legacyBehavior passHref>
                                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                    Tech Toolkits HUB
+                                    Tech ToolKits HUB
                                   </NavigationMenuLink>
                                 </Link>
                               </DropdownMenuItem>
