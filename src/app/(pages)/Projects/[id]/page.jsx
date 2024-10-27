@@ -346,7 +346,7 @@ export default function SingleProject() {
         </div>
       </div>
 
-      <div class="container bg-gradient-to-r from-indigo-500 to-violet-500 text-white p-8 rounded-lg shadow-lg max-w mx-auto">
+      <div class="container bg-gradient-to-r from-indigo-500 to-violet-500 text-white p-8 rounded-lg shadow-lg max-w mx-auto mb-10">
         <div class="text-3xl font-bold mb-4">Additional Links!</div>
         <div class="text-lg mb-4">
           Look at the <span class="text-yellow-400 font-bold">Project </span> Plan
