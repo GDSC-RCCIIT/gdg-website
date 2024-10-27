@@ -1,6 +1,6 @@
 "use client";
-import { useEffect, useState } from 'react';
-import { Container, Typography, TextField, Button, Paper, Box, List, ListItem, ListItemText, Divider, IconButton, Stack } from '@mui/material';
+import { useEffect, useRef, useState } from 'react';
+import { Container, TextField, Button, Paper, Box, List, ListItem, ListItemText, Divider, IconButton, Stack } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { ToastContainer, toast } from 'react-toastify';
@@ -12,9 +12,13 @@ export default function GeminiAI() {
         const savedHistory = localStorage.getItem('chatHistory');
         return savedHistory ? JSON.parse(savedHistory) : [];
     });
+    const chatContainerRef = useRef(null);
 
     useEffect(() => {
         localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+        if (chatContainerRef.current) {
+            chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+        }
     }, [chatHistory]);
 
     const formatMessage = (text) => {
@@ -95,6 +99,7 @@ export default function GeminiAI() {
                     Gemini AI Chat
                 </h1>
                 <Box
+                    ref={chatContainerRef}
                     style={{
                         height: '60vh',
                         overflowY: 'auto',
