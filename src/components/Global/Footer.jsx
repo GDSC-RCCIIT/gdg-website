@@ -8,7 +8,7 @@ import Link from "next/link";
 import { HeartIcon } from "lucide-react";
 
 const resources = [
-  { text: "Location", href: "https://flowbite.com/" },
+  { text: "Location", href: "https://www.google.com/maps/place/RCC+Institute+of+Information+Technology/@22.5592665,88.3938297,17z/data=!4m14!1m7!3m6!1s0x3a027686b848fb8d:0xed09795e4836e886!2sRCC+Institute+of+Information+Technology!8m2!3d22.5592616!4d88.3964046!16s%2Fm%2F02vtlkw!3m5!1s0x3a027686b848fb8d:0xed09795e4836e886!8m2!3d22.5592616!4d88.3964046!16s%2Fm%2F02vtlkw?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D" },
   { text: "About GDG", href: "https://tailwindcss.com/" },
   { text: "How to Apply", href: "https://tailwindcss.com/" },
   { text: "Who can apply?", href: "https://tailwindcss.com/" },
@@ -18,7 +18,7 @@ const followUs = [
   { text: "Github", href: "https://github.com/GDSC-RCCIIT/gdg-website" },
   { text: "Instagram", href: "https://instagram.com/" },
   { text: "Twitter", href: "https://x.com/gdsc_rcciit" },
-  { text: "Whatsapp", href: "https://whatsapp.com/" },
+  { text: "Whatsapp", href: "https://web.whatsapp.com/" },
   { text: "LinkedIn", href: "https://www.linkedin.com/company/gdgc-rcciit/" },
 ];
 
@@ -33,7 +33,7 @@ const socialLinks = [
   { icon: <FaXTwitter size={20} />, color: "bg-black", href: "https://x.com/gdsc_rcciit" },
   { icon: <Linkedin size={20} />, color: "bg-blue-600", href: "https://www.linkedin.com/company/gdgc-rcciit/" },
   { icon: <Github size={20} />, color: "bg-gray-800", href: "https://github.com/GDSC-RCCIIT/gdg-website" },
-  { icon: <FaWhatsapp size={20} />, color: "bg-green-500", href: "https://whatsapp.com/" },
+  { icon: <FaWhatsapp size={20} />, color: "bg-green-500", href: "https://web.whatsapp.com/" },
   { icon: <FiMail size={20} />, color: "bg-red-500", href: "mailto:contact@gdsc.com" },
 ];
 
