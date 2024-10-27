@@ -161,6 +161,13 @@ export function NavigationMenu() {
                           <DropdownMenuContent className="w-56">
                             <DropdownMenuGroup>
                               <DropdownMenuItem asChild>
+                                <Link href="/TechToolkits" legacyBehavior passHref>
+                                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                    Tech Toolkits HUB
+                                  </NavigationMenuLink>
+                                </Link>
+                              </DropdownMenuItem>
+                              <DropdownMenuItem asChild>
                                 <Link href="/TeamsGallery" legacyBehavior passHref>
                                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                               Teams & Gallery
