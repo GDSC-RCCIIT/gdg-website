@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Events.css';
 import EventItem from './EventItem';
 import { motion } from 'framer-motion';

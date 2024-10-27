@@ -26,6 +26,7 @@ function ProjectsPage() {
       .then((response) => {
         setAllProjects(response.data);
         setLoading(false);
+        console.log("allProjects",allProjects);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -85,11 +86,11 @@ function ProjectsPage() {
         {loading ? (
           <ProjectsSkeleton />
         ) : (
-<div className="flex justify-center flex-wrap mt-8">
-          {filteredProjects && filteredProjects.length > 0 ? (
-            filteredProjects.map((project, index) => (
+<div className="flex justify-center flex-wrap my-8">
+          {allProjects && allProjects.length > 0 ? (
+            allProjects.map((project, index) => (
               <motion.div
-                key={project.title}
+                key={project.projectTitle}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 50 }}
@@ -97,10 +98,10 @@ function ProjectsPage() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
                 <Card
-                  title={project.title}
-                  description={project.description}
-                  image={project.image}
-                  link={project.link}
+                  title={project.projectTitle}
+                  description={project.projectOverview}
+                  image='/Img1.jpg'
+                  link={project.youtubeLink}
                 />
               </motion.div>
             ))
