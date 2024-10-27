@@ -2,14 +2,8 @@
 
 import * as React from "react";
 import Link from "next/link";
-
 import { cn } from "@/lib/utils";
-// import { Icons } from "@/components/icons";
-
-
-
-
-
+import { FaProjectDiagram, FaTools, FaUsers, FaQuestionCircle } from 'react-icons/fa';
 import {
   Cloud,
   CreditCard,
@@ -121,123 +115,152 @@ export function NavigationMenu() {
           <UiNavigationMenu>
             <NavigationMenuList className="flex">
               <NavigationMenuItem>
-                  <DropdownMenu className="mr-4">
-                          <DropdownMenuTrigger asChild>
-                            <Button variant="outline">Projects and Events</Button>
-                          </DropdownMenuTrigger>
-                          <DropdownMenuContent className="w-56">
-                            <DropdownMenuGroup>
-                              <DropdownMenuItem asChild>
-                                <Link href="/Projects" legacyBehavior passHref>
-                                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                    Projects
-                                  </NavigationMenuLink>
-                                </Link>
-                              </DropdownMenuItem>
-                              <DropdownMenuItem asChild>
-                                <Link href="/Hackathon" legacyBehavior passHref>
-                                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                    Hackathons
-                                  </NavigationMenuLink>
-                                </Link>
-                              </DropdownMenuItem>
-                              <DropdownMenuItem asChild>
-                                <Link href="/Events" legacyBehavior passHref>
-                                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                    Events
-                                  </NavigationMenuLink>
-                                </Link>
-                              </DropdownMenuItem>
-                            </DropdownMenuGroup>
-                          </DropdownMenuContent>
-                        </DropdownMenu>
-                    </NavigationMenuItem>
-                    
-                    <NavigationMenuItem>   
-                      <DropdownMenu>
-                          <DropdownMenuTrigger asChild>
-                            <Button variant="outline">Resources and FAQ</Button>
-                          </DropdownMenuTrigger>
-                          <DropdownMenuContent className="w-56">
-                            <DropdownMenuGroup>
-                              <DropdownMenuItem asChild>
-                                <Link href="/TechToolkits" legacyBehavior passHref>
-                                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                    Tech ToolKits HUB
-                                  </NavigationMenuLink>
-                                </Link>
-                              </DropdownMenuItem>
-                              <DropdownMenuItem asChild>
-                                <Link href="/TeamsGallery" legacyBehavior passHref>
-                                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                              Teams & Gallery
-                                            </NavigationMenuLink>
-                                          </Link>
-                              </DropdownMenuItem>
-                              <DropdownMenuItem asChild>
-                              <Link href="/FAQsForum" legacyBehavior passHref>
-                                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                              FAQs & Forum
-                                            </NavigationMenuLink>
-                                          </Link>
-                              </DropdownMenuItem>
-                              <DropdownMenuItem asChild>
-                                <Link href="/Resources" legacyBehavior passHref>
-                                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                    Resources
-                                  </NavigationMenuLink>
-                                </Link>
-                              </DropdownMenuItem>
-                              <DropdownMenuItem asChild>
-                              <Link href="/localdev" legacyBehavior passHref>
-                                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                  Connect To Local Dev
-                                </NavigationMenuLink>
-                              </Link>
-                              </DropdownMenuItem>
-                            </DropdownMenuGroup>
-                          </DropdownMenuContent>
-                          </DropdownMenu>
-                    </NavigationMenuItem>
+                <DropdownMenu className="mr-4">
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline">
+                      <FaProjectDiagram className="mr-2" /> Projects and Events
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-56">
+                    <DropdownMenuGroup>
+                      <DropdownMenuItem asChild>
+                        <Link href="/Projects" legacyBehavior passHref>
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <FaProjectDiagram className="mr-2" /> Projects
+                          </NavigationMenuLink>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/Hackathon" legacyBehavior passHref>
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <FaProjectDiagram className="mr-2" /> Hackathons
+                          </NavigationMenuLink>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/Events" legacyBehavior passHref>
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <FaProjectDiagram className="mr-2" /> Events
+                          </NavigationMenuLink>
+                        </Link>
+                      </DropdownMenuItem>
+                    </DropdownMenuGroup>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/Subscribe" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Subscribe
-                  </NavigationMenuLink>
-                </Link>
+                <DropdownMenu className="mr-4">
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline">
+                      <FaTools className="mr-2" /> Guides and Support
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-56">
+                    <DropdownMenuGroup>
+                      <DropdownMenuItem asChild>
+                        <Link href="/helpCenter" legacyBehavior passHref>
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <FaQuestionCircle className="mr-2" /> Help Center
+                          </NavigationMenuLink>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/participation-terms" legacyBehavior passHref>
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <FaQuestionCircle className="mr-2" /> Participation Terms
+                          </NavigationMenuLink>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/RulesAndRegulations" legacyBehavior passHref>
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <FaQuestionCircle className="mr-2" /> Rules and Regulations
+                          </NavigationMenuLink>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/Resources" legacyBehavior passHref>
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <FaQuestionCircle className="mr-2" /> Resources
+                          </NavigationMenuLink>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/FAQsForum" legacyBehavior passHref>
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <FaQuestionCircle className="mr-2" /> FAQs & Forum
+                          </NavigationMenuLink>
+                        </Link>
+                      </DropdownMenuItem>
+                    </DropdownMenuGroup>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </NavigationMenuItem>
+
               <NavigationMenuItem>
-                <Link href="/About" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    About GDSC
-                  </NavigationMenuLink>
-                </Link>
+                <DropdownMenu className="mr-4">
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline">
+                      <FaUsers className="mr-2" /> Developer and Community Programs
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-56">
+                    <DropdownMenuGroup>
+                      <DropdownMenuItem asChild>
+                        <Link href="/devprod" legacyBehavior passHref>
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <FaUsers className="mr-2" /> DevProd
+                          </NavigationMenuLink>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/devStudent" legacyBehavior passHref>
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <FaUsers className="mr-2" /> DevStudent
+                          </NavigationMenuLink>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/expertdev" legacyBehavior passHref>
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <FaUsers className="mr-2" /> ExpertDev
+                          </NavigationMenuLink>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/Chapters" legacyBehavior passHref>
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <FaUsers className="mr-2" /> Chapters
+                          </NavigationMenuLink>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/womentechmakers" legacyBehavior passHref>
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <FaUsers className="mr-2" /> Women Techmakers
+                          </NavigationMenuLink>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/how-apply" legacyBehavior passHref>
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <FaUsers className="mr-2" /> How to Apply
+                          </NavigationMenuLink>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/gitContributors" legacyBehavior passHref>
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            <FaUsers className="mr-2" /> Git Contributors
+                          </NavigationMenuLink>
+                        </Link>
+                      </DropdownMenuItem>
+                    </DropdownMenuGroup>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </NavigationMenuItem>
-            
-              <DropdownMenu className="mr-4">
-                <DropdownMenuTrigger asChild>
-                  <Button variant="outline">Career And Support</Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56">
-                  <DropdownMenuGroup>
-                    <DropdownMenuItem asChild>
-                      <Link href="/careers" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                          Career
-                        </NavigationMenuLink>
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/Stories-Achievements" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                          Stories and Achievements
-                        </NavigationMenuLink>
-                      </Link>
-                    </DropdownMenuItem>
-                  </DropdownMenuGroup>
-                </DropdownMenuContent>
-              </DropdownMenu>
+
               <NavigationMenuItem>
                 <Link href="/GeminiAI" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -245,6 +268,7 @@ export function NavigationMenu() {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
+
               <NavigationMenuItem>
                 <Link href="/SignIn" legacyBehavior passHref>
                   <NavigationMenuLink
@@ -257,6 +281,7 @@ export function NavigationMenu() {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
+
               <NavigationMenuItem>
                 <Link href="/SignUp" legacyBehavior passHref>
                   <NavigationMenuLink
@@ -269,6 +294,7 @@ export function NavigationMenu() {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
+
             </NavigationMenuList>
           </UiNavigationMenu>
         </div>
