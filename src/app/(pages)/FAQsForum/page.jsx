@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { FAQs } from "./FAQs";
 import { posts as initialPosts } from "./Posts";
-import "./Posts.css"
+import "./Posts.css";
 
 const FAQForum = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -13,7 +13,12 @@ const FAQForum = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  const cardColors = ["bg-red-500", "bg-blue-500", "bg-green-500", "bg-yellow-500"];
+  const cardColors = [
+    "bg-red-500",
+    "bg-blue-500",
+    "bg-green-500",
+    "bg-yellow-500",
+  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,9 +31,11 @@ const FAQForum = () => {
   const [sortAsc, setSortAsc] = useState(true);
 
   const toggleExpand = (id) => {
-    setExpandedPosts(expandedPosts.includes(id)
-      ? expandedPosts.filter((postId) => postId !== id)
-      : [...expandedPosts, id]);
+    setExpandedPosts(
+      expandedPosts.includes(id)
+        ? expandedPosts.filter((postId) => postId !== id)
+        : [...expandedPosts, id]
+    );
   };
 
   const handleSort = () => {
@@ -50,31 +57,39 @@ const FAQForum = () => {
 
         {/* FAQs Section */}
         <section className="mb-16 mt-10">
-          <h2 className="text-4xl font-semibold text-indigo-600 mb-8 text-center">Frequently Asked Questions</h2>
+          <h2 className="text-4xl font-semibold text-indigo-600 mb-8 text-center">
+            Frequently Asked Questions
+          </h2>
           <div className="space-y-6">
             {FAQs.map((faq, index) => (
               <div
                 key={index}
-                className={`transition duration-300 ease-in-out rounded-lg shadow-md ${cardColors[index % cardColors.length]}`}
+                className={`transition duration-300 ease-in-out rounded-lg shadow-md ${
+                  cardColors[index % cardColors.length]
+                }`}
               >
                 <button
                   className="w-full text-left p-5 text-white rounded-lg focus:outline-none"
                   onClick={() => toggleFAQ(index)}
                 >
                   <div className="flex justify-between items-center">
-                    <span className="text-lg font-semibold">{faq.question}</span>
+                    <span className="text-lg font-semibold">
+                      {faq.question}
+                    </span>
                     {/* Icon rotation logic */}
                     <span
-                      className={`text-3xl transition-transform duration-300 transform ${activeIndex === index ? "rotate-180" : ""
-                        }`}
+                      className={`text-3xl transition-transform duration-300 transform ${
+                        activeIndex === index ? "rotate-180" : ""
+                      }`}
                     >
                       +
                     </span>
                   </div>
                 </button>
                 <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${activeIndex === index ? "max-h-96" : "max-h-0"
-                    }`}
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                    activeIndex === index ? "max-h-96" : "max-h-0"
+                  }`}
                 >
                   <div className="p-5 bg-white rounded-lg mt-2 shadow-inner text-gray-600 border-l-4 border-indigo-600">
                     {faq.answer}
@@ -87,7 +102,9 @@ const FAQForum = () => {
 
         {/* Forum Section */}
         <section>
-          <h2 className="text-4xl font-semibold text-indigo-600 mb-8 text-center">Forum</h2>
+          <h2 className="text-4xl font-semibold text-indigo-600 mb-8 text-center">
+            Forum
+          </h2>
 
           <form className="mb-12" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 gap-4">
@@ -96,14 +113,18 @@ const FAQForum = () => {
                 className="p-4 w-full border border-indigo-300 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-400 transition duration-300"
                 placeholder="Post title"
                 value={newPost.title}
-                onChange={(e) => setNewPost({ ...newPost, title: e.target.value })}
+                onChange={(e) =>
+                  setNewPost({ ...newPost, title: e.target.value })
+                }
                 required
               />
               <textarea
                 className="p-4 w-full h-32 border border-indigo-300 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-400 transition duration-300"
                 placeholder="Post content"
                 value={newPost.content}
-                onChange={(e) => setNewPost({ ...newPost, content: e.target.value })}
+                onChange={(e) =>
+                  setNewPost({ ...newPost, content: e.target.value })
+                }
                 required
               />
             </div>
@@ -116,49 +137,71 @@ const FAQForum = () => {
           </form>
 
           {/* All Posts */}
-            <section>
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-4xl font-semibold text-indigo-600">All Posts</h2>
-                <button
-                  className="px-4 py-2 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-600 transition duration-300"
-                  onClick={handleSort}
+          <section>
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-4xl font-semibold text-indigo-600">
+                All Posts
+              </h2>
+              <button
+                className="px-4 py-2 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-600 transition duration-300"
+                onClick={handleSort}
+              >
+                Sort
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {posts.map((post, index) => (
+                <div
+                  key={post.id}
+                  className={`relative w-full perspective transition-transform duration-300 hover:scale-105`}
                 >
-                  Sort
-                </button>
-              </div>
+                  <div className="relative w-full h-64 transform-style-3d transition-transform duration-700 hover:rotate-y-180">
+                    {/* Front of the Card */}
+                    <div
+                      className={`absolute inset-0 p-6 rounded-lg shadow-lg backface-hidden flex items-center justify-center overflow-hidden transition duration-300 ease-in-out hover:shadow-xl ${
+                        cardColors[index % cardColors.length]
+                      }`}
+                    >
+                      <h3 className="text-xl font-semibold text-white text-center">
+                        {post.title}
+                      </h3>
+                    </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {posts.map((post, index) => (
-                  <div key={post.id} className={`relative w-full perspective transition-transform duration-300 hover:scale-105`}>
-                    <div className="relative w-full h-64 transform-style-3d transition-transform duration-700 hover:rotate-y-180">
-
-                      {/* Front of the Card */}
-                      <div className={`absolute inset-0 p-6 rounded-lg shadow-lg backface-hidden flex items-center justify-center overflow-hidden transition duration-300 ease-in-out hover:shadow-xl ${cardColors[index % cardColors.length]}`}>
-                        <h3 className="text-xl font-semibold text-white text-center">{post.title}</h3>
-                      </div>
-
-                      {/* Back of the Card */}
-                      <div className={`absolute inset-0 p-6 rounded-lg shadow-lg rotate-y-180 backface-hidden overflow-hidden transition duration-300 ease-in-out hover:shadow-xl ${cardColors[(index + 1) % cardColors.length]}`}>
-                        <p className={`text-white transition-all duration-300 ${expandedPosts.includes(post.id) ? 'h-auto' : 'h-16 overflow-hidden'}`}>
-                          {post.content}
-                        </p>
-                        {post.content.length > 150 && (
-                          <button
-                            className="text-blue-600 mt-2 underline hover:text-blue-700 transition duration-200"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              toggleExpand(post.id);
-                            }}
-                          >
-                            {expandedPosts.includes(post.id) ? 'Show Less' : 'Read More'}
-                          </button>
-                        )}
-                      </div>
+                    {/* Back of the Card */}
+                    <div
+                      className={`absolute inset-0 p-6 rounded-lg shadow-lg rotate-y-180 backface-hidden flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out hover:shadow-xl ${
+                        cardColors[(index + 1) % cardColors.length]
+                      }`}
+                    >
+                      <p
+                        className={`text-white  h-full transition-all duration-300 ${
+                          expandedPosts.includes(post.id)
+                            ? "h-auto"
+                            : "h-16 overflow-hidden"
+                        }`}
+                      >
+                        {post.content}
+                      </p>
+                      {post.content.length > 150 && (
+                        <button
+                          className="text-blue-600 mt-2 underline hover:text-blue-700 transition duration-200"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleExpand(post.id);
+                          }}
+                        >
+                          {expandedPosts.includes(post.id)
+                            ? "Show Less"
+                            : "Read More"}
+                        </button>
+                      )}
                     </div>
                   </div>
-                ))}
-              </div>
-            </section>
+                </div>
+              ))}
+            </div>
+          </section>
         </section>
       </div>
     </div>

@@ -1,9 +1,23 @@
 "use client";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import resources from './resources';
 
+const Skeleton = ({ width, height, className }) => (
+  <div
+    style={{ width, height }}
+    className={`animate-pulse bg-gray-300 rounded ${className}`}
+  ></div>
+);
+
 function Resource() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <section className="bg-white text-black">
@@ -28,7 +42,11 @@ function Resource() {
           </div>
 
           <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {resources.map((resource, index) => (
+            {loading
+              ? Array.from({ length: 6 }).map((_, index) => (
+                <Skeleton key={index} width="100%" height="200px" className="rounded-xl" />
+              ))
+              : resources.map((resource, index) => (
               <motion.a
                 key={index}
                 className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
@@ -59,10 +77,13 @@ function Resource() {
                 <h2 className="mt-4 text-xl font-bold text-black">{resource.title}</h2>
                 <p className="mt-1 text-sm text-gray-900">{resource.description}</p>
               </motion.a>
-            ))}
+              ))}
           </div>
 
           <div className="mt-12 text-center">
+            {loading ? (
+              <Skeleton width="200px" height="40px" className="mx-auto rounded" />
+            ) : (
             <motion.a
               href="/signup"
               className="inline-block rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-pink-700 focus:outline-none focus:ring focus:ring-yellow-400"
@@ -72,6 +93,7 @@ function Resource() {
             >
               Get Started Today
             </motion.a>
+            )}
           </div>
         </div>
       </section>

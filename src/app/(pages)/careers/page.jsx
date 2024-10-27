@@ -1,4 +1,7 @@
+"use client"
 import React from 'react';
+import spotlightJobs from './opportunities';
+import Link from 'next/link';
 // Hero Component
 const Hero = () => {
   return (
@@ -51,61 +54,36 @@ const Hero = () => {
 };
 
 // Spotlight Component
+// Spotlight Component
 const Spotlight = () => {
-  const spotlightJobs = [
-    {
-      title: 'Senior Staff Software Developer, Kubernetes',
-      description: 'Work on building the future of Kubernetes with our cloud-native team.',
-      location: 'Remote eligible',
-      office: 'Kirkland, WA, USA; +5 more',
-      image: '/spot1.jpg', 
-    },
-    {
-      title: 'Google AI and ML roles',
-      description: 'Search some of our newest, priority roles in artificial intelligence and machine learning.',
-      image: '/spot2.jpg', 
-    },
-    {
-      title: 'Consumer Hardware',
-      description: 'Design and build the systems that are at the heart of the world\'s largest and most powerful computing infrastructure and products.',
-      image: '/spot3.jpg', 
-    },
-    {
-      title: 'Platforms & Ecosystems',
-      description: 'Work on our innovative software products that have an impact on people’s lives across the world.',
-      image: '/sopt4.jpg', 
-    },
-  ];
-
   return (
     <div className="mt-16 flex flex-col items-center">
       <h2 className="text-3xl font-semibold mb-6">Spotlight</h2>
       <div className="flex space-x-4 overflow-x-auto pb-4">
-        {spotlightJobs.map((job, index) => (
-          <div key={index} className="bg-white shadow-md rounded-lg p-4 w-72">
-            <img src={job.image} alt={job.title} className="rounded-t-lg w-full h-40 object-cover" />
-            <div className="mt-4">
-              <h3 className="font-bold text-xl">{job.title}</h3>
-              <p className="mt-2 text-gray-600">{job.description}</p>
-              {job.location && (
-                <div className="mt-4 flex items-center space-x-2 text-gray-500">
-                  <span className="material-icons">laptop_mac</span>
-                  <span>{job.location}</span>
-                </div>
-              )}
-              {job.office && (
-                <div className="mt-2 flex items-center space-x-2 text-gray-500">
-                  <span className="material-icons">location_on</span>
-                  <span>{job.office}</span>
-                </div>
-              )}
+        {spotlightJobs.map((job) => (
+          <Link key={job.id} href={`/careers/${job.id}`} className="bg-white shadow-lg rounded-lg p-6 w-72 transition-transform transform hover:scale-105 hover:shadow-xl">
+            <img src={job.image} alt={job.title} className="rounded-t-lg w-full h-40 object-cover mb-4" />
+            <h3 className="font-bold text-xl text-blue-600">{job.title}</h3>
+            <p className="mt-1 text-gray-500">{job.company}</p>
+            <p className="mt-2 text-gray-600 text-sm">{job.description}</p>
+
+            {/* Enhanced Location Section */}
+            {/* {job.location && (
+              <div className="mt-2 flex items-center space-x-2 text-gray-700">
+                <span className="material-icons">location_on</span>
+                <span className="font-semibold">{job.location}</span>
+              </div>
+            )} */}
+            <div className="mt-4 flex justify-between items-center">
+              <span className="text-gray-400 text-sm">View Details</span>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
   );
 };
+
 
 // Path to Success Section (New)
 const PathToSuccess = () => {

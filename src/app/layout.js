@@ -27,11 +27,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="antialiased">
-        <ScrollProgressBar/>
+        <ScrollProgressBar />
         <NavigationMenu />
-        <main className="mt-16">{children}</main>
+        <main className="mt-16">
+        <div className="gtranslate_wrapper">
+          {children}
+          </div>
+          </main>
         <Footer />
-        <ScrollToTop/>
+        <ScrollToTop />
         <ToastContainer />
       </body>
     </html>

@@ -1,17 +1,36 @@
-'use client'
-import React, { useState } from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
 import Card from './Card.jsx';
 import { projectData } from '../../../lib/Projects';
 import { motion } from 'framer-motion';
 
 function ProjectsPage() {
-  // State to handle the search query
   const [searchQuery, setSearchQuery] = useState('');
-
-  // Function to filter projects based on the search query
+  const [loading, setLoading] = useState(true); 
   const filteredProjects = projectData.filter((project) =>
     project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     project.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const ProjectsSkeleton = () => (
+    <div className="flex justify-center flex-wrap mt-8">
+      {Array.from({ length: 4 }).map((_, index) => (
+        <div key={index} className="w-full max-w-xs mx-2 mb-4 bg-gray-100 border border-gray-300 animate-pulse rounded-lg">
+          <div className="h-32 bg-gray-300 rounded-t-lg" />
+
+          <div className="p-4">
+            <div className="h-6 w-3/4 bg-gray-300 rounded-md mb-2" />
+            <div className="h-4 w-2/3 bg-gray-300 rounded-md mb-2" />
+            <div className="h-4 w-1/2 bg-gray-300 rounded-md" />
+          </div>
+        </div>
+      ))}
+    </div>
   );
 
   return (
@@ -48,8 +67,10 @@ function ProjectsPage() {
           />
         </div>
 
-        {/* Projects List */}
-        <div className="flex justify-center flex-wrap mt-8">
+        {loading ? (
+          <ProjectsSkeleton />
+        ) : (
+<div className="flex justify-center flex-wrap mt-8">
           {filteredProjects && filteredProjects.length > 0 ? (
             filteredProjects.map((project, index) => (
               <motion.div
@@ -72,6 +93,7 @@ function ProjectsPage() {
             <p>No projects available</p>
           )}
         </div>
+        )}
       </div>
     </div>
   );
