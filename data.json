@@ -1,0 +1,410 @@
+{
+    "hackathons": [
+      {
+        "basicInformation": {
+          "hackathonTitle": "Tech for Good Hackathon",
+          "description": "A 48-hour hackathon focused on leveraging technology to address pressing challenges in the healthcare sector. Participants will explore innovative approaches to improve patient care, streamline medical processes, and enhance accessibility in healthcare. Ideal for innovators, developers, and healthcare professionals.",
+          "dateAndTime": {
+            "start": "2024-11-01T09:00:00Z",
+            "end": "2024-11-03T17:00:00Z"
+          },
+          "duration": "48 hours",
+          "location": "Online",
+          "theme": "Technology for Social Impact",
+          "eligibility": "Open to students, professionals, and developers worldwide. Minimum age: 18"
+        },
+        "registrationAndParticipation": {
+          "registrationLink": "https://github.com/GDSC-RCCIIT/gdg-website",
+          "teamSize": "1-5 members",
+          "registrationDeadline": "2024-10-28",
+          "participationFee": "Free"
+        },
+        "prizesAndPerks": {
+          "prizePool": "$10,000",
+          "prizeCategories": [
+            "Best Overall Project",
+            "Most Innovative Solution",
+            "Best Use of Technology"
+          ],
+          "perks": [
+            "Mentorship sessions",
+            "Access to premium tools",
+            "Networking opportunities"
+          ]
+        },
+        "rulesAndGuidelines": {
+          "codeOfConduct": "Participants are expected to be respectful and inclusive, adhering to ethical guidelines.",
+          "judgingCriteria": [
+            "Innovation",
+            "Technical Implementation",
+            "Feasibility",
+            "Social Impact"
+          ],
+          "projectSubmissionGuidelines": {
+            "format": "GitHub repository or .zip file",
+            "fileTypes": ["code files", "presentation"],
+            "deadline": "2024-11-03T17:00:00Z"
+          }
+        },
+        "additionalInformation": {
+          "organizers": [
+            {
+              "name": "GDSC RCCIIT",
+              "contact": "contact@gdscrcciit.com"
+            }
+          ],
+          "sponsors": [
+            {
+              "name": "TechCorp",
+              "logo": "Img1"
+            },
+            {
+              "name": "InnovateX",
+              "logo": "Img1"
+            }
+          ],
+          "faqs": [
+            {
+              "question": "Who can participate?",
+              "answer": "Anyone aged 18 or older with an interest in tech for social good."
+            },
+            {
+              "question": "Is prior experience required?",
+              "answer": "No, beginners are welcome!"
+            }
+          ],
+          "socialMediaHandles": {
+            "twitter": "https://twitter.com/GDSC_RCCIIT",
+            "instagram": "https://instagram.com/GDSC_RCCIIT"
+          },
+          "contactInformation": "support@gdscrcciit.com"
+        },
+        "visualElements": {
+          "bannerImage": "Img1",
+          "logo": "Img1",
+          "socialMediaSharingButtons": "enabled"
+        }
+      },
+      {
+        "basicInformation": {
+          "hackathonTitle": "Green Innovators Challenge",
+          "description": "A 36-hour virtual hackathon aimed at developing innovative AI solutions to improve accessibility for individuals with disabilities. This event is open to developers, designers, and enthusiasts focused on creating inclusive technologies that enhance independence and quality of life for users.",
+          "dateAndTime": {
+            "start": "2024-12-05T08:00:00Z",
+            "end": "2024-12-07T20:00:00Z"
+          },
+          "duration": "72 hours",
+          "location": "Hybrid (New York City & Online)",
+          "theme": "Sustainable Tech Solutions",
+          "eligibility": "Open to all; teams encouraged."
+        },
+        "registrationAndParticipation": {
+          "registrationLink": "https://github.com/GDSC-RCCIIT/gdg-website",
+          "teamSize": "2-6 members",
+          "registrationDeadline": "2024-12-01",
+          "participationFee": "$25"
+        },
+        "prizesAndPerks": {
+          "prizePool": "$15,000",
+          "prizeCategories": [
+            "Best Green Technology",
+            "Most Feasible Solution",
+            "People's Choice Award"
+          ],
+          "perks": [
+            "Free eco-friendly swag",
+            "Access to sustainability mentors",
+            "Networking with green tech companies"
+          ]
+        },
+        "rulesAndGuidelines": {
+          "codeOfConduct": "Respectful and inclusive participation is mandatory.",
+          "judgingCriteria": [
+            "Innovation",
+            "Sustainability",
+            "Technical Feasibility",
+            "Presentation"
+          ],
+          "projectSubmissionGuidelines": {
+            "format": "GitHub link or PDF presentation",
+            "fileTypes": ["pdf", "code files"],
+            "deadline": "2024-12-07T20:00:00Z"
+          }
+        },
+        "additionalInformation": {
+          "organizers": [
+            {
+              "name": "EcoTech Collective",
+              "contact": "contact@ecotechcollective.com"
+            }
+          ],
+          "sponsors": [
+            {
+              "name": "GreenWorks",
+              "logo": "Img1"
+            },
+            {
+              "name": "EcoFuture",
+              "logo": "Img1"
+            }
+          ],
+          "faqs": [
+            {
+              "question": "Can teams participate remotely?",
+              "answer": "Yes, online participation is supported."
+            }
+          ],
+          "socialMediaHandles": {
+            "facebook": "https://facebook.com/EcoTechCollective"
+          },
+          "contactInformation": "support@ecotechcollective.com"
+        },
+        "visualElements": {
+          "bannerImage": "Img1",
+          "logo": "Img1",
+          "socialMediaSharingButtons": "enabled"
+        }
+      },
+      {
+        "basicInformation": {
+          "hackathonTitle": "FinTech Future Hackathon",
+          "description": "FinTech Future Hackathon is a 36-hour sprint where participants are invited to develop the next wave of financial technology solutions. This event focuses on creating secure, efficient, and user-friendly financial applications that cater to modern digital banking, investment, and finance needs.",
+          "dateAndTime": {
+            "start": "2024-11-20T10:00:00Z",
+            "end": "2024-11-22T18:00:00Z"
+          },
+          "duration": "48 hours",
+          "location": "Virtual",
+          "theme": "Innovating Financial Technology",
+          "eligibility": "University students and recent graduates in finance or tech fields."
+        },
+        "registrationAndParticipation": {
+          "registrationLink": "https://github.com/GDSC-RCCIIT/gdg-website",
+          "teamSize": "3-5 members",
+          "registrationDeadline": "2024-11-15",
+          "participationFee": "Free"
+        },
+        "prizesAndPerks": {
+          "prizePool": "$20,000",
+          "prizeCategories": [
+            "Best FinTech Solution",
+            "Best UX/UI Design",
+            "Best Use of Blockchain"
+          ],
+          "perks": [
+            "Workshops on FinTech trends",
+            "Mentorship with industry experts",
+            "Certificate of participation"
+          ]
+        },
+        "rulesAndGuidelines": {
+          "codeOfConduct": "Professional and respectful conduct required.",
+          "judgingCriteria": [
+            "Innovation",
+            "User Experience",
+            "Market Potential",
+            "Technical Implementation"
+          ],
+          "projectSubmissionGuidelines": {
+            "format": "GitHub repository",
+            "fileTypes": ["code files", "presentation"],
+            "deadline": "2024-11-22T18:00:00Z"
+          }
+        },
+        "additionalInformation": {
+          "organizers": [
+            {
+              "name": "Global FinTech Hub",
+              "contact": "contact@globalfintechhub.com"
+            }
+          ],
+          "sponsors": [
+            {
+              "name": "BankTech Inc.",
+              "logo": "Img1"
+            },
+            {
+              "name": "CryptoNet",
+              "logo": "Img1"
+            }
+          ],
+          "faqs": [
+            {
+              "question": "Are there specific tech stacks required?",
+              "answer": "No, participants are free to choose any tech stack."
+            }
+          ],
+          "socialMediaHandles": {
+            "linkedin": "https://linkedin.com/company/GlobalFinTechHub"
+          },
+          "contactInformation": "info@globalfintechhub.com"
+        },
+        "visualElements": {
+          "bannerImage": "Img1",
+          "logo": "Img1",
+          "socialMediaSharingButtons": "enabled"
+        }
+      },
+      {
+        "basicInformation": {
+          "hackathonTitle": "HealthTech Revolution",
+          "description": "HealthTech Revolution is an intensive, innovation-driven hackathon focused on transforming healthcare through technology. Over 48 hours, participants will tackle real-world healthcare challenges by developing solutions that enhance patient care, streamline operations, and improve overall healthcare access.",
+          "dateAndTime": {
+            "start": "2024-10-29T12:00:00Z",
+            "end": "2024-10-31T18:00:00Z"
+          },
+          "duration": "2 days",
+          "location": "Hybrid (San Francisco & Online)",
+          "theme": "Health and Wellness Solutions",
+          "eligibility": "Open to healthcare professionals, students, and tech enthusiasts."
+        },
+        "registrationAndParticipation": {
+          "registrationLink": "https://github.com/GDSC-RCCIIT/gdg-website",
+          "teamSize": "1-4 members",
+          "registrationDeadline": "2024-10-25",
+          "participationFee": "$30"
+        },
+        "prizesAndPerks": {
+          "prizePool": "$25,000",
+          "prizeCategories": [
+            "Best Health Solution",
+            "Best Patient Experience",
+            "Most Scalable Product"
+          ],
+          "perks": [
+            "Workshops on health tech trends",
+            "Networking with healthcare experts",
+            "HealthTech merchandise"
+          ]
+        },
+        "rulesAndGuidelines": {
+          "codeOfConduct": "Professional conduct and collaboration are expected.",
+          "judgingCriteria": [
+            "Innovation",
+            "Impact",
+            "Technical Feasibility",
+            "Scalability"
+          ],
+          "projectSubmissionGuidelines": {
+            "format": "PDF presentation with demo link",
+            "fileTypes": ["pdf", "code files"],
+            "deadline": "2024-10-31T18:00:00Z"
+          }
+        },
+        "additionalInformation": {
+          "organizers": [
+            {
+              "name": "MedTech Innovators",
+              "contact": "contact@medtechinnovators.com"
+            }
+          ],
+          "sponsors": [
+            {
+              "name": "HealthFirst",
+              "logo": "Img1"
+            },
+            {
+              "name": "WellTech",
+              "logo": "Img1"
+            }
+          ],
+          "faqs": [
+            {
+              "question": "Do I need a healthcare background to participate?",
+              "answer": "No, the hackathon is open to all backgrounds."
+            }
+          ],
+          "socialMediaHandles": {
+            "instagram": "https://instagram.com/MedTechInnovators"
+          },
+          "contactInformation": "support@medtechinnovators.com"
+        },
+        "visualElements": {
+          "bannerImage": "Img1",
+          "logo": "Img1",
+          "socialMediaSharingButtons": "enabled"
+        }
+      },
+      {
+        "basicInformation": {
+          "hackathonTitle": "AI for Accessibility Hackathon",
+          "description": "Develop an AI-powered news aggregator that curates the latest tech news from multiple sources and personalizes recommendations. Ideal for participants interested in machine learning and AI.",
+          "dateAndTime": {
+            "start": "2024-11-15T08:00:00Z",
+            "end": "2024-11-16T20:00:00Z"
+          },
+          "duration": "36 hours",
+          "location": "Online",
+          "theme": "Artificial Intelligence for Accessibility",
+          "eligibility": "Open to developers, designers, and students interested in AI for accessibility."
+        },
+        "registrationAndParticipation": {
+          "registrationLink": "https://github.com/GDSC-RCCIIT/gdg-website",
+          "teamSize": "2-6 members",
+          "registrationDeadline": "2024-11-10",
+          "participationFee": "Free"
+        },
+        "prizesAndPerks": {
+          "prizePool": "$12,000",
+          "prizeCategories": [
+            "Best AI Solution",
+            "Best Accessibility Tool",
+            "Most Inclusive Design"
+          ],
+          "perks": [
+            "Mentorship from AI experts",
+            "AI tool credits",
+            "Networking with tech companies"
+          ]
+        },
+        "rulesAndGuidelines": {
+          "codeOfConduct": "Inclusive and respectful behavior is required.",
+          "judgingCriteria": [
+            "Innovation",
+            "Accessibility Impact",
+            "Technical Implementation",
+            "User Experience"
+          ],
+          "projectSubmissionGuidelines": {
+            "format": "GitHub repository or zip file",
+            "fileTypes": ["code files", "presentation"],
+            "deadline": "2024-11-16T20:00:00Z"
+          }
+        },
+        "additionalInformation": {
+          "organizers": [
+            {
+              "name": "Inclusive Tech Foundation",
+              "contact": "info@inclusivetech.org"
+            }
+          ],
+          "sponsors": [
+            {
+              "name": "TechForAll",
+              "logo": "Img1"
+            },
+            {
+              "name": "AIConnect",
+              "logo": "Img1"
+            }
+          ],
+          "faqs": [
+            {
+              "question": "Do I need experience in AI to participate?",
+              "answer": "No, participants of all experience levels are welcome."
+            }
+          ],
+          "socialMediaHandles": {
+            "twitter": "https://twitter.com/InclusiveTech"
+          },
+          "contactInformation": "support@inclusivetech.org"
+        },
+        "visualElements": {
+          "bannerImage": "/Img1",
+          "logo": "/Img1",
+          "socialMediaSharingButtons": "enabled"
+        }
+      }
+    ]
+  }
+  
