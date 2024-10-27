@@ -408,6 +408,7 @@
   ],
   "projects": [
     {
+      "id": "1",
       "projectTitle": "AI-Powered Chatbot Development",
       "projectOverview": "This project aims to develop an AI-powered chatbot to enhance customer service efficiency and improve user experience on our platform.",
       "projectStartDate": "2024-01-15",
@@ -485,6 +486,7 @@
       "youtubeLink": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
+      "id": "2",
       "projectTitle": "Website Redesign",
       "projectOverview": "A complete overhaul of the company website to improve navigation, aesthetics, and functionality.",
       "projectStartDate": "2024-02-01",
@@ -558,6 +560,7 @@
       "youtubeLink": "https://www.youtube.com/watch?v=5aA7i_8v1h8"
     },
     {
+      "id": "3",
       "projectTitle": "Mobile App Development for E-Commerce",
       "projectOverview": "Development of a mobile application to enhance customer shopping experience and streamline order processes.",
       "projectStartDate": "2024-03-10",
