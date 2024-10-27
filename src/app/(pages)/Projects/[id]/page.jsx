@@ -391,31 +391,7 @@ export default function SingleProject() {
         </div>
       </div>
 
-      <div className="p-6">
-        <div className="mt-4">
-          <h2 className="text-xl font-semibold">Project Plan</h2>
-          <a
-            href={projectDetails.projectPlan}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600"
-          >
-            View Project Plan
-          </a>
-        </div>
-
-        <div className="mt-4">
-          <h2 className="text-xl font-semibold">YouTube Link</h2>
-          <a
-            href={projectDetails.youtubeLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600"
-          >
-            Watch on YouTube
-          </a>
-        </div>
-      </div>
+      
     </>
   );
 }
