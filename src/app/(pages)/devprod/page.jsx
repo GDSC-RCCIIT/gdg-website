@@ -1,13 +1,14 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
-import { Filter, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
 
+// Header Section with Search Bar
 const Header = () => {
     return (
-        <div className="relative bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-20 px-6 text-center">
+        <div className="relative bg-gradient-to-r from-[#4285F4] via-[#34A853] to-[#EA4335] text-white py-20 px-6 text-center">
             <h1 className="text-5xl font-bold mb-4">Developer Products</h1>
-            <p className="text-xl font-light mb-8 max-w-lg mx-auto">
-                Explore our suite of developer products designed to fuel innovation, streamline development, and unlock new growth for your projects.
+            <p className="text-lg font-light mb-8 max-w-lg mx-auto">
+                Discover powerful tools and platforms designed to accelerate your development journey with Google.
             </p>
             <div className="mt-6 max-w-lg mx-auto flex items-center bg-white rounded-full overflow-hidden shadow-lg">
                 <input
@@ -15,7 +16,7 @@ const Header = () => {
                     placeholder="Search for a product..."
                     className="flex-grow py-3 px-4 text-gray-800 focus:outline-none"
                 />
-                <button className="bg-blue-600 text-white px-6 py-3 hover:bg-blue-700 transition">
+                <button className="bg-[#4285F4] text-white px-6 py-3 hover:bg-[#357ae8] transition">
                     <Search className="w-5 h-5" />
                 </button>
             </div>
@@ -23,13 +24,9 @@ const Header = () => {
     );
 };
 
+// Filter Section with Category and Development Focus Buttons
 const Filters = ({ selectedCategory, setSelectedCategory, selectedFocus, setSelectedFocus }) => {
-    const categories = [
-        "Platforms and Operating Systems",
-        "Frameworks, IDEs and SDKs",
-        "Services and Integrations",
-        "Growth and Monetization",
-    ];
+    const categories = ["Platforms", "Frameworks", "Services", "Growth"];
     const focusAreas = ["AI", "Mobile", "Web", "Cloud"];
 
     return (
@@ -42,7 +39,10 @@ const Filters = ({ selectedCategory, setSelectedCategory, selectedFocus, setSele
                             <button
                                 key={index}
                                 onClick={() => setSelectedCategory(category)}
-                                className={`px-4 py-2 rounded-full ${selectedCategory === category ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-800 hover:bg-gray-300"}`}
+                                className={`px-4 py-2 rounded-full text-sm font-medium transition ${selectedCategory === category
+                                    ? "bg-[#34A853] text-white"
+                                    : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                                    }`}
                             >
                                 {category}
                             </button>
@@ -56,7 +56,10 @@ const Filters = ({ selectedCategory, setSelectedCategory, selectedFocus, setSele
                             <button
                                 key={index}
                                 onClick={() => setSelectedFocus(focus)}
-                                className={`px-4 py-2 rounded-full ${selectedFocus === focus ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-800 hover:bg-gray-300"}`}
+                                className={`px-4 py-2 rounded-full text-sm font-medium transition ${selectedFocus === focus
+                                    ? "bg-[#EA4335] text-white"
+                                    : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                                    }`}
                             >
                                 {focus}
                             </button>
@@ -68,19 +71,28 @@ const Filters = ({ selectedCategory, setSelectedCategory, selectedFocus, setSele
     );
 };
 
+// Product Card Component with Classy Hover Effect
 const ProductCard = ({ product }) => {
     return (
-        <div className="bg-white rounded-lg shadow-lg p-6 w-80 hover:bg-gray-50 transition">
-            <img src={product.image} alt={product.title} className="rounded-lg w-full h-40 object-cover mb-4" />
-            <h3 className="text-2xl font-semibold text-gray-800 mb-2">{product.title}</h3>
+        <div className="bg-white rounded-lg shadow-md hover:shadow-lg p-6 w-80 hover:bg-gray-50 transition-all">
+            <img
+                src={product.image}
+                alt={product.title}
+                className="rounded-lg w-full h-40 object-cover mb-4 border border-gray-200"
+            />
+            <h3 className="text-2xl font-semibold text-gray-900 mb-2">{product.title}</h3>
             <p className="text-gray-600 mb-4">{product.description}</p>
-            <a href={product.link} className="text-blue-600 font-medium hover:text-blue-800 transition">
+            <a
+                href={product.link}
+                className="inline-block px-4 py-2 rounded-full bg-[#FABB05] text-gray-900 font-semibold hover:bg-[#F4B400] transition"
+            >
                 Explore
             </a>
         </div>
     );
 };
 
+// Product Grid Section
 const ProductGrid = ({ products }) => {
     return (
         <div className="py-16 bg-gray-100">
@@ -103,40 +115,39 @@ const DeveloperProductsPage = () => {
         {
             title: "Android",
             description: "Modern tools to help you build experiences that people love across every Android device.",
-            image: "/devprod1.jpeg", // Replace with actual path
+            image: "/devprod1.jpeg",
             link: "#",
         },
         {
             title: "Google Cloud",
             description: "New customers get $300 in free credits to deploy dynamic websites and launch VMs.",
-            image: "/devprod2.png", // Replace with actual path
+            image: "/devprod2.png",
             link: "#",
         },
         {
             title: "Google AI Studio",
             description: "Build generative AI applications quickly with Gemini in Google AI Studio.",
-            image: "/devprod3.jpeg",  // Replace with actual path
+            image: "/devprod3.jpeg",
             link: "#",
         },
         {
             title: "ChromeOS",
             description: "Modern tools and features to help you build high-quality web experiences.",
-            image: "/devprod4.png",// Replace with actual path
+            image: "/devprod4.png",
             link: "#",
         },
         {
             title: "Android Studio",
             description: "An integrated development environment (IDE) optimized for Android apps.",
-            image: "/devprod5.jpeg", // Replace with actual path
+            image: "/devprod5.jpeg",
             link: "#",
         },
         {
             title: "Firebase Cloud Messaging",
             description: "A cross-platform messaging solution to reliably send messages at no cost.",
-            image: "/devprod6.jpeg", // Replace with actual path
+            image: "/devprod6.jpeg",
             link: "#",
         },
-        // Add more products as needed
     ];
 
     return (
