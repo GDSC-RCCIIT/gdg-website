@@ -12,6 +12,9 @@
 ├── postcss.config.mjs
 ├── public/
 │   ├── Logo.svg
+│   ├── Mentor 1.jpeg
+│   ├── Mentor 2.jpeg
+│   ├── Mentor 3.png
 │   ├── Newsletter.png
 │   ├── avatar.png
 │   ├── avatar1.png
@@ -86,11 +89,18 @@
 │   │   │   ├── SingleEvent/
 │   │   │   │   └── [id]/
 │   │   │   │       └── page.jsx
+│   │   │   ├── Stories-Achievements/
+│   │   │   │   ├── achievements.js
+│   │   │   │   ├── mentors.js
+│   │   │   │   └── page.jsx
 │   │   │   ├── Subscribe/
 │   │   │   │   └── page.jsx
 │   │   │   ├── TeamsGallery/
 │   │   │   │   ├── Teams.js
 │   │   │   │   └── page.jsx
+│   │   │   ├── TechToolkits/
+│   │   │   │   ├── page.jsx
+│   │   │   │   └── techStacks.js
 │   │   │   ├── TermsAndConditions/
 │   │   │   │   └── page.jsx
 │   │   │   ├── api/
@@ -178,6 +188,8 @@
 │   │   ├── Hackathon.js
 │   │   ├── Projects.js
 │   │   ├── cpp-content.js
+│   │   ├── dsa-content.js
+│   │   ├── dsa-track-content.js
 │   │   └── utils.js
 │   └── public/
 │       └── GDSC-RCIIT Logo.png
