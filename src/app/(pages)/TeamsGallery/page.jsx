@@ -154,9 +154,39 @@ const galleryItems = [
             'https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
+        title: 'IPC Conference',
+        imageUrl:
+            'https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+    {
+        title: 'IPC Conference',
+        imageUrl:
+            'https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+    {
         title: 'Winter Shorts',
         imageUrl:
             'https://images.unsplash.com/photo-1523908511403-7fc7b25592f4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+    {
+        title: 'Winter Shorts',
+        imageUrl:
+            'https://images.unsplash.com/photo-1523908511403-7fc7b25592f4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+    {
+        title: 'Skinny code Hackathon',
+        imageUrl:
+            'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=812&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+    {
+        title: 'Skinny code Hackathon',
+        imageUrl:
+            'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=812&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    },
+    {
+        title: 'Skinny code Hackathon',
+        imageUrl:
+            'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=812&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
         title: 'Skinny code Hackathon',
@@ -168,7 +198,7 @@ const galleryItems = [
 const GalleryItem = ({ item, index }) => {
     return (
         <motion.li
-            className={`group relative block ${index === 2 ? 'lg:col-span-2 lg:row-span-2 lg:col-start-2' : ''}`}
+            className={`group relative block ${index % 3 === 0 ? 'lg:col-span-2 lg:row-span-2 lg:col-start-2' : 'lg:col-span-1 lg:row-span-1 lg:col-start-1'}`}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
