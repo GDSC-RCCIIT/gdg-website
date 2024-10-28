@@ -8,6 +8,7 @@
 ├── code_of_conduct.md
 ├── components.json
 ├── contributing.md
+├── data.json
 ├── jsconfig.json
 ├── next.config.mjs
 ├── package-lock.json
@@ -25,6 +26,13 @@
 │   ├── dev5.jpeg
 │   ├── dev6.jpeg
 │   ├── dev7.jpeg
+│   ├── exp1.png
+│   ├── exp2.jpeg
+│   ├── exp3.jpeg
+│   ├── exp4.jpeg
+│   ├── exp5.jpeg
+│   ├── exp6.jpeg
+│   ├── exp7.jpeg
 │   ├── goal.webp
 │   ├── hack1.jpg
 │   ├── img1.jpg
@@ -33,6 +41,13 @@
 │   ├── spot1.jpg
 │   ├── spot2.jpg
 │   ├── spot3.jpg
+│   ├── story1.jpeg
+│   ├── story2.png
+│   ├── story3.png
+│   ├── story4.jpeg
+│   ├── story5.png
+│   ├── story6.png
+│   ├── story7.png
 │   └── vision.webp
 ├── repo_structure.txt
 ├── src/
@@ -86,8 +101,25 @@
 │   │   │   │   └── generate/
 │   │   │   │       └── route.js
 │   │   │   ├── careers/
+│   │   │   │   ├── [id]/
+│   │   │   │   │   └── page.jsx
+│   │   │   │   ├── opportunities.js
 │   │   │   │   └── page.jsx
-│   │   │   └── localdev/
+│   │   │   ├── expertdev/
+│   │   │   │   └── page.jsx
+│   │   │   ├── how-apply/
+│   │   │   │   └── page.jsx
+│   │   │   ├── localdev/
+│   │   │   │   └── page.jsx
+│   │   │   ├── orginizer/
+│   │   │   │   └── page.jsx
+│   │   │   ├── participationterms/
+│   │   │   │   └── page.jsx
+│   │   │   ├── stories/
+│   │   │   │   └── page.jsx
+│   │   │   ├── who-apply/
+│   │   │   │   └── page.jsx
+│   │   │   └── womentechmakers/
 │   │   │       └── page.jsx
 │   │   ├── api/
 │   │   │   └── subscribe/
@@ -149,6 +181,7 @@
 │   ├── lib/
 │   │   ├── Hackathon.js
 │   │   ├── Projects.js
+│   │   ├── cpp-content.js
 │   │   └── utils.js
 │   └── public/
 │       └── GDSC-RCIIT Logo.png
