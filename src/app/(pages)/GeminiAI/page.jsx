@@ -52,7 +52,7 @@ export default function GeminiAI() {
         setUserInput("");
 
         try {
-            const res = await fetch('/api/generate', {
+            const res = await fetch('/api/generate-content', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
