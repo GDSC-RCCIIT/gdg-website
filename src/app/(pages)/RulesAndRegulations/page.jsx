@@ -4,7 +4,6 @@ import { AiOutlineInfoCircle, AiOutlineSafetyCertificate, AiOutlineWarning, AiFi
 import { MdEmojiEvents, MdEmail } from "react-icons/md";
 import { GiHealthNormal } from "react-icons/gi";
 
-// Sidebar Component
 function Sidebar() {
     return (
         <div className="hidden lg:block lg:w-1/4 bg-gradient-to-b from-blue-500 to-purple-600 text-white p-6 h-screen sticky top-0 overflow-y-auto">
@@ -57,12 +56,8 @@ function Sidebar() {
 export default function RulesAndRegulations() {
     return (
         <div className="flex flex-col lg:flex-row">
-            {/* Sidebar for quick navigation */}
             <Sidebar />
-
-            {/* Main Content */}
             <div className="px-6 lg:w-3/4 lg:h-screen overflow-y-auto text-gray-800">
-                {/* Title */}
                 <div className="text-center pt-10">
                     <motion.h1
                         className="text-5xl font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
@@ -81,8 +76,6 @@ export default function RulesAndRegulations() {
                         Welcome to GDSC RCIIT! Please adhere to these rules to maintain a productive environment.
                     </motion.p>
                 </div>
-
-                {/* Sections */}
                 <Section title="General Conduct" id="general-conduct" icon={<AiOutlineInfoCircle />}>
                     <p>Participants should conduct themselves positively and respectfully at GDSC RCIIT events.</p>
                     <ul className="list-disc list-inside mt-2 space-y-1">
@@ -149,7 +142,6 @@ export default function RulesAndRegulations() {
     );
 }
 
-// Reusable Section Component
 function Section({ title, id, icon, children }) {
     return (
         <motion.div
