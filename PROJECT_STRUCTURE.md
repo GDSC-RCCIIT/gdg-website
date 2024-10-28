@@ -64,6 +64,8 @@
 │   │   ├── (pages)/
 │   │   │   ├── About/
 │   │   │   │   └── page.jsx
+│   │   │   ├── AddHackathon/
+│   │   │   │   └── page.jsx
 │   │   │   ├── Chapters/
 │   │   │   │   └── page.jsx
 │   │   │   ├── Events/
@@ -131,11 +133,15 @@
 │   │   │   │   │   └── page.jsx
 │   │   │   │   ├── opportunities.js
 │   │   │   │   └── page.jsx
+│   │   │   ├── certifications/
+│   │   │   │   └── page.jsx
 │   │   │   ├── devStudent/
 │   │   │   │   └── page.jsx
 │   │   │   ├── devprod/
 │   │   │   │   └── page.jsx
 │   │   │   ├── expertdev/
+│   │   │   │   └── page.jsx
+│   │   │   ├── explore/
 │   │   │   │   └── page.jsx
 │   │   │   ├── gitContributors/
 │   │   │   │   └── page.jsx
@@ -181,6 +187,7 @@
 │   │   ├── Chatbot.jsx
 │   │   ├── GTranslateLoader.js
 │   │   ├── Global/
+│   │   │   ├── AddHackathonForm.jsx
 │   │   │   ├── Footer.jsx
 │   │   │   ├── Header.jsx
 │   │   │   └── Hero.jsx
