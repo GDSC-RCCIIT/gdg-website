@@ -195,6 +195,13 @@ export function NavigationMenu() {
                                 </NavigationMenuLink>
                               </Link>
                               </DropdownMenuItem>
+                              <DropdownMenuItem asChild>
+                              <Link href="/Certifications" legacyBehavior passHref>
+                                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                  Google Certifications
+                                </NavigationMenuLink>
+                              </Link>
+                              </DropdownMenuItem>
                             </DropdownMenuGroup>
                           </DropdownMenuContent>
                           </DropdownMenu>
