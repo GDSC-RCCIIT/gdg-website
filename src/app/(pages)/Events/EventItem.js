@@ -19,7 +19,7 @@ const EventItem = ({ title, date, description, videoSrc, id }) => {
                 <h2 className="event-title">{title}</h2>
                 <p className="event-date">Date: {date}</p>
                 <p className="event-description">{description}</p>
-                <Link href={`/SingleEvent/${id}`} passHref className="event-link">
+                <Link href={`/SingleEvent/${id}`} passHref className="event-link bg-blue-500">
                     Learn More
                 </Link>
             </div>

@@ -71,7 +71,7 @@ export default function Subscribe() {
                                 placeholder="youremail@gmail.com"
                                 className="bg-gray-100 rounded-lg w-full text-center h-12 focus:outline-slate-400 focus:shadow-lg transition-shadow duration-300 ease-in-out"
                             />
-                            <Button className="hover:scale-105 transition-transform duration-300 ease-in-out">Subscribe</Button>
+                            <Button className="hover:scale-105 transition-transform duration-300 ease-in-out bg-blue-500 hover:bg-blue-600 text-white">Subscribe</Button>
                         </motion.div>
                     </div>
                 </motion.div>

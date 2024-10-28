@@ -39,7 +39,7 @@ const resources = [
     },
     {
         id: 3,
-        title: "UI/UX Development",
+        title: "UI / UX Development",
         description: "To learn UX design, follow this roadmap",
         extendedContent: `
             User Experience (UX) and User Interface (UI) design are crucial for creating products that users find intuitive and enjoyable.

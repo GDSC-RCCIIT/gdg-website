@@ -26,7 +26,7 @@ function Card(props) {
       <div className="px-6 py-4 flex justify-center">
         <a
           href={props.link}
-          className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg shadow-md hover:from-blue-600 hover:to-indigo-600 transition duration-300 transform hover:scale-105"
+          className="inline-block px-4 py-2  bg-blue-500  text-white rounded-lg shadow-md hover:from-blue-600 hover:to-indigo-600 transition duration-300 transform hover:scale-105"
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -57,7 +57,7 @@ const FAQForum = () => {
 
         {/* FAQs Section */}
         <section className="mb-16 mt-10">
-          <h2 className="text-4xl font-semibold text-indigo-600 mb-8 text-center">
+          <h2 className="text-4xl font-semibold text-blue-600 mb-8 text-center">
             Frequently Asked Questions
           </h2>
           <div className="space-y-6">
@@ -102,7 +102,7 @@ const FAQForum = () => {
 
         {/* Forum Section */}
         <section>
-          <h2 className="text-4xl font-semibold text-indigo-600 mb-8 text-center">
+          <h2 className="text-4xl font-semibold text-blue-600 mb-8 text-center">
             Forum
           </h2>
 
@@ -130,7 +130,7 @@ const FAQForum = () => {
             </div>
             <button
               type="submit"
-              className="mt-4 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-300 ease-in-out"
+              className="mt-4 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition duration-300 ease-in-out"
             >
               Submit Post
             </button>
@@ -139,11 +139,11 @@ const FAQForum = () => {
           {/* All Posts */}
           <section>
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-4xl font-semibold text-indigo-600">
+              <h2 className="text-4xl font-semibold text-blue-600">
                 All Posts
               </h2>
               <button
-                className="px-4 py-2 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-600 transition duration-300"
+                className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
                 onClick={handleSort}
               >
                 Sort

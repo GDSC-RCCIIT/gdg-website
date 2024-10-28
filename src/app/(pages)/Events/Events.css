@@ -127,7 +127,7 @@
 
 .event-link {
   display: inline-block;
-  background-color: #333333;
+  background-color: #3b82f6;
   color: #fff;
   padding: 8px 15px;
   border-radius: 4px;
@@ -136,7 +136,7 @@
 }
 
 .event-link:hover {
-  background-color: #555;
+  background-color: #2563eb;
 }
 
 @media screen and (max-width: 768px) {

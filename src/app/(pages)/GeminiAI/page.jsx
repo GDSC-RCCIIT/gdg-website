@@ -122,18 +122,30 @@ export default function GeminiAI() {
                 </Box>
                 <Divider />
                 <form onSubmit={handleSubmit} style={{ display: 'flex', alignItems: 'center', marginTop: '1rem' }}>
-                    <TextField
-                        fullWidth
-                        variant="outlined"
-                        value={userInput}
-                        onChange={(e) => setUserInput(e.target.value)}
-                        placeholder="Type a message..."
-                        style={{ marginRight: '1rem', backgroundColor: 'white', borderRadius: '4px' }}
-                    />
-                    <Button type="submit" variant="contained" color="primary" endIcon={<SendIcon />}>
-                        Send
-                    </Button>
-                </form>
+    <TextField
+        fullWidth
+        variant="outlined"
+        value={userInput}
+        onChange={(e) => setUserInput(e.target.value)}
+        placeholder="Type a message..."
+        style={{
+            marginRight: '1rem',
+            backgroundColor: 'white',
+            borderRadius: '4px',
+            height: '56px', // Adjust height to match button
+        }}
+    />
+    <Button
+        type="submit"
+        variant="contained"
+        color="primary"
+        endIcon={<SendIcon />}
+        style={{ height: '56px' }} // Match the height of the input
+    >
+        Send
+    </Button>
+</form>
+
             </Paper>
         </Container>
     );
