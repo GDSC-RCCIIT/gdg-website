@@ -44,7 +44,7 @@ const AddEvent = () => {
   }
 
   return (
-    <div className="relative h-[2900px] bg-white flex justify-center items-center overflow-hidden border border-gray-300">
+    <div className="relative h-[1700px] bg-white flex justify-center items-center overflow-hidden border border-gray-300">
       <motion.div
         className="absolute inset-0 grid grid-cols-12 gap-4 bg-[length:60px_60px]"
         style={{
@@ -104,7 +104,7 @@ const AddEvent = () => {
       </motion.div>
 
       {/* Centered White Box */}
-      <div className="relative z-10 bg-white -mt-60 -mb-24 rounded-lg shadow-lg p-12 w-[1200px] h-[2500px] flex ">
+      <div className="relative z-10 bg-white -mt-60 -mb-24 rounded-lg shadow-lg p-12 w-[1200px] h-[1300px] flex ">
         <form className="w-full">
         <div className="text-center">
           <motion.h1
