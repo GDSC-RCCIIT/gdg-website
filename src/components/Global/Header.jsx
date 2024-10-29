@@ -283,6 +283,13 @@ export function NavigationMenu() {
                       </NavigationMenuLink>
                     </Link>
                   </NavigationMenuItem>
+                                    <NavigationMenuItem>
+                <Link href="/Contact" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Contact
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
                   <NavigationMenuItem>
                     <Link href="/careers" legacyBehavior passHref>
                       <NavigationMenuLink
@@ -321,6 +328,7 @@ export function NavigationMenu() {
             </div>
           )}
 
+]
         </div>
       </div>
     </>
