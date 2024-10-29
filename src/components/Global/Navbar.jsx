@@ -82,6 +82,7 @@ const Navbar = () => {
                 { href: '/Hackathon', label: 'Hackathons' },
                 { href: '/Events', label: 'Events' }
               ]}
+              closeDropdown={closeAll}
             />
             
             <Link href="/About" className="nav-link">
@@ -100,6 +101,7 @@ const Navbar = () => {
                 { href: '/Resources', label: 'Resources' },
                 { href: '/localdev', label: 'Connect To Local Dev' }
               ]}
+              closeDropdown={closeAll}
             />
 
             <Link href="/GeminiAI" className="nav-link">
@@ -115,6 +117,7 @@ const Navbar = () => {
                 { href: '/careers', label: 'Careers' },
                 { href: '/Stories-Achievements', label: 'Stories & Achievements' }
               ]}
+              closeDropdown={closeAll}
             />
           </div>
 
@@ -240,7 +243,7 @@ const Navbar = () => {
 };
 
 // Desktop Navigation Item Component
-const NavItem = ({ type, label, isOpen, onToggle, items }) => {
+const NavItem = ({ type, label, isOpen, onToggle, items, closeDropdown}) => {
   if (type === 'dropdown') {
     return (
       <div className="relative">
@@ -258,6 +261,7 @@ const NavItem = ({ type, label, isOpen, onToggle, items }) => {
                 key={item.href}
                 href={item.href}
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                onClick={closeDropdown}
               >
                 {item.label}
               </Link>
