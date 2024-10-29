@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Events.css';
 import EventItem from './EventItem';
 import { motion } from 'framer-motion';
+import axios from 'axios';
 
 
 const EventsPage = () => {
@@ -85,6 +86,20 @@ const EventsPage = () => {
             behavior: 'smooth',
         });
     }, [events]);
+
+    const [allEvents, setAllEvents] = useState([]);
+
+    useEffect(() => {
+      axios
+        .get("http://localhost:5000/events")
+        .then((response) => {
+        setAllEvents(response.data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    }, []);
 
     return (
         <div className="container">
