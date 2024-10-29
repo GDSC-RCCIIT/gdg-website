@@ -4,6 +4,8 @@ import * as React from "react";
 import Link from "next/link";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+// import { Icons } from "@/components/icons";
+
 import {
   NavigationMenu as UiNavigationMenu,
   NavigationMenuItem,
@@ -56,8 +58,10 @@ export function NavigationMenu() {
 
   return (
     <>
-      <div className="bg-white shadow-md fixed top-0 left-0 right-0 z-10 text-black flex justify-between items-center p-4 border-b select-none">
-        {/* Left Corner - GDSC-RCIIT with image */}
+      <div
+        className="bg-white shadow-md fixed top-0 left-0 right-0 z-10 text-black flex justify-between items-center p-4 border-b select-none"
+        style={{zIndex: 11}}
+      >
         <div className="flex items-center space-x-3">
           <img
             src="/Logo.svg"

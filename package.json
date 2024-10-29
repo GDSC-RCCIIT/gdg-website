@@ -12,6 +12,7 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@google/generative-ai": "^0.21.0",
+    "@hookform/resolvers": "^3.9.1",
     "@mui/icons-material": "^6.1.5",
     "@mui/material": "^6.1.5",
     "@radix-ui/react-aspect-ratio": "^1.1.0",
@@ -54,7 +55,8 @@
     "styled-components": "^6.1.13",
     "tailwind-merge": "^2.5.3",
     "tailwindcss-animate": "^1.0.7",
-    "vaul": "^1.0.0"
+    "vaul": "^1.0.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "postcss": "^8",
