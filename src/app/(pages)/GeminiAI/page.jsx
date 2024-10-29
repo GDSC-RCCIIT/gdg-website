@@ -1,6 +1,6 @@
 "use client";
-import { useState } from 'react';
-import { Container, Typography, TextField, Button, Paper, Box, List, ListItem, ListItemText, Divider, IconButton } from '@mui/material';
+import { useEffect, useRef, useState } from 'react';
+import { Container, TextField, Button, Paper, Box, List, ListItem, ListItemText, Divider, IconButton, Stack } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { ToastContainer, toast } from 'react-toastify';
@@ -8,12 +8,24 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function GeminiAI() {
     const [userInput, setUserInput] = useState('');
-    const [chatHistory, setChatHistory] = useState([]);
+    const [chatHistory, setChatHistory] = useState(() => {
+        const savedHistory = localStorage.getItem('chatHistory');
+        return savedHistory ? JSON.parse(savedHistory) : [];
+    });
+    const chatContainerRef = useRef(null);
+
+    useEffect(() => {
+        localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+        if (chatContainerRef.current) {
+            chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+        }
+    }, [chatHistory]);
 
     const formatMessage = (text) => {
+        const messageText = typeof text === 'string' ? text : '';
         const regex = /```(.*?)```/gs;
 
-        return text.split(regex).map((part, index) =>
+        return messageText.split(regex).map((part, index) =>
             index % 2 === 1 ? (
                 <Box key={index} sx={{ position: 'relative', marginBottom: '1rem' }}>
                     <pre style={{ whiteSpace: 'pre-wrap', backgroundColor: '#f4f4f4', padding: '0.5rem', borderRadius: '5px' }}>
@@ -22,7 +34,7 @@ export default function GeminiAI() {
                     <IconButton
                         onClick={() => {
                             navigator.clipboard.writeText(part);
-                            toast.success("Copied Successfully"); // Show success toast
+                            toast.success("Copied Successfully");
                         }}
                         size="small"
                         color="primary"
@@ -48,16 +60,19 @@ export default function GeminiAI() {
         if (!userInput) return;
 
         const userMessage = { sender: "User", text: userInput };
-        setChatHistory([...chatHistory, userMessage]);
+        setChatHistory((prev) => [...prev, userMessage]);
         setUserInput("");
 
         try {
-            const res = await fetch('/api/generate', {
+            const previousMessages = chatHistory.map(msg => msg.text).join("\n");
+            const res = await fetch('/api/generate-content', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ prompt: userInput }),
+                body: JSON.stringify({
+                    prompt: "Previous Responses By You: " + previousMessages + "\nMy New Query: " + userInput
+                }),
             });
 
             if (!res.ok) {
@@ -72,6 +87,11 @@ export default function GeminiAI() {
         }
     };
 
+    const handleClearChat = () => {
+        setChatHistory([]);
+        localStorage.removeItem('chatHistory');
+    };
+
     return (
         <Container style={{ marginTop: '6rem', marginBottom: '2rem' }}>
             <Paper elevation={3} style={{ padding: '1.5rem', borderRadius: '8px' }}>
@@ -79,6 +99,7 @@ export default function GeminiAI() {
                     Gemini AI Chat
                 </h1>
                 <Box
+                    ref={chatContainerRef}
                     style={{
                         height: '60vh',
                         overflowY: 'auto',
@@ -121,32 +142,25 @@ export default function GeminiAI() {
                     </List>
                 </Box>
                 <Divider />
-                <form onSubmit={handleSubmit} style={{ display: 'flex', alignItems: 'center', marginTop: '1rem' }}>
-    <TextField
-        fullWidth
-        variant="outlined"
-        value={userInput}
-        onChange={(e) => setUserInput(e.target.value)}
-        placeholder="Type a message..."
-        style={{
-            marginRight: '1rem',
-            backgroundColor: 'white',
-            borderRadius: '4px',
-            height: '56px', // Adjust height to match button
-        }}
-    />
-    <Button
-        type="submit"
-        variant="contained"
-        color="primary"
-        endIcon={<SendIcon />}
-        style={{ height: '56px' }} // Match the height of the input
-    >
-        Send
-    </Button>
-</form>
+                <Stack direction="row" spacing={2} style={{ marginTop: '1rem' }}>
+                    <TextField
+                        fullWidth
+                        variant="outlined"
+                        value={userInput}
+                        onChange={(e) => setUserInput(e.target.value)}
+                        placeholder="Type a message..."
+                        style={{ backgroundColor: 'white', borderRadius: '4px' }}
+                    />
+                    <Button type="submit" variant="contained" color="primary" endIcon={<SendIcon />} onClick={handleSubmit}>
+                        Send
+                    </Button>
+                    <Button variant="outlined" color="secondary" onClick={handleClearChat}>
+                        Clear
+                    </Button>
+                </Stack>
 
             </Paper>
+            <ToastContainer />
         </Container>
     );
 }
