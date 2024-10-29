@@ -1,3 +1,11 @@
+**This project is now OFFICIALLY accepted for**
+---
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/349f039e-8ecc-42da-863f-00c4fc531d39" alt="GirlScript Summer of Code" style="width:60%; margin-bottom: 20px;" />
+  <img src="https://github.com/user-attachments/assets/352ba700-4f8d-45cc-87e4-86fc569a2c78" alt="Hacktoberfest" style="width:60%;" />
+</div>
+
 # GDG RCCIIT Website 🚀
 
 ![image](https://github.com/user-attachments/assets/bba5659e-5d29-464a-ad33-63b7a2e9bd55)
