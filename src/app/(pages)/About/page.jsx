@@ -40,7 +40,7 @@ export default function About() {
             >
                 <div className="mx-auto max-w-xl text-center">
                     <h2 className="text-2xl font-bold text-white md:text-3xl">
-                        About GSG at RCIIT
+                        About GDSC at RCIIT
                     </h2>
                     <p className="hidden text-white/90 sm:mt-4 sm:block">
                         GDG on Campus RCCIIT stands for Google Developer Group on
