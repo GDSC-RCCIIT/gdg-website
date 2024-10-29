@@ -158,6 +158,7 @@ export default function GeminiAI() {
                         Clear
                     </Button>
                 </Stack>
+
             </Paper>
             <ToastContainer />
         </Container>
