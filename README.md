@@ -92,6 +92,18 @@ We welcome everyone to contribute to the GDG RCCIIT website! Please review our [
   </a>
 </div>
 
+## 💗 Forkers
+
+[![Forkers repo roster for @GDSC-RCCIIT/gdg-website](https://reporoster.com/forks/GDSC-RCCIIT/gdg-website)](https://github.com/GDSC-RCCIIT/gdg-website/network/members)
+
+## 💗 Stargazers
+
+<div align='left'>
+
+[![Stargazers repo roster for @GDSC-RCCIIT/gdg-website](https://reporoster.com/stars/GDSC-RCCIIT/gdg-website)](https://github.com/GDSC-RCCIIT/gdg-website/stargazers)
+
+</div>
+
 ## 🎉 Happy Coding!
 
 Explore, contribute, and let’s build an awesome GDG RCCIIT website together!
