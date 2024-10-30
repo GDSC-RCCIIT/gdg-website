@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { Search } from 'lucide-react';
+import ProductNavbar from '../../../components/Global/ProductsNavbar';
 
 // Header Section with Search Bar
 const Header = () => {
@@ -110,7 +111,7 @@ const ProductGrid = ({ products }) => {
 const DeveloperProductsPage = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedFocus, setSelectedFocus] = useState(null);
-
+    const [selectedTab, setSelectedTab] = useState("All Products");
     const products = [
         {
             title: "Android",
@@ -152,6 +153,10 @@ const DeveloperProductsPage = () => {
 
     return (
         <div>
+             <ProductNavbar
+                selectedTab={selectedTab} 
+                setSelectedTab={setSelectedTab} 
+            />
             <Header />
             <Filters
                 selectedCategory={selectedCategory}
