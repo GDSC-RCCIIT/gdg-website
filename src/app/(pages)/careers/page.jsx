@@ -1,9 +1,11 @@
 "use client"
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import spotlightJobs from './opportunities';
 import Link from 'next/link';
+import axios from 'axios';
 // Hero Component
 const Hero = () => {
+
   return (
     <div className="relative h-[600px] bg-white overflow-hidden border border-gray-200">
       {/* Background Grid and Decorative Elements */}
@@ -56,11 +58,26 @@ const Hero = () => {
 // Spotlight Component
 // Spotlight Component
 const Spotlight = () => {
+  const [jobs, setJobs] = useState([]);
+  console.log("jobs", jobs);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/careers")
+      .then((response) => {
+      setJobs(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+  
   return (
     <div className="mt-16 flex flex-col items-center">
       <h2 className="text-3xl font-semibold mb-6">Spotlight</h2>
       <div className="flex space-x-4 overflow-x-auto pb-4">
-        {spotlightJobs.map((job) => (
+        {jobs.map((job) => (
           <Link key={job.id} href={`/careers/${job.id}`} className="bg-white shadow-lg rounded-lg p-6 w-72 transition-transform transform hover:scale-105 hover:shadow-xl">
             <img src={job.image} alt={job.title} className="rounded-t-lg w-full h-40 object-cover mb-4" />
             <h3 className="font-bold text-xl text-blue-600">{job.title}</h3>
