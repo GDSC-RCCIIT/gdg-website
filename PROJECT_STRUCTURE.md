@@ -69,11 +69,18 @@
 │   │   ├── (pages)/
 │   │   │   ├── About/
 │   │   │   │   └── page.jsx
+│   │   │   ├── AddEvent/
+│   │   │   │   └── page.jsx
 │   │   │   ├── AddHackathon/
+│   │   │   │   └── page.jsx
+│   │   │   ├── AddProjects/
 │   │   │   │   └── page.jsx
 │   │   │   ├── Certifications/
 │   │   │   │   └── page.jsx
 │   │   │   ├── Chapters/
+│   │   │   │   └── page.jsx
+│   │   │   ├── Contact/
+│   │   │   │   ├── Contactus.svg
 │   │   │   │   └── page.jsx
 │   │   │   ├── Events/
 │   │   │   │   ├── EventItem.js
@@ -95,6 +102,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── Projects/
 │   │   │   │   ├── Card.jsx
+│   │   │   │   ├── [id]/
+│   │   │   │   │   └── page.jsx
 │   │   │   │   └── page.jsx
 │   │   │   ├── Resources/
 │   │   │   │   ├── [id]/
@@ -184,6 +193,7 @@
 │   │   ├── globals.css
 │   │   ├── images/
 │   │   │   ├── ai_img.jpg
+│   │   │   ├── gdsc-logo.png
 │   │   │   └── teamMember.jpg
 │   │   ├── layout.js
 │   │   ├── not-found.jsx
@@ -192,10 +202,13 @@
 │   │   ├── Chatbot.jsx
 │   │   ├── GTranslateLoader.js
 │   │   ├── Global/
+│   │   │   ├── AddEventForm.jsx
 │   │   │   ├── AddHackathonForm.jsx
+│   │   │   ├── AddProjectsForm.jsx
 │   │   │   ├── Footer.jsx
 │   │   │   ├── Header.jsx
-│   │   │   └── Hero.jsx
+│   │   │   ├── Hero.jsx
+│   │   │   └── Navbar.jsx
 │   │   └── ui/
 │   │       ├── aspect-ratio.jsx
 │   │       ├── back2top.jsx
@@ -209,6 +222,7 @@
 │   │       ├── dialog.jsx
 │   │       ├── drawer.jsx
 │   │       ├── dropdown-menu.jsx
+│   │       ├── form.jsx
 │   │       ├── homepage.jsx
 │   │       ├── hover-card.jsx
 │   │       ├── input.jsx
