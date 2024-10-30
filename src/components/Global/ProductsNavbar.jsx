@@ -1,17 +1,17 @@
 'use client';
-import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation'; // Ensure using the navigation router for client-side navigation
+import React from 'react';
+import { useRouter } from 'next/navigation';
 
 // Product Navbar Component with Tabs
-const ProductNavbarComponent = ({ selectedTab, setSelectedTab }) => {
-    const router = useRouter(); // Import useRouter to handle navigation
+const ProductsNavbar = ({ selectedTab, setSelectedTab }) => {
+    const router = useRouter();
 
     const tabs = [
-        { name: "All Products", path: "/products" },
+        { name: "All Products", path: "/devprod" },
         { name: "Platforms and operating systems", path: "/products/platforms" },
         { name: "Frameworks, IDEs and SDKs", path: "/products/frameworks" },
         { name: "Services and integrations", path: "/products/services" },
-        { name: "Growth and monetization", path: "/products/growth" },
+        { name: "Growth and monetization", path: "/growth" },
     ];
 
     const handleTabClick = (tab) => {
@@ -21,7 +21,7 @@ const ProductNavbarComponent = ({ selectedTab, setSelectedTab }) => {
 
     return (
         <div className="bg-gray-100 border-b">
-            <div className="max-w-6xl mx-auto flex gap-4 px-6 py-4 overflow-x-auto">
+            <div className="max-w-7xl mx-auto flex gap-4 px-6 py-4 overflow-x-auto">
                 {tabs.map((tab, index) => (
                     <button
                         key={index}
@@ -39,4 +39,4 @@ const ProductNavbarComponent = ({ selectedTab, setSelectedTab }) => {
     );
 };
 
-export default ProductNavbarComponent;
+export default ProductsNavbar;
