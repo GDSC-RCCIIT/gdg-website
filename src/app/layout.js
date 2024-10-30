@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import { NavigationMenu } from "@/components/Global/Header";
+import  NavigationMenu  from "@/components/Global/Navbar";
 import Footer from "@/components/Global/Footer";
 import ScrollToTop from "@/components/ui/back2top";
 import ScrollProgressBar from "@/components/ui/progress-bar"

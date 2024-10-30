@@ -2,56 +2,18 @@
 
 import * as React from "react";
 import Link from "next/link";
-
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 // import { Icons } from "@/components/icons";
 
-
-
-
-
-import {
-  Cloud,
-  CreditCard,
-  Github,
-  Keyboard,
-  LifeBuoy,
-  LogOut,
-  Mail,
-  MessageSquare,
-  Plus,
-  PlusCircle,
-  Settings,
-  User,
-  UserPlus,
-  Users,
-} from "lucide-react"
-
-import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-
 import {
   NavigationMenu as UiNavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { HiOutlineMenu } from "react-icons/hi";
 
 const components = [
   {
@@ -92,9 +54,14 @@ const components = [
 ];
 
 export function NavigationMenu() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <>
-      <div className="bg-white shadow-md fixed top-0 left-0 right-0 z-10 text-black flex justify-between items-center p-4 border-b select-none">
+      <div
+        className="bg-white shadow-md fixed top-0 left-0 right-0 z-10 text-black flex justify-between items-center p-4 border-b select-none"
+        style={{zIndex: 11}}
+      >
         <div className="flex items-center space-x-3">
           <img
             src="/Logo.svg"
@@ -116,188 +83,256 @@ export function NavigationMenu() {
           </Link>
         </div>
 
-        {/* Right-Aligned Menu */}
-        <div className="flex">
-          <UiNavigationMenu>
-            <NavigationMenuList className="flex">
-              <NavigationMenuItem>
-                  <DropdownMenu className="mr-4">
-                          <DropdownMenuTrigger asChild>
-                            <Button variant="outline">Projects and Events</Button>
-                          </DropdownMenuTrigger>
-                          <DropdownMenuContent className="w-56">
-                            <DropdownMenuGroup>
-                              <DropdownMenuItem asChild>
-                                <Link href="/Projects" legacyBehavior passHref>
-                                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                    Projects
-                                  </NavigationMenuLink>
-                                </Link>
-                              </DropdownMenuItem>
-                              <DropdownMenuItem asChild>
-                                <Link href="/Hackathon" legacyBehavior passHref>
-                                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                    Hackathons
-                                  </NavigationMenuLink>
-                                </Link>
-                              </DropdownMenuItem>
-                              <DropdownMenuItem asChild>
-                                <Link href="/Events" legacyBehavior passHref>
-                                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                    Events
-                                  </NavigationMenuLink>
-                                </Link>
-                              </DropdownMenuItem>
-                            </DropdownMenuGroup>
-                          </DropdownMenuContent>
-                        </DropdownMenu>
-                    </NavigationMenuItem>
-                    
-                    <NavigationMenuItem>   
-                      <DropdownMenu>
-                          <DropdownMenuTrigger asChild>
-                            <Button variant="outline">Resources and FAQ</Button>
-                          </DropdownMenuTrigger>
-                          <DropdownMenuContent className="w-56">
-                            <DropdownMenuGroup>
-                              <DropdownMenuItem asChild>
-                                <Link href="/TechToolkits" legacyBehavior passHref>
-                                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                    Tech ToolKits HUB
-                                  </NavigationMenuLink>
-                                </Link>
-                              </DropdownMenuItem>
-                              <DropdownMenuItem asChild>
-                                <Link href="/TeamsGallery" legacyBehavior passHref>
-                                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                              Teams & Gallery
-                                            </NavigationMenuLink>
-                                          </Link>
-                              </DropdownMenuItem>
-                              <DropdownMenuItem asChild>
-                              <Link href="/FAQsForum" legacyBehavior passHref>
-                                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                              FAQs & Forum
-                                            </NavigationMenuLink>
-                                          </Link>
-                              </DropdownMenuItem>
-                              <DropdownMenuItem asChild>
-                                <Link href="/Resources" legacyBehavior passHref>
-                                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                    Resources
-                                  </NavigationMenuLink>
-                                </Link>
-                              </DropdownMenuItem>
-                              <DropdownMenuItem asChild>
-                              <Link href="/localdev" legacyBehavior passHref>
-                                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                  Connect To Local Dev
-                                </NavigationMenuLink>
-                              </Link>
-                              </DropdownMenuItem>
-                            </DropdownMenuGroup>
-                          </DropdownMenuContent>
-                          </DropdownMenu>
-                    </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <Link href="/Subscribe" legacyBehavior passHref>
+        {/* Right-Aligned Menu with Hamburger Icon */}
+        <div className="flex items-center">
+          <button
+            className="md:hidden p-2"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <HiOutlineMenu className="w-6 h-6" />
+          </button>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex">
+            <UiNavigationMenu>
+              <NavigationMenuList className="flex">
+                <NavigationMenuItem>
+                  <Link href="/Projects" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      Projects
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/Hackathon" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      Hackathons
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/Events" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      Events
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/TeamsGallery" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      Teams & Gallery
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/Subscribe" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      Subscribe
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/About" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      About GDSC
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/FAQsForum" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      FAQs & Forum
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/Resources" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      Resources
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/careers" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      Careers
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/SignIn" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        "bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-600 transition duration-300"
+                      )}
+                    >
+                      Sign In
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/SignUp" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        "bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-600 transition duration-300"
+                      )}
+                    >
+                      Sign Up
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </UiNavigationMenu>
+          </div>
+
+          {/* Mobile Dropdown Menu */}
+          {isMenuOpen && (
+            <div className="absolute top-16 left-0 right-0 bg-white shadow-md p-4 md:hidden flex justify-center">
+              <UiNavigationMenu>
+                <NavigationMenuList className="flex flex-col space-y-2 gap-1">
+                  <NavigationMenuItem>
+                    <Link href="/Projects" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        Projects
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Link href="/Hackathon" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        Hackathons
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Link href="/Events" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        Events
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Link href="/TeamsGallery" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        Teams & Gallery
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Link href="/Subscribe" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        Subscribe
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Link href="/About" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        About GDSC
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Link href="/FAQsForum" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        FAQs & Forum
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Link href="/Resources" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        Resources
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                                    <NavigationMenuItem>
+                <Link href="/Contact" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Subscribe
+                  Contact
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/About" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    About GDSC
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-            
-              <DropdownMenu className="mr-4">
-                <DropdownMenuTrigger asChild>
-                  <Button variant="outline">Career And Support</Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56">
-                  <DropdownMenuGroup>
-                    <DropdownMenuItem asChild>
-                      <Link href="/careers" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                          Career
-                        </NavigationMenuLink>
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/Stories-Achievements" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                          Stories and Achievements
-                        </NavigationMenuLink>
-                      </Link>
-                    </DropdownMenuItem>
-                  </DropdownMenuGroup>
-                </DropdownMenuContent>
-              </DropdownMenu>
-              <NavigationMenuItem>
-                <Link href="/GeminiAI" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Gemini AI
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/SignIn" legacyBehavior passHref>
-                  <NavigationMenuLink
-                    className={cn(
-                      navigationMenuTriggerStyle(),
-                      "bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-600 transition duration-300"
-                    )}
-                  >
-                    Sign In
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/SignUp" legacyBehavior passHref>
-                  <NavigationMenuLink
-                    className={cn(
-                      navigationMenuTriggerStyle(),
-                      "bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-600 transition duration-300"
-                    )}
-                  >
-                    Sign Up
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </UiNavigationMenu>
+                  <NavigationMenuItem>
+                    <Link href="/careers" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        Careers
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Link href="/SignIn" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={cn(
+                          navigationMenuTriggerStyle(),
+                          "bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-600 transition duration-300"
+                        )}
+                      >
+                        Sign In
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Link href="/SignUp" legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={cn(
+                          navigationMenuTriggerStyle(),
+                          "bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-600 transition duration-300"
+                        )}
+                      >
+                        Sign Up
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </UiNavigationMenu>
+            </div>
+          )}
+
+]
         </div>
       </div>
     </>
   );
 }
 
-const ListItem = React.forwardRef(
-  ({ className, title, children, ...props }, ref) => {
-    return (
-      <li>
-        <NavigationMenuLink asChild>
-          <a
-            ref={ref}
-            className={cn(
-              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-              className
-            )}
-            {...props}
-          >
-            <div className="text-sm font-medium leading-none">{title}</div>
-            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-              {children}
-            </p>
-          </a>
-        </NavigationMenuLink>
-      </li>
-    );
-  }
-);
-ListItem.displayName = "ListItem";
+export default NavigationMenu;
