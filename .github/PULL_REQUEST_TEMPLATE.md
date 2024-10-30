@@ -31,7 +31,7 @@
 ---
 
 #### Identify Yourself
-**Mention in which program you are contributing (e.g., WoB, GSSOC, SSOC, SWOC).**  
+**Mention in which program you are contributing (e.g., WoB, GSSOC, SSOC, Hactoberfest).**  
 *Enter your participant role here-*
 
 - [ ] I have mentioned my participant role.
