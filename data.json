@@ -639,8 +639,7 @@
       "youtubeLink": "https://www.youtube.com/watch?v=3N1Cg7nM3Bg"
     }
   ],
-  "events": {
-    "finished": [
+  "events": [
       {
         "id": "1",
         "title": "Tech for Good Hackathon",
@@ -676,9 +675,7 @@
         "status": "finished",
         "organizers": ["GDSC RCCIIT"],
         "participants": 50
-      }
-    ],
-    "ongoing": [
+      },
       {
         "id": "3",
         "title": "AI & ML Workshop",
@@ -691,9 +688,7 @@
         "status": "ongoing",
         "organizers": ["GDSC RCCIIT"],
         "participants": 80
-      }
-    ],
-    "upcoming": [
+      },
       {
         "id": "4",
         "title": "Cloud Computing Seminar",
@@ -723,5 +718,4 @@
         "participants": 0
       }
     ]
-  }
 }
