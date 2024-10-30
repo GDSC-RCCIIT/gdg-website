@@ -8,9 +8,9 @@ const ProductsNavbar = ({ selectedTab, setSelectedTab }) => {
 
     const tabs = [
         { name: "All Products", path: "/devprod" },
-        { name: "Platforms and operating systems", path: "/products/platforms" },
-        { name: "Frameworks, IDEs and SDKs", path: "/products/frameworks" },
-        { name: "Services and integrations", path: "/products/services" },
+        { name: "Platforms and operating systems", path: "/platforms" },
+        { name: "Frameworks, IDEs and SDKs", path: "/frameworks" },
+        { name: "Services and integrations", path: "/services" },
         { name: "Growth and monetization", path: "/growth" },
     ];
 
