@@ -82,6 +82,7 @@ We welcome everyone to contribute to the GDG RCCIIT website! Please review our [
 - **Tailwind CSS**: For responsive, utility-first CSS design.
 - **Supabase**: Provides real-time backend services and user authentication.
 - **Cloudinary**: Handles cloud-based image storage and media optimization.
+
  
 
 ## 👀 Our Valuable Contributors 💖✨
@@ -92,17 +93,20 @@ We welcome everyone to contribute to the GDG RCCIIT website! Please review our [
   </a>
 </div>
 
+
 ## 💗 Forkers
 
 [![Forkers repo roster for @GDSC-RCCIIT/gdg-website](https://reporoster.com/forks/GDSC-RCCIIT/gdg-website)](https://github.com/GDSC-RCCIIT/gdg-website/network/members)
 
-## 💗 Stargazers
+
+## ⭐ Stargazers
 
 <div align='left'>
 
 [![Stargazers repo roster for @GDSC-RCCIIT/gdg-website](https://reporoster.com/stars/GDSC-RCCIIT/gdg-website)](https://github.com/GDSC-RCCIIT/gdg-website/stargazers)
 
 </div>
+
 
 ## 🎉 Happy Coding!
 
