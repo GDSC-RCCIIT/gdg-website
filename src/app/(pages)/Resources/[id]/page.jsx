@@ -5,6 +5,8 @@ import { useRouter, useParams } from 'next/navigation';
 import resources from '../resources';
 import { cppContent } from '@/lib/cpp-content';
 import { dsaContent } from '@/lib/dsa-content';
+import { cpContent } from '@/lib/competitive_programming-content';
+import { cpTrackContent } from '@/lib/competitive_programming-track-content';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -26,15 +28,17 @@ const SolutionDialog = ({ solution }) => {
                 <DialogHeader>
                     <DialogTitle>Solution</DialogTitle>
                 </DialogHeader>
-                <div className="space-y-4">
+                <div className="space-y-6">
                     <div className="bg-gray-800 rounded-lg p-4 overflow-x-auto">
                         <pre className="text-white">
                             <code>{solution.code}</code>
                         </pre>
                     </div>
                     <div className="text-gray-700">
-                        <h4 className="font-semibold mb-2">Explanation:</h4>
-                        <p>{solution.explanation}</p>
+                        <h4 className="text-lg font-semibold mb-4">Explanation:</h4>
+                        <pre className="whitespace-pre-wrap text-base leading-relaxed font-sans">
+                            {solution.explanation}
+                        </pre>
                     </div>
                 </div>
             </DialogContent>
@@ -98,16 +102,25 @@ function ResourceDetail() {
     // Define learning track types
     const isCppTrack = resource.id === 4;
     const isDSATrack = resource.id === 5;
-    const isLearningTrack = isCppTrack || isDSATrack;
+    const isCompetitiveProgrammingTrack = resource.id === 6;
+    const isLearningTrack = isCppTrack || isDSATrack || isCompetitiveProgrammingTrack;
 
     // Get appropriate content based on track type
     const getTrackContent = () => {
         if (isCppTrack) return cppContent;
         if (isDSATrack) return dsaContent;
+        if (isCompetitiveProgrammingTrack) return cpContent;
+        return null;
+    };
+
+    // Get track-specific description content
+    const getTrackDescription = () => {
+        if (isCompetitiveProgrammingTrack) return cpTrackContent;
         return null;
     };
 
     const content = getTrackContent();
+    const trackDescription = getTrackDescription();
 
     return (
         <section className="bg-gray-50 text-black min-h-screen">
@@ -138,9 +151,46 @@ function ResourceDetail() {
                                     <CardTitle>{resource.title}</CardTitle>
                                 </CardHeader>
                                 <CardContent>
-                                    <p className="text-gray-700 text-lg leading-relaxed">
-                                        {resource.extendedContent}
-                                    </p>
+                                    <div className="space-y-6">
+                                        <p className="text-gray-700 text-lg leading-relaxed">
+                                            {isCompetitiveProgrammingTrack && trackDescription 
+                                                ? trackDescription.extendedContent 
+                                                : resource.extendedContent}
+                                        </p>
+                                        {isCompetitiveProgrammingTrack && trackDescription && (
+                                            <>
+                                                <div className="mt-6">
+                                                    <h3 className="text-xl font-semibold mb-3">Prerequisites</h3>
+                                                    <ul className="list-disc pl-5 space-y-2">
+                                                        {trackDescription.content.prerequisites.map((prereq, index) => (
+                                                            <li key={index} className="text-gray-600">{prereq}</li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                                <div className="mt-6">
+                                                    <h3 className="text-xl font-semibold mb-3">Learning Outcomes</h3>
+                                                    <ul className="list-disc pl-5 space-y-2">
+                                                        {trackDescription.content.outcomes.map((outcome, index) => (
+                                                            <li key={index} className="text-gray-600">{outcome}</li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                                <div className="mt-6">
+                                                    <h3 className="text-xl font-semibold mb-3">Course Sections</h3>
+                                                    <div className="space-y-4">
+                                                        {trackDescription.content.sections.map((section, index) => (
+                                                            <div key={index} className="bg-gray-50 p-4 rounded-lg">
+                                                                <h4 className="font-semibold text-blue-600 mb-2">
+                                                                    {section.title}
+                                                                </h4>
+                                                                <p className="text-gray-600">{section.content}</p>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </>
+                                        )}
+                                    </div>
                                 </CardContent>
                             </Card>
                         </TabsContent>
