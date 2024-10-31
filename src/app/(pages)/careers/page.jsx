@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import spotlightJobs from './opportunities';
 import Link from 'next/link';
 // Hero Component
@@ -54,29 +54,55 @@ const Hero = () => {
 };
 
 // Spotlight Component
-// Spotlight Component
 const Spotlight = () => {
+  const [spotlightJobs, setSpotlightJobs] = useState([]);
+
+  useEffect(() => {
+    // Fetch spotlight data from JSON server
+    const fetchSpotlightJobs = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/spotlightJobs');
+        if (!response.ok) {
+          throw new Error('Failed to fetch spotlight jobs');
+        }
+        const data = await response.json();
+        setSpotlightJobs(data);
+      } catch (error) {
+        console.error('Error fetching spotlight jobs:', error);
+      }
+    };
+
+    fetchSpotlightJobs();
+  }, []);
+
   return (
     <div className="mt-16 flex flex-col items-center">
       <h2 className="text-3xl font-semibold mb-6">Spotlight</h2>
       <div className="flex space-x-4 overflow-x-auto pb-4">
         {spotlightJobs.map((job) => (
           <Link key={job.id} href={`/careers/${job.id}`} className="bg-white shadow-lg rounded-lg p-6 w-72 transition-transform transform hover:scale-105 hover:shadow-xl">
-            <img src={job.image} alt={job.title} className="rounded-t-lg w-full h-40 object-cover mb-4" />
-            <h3 className="font-bold text-xl text-blue-600">{job.title}</h3>
-            <p className="mt-1 text-gray-500">{job.company}</p>
-            <p className="mt-2 text-gray-600 text-sm">{job.description}</p>
+            <h3 className="font-bold text-xl text-blue-600 mb-2">{job.title}</h3>
+            <p className="text-gray-600 text-sm mb-4">{job.description}</p>
 
-            {/* Enhanced Location Section */}
-            {/* {job.location && (
-              <div className="mt-2 flex items-center space-x-2 text-gray-700">
-                <span className="material-icons">location_on</span>
-                <span className="font-semibold">{job.location}</span>
-              </div>
-            )} */}
-            <div className="mt-4 flex justify-between items-center">
-              <span className="text-gray-400 text-sm">View Details</span>
+            <div className="text-gray-700 text-sm mb-2">
+              <span className="font-semibold">Date:</span> {job.date.start} - {job.date.end}
             </div>
+            <div className="text-gray-700 text-sm mb-2">
+              <span className="font-semibold">Location:</span> {job.location}
+            </div>
+            <div className="text-gray-700 text-sm mb-2">
+              <span className="font-semibold">Status:</span> {job.status}
+            </div>
+            <div className="text-gray-700 text-sm mb-2">
+              <span className="font-semibold">Organizers:</span> {job.organizers.join(', ')}
+            </div>
+            <div className="text-gray-700 text-sm mb-4">
+              <span className="font-semibold">Participants:</span> {job.participants}
+            </div>
+
+            <a href={job.registrationLink} target="_blank" className="inline-block px-4 py-2 mt-2 text-white bg-blue-600 rounded-md hover:bg-blue-700">
+              Register
+            </a>
           </Link>
         ))}
       </div>
