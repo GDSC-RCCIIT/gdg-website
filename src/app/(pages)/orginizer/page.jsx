@@ -1,10 +1,17 @@
+"use client"
 import React from 'react';
 import { Briefcase, Users, Globe, CheckCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 // Colorful Google-inspired Hero Section
 const Hero = () => {
     return (
-        <div className="relative h-[500px] flex items-center justify-center text-center border-b border-gray-200 bg-gradient-to-r from-blue-500 via-green-400 to-yellow-400">
+        <motion.div
+            className="relative h-[500px] flex items-center justify-center text-center border-b border-gray-200 bg-gradient-to-r from-blue-500 via-green-400 to-yellow-400"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }} 
+            transition={{ duration: 1 }} 
+        >
             <div className="absolute inset-0 opacity-30">
                 <div className="w-96 h-96 bg-red-500 rounded-full blur-2xl opacity-80 absolute top-0 left-20"></div>
                 <div className="w-80 h-80 bg-green-500 rounded-full blur-2xl opacity-80 absolute bottom-0 right-40"></div>
@@ -33,7 +40,7 @@ const Hero = () => {
                     </a>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
@@ -58,18 +65,29 @@ const Benefits = () => {
     ];
 
     return (
-        <div className="mt-16 max-w-6xl mx-auto px-6">
+        <motion.div
+            className="mt-16 max-w-6xl mx-auto px-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }} 
+        >
             <h2 className="text-4xl font-semibold text-center mb-8 text-gray-800">Benefits of being an Organizer</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {benefits.map((benefit, index) => (
-                    <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">
+                    <motion.div
+                        key={index}
+                        className="bg-white p-6 rounded-lg shadow-md text-center"
+                        initial={{ scale: 0.8 }}
+                        animate={{ scale: 1 }} 
+                        transition={{ duration: 0.5 }}
+                    >
                         <div className="flex justify-center mb-4">{benefit.icon}</div>
                         <h3 className="text-2xl font-semibold text-gray-700">{benefit.title}</h3>
                         <p className="mt-3 text-gray-600">{benefit.description}</p>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
-        </div>
+        </motion.div>
     );
 };
 
@@ -93,7 +111,12 @@ const BecomeOrganizer = () => {
     ];
 
     return (
-        <div className="mt-20 max-w-6xl mx-auto px-6">
+        <motion.div
+            className="mt-20 max-w-6xl mx-auto px-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }} 
+        >
             <h2 className="text-4xl font-semibold text-center mb-12 text-indigo-600">Become an Organizer</h2>
             <div className="grid md:grid-cols-2 gap-12">
                 <div>
@@ -113,7 +136,7 @@ const BecomeOrganizer = () => {
                     </ol>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
@@ -139,7 +162,12 @@ const OrganizerGuidelines = () => {
     ];
 
     return (
-        <div className="mt-20 max-w-6xl mx-auto px-6">
+        <motion.div
+            className="mt-20 max-w-6xl mx-auto px-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.5 }}
+        >
             <h2 className="text-4xl font-semibold text-center mb-12 text-gray-800">Organizer Guidelines</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {guidelines.map((guideline, index) => (
@@ -149,7 +177,7 @@ const OrganizerGuidelines = () => {
                     </div>
                 ))}
             </div>
-        </div>
+        </motion.div>
     );
 };
 
@@ -164,16 +192,19 @@ const OrganizerAcknowledgements = () => {
     ];
 
     return (
-        <div className="mt-20 max-w-6xl mx-auto px-6">
-            <h2 className="text-4xl font-semibold text-center mb-12 text-indigo-600">Organizer Acknowledgements</h2>
+        <motion.div
+            className="mt-20 max-w-6xl mx-auto px-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 2 }} 
+        >
+            <h2 className="text-4xl font-semibold text-center mb-8 text-gray-800">Acknowledgements</h2>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
-                {acknowledgements.map((ack, index) => (
-                    <li key={index} className="bg-white p-4 rounded-lg shadow-sm">
-                        {ack}
-                    </li>
+                {acknowledgements.map((acknowledgement, index) => (
+                    <li key={index}>{acknowledgement}</li>
                 ))}
             </ul>
-        </div>
+        </motion.div>
     );
 };
 
