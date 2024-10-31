@@ -641,81 +641,31 @@
   ],
   "events": [
       {
-        "id": "1",
-        "title": "Tech for Good Hackathon",
-        "description": "A 48-hour hackathon focused on leveraging technology to address challenges in healthcare.",
-        "date": {
-          "start": "2024-11-01T09:00:00Z",
-          "end": "2024-11-03T17:00:00Z"
-        },
-        "location": "Online",
-        "status": "finished",
-        "prizes": [
-          {
-            "category": "Best Overall Project",
-            "amount": "$3,000"
-          },
-          {
-            "category": "Most Innovative Solution",
-            "amount": "$2,000"
-          }
-        ],
-        "organizers": ["GDSC RCCIIT"],
-        "participants": 150
+          "title": "GDSC RCCIIT Event : #1",
+          "date": "18 Jul 2024",
+          "heading": "Session Highlights",
+          "description1": "🔍 Live GitHub Profile Reviews: Get feedback on your GitHub profile.",
+          "description2": "💡 Tips to Enhance Your GitHub: Learn valuable tips and tricks to make your profile stand out.",
+          "videoSrc": "https://www.youtube.com/embed/H6sHvucuphU?si=qJoRcNyq2GcC2z3C",
+          "id": "scroll1"
       },
       {
-        "id": "2",
-        "title": "Web Development Bootcamp",
-        "description": "A three-day intensive bootcamp to learn web development from scratch.",
-        "date": {
-          "start": "2024-09-10T09:00:00Z",
-          "end": "2024-09-12T17:00:00Z"
-        },
-        "location": "RCCIIT Campus",
-        "status": "finished",
-        "organizers": ["GDSC RCCIIT"],
-        "participants": 50
+          "title": "GDSC RCCIIT Event : #2",
+          "date": "18 Jul 2024",
+          "heading": "Session Highlights",
+          "description1": "🔍 Live GitHub Profile Reviews: Get feedback on your GitHub profile.",
+          "description2": "💡 Tips to Enhance Your GitHub: Learn valuable tips and tricks to make your profile stand out.",
+          "videoSrc": "https://www.youtube.com/embed/H6sHvucuphU?si=qJoRcNyq2GcC2z3C",
+          "id": "scroll2"
       },
       {
-        "id": "3",
-        "title": "AI & ML Workshop",
-        "description": "A hands-on workshop on artificial intelligence and machine learning concepts.",
-        "date": {
-          "start": "2024-10-15T09:00:00Z",
-          "end": "2024-10-30T17:00:00Z"
-        },
-        "location": "Online",
-        "status": "ongoing",
-        "organizers": ["GDSC RCCIIT"],
-        "participants": 80
-      },
-      {
-        "id": "4",
-        "title": "Cloud Computing Seminar",
-        "description": "An interactive seminar discussing cloud computing trends and best practices.",
-        "date": {
-          "start": "2024-11-05T14:00:00Z",
-          "end": "2024-11-05T16:00:00Z"
-        },
-        "location": "Online",
-        "status": "upcoming",
-        "registrationLink": "https://example.com/register-cloud-seminar",
-        "organizers": ["GDSC RCCIIT"],
-        "participants": 0
-      },
-      {
-        "id": "5",
-        "title": "Mobile App Development Workshop",
-        "description": "Learn to build mobile applications using Flutter in this hands-on workshop.",
-        "date": {
-          "start": "2024-11-15T10:00:00Z",
-          "end": "2024-11-17T17:00:00Z"
-        },
-        "location": "RCCIIT Campus",
-        "status": "upcoming",
-        "registrationLink": "https://example.com/register-mobile-workshop",
-        "organizers": ["GDSC RCCIIT"],
-        "participants": 0
+          "title": "GDSC RCCIIT Event : #3",
+          "date": "18 Jul 2024",
+          "heading": "Session Highlights",
+          "description1": "🔍 Live GitHub Profile Reviews: Get feedback on your GitHub profile.",
+          "description2": "💡 Tips to Enhance Your GitHub: Learn valuable tips and tricks to make your profile stand out.",
+          "videoSrc": "https://www.youtube.com/embed/H6sHvucuphU?si=qJoRcNyq2GcC2z3C",
+          "id": "scroll3"
       }
-    ]
+  ]
 }
