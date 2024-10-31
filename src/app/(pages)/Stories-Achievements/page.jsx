@@ -1,8 +1,6 @@
 "use client";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import achievements from "./achievements"
-import mentors from "./mentors"
 
 const Container = styled.div`
   padding: 40px;
@@ -96,7 +94,24 @@ const ConnectButton = styled.button`
 `;
 
 const Mentorship = () => {
-    return (
+  const [achievements, setAchievements] = useState([]);
+  const [mentors, setMentors] = useState([]);
+
+  useEffect(() => {
+    // Fetch achievements
+    fetch('http://localhost:5000/achievements')
+      .then((response) => response.json())
+      .then((data) => setAchievements(data))
+      .catch((error) => console.error("Error fetching achievements:", error));
+
+    // Fetch mentors
+    fetch('http://localhost:5000/mentors')
+      .then((response) => response.json())
+      .then((data) => setMentors(data))
+      .catch((error) => console.error("Error fetching mentors:", error));
+  }, []);
+
+return (
         <Container>
             <SectionTitle>Stories from the Community</SectionTitle>
             <Subtitle>Get inspired by the clever ways people are using Google technology.</Subtitle>
