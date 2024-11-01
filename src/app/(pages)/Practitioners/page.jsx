@@ -50,25 +50,6 @@ const DevelopersPractitionersPage = () => {
                     Load more stories
                 </button>
             </div>
-
-            {/* Footer Section */}
-            <footer className="bg-gray-900 text-gray-400 py-16">
-                <div className="max-w-7xl mx-auto px-8 text-center">
-                    <p className="text-lg mb-6">Follow us:</p>
-                    <div className="flex justify-center space-x-6 mb-10">
-                        <a href="#"><img src="/images/instagram-icon.png" alt="Instagram" className="w-6 h-6 hover:text-white transition-all" /></a>
-                        <a href="#"><img src="/images/twitter-icon.png" alt="Twitter" className="w-6 h-6 hover:text-white transition-all" /></a>
-                        <a href="#"><img src="/images/linkedin-icon.png" alt="LinkedIn" className="w-6 h-6 hover:text-white transition-all" /></a>
-                    </div>
-                    <ul className="flex justify-center space-x-8 mb-8">
-                        <li><a href="#" className="hover:text-white">Google Cloud Products</a></li>
-                        <li><a href="#" className="hover:text-white">Privacy</a></li>
-                        <li><a href="#" className="hover:text-white">Terms</a></li>
-                        <li><a href="#" className="hover:text-white">Help</a></li>
-                    </ul>
-                    <p className="text-sm">© 2024 Google Cloud</p>
-                </div>
-            </footer>
         </div>
     );
 };
@@ -79,14 +60,12 @@ const articles = [
         category: "AI & Machine Learning",
         author: "Keith Ballinger",
         readTime: "2-minute read",
-        image: "/images/github-copilot.png",
     },
     {
         title: "Highlights from the 10th DORA report",
         category: "DevOps & SRE",
         author: "Nathen Harvey",
         readTime: "6-minute read",
-        image: "/images/dora-report.png",
     },
     {
         title: "How to protect your site from DDoS attacks with the power of Google Cloud networking and network security",
