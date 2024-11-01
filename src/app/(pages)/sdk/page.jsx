@@ -79,25 +79,6 @@ const FrameworksIDEsSDKsPage = () => {
                 </div>
             </div>
 
-            {/* Footer Section */}
-            <footer className="mt-32 py-16 bg-gray-900 text-gray-400">
-                <div className="max-w-7xl mx-auto px-8 text-center">
-                    <div className="mb-10">
-                        <p className="text-lg">Connect with us:</p>
-                        <div className="flex justify-center space-x-6 mt-4">
-                            <a href="#"><img src="/images/instagram-icon.png" alt="Instagram" className="w-6 h-6 hover:text-white transition-all" /></a>
-                            <a href="#"><img src="/images/twitter-icon.png" alt="Twitter" className="w-6 h-6 hover:text-white transition-all" /></a>
-                            <a href="#"><img src="/images/linkedin-icon.png" alt="LinkedIn" className="w-6 h-6 hover:text-white transition-all" /></a>
-                            <a href="#"><img src="/images/mail-icon.png" alt="Email" className="w-6 h-6 hover:text-white transition-all" /></a>
-                        </div>
-                    </div>
-                    <ul className="flex justify-center space-x-8 mb-8">
-                        <li><a href="#" className="hover:text-white">Privacy</a></li>
-                        <li><a href="#" className="hover:text-white">Terms</a></li>
-                    </ul>
-                    <p className="text-sm">© 2024 Google - Frameworks, IDEs and SDKs</p>
-                </div>
-            </footer>
         </div>
     );
 };
