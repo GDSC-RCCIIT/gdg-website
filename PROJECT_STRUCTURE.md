@@ -279,9 +279,6 @@
 │   ├── lib/
 │   │   ├── Hackathon.js
 │   │   ├── Projects.js
-│   │   ├── cpp-content.js
-│   │   ├── dsa-content.js
-│   │   ├── dsa-track-content.js
 │   │   └── utils.js
 │   └── public/
 │       └── GDSC-RCIIT Logo.png
