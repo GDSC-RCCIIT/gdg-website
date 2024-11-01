@@ -46,6 +46,8 @@ _(Screenshots will be added as the development progresses)_
 ## 🤝 Contribution Guidelines
 We welcome everyone to contribute to the GDG RCCIIT website! Please review our [CONTRIBUTING.md](link-to-your-contributing-guidelines) and [CODE_OF_CONDUCT.md](link-to-your-code-of-conduct) for more details on how to get involved.
 
+Each contributor can only have 3 issues assigned or created at a time. Any additional issues will be considered spam and will be closed.
+
 ## 🚀 Getting Started
 
 ### Prerequisites
