@@ -2,8 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import spotlightJobs from './opportunities';
 import Link from 'next/link';
+import axios from 'axios';
 // Hero Component
 const Hero = () => {
+
   return (
     <div className="relative h-[600px] bg-white overflow-hidden border border-gray-200">
       {/* Background Grid and Decorative Elements */}
@@ -55,31 +57,26 @@ const Hero = () => {
 
 // Spotlight Component
 const Spotlight = () => {
-  const [spotlightJobs, setSpotlightJobs] = useState([]);
+  const [jobs, setJobs] = useState([]);
+  console.log("jobs", jobs);
 
   useEffect(() => {
-    // Fetch spotlight data from JSON server
-    const fetchSpotlightJobs = async () => {
-      try {
-        const response = await fetch('http://localhost:5000/spotlightJobs');
-        if (!response.ok) {
-          throw new Error('Failed to fetch spotlight jobs');
-        }
-        const data = await response.json();
-        setSpotlightJobs(data);
-      } catch (error) {
-        console.error('Error fetching spotlight jobs:', error);
-      }
-    };
-
-    fetchSpotlightJobs();
+    axios
+      .get("http://localhost:5000/careers")
+      .then((response) => {
+      setJobs(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
   }, []);
-
+  
   return (
     <div className="mt-16 flex flex-col items-center">
       <h2 className="text-3xl font-semibold mb-6">Spotlight</h2>
       <div className="flex space-x-4 overflow-x-auto pb-4">
-        {spotlightJobs.map((job) => (
+        {jobs.map((job) => (
           <Link key={job.id} href={`/careers/${job.id}`} className="bg-white shadow-lg rounded-lg p-6 w-72 transition-transform transform hover:scale-105 hover:shadow-xl">
             <h3 className="font-bold text-xl text-blue-600 mb-2">{job.title}</h3>
             <p className="text-gray-600 text-sm mb-4">{job.description}</p>
