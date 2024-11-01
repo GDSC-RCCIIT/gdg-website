@@ -95,7 +95,7 @@ const Footer = () => {
     <div className="mt-16 pt-8 border-t border-gray-200">
       <div className="flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-sm text-gray-600 text-center md:text-left">
-          © 2024 Google Developer Student Club - RCCIIT. All Rights Reserved.
+          © {new Date().getFullYear()} Google Developer Student Club - RCCIIT. All Rights Reserved.
         </p>
         <div className="flex items-center gap-2">
           <span className="text-sm text-gray-500">Made with</span>
