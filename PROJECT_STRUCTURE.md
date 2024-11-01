@@ -88,6 +88,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── AddProjects/
 │   │   │   │   └── page.jsx
+│   │   │   ├── AddSpotlight/
+│   │   │   │   └── page.jsx
 │   │   │   ├── Certifications/
 │   │   │   │   └── page.jsx
 │   │   │   ├── Chapters/
@@ -228,6 +230,7 @@
 │   │   │   ├── AddEventForm.jsx
 │   │   │   ├── AddHackathonForm.jsx
 │   │   │   ├── AddProjectsForm.jsx
+│   │   │   ├── AddSpotlightForm.jsx
 │   │   │   ├── Footer.jsx
 │   │   │   ├── Header.jsx
 │   │   │   ├── Hero.jsx
