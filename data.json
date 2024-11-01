@@ -667,5 +667,77 @@
           "videoSrc": "https://www.youtube.com/embed/H6sHvucuphU?si=qJoRcNyq2GcC2z3C",
           "id": "scroll3"
       }
-  ]
+    ],
+    "spotlightJobs":[
+        {
+            "id": "1",
+            "title": "Tech Innovations Summit 2024",
+            "description": "An annual event bringing together innovators and thought leaders in technology to discuss the latest advancements and opportunities.",
+            "date": {
+                "start": "2024-11-15",
+                "end": "2024-11-17"
+            },
+            "location": "San Francisco, CA",
+            "status": "Open",
+            "registrationLink": "https://techsummit2024.com/register",
+            "organizers": ["Tech Innovators", "Global Science Foundation"],
+            "participants": 500
+        },
+        {
+            "id": "2",
+            "title": "AI for Social Good Hackathon",
+            "description": "A weekend hackathon focused on developing AI solutions for social impact, open to students and professionals alike.",
+            "date": {
+                "start": "2024-12-02",
+                "end": "2024-12-04"
+            },
+            "location": "Virtual",
+            "status": "Closed",
+            "registrationLink": "https://aisocialgoodhackathon.com",
+            "organizers": ["AI4Good Foundation", "OpenAI"],
+            "participants": 300
+        },
+        {
+            "id": "3",
+            "title": "Blockchain & Cryptocurrency Workshop",
+            "description": "A hands-on workshop introducing participants to blockchain technology and cryptocurrency basics.",
+            "date": {
+                "start": "2024-11-22",
+                "end": "2024-11-23"
+            },
+            "location": "New York, NY",
+            "status": "Open",
+            "registrationLink": "https://blockchainworkshop.com",
+            "organizers": ["Crypto Academy", "Blockchain Innovators"],
+            "participants": 200
+        },
+        {
+            "id": "4",
+            "title": "Women in Tech Leadership Conference",
+            "description": "An empowering conference for women in tech to connect, learn, and lead in the technology sector.",
+            "date": {
+                "start": "2025-01-10",
+                "end": "2025-01-11"
+            },
+            "location": "Los Angeles, CA",
+            "status": "Upcoming",
+            "registrationLink": "https://womenintechconference.com",
+            "organizers": ["Women Who Code", "TechStars"],
+            "participants": 400
+        },
+        {
+            "id": "5",
+            "title": "Data Science Bootcamp",
+            "description": "A five-day bootcamp covering data science fundamentals, machine learning, and data analytics tools.",
+            "date": {
+                "start": "2025-02-05",
+                "end": "2025-02-10"
+            },
+            "location": "London, UK",
+            "status": "Open",
+            "registrationLink": "https://datasciencebootcamp.com",
+            "organizers": ["DataCamp", "Tech Academy"],
+            "participants": 150
+        }
+    ]
 }
