@@ -5,8 +5,9 @@ import { useRouter, useParams } from 'next/navigation';
 import resources from '../resources';
 import { cppContent } from '@/lib/cpp-content';
 import { dsaContent } from '@/lib/dsa-content';
-import { cpContent } from '@/lib/competitive_programming-content';
-import { cpTrackContent } from '@/lib/competitive_programming-track-content';
+// import { cpContent } from '@/lib/competitive_programming-content';
+// import { cpTrackContent } from '@/lib/competitive_programming-track-content';
+import { trackContents } from '@/lib/track-contents';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -99,28 +100,26 @@ function ResourceDetail() {
         return null;
     }
 
-    // Define learning track types
-    const isCppTrack = resource.id === 4;
-    const isDSATrack = resource.id === 5;
-    const isCompetitiveProgrammingTrack = resource.id === 6;
-    const isLearningTrack = isCppTrack || isDSATrack || isCompetitiveProgrammingTrack;
+   // Define learning track types
+const isCppTrack = resource.id === 4;
+const isDSATrack = resource.id === 5;
+const isCompetitiveProgrammingTrack = resource.id === 6;
 
-    // Get appropriate content based on track type
-    const getTrackContent = () => {
-        if (isCppTrack) return cppContent;
-        if (isDSATrack) return dsaContent;
-        if (isCompetitiveProgrammingTrack) return cpContent;
-        return null;
-    };
+// Get appropriate content based on track type
+const getTrackContent = () => {
+    if (!resource) return null;
+    return trackContents[resource.id]?.content || null;
+};
 
-    // Get track-specific description content
-    const getTrackDescription = () => {
-        if (isCompetitiveProgrammingTrack) return cpTrackContent;
-        return null;
-    };
+// Get track-specific info
+const getTrackInfo = () => {
+    if (!resource) return null;
+    return trackContents[resource.id]?.trackInfo || null;
+};
 
-    const content = getTrackContent();
-    const trackDescription = getTrackDescription();
+const content = getTrackContent();
+const trackInfo = getTrackInfo();
+const isLearningTrack = content !== null; // Single declaration of isLearningTrack
 
     return (
         <section className="bg-gray-50 text-black min-h-screen">
@@ -146,54 +145,52 @@ function ResourceDetail() {
 
                         {/* Introduction Tab */}
                         <TabsContent value="introduction">
-                            <Card>
-                                <CardHeader>
-                                    <CardTitle>{resource.title}</CardTitle>
-                                </CardHeader>
-                                <CardContent>
-                                    <div className="space-y-6">
-                                        <p className="text-gray-700 text-lg leading-relaxed">
-                                            {isCompetitiveProgrammingTrack && trackDescription 
-                                                ? trackDescription.extendedContent 
-                                                : resource.extendedContent}
-                                        </p>
-                                        {isCompetitiveProgrammingTrack && trackDescription && (
-                                            <>
-                                                <div className="mt-6">
-                                                    <h3 className="text-xl font-semibold mb-3">Prerequisites</h3>
-                                                    <ul className="list-disc pl-5 space-y-2">
-                                                        {trackDescription.content.prerequisites.map((prereq, index) => (
-                                                            <li key={index} className="text-gray-600">{prereq}</li>
-                                                        ))}
-                                                    </ul>
-                                                </div>
-                                                <div className="mt-6">
-                                                    <h3 className="text-xl font-semibold mb-3">Learning Outcomes</h3>
-                                                    <ul className="list-disc pl-5 space-y-2">
-                                                        {trackDescription.content.outcomes.map((outcome, index) => (
-                                                            <li key={index} className="text-gray-600">{outcome}</li>
-                                                        ))}
-                                                    </ul>
-                                                </div>
-                                                <div className="mt-6">
-                                                    <h3 className="text-xl font-semibold mb-3">Course Sections</h3>
-                                                    <div className="space-y-4">
-                                                        {trackDescription.content.sections.map((section, index) => (
-                                                            <div key={index} className="bg-gray-50 p-4 rounded-lg">
-                                                                <h4 className="font-semibold text-blue-600 mb-2">
-                                                                    {section.title}
-                                                                </h4>
-                                                                <p className="text-gray-600">{section.content}</p>
-                                                            </div>
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                            </>
-                                        )}
+    <Card>
+        <CardHeader>
+            <CardTitle>{resource.title}</CardTitle>
+        </CardHeader>
+        <CardContent>
+            <div className="space-y-6">
+                <p className="text-gray-700 text-lg leading-relaxed">
+                    {resource.extendedContent}
+                </p>
+                {trackInfo && (
+                    <>
+                        <div className="mt-6">
+                            <h3 className="text-xl font-semibold mb-3">Prerequisites</h3>
+                            <ul className="list-disc pl-5 space-y-2">
+                                {trackInfo.prerequisites.map((prereq, index) => (
+                                    <li key={index} className="text-gray-600">{prereq}</li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="mt-6">
+                            <h3 className="text-xl font-semibold mb-3">Learning Outcomes</h3>
+                            <ul className="list-disc pl-5 space-y-2">
+                                {trackInfo.outcomes.map((outcome, index) => (
+                                    <li key={index} className="text-gray-600">{outcome}</li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="mt-6">
+                            <h3 className="text-xl font-semibold mb-3">Course Sections</h3>
+                            <div className="space-y-4">
+                                {trackInfo.sections.map((section, index) => (
+                                    <div key={index} className="bg-gray-50 p-4 rounded-lg">
+                                        <h4 className="font-semibold text-blue-600 mb-2">
+                                            {section.title}
+                                        </h4>
+                                        <p className="text-gray-600">{section.content}</p>
                                     </div>
-                                </CardContent>
-                            </Card>
-                        </TabsContent>
+                                ))}
+                            </div>
+                        </div>
+                    </>
+                )}
+            </div>
+        </CardContent>
+    </Card>
+</TabsContent>
 
                         {/* Examples Tab */}
                         <TabsContent value="examples">
