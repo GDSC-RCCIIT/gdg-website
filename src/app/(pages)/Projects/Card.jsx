@@ -1,6 +1,7 @@
-import React from 'react';
-import { FaGithub, FaYoutube } from 'react-icons/fa';
-import Image from 'next/image';
+import React from "react";
+import { FaGithub, FaYoutube } from "react-icons/fa";
+import Image from "next/image";
+import Link from "next/link";
 
 function Card(props) {
   return (
@@ -17,7 +18,16 @@ function Card(props) {
 
       {/* Content Section */}
       <div className="px-6 py-4 flex-grow">
-        <div className="font-bold text-2xl text-gray-800 mb-3">{props.title}</div>
+        <Link
+          href={{
+            pathname: `/Projects/${props.title}`,
+            query: { id: props.id },
+          }}
+        >
+          <div className="font-bold text-2xl text-gray-800 mb-3">
+            {props.title}
+          </div>
+        </Link>
         <p className="text-gray-700 text-sm leading-relaxed overflow-hidden h-full line-clamp-4">
           {props.description}
         </p>

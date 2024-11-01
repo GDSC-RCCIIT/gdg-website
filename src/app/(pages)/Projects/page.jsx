@@ -1,16 +1,17 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import Card from './Card.jsx';
-import { projectData } from '../../../lib/Projects';
-import { motion } from 'framer-motion';
-import axios from 'axios';
+"use client";
+import React, { useState, useEffect } from "react";
+import Card from "./Card.jsx";
+import { projectData } from "../../../lib/Projects";
+import { motion } from "framer-motion";
+import axios from "axios";
 
 function ProjectsPage() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [loading, setLoading] = useState(true); 
-  const filteredProjects = projectData.filter((project) =>
-    project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    project.description.toLowerCase().includes(searchQuery.toLowerCase())
+  const [searchQuery, setSearchQuery] = useState("");
+  const [loading, setLoading] = useState(true);
+  const filteredProjects = projectData.filter(
+    (project) =>
+      project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   useEffect(() => {
@@ -36,7 +37,10 @@ function ProjectsPage() {
   const ProjectsSkeleton = () => (
     <div className="flex justify-center flex-wrap mt-8">
       {Array.from({ length: 4 }).map((_, index) => (
-        <div key={index} className="w-full max-w-xs mx-2 mb-4 bg-gray-100 border border-gray-300 animate-pulse rounded-lg">
+        <div
+          key={index}
+          className="w-full max-w-xs mx-2 mb-4 bg-gray-100 border border-gray-300 animate-pulse rounded-lg"
+        >
           <div className="h-32 bg-gray-300 rounded-t-lg" />
 
           <div className="p-4">
@@ -68,7 +72,8 @@ function ProjectsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Explore our latest projects and get involved by contributing to open source on GitHub!
+            Explore our latest projects and get involved by contributing to open
+            source on GitHub!
           </motion.p>
         </div>
 
@@ -86,7 +91,7 @@ function ProjectsPage() {
         {loading ? (
           <ProjectsSkeleton />
         ) : (
-<div className="flex justify-center flex-wrap my-8">
+        <div className="flex justify-center flex-wrap my-8">
           {allProjects && allProjects.length > 0 ? (
             allProjects.map((project, index) => (
               <motion.div

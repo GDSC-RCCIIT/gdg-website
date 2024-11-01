@@ -1,3 +1,11 @@
+**This project is now OFFICIALLY accepted for**
+---
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/349f039e-8ecc-42da-863f-00c4fc531d39" alt="GirlScript Summer of Code" style="width:60%; margin-bottom: 20px;" />
+  <img src="https://github.com/user-attachments/assets/352ba700-4f8d-45cc-87e4-86fc569a2c78" alt="Hacktoberfest" style="width:60%;" />
+</div>
+
 # GDG RCCIIT Website 🚀
 
 ![image](https://github.com/user-attachments/assets/bba5659e-5d29-464a-ad33-63b7a2e9bd55)
@@ -104,6 +112,7 @@ To set up and run a JSON server for testing or development purposes, follow thes
 3. **Access the Server**:
    You can now access the JSON server at [http://localhost:5000](http://localhost:5000). This will serve your `data.json` file, and you can interact with it via API endpoints.
 
+
 ## 👀 Our Valuable Contributors 💖✨
 
 <div align="center">
@@ -111,6 +120,21 @@ To set up and run a JSON server for testing or development purposes, follow thes
     <img src="https://contrib.rocks/image?repo=GDSC-RCCIIT/gdg-website&max=100" />
   </a>
 </div>
+
+
+## 💗 Forkers
+
+[![Forkers repo roster for @GDSC-RCCIIT/gdg-website](https://reporoster.com/forks/GDSC-RCCIIT/gdg-website)](https://github.com/GDSC-RCCIIT/gdg-website/network/members)
+
+
+## ⭐ Stargazers
+
+<div align='left'>
+
+[![Stargazers repo roster for @GDSC-RCCIIT/gdg-website](https://reporoster.com/stars/GDSC-RCCIIT/gdg-website)](https://github.com/GDSC-RCCIIT/gdg-website/stargazers)
+
+</div>
+
 
 ## 🎉 Happy Coding!
 

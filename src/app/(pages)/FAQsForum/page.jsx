@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FAQs } from "./FAQs";
 import { posts as initialPosts } from "./Posts";
 import "./Posts.css";
+import { motion } from "framer-motion";
 
 const FAQForum = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -46,27 +47,49 @@ const FAQForum = () => {
     setSortAsc(!sortAsc);
   };
   return (
-    <div className="min-h-screen p-8 bg-gray-50">
+    <motion.div
+      className="min-h-screen p-8 bg-gray-50"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="max-w-5xl mx-auto">
-        <div className="text-center pt-6">
+        <motion.div
+          className="text-center pt-6"
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
           <h1 className="text-5xl font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
             FAQs & Forum
           </h1>
-          <div className="mt-2 mx-auto w-54 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded"></div>
-        </div>
+          <motion.div
+            className="mt-2 mx-auto w-54 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.5 }}
+          />
+        </motion.div>
 
         {/* FAQs Section */}
-        <section className="mb-16 mt-10">
+        <motion.section
+          className="mb-16 mt-10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
           <h2 className="text-4xl font-semibold text-indigo-600 mb-8 text-center">
             Frequently Asked Questions
           </h2>
           <div className="space-y-6">
             {FAQs.map((faq, index) => (
-              <div
+              <motion.div
                 key={index}
-                className={`transition duration-300 ease-in-out rounded-lg shadow-md ${
-                  cardColors[index % cardColors.length]
-                }`}
+                className={`transition duration-300 ease-in-out rounded-lg shadow-md ${cardColors[index % cardColors.length]
+                  }`}
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.4 }}
               >
                 <button
                   className="w-full text-left p-5 text-white rounded-lg focus:outline-none"
@@ -76,29 +99,29 @@ const FAQForum = () => {
                     <span className="text-lg font-semibold">
                       {faq.question}
                     </span>
-                    {/* Icon rotation logic */}
                     <span
-                      className={`text-3xl transition-transform duration-300 transform ${
-                        activeIndex === index ? "rotate-180" : ""
-                      }`}
+                      className={`text-3xl transition-transform duration-300 transform ${activeIndex === index ? "rotate-180" : ""
+                        }`}
                     >
                       +
                     </span>
                   </div>
                 </button>
-                <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    activeIndex === index ? "max-h-96" : "max-h-0"
-                  }`}
+                <motion.div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${activeIndex === index ? "max-h-96" : "max-h-0"
+                    }`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: activeIndex === index ? 1 : 0 }}
+                  transition={{ duration: 0.4 }}
                 >
                   <div className="p-5 bg-white rounded-lg mt-2 shadow-inner text-gray-600 border-l-4 border-indigo-600">
                     {faq.answer}
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Forum Section */}
         <section>
@@ -128,16 +151,21 @@ const FAQForum = () => {
                 required
               />
             </div>
-            <button
+            <motion.button
               type="submit"
               className="mt-4 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 transition duration-300 ease-in-out"
+              whileHover={{ scale: 1.05 }}
             >
               Submit Post
-            </button>
+            </motion.button>
           </form>
 
           {/* All Posts */}
-          <section>
+          <motion.section
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-4xl font-semibold text-indigo-600">
                 All Posts
@@ -152,34 +180,34 @@ const FAQForum = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {posts.map((post, index) => (
-                <div
+                <motion.div
                   key={post.id}
                   className={`relative w-full perspective transition-transform duration-300 hover:scale-105`}
+                  whileHover={{ scale: 1.05 }}
                 >
-                  <div className="relative w-full h-64 transform-style-3d transition-transform duration-700 hover:rotate-y-180">
-                    {/* Front of the Card */}
+                  <motion.div
+                    className="relative w-full h-64 transform-style-3d transition-transform duration-700 hover:rotate-y-180"
+                    initial={{ rotateY: 0 }}
+                    whileHover={{ rotateY: 180 }}
+                  >
                     <div
-                      className={`absolute inset-0 p-6 rounded-lg shadow-lg backface-hidden flex items-center justify-center overflow-hidden transition duration-300 ease-in-out hover:shadow-xl ${
-                        cardColors[index % cardColors.length]
-                      }`}
+                      className={`absolute inset-0 p-6 rounded-lg shadow-lg backface-hidden flex items-center justify-center overflow-hidden transition duration-300 ease-in-out hover:shadow-xl ${cardColors[index % cardColors.length]
+                        }`}
                     >
                       <h3 className="text-xl font-semibold text-white text-center">
                         {post.title}
                       </h3>
                     </div>
 
-                    {/* Back of the Card */}
                     <div
-                      className={`absolute inset-0 p-6 rounded-lg shadow-lg rotate-y-180 backface-hidden flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out hover:shadow-xl ${
-                        cardColors[(index + 1) % cardColors.length]
-                      }`}
+                      className={`absolute inset-0 p-6 rounded-lg shadow-lg rotate-y-180 backface-hidden flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out hover:shadow-xl ${cardColors[(index + 1) % cardColors.length]
+                        }`}
                     >
                       <p
-                        className={`text-white  h-full transition-all duration-300 ${
-                          expandedPosts.includes(post.id)
+                        className={`text-white  h-full transition-all duration-300 ${expandedPosts.includes(post.id)
                             ? "h-auto"
                             : "h-16 overflow-hidden"
-                        }`}
+                          }`}
                       >
                         {post.content}
                       </p>
@@ -197,14 +225,14 @@ const FAQForum = () => {
                         </button>
                       )}
                     </div>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               ))}
             </div>
-          </section>
+          </motion.section>
         </section>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
