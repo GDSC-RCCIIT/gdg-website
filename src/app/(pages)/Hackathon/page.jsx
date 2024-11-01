@@ -102,6 +102,9 @@ export default function ProjectsPage() {
                     <Card
                       title={hackathon.basicInformation.hackathonTitle}
                       description={hackathon.basicInformation.description}
+                      location={hackathon.basicInformation.location}
+                      prizePool={hackathon.prizesAndPerks.prizePool}
+                      teamSize={hackathon.registrationAndParticipation.teamSize}
                       image="/img1.jpg"
                       registrationDeadline={hackathon.registrationAndParticipation.registrationDeadline} // Display registration deadline
                     />

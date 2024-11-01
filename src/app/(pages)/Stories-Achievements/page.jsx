@@ -1,8 +1,16 @@
 "use client";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import achievements from "./achievements"
-import mentors from "./mentors"
+import { motion } from 'framer-motion'
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const cardHover = {
+  hover: { scale: 1.05 },
+};
 
 const Container = styled.div`
   padding: 40px;
@@ -96,41 +104,99 @@ const ConnectButton = styled.button`
 `;
 
 const Mentorship = () => {
-    return (
-        <Container>
-            <SectionTitle>Stories from the Community</SectionTitle>
-            <Subtitle>Get inspired by the clever ways people are using Google technology.</Subtitle>
-            <CardGrid>
-                {achievements.map((achieve, index) => (
-                    <Card key={index}>
-                        <CardImage src={achieve.imageUrl} alt={`${achieve.name} photo`} />
-                        <CardTitle>{achieve.name}</CardTitle>
-                        <CardContent><strong>Job:</strong> {achieve.job}</CardContent>
-                        <CardContent><strong>Project:</strong> {achieve.project}</CardContent>
-                        <CardContent><strong>Testimonial:</strong> "{achieve.testimonial}"</CardContent>
-                        <ReadMoreButton>Read now</ReadMoreButton>
-                    </Card>
-                ))}
-            </CardGrid>
+  const [achievements, setAchievements] = useState([]);
+  const [mentors, setMentors] = useState([]);
 
-            <SectionTitle style={{marginTop:"50px"}}>Meet the Mentors</SectionTitle>
-            <Subtitle>Our mentors are here to guide GDSC members in various fields.</Subtitle>
-            <CardGrid>
-                {mentors.map((mentor, index) => (
-                    <Card key={index}>
-                        <CardImage src={mentor.imageUrl} alt={`${mentor.name} photo`} />
-                        <CardTitle>{mentor.name}</CardTitle>
-                        <CardContent><strong>Position:</strong> {mentor.position}</CardContent>
-                        <CardContent>{mentor.bio}</CardContent>
-                        <ReadMoreButton>Read now</ReadMoreButton>
-                    </Card>
-                ))}
-            </CardGrid>
+  useEffect(() => {
+    // Fetch achievements
+    fetch('http://localhost:5000/achievements')
+      .then((response) => response.json())
+      .then((data) => setAchievements(data))
+      .catch((error) => console.error("Error fetching achievements:", error));
 
-            <SectionTitle style={{ marginTop: "50px" }}>Connect with GDSC Alumni</SectionTitle>
-            <Subtitle>Our GDSC members can connect with alumni for advice and career guidance.</Subtitle>
-            <ConnectButton>Connect with Alumni</ConnectButton>
-        </Container>
+    // Fetch mentors
+    fetch('http://localhost:5000/mentors')
+      .then((response) => response.json())
+      .then((data) => setMentors(data))
+      .catch((error) => console.error("Error fetching mentors:", error));
+  }, []);
+
+return (
+      <Container>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUp}
+          transition={{ duration: 0.5 }}
+        >
+          <SectionTitle>Stories from the Community</SectionTitle>
+          <Subtitle>Get inspired by the clever ways people are using Google technology.</Subtitle>
+          <CardGrid>
+            {achievements.map((achieve, index) => (
+              <motion.div
+                key={index}
+                variants={cardHover}
+                whileHover="hover"
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
+                <Card>
+                  <CardImage src={achieve.imageUrl} alt={`${achieve.name} photo`} />
+                  <CardTitle>{achieve.name}</CardTitle>
+                  <CardContent><strong>Job:</strong> {achieve.job}</CardContent>
+                  <CardContent><strong>Project:</strong> {achieve.project}</CardContent>
+                  <CardContent><strong>Testimonial:</strong> "{achieve.testimonial}"</CardContent>
+                  <ReadMoreButton>Read now</ReadMoreButton>
+                </Card>
+              </motion.div>
+            ))}
+          </CardGrid>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUp}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          style={{ marginTop: "50px" }}
+        >
+          <SectionTitle>Meet the Mentors</SectionTitle>
+          <Subtitle>Our mentors are here to guide GDSC members in various fields.</Subtitle>
+          <CardGrid>
+            {mentors.map((mentor, index) => (
+              <motion.div
+                key={index}
+                variants={cardHover}
+                whileHover="hover"
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
+                <Card>
+                  <CardImage src={mentor.imageUrl} alt={`${mentor.name} photo`} />
+                  <CardTitle>{mentor.name}</CardTitle>
+                  <CardContent><strong>Position:</strong> {mentor.position}</CardContent>
+                  <CardContent>{mentor.bio}</CardContent>
+                  <ReadMoreButton>Read now</ReadMoreButton>
+                </Card>
+              </motion.div>
+            ))}
+          </CardGrid>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUp}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          style={{ marginTop: "50px" }}
+        >
+          <SectionTitle>Connect with GDSC Alumni</SectionTitle>
+          <Subtitle>Our GDSC members can connect with alumni for advice and career guidance.</Subtitle>
+          <ConnectButton>Connect with Alumni</ConnectButton>
+        </motion.div>
+      </Container>
     );
 };
 
