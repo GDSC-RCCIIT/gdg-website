@@ -1,49 +1,90 @@
+"use client"
 import React from 'react';
+import { motion } from 'framer-motion'; // Importing motion
 import { MapPin, Laptop } from 'lucide-react';
 
 // Redesigned Hero Component with new content and creative layout
 const Hero = () => {
     return (
-        <div className="relative h-[700px] bg-gradient-to-r from-blue-600 to-indigo-600 overflow-hidden border-b border-gray-300">
+        <motion.div
+            className="relative h-[700px] bg-gradient-to-r from-blue-600 to-indigo-600 overflow-hidden border-b border-gray-300"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+        >
             {/* Background Elements */}
-            <div
+            <motion.div
                 className="absolute inset-0 bg-opacity-70 flex justify-center items-center text-white"
                 style={{
                     backgroundImage: `
-                        radial-gradient(circle at top left, rgba(255,255,255,0.2), transparent),
-                        linear-gradient(160deg, rgba(255,255,255,0.1), rgba(255,255,255,0) 80%)`,
+                    radial-gradient(circle at top left, rgba(255,255,255,0.2), transparent),
+                    linear-gradient(160deg, rgba(255,255,255,0.1), rgba(255,255,255,0) 80%)`,
                 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
             >
                 {/* Layered geometric elements */}
-                <div className="absolute top-[-50px] left-[100px] h-40 w-40 bg-white rounded-full opacity-10"></div>
-                <div className="absolute top-[200px] right-[100px] h-28 w-28 bg-blue-500 rounded-lg transform rotate-45 opacity-20"></div>
-                <div className="absolute bottom-[-60px] left-[200px] h-[220px] w-[220px] bg-indigo-500 rounded-full opacity-20"></div>
-            </div>
+                <motion.div
+                    className="absolute top-[-50px] left-[100px] h-40 w-40 bg-white rounded-full opacity-10"
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 0.1 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                />
+                <motion.div
+                    className="absolute top-[200px] right-[100px] h-28 w-28 bg-blue-500 rounded-lg transform rotate-45 opacity-20"
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 0.2 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                />
+                <motion.div
+                    className="absolute bottom-[-60px] left-[200px] h-[220px] w-[220px] bg-indigo-500 rounded-full opacity-20"
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 0.2 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                />
+            </motion.div>
 
             {/* Content Section */}
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-8">
-                <h1 className="text-6xl font-bold text-white leading-snug">
+                <motion.h1
+                    className="text-6xl font-bold text-white leading-snug"
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                >
                     Stories that Inspire, Connect, and Empower
-                </h1>
-                <p className="mt-6 max-w-2xl text-lg text-gray-100 leading-relaxed">
+                </motion.h1>
+                <motion.p
+                    className="mt-6 max-w-2xl text-lg text-gray-100 leading-relaxed"
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                >
                     Dive into inspiring journeys from developers worldwide. Explore their achievements, challenges, and the powerful impact of the global developer community.
-                </p>
+                </motion.p>
                 <div className="mt-10 space-x-4">
-                    <a
+                    <motion.a
                         href="#featured-stories"
                         className="inline-block px-8 py-3 text-blue-800 bg-white rounded-md hover:bg-gray-100 font-semibold"
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
                     >
                         Explore Stories
-                    </a>
-                    <a
+                    </motion.a>
+                    <motion.a
                         href="#share-your-story"
                         className="inline-block px-8 py-3 text-white border-2 border-gray-200 rounded-md hover:bg-gray-200 bg-opacity-20"
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
                     >
                         Share Your Story
-                    </a>
+                    </motion.a>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
@@ -81,11 +122,22 @@ const Spotlight = () => {
     ];
 
     return (
-        <div className="mt-16 flex flex-col items-center">
+        <motion.div
+            className="mt-16 flex flex-col items-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+        >
             <h2 className="text-4xl font-semibold mb-6 text-gray-800">Featured Stories</h2>
             <div className="flex space-x-4 overflow-x-auto pb-4">
                 {spotlightStories.map((story, index) => (
-                    <div key={index} className="bg-white shadow-lg rounded-lg p-4 w-80">
+                    <motion.div
+                        key={index}
+                        className="bg-white shadow-lg rounded-lg p-4 w-80"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3, delay: index * 0.1 }}
+                    >
                         <img src={story.image} alt={story.title} className="rounded-t-lg w-full h-40 object-cover" />
                         <div className="mt-4">
                             <h3 className="font-bold text-2xl">{story.title}</h3>
@@ -99,21 +151,31 @@ const Spotlight = () => {
                                 <span>{story.date}</span>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
-        </div>
+        </motion.div>
     );
 };
 
 // Path to Success Section with new design and thematic content
 const PathToSuccess = () => {
     return (
-        <section className="py-12 px-6 md:px-16 mx-auto max-w-screen-xl">
+        <motion.section
+            className="py-12 px-6 md:px-16 mx-auto max-w-screen-xl"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+        >
             <h2 className="text-4xl font-bold text-center mb-12 text-indigo-600">Why Our Stories Matter</h2>
 
             {/* Inspire */}
-            <div className="flex flex-col md:flex-row items-center mb-16">
+            <motion.div
+                className="flex flex-col md:flex-row items-center mb-16"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+            >
                 <img
                     src="/story5.png"
                     alt="Inspire"
@@ -125,10 +187,15 @@ const PathToSuccess = () => {
                         Discover how developers worldwide are using technology to solve real-world problems and inspire others to create change.
                     </p>
                 </div>
-            </div>
+            </motion.div>
 
             {/* Connect */}
-            <div className="flex flex-col md:flex-row-reverse items-center mb-16">
+            <motion.div
+                className="flex flex-col md:flex-row-reverse items-center mb-16"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+            >
                 <img
                     src="/story6.png"
                     alt="Connect"
@@ -140,27 +207,32 @@ const PathToSuccess = () => {
                         From local meetups to global conferences, learn how communities help developers connect, share, and grow together.
                     </p>
                 </div>
-            </div>
+            </motion.div>
 
             {/* Empower */}
-            <div className="flex flex-col md:flex-row items-center mb-16">
+            <motion.div
+                className="flex flex-col md:flex-row items-center mb-16"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+            >
                 <img
                     src="/story7.png"
                     alt="Empower"
                     className="w-full md:w-1/2 h-64 object-contain rounded-lg transition-transform duration-300 hover:scale-105"
                 />
                 <div className="md:ml-8 text-center md:text-left mt-6 md:mt-0 md:w-1/2">
-                    <h3 className="text-4xl font-semibold text-gray-800 mb-4">🚀 Empower Future Innovators</h3>
+                    <h3 className="text-4xl font-semibold text-gray-800 mb-4">🚀 Empower Innovators</h3>
                     <p className="text-xl text-gray-600 leading-relaxed">
-                        By sharing stories, we empower the next generation of innovators to take bold steps in their technology careers.
+                        Empower the next generation of developers by sharing their stories, challenges, and triumphs in the tech world.
                     </p>
                 </div>
-            </div>
-        </section>
+            </motion.div>
+        </motion.section>
     );
 };
 
-// Main Page Component
+// Main StoriesPage component bringing together all sections
 const StoriesPage = () => {
     return (
         <div>

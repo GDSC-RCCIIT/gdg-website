@@ -78,11 +78,40 @@ We welcome everyone to contribute to the GDG RCCIIT website! Please review our [
 
 ## 🛠️ Technologies Used
 - **Next.js**: For server-side rendering (SSR) and static site generation (SSG).
-
+- **Json-Server**: For the backend and running the project locally.
 - **Tailwind CSS**: For responsive, utility-first CSS design.
 - **Supabase**: Provides real-time backend services and user authentication.
 - **Cloudinary**: Handles cloud-based image storage and media optimization.
- 
+
+## 📂 How to Run the JSON Server
+
+To set up and run a JSON server for testing or development purposes, follow these steps:
+
+### Prerequisites
+- **Node.js**: Ensure you have Node.js installed on your machine.
+
+### Installation
+1. **Install JSON Server and CORS**:
+   Open your terminal and run the following command to install `json-server` and `cors`:
+   ```bash
+   npm install -g json-server cors
+   ```
+
+### Running the JSON Server
+1. **Navigate to your project directory**:
+   ```bash
+   cd path/to/your/project
+   ```
+
+2. **Run the JSON Server**:
+   Execute the following command to start the JSON server:
+   ```bash
+   npx json-server data.json --port 5000
+   ```
+
+3. **Access the Server**:
+   You can now access the JSON server at [http://localhost:5000](http://localhost:5000). This will serve your `data.json` file, and you can interact with it via API endpoints.
+
 
 ## 👀 Our Valuable Contributors 💖✨
 
@@ -91,6 +120,21 @@ We welcome everyone to contribute to the GDG RCCIIT website! Please review our [
     <img src="https://contrib.rocks/image?repo=GDSC-RCCIIT/gdg-website&max=100" />
   </a>
 </div>
+
+
+## 💗 Forkers
+
+[![Forkers repo roster for @GDSC-RCCIIT/gdg-website](https://reporoster.com/forks/GDSC-RCCIIT/gdg-website)](https://github.com/GDSC-RCCIIT/gdg-website/network/members)
+
+
+## ⭐ Stargazers
+
+<div align='left'>
+
+[![Stargazers repo roster for @GDSC-RCCIIT/gdg-website](https://reporoster.com/stars/GDSC-RCCIIT/gdg-website)](https://github.com/GDSC-RCCIIT/gdg-website/stargazers)
+
+</div>
+
 
 ## 🎉 Happy Coding!
 

@@ -5,6 +5,7 @@ import SendIcon from '@mui/icons-material/Send';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { motion } from 'framer-motion';
 
 export default function GeminiAI() {
     const [userInput, setUserInput] = useState('');
@@ -94,71 +95,101 @@ export default function GeminiAI() {
 
     return (
         <Container style={{ marginTop: '6rem', marginBottom: '2rem' }}>
-            <Paper elevation={3} style={{ padding: '1.5rem', borderRadius: '8px' }}>
-                <h1 className="m-2 text-5xl text-center font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
-                    Gemini AI Chat
-                </h1>
-                <Box
-                    ref={chatContainerRef}
-                    style={{
-                        height: '60vh',
-                        overflowY: 'auto',
-                        padding: '1rem',
-                        backgroundColor: '#f1f1f1',
-                        borderRadius: '8px',
-                        marginBottom: '1rem',
-                    }}
-                >
-                    <List>
-                        {chatHistory.map((msg, index) => (
-                            <ListItem
-                                key={index}
-                                alignItems="flex-start"
-                                style={{
-                                    display: 'flex',
-                                    justifyContent: msg.sender === "User" ? 'flex-end' : 'flex-start',
-                                }}
-                            >
-                                <Paper
-                                    elevation={1}
-                                    style={{
-                                        padding: '0.01rem 1rem',
-                                        borderRadius: '5px',
-                                        backgroundColor: msg.sender === "User" ? '#1976d2' : '#e0e0e0',
-                                        color: msg.sender === "User" ? 'white' : 'black',
-                                        maxWidth: '70%',
-                                    }}
-                                >
-                                    <ListItemText
-                                        primary={formatMessage(msg.text)}
-                                        secondary={msg.sender === "User" ? "" : msg.sender}
-                                        secondaryTypographyProps={{
-                                            style: { color: msg.sender === "User" ? '#bbdefb' : '#757575' },
-                                        }}
-                                    />
-                                </Paper>
-                            </ListItem>
-                        ))}
-                    </List>
-                </Box>
-                <Divider />
-                <Stack direction="row" spacing={2} style={{ marginTop: '1rem' }}>
-                    <TextField
-                        fullWidth
-                        variant="outlined"
-                        value={userInput}
-                        onChange={(e) => setUserInput(e.target.value)}
-                        placeholder="Type a message..."
-                        style={{ backgroundColor: 'white', borderRadius: '4px' }}
-                    />
-                    <Button type="submit" variant="contained" color="primary" endIcon={<SendIcon />} onClick={handleSubmit}>
-                        Send
-                    </Button>
-                    <Button variant="outlined" color="secondary" onClick={handleClearChat}>
-                        Clear
-                    </Button>
-                </Stack>
-            </Paper>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+                <Paper elevation={3} style={{ padding: '1.5rem', borderRadius: '8px' }}>
+                    <motion.h1
+                        className="m-2 text-5xl text-center font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
+                        initial={{ y: -20, opacity: 0 }} // Animation for the header
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        Gemini AI Chat
+                    </motion.h1>
+                    <motion.div
+                        initial={{ opacity: 0 }} // Animation for the chat box
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                    >
+                        <Box
+                            ref={chatContainerRef}
+                            style={{
+                                height: '60vh',
+                                overflowY: 'auto',
+                                padding: '1rem',
+                                backgroundColor: '#f1f1f1',
+                                borderRadius: '8px',
+                                marginBottom: '1rem',
+                            }}
+                        >
+                            <List>
+                                {chatHistory.map((msg, index) => (
+                                    <motion.div
+                                        key={index}
+                                        initial={{ opacity: 0 }} // Animation for each message
+                                        animate={{ opacity: 1 }}
+                                        transition={{ duration: 0.3, delay: index * 0.1 }} // Stagger the appearance of messages
+                                        style={{ marginBottom: '0.5rem' }}
+                                    >
+                                        <ListItem
+                                            alignItems="flex-start"
+                                            style={{
+                                                display: 'flex',
+                                                justifyContent: msg.sender === "User" ? 'flex-end' : 'flex-start',
+                                            }}
+                                        >
+                                            <Paper
+                                                elevation={1}
+                                                style={{
+                                                    padding: '0.01rem 1rem',
+                                                    borderRadius: '5px',
+                                                    backgroundColor: msg.sender === "User" ? '#1976d2' : '#e0e0e0',
+                                                    color: msg.sender === "User" ? 'white' : 'black',
+                                                    maxWidth: '70%',
+                                                }}
+                                            >
+                                                <ListItemText
+                                                    primary={formatMessage(msg.text)}
+                                                    secondary={msg.sender === "User" ? "" : msg.sender}
+                                                    secondaryTypographyProps={{
+                                                        style: { color: msg.sender === "User" ? '#bbdefb' : '#757575' },
+                                                    }}
+                                                />
+                                            </Paper>
+                                        </ListItem>
+                                    </motion.div>
+                                ))}
+                            </List>
+                        </Box>
+                    </motion.div>
+                    <Divider />
+                    <Stack direction="row" spacing={2} style={{ marginTop: '1rem' }}>
+                        {/* <motion.div
+                            initial={{ opacity: 0 }} // Animation for the input field
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.5, delay: 0.4 }} // Slight delay for the input field
+                        > */}
+                            <TextField
+                                fullWidth
+                                variant="outlined"
+                                value={userInput}
+                                onChange={(e) => setUserInput(e.target.value)}
+                                placeholder="Type a message..."
+                                style={{ backgroundColor: 'white', borderRadius: '4px' }}
+                            />
+                        {/* </motion.div> */}
+                        {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}> */}
+                            <Button type="submit" variant="contained" color="primary" endIcon={<SendIcon />} onClick={handleSubmit}>
+                                Send
+                            </Button>
+                        {/* </motion.div> */}
+                        {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}> */}
+                            <Button variant="outlined" color="secondary" onClick={handleClearChat}>
+                                Clear
+                            </Button>
+                        {/* </motion.div> */}
+                    </Stack>
+                </Paper>
+            </motion.div>
             <ToastContainer />
         </Container>
     );

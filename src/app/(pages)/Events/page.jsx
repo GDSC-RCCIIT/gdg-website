@@ -5,58 +5,25 @@ import EventItem from './EventItem';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 
-
 const EventsPage = () => {
-    const events = [
-        {
-            title: 'GDSC RCCIIT Event : #1',
-            date: '18 Jul 2024',
-            description: (
-                <>
-                    Session Highlights:
-                    <br />
-                    🔍 Live GitHub Profile Reviews: Get feedback on your GitHub profile.
-                    <br />
-                    💡 Tips to Enhance Your GitHub: Learn valuable tips and tricks to make your profile stand out.
-                </>
-            ),
-            videoSrc: 'https://www.youtube.com/embed/H6sHvucuphU?si=qJoRcNyq2GcC2z3C',
-            id: 'scroll1',
-        },
-        {
-            title: 'GDSC RCCIIT Event : #2',
-            date: '21 Jul 2024',
-            description: (
-                <>
-                    Session Highlights:
-                    <br />
-                    🔍 Live GitHub Profile Reviews: Get feedback on your GitHub profile.
-                    <br />
-                    💡 Tips to Enhance Your GitHub: Learn valuable tips and tricks to make your profile stand out.
-                </>
-            ),
-            videoSrc: 'https://www.youtube.com/embed/H6sHvucuphU?si=qJoRcNyq2GcC2z3C',
-            id: 'scroll2',
-        },
-        {
-            title: 'GDSC RCCIIT Event : #3',
-            date: '7 Aug 2024',
-            description: (
-                <>
-                    Session Highlights:
-                    <br />
-                    🔍 Live GitHub Profile Reviews: Get feedback on your GitHub profile.
-                    <br />
-                    💡 Tips to Enhance Your GitHub: Learn valuable tips and tricks to make your profile stand out.
-                </>
-            ),
-            videoSrc: 'https://www.youtube.com/embed/H6sHvucuphU?si=qJoRcNyq2GcC2z3C',
-            id: 'scroll3',
-        },
-    ];
+    const [allEvents, setAllEvents] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const scrollItems = events.map(event => event.id);
+        axios
+            .get("http://localhost:5000/events")
+            .then((response) => {
+                console.log(response.data)
+                setAllEvents(response.data);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.error("Error fetching data:", error);
+            });
+    }, []);
+
+    useEffect(() => {
+        const scrollItems = allEvents.map(event => event.id);
 
         const handleIntersection = (entries, observer) => {
             entries.forEach((entry) => {
@@ -85,21 +52,7 @@ const EventsPage = () => {
             top: 0,
             behavior: 'smooth',
         });
-    }, [events]);
-
-    const [allEvents, setAllEvents] = useState([]);
-
-    useEffect(() => {
-      axios
-        .get("http://localhost:5000/events")
-        .then((response) => {
-        setAllEvents(response.data);
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-        });
-    }, []);
+    }, [allEvents]);
 
     return (
         <div className="container">
@@ -130,9 +83,13 @@ const EventsPage = () => {
                 style={{ position: 'relative' }} 
                 className="timeline"
             >
-                    {events.map((event, index) => (
+                {!loading ? (
+                    allEvents.map((event, index) => (
                         <EventItem key={index} {...event} />
-                    ))}
+                    ))
+                ) : (
+                    <p>Loading events...</p>
+                )}
             </motion.div>
         </div>
     );
