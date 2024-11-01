@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Github, Instagram, Twitter, Linkedin, MapPin, Book, Users, Phone } from 'lucide-react';
+import Link from 'next/link';
 
 // Google Dot component with wavy animation effect
 const GoogleDot = ({ color, delay = 0, size = "w-4 h-4" }) => (
@@ -102,9 +103,11 @@ const GDSCLanding = () => {
             <button className="px-8 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors">
               Join Us
             </button>
-            <button className="px-8 py-3 border-2 border-blue-500 text-blue-500 rounded-full hover:bg-blue-50 transition-colors">
-              Contact Us
-            </button>
+            <Link href="/Contact">
+              <button className="px-8 py-3 border-2 border-blue-500 text-blue-500 rounded-full hover:bg-blue-50 transition-colors">
+                Contact Us
+              </button>
+            </Link>
           </motion.div>
         </div>
       </section>
