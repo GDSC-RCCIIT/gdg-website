@@ -18,6 +18,1342 @@ const resources = [
             complex, user-friendly, and responsive web interfaces.
         `,
         icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+        trackInfo: {
+            prerequisites: [
+                "Basic computer skills and familiarity with web browsers",
+                "Understanding of how the internet works",
+                "Text editor or IDE (VS Code recommended)",
+                "Problem-solving aptitude",
+                "Design sense and attention to detail"
+            ],
+            outcomes: [
+                "Build responsive and interactive websites from scratch",
+                "Master HTML5, CSS3, and modern JavaScript",
+                "Create single-page applications using React",
+                "Implement modern UI/UX design principles",
+                "Optimize website performance and accessibility",
+                "Handle state management in complex applications",
+                "Deploy and maintain web applications"
+            ],
+            sections: [
+                {
+                    title: "Web Fundamentals",
+                    content: "Master the core technologies of web development: HTML5 for structure, CSS3 for styling, and JavaScript for interactivity. Learn about semantic markup, responsive design principles, and modern ECMAScript features."
+                },
+                {
+                    title: "Modern Frameworks & Tools",
+                    content: "Explore popular frontend frameworks like React, along with essential development tools including Git, npm, and webpack. Learn component-based architecture and state management solutions."
+                },
+                {
+                    title: "UI/UX & Best Practices",
+                    content: "Apply modern design principles, implement responsive layouts, and ensure accessibility. Learn about CSS preprocessors, design systems, and cross-browser compatibility."
+                },
+                {
+                    title: "Performance & Optimization",
+                    content: "Master performance optimization techniques, implement PWA features, and learn about SEO best practices. Understand caching, lazy loading, and modern build optimization strategies."
+                },
+                {
+                    title: "Professional Development",
+                    content: "Work on real-world projects, learn debugging techniques, and understand deployment processes. Practice code reviews, testing, and continuous integration/deployment (CI/CD)."
+                }
+            ]
+        },
+        content: {
+            examples: [
+                {
+                    title: "Responsive Navigation Bar",
+                    code: `<!-- HTML Structure -->
+        <nav class="navbar">
+            <div class="brand">Brand</div>
+            <button class="nav-toggle">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        /* CSS Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #333;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        
+        // JavaScript Functionality
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });`,
+                    explanation: "A responsive navigation bar implementation using HTML, CSS, and JavaScript. Features a mobile-friendly hamburger menu, flexbox layout, and media queries for responsive design."
+                },
+                {
+                    title: "Modern Card Component with React",
+                    code: `import React from 'react';
+        
+        const Card = ({ title, description, imageUrl, tags }) => {
+            return (
+                <div className="card">
+                    <img 
+                        src={imageUrl} 
+                        alt={title}
+                        className="card-image" 
+                    />
+                    <div className="card-content">
+                        <h2 className="card-title">{title}</h2>
+                        <p className="card-description">{description}</p>
+                        <div className="card-tags">
+                            {tags.map((tag, index) => (
+                                <span key={index} className="tag">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+        
+        // CSS Styles (using styled-components or CSS modules)
+        .card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tag {
+            padding: 0.25rem 0.75rem;
+            background-color: #f0f0f0;
+            border-radius: 16px;
+            font-size: 0.875rem;
+        }`,
+                    explanation: "A reusable React card component showcasing modern component design patterns, CSS-in-JS styling, and responsive image handling."
+                },
+                {
+                    title: "State Management with React Hooks",
+                    code: `import React, { useState, useEffect } from 'react';
+        
+        const TodoApp = () => {
+            const [todos, setTodos] = useState([]);
+            const [inputValue, setInputValue] = useState('');
+            const [filter, setFilter] = useState('all');
+        
+            useEffect(() => {
+                const savedTodos = localStorage.getItem('todos');
+                if (savedTodos) {
+                    setTodos(JSON.parse(savedTodos));
+                }
+            }, []);
+        
+            useEffect(() => {
+                localStorage.setItem('todos', JSON.stringify(todos));
+            }, [todos]);
+        
+            const addTodo = (e) => {
+                e.preventDefault();
+                if (!inputValue.trim()) return;
+                
+                setTodos([
+                    ...todos,
+                    {
+                        id: Date.now(),
+                        text: inputValue,
+                        completed: false
+                    }
+                ]);
+                setInputValue('');
+            };
+        
+            const toggleTodo = (id) => {
+                setTodos(todos.map(todo =>
+                    todo.id === id
+                        ? { ...todo, completed: !todo.completed }
+                        : todo
+                ));
+            };
+        
+            const filteredTodos = todos.filter(todo => {
+                if (filter === 'active') return !todo.completed;
+                if (filter === 'completed') return todo.completed;
+                return true;
+            });
+        
+            return (
+                <div className="todo-app">
+                    <form onSubmit={addTodo}>
+                        <input
+                            value={inputValue}
+                            onChange={(e) => setInputValue(e.target.value)}
+                            placeholder="Add todo..."
+                        />
+                    </form>
+                    
+                    <div className="filters">
+                        <button onClick={() => setFilter('all')}>All</button>
+                        <button onClick={() => setFilter('active')}>Active</button>
+                        <button onClick={() => setFilter('completed')}>Completed</button>
+                    </div>
+        
+                    <ul className="todo-list">
+                        {filteredTodos.map(todo => (
+                            <li
+                                key={todo.id}
+                                onClick={() => toggleTodo(todo.id)}
+                                className={todo.completed ? 'completed' : ''}
+                            >
+                                {todo.text}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        };`,
+                    explanation: "A Todo application demonstrating React Hooks usage, including useState for state management, useEffect for side effects, and local storage integration. Shows proper component organization and event handling."
+                }
+            ],
+        
+            roadmap: [
+                {
+                    title: "1. HTML & CSS Fundamentals",
+                    description: "Master the building blocks of web development",
+                    topics: [
+                        "HTML5 semantic elements and structure",
+                        "CSS selectors and specificity",
+                        "Flexbox and Grid layouts",
+                        "Responsive design principles",
+                        "CSS animations and transitions",
+                        "CSS preprocessors (SASS/SCSS)",
+                        "CSS methodologies (BEM, OOCSS)"
+                    ]
+                },
+                {
+                    title: "2. JavaScript Essentials",
+                    description: "Learn modern JavaScript and ES6+ features",
+                    topics: [
+                        "Variables, data types, and functions",
+                        "DOM manipulation and events",
+                        "Promises and async/await",
+                        "ES6+ features and modules",
+                        "Error handling and debugging",
+                        "Local storage and cookies",
+                        "API integration and fetch"
+                    ]
+                },
+                {
+                    title: "3. React Development",
+                    description: "Build modern web applications with React",
+                    topics: [
+                        "Components and JSX",
+                        "State and Props management",
+                        "Hooks and lifecycle methods",
+                        "Context API and Redux",
+                        "React Router for navigation",
+                        "Performance optimization",
+                        "Testing with Jest and RTL"
+                    ]
+                },
+                {
+                    title: "4. Build Tools & Deployment",
+                    description: "Master modern development workflow",
+                    topics: [
+                        "Git version control",
+                        "Package managers (npm/yarn)",
+                        "Webpack and bundling",
+                        "Babel and transpilation",
+                        "CI/CD pipelines",
+                        "Docker basics",
+                        "Cloud deployment (Vercel, Netlify)"
+                    ]
+                },
+                {
+                    title: "5. Advanced Concepts",
+                    description: "Polish your skills with advanced topics",
+                    topics: [
+                        "Progressive Web Apps (PWA)",
+                        "Web accessibility (a11y)",
+                        "SEO optimization",
+                        "Performance monitoring",
+                        "Security best practices",
+                        "GraphQL basics",
+                        "Micro-frontends"
+                    ]
+                }
+            ],
+            resources: {
+                documentation: [
+                    {
+                        title: "MDN Web Docs",
+                        url: "https://developer.mozilla.org/",
+                        description: "Comprehensive documentation for web technologies including HTML, CSS, and JavaScript",
+                        type: "Official Documentation"
+                    },
+                    {
+                        title: "React Documentation",
+                        url: "https://react.dev/",
+                        description: "Official React documentation with guides, API references, and best practices",
+                        type: "Framework Documentation"
+                    },
+                    {
+                        title: "CSS-Tricks",
+                        url: "https://css-tricks.com/",
+                        description: "In-depth articles and tutorials about CSS and frontend development",
+                        type: "Resource Collection"
+                    },
+                    {
+                        title: "Web.dev",
+                        url: "https://web.dev/",
+                        description: "Google's resource for modern web development guidance",
+                        type: "Learning Platform"
+                    }
+                ],
+                tutorials: [
+                    {
+                        title: "freeCodeCamp",
+                        url: "https://www.freecodecamp.org/",
+                        description: "Interactive coding tutorials covering the entire frontend development stack",
+                        type: "Interactive Course"
+                    },
+                    {
+                        title: "Frontend Masters",
+                        url: "https://frontendmasters.com/",
+                        description: "Expert-led video courses on frontend technologies and frameworks",
+                        type: "Video Course Platform"
+                    },
+                    {
+                        title: "JavaScript30",
+                        url: "https://javascript30.com/",
+                        description: "30 Day Vanilla JS Coding Challenge",
+                        type: "Practice Course"
+                    },
+                    {
+                        title: "Scrimba",
+                        url: "https://scrimba.com/",
+                        description: "Interactive screencasts for learning frontend development",
+                        type: "Interactive Platform"
+                    }
+                ],
+                videos: [
+                    {
+                        title: "Traversy Media",
+                        url: "https://www.youtube.com/c/TraversyMedia",
+                        description: "Practical project-based web development tutorials",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Net Ninja",
+                        url: "https://www.youtube.com/c/TheNetNinja",
+                        description: "Comprehensive frontend development tutorial series",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Fireship",
+                        url: "https://www.youtube.com/c/Fireship",
+                        description: "Quick, modern web development tutorials and tips",
+                        platform: "YouTube"
+                    }
+                ],
+                books: [
+                    {
+                        title: "Eloquent JavaScript",
+                        author: "Marijn Haverbeke",
+                        description: "A comprehensive guide to JavaScript programming",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "CSS in Depth",
+                        author: "Keith J. Grant",
+                        description: "Advanced CSS concepts and modern techniques",
+                        level: "Advanced"
+                    },
+                    {
+                        title: "React Up and Running",
+                        author: "Stoyan Stefanov",
+                        description: "Building web applications with React and modern tools",
+                        level: "Intermediate"
+                    }
+                ],
+                practice: [
+                    {
+                        title: "Frontend Mentor",
+                        url: "https://www.frontendmentor.io/",
+                        description: "Real-world frontend challenges with professional designs",
+                        type: "Challenge Platform"
+                    },
+                    {
+                        title: "CodePen",
+                        url: "https://codepen.io/",
+                        description: "Social development environment for frontend projects",
+                        type: "Practice Platform"
+                    },
+                    {
+                        title: "CSS Battle",
+                        url: "https://cssbattle.dev/",
+                        description: "CSS coding challenges to test your skills",
+                        type: "Challenge Platform"
+                    }
+                ]
+            },
+        
+            practice: {
+                beginnerExercises: [
+                    {
+                        title: "Responsive Product Card",
+                        difficulty: "Easy",
+                        description: "Create a responsive product card component with image, title, price, and buy button. Implement hover effects and ensure mobile compatibility.",
+                        hints: [
+                            "Use CSS Flexbox or Grid for layout",
+                            "Implement responsive images",
+                            "Add smooth hover transitions",
+                            "Consider mobile-first approach"
+                        ],
+                        solution: {
+                            code: `<!-- HTML -->
+        <div class="product-card">
+            <img src="product-image.jpg" alt="Product" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Product Name</h2>
+                <p class="product-price">$99.99</p>
+                <button class="buy-button">Add to Cart</button>
+            </div>
+        </div>
+        
+        /* CSS */
+        .product-card {
+            max-width: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 1rem;
+        }
+        
+        .product-title {
+            margin: 0;
+            font-size: 1.25rem;
+            color: #333;
+        }
+        
+        .product-price {
+            color: #0066cc;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+        
+        .buy-button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .buy-button:hover {
+            background-color: #0052a3;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .product-card {
+                max-width: 100%;
+            }
+        }`,
+                            explanation: "This solution demonstrates key frontend concepts including responsive design, CSS transitions, hover effects, and mobile optimization. The component uses flexbox for layout, maintains proper spacing, and includes interactive elements."
+                        }
+                    },
+                    {
+                        title: "Navigation Menu",
+                        difficulty: "Easy",
+                        description: "Build a responsive navigation menu that collapses into a hamburger menu on mobile devices.",
+                        hints: [
+                            "Use media queries for responsiveness",
+                            "Implement hamburger menu icon",
+                            "Add smooth transition for menu toggle",
+                            "Ensure accessibility with ARIA attributes"
+                        ],
+                        solution: {
+                        code:
+                         `<!-- HTML -->
+                        <nav class="navbar">
+                            <div class="nav-brand">Brand Logo</div>
+                            <button class="nav-toggle" aria-label="Toggle navigation"\naria-expanded="false">
+                                <span class="hamburger"></span>
+                            </button>
+                            <div class="nav-menu">
+                                <ul class="nav-links">
+                                    <li><a href="#home">Home</a></li>
+                                    <li><a href="#about">About</a></li>
+                                    <li><a href="#services">Services</a></li>
+                                    <li><a href="#contact">Contact</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                        
+                        /* CSS */
+                        .navbar {
+                            background: #ffffff;
+                            padding: 1rem 2rem;
+                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                            position: relative;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                        
+                        .nav-brand {
+                            font-size: 1.5rem;
+                            font-weight: bold;
+                            color: #333;
+                        }
+                        
+                        .nav-links {
+                            display: flex;
+                            list-style: none;
+                            margin: 0;
+                            padding: 0;
+                            gap: 2rem;
+                        }
+                        
+                        .nav-links a {
+                            color: #333;
+                            text-decoration: none;
+                            font-weight: 500;
+                            transition: color 0.3s ease;
+                        }
+                        
+                        .nav-links a:hover {
+                            color: #0066cc;
+                        }
+                        
+                        .nav-toggle {
+                            display: none;
+                            background: none;
+                            border: none;
+                            cursor: pointer;
+                            padding: 0.5rem;
+                        }
+                        
+                        .hamburger {
+                            display: block;
+                            position: relative;
+                            width: 24px;
+                            height: 2px;
+                            background: #333;
+                            transition: all 0.3s ease-in-out;
+                        }
+                        
+                        .hamburger::before,
+                        .hamburger::after {
+                            content: '';
+                            position: absolute;
+                            width: 24px;
+                            height: 2px;
+                            background: #333;
+                            transition: all 0.3s ease-in-out;
+                        }
+                        
+                        .hamburger::before {
+                            transform: translateY(-8px);
+                        }
+                        
+                        .hamburger::after {
+                            transform: translateY(8px);
+                        }
+                        
+                        /* Hamburger Animation */
+                        .nav-toggle.active .hamburger {
+                            background: transparent;
+                        }
+                        
+                        .nav-toggle.active .hamburger::before {
+                            transform: rotate(45deg);
+                        }
+                        
+                        .nav-toggle.active .hamburger::after {
+                            transform: rotate(-45deg);
+                        }
+                        
+                        /* Mobile Responsive */
+                        @media screen and (max-width: 768px) {
+                            .nav-toggle {
+                                display: block;
+                            }
+                        
+                            .nav-menu {
+                                position: absolute;
+                                top: 100%;
+                                left: 0;
+                                right: 0;
+                                background: #ffffff;
+                                padding: 1rem;
+                                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                                transform: translateY(-100%);
+                                opacity: 0;
+                                visibility: hidden;
+                                transition: all 0.3s ease-in-out;
+                            }
+                        
+                            .nav-menu.active {
+                                transform: translateY(0);
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                        
+                            .nav-links {
+                                flex-direction: column;
+                                gap: 1rem;
+                                text-align: center;
+                            }
+                        }
+                        
+                        // JavaScript
+                        const navToggle = document.querySelector('.nav-toggle');
+                        const navMenu = document.querySelector('.nav-menu');
+                        
+                        navToggle.addEventListener('click', () => {
+                            const isExpanded = navToggle.getAttribute('aria-expanded') \n === 'true';
+                            navToggle.setAttribute('aria-expanded', !isExpanded);
+                            navToggle.classList.toggle('active');
+                            navMenu.classList.toggle('active');
+                        });
+                        
+                        // Close menu when clicking outside
+                        document.addEventListener('click', (e) => {
+                            if (!navMenu.contains(e.target) && \n!navToggle.contains(e.target)) {
+                                navToggle.setAttribute('aria-expanded', 'false');
+                                navToggle.classList.remove('active');
+                                navMenu.classList.remove('active');
+                            }
+                        });`,
+                            explanation: "This solution implements a responsive navigation menu with several key features:\n\n" +
+                                "1. Accessibility:\n" +
+                                "   - ARIA attributes for screen readers\n" +
+                                "   - Semantic HTML structure\n" +
+                                "   - Keyboard navigation support\n\n" +
+                                "2. Responsive Design:\n" +
+                                "   - Mobile-first approach\n" +
+                                "   - Smooth transitions\n" +
+                                "   - Hamburger menu animation\n\n" +
+                                "3. User Experience:\n" +
+                                "   - Smooth animations\n" +
+                                "   - Click outside to close\n" +
+                                "   - Visual feedback on interactions\n\n" +
+                                "4. Performance:\n" +
+                                "   - CSS transforms for animations\n" +
+                                "   - Efficient event handling\n" +
+                                "   - No layout shifts"
+                        }
+                    }
+                    
+
+                ],
+                intermediateExercises: [
+                    {
+                        title: "Dynamic Form Validation",
+                        difficulty: "Medium",
+                        description: "Create a form with real-time validation for email, password strength, and matching password confirmation.",
+                        hints: [
+                            "Use regular expressions for validation",
+                            "Implement real-time feedback",
+                            "Handle form submission properly",
+                            "Show appropriate error messages"
+                        ],
+                        solution: {
+                            code: `<!-- HTML -->
+<form id="registrationForm" class="registration-form" novalidate>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            required
+            autocomplete="email"
+        >
+        <span class="error-message" data-error="email"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            required
+            autocomplete="new-password"
+        >
+        <div class="password-strength">
+            <div class="strength-bar"></div>
+        </div>
+        <ul class="password-requirements">
+            <li data-requirement="length">At least 8 characters</li>
+            <li data-requirement="uppercase">One uppercase letter</li>
+            <li data-requirement="lowercase">One lowercase letter</li>
+            <li data-requirement="number">One number</li>
+            <li data-requirement="special">One special character</li>
+        </ul>
+        <span class="error-message" data-error="password"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input 
+            type="password" 
+            id="confirmPassword" 
+            name="confirmPassword" 
+            required
+            autocomplete="new-password"
+        >
+        <span class="error-message" data-error="confirmPassword"></span>
+    </div>
+
+    <button type="submit" class="submit-button" disabled>Register</button>
+</form>
+
+/* CSS */
+.registration-form {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #0066cc;
+}
+
+input.valid {
+    border-color: #28a745;
+}
+
+input.invalid {
+    border-color: #dc3545;
+}
+
+.error-message {
+    display: block;
+    margin-top: 0.5rem;
+    color: #dc3545;
+    font-size: 0.875rem;
+    min-height: 1.25rem;
+}
+
+.password-strength {
+    margin-top: 0.5rem;
+    height: 4px;
+    background: #ddd;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0;
+    background: #dc3545;
+    transition: all 0.3s ease;
+}
+
+.strength-bar.weak { width: 33.33%; background: #dc3545; }
+.strength-bar.medium { width: 66.66%; background: #ffc107; }
+.strength-bar.strong { width: 100%; background: #28a745; }
+
+.password-requirements {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+    font-size: 0.875rem;
+}
+
+.password-requirements li {
+    color: #666;
+    margin-bottom: 0.25rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.password-requirements li::before {
+    content: '×';
+    position: absolute;
+    left: 0;
+    color: #dc3545;
+}
+
+.password-requirements li.valid::before {
+    content: '✓';
+    color: #28a745;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 0.75rem;
+    background: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.submit-button:hover:not(:disabled) {
+    background: #0052a3;
+}
+    // JavaScript
+const form = document.getElementById('registrationForm');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const confirmPasswordInput = document.getElementById('confirmPassword');
+const submitButton = form.querySelector('.submit-button');
+
+const validators = {
+    email: {
+        regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        message: 'Please enter a valid email address'
+    },
+    password: {
+        requirements: {
+            length: {
+                regex: /.{8,}/,
+                message: 'At least 8 characters'
+            },
+            uppercase: {
+                regex: /[A-Z]/,
+                message: 'One uppercase letter'
+            },
+            lowercase: {
+                regex: /[a-z]/,
+                message: 'One lowercase letter'
+            },
+            number: {
+                regex: /[0-9]/,
+                message: 'One number'
+            },
+            special: {
+                regex: /[!@#$%^&*]/,
+                message: 'One special character'
+            }
+        }
+    }
+};
+function validateEmail() {
+    const email = emailInput.value;
+    const errorElement = document.querySelector('[data-error="email"]');
+    
+    if (!email) {
+        showError(emailInput, errorElement, 'Email is required');
+        return false;
+    }
+    
+    if (!validators.email.regex.test(email)) {
+        showError(emailInput, errorElement, validators.email.message);
+        return false;
+    }
+    
+    showSuccess(emailInput, errorElement);
+    return true;
+}
+
+function validatePassword() {
+    const password = passwordInput.value;
+    const errorElement = document.querySelector('[data-error="password"]');
+    const requirements = validators.password.requirements;
+    let strength = 0;
+    let isValid = true;
+    
+    // Check each requirement
+    Object.entries(requirements).forEach(([key, requirement]) => {
+        if (requirement.regex.test(password)) {
+            element.classList.add('valid');
+            strength++;
+        } else {
+            element.classList.remove('valid');
+            isValid = false;
+        }
+    });
+    
+    // Update strength bar
+    const strengthBar = document.querySelector('.strength-bar');
+    strengthBar.className = 'strength-bar';
+    if (strength > 3) strengthBar.classList.add('strong');
+    else if (strength > 2) strengthBar.classList.add('medium');
+    else strengthBar.classList.add('weak');
+    
+    if (!isValid) {
+        showError(passwordInput, errorElement, 'Please meet all password requirements');
+        return false;
+    }
+    
+    showSuccess(passwordInput, errorElement);
+    return true;
+}
+
+function validateConfirmPassword() {
+    const confirmPassword = confirmPasswordInput.value;
+    const errorElement = document.querySelector('[data-error="confirmPassword"]');
+    
+    if (confirmPassword !== passwordInput.value) {
+        showError(confirmPasswordInput, errorElement, 'Passwords do not match');
+        return false;
+    }
+    
+    showSuccess(confirmPasswordInput, errorElement);
+    return true;
+}
+
+function showError(input, errorElement, message) {
+    input.classList.remove('valid');
+    input.classList.add('invalid');
+    errorElement.textContent = message;
+}
+
+function showSuccess(input, errorElement) {
+    input.classList.remove('invalid');
+    input.classList.add('valid');
+    errorElement.textContent = '';
+}
+
+function validateForm() {
+    const isEmailValid = validateEmail();
+    const isPasswordValid = validatePassword();
+    const isConfirmPasswordValid = validateConfirmPassword();
+    
+    submitButton.disabled = !(isEmailValid && isPasswordValid && isConfirmPasswordValid);
+}
+
+// Event Listeners
+emailInput.addEventListener('input', validateForm);
+passwordInput.addEventListener('input', validateForm);
+confirmPasswordInput.addEventListener('input', validateForm);
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!submitButton.disabled) {
+        // Handle form submission
+        console.log('Form submitted successfully');
+    }
+        });`,
+        explanation: "This form validation solution includes several advanced features:\n\n" +
+        "1. Real-time Validation:\n" +
+        "   - Immediate feedback on input\n" +
+        "   - Password strength indicator\n" +
+        "   - Visual requirement checklist\n\n" +
+        "2. Security Features:\n" +
+        "   - Strong password requirements\n" +
+        "   - Proper password confirmation\n" +
+        "   - Input sanitization\n\n" +
+        "3. User Experience:\n" +
+        "   - Clear error messages\n" +
+        "   - Visual feedback\n" +
+        "   - Disabled submit until valid\n\n" +
+        "4. Accessibility:\n" +
+        "   - ARIA attributes\n" +
+        "   - Proper form labeling\n" +
+        "   - Keyboard navigation support"
+
+                        }
+                    }
+                ],
+                advancedExercises: [
+                    {
+                        title: "Infinite Scroll Gallery",
+                        difficulty: "Hard",
+                        description: "Build an infinite-scrolling image gallery with lazy loading and masonry layout.",
+                        hints: [
+                            "Implement Intersection Observer",
+                            "Handle image loading efficiently",
+                            "Manage state for loaded images",
+                            "Optimize performance"
+                        ],
+                        solution: {
+                            code: `<!-- HTML -->
+<div class="gallery-container">
+    <div class="masonry-grid" id="gallery">
+        <!-- Images will be dynamically added here -->
+    </div>
+    <div class="loading-spinner" id="loader">
+        <div class="spinner"></div>
+    </div>
+</div>
+
+/* CSS */
+.gallery-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    grid-auto-flow: dense;
+}
+
+.image-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f0f0f0;
+    transition: transform 0.3s ease;
+}
+
+.image-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.image-item.loading {
+    min-height: 200px;
+}
+
+.image-item.loading img {
+    opacity: 0;
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.loading-spinner.visible {
+    opacity: 1;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .masonry-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-gap: 15px;
+    }
+}
+
+// JavaScript
+class InfiniteGallery {
+    constructor(options) {
+        this.options = {
+            container: '#gallery',
+            loader: '#loader',
+            batchSize: 10,
+            threshold: 0.5,
+            ...options
+        };
+
+        this.page = 1;
+        this.loading = false;
+        this.hasMore = true;
+        this.imageCache = new Map();
+
+        this.init();
+    }
+
+    init() {
+        this.container = document.querySelector(this.options.container);
+        this.loader = document.querySelector(this.options.loader);
+        
+        // Set up Intersection Observer for infinite scroll
+        this.setupIntersectionObserver();
+        
+        // Set up image lazy loading
+        this.setupLazyLoading();
+        
+        // Load initial batch
+        this.loadImages();
+    }
+
+    setupIntersectionObserver() {
+        this.scrollObserver = new IntersectionObserver((entries) => {
+            const target = entries[0];
+            if (target.isIntersecting && !this.loading && this.hasMore) {
+                this.loadImages();
+            }
+        }, {
+            threshold: this.options.threshold
+        });
+
+        this.scrollObserver.observe(this.loader);
+    }
+
+    setupLazyLoading() {
+        this.imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.loadImage(entry.target);
+                    this.imageObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '50px'
+        });
+    }
+
+    async loadImages() {
+        try {
+            this.loading = true;
+            this.loader.classList.add('visible');
+
+            // Simulated API call - replace with your actual API endpoint
+            const images = await this.fetchImages(this.page, this.options.batchSize);
+            
+            if (images.length < this.options.batchSize) {
+                this.hasMore = false;
+            }
+
+            this.appendImages(images);
+            this.page++;
+            
+        } catch (error) {
+            console.error('Error loading images:', error);
+        } finally {
+            this.loading = false;
+            this.loader.classList.remove('visible');
+        }
+    }
+
+    async fetchImages(page, limit) {
+        // Replace with your actual API call
+        const response = await fetch(
+            \`https://api.yourservice.com/images?page=\${page}&limit=\${limit}\`
+        );
+        return await response.json();
+    }
+
+    appendImages(images) {
+        images.forEach(imageData => {
+            const item = this.createImageElement(imageData);
+            this.container.appendChild(item);
+            this.imageObserver.observe(item.querySelector('img'));
+        });
+
+        // Optional: Trigger masonry layout recalculation if using a masonry library
+        if (this.options.onLayoutComplete) {
+            this.options.onLayoutComplete();
+        }
+    }
+
+    createImageElement(imageData) {
+        const item = document.createElement('div');
+        item.className = 'image-item loading';
+        
+        const img = document.createElement('img');
+        img.dataset.src = imageData.url;
+        img.alt = imageData.description || '';
+        
+        // Optional: Add additional metadata
+        if (imageData.title) {
+            const title = document.createElement('div');
+            title.className = 'image-title';
+            title.textContent = imageData.title;
+            item.appendChild(title);
+        }
+
+        item.appendChild(img);
+        return item;
+    }
+
+    loadImage(img) {
+        const src = img.dataset.src;
+        if (!src) return;
+
+        // Check cache first
+        if (this.imageCache.has(src)) {
+            this.applyImage(img, this.imageCache.get(src));
+            return;
+        }
+
+        // Load and cache image
+        const tempImage = new Image();
+        tempImage.onload = () => {
+            this.imageCache.set(src, src);
+            this.applyImage(img, src);
+        };
+        tempImage.src = src;
+    }
+
+    applyImage(img, src) {
+        img.src = src;
+        img.removeAttribute('data-src');
+        img.parentElement.classList.remove('loading');
+    }
+
+    // Optional: Method to manually trigger a refresh
+    refresh() {
+        this.page = 1;
+        this.hasMore = true;
+        this.container.innerHTML = '';
+        this.loadImages();
+    }
+
+    // Cleanup method
+    destroy() {
+        this.scrollObserver.disconnect();
+        this.imageObserver.disconnect();
+        this.imageCache.clear();
+    }
+}
+
+// Usage Example
+document.addEventListener('DOMContentLoaded', () => {
+    const gallery = new InfiniteGallery({
+        container: '#gallery',
+        loader: '#loader',
+        batchSize: 12,
+        onLayoutComplete: () => {
+            // Optional: Integrate with masonry library if needed
+            // masonryInstance.layout();
+        }
+    });
+
+    // Optional: Add error handling
+    window.addEventListener('error', (e) => {
+        if (e.target.tagName === 'IMG') {
+            e.target.parentElement.classList.add('error');
+        }
+    });
+});`,
+    explanation: "This advanced implementation includes several key features:\n\n" +
+        "1. Performance Optimization:\n" +
+        "   - Image lazy loading using Intersection Observer\n" +
+        "   - Image caching mechanism\n" +
+        "   - Efficient DOM manipulation\n" +
+        "   - Debounced scroll handling\n\n" +
+        "2. User Experience:\n" +
+        "   - Smooth loading animations\n" +
+        "   - Loading indicators\n" +
+        "   - Error handling\n" +
+        "   - Responsive design\n\n" +
+        "3. Technical Features:\n" +
+        "   - CSS Grid masonry layout\n" +
+        "   - Intersection Observer for infinite scroll\n" +
+        "   - Image preloading\n" +
+        "   - Memory management\n\n" +
+        "4. Code Organization:\n" +
+        "   - Class-based architecture\n" +
+        "   - Configurable options\n" +
+        "   - Clean separation of concerns\n" +
+        "   - Extensible design"
+                        }
+                    }
+                ]
+            }
+        }
     },
     {
         id: 2,
