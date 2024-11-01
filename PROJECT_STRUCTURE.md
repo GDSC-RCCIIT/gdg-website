@@ -48,9 +48,20 @@
 │   ├── exp6.jpeg
 │   ├── exp7.jpeg
 │   ├── goal.webp
+│   ├── gro1.png
+│   ├── gro2.png
+│   ├── gro3.svg
+│   ├── gro4.svg
 │   ├── hack1.jpg
 │   ├── img1.jpg
+│   ├── inovate1.png
+│   ├── inovate2.png
+│   ├── inovate3.png
 │   ├── mission.webp
+│   ├── ser1.png
+│   ├── ser2.png
+│   ├── ser3.svg
+│   ├── ser4.svg
 │   ├── sopt4.jpg
 │   ├── spot1.jpg
 │   ├── spot2.jpg
@@ -62,6 +73,8 @@
 │   ├── story5.png
 │   ├── story6.png
 │   ├── story7.png
+│   ├── techeq1.webp
+│   ├── techeq2.webp
 │   └── vision.webp
 ├── repo_structure.txt
 ├── src/
@@ -69,11 +82,20 @@
 │   │   ├── (pages)/
 │   │   │   ├── About/
 │   │   │   │   └── page.jsx
+│   │   │   ├── AddEvent/
+│   │   │   │   └── page.jsx
 │   │   │   ├── AddHackathon/
+│   │   │   │   └── page.jsx
+│   │   │   ├── AddProjects/
+│   │   │   │   └── page.jsx
+│   │   │   ├── AddSpotlight/
 │   │   │   │   └── page.jsx
 │   │   │   ├── Certifications/
 │   │   │   │   └── page.jsx
 │   │   │   ├── Chapters/
+│   │   │   │   └── page.jsx
+│   │   │   ├── Contact/
+│   │   │   │   ├── Contactus.svg
 │   │   │   │   └── page.jsx
 │   │   │   ├── Events/
 │   │   │   │   ├── EventItem.js
@@ -95,6 +117,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── Projects/
 │   │   │   │   ├── Card.jsx
+│   │   │   │   ├── [id]/
+│   │   │   │   │   └── page.jsx
 │   │   │   │   └── page.jsx
 │   │   │   ├── Resources/
 │   │   │   │   ├── [id]/
@@ -142,6 +166,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── devStudent/
 │   │   │   │   └── page.jsx
+│   │   │   ├── devfest/
+│   │   │   │   └── page.jsx
 │   │   │   ├── devprod/
 │   │   │   │   └── page.jsx
 │   │   │   ├── expertdev/
@@ -150,23 +176,31 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── gitContributors/
 │   │   │   │   └── page.jsx
+│   │   │   ├── growth/
+│   │   │   │   └── page.jsx
 │   │   │   ├── helpCenter/
 │   │   │   │   └── page.jsx
 │   │   │   ├── how-apply/
+│   │   │   │   └── page.jsx
+│   │   │   ├── inovate/
+│   │   │   │   └── page.jsx
+│   │   │   ├── ioext/
 │   │   │   │   └── page.jsx
 │   │   │   ├── localdev/
 │   │   │   │   └── page.jsx
 │   │   │   ├── orginizer/
 │   │   │   │   └── page.jsx
-│   │   │   ├── participation-terms/
-│   │   │   │   └── page.jsx
 │   │   │   ├── participationterms/
+│   │   │   │   └── page.jsx
+│   │   │   ├── services/
 │   │   │   │   └── page.jsx
 │   │   │   ├── stories/
 │   │   │   │   └── page.jsx
 │   │   │   ├── student-challenge/
 │   │   │   │   └── page.jsx
 │   │   │   ├── sustainable/
+│   │   │   │   └── page.jsx
+│   │   │   ├── techequity/
 │   │   │   │   └── page.jsx
 │   │   │   ├── timeline/
 │   │   │   │   └── page.jsx
@@ -184,6 +218,7 @@
 │   │   ├── globals.css
 │   │   ├── images/
 │   │   │   ├── ai_img.jpg
+│   │   │   ├── gdsc-logo.png
 │   │   │   └── teamMember.jpg
 │   │   ├── layout.js
 │   │   ├── not-found.jsx
@@ -192,10 +227,15 @@
 │   │   ├── Chatbot.jsx
 │   │   ├── GTranslateLoader.js
 │   │   ├── Global/
+│   │   │   ├── AddEventForm.jsx
 │   │   │   ├── AddHackathonForm.jsx
+│   │   │   ├── AddProjectsForm.jsx
+│   │   │   ├── AddSpotlightForm.jsx
 │   │   │   ├── Footer.jsx
 │   │   │   ├── Header.jsx
-│   │   │   └── Hero.jsx
+│   │   │   ├── Hero.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   └── ProductsNavbar.jsx
 │   │   └── ui/
 │   │       ├── aspect-ratio.jsx
 │   │       ├── back2top.jsx
@@ -209,6 +249,7 @@
 │   │       ├── dialog.jsx
 │   │       ├── drawer.jsx
 │   │       ├── dropdown-menu.jsx
+│   │       ├── form.jsx
 │   │       ├── homepage.jsx
 │   │       ├── hover-card.jsx
 │   │       ├── input.jsx
