@@ -27,6 +27,11 @@
 │   ├── certi 3.svg
 │   ├── certi 4.png
 │   ├── certi 5.png
+│   ├── cicd1.png
+│   ├── cicd2.jpg
+│   ├── cicd3.jpg
+│   ├── cicd4.jpg
+│   ├── cicd5.jpg
 │   ├── dev1.jpeg
 │   ├── dev2.jpeg
 │   ├── dev3.jpeg
@@ -58,6 +63,14 @@
 │   ├── inovate2.png
 │   ├── inovate3.png
 │   ├── mission.webp
+│   ├── os1.png
+│   ├── os2.ico
+│   ├── os3.svg
+│   ├── os4.png
+│   ├── sdk1.png
+│   ├── sdk2.png
+│   ├── sdk3.png
+│   ├── sdk4.png
 │   ├── ser1.png
 │   ├── ser2.png
 │   ├── ser3.svg
@@ -115,6 +128,8 @@
 │   │   │   │   ├── [id]/
 │   │   │   │   │   └── page.jsx
 │   │   │   │   └── page.jsx
+│   │   │   ├── Practitioners/
+│   │   │   │   └── page.jsx
 │   │   │   ├── PrivacyPolicy/
 │   │   │   │   └── page.jsx
 │   │   │   ├── Projects/
@@ -166,6 +181,8 @@
 │   │   │   │   │   └── page.jsx
 │   │   │   │   ├── opportunities.js
 │   │   │   │   └── page.jsx
+│   │   │   ├── cicd/
+│   │   │   │   └── page.jsx
 │   │   │   ├── devStudent/
 │   │   │   │   └── page.jsx
 │   │   │   ├── devfest/
@@ -190,9 +207,13 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── localdev/
 │   │   │   │   └── page.jsx
+│   │   │   ├── operating-system/
+│   │   │   │   └── page.jsx
 │   │   │   ├── orginizer/
 │   │   │   │   └── page.jsx
 │   │   │   ├── participationterms/
+│   │   │   │   └── page.jsx
+│   │   │   ├── sdk/
 │   │   │   │   └── page.jsx
 │   │   │   ├── services/
 │   │   │   │   └── page.jsx
