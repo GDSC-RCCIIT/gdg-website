@@ -1372,7 +1372,1359 @@ document.addEventListener('DOMContentLoaded', () => {
             Mastering backend development will enable you to build efficient, scalable, and secure web applications.
         `,
         icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+        trackInfo: {
+            prerequisites: [
+                "Basic understanding of programming concepts",
+                "Familiarity with command line interface",
+                "Knowledge of web fundamentals (HTTP, APIs)",
+                "Basic understanding of databases",
+                "Problem-solving and analytical thinking skills"
+            ],
+            outcomes: [
+                "Design and build RESTful APIs",
+                "Implement secure authentication and authorization",
+                "Work with both SQL and NoSQL databases",
+                "Deploy and manage web applications",
+                "Implement microservices architecture",
+                "Handle server-side performance optimization",
+                "Manage application security and testing"
+            ],
+            sections: [
+                {
+                    title: "Server-Side Fundamentals",
+                    content: "Master core backend concepts including HTTP protocols, API design, server architecture, and database management. Learn about request-response cycles, middleware, and server-side rendering."
+                },
+                {
+                    title: "Database & ORM",
+                    content: "Explore different database systems (SQL/NoSQL), learn database design principles, and master ORM frameworks for efficient data manipulation. Understand transactions, indexing, and query optimization."
+                },
+                {
+                    title: "Authentication & Security",
+                    content: "Implement secure user authentication, handle authorization, manage sessions, and protect against common security vulnerabilities. Learn about encryption, JWT, OAuth, and security best practices."
+                },
+                {
+                    title: "API Development",
+                    content: "Design and build RESTful APIs, handle data validation, implement error handling, and manage API documentation. Learn about API versioning, rate limiting, and caching strategies."
+                },
+                {
+                    title: "Deployment & DevOps",
+                    content: "Master deployment processes, set up CI/CD pipelines, implement monitoring solutions, and manage application scaling. Learn about containerization, cloud services, and infrastructure management."
+                }
+            ]
+        },
+        content: {
+            examples: [
+                {
+                    title: "Basic Express.js Server",
+                    code: `const express = require('express');
+        const app = express();
+        const port = 3000;
+        
+        // Middleware for parsing JSON bodies
+        app.use(express.json());
+        
+        // Basic route handler
+        app.get('/', (req, res) => {
+            res.json({ message: 'Welcome to the API' });
+        });
+        
+        // Route with path parameters
+        app.get('/users/:id', (req, res) => {
+            const userId = req.params.id;
+            res.json({ message: \`Fetching user \${userId}\` });
+        });
+        
+        // POST route with request body
+        app.post('/users', (req, res) => {
+            const userData = req.body;
+            // Validate user data
+            if (!userData.name || !userData.email) {
+                return res.status(400).json({ 
+                    error: 'Name and email are required' 
+                });
+            }
+            res.status(201).json({
+                message: 'User created successfully',
+                user: userData
+            });
+        });
+        
+        // Error handling middleware
+        app.use((err, req, res, next) => {
+            console.error(err.stack);
+            res.status(500).json({ 
+                error: 'Something went wrong!' 
+            });
+        });
+        
+        app.listen(port, () => {
+            console.log(\`Server running at http://localhost:\${port}\`);
+        });`,
+                    explanation: "A basic Express.js server implementation showcasing route handling, middleware usage, parameter parsing, and error handling. Demonstrates RESTful API concepts and HTTP methods."
+                },
+                {
+                    title: "Database Integration with MongoDB",
+                    code: `const mongoose = require('mongoose');
+        const express = require('express');
+        const app = express();
+        
+        // MongoDB connection
+        mongoose.connect('mongodb://localhost/myapp', {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
+        
+        // User Schema
+        const userSchema = new mongoose.Schema({
+            name: { type: String, required: true },
+            email: { type: String, required: true, unique: true },
+            age: Number,
+            createdAt: { type: Date, default: Date.now }
+        });
+        
+        const User = mongoose.model('User', userSchema);
+        
+        // Create user
+        app.post('/users', async (req, res) => {
+            try {
+                const user = new User(req.body);
+                await user.save();
+                res.status(201).json(user);
+            } catch (error) {
+                if (error.code === 11000) { // Duplicate key error
+                    res.status(400).json({ 
+                        error: 'Email already exists' 
+                    });
+                } else {
+                    res.status(500).json({ 
+                        error: 'Error creating user' 
+                    });
+                }
+            }
+        });
+        
+        // Get all users with pagination
+        app.get('/users', async (req, res) => {
+            try {
+                const page = parseInt(req.query.page) || 1;
+                const limit = parseInt(req.query.limit) || 10;
+                const skip = (page - 1) * limit;
+                
+                const users = await User.find()
+                    .skip(skip)
+                    .limit(limit)
+                    .select('-__v');
+                    
+                const total = await User.countDocuments();
+                
+                res.json({
+                    users,
+                    totalPages: Math.ceil(total / limit),
+                    currentPage: page
+                });
+            } catch (error) {
+                res.status(500).json({ 
+                    error: 'Error fetching users' 
+                });
+            }
+        });`,
+                    explanation: "Demonstrates MongoDB integration with Mongoose ORM, including schema definition, CRUD operations, error handling, and pagination implementation."
+                },
+                {
+                    title: "JWT Authentication Middleware",
+                    code: `const jwt = require('jsonwebtoken');
+        const bcrypt = require('bcrypt');
+        const SECRET_KEY = 'your-secret-key';
+        
+        // User login
+        async function login(req, res) {
+            const { email, password } = req.body;
+            
+            try {
+                // Find user by email
+                const user = await User.findOne({ email });
+                if (!user) {
+                    return res.status(401).json({ 
+                        error: 'Invalid credentials' 
+                    });
+                }
+                
+                // Verify password
+                const validPassword = await bcrypt.compare(
+                    password, 
+                    user.password
+                );
+                if (!validPassword) {
+                    return res.status(401).json({ 
+                        error: 'Invalid credentials' 
+                    });
+                }
+                
+                // Generate JWT
+                const token = jwt.sign(
+                    { userId: user._id }, 
+                    SECRET_KEY, 
+                    { expiresIn: '24h' }
+                );
+                
+                res.json({ token });
+            } catch (error) {
+                res.status(500).json({ 
+                    error: 'Error during login' 
+                });
+            }
+        }
+        
+        // Authentication middleware
+        function authenticate(req, res, next) {
+            try {
+                const token = req.headers.authorization?.split(' ')[1];
+                if (!token) {
+                    return res.status(401).json({ 
+                        error: 'Authentication required' 
+                    });
+                }
+                
+                const decoded = jwt.verify(token, SECRET_KEY);
+                req.userId = decoded.userId;
+                next();
+            } catch (error) {
+                res.status(401).json({ 
+                    error: 'Invalid token' 
+                });
+            }
+        }
+        
+        // Protected route example
+        app.get('/profile', authenticate, async (req, res) => {
+            try {
+                const user = await User.findById(req.userId)
+                    .select('-password');
+                res.json(user);
+            } catch (error) {
+                res.status(500).json({ 
+                    error: 'Error fetching profile' 
+                });
+            }
+        });`,
+                    explanation: "Implementation of JWT-based authentication with middleware, including user login, token generation, and protected route access."
+                },
+                {
+                    title: "API Rate Limiting and Caching",
+                    code: `const rateLimit = require('express-rate-limit');
+        const redis = require('redis');
+        const { promisify } = require('util');
+        
+        // Redis client setup
+        const redisClient = redis.createClient();
+        const getAsync = promisify(redisClient.get).bind(redisClient);
+        const setAsync = promisify(redisClient.set).bind(redisClient);
+        
+        // Rate limiting middleware
+        const apiLimiter = rateLimit({
+            windowMs: 15 * 60 * 1000, // 15 minutes
+            max: 100, // limit each IP to 100 requests per windowMs
+            message: {
+                error: 'Too many requests, please try again later.'
+            }
+        });
+        
+        // Caching middleware
+        const cacheMiddleware = (duration) => async (req, res, next) => {
+            const key = \`cache:\${req.originalUrl}\`;
+            
+            try {
+                const cachedResponse = await getAsync(key);
+                if (cachedResponse) {
+                    return res.json(JSON.parse(cachedResponse));
+                }
+                
+                // Modify res.json to cache the response
+                const originalJson = res.json;
+                res.json = async (body) => {
+                    await setAsync(key, JSON.stringify(body), 'EX', duration);
+                    return originalJson.call(res, body);
+                };
+                
+                next();
+            } catch (error) {
+                next(error);
+            }
+        };
+        
+        // Example usage
+        app.get('/popular-posts',
+            apiLimiter,
+            cacheMiddleware(300), // Cache for 5 minutes
+            async (req, res) => {
+                try {
+                    const posts = await Post.find()
+                        .sort({ views: -1 })
+                        .limit(10);
+                    res.json(posts);
+                } catch (error) {
+                    res.status(500).json({ 
+                        error: 'Error fetching posts' 
+                    });
+                }
+            }
+        );`,
+                    explanation: "Shows implementation of API rate limiting and Redis-based response caching to improve API performance and prevent abuse."
+                }
+            ],
+            
+            roadmap: [
+                {
+                    title: "1. Backend Fundamentals",
+                    description: "Master the core concepts of backend development",
+                    topics: [
+                        "HTTP/HTTPS protocols and methods",
+                        "RESTful API principles",
+                        "Server architecture patterns",
+                        "Request-Response lifecycle",
+                        "Middleware concepts",
+                        "Error handling strategies",
+                        "API security basics"
+                    ]
+                },
+                {
+                    title: "2. Databases & Data Modeling",
+                    description: "Learn database management and data modeling techniques",
+                    topics: [
+                        "SQL databases (PostgreSQL/MySQL)",
+                        "NoSQL databases (MongoDB/Redis)",
+                        "Database design principles",
+                        "ORM/ODM frameworks",
+                        "Data normalization",
+                        "Indexing and optimization",
+                        "Database transactions"
+                    ]
+                },
+                {
+                    title: "3. Authentication & Security",
+                    description: "Implement secure authentication and authorization",
+                    topics: [
+                        "User authentication methods",
+                        "JSON Web Tokens (JWT)",
+                        "OAuth 2.0 and OpenID Connect",
+                        "Password hashing and salting",
+                        "Security best practices",
+                        "Cross-Site Scripting (XSS) prevention",
+                        "SQL injection prevention"
+                    ]
+                },
+                {
+                    title: "4. Advanced Backend Concepts",
+                    description: "Master advanced backend development techniques",
+                    topics: [
+                        "Microservices architecture",
+                        "Message queues (RabbitMQ/Redis)",
+                        "WebSockets and real-time data",
+                        "Caching strategies",
+                        "API documentation (Swagger/OpenAPI)",
+                        "Logging and monitoring",
+                        "Performance optimization"
+                    ]
+                },
+                {
+                    title: "5. DevOps & Deployment",
+                    description: "Learn deployment and operations management",
+                    topics: [
+                        "Container orchestration (Docker/Kubernetes)",
+                        "CI/CD pipelines",
+                        "Cloud platforms (AWS/GCP/Azure)",
+                        "Server monitoring and logging",
+                        "Load balancing",
+                        "Scalability patterns",
+                        "Infrastructure as Code"
+                    ]
+                }
+            ],
+        
+        resources: {
+            documentation: [
+                {
+                    title: "Node.js Documentation",
+                    url: "https://nodejs.org/docs/",
+                    description: "Official Node.js documentation and API reference guide",
+                    type: "Official Documentation"
+                },
+                {
+                    title: "Express.js Guide",
+                    url: "https://expressjs.com/",
+                    description: "Comprehensive guide for Express.js framework",
+                    type: "Framework Documentation"
+                },
+                {
+                    title: "MongoDB Manual",
+                    url: "https://docs.mongodb.com/manual/",
+                    description: "Complete MongoDB documentation with tutorials and best practices",
+                    type: "Database Documentation"
+                },
+                {
+                    title: "PostgreSQL Documentation",
+                    url: "https://www.postgresql.org/docs/",
+                    description: "Official PostgreSQL database documentation and tutorials",
+                    type: "Database Documentation"
+                },
+                {
+                    title: "Docker Documentation",
+                    url: "https://docs.docker.com/",
+                    description: "Official Docker documentation for containerization",
+                    type: "DevOps Documentation"
+                }
+            ],
+            tutorials: [
+                {
+                    title: "Node.js Backend Masterclass",
+                    url: "https://www.udemy.com/course/nodejs-api-masterclass/",
+                    description: "Complete Node.js backend development course with real-world projects",
+                    type: "Video Course"
+                },
+                {
+                    title: "Learn SQL and Database Design",
+                    url: "https://www.codecademy.com/learn/learn-sql",
+                    description: "Interactive SQL course covering database fundamentals",
+                    type: "Interactive Course"
+                },
+                {
+                    title: "Backend Development with Python and Django",
+                    url: "https://www.djangoproject.com/start/",
+                    description: "Official Django tutorial for building web applications",
+                    type: "Framework Tutorial"
+                },
+                {
+                    title: "Microservices with Node.js",
+                    url: "https://www.youtube.com/watch?v=XUSHH0E-7zk",
+                    description: "Practical guide to building microservices architecture",
+                    type: "Video Series"
+                },
+                {
+                    title: "AWS for Backend Developers",
+                    url: "https://aws.amazon.com/getting-started/hands-on/",
+                    description: "Hands-on tutorials for AWS services and cloud deployment",
+                    type: "Cloud Platform Tutorial"
+                }
+            ],
+            videos: [
+                {
+                    title: "Traversy Media Backend Series",
+                    url: "https://www.youtube.com/c/TraversyMedia",
+                    description: "Practical backend development tutorials and project builds",
+                    platform: "YouTube"
+                },
+                {
+                    title: "The Net Ninja Backend Tutorials",
+                    url: "https://www.youtube.com/c/TheNetNinja",
+                    description: "In-depth tutorials on various backend technologies",
+                    platform: "YouTube"
+                },
+                {
+                    title: "freeCodeCamp Backend Development",
+                    url: "https://www.youtube.com/c/Freecodecamp",
+                    description: "Comprehensive backend development courses and tutorials",
+                    platform: "YouTube"
+                },
+                {
+                    title: "Hussein Nasser Database Engineering",
+                    url: "https://www.youtube.com/c/HusseinNasser-software-engineering",
+                    description: "Deep dives into database engineering and system design",
+                    platform: "YouTube"
+                }
+            ],
+            books: [
+                {
+                    title: "Node.js Design Patterns",
+                    author: "Mario Casciaro & Luciano Mammino",
+                    description: "Comprehensive guide to Node.js application design and patterns",
+                    level: "Intermediate to Advanced"
+                },
+                {
+                    title: "Designing Data-Intensive Applications",
+                    author: "Martin Kleppmann",
+                    description: "Deep dive into database systems and distributed architecture",
+                    level: "Advanced"
+                },
+                {
+                    title: "Clean Architecture",
+                    author: "Robert C. Martin",
+                    description: "Principles of software architecture and clean code practices",
+                    level: "Intermediate to Advanced"
+                },
+                {
+                    title: "Database Design for Mere Mortals",
+                    author: "Michael J. Hernandez",
+                    description: "Practical guide to relational database design",
+                    level: "Beginner to Intermediate"
+                },
+                {
+                    title: "Web Scalability for Startup Engineers",
+                    author: "Artur Ejsmont",
+                    description: "Scalable architecture design for web applications",
+                    level: "Intermediate"
+                }
+            ],
+            practice: [
+                {
+                    title: "Backend Development Projects on GitHub",
+                    url: "https://github.com/topics/backend",
+                    description: "Open source backend projects for learning and contribution",
+                    type: "Project Repository"
+                },
+                {
+                    title: "HackerRank Backend Challenges",
+                    url: "https://www.hackerrank.com/domains/databases",
+                    description: "Practice problems for SQL and database concepts",
+                    type: "Practice Platform"
+                },
+                {
+                    title: "MongoDB University",
+                    url: "https://university.mongodb.com/",
+                    description: "Free courses and certifications for MongoDB",
+                    type: "Learning Platform"
+                },
+                {
+                    title: "Exercism Backend Track",
+                    url: "https://exercism.io/tracks/javascript",
+                    description: "Mentored code practice and feedback",
+                    type: "Practice Platform"
+                },
+                {
+                    title: "PostgreSQL Exercises",
+                    url: "https://pgexercises.com/",
+                    description: "Interactive PostgreSQL tutorial and exercises",
+                    type: "Practice Platform"
+                },
+                {
+                    title: "API Design Challenges",
+                    url: "https://github.com/public-apis/public-apis",
+                    description: "Collection of public APIs for practice integration",
+                    type: "API Practice"
+                }
+            ]
+        },
+        practice: {
+            beginnerExercises: [
+                {
+                    title: "Basic REST API Server",
+                    difficulty: "Easy",
+                    description: "Create a simple REST API server with CRUD operations for a todo list using Express.js and in-memory storage.",
+                    hints: [
+                        "Use Express.js router for organizing routes",
+                        "Implement proper HTTP status codes",
+                        "Add input validation",
+                        "Use middleware for error handling"
+                    ],
+                    solution: {
+                        code: `const express = require('express');
+        const app = express();
+        const port = 3000;
+        
+        // Middleware
+        app.use(express.json());
+        
+        // In-memory storage
+        let todos = [];
+        let nextId = 1;
+        
+        // Error handler middleware
+        const errorHandler = (err, req, res, next) => {
+            console.error(err.stack);
+            res.status(500).json({ error: 'Something went wrong!' });
+        };
+        
+        // GET all todos
+        app.get('/todos', (req, res) => {
+            res.json(todos);
+        });
+        
+        // GET single todo
+        app.get('/todos/:id', (req, res) => {
+            const todo = todos.find(t => t.id === parseInt(req.params.id));
+            if (!todo) {
+                return res.status(404).json({ error: 'Todo not found' });
+            }
+            res.json(todo);
+        });
+        
+        // POST new todo
+        app.post('/todos', (req, res) => {
+            const { title } = req.body;
+            if (!title) {
+                return res.status(400).json({ error: 'Title is required' });
+            }
+        
+            const todo = {
+                id: nextId++,
+                title,
+                completed: false,
+                createdAt: new Date()
+            };
+        
+            todos.push(todo);
+            res.status(201).json(todo);
+        });
+        
+        // PUT update todo
+        app.put('/todos/:id', (req, res) => {
+            const { title, completed } = req.body;
+            const todo = todos.find(t => t.id === parseInt(req.params.id));
+            
+            if (!todo) {
+                return res.status(404).json({ error: 'Todo not found' });
+            }
+        
+            todo.title = title || todo.title;
+            todo.completed = completed !== undefined ? completed : todo.completed;
+            
+            res.json(todo);
+        });
+        
+        // DELETE todo
+        app.delete('/todos/:id', (req, res) => {
+            const index = todos.findIndex(t => t.id === parseInt(req.params.id));
+            
+            if (index === -1) {
+                return res.status(404).json({ error: 'Todo not found' });
+            }
+        
+            todos.splice(index, 1);
+            res.status(204).send();
+        });
+        
+        app.use(errorHandler);
+        
+        app.listen(port, () => {
+            console.log(\`Server running at http://localhost:\${port}\`);
+        });`,
+                        explanation: "This solution demonstrates a basic REST API implementation with the following features:\n\n" +
+                            "1. CRUD Operations:\n" +
+                            "   - GET /todos - List all todos\n" +
+                            "   - GET /todos/:id - Get single todo\n" +
+                            "   - POST /todos - Create new todo\n" +
+                            "   - PUT /todos/:id - Update todo\n" +
+                            "   - DELETE /todos/:id - Delete todo\n\n" +
+                            "2. Best Practices:\n" +
+                            "   - Proper HTTP status codes\n" +
+                            "   - Error handling middleware\n" +
+                            "   - Input validation\n" +
+                            "   - RESTful routing conventions\n\n" +
+                            "3. Code Organization:\n" +
+                            "   - Middleware setup\n" +
+                            "   - Route handlers\n" +
+                            "   - In-memory data storage"
+                    }
+                },
+                {
+                    title: "Database Connection and Basic CRUD",
+                    difficulty: "Easy",
+                    description: "Implement basic CRUD operations using MongoDB and Mongoose for a user management system.",
+                    hints: [
+                        "Set up MongoDB connection with proper error handling",
+                        "Create a User schema with validation",
+                        "Implement async/await for database operations",
+                        "Add basic error handling for database operations"
+                    ],
+                    solution: {
+                        code: `const mongoose = require('mongoose');
+        const express = require('express');
+        const app = express();
+        
+        // MongoDB Connection
+        mongoose.connect('mongodb://localhost/userdb', {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        }).then(() => {
+            console.log('Connected to MongoDB');
+        }).catch(err => {
+            console.error('MongoDB connection error:', err);
+            process.exit(1);
+        });
+        
+        // User Schema
+        const userSchema = new mongoose.Schema({
+            username: {
+                type: String,
+                required: [true, 'Username is required'],
+                unique: true,
+                trim: true,
+                minlength: [3, 'Username must be at least 3 characters']
+            },
+            email: {
+                type: String,
+                required: [true, 'Email is required'],
+                unique: true,
+                lowercase: true,
+                match: [/^\\S+@\\S+\\.\\S+$/, 'Please enter a valid email']
+            },
+            age: {
+                type: Number,
+                min: [0, 'Age cannot be negative']
+            },
+            createdAt: {
+                type: Date,
+                default: Date.now
+            }
+        });
+        
+        const User = mongoose.model('User', userSchema);
+        
+        // Middleware
+        app.use(express.json());
+        
+        // Create User
+        app.post('/users', async (req, res) => {
+            try {
+                const user = new User(req.body);
+                await user.save();
+                res.status(201).json(user);
+            } catch (error) {
+                if (error.code === 11000) {
+                    res.status(400).json({ 
+                        error: 'Username or email already exists' 
+                    });
+                } else {
+                    res.status(400).json({ 
+                        error: error.message 
+                    });
+                }
+            }
+        });
+        
+        // Get All Users
+        app.get('/users', async (req, res) => {
+            try {
+                const users = await User.find()
+                    .select('-__v')
+                    .sort({ createdAt: -1 });
+                res.json(users);
+            } catch (error) {
+                res.status(500).json({ 
+                    error: 'Error fetching users' 
+                });
+            }
+        });
+        
+        // Get User by ID
+        app.get('/users/:id', async (req, res) => {
+            try {
+                const user = await User.findById(req.params.id)
+                    .select('-__v');
+                if (!user) {
+                    return res.status(404).json({ 
+                        error: 'User not found' 
+                    });
+                }
+                res.json(user);
+            } catch (error) {
+                res.status(500).json({ 
+                    error: 'Error fetching user' 
+                });
+            }
+        });
+        
+        // Update User
+        app.put('/users/:id', async (req, res) => {
+            try {
+                const user = await User.findByIdAndUpdate(
+                    req.params.id,
+                    req.body,
+                    { 
+                        new: true, 
+                        runValidators: true 
+                    }
+                );
+                if (!user) {
+                    return res.status(404).json({ 
+                        error: 'User not found' 
+                    });
+                }
+                res.json(user);
+            } catch (error) {
+                res.status(400).json({ 
+                    error: error.message 
+                });
+            }
+        });
+        
+        // Delete User
+        app.delete('/users/:id', async (req, res) => {
+            try {
+                const user = await User.findByIdAndDelete(req.params.id);
+                if (!user) {
+                    return res.status(404).json({ 
+                        error: 'User not found' 
+                    });
+                }
+                res.status(204).send();
+            } catch (error) {
+                res.status(500).json({ 
+                    error: 'Error deleting user' 
+                });
+            }
+        });
+        
+        const port = 3000;
+        app.listen(port, () => {
+            console.log(\`Server running at http://localhost:\${port}\`);
+        });`,
+                        explanation: "This solution demonstrates MongoDB integration with the following features:\n\n" +
+                            "1. Database Setup:\n" +
+                            "   - MongoDB connection with error handling\n" +
+                            "   - Mongoose schema with validation\n" +
+                            "   - Data model definition\n\n" +
+                            "2. CRUD Operations:\n" +
+                            "   - Create: POST /users\n" +
+                            "   - Read: GET /users and GET /users/:id\n" +
+                            "   - Update: PUT /users/:id\n" +
+                            "   - Delete: DELETE /users/:id\n\n" +
+                            "3. Best Practices:\n" +
+                            "   - Async/await usage\n" +
+                            "   - Error handling\n" +
+                            "   - Input validation\n" +
+                            "   - Proper status codes"
+                    }
+                }
+            ],
+            intermediateExercises: [
+                {
+                    title: "Authentication System",
+                    difficulty: "Medium",
+                    description: "Implement a complete authentication system with JWT, password hashing, and protected routes.",
+                    hints: [
+                        "Use bcrypt for password hashing",
+                        "Implement JWT for authentication",
+                        "Create middleware for route protection",
+                        "Add refresh token functionality"
+                    ],
+                    solution: {
+                        code: `const express = require('express');
+        const jwt = require('jsonwebtoken');
+        const bcrypt = require('bcrypt');
+        const mongoose = require('mongoose');
+        
+        const app = express();
+        app.use(express.json());
+        
+        // Environment variables (should be in .env file)
+        const JWT_SECRET = 'your-secret-key';
+        const JWT_REFRESH_SECRET = 'your-refresh-secret';
+        const SALT_ROUNDS = 10;
+        
+        // User Schema
+        const userSchema = new mongoose.Schema({
+            email: {
+                type: String,
+                required: true,
+                unique: true,
+                lowercase: true
+            },
+            password: {
+                type: String,
+                required: true,
+                minlength: 6
+            },
+            refreshTokens: [String]
+        });
+        
+        // Hash password before saving
+        userSchema.pre('save', async function(next) {
+            if (this.isModified('password')) {
+                this.password = await bcrypt.hash(this.password, SALT_ROUNDS);
+            }
+            next();
+        });
+        
+        const User = mongoose.model('User', userSchema);
+        
+        // Generate tokens
+        function generateTokens(userId) {
+            const accessToken = jwt.sign(
+                { userId }, 
+                JWT_SECRET, 
+                { expiresIn: '15m' }
+            );
+            
+            const refreshToken = jwt.sign(
+                { userId }, 
+                JWT_REFRESH_SECRET, 
+                { expiresIn: '7d' }
+            );
+            
+            return { accessToken, refreshToken };
+        }
+        
+        // Authentication middleware
+        const authenticate = async (req, res, next) => {
+            try {
+                const authHeader = req.headers.authorization;
+                if (!authHeader) {
+                    return res.status(401).json({ 
+                        error: 'No token provided' 
+                    });
+                }
+        
+                const token = authHeader.split(' ')[1];
+                const decoded = jwt.verify(token, JWT_SECRET);
+                req.userId = decoded.userId;
+                next();
+            } catch (error) {
+                if (error.name === 'TokenExpiredError') {
+                    return res.status(401).json({ 
+                        error: 'Token expired' 
+                    });
+                }
+                res.status(401).json({ 
+                    error: 'Invalid token' 
+                });
+            }
+        };
+        
+        // Register user
+        app.post('/auth/register', async (req, res) => {
+            try {
+                const { email, password } = req.body;
+                
+                // Check if user exists
+                const existingUser = await User.findOne({ email });
+                if (existingUser) {
+                    return res.status(400).json({ 
+                        error: 'Email already registered' 
+                    });
+                }
+        
+                // Create new user
+                const user = new User({ email, password });
+                await user.save();
+        
+                // Generate tokens
+                const { accessToken, refreshToken } = generateTokens(user._id);
+                
+                // Save refresh token
+                user.refreshTokens.push(refreshToken);
+                await user.save();
+        
+                res.status(201).json({ accessToken, refreshToken });
+            } catch (error) {
+                res.status(500).json({ 
+                    error: 'Error registering user' 
+                });
+            }
+        });
+        
+        // Login user
+        app.post('/auth/login', async (req, res) => {
+            try {
+                const { email, password } = req.body;
+        
+                // Find user
+                const user = await User.findOne({ email });
+                if (!user) {
+                    return res.status(401).json({ 
+                        error: 'Invalid credentials' 
+                    });
+                }
+        
+                // Check password
+                const validPassword = await bcrypt.compare(
+                    password, 
+                    user.password
+                );
+                if (!validPassword) {
+                    return res.status(401).json({ 
+                        error: 'Invalid credentials' 
+                    });
+                }
+        
+                // Generate tokens
+                const { accessToken, refreshToken } = generateTokens(user._id);
+                
+                // Save refresh token
+                user.refreshTokens.push(refreshToken);
+                await user.save();
+        
+                res.json({ accessToken, refreshToken });
+            } catch (error) {
+                res.status(500).json({ 
+                    error: 'Error logging in' 
+                });
+            }
+        });
+        
+        // Refresh token
+        app.post('/auth/refresh-token', async (req, res) => {
+            try {
+                const { refreshToken } = req.body;
+                if (!refreshToken) {
+                    return res.status(401).json({ 
+                        error: 'Refresh token required' 
+                    });
+                }
+        
+                // Verify refresh token
+                const decoded = jwt.verify(refreshToken, JWT_REFRESH_SECRET);
+                
+                // Find user and check if refresh token exists
+                const user = await User.findById(decoded.userId);
+                if (!user || !user.refreshTokens.includes(refreshToken)) {
+                    return res.status(401).json({ 
+                        error: 'Invalid refresh token' 
+                    });
+                }
+        
+                // Generate new tokens
+                const newTokens = generateTokens(user._id);
+                
+                // Update refresh tokens
+                user.refreshTokens = user.refreshTokens.filter(
+                    t => t !== refreshToken
+                );
+                user.refreshTokens.push(newTokens.refreshToken);
+                await user.save();
+        
+                res.json(newTokens);
+            } catch (error) {
+                res.status(401).json({ 
+                    error: 'Invalid refresh token' 
+                });
+            }
+        });
+        
+        // Logout
+        app.post('/auth/logout', authenticate, async (req, res) => {
+            try {
+                const { refreshToken } = req.body;
+                
+                // Remove refresh token
+                const user = await User.findById(req.userId);
+                user.refreshTokens = user.refreshTokens.filter(
+                    t => t !== refreshToken
+                );
+                await user.save();
+        
+                res.status(204).send();
+            } catch (error) {
+                res.status(500).json({ 
+                    error: 'Error logging out' 
+                });
+            }
+        });
+        
+        // Protected route example
+        app.get('/protected', authenticate, (req, res) => {
+            res.json({ 
+                message: 'Access granted to protected resource' 
+            });
+        });`,
+        explanation: "This authentication system implements:\n\n" +
+        "1. Security Features:\n" +
+        "   - Password hashing with bcrypt\n" +
+        "   - JWT-based authentication\n" +
+        "   - Refresh token rotation\n" +
+        "   - Secure password storage\n" +
+        "   - Token blacklisting on logout\n\n" +
+        "2. Authentication Flow:\n" +
+        "   - User registration with validation\n" +
+        "   - User login with credentials\n" +
+        "   - Access token generation and validation\n" +
+        "   - Refresh token mechanism\n" +
+        "   - Secure logout process\n\n" +
+        "3. Best Practices:\n" +
+        "   - Environment variable usage\n" +
+        "   - Middleware for route protection\n" +
+        "   - Error handling\n" +
+        "   - Token expiration\n" +
+        "   - MongoDB integration\n\n" +
+        "4. Advanced Features:\n" +
+        "   - Multiple device support\n" +
+        "   - Token refresh mechanism\n" +
+        "   - Session management\n" +
+        "   - Concurrent login handling\n\n" +
+        "5. API Endpoints:\n" +
+        "   - POST /auth/register - New user registration\n" +
+        "   - POST /auth/login - User login\n" +
+        "   - POST /auth/refresh-token - Token refresh\n" +
+        "   - POST /auth/logout - User logout\n" +
+        "   - GET /protected - Protected route example"
+                }
+           }
+        ],
+        advancedExercises: [
+            {
+                title: "Real-time Chat System with Microservices",
+                difficulty: "Hard",
+                description: "Implement a scalable real-time chat system using Socket.IO, Redis for pub/sub, and MongoDB for message persistence. Include features like user presence, message delivery status, and chat rooms.",
+                hints: [
+                    "Use Socket.IO for real-time communication",
+                    "Implement Redis for message broker and caching",
+                    "Use MongoDB for message persistence",
+                    "Handle user presence and disconnections",
+                    "Implement message delivery acknowledgments",
+                    "Add room-based chat functionality",
+                    "Include error handling and reconnection logic"
+                ],
+                solution: {
+                    code: `const express = require('express');
+        const http = require('http');
+        const socketIO = require('socket.io');
+        const mongoose = require('mongoose');
+        const Redis = require('ioredis');
+        const { promisify } = require('util');
+        
+        // Initialize Express app and Socket.IO
+        const app = express();
+        const server = http.createServer(app);
+        const io = socketIO(server);
+        
+        // Redis clients for pub/sub
+        const publisher = new Redis();
+        const subscriber = new Redis();
+        
+        // MongoDB connection
+        mongoose.connect('mongodb://localhost/chat', {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
+        
+        // Message Schema
+        const messageSchema = new mongoose.Schema({
+            room: { type: String, required: true },
+            sender: { type: String, required: true },
+            content: { type: String, required: true },
+            timestamp: { type: Date, default: Date.now },
+            delivered: { type: Boolean, default: false },
+            read: { type: Boolean, default: false }
+        });
+        
+        const Message = mongoose.model('Message', messageSchema);
+        
+        // Room Schema
+        const roomSchema = new mongoose.Schema({
+            name: { type: String, required: true },
+            participants: [String],
+            type: { type: String, enum: ['private', 'group'], default: 'private' },
+            created: { type: Date, default: Date.now }
+        });
+        
+        const Room = mongoose.model('Room', roomSchema);
+        
+        // User presence tracking
+        const userPresence = new Map();
+        
+        // Socket.IO middleware for authentication
+        io.use(async (socket, next) => {
+            const token = socket.handshake.auth.token;
+            try {
+                // Verify user token (implement your auth logic here)
+                socket.userId = 'user-' + Math.random().toString(36).substr(2, 9);
+                next();
+            } catch (error) {
+                next(new Error('Authentication error'));
+            }
+        });
+        
+        // Handle socket connections
+        io.on('connection', (socket) => {
+            console.log(\`User connected: \${socket.userId}\`);
+            
+            // Update user presence
+            userPresence.set(socket.userId, {
+                online: true,
+                lastSeen: new Date(),
+                socketId: socket.id
+            });
+            
+            // Broadcast user presence to all clients
+            io.emit('presence', {
+                userId: socket.userId,
+                online: true
+            });
+        
+            // Join a chat room
+            socket.on('join-room', async ({ roomId }) => {
+                try {
+                    const room = await Room.findById(roomId);
+                    if (!room) {
+                        socket.emit('error', { message: 'Room not found' });
+                        return;
+                    }
+        
+                    socket.join(roomId);
+                    
+                    // Get recent messages
+                    const messages = await Message.find({ room: roomId })
+                        .sort('-timestamp')
+                        .limit(50);
+                    
+                    socket.emit('room-history', messages);
+                    
+                    // Notify room participants
+                    socket.to(roomId).emit('user-joined', {
+                        userId: socket.userId,
+                        timestamp: new Date()
+                    });
+                } catch (error) {
+                    socket.emit('error', { message: 'Error joining room' });
+                }
+            });
+        
+            // Handle new message
+            socket.on('send-message', async (data) => {
+                try {
+                    const { roomId, content } = data;
+                    
+                    // Create and save message
+                    const message = new Message({
+                        room: roomId,
+                        sender: socket.userId,
+                        content,
+                        timestamp: new Date()
+                    });
+                    await message.save();
+        
+                    // Publish message to Redis
+                    const messageData = {
+                        id: message._id,
+                        room: roomId,
+                        sender: socket.userId,
+                        content,
+                        timestamp: message.timestamp
+                    };
+                    
+                    await publisher.publish(
+                        'chat_messages', 
+                        JSON.stringify(messageData)
+                    );
+        
+                    // Send acknowledgment to sender
+                    socket.emit('message-sent', {
+                        messageId: message._id,
+                        timestamp: message.timestamp
+                    });
+        
+                    // Broadcast to room participants
+                    socket.to(roomId).emit('new-message', messageData);
+                } catch (error) {
+                    socket.emit('error', { message: 'Error sending message' });
+                }
+            });
+        
+            // Handle message delivery status
+            socket.on('message-delivered', async ({ messageId }) => {
+                try {
+                    await Message.findByIdAndUpdate(messageId, {
+                        delivered: true,
+                        deliveredAt: new Date()
+                    });
+        
+                    // Notify message sender
+                    const message = await Message.findById(messageId);
+                    io.to(message.sender).emit('delivery-status', {
+                        messageId,
+                        status: 'delivered'
+                    });
+                } catch (error) {
+                    socket.emit('error', { message: 'Error updating delivery status' });
+                }
+            });
+        
+            // Handle message read status
+            socket.on('message-read', async ({ messageId }) => {
+                try {
+                    await Message.findByIdAndUpdate(messageId, {
+                        read: true,
+                        readAt: new Date()
+                    });
+        
+                    // Notify message sender
+                    const message = await Message.findById(messageId);
+                    io.to(message.sender).emit('read-status', {
+                        messageId,
+                        status: 'read'
+                    });
+                } catch (error) {
+                    socket.emit('error', { message: 'Error updating read status' });
+                }
+            });
+        
+            // Handle typing indicators
+            socket.on('typing', ({ roomId }) => {
+                socket.to(roomId).emit('user-typing', {
+                    userId: socket.userId,
+                    timestamp: new Date()
+                });
+            });
+        
+            // Handle disconnection
+            socket.on('disconnect', () => {
+                userPresence.set(socket.userId, {
+                    online: false,
+                    lastSeen: new Date()
+                });
+        
+                // Broadcast user offline status
+                io.emit('presence', {
+                    userId: socket.userId,
+                    online: false,
+                    lastSeen: new Date()
+                });
+            });
+        });
+        
+        // Subscribe to Redis messages
+        subscriber.subscribe('chat_messages');
+        subscriber.on('message', (channel, message) => {
+            if (channel === 'chat_messages') {
+                const messageData = JSON.parse(message);
+                // Handle message broadcast to relevant clients
+                io.to(messageData.room).emit('new-message', messageData);
+            }
+        });
+        
+        // Error handling
+        process.on('unhandledRejection', (error) => {
+            console.error('Unhandled promise rejection:', error);
+        });
+        
+        // Start server
+        const PORT = process.env.PORT || 3000;
+        server.listen(PORT, () => {
+            console.log(\`Server running on port \${PORT}\`);
+        });`,
+                    explanation: "This advanced chat system implementation demonstrates:\n\n" +
+                        "1. Real-time Features:\n" +
+                        "   - WebSocket communication using Socket.IO\n" +
+                        "   - User presence tracking\n" +
+                        "   - Typing indicators\n" +
+                        "   - Message delivery/read receipts\n" +
+                        "   - Room-based chat functionality\n\n" +
+                        "2. Scalability Solutions:\n" +
+                        "   - Redis pub/sub for message broadcasting\n" +
+                        "   - MongoDB for message persistence\n" +
+                        "   - User presence management\n" +
+                        "   - Efficient message delivery\n\n" +
+                        "3. Advanced Concepts:\n" +
+                        "   - Event-driven architecture\n" +
+                        "   - Message acknowledgment system\n" +
+                        "   - Error handling and recovery\n" +
+                        "   - Connection state management\n\n" +
+                        "4. Best Practices:\n" +
+                        "   - Authentication middleware\n" +
+                        "   - Database schema design\n" +
+                        "   - Real-time event handling\n" +
+                        "   - Error broadcasting\n\n" +
+                        "5. Performance Optimizations:\n" +
+                        "   - Message caching\n" +
+                        "   - Efficient room management\n" +
+                        "   - Optimized database queries\n" +
+                        "   - Connection pooling"
+                }
+            }
+        ]
+        }
+    }
     },
+
     {
         id: 3,
         title: "UI/UX Development",
