@@ -90,6 +90,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── AddSpotlight/
 │   │   │   │   └── page.jsx
+│   │   │   ├── AddStories/
+│   │   │   │   └── page.jsx
 │   │   │   ├── Certifications/
 │   │   │   │   └── page.jsx
 │   │   │   ├── Chapters/
@@ -231,6 +233,7 @@
 │   │   │   ├── AddHackathonForm.jsx
 │   │   │   ├── AddProjectsForm.jsx
 │   │   │   ├── AddSpotlightForm.jsx
+│   │   │   ├── AddStoriesForm.jsx
 │   │   │   ├── Footer.jsx
 │   │   │   ├── Header.jsx
 │   │   │   ├── Hero.jsx
@@ -276,9 +279,6 @@
 │   ├── lib/
 │   │   ├── Hackathon.js
 │   │   ├── Projects.js
-│   │   ├── cpp-content.js
-│   │   ├── dsa-content.js
-│   │   ├── dsa-track-content.js
 │   │   └── utils.js
 │   └── public/
 │       └── GDSC-RCIIT Logo.png
