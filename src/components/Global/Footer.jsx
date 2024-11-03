@@ -35,36 +35,12 @@ const legal = [
 ];
 
 const socialLinks = [
-  {
-    icon: <Instagram size={20} />,
-    color: "bg-gradient-to-br from-purple-600 to-pink-500",
-    href: "https://instagram.com/",
-  },
-  {
-    icon: <FaXTwitter size={20} />,
-    color: "bg-black",
-    href: "https://x.com/gdsc_rcciit",
-  },
-  {
-    icon: <Linkedin size={20} />,
-    color: "bg-blue-600",
-    href: "https://www.linkedin.com/company/gdgc-rcciit/",
-  },
-  {
-    icon: <Github size={20} />,
-    color: "bg-gray-800",
-    href: "https://github.com/GDSC-RCCIIT/gdg-website",
-  },
-  {
-    icon: <FaWhatsapp size={20} />,
-    color: "bg-green-500",
-    href: "https://web.whatsapp.com/",
-  },
-  {
-    icon: <FiMail size={20} />,
-    color: "bg-red-500",
-    href: "mailto:contact@gdsc.com",
-  },
+  { icon: <Instagram size={20} />, color: "bg-gradient-to-br from-purple-600 to-pink-500", href: "https://instagram.com/" },
+  { icon: <FaXTwitter size={20} />, color: "bg-black", href: "https://x.com/gdsc_rcciit" },
+  { icon: <Linkedin size={20} />, color: "bg-blue-600", href: "https://www.linkedin.com/company/gdgc-rcciit/" },
+  { icon: <Github size={20} />, color: "bg-gray-800", href: "https://github.com/GDSC-RCCIIT/gdg-website" },
+  { icon: <FaWhatsapp size={20} />, color: "bg-green-500", href: "https://web.whatsapp.com/" },
+  { icon: <FiMail size={20} />, color: "bg-red-500", href: "mailto:contact@gdsc.com" },
 ];
 
 const Footer = () => {
