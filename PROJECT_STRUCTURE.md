@@ -90,6 +90,7 @@
 │   ├── techeq2.webp
 │   └── vision.webp
 ├── repo_structure.txt
+├── security.md
 ├── src/
 │   ├── app/
 │   │   ├── (pages)/
