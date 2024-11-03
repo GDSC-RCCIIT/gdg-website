@@ -6546,6 +6546,1596 @@ const designSystem = {
         }
         }
     },
+    {
+        id: 7,
+        title: "Cloud Computing & DevOps",
+        description: "To learn cloud and DevOps, follow this roadmap",
+        extendedContent: `
+            Master cloud platforms (AWS, Azure, GCP) and DevOps practices including CI/CD, 
+            infrastructure as code, containerization, and orchestration. Learn about cloud 
+            architecture, microservices, monitoring, and security best practices.
+            
+            This roadmap covers essential DevOps tools like Docker, Kubernetes, Jenkins, 
+            and Terraform. You'll also learn about cloud services, scalability patterns, 
+            and automated deployment strategies.
+            
+            Advanced topics include cloud-native development, serverless architecture, 
+            monitoring and logging, and site reliability engineering (SRE) practices.
+        `,
+        icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+        trackInfo: {
+            prerequisites: [
+                "Basic understanding of operating systems (Linux preferred)",
+                "Command line and shell scripting knowledge",
+                "Fundamentals of networking and protocols",
+                "Basic programming skills in any language",
+                "Understanding of web technologies and APIs",
+                "Version control with Git",
+                "Basic understanding of software development lifecycle"
+            ],
+            outcomes: [
+                "Design and implement cloud infrastructure on major platforms",
+                "Build and manage CI/CD pipelines",
+                "Implement Infrastructure as Code using various tools",
+                "Master containerization and orchestration",
+                "Configure monitoring and logging solutions",
+                "Implement cloud security best practices",
+                "Automate deployment and scaling processes",
+                "Manage microservices architectures",
+                "Handle incident response and system reliability",
+                "Optimize cloud costs and resource utilization"
+            ],
+            sections: [
+                {
+                    title: "Cloud Fundamentals",
+                    content: "Master core cloud computing concepts including virtualization, service models (IaaS, PaaS, SaaS), deployment models, and basic cloud architecture. Learn about major cloud providers (AWS, Azure, GCP) and their core services. Understand cloud networking, storage, and compute resources."
+                },
+                {
+                    title: "DevOps Practices & Tools",
+                    content: "Learn essential DevOps methodologies and tools including version control, CI/CD pipelines, and automation. Master configuration management, infrastructure as code, and deployment strategies. Understand DevOps culture and practices for team collaboration."
+                },
+                {
+                    title: "Containerization & Orchestration",
+                    content: "Deep dive into containerization with Docker and container orchestration with Kubernetes. Learn about container networking, storage, security, and best practices. Understand microservices architecture and service mesh concepts."
+                },
+                {
+                    title: "Infrastructure Automation",
+                    content: "Master Infrastructure as Code using tools like Terraform, CloudFormation, and Ansible. Learn about configuration management, automated provisioning, and infrastructure testing. Understand immutable infrastructure patterns and GitOps practices."
+                },
+                {
+                    title: "Monitoring & Operations",
+                    content: "Implement comprehensive monitoring, logging, and alerting solutions. Learn about observability, performance optimization, and troubleshooting. Master tools like Prometheus, Grafana, ELK stack, and cloud-native monitoring solutions."
+                },
+                {
+                    title: "Security & Compliance",
+                    content: "Implement cloud security best practices, identity management, and compliance standards. Learn about security automation, threat detection, and incident response. Understand DevSecOps practices and security tools integration."
+                },
+                {
+                    title: "Site Reliability Engineering",
+                    content: "Learn SRE practices including service level objectives, error budgets, and reliability patterns. Master incident management, capacity planning, and performance optimization. Understand chaos engineering and resilience testing."
+                }
+            ]
+        },
+        content: {
+            examples: [
+                {
+                    title: "AWS Infrastructure Setup with Terraform",
+                    code: `# AWS VPC and EC2 Instance Setup
+        # main.tf
+        
+        provider "aws" {
+            region = "us-west-2"
+        }
+        
+        # Create VPC
+        resource "aws_vpc" "main" {
+            cidr_block = "10.0.0.0/16"
+            
+            tags = {
+                Name = "main-vpc"
+                Environment = "production"
+            }
+        }
+        
+        # Create Public Subnet
+        resource "aws_subnet" "public" {
+            vpc_id = aws_vpc.main.id
+            cidr_block = "10.0.1.0/24"
+            availability_zone = "us-west-2a"
+            map_public_ip_on_launch = true
+            
+            tags = {
+                Name = "public-subnet"
+                Environment = "production"
+            }
+        }
+        
+        # Create Internet Gateway
+        resource "aws_internet_gateway" "main" {
+            vpc_id = aws_vpc.main.id
+            
+            tags = {
+                Name = "main-igw"
+            }
+        }
+        
+        # Create Route Table
+        resource "aws_route_table" "public" {
+            vpc_id = aws_vpc.main.id
+            
+            route {
+                cidr_block = "0.0.0.0/0"
+                gateway_id = aws_internet_gateway.main.id
+            }
+            
+            tags = {
+                Name = "public-rt"
+            }
+        }
+        
+        # Associate Route Table with Subnet
+        resource "aws_route_table_association" "public" {
+            subnet_id = aws_subnet.public.id
+            route_table_id = aws_route_table.public.id
+        }
+        
+        # Create Security Group
+        resource "aws_security_group" "web" {
+            name = "web-sg"
+            description = "Security group for web servers"
+            vpc_id = aws_vpc.main.id
+            
+            ingress {
+                from_port = 80
+                to_port = 80
+                protocol = "tcp"
+                cidr_blocks = ["0.0.0.0/0"]
+            }
+            
+            ingress {
+                from_port = 443
+                to_port = 443
+                protocol = "tcp"
+                cidr_blocks = ["0.0.0.0/0"]
+            }
+            
+            ingress {
+                from_port = 22
+                to_port = 22
+                protocol = "tcp"
+                cidr_blocks = ["0.0.0.0/0"]
+            }
+            
+            egress {
+                from_port = 0
+                to_port = 0
+                protocol = "-1"
+                cidr_blocks = ["0.0.0.0/0"]
+            }
+        }
+        
+        # Create EC2 Instance
+        resource "aws_instance" "web" {
+            ami = "ami-0c55b159cbfafe1f0"
+            instance_type = "t2.micro"
+            subnet_id = aws_subnet.public.id
+            vpc_security_group_ids = [aws_security_group.web.id]
+            
+            user_data = <<-EOF
+                        #!/bin/bash
+                        yum update -y
+                        yum install -y httpd
+                        systemctl start httpd
+                        systemctl enable httpd
+                        EOF
+            
+            tags = {
+                Name = "web-server"
+                Environment = "production"
+            }
+        }
+        
+        # Output Values
+        output "instance_public_ip" {
+            value = aws_instance.web.public_ip
+            description = "Public IP of the web server"
+        }`,
+                    explanation: "This example demonstrates Infrastructure as Code using Terraform to set up AWS infrastructure including VPC, subnet, security groups, and EC2 instance with proper networking configurations."
+                },
+                {
+                    title: "Docker Container with CI/CD Pipeline",
+                    code: `# Dockerfile
+        FROM node:14-alpine
+        
+        WORKDIR /app
+        
+        COPY package*.json ./
+        RUN npm install
+        
+        COPY . .
+        
+        EXPOSE 3000
+        CMD ["npm", "start"]
+        
+        # docker-compose.yml
+        version: '3'
+        services:
+          web:
+            build: .
+            ports:
+              - "3000:3000"
+            environment:
+              - NODE_ENV=production
+            volumes:
+              - .:/app
+            depends_on:
+              - db
+          
+          db:
+            image: mongo:latest
+            ports:
+              - "27017:27017"
+            volumes:
+              - mongodb_data:/data/db
+        
+        volumes:
+          mongodb_data:
+        
+        # .gitlab-ci.yml
+        stages:
+          - test
+          - build
+          - deploy
+        
+        variables:
+          DOCKER_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+        
+        test:
+          stage: test
+          image: node:14-alpine
+          script:
+            - npm install
+            - npm test
+          only:
+            - main
+            - develop
+        
+        build:
+          stage: build
+          image: docker:latest
+          services:
+            - docker:dind
+          script:
+            - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+            - docker build -t $DOCKER_IMAGE .
+            - docker push $DOCKER_IMAGE
+          only:
+            - main
+        
+        deploy:
+          stage: deploy
+          image: 
+            name: bitnami/kubectl:latest
+            entrypoint: ['']
+          script:
+            - kubectl config set-cluster k8s --server="$KUBE_URL" --certificate-authority="$KUBE_CA_PEM"
+            - kubectl config set-credentials gitlab --token="$KUBE_TOKEN"
+            - kubectl config set-context default --cluster=k8s --user=gitlab
+            - kubectl config use-context default
+            - sed -i "s/:latest/:$CI_COMMIT_SHA/" kubernetes/deployment.yml
+            - kubectl apply -f kubernetes/deployment.yml
+          only:
+            - main
+        
+        # kubernetes/deployment.yml
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: web-app
+        spec:
+          replicas: 3
+          selector:
+            matchLabels:
+              app: web
+          template:
+            metadata:
+              labels:
+                app: web
+            spec:
+              containers:
+              - name: web
+                image: $DOCKER_IMAGE
+                ports:
+                - containerPort: 3000
+                env:
+                - name: NODE_ENV
+                  value: production
+                resources:
+                  limits:
+                    cpu: "0.5"
+                    memory: "512Mi"
+                  requests:
+                    cpu: "0.2"
+                    memory: "256Mi"
+        ---
+        apiVersion: v1
+        kind: Service
+        metadata:
+          name: web-service
+        spec:
+          type: LoadBalancer
+          ports:
+          - port: 80
+            targetPort: 3000
+          selector:
+            app: web`,
+                    explanation: "This example shows a complete CI/CD pipeline setup with Docker containerization, GitLab CI/CD configuration, and Kubernetes deployment manifests."
+                },
+                {
+                    title: "Monitoring Stack Configuration",
+                    code: `# prometheus.yml
+        global:
+          scrape_interval: 15s
+          evaluation_interval: 15s
+        
+        alerting:
+          alertmanagers:
+            - static_configs:
+                - targets:
+                  - alertmanager:9093
+        
+        rule_files:
+          - "alerts.yml"
+        
+        scrape_configs:
+          - job_name: 'prometheus'
+            static_configs:
+              - targets: ['localhost:9090']
+        
+          - job_name: 'node-exporter'
+            static_configs:
+              - targets: ['node-exporter:9100']
+        
+          - job_name: 'application'
+            metrics_path: '/metrics'
+            static_configs:
+              - targets: ['application:8080']
+        
+        # alerts.yml
+        groups:
+          - name: alerts
+            rules:
+              - alert: HighCPUUsage
+                expr: 100 - (avg by(instance) (rate(node_cpu_seconds_total{mode="idle"}[2m])) * 100) > 80
+                for: 5m
+                labels:
+                  severity: warning
+                annotations:
+                  summary: High CPU usage on {{ $labels.instance }}
+                  description: CPU usage is above 80% for 5 minutes
+        
+        # docker-compose.monitoring.yml
+        version: '3'
+        
+        services:
+          prometheus:
+            image: prom/prometheus
+            ports:
+              - "9090:9090"
+            volumes:
+              - ./prometheus.yml:/etc/prometheus/prometheus.yml
+              - ./alerts.yml:/etc/prometheus/alerts.yml
+            command:
+              - '--config.file=/etc/prometheus/prometheus.yml'
+              - '--storage.tsdb.path=/prometheus'
+              - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+              - '--web.console.templates=/usr/share/prometheus/consoles'
+        
+          grafana:
+            image: grafana/grafana
+            ports:
+              - "3000:3000"
+            environment:
+              - GF_SECURITY_ADMIN_PASSWORD=secret
+            volumes:
+              - grafana_data:/var/lib/grafana
+            depends_on:
+              - prometheus
+        
+          alertmanager:
+            image: prom/alertmanager
+            ports:
+              - "9093:9093"
+            volumes:
+              - ./alertmanager.yml:/etc/alertmanager/alertmanager.yml
+            command:
+              - '--config.file=/etc/alertmanager/alertmanager.yml'
+        
+          node-exporter:
+            image: prom/node-exporter
+            ports:
+              - "9100:9100"
+            volumes:
+              - /proc:/host/proc:ro
+              - /sys:/host/sys:ro
+              - /:/rootfs:ro
+        
+        volumes:
+          grafana_data:
+        
+        # alertmanager.yml
+        global:
+          resolve_timeout: 5m
+        
+        route:
+          group_by: ['alertname']
+          group_wait: 10s
+          group_interval: 10s
+          repeat_interval: 1h
+          receiver: 'slack'
+        
+        receivers:
+          - name: 'slack'
+            slack_configs:
+              - api_url: 'https://hooks.slack.com/services/XXX/YYY/ZZZ'
+                channel: '#alerts'
+                send_resolved: true
+        
+        # Grafana Dashboard JSON
+        {
+          "dashboard": {
+            "id": null,
+            "title": "Node Metrics",
+            "panels": [
+              {
+                "title": "CPU Usage",
+                "type": "graph",
+                "datasource": "Prometheus",
+                "targets": [
+                  {
+                    "expr": "100 - (avg by (instance) (rate(node_cpu_seconds_total{mode=\"idle\"}[2m])) * 100)",
+                    "legendFormat": "{{instance}}"
+                  }
+                ]
+              },
+              {
+                "title": "Memory Usage",
+                "type": "graph",
+                "datasource": "Prometheus",
+                "targets": [
+                  {
+                    "expr": "node_memory_MemTotal_bytes - node_memory_MemFree_bytes",
+                    "legendFormat": "{{instance}}"
+                  }
+                ]
+              }
+            ]
+          }
+        }`,
+                    explanation: "This example demonstrates setting up a complete monitoring stack with Prometheus, Grafana, AlertManager, and Node Exporter, including alert configurations and dashboard definitions."
+                }
+            ],
+        
+            roadmap: [
+                {
+                    title: "1. Cloud Computing Fundamentals",
+                    description: "Master the basics of cloud computing and service models",
+                    topics: [
+                        "Cloud Computing Concepts",
+                        "Major Cloud Providers (AWS, Azure, GCP)",
+                        "Cloud Service Models (IaaS, PaaS, SaaS)",
+                        "Cloud Networking and Security",
+                        "Virtual Machines and Containers",
+                        "Cloud Storage Solutions",
+                        "Identity and Access Management"
+                    ]
+                },
+                {
+                    title: "2. DevOps Fundamentals",
+                    description: "Learn core DevOps practices and methodologies",
+                    topics: [
+                        "DevOps Culture and Principles",
+                        "Version Control with Git",
+                        "CI/CD Fundamentals",
+                        "Automation and Scripting",
+                        "Configuration Management",
+                        "Infrastructure as Code Basics",
+                        "Release Management"
+                    ]
+                },
+                {
+                    title: "3. Containerization and Orchestration",
+                    description: "Master container technologies and orchestration",
+                    topics: [
+                        "Docker Fundamentals",
+                        "Container Networking",
+                        "Kubernetes Architecture",
+                        "Pod Management",
+                        "Service Deployment",
+                        "Container Security",
+                        "Service Mesh (Istio)"
+                    ]
+                },
+                {
+                    title: "4. Infrastructure Automation",
+                    description: "Learn infrastructure automation and provisioning",
+                    topics: [
+                        "Terraform",
+                        "AWS CloudFormation",
+                        "Ansible",
+                        "Infrastructure Testing",
+                        "GitOps Practices",
+                        "Resource Management",
+                        "Cost Optimization"
+                    ]
+                },
+                {
+                    title: "5. Monitoring and Logging",
+                    description: "Implement monitoring, logging, and observability",
+                    topics: [
+                        "Prometheus and Grafana",
+                        "ELK Stack",
+                        "Application Monitoring",
+                        "Log Management",
+                        "Alerting Systems",
+                        "Performance Monitoring",
+                        "Troubleshooting"
+                    ]
+                },
+                {
+                    title: "6. Cloud Security",
+                    description: "Master cloud security and compliance",
+                    topics: [
+                        "Security Best Practices",
+                        "Compliance Standards",
+                        "Network Security",
+                        "Identity Management",
+                        "Security Automation",
+                        "Incident Response",
+                        "Disaster Recovery"
+                    ]
+                },
+                {
+                    title: "7. Site Reliability Engineering",
+                    description: "Learn SRE practices and principles",
+                    topics: [
+                        "Service Level Objectives",
+                        "Error Budgets",
+                        "Capacity Planning",
+                        "Chaos Engineering",
+                        "Incident Management",
+                        "Performance Optimization",
+                        "Reliability Patterns"
+                    ]
+                }
+            ],
+            resources: {
+                documentation: [
+                    {
+                        title: "AWS Documentation",
+                        url: "https://docs.aws.amazon.com/",
+                        description: "Official Amazon Web Services documentation covering all AWS services and features",
+                        type: "Cloud Platform Documentation"
+                    },
+                    {
+                        title: "Microsoft Azure Docs",
+                        url: "https://docs.microsoft.com/azure/",
+                        description: "Comprehensive documentation for Azure cloud services and features",
+                        type: "Cloud Platform Documentation"
+                    },
+                    {
+                        title: "Google Cloud Documentation",
+                        url: "https://cloud.google.com/docs",
+                        description: "Official documentation for Google Cloud Platform services",
+                        type: "Cloud Platform Documentation"
+                    },
+                    {
+                        title: "Kubernetes Documentation",
+                        url: "https://kubernetes.io/docs/",
+                        description: "Official Kubernetes documentation and guides",
+                        type: "Container Orchestration"
+                    },
+                    {
+                        title: "Docker Documentation",
+                        url: "https://docs.docker.com/",
+                        description: "Official Docker documentation, tutorials, and best practices",
+                        type: "Containerization"
+                    },
+                    {
+                        title: "Terraform Documentation",
+                        url: "https://www.terraform.io/docs/",
+                        description: "HashiCorp's official documentation for Terraform IaC",
+                        type: "Infrastructure as Code"
+                    }
+                ],
+                tutorials: [
+                    {
+                        title: "AWS Certified Solutions Architect",
+                        url: "https://aws.amazon.com/training/path-architecting/",
+                        description: "Official AWS certification path for cloud architects",
+                        type: "Certification Course"
+                    },
+                    {
+                        title: "Docker and Kubernetes: The Complete Guide",
+                        url: "https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/",
+                        description: "Comprehensive course on containerization and orchestration",
+                        type: "Video Course"
+                    },
+                    {
+                        title: "DevOps with AWS CodePipeline",
+                        url: "https://aws.amazon.com/getting-started/hands-on/create-continuous-delivery-pipeline/",
+                        description: "Hands-on tutorial for building CI/CD pipelines in AWS",
+                        type: "Hands-on Tutorial"
+                    },
+                    {
+                        title: "HashiCorp Learn",
+                        url: "https://learn.hashicorp.com/",
+                        description: "Official tutorials for Terraform, Vault, and other HashiCorp tools",
+                        type: "Interactive Tutorial"
+                    },
+                    {
+                        title: "Google Cloud Training",
+                        url: "https://cloud.google.com/training",
+                        description: "Official Google Cloud training and certification resources",
+                        type: "Training Platform"
+                    }
+                ],
+                videos: [
+                    {
+                        title: "freeCodeCamp DevOps Course",
+                        url: "https://www.youtube.com/watch?v=j5Zsa_eOXeY",
+                        description: "Complete DevOps course including CI/CD, Docker, and Kubernetes",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "TechWorld with Nana",
+                        url: "https://www.youtube.com/c/TechWorldwithNana",
+                        description: "DevOps tutorials and technology overviews",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "AWS Events",
+                        url: "https://www.youtube.com/user/AmazonWebServices",
+                        description: "Official AWS channel with service updates and deep dives",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "HashiCorp Resource Library",
+                        url: "https://www.hashicorp.com/resources",
+                        description: "Webinars and presentations on infrastructure automation",
+                        platform: "Webinars"
+                    },
+                    {
+                        title: "CNCF YouTube",
+                        url: "https://www.youtube.com/c/cloudnativefdn",
+                        description: "Cloud Native Computing Foundation's official channel",
+                        platform: "YouTube"
+                    }
+                ],
+                books: [
+                    {
+                        title: "The Phoenix Project",
+                        author: "Gene Kim, Kevin Behr, George Spafford",
+                        description: "A novel about IT, DevOps, and helping your business win",
+                        level: "Beginner"
+                    },
+                    {
+                        title: "Site Reliability Engineering",
+                        author: "Google",
+                        description: "How Google Runs Production Systems",
+                        level: "Advanced"
+                    },
+                    {
+                        title: "Infrastructure as Code",
+                        author: "Kief Morris",
+                        description: "Managing Servers in the Cloud",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "Kubernetes: Up and Running",
+                        author: "Brendan Burns, Joe Beda, Kelsey Hightower",
+                        description: "Dive into the Future of Infrastructure",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "The DevOps Handbook",
+                        author: "Gene Kim, Jez Humble, Patrick Debois, John Willis",
+                        description: "How to Create World-Class Agility, Reliability, & Security in Technology Organizations",
+                        level: "Intermediate"
+                    }
+                ],
+                tools: [
+                    {
+                        title: "Terraform",
+                        url: "https://www.terraform.io/",
+                        description: "Infrastructure as Code tool",
+                        type: "IaC",
+                        category: "Essential"
+                    },
+                    {
+                        title: "Jenkins",
+                        url: "https://www.jenkins.io/",
+                        description: "Open-source automation server",
+                        type: "CI/CD",
+                        category: "Essential"
+                    },
+                    {
+                        title: "Prometheus",
+                        url: "https://prometheus.io/",
+                        description: "Monitoring and alerting toolkit",
+                        type: "Monitoring",
+                        category: "Essential"
+                    },
+                    {
+                        title: "GitLab",
+                        url: "https://about.gitlab.com/",
+                        description: "Complete DevOps platform",
+                        type: "DevOps Platform",
+                        category: "Platform"
+                    },
+                    {
+                        title: "Ansible",
+                        url: "https://www.ansible.com/",
+                        description: "Automation and configuration management",
+                        type: "Configuration Management",
+                        category: "Essential"
+                    }
+                ],
+                communities: [
+                    {
+                        title: "DevOps Stack Exchange",
+                        url: "https://devops.stackexchange.com/",
+                        description: "Q&A community for DevOps professionals",
+                        type: "Q&A Forum"
+                    },
+                    {
+                        title: "Reddit r/devops",
+                        url: "https://www.reddit.com/r/devops/",
+                        description: "DevOps community discussions and resources",
+                        type: "Forum"
+                    },
+                    {
+                        title: "CNCF Slack",
+                        url: "https://slack.cncf.io/",
+                        description: "Cloud Native Computing Foundation community",
+                        type: "Slack Community"
+                    },
+                    {
+                        title: "AWS Community",
+                        url: "https://aws.amazon.com/developer/community/",
+                        description: "AWS user community and forums",
+                        type: "Developer Community"
+                    },
+                    {
+                        title: "DevOps Discord",
+                        url: "https://discord.gg/devops",
+                        description: "Active Discord community for DevOps discussions",
+                        type: "Discord Community"
+                    }
+                ],
+                certifications: [
+                    {
+                        title: "AWS Certified DevOps Engineer - Professional",
+                        provider: "Amazon Web Services",
+                        description: "Professional level certification for DevOps on AWS",
+                        level: "Professional"
+                    },
+                    {
+                        title: "Certified Kubernetes Administrator (CKA)",
+                        provider: "CNCF",
+                        description: "Professional certification for Kubernetes administration",
+                        level: "Professional"
+                    },
+                    {
+                        title: "Microsoft Azure DevOps Engineer Expert",
+                        provider: "Microsoft",
+                        description: "Expert level certification for Azure DevOps",
+                        level: "Expert"
+                    },
+                    {
+                        title: "Google Cloud Professional DevOps Engineer",
+                        provider: "Google Cloud",
+                        description: "Professional certification for GCP DevOps",
+                        level: "Professional"
+                    },
+                    {
+                        title: "HashiCorp Certified: Terraform Associate",
+                        provider: "HashiCorp",
+                        description: "Certification for Terraform expertise",
+                        level: "Associate"
+                    }
+                ]
+            },
+            practice: {
+                beginnerExercises: [
+                    {
+                        title: "Basic AWS Infrastructure Setup",
+                        difficulty: "Easy",
+                        description: "Create a basic AWS infrastructure with a VPC, EC2 instance, and S3 bucket using the AWS Console.",
+                        hints: [
+                            "Start with a default VPC configuration",
+                            "Use t2.micro instance type (free tier)",
+                            "Configure security groups properly",
+                            "Set up proper IAM roles and permissions"
+                        ],
+                        solution: {
+                            code: `# Step-by-step AWS CLI commands
+            
+            # Create VPC
+            aws ec2 create-vpc --cidr-block 10.0.0.0/16 --tag-specifications 
+            'ResourceType=vpc,Tags=[{Key=Name,Value=MyVPC}]'
+            
+            # Create Subnet
+            aws ec2 create-subnet --vpc-id vpc-xxx --cidr-block 10.0.1.0/24
+            
+            # Create Internet Gateway
+            aws ec2 create-internet-gateway
+            aws ec2 attach-internet-gateway --vpc-id 
+            vpc-xxx --internet-gateway-id igw-xxx
+            
+            # Create Security Group
+            aws ec2 create-security-group --group-name MySecurityGroup
+            --description "Basic security group" --vpc-id vpc-xxx
+            
+            # Add Security Group Rules
+            aws ec2 authorize-security-group-ingress --group-id sg-xxx 
+            --protocol tcp --port 22 --cidr 0.0.0.0/0
+            aws ec2 authorize-security-group-ingress --group-id sg-xxx 
+            --protocol tcp --port 80 --cidr 0.0.0.0/0
+            
+            # Launch EC2 Instance
+            aws ec2 run-instances \n
+                --image-id ami-xxx \n
+                --count 1 \n
+                --instance-type t2.micro \n
+                --key-name MyKeyPair \n
+                --security-group-ids sg-xxx \n
+                --subnet-id subnet-xxx
+            
+            # Create S3 Bucket
+            aws s3api create-bucket \n
+                --bucket my-unique-bucket-name \n
+                --region us-west-2 \n
+                --create-bucket-configuration LocationConstraint=us-west-2`,
+                            explanation: "This exercise demonstrates:\n" +
+                                "1. Basic VPC networking setup\n" +
+                                "2. Security group configuration\n" +
+                                "3. EC2 instance deployment\n" +
+                                "4. S3 bucket creation\n" +
+                                "5. AWS CLI usage for infrastructure management"
+                        }
+                    },
+                    {
+                        title: "Docker Container Deployment",
+                        difficulty: "Easy",
+                        description: "Create and deploy a simple web application using Docker containers.",
+                        hints: [
+                            "Use a simple web framework (e.g., Node.js/Express)",
+                            "Create a proper Dockerfile",
+                            "Implement basic health checks",
+                            "Use Docker Compose for multi-container setup"
+                        ],
+                        solution: {
+                            code: `# Simple Express Application
+            # app.js
+            const express = require('express');
+            const app = express();
+            const port = 3000;
+            
+            app.get('/', (req, res) => {
+                res.send('Hello from Docker!');
+            });
+            
+            app.get('/health', (req, res) => {
+                res.status(200).send('Healthy');
+            });
+            
+            app.listen(port, () => {
+                console.log(\`App running on port \${port}\`);
+            });
+            
+            # Dockerfile
+            FROM node:14-alpine
+            
+            WORKDIR /app
+            
+            COPY package*.json ./
+            RUN npm install
+            
+            COPY . .
+            
+            EXPOSE 3000
+            HEALTHCHECK --interval=30s --timeout=3s \n
+              CMD wget --quiet --tries=1 --spider http://localhost:3000/health || exit 1
+            
+            CMD ["node", "app.js"]
+            
+            # docker-compose.yml
+            version: '3'
+            services:
+              web:
+                build: .
+                ports:
+                  - "3000:3000"
+                environment:
+                  - NODE_ENV=production
+                restart: always
+            
+            # Commands to build and run
+            docker build -t my-web-app .
+            docker run -p 3000:3000 my-web-app
+            
+            # Or using Docker Compose
+            docker-compose up -d`,
+                            explanation: "This exercise covers:\n" +
+                                "1. Basic Dockerfile creation\n" +
+                                "2. Docker image building\n" +
+                                "3. Container health checking\n" +
+                                "4. Docker Compose usage\n" +
+                                "5. Container port mapping and environment variables"
+                        }
+                    },
+                    {
+                        title: "Basic CI/CD Pipeline",
+                        difficulty: "Easy",
+                        description: "Set up a basic CI/CD pipeline using GitHub Actions for a simple application.",
+                        hints: [
+                            "Use GitHub Actions workflow syntax",
+                            "Implement basic testing",
+                            "Add automated build process",
+                            "Configure deployment step"
+                        ],
+                        solution: {
+                            code: `# .github/workflows/ci-cd.yml
+            name: CI/CD Pipeline
+            
+            on:
+              push:
+                branches: [ main ]
+              pull_request:
+                branches: [ main ]
+            
+            jobs:
+              test:
+                runs-on: ubuntu-latest
+                steps:
+                - uses: actions/checkout@v2
+                - name: Set up Node.js
+                  uses: actions/setup-node@v2
+                  with:
+                    node-version: '14'
+                - name: Install dependencies
+                  run: npm install
+                - name: Run tests
+                  run: npm test
+            
+              build:
+                needs: test
+                runs-on: ubuntu-latest
+                steps:
+                - uses: actions/checkout@v2
+                - name: Build Docker image
+                  run: docker build -t my-app: {{ github.sha }}
+                - name: Login to GitHub Container Registry
+                  uses: docker/login-action@v1
+                  with:
+                    registry: ghcr.io
+                    username: {{ github.actor }}
+                    password: {{ secrets.GITHUB_TOKEN }}
+                - name: Push Docker image
+                  run: |
+                    docker tag my-app:{{ github.sha }} 
+                    ghcr.io/{{ github.repository }}/my-app:{{ github.sha }}
+                    docker push ghcr.io/{{ github.repository }}/my-app:{{ github.sha }}
+            
+              deploy:
+                needs: build
+                runs-on: ubuntu-latest
+                if: github.ref == 'refs/heads/main'
+                steps:
+                - name: Deploy to production
+                  run: |
+                    echo "Deploying version {{ github.sha }}"
+                    # Add deployment commands here`,
+                            explanation: "This exercise demonstrates:\n" +
+                                "1. Basic GitHub Actions workflow setup\n" +
+                                "2. Automated testing implementation\n" +
+                                "3. Docker image building and pushing\n" +
+                                "4. Basic deployment pipeline\n" +
+                                "5. CI/CD best practices"
+                        }
+                    }
+                ],
+                intermediateExercises: [
+                    {
+                        title: "Kubernetes Cluster Deployment",
+                        difficulty: "Medium",
+                        description: "Set up a Kubernetes cluster and deploy a microservices application.",
+                        hints: [
+                            "Use minikube for local development",
+                            "Implement proper resource requests/limits",
+                            "Configure service discovery",
+                            "Set up proper monitoring"
+                        ],
+                        solution: {
+                            code: `# Deployment manifests for a microservices application
+            
+            # frontend-deployment.yaml
+            apiVersion: apps/v1
+            kind: Deployment
+            metadata:
+              name: frontend
+            spec:
+              replicas: 3
+              selector:
+                matchLabels:
+                  app: frontend
+              template:
+                metadata:
+                  labels:
+                    app: frontend
+                spec:
+                  containers:
+                  - name: frontend
+                    image: frontend:1.0
+                    ports:
+                    - containerPort: 80
+                    resources:
+                      requests:
+                        cpu: "100m"
+                        memory: "128Mi"
+                      limits:
+                        cpu: "200m"
+                        memory: "256Mi"
+                    livenessProbe:
+                      httpGet:
+                        path: /health
+                        port: 80
+                      initialDelaySeconds: 30
+                      periodSeconds: 10
+            
+            # backend-deployment.yaml
+            apiVersion: apps/v1
+            kind: Deployment
+            metadata:
+              name: backend
+            spec:
+              replicas: 2
+              selector:
+                matchLabels:
+                  app: backend
+              template:
+                metadata:
+                  labels:
+                    app: backend
+                spec:
+                  containers:
+                  - name: backend
+                    image: backend:1.0
+                    ports:
+                    - containerPort: 8080
+                    env:
+                    - name: DB_HOST
+                      valueFrom:
+                        configMapKeyRef:
+                          name: app-config
+                          key: db_host
+                    resources:
+                      requests:
+                        cpu: "200m"
+                        memory: "256Mi"
+                      limits:
+                        cpu: "400m"
+                        memory: "512Mi"
+            
+            # services.yaml
+            apiVersion: v1
+            kind: Service
+            metadata:
+              name: frontend-service
+            spec:
+              type: LoadBalancer
+              selector:
+                app: frontend
+              ports:
+              - port: 80
+                targetPort: 80
+            
+            ---
+            apiVersion: v1
+            kind: Service
+            metadata:
+              name: backend-service
+            spec:
+              type: ClusterIP
+              selector:
+                app: backend
+              ports:
+              - port: 8080
+                targetPort: 8080
+            
+            # configmap.yaml
+            apiVersion: v1
+            kind: ConfigMap
+            metadata:
+              name: app-config
+            data:
+              db_host: "mongodb-service"
+              api_url: "http://backend-service:8080"
+            
+            # monitoring.yaml
+            apiVersion: monitoring.coreos.com/v1
+            kind: ServiceMonitor
+            metadata:
+              name: app-monitor
+            spec:
+              selector:
+                matchLabels:
+                  app: frontend
+              endpoints:
+              - port: web
+            
+            # Commands
+            kubectl apply -f frontend-deployment.yaml
+            kubectl apply -f backend-deployment.yaml
+            kubectl apply -f services.yaml
+            kubectl apply -f configmap.yaml
+            kubectl apply -f monitoring.yaml
+            
+            # Verify deployments
+            kubectl get pods
+            kubectl get services
+            kubectl get configmaps`,
+                            explanation: "This exercise covers:\n" +
+                                "1. Kubernetes deployment configuration\n" +
+                                "2. Service discovery and networking\n" +
+                                "3. Resource management\n" +
+                                "4. Configuration management\n" +
+                                "5. Basic monitoring setup\n" +
+                                "6. Container health probes"
+                        }
+                    },
+                    {
+                        title: "Infrastructure as Code with Terraform",
+                        difficulty: "Medium",
+                        description: "Implement a complete infrastructure using Terraform including networking, compute, and storage resources.",
+                        hints: [
+                            "Use Terraform modules",
+                            "Implement state management",
+                            "Use variables and outputs",
+                            "Follow security best practices"
+                        ],
+                        solution: {
+                            code: `# Complete Infrastructure as Code Example
+            
+            # variables.tf
+            variable "region" {
+              description = "AWS region"
+              default     = "us-west-2"
+            }
+            
+            variable "environment" {
+              description = "Environment name"
+              default     = "production"
+            }
+            
+            # main.tf
+            provider "aws" {
+              region = var.region
+            }
+            
+            module "vpc" {
+              source = "./modules/vpc"
+              
+              environment = var.environment
+              cidr_block  = "10.0.0.0/16"
+            }
+            
+            module "ec2" {
+              source = "./modules/ec2"
+              
+              vpc_id      = module.vpc.vpc_id
+              subnet_ids  = module.vpc.private_subnet_ids
+              environment = var.environment
+            }
+            
+            module "rds" {
+              source = "./modules/rds"
+              
+              vpc_id      = module.vpc.vpc_id
+              subnet_ids  = module.vpc.private_subnet_ids
+              environment = var.environment
+            }
+            
+            # modules/vpc/main.tf
+            resource "aws_vpc" "main" {
+              cidr_block = var.cidr_block
+              
+              tags = {
+                Name        = "{var.environment}-vpc"
+                Environment = var.environment
+              }
+            }
+            
+            resource "aws_subnet" "private" {
+              count             = 2
+              vpc_id            = aws_vpc.main.id
+              cidr_block        = cidrsubnet(var.cidr_block, 8, count.index)
+              availability_zone = data.aws_availability_zones.available.names[count.index]
+              
+              tags = {
+                Name        = "{var.environment}-private-{count.index + 1}"
+                Environment = var.environment
+              }
+            }
+            
+            # modules/ec2/main.tf
+            resource "aws_launch_template" "app" {
+              name_prefix   = "app-"
+              image_id      = data.aws_ami.amazon_linux_2.id
+              instance_type = "t3.micro"
+            
+              user_data = base64encode(<<-EOF
+                          #!/bin/bash
+                          yum update -y
+                          yum install -y docker
+                          service docker start
+                          EOF
+              )
+              
+              vpc_security_group_ids = [aws_security_group.app.id]
+              
+              tags = {
+                Environment = var.environment
+              }
+            }
+            
+            resource "aws_autoscaling_group" "app" {
+              desired_capacity    = 2
+              max_size           = 4
+              min_size           = 1
+              target_group_arns  = [aws_lb_target_group.app.arn]
+              vpc_zone_identifier = var.subnet_ids
+              
+              launch_template {
+                id      = aws_launch_template.app.id
+                version = "$Latest"
+              }
+              
+              tag {
+                key                 = "Environment"
+                value               = var.environment
+                propagate_at_launch = true
+              }
+            }
+            
+            # modules/rds/main.tf
+            resource "aws_db_instance" "main" {
+              identifier        = "{var.environment}-db"
+              engine            = "postgresql"
+              engine_version    = "13.4"
+              instance_class    = "db.t3.micro"
+              allocated_storage = 20
+              
+              username = "admin"
+              password = random_password.db_password.result
+              
+              vpc_security_group_ids = [aws_security_group.db.id]
+              db_subnet_group_name   = aws_db_subnet_group.main.name
+              
+              backup_retention_period = 7
+              skip_final_snapshot    = true
+              
+              tags = {
+                Environment = var.environment
+              }
+            }
+            
+            # outputs.tf
+            output "vpc_id" {
+              value = module.vpc.vpc_id
+            }
+            
+            output "db_endpoint" {
+              value = module.rds.endpoint
+            }
+            
+            output "app_url" {
+              value = module.ec2.load_balancer_dns
+            }
+            
+            # terraform.tfvars
+            region      = "us-west-2"
+            environment = "production"
+            
+            # Commands
+            terraform init
+            terraform plan
+            terraform apply
+            terraform destroy`,
+                            explanation: "This exercise demonstrates:\n" +
+                                "1. Modular Terraform structure\n" +
+                                "2. Resource organization\n" +
+                                "3. Infrastructure provisioning\n" +
+                                "4. State management\n" +
+                                "5. Security group configuration\n" +
+                                "6. Auto-scaling setup"
+                        }
+                    }
+                ],
+                advancedExercises: [
+                    {
+                        title: "Complete DevOps Pipeline",
+                        difficulty: "Hard",
+                        description: "Build a complete DevOps pipeline including CI/CD, monitoring, logging, and automated scaling.",
+                        hints: [
+                            "Implement GitOps practices",
+                            "Set up comprehensive monitoring",
+                            "Configure auto-scaling",
+                            "Implement security scanning"
+                        ],
+                        solution: {
+                            code: `# This is a high-level overview of components
+            
+            # GitLab CI/CD Pipeline
+            # .gitlab-ci.yml
+            stages:
+              - test
+              - build
+              - security
+              - deploy
+              - monitor
+            
+            variables:
+              DOCKER_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+            
+            test:
+              stage: test
+              script:
+                - npm install
+                - npm test
+                - sonar-scanner
+            
+            build:
+       stage: build
+       script:
+           - docker build -t $DOCKER_IMAGE .
+           - docker push $DOCKER_IMAGE
+           - trivy image $DOCKER_IMAGE
+
+security:
+   stage: security
+   script:
+       - trivy image $DOCKER_IMAGE
+       - SNYK_TOKEN=$SNYK_TOKEN snyk test
+       - owasp-dependency-check --project "My App" --scan .
+
+deploy:
+   stage: deploy
+   script:
+       - helm upgrade --install my-app ./helm \n
+           --set image.tag=$CI_COMMIT_SHA \n
+           --namespace production
+       - kubectl apply -f k8s/
+       
+monitor:
+   stage: monitor
+   script:
+       - ./scripts/check-deployment-health.sh
+       - ./scripts/verify-metrics.sh
+
+# Kubernetes Manifests
+# monitoring/prometheus-values.yaml
+prometheus:
+   serviceMonitors:
+       - name: app-monitor
+         labels:
+           app: my-app
+   alertmanager:
+       enabled: true
+       config:
+           route:
+               receiver: 'slack'
+           receivers:
+               - name: 'slack'
+                 slack_configs:
+                   - channel: '#alerts'
+                     api_url: '{SLACK_WEBHOOK_URL}'
+
+# monitoring/grafana-values.yaml
+grafana:
+   datasources:
+       - name: Prometheus
+         type: prometheus
+         url: http://prometheus-server
+   dashboardProviders:
+       - name: 'default'
+         folder: ''
+         type: file
+         options:
+           path: /var/lib/grafana/dashboards
+   dashboards:
+       default:
+           app-dashboard:
+               file: dashboards/app-dashboard.json
+
+# autoscaling/hpa.yaml
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+   name: app-hpa
+spec:
+   scaleTargetRef:
+       apiVersion: apps/v1
+       kind: Deployment
+       name: my-app
+   minReplicas: 2
+   maxReplicas: 10
+   metrics:
+       - type: Resource
+         resource:
+           name: cpu
+           target:
+               type: Utilization
+               averageUtilization: 70
+       - type: Resource
+         resource:
+           name: memory
+           target:
+               type: Utilization
+               averageUtilization: 80
+
+# logging/fluentd-config.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+   name: fluentd-config
+data:
+   fluent.conf: |
+       <source>
+           @type tail
+           path /var/log/containers/*.log
+           pos_file /var/log/fluentd-containers.log.pos
+           tag kubernetes.*
+           read_from_head true
+           <parse>
+               @type json
+               time_key time
+               time_format %Y-%m-%dT%H:%M:%S.%NZ
+           </parse>
+       </source>
+       
+       <match kubernetes.**>
+           @type elasticsearch
+           host elasticsearch-master
+           port 9200
+           logstash_format true
+           logstash_prefix k8s
+           <buffer>
+               @type file
+               path /var/log/fluentd-buffers/kubernetes.system.buffer
+               flush_mode interval
+               retry_type exponential_backoff
+               flush_interval 5s
+               retry_forever false
+               retry_max_interval 30
+               chunk_limit_size 2M
+               queue_limit_length 8
+               overflow_action block
+           </buffer>
+       </match>
+
+# security/network-policy.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+   name: app-network-policy
+spec:
+   podSelector:
+       matchLabels:
+           app: my-app
+   policyTypes:
+       - Ingress
+       - Egress
+   ingress:
+       - from:
+           - podSelector:
+               matchLabels:
+                   role: frontend
+         ports:
+           - protocol: TCP
+             port: 80
+   egress:
+       - to:
+           - podSelector:
+               matchLabels:
+                   role: database
+         ports:
+           - protocol: TCP
+             port: 5432
+
+# Terraform for Infrastructure
+# main.tf
+module "eks" {
+   source = "terraform-aws-modules/eks/aws"
+   
+   cluster_name    = "my-cluster"
+   cluster_version = "1.21"
+   
+   vpc_id          = module.vpc.vpc_id
+   subnets         = module.vpc.private_subnets
+   
+   node_groups = {
+       general = {
+           desired_capacity = 2
+           max_capacity     = 10
+           min_capacity     = 2
+           instance_type    = "t3.medium"
+       }
+   }
+}
+
+module "monitoring" {
+   source = "./modules/monitoring"
+   
+   eks_cluster_id = module.eks.cluster_id
+   grafana_admin_password = var.grafana_password
+}
+
+# Scripts
+# check-deployment-health.sh
+#!/bin/bash
+kubectl rollout status deployment/my-app -n production
+if [ $? -eq 0 ]; then
+   echo "Deployment successful"
+   # Check application health
+   for i in {1..5}; do
+       response=$(curl -s -o /dev/null -w "%{http_code}" http://app-endpoint/health)
+       if [ $response -eq 200 ]; then
+           echo "Application is healthy"
+           exit 0
+       fi
+       sleep 10
+   done
+   echo "Application health check failed"
+   exit 1
+else
+   echo "Deployment failed"
+   exit 1
+fi`,
+               explanation: "This advanced exercise demonstrates a complete DevOps pipeline including:\n\n" +
+                   "1. CI/CD Pipeline:\n" +
+                   "   - Automated testing\n" +
+                   "   - Security scanning\n" +
+                   "   - Container building\n" +
+                   "   - Deployment automation\n\n" +
+                   "2. Monitoring Setup:\n" +
+                   "   - Prometheus configuration\n" +
+                   "   - Grafana dashboards\n" +
+                   "   - Custom metrics\n" +
+                   "   - Alert management\n\n" +
+                   "3. Logging System:\n" +
+                   "   - Centralized logging\n" +
+                   "   - Log aggregation\n" +
+                   "   - Search and analysis\n\n" +
+                   "4. Auto-scaling:\n" +
+                   "   - Horizontal Pod Autoscaling\n" +
+                   "   - Resource-based scaling\n" +
+                   "   - Custom metrics scaling\n\n" +
+                   "5. Security:\n" +
+                   "   - Network policies\n" +
+                   "   - Security scanning\n" +
+                   "   - Access controls\n\n" +
+                   "6. Infrastructure:\n" +
+                   "   - EKS cluster setup\n" +
+                   "   - Monitoring infrastructure\n" +
+                   "   - Terraform automation"
+           }
+       }
+   ]
+}
+    }
+}
 ];
 
 export default resources;
