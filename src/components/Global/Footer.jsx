@@ -1,12 +1,20 @@
 import React from "react";
 import { FiMail } from "react-icons/fi";
-import { FaWhatsapp, FaInstagram as Instagram, FaLinkedin as Linkedin, FaGithub as Github } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaInstagram as Instagram,
+  FaLinkedin as Linkedin,
+  FaGithub as Github,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
 import { HeartIcon } from "lucide-react";
 
 const resources = [
-  { text: "Location", href: "https://www.google.com/maps/place/RCC+Institute+of+Information+Technology/@22.5592665,88.3938297,17z/data=!4m14!1m7!3m6!1s0x3a027686b848fb8d:0xed09795e4836e886!2sRCC+Institute+of+Information+Technology!8m2!3d22.5592616!4d88.3964046!16s%2Fm%2F02vtlkw!3m5!1s0x3a027686b848fb8d:0xed09795e4836e886!8m2!3d22.5592616!4d88.3964046!16s%2Fm%2F02vtlkw?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D" },
+  {
+    text: "Location",
+    href: "https://www.google.com/maps/place/RCC+Institute+of+Information+Technology/@22.5592665,88.3938297,17z/data=!4m14!1m7!3m6!1s0x3a027686b848fb8d:0xed09795e4836e886!2sRCC+Institute+of+Information+Technology!8m2!3d22.5592616!4d88.3964046!16s%2Fm%2F02vtlkw!3m5!1s0x3a027686b848fb8d:0xed09795e4836e886!8m2!3d22.5592616!4d88.3964046!16s%2Fm%2F02vtlkw?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D",
+  },
   { text: "About GDG", href: "https://tailwindcss.com/" },
   { text: "How to Apply", href: "https://tailwindcss.com/" },
   { text: "Who can apply?", href: "https://tailwindcss.com/" },
@@ -27,18 +35,42 @@ const legal = [
 ];
 
 const socialLinks = [
-  { icon: <Instagram size={20} />, color: "bg-gradient-to-br from-purple-600 to-pink-500", href: "https://instagram.com/" },
-  { icon: <FaXTwitter size={20} />, color: "bg-black", href: "https://x.com/gdsc_rcciit" },
-  { icon: <Linkedin size={20} />, color: "bg-blue-600", href: "https://www.linkedin.com/company/gdgc-rcciit/" },
-  { icon: <Github size={20} />, color: "bg-gray-800", href: "https://github.com/GDSC-RCCIIT/gdg-website" },
-  { icon: <FaWhatsapp size={20} />, color: "bg-green-500", href: "https://web.whatsapp.com/" },
-  { icon: <FiMail size={20} />, color: "bg-red-500", href: "mailto:contact@gdsc.com" },
+  {
+    icon: <Instagram size={20} />,
+    color: "bg-gradient-to-br from-purple-600 to-pink-500",
+    href: "https://instagram.com/",
+  },
+  {
+    icon: <FaXTwitter size={20} />,
+    color: "bg-black",
+    href: "https://x.com/gdsc_rcciit",
+  },
+  {
+    icon: <Linkedin size={20} />,
+    color: "bg-blue-600",
+    href: "https://www.linkedin.com/company/gdgc-rcciit/",
+  },
+  {
+    icon: <Github size={20} />,
+    color: "bg-gray-800",
+    href: "https://github.com/GDSC-RCCIIT/gdg-website",
+  },
+  {
+    icon: <FaWhatsapp size={20} />,
+    color: "bg-green-500",
+    href: "https://web.whatsapp.com/",
+  },
+  {
+    icon: <FiMail size={20} />,
+    color: "bg-red-500",
+    href: "mailto:contact@gdsc.com",
+  },
 ];
 
 const Footer = () => {
   return (
     <footer className="relative bg-gradient-to-br from-blue-50 via-white to-blue-50">
-      {/* Background shapes for visual interest */}
+      {/* Google-inspired geometric shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -right-12 -top-12 w-48 h-48 bg-blue-100 rounded-full opacity-20"></div>
         <div className="absolute left-1/4 top-1/3 w-24 h-24 bg-green-100 rotate-45 opacity-20"></div>
@@ -60,12 +92,16 @@ const Footer = () => {
                   <span className="text-3xl font-bold bg-gradient-to-r from-blue-600 via-blue-500 to-green-500 bg-clip-text text-transparent">
                     GDSC
                   </span>
-                  <span className="text-lg font-medium text-gray-600">RCCIIT</span>
+                  <span className="text-lg font-medium text-gray-600">
+                    RCCIIT
+                  </span>
                 </div>
               </div>
             </Link>
             <p className="text-gray-600 max-w-md mx-auto md:mx-0">
-              Join our community of student developers, designers, and innovators. Build solutions for local businesses and your community.
+              Join our community of student developers, designers, and
+              innovators. Build solutions for local businesses and your
+              community.
             </p>
           </div>
 
@@ -79,10 +115,17 @@ const Footer = () => {
           {/* Social Section */}
           <div className="lg:col-span-3">
             <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-              <h3 className="text-lg font-semibold mb-6 text-gray-800 text-center md:text-left">Connect With Us</h3>
+              <h3 className="text-lg font-semibold mb-6 text-gray-800 text-center md:text-left">
+                Connect With Us
+              </h3>
               <div className="grid grid-cols-3 gap-4">
                 {socialLinks.map((link, index) => (
-                  <SocialButton key={index} icon={link.icon} color={link.color} href={link.href} />
+                  <SocialButton
+                    key={index}
+                    icon={link.icon}
+                    color={link.color}
+                    href={link.href}
+                  />
                 ))}
               </div>
             </div>
@@ -93,7 +136,8 @@ const Footer = () => {
         <div className="mt-16 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-600 text-center md:text-left">
-              © {new Date().getFullYear()} Google Developer Student Club - RCCIIT. All Rights Reserved.
+              © {new Date().getFullYear()} Google Developer Student Club -
+              RCCIIT. All Rights Reserved.
             </p>
             <div className="flex items-center gap-2">
               <span className="text-sm text-gray-500">Made with</span>
@@ -132,9 +176,7 @@ const SocialButton = ({ href, icon, color }) => (
     className={`${color} p-2 sm:p-3 rounded-lg text-white transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg flex items-center justify-center`}
     aria-label={`Follow us on ${icon.props.className}`} // Improves accessibility
   >
-    <span className="text-lg sm:text-xl lg:text-2xl">
-      {icon}
-    </span>
+    <span className="text-lg sm:text-xl lg:text-2xl">{icon}</span>
   </Link>
 );
 
