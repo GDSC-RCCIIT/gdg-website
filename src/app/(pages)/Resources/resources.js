@@ -2742,6 +2742,1714 @@ document.addEventListener('DOMContentLoaded', () => {
             and the latest trends in UI/UX, including motion design, micro-interactions, and adaptive design for multiple devices.
         `,
         icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+        trackInfo: {
+            prerequisites: [
+                "Basic understanding of design principles",
+                "Familiarity with basic graphic design tools",
+                "Good eye for aesthetics and attention to detail",
+                "Understanding of human psychology basics",
+                "Basic knowledge of HTML/CSS (helpful but not required)",
+                "Critical thinking and problem-solving skills"
+            ],
+            outcomes: [
+                "Conduct effective user research and create user personas",
+                "Design intuitive and user-friendly interfaces",
+                "Create wireframes, prototypes, and mockups",
+                "Master modern design tools (Figma, Sketch, Adobe XD)",
+                "Implement accessibility best practices",
+                "Develop responsive and adaptive designs",
+                "Create effective user flows and information architecture",
+                "Execute usability testing and iterate designs",
+                "Apply design systems and component libraries",
+                "Understand and implement design thinking methodology"
+            ],
+            sections: [
+                {
+                    title: "UX Research & Strategy",
+                    content: "Learn fundamental UX research methods including user interviews, surveys, usability testing, and analytics. Master creating user personas, journey maps, and conducting competitive analysis. Understand how to translate research insights into actionable design strategies."
+                },
+                {
+                    title: "UI Design Fundamentals",
+                    content: "Master core UI design principles including typography, color theory, layout design, and visual hierarchy. Learn about design systems, component libraries, and creating consistent, scalable interfaces. Understand grid systems and responsive design principles."
+                },
+                {
+                    title: "Design Process & Tools",
+                    content: "Learn the end-to-end design process from ideation to final deliverables. Master industry-standard tools like Figma, Sketch, and Adobe XD. Understand wireframing, prototyping, and creating interactive designs. Learn version control and design collaboration best practices."
+                },
+                {
+                    title: "Interaction & Motion Design",
+                    content: "Explore advanced interaction design patterns, micro-interactions, and animation principles. Learn to create meaningful transitions and feedback mechanisms. Understand how to enhance user experience through motion while maintaining usability and performance."
+                },
+                {
+                    title: "Accessibility & Best Practices",
+                    content: "Learn how to design inclusive interfaces that work for all users. Master WCAG guidelines and accessibility standards. Understand how to conduct accessibility audits and implement improvements. Learn about performance optimization and cross-platform compatibility."
+                },
+                {
+                    title: "Professional Practice",
+                    content: "Develop skills in presenting and defending design decisions, conducting design reviews, and working with stakeholders. Learn about design documentation, handoff processes, and collaboration with developers. Understand design ethics and industry best practices."
+                }
+            ]
+        },
+        content: {
+            examples: [
+                {
+                    title: "User Persona Creation",
+                    code: `// User Persona Template
+        {
+            "persona": {
+                "name": "Sarah Chen",
+                "age": 28,
+                "occupation": "Digital Marketing Manager",
+                "location": "Urban area, San Francisco",
+                
+                "background": {
+                    "education": "Bachelor's in Marketing",
+                    "family": "Single, lives with roommate",
+                    "lifestyle": "Tech-savvy, busy professional",
+                    "personality": ["Organized", "Goal-oriented", "Early adopter"]
+                },
+                
+                "goals": [
+                    "Streamline workflow and increase productivity",
+                    "Stay updated with industry trends",
+                    "Maintain work-life balance"
+                ],
+                
+                "painPoints": [
+                    "Too many tools and platforms to manage",
+                    "Difficulty tracking project progress",
+                    "Limited time for learning new tools"
+                ],
+                
+                "behaviors": {
+                    "technology": "Power user of productivity apps",
+                    "socialMedia": "Active on LinkedIn and Twitter",
+                    "shopping": "Researches thoroughly before purchasing",
+                    "workStyle": "Prefers mobile-first solutions"
+                },
+                
+                "preferences": {
+                    "devices": ["Smartphone", "Laptop", "Tablet"],
+                    "apps": ["Slack", "Trello", "Google Suite"],
+                    "communication": "Quick, visual information"
+                }
+            }
+        }`,
+                    explanation: "A structured user persona template demonstrating how to organize and document user research findings. This helps in creating user-centered designs by understanding target users' needs, behaviors, and preferences."
+                },
+                {
+                    title: "Wireframe Component Library",
+                    code: `<!-- Low-fidelity Wireframe Components -->
+        <div class="wireframe-library">
+            <!-- Header Component -->
+            <header class="component">
+                <div class="logo-placeholder"></div>
+                <nav class="nav-placeholder">
+                    <div class="nav-item"></div>
+                    <div class="nav-item"></div>
+                    <div class="nav-item"></div>
+                </nav>
+                <div class="cta-button"></div>
+            </header>
+        
+            <!-- Card Component -->
+            <div class="card-component">
+                <div class="image-placeholder"></div>
+                <div class="content">
+                    <div class="title-placeholder"></div>
+                    <div class="text-placeholder"></div>
+                    <div class="button-placeholder"></div>
+                </div>
+            </div>
+        
+            <!-- Form Component -->
+            <form class="form-component">
+                <div class="input-group">
+                    <div class="label"></div>
+                    <div class="input"></div>
+                </div>
+                <div class="input-group">
+                    <div class="label"></div>
+                    <div class="textarea"></div>
+                </div>
+                <div class="button-group">
+                    <div class="submit-button"></div>
+                </div>
+            </form>
+        </div>
+        
+        <style>
+        /* Wireframe Styles */
+        .wireframe-library {
+            background: #f5f5f5;
+            padding: 20px;
+            font-family: sans-serif;
+        }
+        
+        .component {
+            background: #fff;
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+        
+        /* Placeholder Styles */
+        .logo-placeholder {
+            width: 100px;
+            height: 40px;
+            background: #ddd;
+        }
+        
+        .nav-item {
+            width: 60px;
+            height: 20px;
+            background: #ddd;
+            margin: 0 10px;
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: #ddd;
+        }
+        
+        .title-placeholder {
+            width: 80%;
+            height: 24px;
+            background: #ddd;
+            margin: 10px 0;
+        }
+        
+        .text-placeholder {
+            width: 100%;
+            height: 60px;
+            background: #ddd;
+        }
+        
+        .input, .textarea {
+            width: 100%;
+            height: 40px;
+            background: #ddd;
+            margin: 5px 0;
+        }
+        
+        .textarea {
+            height: 100px;
+        }
+        
+        .button-placeholder {
+            width: 120px;
+            height: 40px;
+            background: #ddd;
+            margin-top: 15px;
+        }
+        </style>`,
+                    explanation: "A basic wireframe component library showcasing common UI elements in their simplest form. This helps in rapid prototyping and maintaining consistency across designs."
+                },
+                {
+                    title: "Color System Definition",
+                    code: `// Design System - Color Tokens
+        const colorSystem = {
+            // Primary Brand Colors
+            primary: {
+                main: '#2196F3',
+                light: '#64B5F6',
+                dark: '#1976D2',
+                contrast: '#FFFFFF'
+            },
+            
+            // Secondary Brand Colors
+            secondary: {
+                main: '#FF4081',
+                light: '#FF80AB',
+                dark: '#F50057',
+                contrast: '#FFFFFF'
+            },
+            
+            // Neutral Colors
+            neutral: {
+                100: '#FFFFFF',
+                200: '#F5F5F5',
+                300: '#E0E0E0',
+                400: '#BDBDBD',
+                500: '#9E9E9E',
+                600: '#757575',
+                700: '#616161',
+                800: '#424242',
+                900: '#212121'
+            },
+            
+            // Semantic Colors
+            semantic: {
+                success: {
+                    light: '#81C784',
+                    main: '#4CAF50',
+                    dark: '#388E3C'
+                },
+                warning: {
+                    light: '#FFB74D',
+                    main: '#FF9800',
+                    dark: '#F57C00'
+                },
+                error: {
+                    light: '#E57373',
+                    main: '#F44336',
+                    dark: '#D32F2F'
+                },
+                info: {
+                    light: '#64B5F6',
+                    main: '#2196F3',
+                    dark: '#1976D2'
+                }
+            },
+            
+            // Special Purpose Colors
+            surface: {
+                background: '#FFFFFF',
+                paper: '#F5F5F5',
+                overlay: 'rgba(0, 0, 0, 0.5)'
+            },
+            
+            // Typography Colors
+            text: {
+                primary: 'rgba(0, 0, 0, 0.87)',
+                secondary: 'rgba(0, 0, 0, 0.6)',
+                disabled: 'rgba(0, 0, 0, 0.38)',
+                hint: 'rgba(0, 0, 0, 0.38)'
+            }
+        };
+        
+        // Color Accessibility Functions
+        const colorUtils = {
+            // Check contrast ratio
+            getContrastRatio: (foreground, background) => {
+                // Implementation of WCAG contrast ratio calculation
+                // Returns value between 1 and 21
+                return calculateContrastRatio(foreground, background);
+            },
+            
+            // Get accessible text color
+            getAccessibleTextColor: (backgroundColor) => {
+                const contrast = getContrastRatio(backgroundColor, '#FFFFFF');
+                return contrast >= 4.5 ? '#FFFFFF' : '#000000';
+            },
+            
+            // Generate color variations
+            generateColorShades: (baseColor) => {
+                // Implementation of color shade generation
+                // Returns lighter and darker variations
+                return {
+                    lighter: adjustLightness(baseColor, 0.2),
+                    darker: adjustLightness(baseColor, -0.2)
+                };
+            }
+        };
+        
+        // Usage Example
+        const buttonStyles = {
+            primary: {
+                background: colorSystem.primary.main,
+                color: colorSystem.primary.contrast,
+                hover: colorSystem.primary.dark
+            },
+            secondary: {
+                background: colorSystem.secondary.main,
+                color: colorSystem.secondary.contrast,
+                hover: colorSystem.secondary.dark
+            }
+        };`,
+                    explanation: "A comprehensive color system definition that includes brand colors, semantic colors, and accessibility utilities. This ensures consistent color usage across the application while maintaining accessibility standards."
+                },
+                {
+                    title: "Interactive Prototype Setup",
+                    code: `// Figma-like Prototype Interaction Model
+        const prototypeInteractions = {
+            screens: [
+                {
+                    id: "home",
+                    elements: [
+                        {
+                            id: "login-button",
+                            type: "button",
+                            interactions: [
+                                {
+                                    trigger: "click",
+                                    animation: {
+                                        type: "smart-animate",
+                                        duration: 300,
+                                        easing: "ease-in-out"
+                                    },
+                                    destination: "login-screen"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: "login-screen",
+                    elements: [
+                        {
+                            id: "form-submit",
+                            type: "button",
+                            interactions: [
+                                {
+                                    trigger: "click",
+                                    conditions: [
+                                        {
+                                            type: "form-valid",
+                                            destination: "dashboard",
+                                            animation: {
+                                                type: "slide-left",
+                                                duration: 400
+                                            }
+                                        },
+                                        {
+                                            type: "form-invalid",
+                                            actions: [
+                                                {
+                                                    type: "show-error",
+                                                    target: "error-message"
+                                                },
+                                                {
+                                                    type: "shake-animation",
+                                                    target: "form-container"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            
+            globalInteractions: {
+                gestures: {
+                    "swipe-left": {
+                        trigger: "gesture",
+                        condition: "navigation-enabled",
+                        action: "navigate-forward"
+                    },
+                    "swipe-right": {
+                        trigger: "gesture",
+                        condition: "navigation-enabled",
+                        action: "navigate-back"
+                    }
+                },
+                transitions: {
+                    default: {
+                        type: "fade",
+                        duration: 300,
+                        easing: "ease-in-out"
+                    }
+                }
+            },
+            
+            animations: {
+                "slide-left": {
+                    keyframes: [
+                        { transform: "translateX(0)" },
+                        { transform: "translateX(-100%)" }
+                    ],
+                    options: {
+                        duration: 300,
+                        easing: "ease-in-out",
+                        fill: "forwards"
+                    }
+                },
+                "shake": {
+                    keyframes: [
+                        { transform: "translateX(0)" },
+                        { transform: "translateX(-10px)" },
+                        { transform: "translateX(10px)" },
+                        { transform: "translateX(-10px)" },
+                        { transform: "translateX(10px)" },
+                        { transform: "translateX(0)" }
+                    ],
+                    options: {
+                        duration: 500,
+                        easing: "ease-in-out"
+                    }
+                }
+            }
+        };
+        
+        // Interaction Controller
+        class PrototypeController {
+            constructor(config) {
+                this.config = config;
+                this.currentScreen = config.screens[0];
+                this.history = [];
+            }
+            
+            handleInteraction(elementId, eventType) {
+                const element = this.findElement(elementId);
+                if (!element) return;
+                
+                const interaction = element.interactions.find(
+                    i => i.trigger === eventType
+                );
+                
+                if (interaction) {
+                    this.executeInteraction(interaction);
+                }
+            }
+            
+            executeInteraction(interaction) {
+                if (interaction.conditions) {
+                    // Handle conditional interactions
+                    const condition = interaction.conditions.find(
+                        c => this.evaluateCondition(c)
+                    );
+                    if (condition) {
+                        this.executeActions(condition.actions);
+                    }
+                } else {
+                    // Direct interaction
+                    this.navigate(interaction.destination, interaction.animation);
+                }
+            }
+            
+            navigate(screenId, animation) {
+                const nextScreen = this.config.screens.find(s => s.id === screenId);
+                if (nextScreen) {
+                    this.history.push(this.currentScreen);
+                    this.animateTransition(this.currentScreen, nextScreen, animation);
+                    this.currentScreen = nextScreen;
+                }
+            }
+        }`,
+                    explanation: "A prototype interaction system similar to what you might find in design tools like Figma. It demonstrates how to structure interactive prototypes with complex animations, conditions, and state management."
+                }
+            ],
+        
+            roadmap: [
+                {
+                    title: "1. UX Research & Design Thinking",
+                    description: "Master the fundamentals of user research and design thinking methodology",
+                    topics: [
+                        "User Research Methods and Tools",
+                        "Creating User Personas and Journey Maps",
+                        "Design Thinking Process",
+                        "Competitive Analysis",
+                        "User Psychology and Behavior",
+                        "Research Documentation",
+                        "Stakeholder Interviews"
+                    ]
+                },
+                {
+                    title: "2. UI Design Fundamentals",
+                    description: "Learn core visual design principles and UI design fundamentals",
+                    topics: [
+                        "Typography and Color Theory",
+                        "Layout and Grid Systems",
+                        "Visual Hierarchy",
+                        "Gestalt Principles",
+                        "Responsive Design",
+                        "Design Systems",
+                        "Icon and Illustration Design"
+                    ]
+                },
+                {
+                    title: "3. Wireframing & Prototyping",
+                    description: "Develop skills in creating wireframes and interactive prototypes",
+                    topics: [
+                        "Low-fidelity Wireframing",
+                        "High-fidelity Mockups",
+                        "Interactive Prototyping",
+                        "User Flows and Sitemaps",
+                        "Information Architecture",
+                        "Navigation Patterns",
+                        "Mobile-first Design"
+                    ]
+                },
+                {
+                    title: "4. Design Tools & Software",
+                    description: "Master industry-standard design and prototyping tools",
+                    topics: [
+                        "Figma Advanced Techniques",
+                        "Sketch Workflow",
+                        "Adobe XD Prototyping",
+                        "Version Control for Designers",
+                        "Design Handoff Tools",
+                        "Collaboration Platforms",
+                        "Asset Management"
+                    ]
+                },
+                {
+                    title: "5. Interaction & Motion Design",
+                    description: "Learn to create engaging interactions and animations",
+                    topics: [
+                        "Micro-interactions",
+                        "Animation Principles",
+                        "Gesture-based Interfaces",
+                        "State Transitions",
+                        "Loading States and Feedback",
+                        "Motion Design Tools",
+                        "Performance Considerations"
+                    ]
+                },
+                {
+                    title: "6. Accessibility & Best Practices",
+                    description: "Ensure designs are accessible and follow industry standards",
+                    topics: [
+                        "WCAG Guidelines",
+                        "Inclusive Design Principles",
+                        "Color Contrast and Typography",
+                        "Screen Reader Optimization",
+                        "Keyboard Navigation",
+                        "Cross-platform Testing",
+                        "Documentation Standards"
+                    ]
+                }
+            ],
+            resources: {
+                documentation: [
+                    {
+                        title: "Material Design Guidelines",
+                        url: "https://material.io/design",
+                        description: "Comprehensive design system guidelines by Google covering principles, patterns, and best practices",
+                        type: "Design System Documentation"
+                    },
+                    {
+                        title: "Apple Human Interface Guidelines",
+                        url: "https://developer.apple.com/design/human-interface-guidelines/",
+                        description: "Detailed guidelines for designing iOS and macOS applications",
+                        type: "Design System Documentation"
+                    },
+                    {
+                        title: "Nielsen Norman Group",
+                        url: "https://www.nngroup.com/articles/",
+                        description: "Research-based UX guidance and articles from industry experts",
+                        type: "Research Articles"
+                    },
+                    {
+                        title: "Interaction Design Foundation",
+                        url: "https://www.interaction-design.org/literature",
+                        description: "Comprehensive collection of UX design articles and literature",
+                        type: "Educational Resource"
+                    },
+                    {
+                        title: "WCAG Guidelines",
+                        url: "https://www.w3.org/WAI/standards-guidelines/wcag/",
+                        description: "Web Content Accessibility Guidelines - standards for accessible design",
+                        type: "Accessibility Standards"
+                    }
+                ],
+                tutorials: [
+                    {
+                        title: "Figma Learning Resources",
+                        url: "https://www.figma.com/resources/learn-design/",
+                        description: "Official tutorials and guides for mastering Figma",
+                        type: "Tool Tutorial"
+                    },
+                    {
+                        title: "Google UX Design Professional Certificate",
+                        url: "https://www.coursera.org/professional-certificates/google-ux-design",
+                        description: "Comprehensive UX design course covering the entire design process",
+                        type: "Online Course"
+                    },
+                    {
+                        title: "Design Better by InVision",
+                        url: "https://www.designbetter.co/",
+                        description: "Collection of books, podcasts, and tutorials about product design",
+                        type: "Learning Platform"
+                    },
+                    {
+                        title: "UI Design Daily",
+                        url: "https://uidesigndaily.com/",
+                        description: "Daily UI design examples and tutorials for practice",
+                        type: "Design Inspiration"
+                    },
+                    {
+                        title: "Shift Nudge Interface Design Course",
+                        url: "https://shiftnudge.com/",
+                        description: "Advanced interface design course focused on visual design skills",
+                        type: "Online Course"
+                    }
+                ],
+                videos: [
+                    {
+                        title: "Figma YouTube Channel",
+                        url: "https://www.youtube.com/c/Figmadesign",
+                        description: "Official Figma tutorials and design process videos",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "AJ&Smart",
+                        url: "https://www.youtube.com/c/AJSmart",
+                        description: "Design sprints and UX design process videos",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Jesse Showalter",
+                        url: "https://www.youtube.com/c/JesseShowalter",
+                        description: "UI/UX design tutorials and industry insights",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Flux Academy",
+                        url: "https://www.youtube.com/c/FluxWithRanSegall",
+                        description: "Web design and UI/UX career guidance",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Design Course",
+                        url: "https://www.youtube.com/c/DesignCourse",
+                        description: "Modern web design and UI/UX tutorials",
+                        platform: "YouTube"
+                    }
+                ],
+                books: [
+                    {
+                        title: "Don't Make Me Think",
+                        author: "Steve Krug",
+                        description: "Classic guide to web usability and user-centered design",
+                        level: "Beginner"
+                    },
+                    {
+                        title: "The Design of Everyday Things",
+                        author: "Don Norman",
+                        description: "Fundamental principles of design and human psychology",
+                        level: "Beginner to Intermediate"
+                    },
+                    {
+                        title: "100 Things Every Designer Needs to Know About People",
+                        author: "Susan Weinschenk",
+                        description: "Psychology principles applied to design",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "Grid Systems in Graphic Design",
+                        author: "Josef Müller-Brockmann",
+                        description: "Comprehensive guide to grid systems and layout design",
+                        level: "Advanced"
+                    },
+                    {
+                        title: "Thinking with Type",
+                        author: "Ellen Lupton",
+                        description: "Critical guide for designers about typography",
+                        level: "Intermediate"
+                    }
+                ],
+                tools: [
+                    {
+                        title: "Figma",
+                        url: "https://www.figma.com",
+                        description: "Collaborative interface design and prototyping tool",
+                        type: "Design Tool",
+                        category: "Essential"
+                    },
+                    {
+                        title: "Maze",
+                        url: "https://maze.design",
+                        description: "User testing and design validation platform",
+                        type: "Testing Tool",
+                        category: "Research"
+                    },
+                    {
+                        title: "Coolors",
+                        url: "https://coolors.co",
+                        description: "Color scheme generator and palette tool",
+                        type: "Color Tool",
+                        category: "Utility"
+                    },
+                    {
+                        title: "Principle",
+                        url: "https://principleformac.com",
+                        description: "Advanced animation and interaction design tool",
+                        type: "Animation Tool",
+                        category: "Advanced"
+                    },
+                    {
+                        title: "Whimsical",
+                        url: "https://whimsical.com",
+                        description: "Flowcharts, wireframes, and mind mapping tool",
+                        type: "Planning Tool",
+                        category: "Planning"
+                    }
+                ],
+                communities: [
+                    {
+                        title: "Dribbble",
+                        url: "https://dribbble.com",
+                        description: "Design inspiration and community platform",
+                        type: "Design Community"
+                    },
+                    {
+                        title: "Behance",
+                        url: "https://www.behance.net",
+                        description: "Portfolio showcase and design inspiration",
+                        type: "Portfolio Platform"
+                    },
+                    {
+                        title: "Design System Slack Community",
+                        url: "https://design.systems/slack",
+                        description: "Community for design system discussions",
+                        type: "Slack Community"
+                    },
+                    {
+                        title: "UX Design Discord",
+                        url: "https://discord.gg/uxdesign",
+                        description: "Active Discord community for UX designers",
+                        type: "Discord Community"
+                    },
+                    {
+                        title: "ADPList",
+                        url: "https://adplist.org",
+                        description: "Mentorship platform for designers",
+                        type: "Mentorship Platform"
+                    }
+                ]
+            },
+            practice: {
+                beginnerExercises: [
+                    {
+                        title: "User Persona Creation",
+                        difficulty: "Easy",
+                        description: "Create a detailed user persona for a mobile banking app targeting young professionals.",
+                        hints: [
+                            "Research demographic data for target audience",
+                            "Include goals, pain points, and behaviors",
+                            "Add realistic personal details and background",
+                            "Consider daily technology usage patterns"
+                        ],
+                        solution: {
+                            code: `
+                    "persona": {
+                        "name": "Alex Rivera",
+                        "age": 29,
+                        "occupation": "Software Developer",
+                    
+                    "demographics": {
+                        "location": "Urban area",
+                        "income": "$85,000/year",
+                        "education": "Bachelor's in Computer Science",
+                        "livingStatus": "Rents apartment, lives with partner"
+                    },
+                    
+                    "goals": [
+                        "Easily track daily expenses",
+                        "Save money for a house down payment",
+                        "Manage multiple investment accounts",
+                        "Quick and secure payment transfers"
+                    ],
+                    
+                    "painPoints": [
+                        "Complex banking interfaces",
+                        "Slow transaction processing",
+                        "Difficulty tracking spending categories",
+                        "Security concerns with mobile banking"
+                    ],
+                    
+                    "behaviors": {
+                        "technology": "Early adopter, uses multiple fintech apps",
+                        "banking": "Primarily mobile banking, rarely visits branches",
+                        "spending": "Regular online shopping, subscription services",
+                        "saving": "Automatic monthly savings, investment apps"
+                    },
+                    
+                    "scenarios": [
+                        "Sending rent payment to roommate",
+                        "Checking expenses while shopping",
+                        "Setting up automatic bill payments",
+                        "Transferring money between accounts"
+                    ]`,
+                            explanation: "This user persona example demonstrates key elements including:\n" +
+                                "1. Demographic details that help visualize the user\n" +
+                                "2. Specific goals and pain points related to the product\n" +
+                                "3. Realistic behaviors and usage patterns\n" +
+                                "4. Practical scenarios for feature validation\n" +
+                                "5. Details that inform design decisions"
+                        }
+                    },
+                    {
+                        title: "Color Scheme Design",
+                        difficulty: "Easy",
+                        description: "Create a comprehensive color scheme for a fitness tracking app, including primary, secondary, and semantic colors.",
+                        hints: [
+                            "Consider accessibility and contrast ratios",
+                            "Include different shades for each primary color",
+                            "Define semantic colors for success/error states",
+                            "Create dark mode variations"
+                        ],
+                        solution: {
+                            code: `const colorSystem = {
+                light: {
+                    primary: {
+                        main: '#2196F3',
+                        light: '#64B5F6',
+                        dark: '#1976D2',
+                        contrast: '#FFFFFF'
+                    },
+                    secondary: {
+                        main: '#FF4081',
+                        light: '#FF80AB',
+                        dark: '#F50057',
+                        contrast: '#FFFFFF'
+                    },
+                    semantic: {
+                        success: '#4CAF50',
+                        warning: '#FFC107',
+                        error: '#F44336',
+                        info: '#2196F3'
+                    },
+                    background: {
+                        primary: '#FFFFFF',
+                        secondary: '#F5F5F5',
+                        tertiary: '#EEEEEE'
+                    },
+                    text: {
+                        primary: '#212121',
+                        secondary: '#757575',
+                        disabled: '#BDBDBD'
+                    }
+                },
+                dark: {
+                    primary: {
+                        main: '#90CAF9',
+                        light: '#BBE0FB',
+                        dark: '#5B9BD5',
+                        contrast: '#000000'
+                    },
+                    secondary: {
+                        main: '#FF80AB',
+                        light: '#FFB2DD',
+                        dark: '#C94F7C',
+                        contrast: '#000000'
+                    },
+                    semantic: {
+                        success: '#81C784',
+                        warning: '#FFD54F',
+                        error: '#E57373',
+                        info: '#64B5F6'
+                    },
+                    background: {
+                        primary: '#121212',
+                        secondary: '#1E1E1E',
+                        tertiary: '#2C2C2C'
+                    },
+                    text: {
+                        primary: '#FFFFFF',
+                        secondary: '#B0B0B0',
+                        disabled: '#707070'
+                    }
+                }
+            };`,
+                            explanation: "This color system solution includes:\n" +
+                                "1. Complete light and dark mode variations\n" +
+                                "2. Semantic colors for different states\n" +
+                                "3. Hierarchical text colors\n" +
+                                "4. Multiple background variations\n" +
+                                "5. Proper contrast ratios for accessibility"
+                        }
+                    },
+                    {
+                        title: "Basic Wireframe Layout",
+                        difficulty: "Easy",
+                        description: "Create a low-fidelity wireframe for a blog post page including header, navigation, content area, and sidebar.",
+                        hints: [
+                            "Focus on content hierarchy",
+                            "Consider responsive breakpoints",
+                            "Include navigation patterns",
+                            "Plan for different content lengths"
+                        ],
+                        solution: {
+                            code: `<!-- HTML Structure for Wireframe -->
+            <div class="wireframe-container">
+                <header class="header">
+                    <div class="logo"></div>
+                    <nav class="navigation">
+                        <div class="nav-item"></div>
+                        <div class="nav-item"></div>
+                        <div class="nav-item"></div>
+                    </nav>
+                </header>
+            
+                <main class="content">
+                    <article class="blog-post">
+                        <div class="title-block">
+                            <div class="category"></div>
+                            <div class="headline"></div>
+                            <div class="meta-info"></div>
+                        </div>
+                        
+                        <div class="featured-image"></div>
+                        
+                        <div class="content-blocks">
+                            <div class="text-block"></div>
+                            <div class="text-block"></div>
+                            <div class="quote-block"></div>
+                            <div class="text-block"></div>
+                        </div>
+                    </article>
+            
+                    <aside class="sidebar">
+                        <div class="widget">
+                            <div class="widget-title"></div>
+                            <div class="widget-content"></div>
+                        </div>
+                        <div class="widget">
+                            <div class="widget-title"></div>
+                            <div class="widget-content"></div>
+                        </div>
+                    </aside>
+                </main>
+            
+                <footer class="footer">
+                    <div class="footer-content"></div>
+                </footer>
+            </div>
+            
+            <style>
+            /* Wireframe Styles */
+            .wireframe-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            
+            .header {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                gap: 20px;
+                padding: 20px 0;
+                border-bottom: 2px solid #ddd;
+            }
+            
+            .logo {
+                width: 120px;
+                height: 40px;
+                background: #ddd;
+            }
+            
+            .navigation {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                justify-content: flex-end;
+            }
+            
+            .nav-item {
+                width: 60px;
+                height: 20px;
+                background: #ddd;
+            }
+            
+            .content {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: 40px;
+                margin: 40px 0;
+            }
+            
+            .blog-post {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .title-block {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .category {
+                width: 80px;
+                height: 24px;
+                background: #ddd;
+            }
+            
+            .headline {
+                height: 48px;
+                background: #ddd;
+            }
+            
+            .meta-info {
+                height: 20px;
+                background: #ddd;
+                width: 60%;
+            }
+            
+            .featured-image {
+                width: 100%;
+                height: 400px;
+                background: #ddd;
+            }
+            
+            .content-blocks {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .text-block {
+                height: 100px;
+                background: #ddd;
+            }
+            
+            .quote-block {
+                height: 120px;
+                background: #eee;
+                margin: 20px 40px;
+            }
+            
+            .sidebar {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .widget {
+                background: #f5f5f5;
+                padding: 20px;
+            }
+            
+            .widget-title {
+                height: 24px;
+                background: #ddd;
+                margin-bottom: 15px;
+            }
+            
+            .widget-content {
+                height: 150px;
+                background: #ddd;
+            }
+            
+            @media (max-width: 768px) {
+                .content {
+                    grid-template-columns: 1fr;
+                }
+                
+                .featured-image {
+                    height: 300px;
+                }
+            }
+            </style>`,
+                            explanation: "This wireframe solution demonstrates:\n" +
+                                "1. Clear visual hierarchy and content structure\n" +
+                                "2. Responsive layout using CSS Grid\n" +
+                                "3. Proper spacing and proportions\n" +
+                                "4. Mobile-friendly considerations\n" +
+                                "5. Placeholder elements for dynamic content"
+                        }
+                    }
+                ],
+                intermediateExercises: [
+                    {
+                        title: "Interactive Prototype",
+                        difficulty: "Medium",
+                        description: "Create an interactive prototype for a mobile app onboarding flow with animations and micro-interactions.",
+                        hints: [
+                            "Plan the onboarding steps flow",
+                            "Design meaningful transitions",
+                            "Include progress indication",
+                            "Add skip and back options"
+                        ],
+                        solution: {
+                            code: `Onboarding Flow Configuration
+            const onboardingConfig = {
+                screens: [
+                    {
+                        id: "welcome",
+                        title: "Welcome to AppName",
+                        subtitle: "Start your journey with us",
+                        animation: {
+                            type: "fade-up",
+                            duration: 600,
+                            elements: ["title", "subtitle", "image"]
+                        },
+                        actions: {
+                            primary: {
+                                text: "Get Started",
+                                action: "next-screen"
+                            }
+                        }
+                    },
+                    {
+                        id: "feature-1",
+                        title: "Track Your Progress",
+                        subtitle: "See your improvements over time",
+                        animation: {
+                            type: "slide-left",
+                            duration: 400,
+                            elements: ["image", "content"]
+                        },
+                        actions: {
+                            primary: {
+                                text: "Next",
+                                action: "next-screen"
+                            },
+                            secondary: {
+                                text: "Back",
+                                action: "previous-screen"
+                            }
+                        }
+                    },
+                    {
+                        id: "feature-2",
+                        title: "Set Your Goals",
+                        subtitle: "Achieve more with goal tracking",
+                        animation: {
+                            type: "slide-left",
+                            duration: 400,
+                            elements: ["image", "content"]
+                        },
+                        actions: {
+                            primary: {
+                                text: "Next",
+                                action: "next-screen"
+                            },
+                            secondary: {
+                                text: "Back",
+                                action: "previous-screen"
+                            }
+                        }
+                    },
+                    {
+                        id: "setup",
+                        title: "Quick Setup",
+                        subtitle: "Let's personalize your experience",
+                        animation: {
+                            type: "fade-up",
+                            duration: 600,
+                            elements: ["form-elements"]
+                        },
+                        actions: {
+                            primary: {
+                                text: "Complete Setup",
+                                action: "finish-onboarding"
+                            },
+                            secondary: {
+                                text: "Back",
+                                action: "previous-screen"
+                            }
+                        }
+                    }
+                ],
+                
+                animations: {
+                    "fade-up": {
+                        keyframes: [
+                            { opacity: 0, transform: "translateY(20px)" },
+                            { opacity: 1, transform: "translateY(0)" }
+                        ],
+                        options: {
+                            duration: 600,
+                            easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+                            fill: "forwards"
+                        }
+                    },
+                    "slide-left": {
+                        keyframes: [
+                            { transform: "translateX(100%)" },
+                            { transform: "translateX(0)" }
+                        ],
+                        options: {
+                            duration: 400,
+                            easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+                            fill: "forwards"
+                        }
+                    }
+                },
+                
+                transitions: {
+                    default: {
+                        type: "fade",
+                        duration: 300,
+                        easing: "ease-in-out"
+                    },
+                    navigation: {
+                        forward: {
+                            type: "slide-left",
+                            duration: 400,
+                            easing: "ease-in-out"
+                        },
+                        backward: {
+                            type: "slide-right",
+                            duration: 400,
+                            easing: "ease-in-out"
+                        }
+                    }
+                },
+                
+                progressBar: {
+                    type: "dots",
+                    animation: true,
+                    showLabels: false
+                }
+            };
+            
+            class OnboardingController {
+                constructor(config) {
+                    this.config = config;
+                    this.currentScreen = 0;
+                    this.init();
+                }
+                
+                init() {
+                    this.setupEventListeners();
+                    this.renderScreen(this.currentScreen);
+                    this.updateProgress();
+                }
+                
+                setupEventListeners() {
+                    document.addEventListener('click', (e) => {
+                        if (e.target.matches('.action-button')) {
+                            const action = e.target.dataset.action;
+                            this.handleAction(action);
+                        }
+                    });
+                    
+                    // Gesture handling
+                    let touchStartX = 0;
+                    document.addEventListener('touchstart', (e) => {
+                        touchStartX = e.touches[0].clientX;
+                    });
+                    
+                    document.addEventListener('touchend', (e) => {
+                        const touchEndX = e.changedTouches[0].clientX;
+                        const diff = touchStartX - touchEndX;
+                        
+                        if (Math.abs(diff) > 50) {
+                            if (diff > 0) this.nextScreen();
+                            else this.previousScreen();
+                        }
+                    });
+                }
+                
+                handleAction(action) {
+                    switch(action) {
+                        case 'next-screen':
+                            this.nextScreen();
+                            break;
+                        case 'previous-screen':
+                            this.previousScreen();
+                            break;
+                        case 'finish-onboarding':
+                            this.completeOnboarding();
+                            break;
+                    }
+                }
+                
+                async renderScreen(index) {
+                    const screen = this.config.screens[index];
+                    const container = document.querySelector('.screen-container');
+                    
+                    // Prepare new screen content
+                    const content = this.createScreenContent(screen);
+                    
+                    // Animate out current content
+                    await this.animateScreenTransition('out');
+                    
+                    // Update DOM
+                    container.innerHTML = content;
+                    
+                    // Animate in new content
+                    await this.animateScreenTransition('in');
+                    
+                    // Trigger screen-specific animations
+                    this.triggerScreenAnimations(screen);
+                }
+                
+                async animateScreenTransition(direction) {
+                    const screen = document.querySelector('.screen-content');
+                    const animation = direction === 'out' ? 
+                        { opacity: [1, 0] } : 
+                        { opacity: [0, 1] };
+                        
+                    await screen.animate(animation, {
+                        duration: 300,
+                        easing: 'ease-in-out',
+                        fill: 'forwards'
+                    }).finished;
+                }
+                
+                triggerScreenAnimations(screen) {
+       screen.animation.elements.forEach((elementId, index) => {
+           const element = document.getElementById(elementId);
+           if (!element) return;
+
+           const delay = index * 150; // Stagger animations
+           const animation = this.config.animations[screen.animation.type];
+           
+           element.animate(animation.keyframes, {
+               ...animation.options,
+               delay
+           });
+       });
+   }
+   
+   updateProgress() {
+       const progress = document.querySelector('.progress-indicator');
+       const totalScreens = this.config.screens.length;
+       const currentProgress = ((this.currentScreen + 1) / totalScreens) * 100;
+       } 
+   }
+   
+   async nextScreen() {
+       if (this.currentScreen < this.config.screens.length - 1) {
+           const transition = this.config.transitions.navigation.forward;
+           await this.animateTransition(transition);
+           this.currentScreen++;
+           await this.renderScreen(this.currentScreen);
+           this.updateProgress();
+       }
+   }
+   
+   async previousScreen() {
+       if (this.currentScreen > 0) {
+           const transition = this.config.transitions.navigation.backward;
+           await this.animateTransition(transition);
+           this.currentScreen--;
+           await this.renderScreen(this.currentScreen);
+           this.updateProgress();
+       }
+   }
+   
+   async animateTransition(transition) {
+       const container = document.querySelector('.screen-container');
+       await container.animate(
+           this.getTransitionKeyframes(transition.type),
+           {
+               duration: transition.duration,
+               easing: transition.easing,
+               fill: 'forwards'
+           }
+       ).finished;
+   }
+   
+   getTransitionKeyframes(type) {
+       switch(type) {
+           case 'slide-left':
+               return [
+                   { transform: 'translateX(0)' },
+                   { transform: 'translateX(-100%)' }
+               ];
+           case 'slide-right':
+               return [
+                   { transform: 'translateX(0)' },
+                   { transform: 'translateX(100%)' }
+               ];
+           default:
+               return [
+                   { opacity: 1 },
+                   { opacity: 0 }
+               ];
+       }
+   }
+   
+   completeOnboarding() {
+       // Save onboarding completion status
+       localStorage.setItem('onboarding_completed', 'true');
+       
+       // Trigger completion callback if provided
+       if (this.config.onComplete) {
+           this.config.onComplete();
+       }
+       
+       // Navigate to main app
+       window.location.href = '/dashboard';
+   }
+}`,
+               explanation: "This interactive prototype solution demonstrates:\n" +
+                   "1. Comprehensive screen management and transitions\n" +
+                   "2. Configurable animations and micro-interactions\n" +
+                   "3. Progress tracking and navigation controls\n" +
+                   "4. Touch gesture support for mobile\n" +
+                   "5. Clean architecture with separation of concerns\n" +
+                   "6. Extensible configuration system\n" +
+                   "7. Error handling and state management"
+           }
+       }
+   ],
+   advancedExercises: [
+       {
+           title: "Design System Creation",
+           difficulty: "Hard",
+           description: "Create a comprehensive design system including components, tokens, documentation, and usage guidelines.",
+           hints: [
+               "Define clear design principles",
+               "Create reusable components",
+               "Document accessibility guidelines",
+               "Include interactive examples",
+               "Create implementation guides"
+           ],
+           solution: {
+               code: `// Design System Definition
+const designSystem = {
+   // Design Tokens
+   tokens: {
+       colors: {
+           primary: {
+               50: '#E3F2FD',
+               100: '#BBDEFB',
+               200: '#90CAF9',
+               300: '#64B5F6',
+               400: '#42A5F5',
+               500: '#2196F3',
+               600: '#1E88E5',
+               700: '#1976D2',
+               800: '#1565C0',
+               900: '#0D47A1'
+           },
+           // ... other color scales
+           
+           semantic: {
+               success: '#4CAF50',
+               warning: '#FFC107',
+               error: '#F44336',
+               info: '#2196F3'
+           }
+       },
+       
+       typography: {
+           fontFamilies: {
+               heading: "'Inter', sans-serif",
+               body: "'Inter', sans-serif",
+               mono: "'Fira Code', monospace"
+           },
+           
+           fontSizes: {
+               xs: '0.75rem',    // 12px
+               sm: '0.875rem',   // 14px
+               base: '1rem',     // 16px
+               lg: '1.125rem',   // 18px
+               xl: '1.25rem',    // 20px
+               '2xl': '1.5rem',  // 24px
+               '3xl': '1.875rem',// 30px
+               '4xl': '2.25rem', // 36px
+               '5xl': '3rem'     // 48px
+           },
+           
+           lineHeights: {
+               tight: '1.25',
+               base: '1.5',
+               relaxed: '1.75'
+           },
+           
+           fontWeights: {
+               normal: '400',
+               medium: '500',
+               semibold: '600',
+               bold: '700'
+           }
+       },
+       
+       spacing: {
+           px: '1px',
+           0: '0',
+           1: '0.25rem',
+           2: '0.5rem',
+           3: '0.75rem',
+           4: '1rem',
+           5: '1.25rem',
+           6: '1.5rem',
+           8: '2rem',
+           10: '2.5rem',
+           12: '3rem',
+           16: '4rem',
+           20: '5rem',
+           24: '6rem',
+           32: '8rem'
+       },
+       
+       breakpoints: {
+           sm: '640px',
+           md: '768px',
+           lg: '1024px',
+           xl: '1280px',
+           '2xl': '1536px'
+       },
+       
+       shadows: {
+           sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+           base: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+           md: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+           lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+           xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
+           '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+           inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)'
+       },
+       
+       animation: {
+           durations: {
+               fast: '150ms',
+               base: '300ms',
+               slow: '450ms',
+               slower: '600ms'
+           },
+           
+           easings: {
+               ease: 'cubic-bezier(0.4, 0, 0.2, 1)',
+               easeIn: 'cubic-bezier(0.4, 0, 1, 1)',
+               easeOut: 'cubic-bezier(0, 0, 0.2, 1)',
+               easeInOut: 'cubic-bezier(0.4, 0, 0.2, 1)'
+           }
+       }
+   },
+   
+   // Component Definitions
+   components: {
+       Button: {
+           variants: {
+               primary: {
+                   base: {
+                       background: 'tokens.colors.primary.500',
+                       color: 'white',
+                       padding: 'tokens.spacing.3 tokens.spacing.6',
+                       borderRadius: 'tokens.spacing.2',
+                       fontWeight: 'tokens.typography.fontWeights.medium'
+                   },
+                   hover: {
+                       background: 'tokens.colors.primary.600'
+                   },
+                   active: {
+                       background: 'tokens.colors.primary.700'
+                   },
+                   disabled: {
+                       background: 'tokens.colors.primary.200',
+                       cursor: 'not-allowed'
+                   }
+               },
+               secondary: {
+                   base: {
+                       background: 'transparent',
+                       color: 'tokens.colors.primary.500',
+                       border: '1px solid tokens.colors.primary.500',
+                       padding: 'tokens.spacing.3 tokens.spacing.6',
+                       borderRadius: 'tokens.spacing.2',
+                       fontWeight: 'tokens.typography.fontWeights.medium'
+                   },
+                   hover: {
+                       background: 'tokens.colors.primary.50'
+                   },
+                   active: {
+                       background: 'tokens.colors.primary.100'
+                   },
+                   disabled: {
+                       borderColor: 'tokens.colors.primary.200',
+                       color: 'tokens.colors.primary.200',
+                       cursor: 'not-allowed'
+                   }
+               }
+           },
+           
+           sizes: {
+               sm: {
+                   fontSize: 'tokens.typography.fontSizes.sm',
+                   padding: 'tokens.spacing.2 tokens.spacing.4'
+               },
+               md: {
+                   fontSize: 'tokens.typography.fontSizes.base',
+                   padding: 'tokens.spacing.3 tokens.spacing.6'
+               },
+               lg: {
+                   fontSize: 'tokens.typography.fontSizes.lg',
+                   padding: 'tokens.spacing.4 tokens.spacing.8'
+               }
+           }
+       },
+       
+       Input: {
+           variants: {
+               outline: {
+                   base: {
+                       border: '1px solid tokens.colors.gray.300',
+                       borderRadius: 'tokens.spacing.2',
+                       padding: 'tokens.spacing.3',
+                       fontSize: 'tokens.typography.fontSizes.base'
+                   },
+                   focus: {
+                       borderColor: 'tokens.colors.primary.500',
+                       boxShadow: '0 0 0 1px tokens.colors.primary.500'
+                   },
+                   error: {
+                       borderColor: 'tokens.colors.semantic.error',
+                       boxShadow: '0 0 0 1px tokens.colors.semantic.error'
+                   }
+               }
+           }
+       }
+       // ... other component definitions
+   },
+   
+   // Pattern Library
+   patterns: {
+       forms: {
+           login: {
+               layout: 'stack',
+               spacing: 'tokens.spacing.6',
+               components: ['Input', 'Input', 'Button'],
+               validation: true
+           },
+           search: {
+               layout: 'inline',
+               spacing: 'tokens.spacing.3',
+               components: ['Input', 'Button']
+           }
+       },
+       
+       navigation: {
+           header: {
+               layout: 'flex',
+               spacing: 'tokens.spacing.4',
+               components: ['Logo', 'NavLinks', 'Button']
+           }
+       }
+   },
+   
+   // Documentation
+   documentation: {
+       principles: [
+           {
+               title: "Consistency",
+               description: "Use consistent patterns and components throughout the system"
+           },
+           {
+               title: "Accessibility",
+               description: "Ensure all components meet WCAG 2.1 AA standards"
+           },
+           {
+               title: "Flexibility",
+               description: "Components should be adaptable to different contexts"
+           }
+       ],
+       
+       usage: {
+           Button: {
+               description: "Buttons trigger actions or navigate to new pages",
+               guidelines: [
+                   "Use primary buttons for main actions",
+                   "Limit buttons per section",
+                   "Use clear, action-oriented labels"
+               ],
+               examples: [
+                   {
+                       title: "Primary Action",
+                       code: '<Button variant="primary">Save Changes</Button>'
+                   }
+               ]
+           }
+       }
+   }
+};`,
+               explanation: "This design system solution includes:\n" +
+                   "1. Comprehensive token system for colors, typography, spacing\n" +
+                   "2. Detailed component definitions with variants and states\n" +
+                   "3. Common UI patterns and layouts\n" +
+                   "4. Extensive documentation and usage guidelines\n" +
+                   "5. Accessibility considerations\n" +
+                   "6. Animation and interaction definitions\n" +
+                   "7. Responsive design tokens\n" +
+                   "8. Component composition patterns"
+           }
+       }
+   ]
+}
+            }
     },
     {
         id: 4,
