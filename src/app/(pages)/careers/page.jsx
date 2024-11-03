@@ -82,22 +82,14 @@ const Spotlight = () => {
             <p className="text-gray-600 text-sm mb-4">{job.description}</p>
 
             <div className="text-gray-700 text-sm mb-2">
-              <span className="font-semibold">Date:</span> {job.date.start} - {job.date.end}
+              {/* <span className="font-semibold">Date:</span> {job.date.start} - {job.date.end} */}
             </div>
             <div className="text-gray-700 text-sm mb-2">
-              <span className="font-semibold">Location:</span> {job.location}
+              <span className="font-semibold">Office:</span> {job.office}
             </div>
-            <div className="text-gray-700 text-sm mb-2">
-              <span className="font-semibold">Status:</span> {job.status}
-            </div>
-            <div className="text-gray-700 text-sm mb-2">
-              <span className="font-semibold">Organizers:</span> {job.organizers.join(', ')}
-            </div>
-            <div className="text-gray-700 text-sm mb-4">
-              <span className="font-semibold">Participants:</span> {job.participants}
-            </div>
+            
 
-            <a href={job.registrationLink} target="_blank" className="inline-block px-4 py-2 mt-2 text-white bg-blue-600 rounded-md hover:bg-blue-700">
+            <a href={job?.registrationLink} target="_blank" className="inline-block px-4 py-2 mt-2 text-white bg-blue-600 rounded-md hover:bg-blue-700">
               Register
             </a>
           </Link>
