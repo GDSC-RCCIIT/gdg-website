@@ -104,9 +104,11 @@ const GDSCLanding = () => {
               Join Us
             </button>
             </a>
+            <a href="./Contact">
             <button className="px-8 py-3 border-2 border-blue-500 text-blue-500 rounded-full hover:bg-blue-50 transition-colors">
               Contact Us
             </button>
+            </a>
           </motion.div>
         </div>
       </section>
