@@ -154,7 +154,6 @@
 │   │   │   │       └── page.jsx
 │   │   │   ├── Stories-Achievements/
 │   │   │   │   ├── achievements.js
-│   │   │   │   ├── mentors.js
 │   │   │   │   └── page.jsx
 │   │   │   ├── Subscribe/
 │   │   │   │   └── page.jsx
@@ -166,17 +165,6 @@
 │   │   │   │   └── techStacks.js
 │   │   │   ├── TermsAndConditions/
 │   │   │   │   └── page.jsx
-│   │   │   ├── api/
-│   │   │   │   ├── Certifications/
-│   │   │   │   │   ├── data.js
-│   │   │   │   │   └── route.js
-│   │   │   │   ├── chapters/
-│   │   │   │   │   ├── data.js
-│   │   │   │   │   └── route.js
-│   │   │   │   ├── generate-content/
-│   │   │   │   │   └── route.js
-│   │   │   │   └── subscribe/
-│   │   │   │       └── route.js
 │   │   │   ├── careers/
 │   │   │   │   ├── [id]/
 │   │   │   │   │   └── page.jsx
@@ -233,6 +221,18 @@
 │   │   │   └── womentechmakers/
 │   │   │       └── page.jsx
 │   │   ├── api/
+│   │   │   ├── Certifications/
+│   │   │   │   ├── data.js
+│   │   │   │   └── route.js
+│   │   │   ├── addhackathon/
+│   │   │   │   └── route.js
+│   │   │   ├── addstoriesapi/
+│   │   │   │   └── route.js
+│   │   │   ├── chapters/
+│   │   │   │   ├── data.js
+│   │   │   │   └── route.js
+│   │   │   ├── generate-content/
+│   │   │   │   └── route.js
 │   │   │   └── subscribe/
 │   │   │       └── route.js
 │   │   ├── favicon.ico
