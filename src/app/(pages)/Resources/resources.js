@@ -8135,6 +8135,1441 @@ fi`,
    ]
 }
     }
+},
+{
+    id: 8,
+    title: "Mobile App Development",
+    description: "To learn mobile development, follow this roadmap",
+    extendedContent: `
+        Learn to build native and cross-platform mobile applications for iOS and Android. 
+        Start with fundamental mobile UI/UX principles and progress to native development 
+        using Swift/SwiftUI for iOS and Kotlin for Android.
+        
+        Explore cross-platform frameworks like React Native and Flutter for building 
+        efficient mobile applications. Learn about mobile app architecture, state management, 
+        and performance optimization.
+        
+        Advanced topics include mobile security, offline storage, push notifications, 
+        app store deployment, and mobile-specific design patterns.
+    `,
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        prerequisites: [
+            "Basic programming knowledge in any language",
+            "Understanding of object-oriented programming",
+            "Familiarity with version control (Git)",
+            "Basic understanding of UI/UX principles",
+            "Knowledge of REST APIs and web services",
+            "Basic understanding of databases",
+            "Familiarity with JSON and data formats"
+        ],
+        outcomes: [
+            "Build native iOS applications using Swift/SwiftUI",
+            "Develop Android apps using Kotlin/Jetpack Compose",
+            "Create cross-platform applications with React Native or Flutter",
+            "Implement responsive and adaptive UI designs",
+            "Integrate with backend services and APIs",
+            "Handle data persistence and state management",
+            "Implement push notifications and background tasks",
+            "Optimize app performance and battery usage",
+            "Deploy apps to App Store and Google Play",
+            "Implement mobile security best practices"
+        ],
+        sections: [
+            {
+                title: "Mobile Development Fundamentals",
+                content: "Learn core mobile development concepts including platform-specific architecture, UI components, layouts, and navigation patterns. Understand mobile app lifecycle, permissions, and platform guidelines. Master debugging tools and development environments."
+            },
+            {
+                title: "Native iOS Development",
+                content: "Master iOS development using Swift and SwiftUI. Learn Xcode, Interface Builder, Auto Layout, and iOS frameworks. Understand iOS app architecture, Core Data, and platform-specific features. Implement authentication, notifications, and background processing."
+            },
+            {
+                title: "Native Android Development",
+                content: "Learn Android development with Kotlin and Jetpack Compose. Master Android Studio, Material Design, and Android SDK. Understand Android architecture components, data storage, and platform integration. Implement services, broadcast receivers, and background tasks."
+            },
+            {
+                title: "Cross-Platform Development",
+                content: "Explore cross-platform development using React Native and Flutter. Learn shared codebase architecture, platform-specific adaptations, and native module integration. Understand state management, navigation libraries, and cross-platform UI components."
+            },
+            {
+                title: "Data & State Management",
+                content: "Master mobile data persistence using SQLite, Realm, or Core Data. Implement state management solutions using Redux, MobX, or Provider. Learn offline-first architecture, data synchronization, and caching strategies."
+            },
+            {
+                title: "App Performance & Security",
+                content: "Optimize app performance through profiling, caching, and lazy loading. Implement security best practices including encryption, secure storage, and API security. Learn about app signing, code obfuscation, and vulnerability testing."
+            },
+            {
+                title: "App Store & Production",
+                content: "Learn app store guidelines, submission processes, and deployment strategies. Master continuous integration and delivery for mobile apps. Understand analytics integration, crash reporting, and user feedback management."
+            },
+            {
+                title: "Advanced Mobile Features",
+                content: "Implement advanced features like maps integration, payment processing, and social media integration. Learn about AR/VR capabilities, machine learning integration, and IoT device connectivity. Understand platform-specific advanced features and APIs."
+            }
+        ]
+    },
+    content: {
+        examples: [
+            {
+                title: "iOS UI Implementation with SwiftUI",
+                code: `// Custom Card View in SwiftUI
+    import SwiftUI
+    
+    struct CardView: View {
+        let title: String
+        let description: String
+        let imageUrl: String
+        @State private var isExpanded = false
+        
+        var body: some View {
+            VStack(alignment: .leading, spacing: 12) {
+                AsyncImage(url: URL(string: imageUrl)) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                } placeholder: {
+                    ProgressView()
+                }
+                .frame(height: 200)
+                .clipped()
+                
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(title)
+                        .font(.headline)
+                        .foregroundColor(.primary)
+                    
+                    Text(description)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                        .lineLimit(isExpanded ? nil : 2)
+                    
+                    Button(action: {
+                        withAnimation {
+                            isExpanded.toggle()
+                        }
+                    }) {
+                        Text(isExpanded ? "Read less" : "Read more")
+                            .font(.caption)
+                            .foregroundColor(.blue)
+                    }
+                }
+                .padding(.horizontal)
+                .padding(.bottom)
+            }
+            .background(Color.white)
+            .cornerRadius(12)
+            .shadow(radius: 4)
+        }
+    }
+    
+    // Usage Example
+    struct ContentView: View {
+        var body: some View {
+            ScrollView {
+                LazyVStack(spacing: 16) {
+                    ForEach(0..<5) { index in
+                        CardView(
+                            title: "Card Title \(index + 1)",
+                            description: "This is a detailed description of the card that might be quite long and need to be expanded to read fully.",
+                            imageUrl: "https://picsum.photos/300/200"
+                        )
+                    }
+                }
+                .padding()
+            }
+        }
+    }`,
+                explanation: "This example demonstrates modern iOS UI development using SwiftUI, including async image loading, animations, and responsive layout design."
+            },
+            {
+                title: "Android Jetpack Compose UI",
+                code: `// Material Design Card in Jetpack Compose
+    import androidx.compose.material.*
+    import androidx.compose.runtime.*
+    import androidx.compose.ui.layout.*
+    import androidx.compose.foundation.layout.*
+    
+    @Composable
+    fun CustomCard(
+        title: String,
+        description: String,
+        imageUrl: String
+    ) {
+        var isExpanded by remember { mutableStateOf(false) }
+        
+        Card(
+            elevation = 4.dp,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        ) {
+            Column {
+                CoilImage(
+                    data = imageUrl,
+                    contentDescription = null,
+                    modifier = Modifier
+                        .height(200.dp)
+                        .fillMaxWidth(),
+                    contentScale = ContentScale.Crop
+                )
+                
+                Column(
+                    modifier = Modifier.padding(16.dp)
+                ) {
+                    Text(
+                        text = title,
+                        style = MaterialTheme.typography.h6
+                    )
+                    
+                    Spacer(modifier = Modifier.height(8.dp))
+                    
+                    Text(
+                        text = description,
+                        style = MaterialTheme.typography.body2,
+                        maxLines = if (isExpanded) Int.MAX_VALUE else 2,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                    
+                    TextButton(
+                        onClick = { isExpanded = !isExpanded }
+                    ) {
+                        Text(
+                            text = if (isExpanded) "Read less" else "Read more"
+                        )
+                    }
+                }
+            }
+        }
+    }
+    
+    // Usage in Activity/Fragment
+    class MainActivity : ComponentActivity() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContent {
+                MaterialTheme {
+                    LazyColumn {
+                        items(5) { index ->
+                            CustomCard(
+                                title = "Card Title index + 1",
+                                description = "This is a detailed description that might need expansion to read fully.",
+                                imageUrl = "https://picsum.photos/300/200"
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }`,
+                explanation: "This example shows modern Android UI development using Jetpack Compose, implementing Material Design principles and state management."
+            },
+            {
+                title: "React Native Cross-Platform Implementation",
+                code: `// Custom Card Component in React Native
+    import React, { useState } from 'react';
+    import {
+        View,
+        Text,
+        Image,
+        TouchableOpacity,
+        StyleSheet,
+        Animated,
+    } from 'react-native';
+    
+    const Card = ({ title, description, imageUrl }) => {
+        const [expanded, setExpanded] = useState(false);
+        const [animation] = useState(new Animated.Value(0));
+    
+        const toggleExpansion = () => {
+            const toValue = expanded ? 0 : 1;
+            Animated.spring(animation, {
+                toValue,
+                useNativeDriver: false,
+            }).start();
+            setExpanded(!expanded);
+        };
+    
+        const maxHeight = animation.interpolate({
+            inputRange: [0, 1],
+            outputRange: [100, 300],
+        });
+    
+        return (
+            <View style={styles.card}>
+                <Image
+                    source={{ uri: imageUrl }}
+                    style={styles.image}
+                    resizeMode="cover"
+                />
+                <View style={styles.content}>
+                    <Text style={styles.title}>{title}</Text>
+                    <Animated.View style={{ maxHeight }}>
+                        <Text style={styles.description}>
+                            {description}
+                        </Text>
+                    </Animated.View>
+                    <TouchableOpacity onPress={toggleExpansion}>
+                        <Text style={styles.button}>
+                            {expanded ? 'Read less' : 'Read more'}
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+        );
+    };
+    
+    const styles = StyleSheet.create({
+        card: {
+            backgroundColor: 'white',
+            borderRadius: 12,
+            shadowColor: '#000',
+            shadowOffset: {
+                width: 0,
+                height: 2,
+            },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 5,
+            marginHorizontal: 16,
+            marginVertical: 8,
+        },
+        image: {
+            height: 200,
+            width: '100%',
+            borderTopLeftRadius: 12,
+            borderTopRightRadius: 12,
+        },
+        content: {
+            padding: 16,
+        },
+        title: {
+            fontSize: 18,
+            fontWeight: 'bold',
+            marginBottom: 8,
+        },
+        description: {
+            fontSize: 14,
+            color: '#666',
+            lineHeight: 20,
+        },
+        button: {
+            color: '#007AFF',
+            marginTop: 8,
+            fontSize: 14,
+        },
+    });
+    
+    // Usage
+    export default function App() {
+        return (
+            <ScrollView>
+                {Array(5).fill().map((_, index) => (
+                    <Card
+                        key={index}
+                        title=Card Title {index + 1}
+                        description="This is a detailed description that demonstrates cross-platform UI implementation with animations and proper styling."
+                        imageUrl="https://picsum.photos/300/200"
+                    />
+                ))}
+            </ScrollView>
+        );
+    }`,
+                explanation: "This example shows cross-platform development with React Native, including animated components and shared styling."
+            },
+            {
+                title: "Flutter Cross-Platform UI",
+                code: `// Custom Card Widget in Flutter
+    import 'package:flutter/material.dart';
+    
+    class CustomCard extends StatefulWidget {
+      final String title;
+      final String description;
+      final String imageUrl;
+    
+      const CustomCard({
+        Key? key,
+        required this.title,
+        required this.description,
+        required this.imageUrl,
+      }) : super(key: key);
+    
+      @override
+      _CustomCardState createState() => _CustomCardState();
+    }
+    
+    class _CustomCardState extends State<CustomCard> {
+      bool _expanded = false;
+    
+      @override
+      Widget build(BuildContext context) {
+        return Card(
+          margin: const EdgeInsets.all(16.0),
+          elevation: 4.0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(12.0),
+                ),
+                child: Image.network(
+                  widget.imageUrl,
+                  height: 200.0,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      widget.title,
+                      style: Theme.of(context).textTheme.headline6,
+                    ),
+                    const SizedBox(height: 8.0),
+                    AnimatedCrossFade(
+                      firstChild: Text(
+                        widget.description,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: Theme.of(context).textTheme.bodyText2,
+                      ),
+                      secondChild: Text(
+                        widget.description,
+                        style: Theme.of(context).textTheme.bodyText2,
+                      ),
+                      crossFadeState: _expanded
+                          ? CrossFadeState.showSecond
+                          : CrossFadeState.showFirst,
+                      duration: const Duration(milliseconds: 300),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        setState(() {
+                          _expanded = !_expanded;
+                        });
+                      },
+                      child: Text(
+                        _expanded ? 'Read less' : 'Read more',
+                        style: TextStyle(
+                          color: Theme.of(context).primaryColor,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      }
+    }
+    
+    // Usage
+    class MyApp extends StatelessWidget {
+      @override
+      Widget build(BuildContext context) {
+        return MaterialApp(
+          home: Scaffold(
+            body: ListView.builder(
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                return CustomCard(
+                  title: Card Title index + 1,
+                  description: 'This is a detailed description showing Flutter\'s '
+                      'cross-platform capabilities with material design implementation.',
+                  imageUrl: 'https://picsum.photos/300/200',
+                );
+              },
+            ),
+          ),
+        );
+      }
+    }`,
+                explanation: "This example demonstrates Flutter's cross-platform UI development capabilities with Material Design components and animations."
+            }
+        ],
+    
+        roadmap: [
+            {
+                title: "1. Mobile Development Fundamentals",
+                description: "Master core concepts of mobile development",
+                topics: [
+                    "Mobile app architecture patterns",
+                    "UI/UX principles for mobile",
+                    "Platform-specific guidelines",
+                    "Development environment setup",
+                    "Version control and collaboration",
+                    "Mobile app lifecycle",
+                    "Debugging and testing basics"
+                ]
+            },
+            {
+                title: "2. iOS Development",
+                description: "Learn native iOS development",
+                topics: [
+                    "Swift programming fundamentals",
+                    "SwiftUI and UIKit",
+                    "iOS app architecture",
+                    "Core Data and persistence",
+                    "iOS networking and security",
+                    "App Store guidelines",
+                    "iOS testing and debugging"
+                ]
+            },
+            {
+                title: "3. Android Development",
+                description: "Master Android app development",
+                topics: [
+                    "Kotlin programming",
+                    "Jetpack Compose and XML layouts",
+                    "Android architecture components",
+                    "Room database and SQLite",
+                    "Android networking",
+                    "Play Store guidelines",
+                    "Android testing frameworks"
+                ]
+            },
+            {
+                title: "4. Cross-Platform Development",
+                description: "Explore cross-platform solutions",
+                topics: [
+                    "React Native fundamentals",
+                    "Flutter development",
+                    "Cross-platform architecture",
+                    "Shared codebase management",
+                    "Native modules integration",
+                    "Platform-specific adaptations",
+                    "Performance optimization"
+                ]
+            },
+            {
+                title: "5. Data Management & Storage",
+                description: "Handle data in mobile applications",
+                topics: [
+                    "Local data persistence",
+                    "State management solutions",
+                    "API integration",
+                    "Offline support",
+                    "Data synchronization",
+                    "Cache management",
+                    "Security best practices"
+                ]
+            },
+            {
+                title: "6. Advanced Features",
+                description: "Implement advanced mobile capabilities",
+                topics: [
+                    "Push notifications",
+                    "Background processing",
+                    "Location services",
+                    "Camera and media",
+                    "Social media integration",
+                    "Payment processing",
+                    "Analytics and tracking"
+                ]
+            },
+            {
+                title: "7. Testing & Deployment",
+                description: "Master testing and deployment processes",
+                topics: [
+                    "Unit and integration testing",
+                    "UI automation testing",
+                    "Continuous integration",
+                    "App store deployment",
+                    "Beta testing",
+                    "App signing and provisioning",
+                    "Release management"
+                ]
+            }
+        ],
+        resources: {
+            documentation: [
+                {
+                    title: "iOS Developer Documentation",
+                    url: "https://developer.apple.com/documentation/",
+                    description: "Official Apple documentation for iOS development including SwiftUI and UIKit",
+                    type: "Platform Documentation"
+                },
+                {
+                    title: "Android Developer Guides",
+                    url: "https://developer.android.com/guide",
+                    description: "Official Android development documentation including Kotlin and Jetpack",
+                    type: "Platform Documentation"
+                },
+                {
+                    title: "React Native Documentation",
+                    url: "https://reactnative.dev/docs/getting-started",
+                    description: "Official React Native documentation and guides",
+                    type: "Framework Documentation"
+                },
+                {
+                    title: "Flutter Documentation",
+                    url: "https://flutter.dev/docs",
+                    description: "Comprehensive Flutter development documentation and cookbooks",
+                    type: "Framework Documentation"
+                },
+                {
+                    title: "Material Design Guidelines",
+                    url: "https://material.io/design",
+                    description: "Design guidelines for creating mobile interfaces",
+                    type: "Design Guidelines"
+                }
+            ],
+            tutorials: [
+                {
+                    title: "SwiftUI Tutorial",
+                    url: "https://developer.apple.com/tutorials/swiftui/",
+                    description: "Official Apple tutorials for SwiftUI development",
+                    type: "Platform Tutorial"
+                },
+                {
+                    title: "Android Kotlin Fundamentals",
+                    url: "https://developer.android.com/courses/kotlin-android-fundamentals/overview",
+                    description: "Official Android Kotlin development course",
+                    type: "Course"
+                },
+                {
+                    title: "React Native Crash Course",
+                    url: "https://www.youtube.com/watch?v=Hf4MJH0jDb4",
+                    description: "Comprehensive React Native tutorial for beginners",
+                    type: "Video Tutorial"
+                },
+                {
+                    title: "Flutter App Development",
+                    url: "https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart",
+                    description: "Complete Flutter development bootcamp",
+                    type: "Course"
+                },
+                {
+                    title: "Mobile UI/UX Design Course",
+                    url: "https://www.coursera.org/learn/mobile-app-design",
+                    description: "Mobile app design principles and best practices",
+                    type: "Design Course"
+                }
+            ],
+            videos: [
+                {
+                    title: "Sean Allen",
+                    url: "https://www.youtube.com/c/SeanAllen",
+                    description: "iOS development tutorials and career advice",
+                    platform: "YouTube"
+                },
+                {
+                    title: "Philipp Lackner",
+                    url: "https://www.youtube.com/c/PhilippLackner",
+                    description: "Android development tutorials with Kotlin",
+                    platform: "YouTube"
+                },
+                {
+                    title: "Flutter Mapp",
+                    url: "https://www.youtube.com/c/FlutterMapp",
+                    description: "Flutter development tutorials and projects",
+                    platform: "YouTube"
+                },
+                {
+                    title: "William Candillon",
+                    url: "https://www.youtube.com/c/wcandillon",
+                    description: "Advanced React Native tutorials and animations",
+                    platform: "YouTube"
+                },
+                {
+                    title: "London App Brewery",
+                    url: "https://www.youtube.com/c/Londonappbrewery",
+                    description: "Mobile app development tutorials and courses",
+                    platform: "YouTube"
+                }
+            ],
+            books: [
+                {
+                    title: "iOS Programming: The Big Nerd Ranch Guide",
+                    author: "Christian Keur, Aaron Hillegass",
+                    description: "Comprehensive guide to iOS development",
+                    level: "Intermediate"
+                },
+                {
+                    title: "Android Programming: The Big Nerd Ranch Guide",
+                    author: "Bill Phillips, Chris Stewart",
+                    description: "In-depth Android development guide",
+                    level: "Intermediate"
+                },
+                {
+                    title: "Flutter in Action",
+                    author: "Eric Windmill",
+                    description: "Practical Flutter development guide",
+                    level: "Intermediate"
+                },
+                {
+                    title: "React Native in Action",
+                    author: "Nader Dabit",
+                    description: "Building mobile apps with React Native",
+                    level: "Intermediate"
+                },
+                {
+                    title: "Mobile App Development with Swift",
+                    author: "Apple Education",
+                    description: "Official Apple guide to Swift development",
+                    level: "Beginner"
+                }
+            ],
+            tools: [
+                {
+                    title: "Xcode",
+                    url: "https://developer.apple.com/xcode/",
+                    description: "Official IDE for iOS development",
+                    type: "Development IDE",
+                    category: "Essential"
+                },
+                {
+                    title: "Android Studio",
+                    url: "https://developer.android.com/studio",
+                    description: "Official IDE for Android development",
+                    type: "Development IDE",
+                    category: "Essential"
+                },
+                {
+                    title: "Visual Studio Code",
+                    url: "https://code.visualstudio.com/",
+                    description: "Popular editor for React Native and Flutter",
+                    type: "Code Editor",
+                    category: "Essential"
+                },
+                {
+                    title: "Figma",
+                    url: "https://www.figma.com/",
+                    description: "Design and prototyping tool",
+                    type: "Design Tool",
+                    category: "Design"
+                },
+                {
+                    title: "Firebase",
+                    url: "https://firebase.google.com/",
+                    description: "Mobile app development platform",
+                    type: "Development Platform",
+                    category: "Backend"
+                }
+            ],
+            communities: [
+                {
+                    title: "iOS Developers",
+                    url: "https://developer.apple.com/forums/",
+                    description: "Official Apple developer forums",
+                    type: "Forum"
+                },
+                {
+                    title: "Android Developers",
+                    url: "https://reddit.com/r/androiddev",
+                    description: "Android development community on Reddit",
+                    type: "Forum"
+                },
+                {
+                    title: "React Native Community",
+                    url: "https://reactnative.dev/community/overview",
+                    description: "Official React Native community resources",
+                    type: "Community"
+                },
+                {
+                    title: "Flutter Dev",
+                    url: "https://discord.gg/flutter",
+                    description: "Flutter development community on Discord",
+                    type: "Discord"
+                },
+                {
+                    title: "Mobile Dev Weekly",
+                    url: "https://mobiledevweekly.com/",
+                    description: "Weekly newsletter for mobile developers",
+                    type: "Newsletter"
+                }
+            ],
+            podcasts: [
+                {
+                    title: "Swift by Sundell",
+                    url: "https://www.swiftbysundell.com/podcast/",
+                    description: "Weekly podcast about Swift development",
+                    platform: "Podcast"
+                },
+                {
+                    title: "Android Developers Backstage",
+                    url: "http://androidbackstage.blogspot.com/",
+                    description: "Official Android developers podcast",
+                    platform: "Podcast"
+                },
+                {
+                    title: "React Native Radio",
+                    url: "https://reactnativeradio.com/",
+                    description: "Weekly podcast about React Native development",
+                    platform: "Podcast"
+                },
+                {
+                    title: "Flutter Widget of the Week",
+                    url: "https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG",
+                    description: "Short videos about Flutter widgets",
+                    platform: "Video Series"
+                }
+            ],
+            blogs: [
+                {
+                    title: "Swift with Majid",
+                    url: "https://swiftwithmajid.com/",
+                    description: "Weekly blog about Swift development",
+                    type: "Blog"
+                },
+                {
+                    title: "Android Weekly",
+                    url: "https://androidweekly.net/",
+                    description: "Weekly Android development newsletter",
+                    type: "Newsletter"
+                },
+                {
+                    title: "React Native Blog",
+                    url: "https://reactnative.dev/blog",
+                    description: "Official React Native blog",
+                    type: "Blog"
+                },
+                {
+                    title: "Flutter Medium Publication",
+                    url: "https://medium.com/flutter",
+                    description: "Official Flutter blog on Medium",
+                    type: "Blog"
+                }
+            ]
+        },
+
+practice: {
+    beginnerExercises: [
+        {
+            title: "To-Do List App",
+            difficulty: "Easy",
+            description: "Create a basic to-do list application with local storage capabilities and basic UI features.",
+            hints: [
+                "Start with a simple list view",
+                "Implement add/delete functionality",
+                "Use local storage for data persistence",
+                "Add basic input validation"
+            ],
+            solution: {
+                code: `// React Native Implementation
+import React, { useState, useEffect } from 'react';
+import {
+    View,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    FlatList,
+    AsyncStorage,
+    StyleSheet,
+} from 'react-native';
+
+const TodoApp = () => {
+    const [todos, setTodos] = useState([]);
+    const [newTodo, setNewTodo] = useState('');
+
+    useEffect(() => {
+        loadTodos();
+    }, []);
+
+    const loadTodos = async () => {
+        try {
+            const storedTodos = await AsyncStorage.getItem('todos');
+            if (storedTodos) {
+                setTodos(JSON.parse(storedTodos));
+            }
+        } catch (error) {
+            console.error('Error loading todos:', error);
+        }
+    };
+
+    const saveTodos = async (updatedTodos) => {
+        try {
+            await AsyncStorage.setItem('todos', JSON.stringify(updatedTodos));
+        } catch (error) {
+            console.error('Error saving todos:', error);
+        }
+    };
+
+    const addTodo = () => {
+        if (newTodo.trim()) {
+            const updatedTodos = [
+                ...todos,
+                {
+                    id: Date.now().toString(),
+                    text: newTodo,
+                    completed: false,
+                }
+            ];
+            setTodos(updatedTodos);
+            saveTodos(updatedTodos);
+            setNewTodo('');
+        }
+    };
+
+    const toggleTodo = (id) => {
+        const updatedTodos = todos.map(todo =>
+            todo.id === id
+                ? { ...todo, completed: !todo.completed }
+                : todo
+        );
+        setTodos(updatedTodos);
+        saveTodos(updatedTodos);
+    };
+
+    const deleteTodo = (id) => {
+        const updatedTodos = todos.filter(todo => todo.id !== id);
+        setTodos(updatedTodos);
+        saveTodos(updatedTodos);
+    };
+
+    const renderItem = ({ item }) => (
+        <View style={styles.todoItem}>
+            <TouchableOpacity
+                style={styles.todoCheck}
+                onPress={() => toggleTodo(item.id)}
+            >
+                <Text>{item.completed ? '✓' : '○'}</Text>
+            </TouchableOpacity>
+            <Text style={[
+                styles.todoText,
+                item.completed && styles.completedTodo
+            ]}>
+                {item.text}
+            </Text>
+            <TouchableOpacity
+                style={styles.deleteButton}
+                onPress={() => deleteTodo(item.id)}
+            >
+                <Text style={styles.deleteButtonText}>✕</Text>
+            </TouchableOpacity>
+        </View>
+    );
+
+    return (
+        <View style={styles.container}>
+            <Text style={styles.title}>Todo List</Text>
+            <View style={styles.inputContainer}>
+                <TextInput
+                    style={styles.input}
+                    value={newTodo}
+                    onChangeText={setNewTodo}
+                    placeholder="Add a new todo"
+                    onSubmitEditing={addTodo}
+                />
+                <TouchableOpacity
+                    style={styles.addButton}
+                    onPress={addTodo}
+                >
+                    <Text style={styles.addButtonText}>+</Text>
+                </TouchableOpacity>
+            </View>
+            <FlatList
+                data={todos}
+                renderItem={renderItem}
+                keyExtractor={item => item.id}
+                style={styles.list}
+            />
+        </View>
+    );
+};
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        padding: 20,
+        backgroundColor: '#f5f5f5',
+    },
+    title: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 20,
+    },
+    inputContainer: {
+        flexDirection: 'row',
+        marginBottom: 20,
+    },
+    input: {
+        flex: 1,
+        borderWidth: 1,
+        borderColor: '#ddd',
+        padding: 10,
+        borderRadius: 6,
+        marginRight: 10,
+        backgroundColor: 'white',
+    },
+    addButton: {
+        backgroundColor: '#007AFF',
+        width: 44,
+        height: 44,
+        borderRadius: 22,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    addButtonText: {
+        color: 'white',
+        fontSize: 24,
+    },
+    list: {
+        flex: 1,
+    },
+    todoItem: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: 'white',
+        padding: 15,
+        borderRadius: 6,
+        marginBottom: 10,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.2,
+        shadowRadius: 1.41,
+        elevation: 2,
+    },
+    todoCheck: {
+        marginRight: 10,
+    },
+    todoText: {
+        flex: 1,
+    },
+    completedTodo: {
+        textDecorationLine: 'line-through',
+        color: '#666',
+    },
+    deleteButton: {
+        padding: 5,
+    },
+    deleteButtonText: {
+        color: '#FF3B30',
+        fontSize: 16,
+    },
+});
+
+export default TodoApp;`,
+                explanation: "This beginner exercise demonstrates:\n" +
+                    "1. Basic mobile UI components and layout\n" +
+                    "2. State management using React hooks\n" +
+                    "3. Local data persistence with AsyncStorage\n" +
+                    "4. User input handling and validation\n" +
+                    "5. List rendering and item manipulation\n" +
+                    "6. Basic styling and animations"
+            }
+        }
+    ],
+    intermediateExercises: [
+        {
+            title: "Social Media Feed App",
+            difficulty: "Medium",
+            description: "Create a social media feed with infinite scrolling, image loading, and interactions.",
+            hints: [
+                "Implement infinite scroll pagination",
+                "Add pull-to-refresh functionality",
+                "Handle image caching",
+                "Implement like/comment actions",
+                "Add skeleton loading states"
+            ],
+            solution: {
+                code: `// Social Feed Implementation in Flutter
+import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+
+class SocialFeed extends StatefulWidget {
+  @override
+  _SocialFeedState createState() => _SocialFeedState();
+}
+
+class _SocialFeedState extends State<SocialFeed> {
+  final List<Post> _posts = [];
+  bool _isLoading = false;
+  bool _hasMore = true;
+  final _scrollController = ScrollController();
+
+  @override
+  void initState() {
+    super.initState();
+    _loadMore();
+    _scrollController.addListener(_onScroll);
+  }
+
+  void _onScroll() {
+    if (_scrollController.position.pixels >=
+        _scrollController.position.maxScrollExtent - 200) {
+      _loadMore();
+    }
+  }
+
+  Future<void> _loadMore() async {
+    if (_isLoading || !_hasMore) return;
+
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      // Simulate API call
+      await Future.delayed(Duration(seconds: 2));
+      final newPosts = await fetchPosts(page: _posts.length ~/ 10);
+      
+      if (newPosts.isEmpty) {
+        setState(() {
+          _hasMore = false;
+        });
+      } else {
+        setState(() {
+          _posts.addAll(newPosts);
+        });
+      }
+    } catch (e) {
+      // Handle error
+      print('Error loading posts: $e');
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
+
+  Future<void> _onRefresh() async {
+    setState(() {
+      _posts.clear();
+      _hasMore = true;
+    });
+    await _loadMore();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Social Feed'),
+      ),
+      body: RefreshIndicator(
+        onRefresh: _onRefresh,
+        child: ListView.builder(
+          controller: _scrollController,
+          itemCount: _posts.length + (_hasMore ? 1 : 0),
+          itemBuilder: (context, index) {
+            if (index == _posts.length) {
+              return _buildLoader();
+            }
+            return _buildPostCard(_posts[index]);
+          },
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPostCard(Post post) {
+    return Card(
+      margin: EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ListTile(
+            leading: CircleAvatar(
+              backgroundImage: CachedNetworkImageProvider(post.userAvatar),
+            ),
+            title: Text(post.userName),
+            subtitle: Text(post.timeAgo),
+          ),
+          CachedNetworkImage(
+            imageUrl: post.imageUrl,
+            placeholder: (context, url) => 
+                Center(child: CircularProgressIndicator()),
+            errorWidget: (context, url, error) => 
+                Icon(Icons.error),
+            fit: BoxFit.cover,
+          ),
+          Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    IconButton(
+                      icon: Icon(
+                        post.isLiked ? Icons.favorite : Icons.favorite_border,
+                        color: post.isLiked ? Colors.red : null,
+                      ),
+                      onPress: () => _toggleLike(post),
+                    ),
+                    Text('post.likes likes'),
+                    SizedBox(width: 16),
+                    IconButton(
+                      icon: Icon(Icons.comment_outlined),
+                      onPress: () => _showComments(post),
+                    ),
+                    Text('post.comments.length} comments'),
+                  ],
+                ),
+                Text(
+                  post.caption,
+                  style: Theme.of(context).textTheme.bodyText2,
+                ),
+                if (post.comments.isNotEmpty)
+                  Padding(
+                    padding: EdgeInsets.only(top: 8.0),
+                    child: Text(
+                      View all post.comments.length  comments,
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildLoader() {
+    return Container(
+      padding: EdgeInsets.all(16.0),
+      alignment: Alignment.center,
+      child: CircularProgressIndicator(),
+    );
+  }
+
+  void _toggleLike(Post post) {
+    setState(() {
+      post.isLiked = !post.isLiked;
+      post.likes += post.isLiked ? 1 : -1;
+    });
+  }
+
+  void _showComments(Post post) {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) => CommentsSheet(post: post),
+    );
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+}
+
+class Post {
+  final String id;
+  final String userName;
+  final String userAvatar;
+  final String imageUrl;
+  final String caption;
+  final String timeAgo;
+  int likes;
+  bool isLiked;
+  final List<Comment> comments;
+
+  Post({
+    required this.id,
+    required this.userName,
+    required this.userAvatar,
+    required this.imageUrl,
+    required this.caption,
+    required this.timeAgo,
+    required this.likes,
+    this.isLiked = false,
+    required this.comments,
+  });
+}
+
+class Comment {
+  final String userName;
+  final String text;
+  final String timeAgo;
+
+  Comment({
+    required this.userName,
+    required this.text,
+    required this.timeAgo,
+  });
+}
+
+class CommentsSheet extends StatelessWidget {
+  final Post post;
+
+  const CommentsSheet({required this.post});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.7,
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Text(
+              'Comments',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: post.comments.length,
+              itemBuilder: (context, index) {
+                final comment = post.comments[index];
+                return ListTile(
+                  title: Text(comment.userName),
+                  subtitle: Text(comment.text),
+                  trailing: Text(comment.timeAgo),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}`,
+                explanation: "This intermediate exercise demonstrates:\n" +
+                    "1. Complex UI implementation with multiple components\n" +
+                    "2. Infinite scroll pagination\n" +
+                    "3. Image caching and loading states\n" +
+                    "4. User interactions and state management\n" +
+                    "5. Modal views and bottom sheets\n" +
+                    "6. Performance optimization techniques"
+            }
+        }
+    ],
+    advancedExercises: [
+        {
+            title: "E-Commerce App",
+            difficulty: "Hard",
+            description: "Build a full-featured e-commerce application with product catalog, cart management, and checkout process.",
+            hints: [
+                "Implement state management (Redux/BLoC)",
+                "Add offline support with local storage",
+                "Implement payment gateway integration",
+                "Add animations and transitions",
+                "Implement push notifications",
+                "Add user authentication"
+            ],
+            solution: {
+            code: `// Android e-commerce app implementation code with core components
+
+// 1. ViewModel and LiveData for State Management
+class ProductViewModel(application: Application) : AndroidViewModel(application) {
+    private val repository = ProductRepository(application)
+    val products: LiveData<List<Product>> = repository.getProducts()
+
+    fun addProductToCart(product: Product) {
+        repository.addToCart(product)
+    }
+}
+
+// 2. Repository with Room for Offline Support
+class ProductRepository(context: Context) {
+    private val productDao = AppDatabase.getDatabase(context).productDao()
+
+    fun getProducts(): LiveData<List<Product>> {
+        return productDao.getAllProducts()
+    }
+
+    suspend fun addToCart(product: Product) {
+        productDao.insertToCart(product)
+    }
+}
+
+// 3. Retrofit API Service for Network Requests
+interface ApiService {
+    @GET("products")
+    suspend fun fetchProducts(): Response<List<Product>>
+
+    @POST("orders")
+    suspend fun createOrder(@Body orderData: Order): Response<Order>
+}
+
+// 4. Firebase Auth for Authentication
+object AuthService {
+    fun login(email: String, password: String, onSuccess: () -> Unit, onError: 
+    (Exception) -> Unit) {
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
+            .addOnSuccessListener { onSuccess() }
+            .addOnFailureListener { exception -> onError(exception) }
+    }
+
+    fun register(email: String, password: String, onSuccess: () -> Unit, onError: 
+    (Exception) -> Unit) {
+        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+            .addOnSuccessListener { onSuccess() }
+            .addOnFailureListener { exception -> onError(exception) }
+    }
+}
+
+// 5. Payment Gateway Integration (e.g., Stripe)
+class PaymentService {
+    fun processPayment(paymentDetails: PaymentDetails, onSuccess: () -> Unit, onError: 
+    (Exception) -> Unit) {
+        // Code for handling payment through Stripe or other gateways
+    }
+}
+
+// 6. Firebase Cloud Messaging for Push Notifications
+class FCMService : FirebaseMessagingService() {
+    override fun onMessageReceived(remoteMessage: RemoteMessage) {
+        // Handle push notification data
+    }
+}
+
+// 7. MotionLayout for Smooth Animations
+// Sample XML layout using MotionLayout for cart transition
+/*
+<MotionLayout
+    android:id="@+id/motionLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/scene"
+    >
+    <!-- Define cart and checkout transitions here -->
+</MotionLayout>
+*/
+
+// AppDatabase.kt for Room Database
+@Database(entities = [Product::class, CartItem::class], version = 1)
+abstract class AppDatabase : RoomDatabase() {
+    abstract fun productDao(): ProductDao
+
+    companion object {
+        private var INSTANCE: AppDatabase? = null
+
+        fun getDatabase(context: Context): AppDatabase {
+            return INSTANCE ?: synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    AppDatabase::class.java,
+                    "ecommerce_database"
+                ).build()
+                INSTANCE = instance
+                instance
+            }
+        }
+    }
+}
+`,
+            explanation: "This advanced exercise demonstrates:\n" +
+                "1. Complex UI and state management with ViewModel and LiveData (or Jetpack Compose State)\n" +
+                "2. Offline capabilities with Room database for caching data\n" +
+                "3. Secure user authentication using Firebase Auth or a custom API\n" +
+                "4. Real-time data fetching and creation with Retrofit and API integration\n" +
+                "5. Push notifications through Firebase Cloud Messaging\n" +
+                "6. Smooth animations and transitions using MotionLayout\n" +
+                "7. Integration with a payment gateway like Stripe or PayPal\n" +
+                "8. Performance optimization for handling large data and reducing memory usage"
+
+                }
+            }
+        ]
+    }   
+}
 }
 ];
 
