@@ -108,14 +108,6 @@ const TransformWithGoogleCloud = () => {
                     </button>
                 </section>
             </main>
-
-            {/* Footer Section */}
-            <footer className="bg-gray-900 text-gray-400 py-6">
-                <div className="container mx-auto text-center">
-                    <p className="text-sm mb-2">Follow us • Google Cloud • Google Cloud Products • Privacy • Terms • Help</p>
-                    <p className="text-sm">‪English‬</p>
-                </div>
-            </footer>
         </div>
     );
 };
