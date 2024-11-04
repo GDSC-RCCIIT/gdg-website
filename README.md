@@ -92,10 +92,22 @@ We welcome everyone to contribute to the GDG RCCIIT website! Please review our [
   </a>
 </div>
 
-## 🎉 Happy Coding!
 
-Explore, contribute, and let’s build an awesome GDG RCCIIT website together!
+## 🌐 Connect with Me
+
+<div align="center">
+    <a href="https://www.linkedin.com/in/rishi-paul04/">
+        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" width="100" height="30"/>
+    </a>
+    <a href="mailto:rishi.404@outlook.com">
+        <img src="https://img.shields.io/badge/Outlook-0078D4?style=flat-square&logo=microsoft-outlook&logoColor=white" alt="Outlook" width="100" height="30"/>
+    </a>
+    <a href="https://discord.com/">
+        <img src="https://img.shields.io/badge/Discord-7289DA?style=flat-square&logo=discord&logoColor=white" alt="Discord" width="100" height="30"/>
+    </a>
+</div>
 
 ---
 
-Let me know if you'd like to add or modify any details!
+Thank you for visiting! Feel free to reach out through any of the links above.
+
