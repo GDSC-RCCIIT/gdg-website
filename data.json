@@ -1,5 +1,5 @@
 {
-"hackathons": [
+  "hackathons": [
     {
       "basicInformation": {
         "id": "1",
@@ -103,7 +103,7 @@
       "registrationAndParticipation": {
         "registrationLink": "https://github.com/GDSC-RCCIIT/gdg-website",
         "teamSize": "2-6 members",
-        "registrationDeadline": "2024-12-01",
+        "registrationDeadline": "2024-02-30",
         "participationFee": "$25"
       },
       "prizesAndPerks": {
@@ -640,82 +640,382 @@
     }
   ],
   "events": [
-      {
-        "id": "1",
-        "title": "Tech for Good Hackathon",
-        "description": "A 48-hour hackathon focused on leveraging technology to address challenges in healthcare.",
-        "date": {
-          "start": "2024-11-01T09:00:00Z",
-          "end": "2024-11-03T17:00:00Z"
-        },
-        "location": "Online",
-        "status": "finished",
-        "prizes": [
-          {
-            "category": "Best Overall Project",
-            "amount": "$3,000"
-          },
-          {
-            "category": "Most Innovative Solution",
-            "amount": "$2,000"
-          }
-        ],
-        "organizers": ["GDSC RCCIIT"],
-        "participants": 150
+    {
+      "id": "1",
+      "title": "Tech for Good Hackathon",
+      "description": "A 48-hour hackathon focused on leveraging technology to address challenges in healthcare.",
+      "date": {
+        "start": "2024-11-01T09:00:00Z",
+        "end": "2024-11-03T17:00:00Z"
       },
-      {
-        "id": "2",
-        "title": "Web Development Bootcamp",
-        "description": "A three-day intensive bootcamp to learn web development from scratch.",
-        "date": {
-          "start": "2024-09-10T09:00:00Z",
-          "end": "2024-09-12T17:00:00Z"
+      "location": "Online",
+      "status": "finished",
+      "prizes": [
+        {
+          "category": "Best Overall Project",
+          "amount": "$3,000"
         },
-        "location": "RCCIIT Campus",
-        "status": "finished",
-        "organizers": ["GDSC RCCIIT"],
-        "participants": 50
+        {
+          "category": "Most Innovative Solution",
+          "amount": "$2,000"
+        }
+      ],
+      "organizers": ["GDSC RCCIIT"],
+      "participants": 150
+    },
+    {
+      "id": "2",
+      "title": "Web Development Bootcamp",
+      "description": "A three-day intensive bootcamp to learn web development from scratch.",
+      "date": {
+        "start": "2024-09-10T09:00:00Z",
+        "end": "2024-09-12T17:00:00Z"
       },
-      {
-        "id": "3",
-        "title": "AI & ML Workshop",
-        "description": "A hands-on workshop on artificial intelligence and machine learning concepts.",
-        "date": {
-          "start": "2024-10-15T09:00:00Z",
-          "end": "2024-10-30T17:00:00Z"
-        },
-        "location": "Online",
-        "status": "ongoing",
-        "organizers": ["GDSC RCCIIT"],
-        "participants": 80
+      "location": "RCCIIT Campus",
+      "status": "finished",
+      "organizers": ["GDSC RCCIIT"],
+      "participants": 50
+    },
+    {
+      "id": "3",
+      "title": "AI & ML Workshop",
+      "description": "A hands-on workshop on artificial intelligence and machine learning concepts.",
+      "date": {
+        "start": "2024-10-15T09:00:00Z",
+        "end": "2024-10-30T17:00:00Z"
       },
-      {
-        "id": "4",
-        "title": "Cloud Computing Seminar",
-        "description": "An interactive seminar discussing cloud computing trends and best practices.",
-        "date": {
-          "start": "2024-11-05T14:00:00Z",
-          "end": "2024-11-05T16:00:00Z"
-        },
-        "location": "Online",
-        "status": "upcoming",
-        "registrationLink": "https://example.com/register-cloud-seminar",
-        "organizers": ["GDSC RCCIIT"],
-        "participants": 0
+      "location": "Online",
+      "status": "ongoing",
+      "organizers": ["GDSC RCCIIT"],
+      "participants": 80
+    },
+    {
+      "id": "4",
+      "title": "Cloud Computing Seminar",
+      "description": "An interactive seminar discussing cloud computing trends and best practices.",
+      "date": {
+        "start": "2024-11-05T14:00:00Z",
+        "end": "2024-11-05T16:00:00Z"
       },
-      {
-        "id": "5",
-        "title": "Mobile App Development Workshop",
-        "description": "Learn to build mobile applications using Flutter in this hands-on workshop.",
-        "date": {
-          "start": "2024-11-15T10:00:00Z",
-          "end": "2024-11-17T17:00:00Z"
-        },
-        "location": "RCCIIT Campus",
-        "status": "upcoming",
-        "registrationLink": "https://example.com/register-mobile-workshop",
-        "organizers": ["GDSC RCCIIT"],
-        "participants": 0
-      }
-    ]
+      "location": "Online",
+      "status": "upcoming",
+      "registrationLink": "https://example.com/register-cloud-seminar",
+      "organizers": ["GDSC RCCIIT"],
+      "participants": 0
+    },
+    {
+      "id": "5",
+      "title": "Mobile App Development Workshop",
+      "description": "Learn to build mobile applications using Flutter in this hands-on workshop.",
+      "date": {
+        "start": "2024-11-15T10:00:00Z",
+        "end": "2024-11-17T17:00:00Z"
+      },
+      "location": "RCCIIT Campus",
+      "status": "upcoming",
+      "registrationLink": "https://example.com/register-mobile-workshop",
+      "organizers": ["GDSC RCCIIT"],
+      "participants": 0
+    }
+  ],
+  "careers": [
+    {
+      "id": "1",
+      "title": "Senior Staff Software Developer, Kubernetes",
+      "description": "Work on building the future of Kubernetes with our cloud-native team.",
+      "location": "Remote eligible",
+      "office": "Kirkland, WA, USA; +5 more",
+      "image": "/spot1.jpg",
+      "details": "As a Senior Software Developer, you will be part of a team responsible for the future development of Kubernetes...",
+      "company": "Google",
+      "minimum_qualifications": {
+        "degree": "Bachelor's degree in Computer Science or related field.",
+        "experience": [
+          "5+ years of experience in software development.",
+          "Strong background in Kubernetes and cloud technologies."
+        ]
+      },
+      "preferred_qualifications": {
+        "coding_experience": "Experience with Go, Python, or Java.",
+        "programming_skills": "Familiarity with microservices architecture and design patterns.",
+        "passion": "Enthusiasm for open-source projects."
+      },
+      "job_description": {
+        "philosophy": "Innovate and optimize for better performance.",
+        "role_overview": "Join the Kubernetes team to enhance and scale our platform.",
+        "impact": "Contribute to the evolution of Kubernetes, impacting millions of users.",
+        "mission": "Empowering developers to build scalable applications."
+      },
+      "responsibilities": [
+        "Design and implement new features for Kubernetes.",
+        "Collaborate with cross-functional teams to improve product performance.",
+        "Mentor junior developers and provide technical guidance.",
+        "Contribute to the Kubernetes community through code and documentation."
+      ],
+      "diversity_statement": "Google is committed to diversity and inclusion in the workplace.",
+      "english_proficiency": "English proficiency is required.",
+      "note_for_agencies": "Google does not accept unsolicited CVs from agencies."
+    },
+    {
+      "id": "2",
+      "title": "Google AI and ML roles",
+      "description": "Search some of our newest, priority roles in artificial intelligence and machine learning.",
+      "image": "/spot2.jpg",
+      "details": "These roles require deep expertise in AI and machine learning, and you will be working on cutting-edge projects...",
+      "company": "Google",
+      "minimum_qualifications": {
+        "degree": "Master's degree or PhD in Computer Science or related field.",
+        "experience": [
+          "3+ years of experience in AI/ML research or development.",
+          "Proficiency in machine learning frameworks such as TensorFlow or PyTorch."
+        ]
+      },
+      "preferred_qualifications": {
+        "coding_experience": "Strong programming skills in Python and R.",
+        "programming_skills": "Experience with data analysis and visualization tools.",
+        "passion": "A passion for solving complex problems with AI."
+      },
+      "job_description": {
+        "philosophy": "Use AI to drive innovation and create value.",
+        "role_overview": "Work on groundbreaking AI/ML projects that change the way we interact with technology.",
+        "impact": "Shape the future of AI and its applications across various sectors.",
+        "mission": "Making AI accessible and useful for everyone."
+      },
+      "responsibilities": [
+        "Develop machine learning models and algorithms.",
+        "Analyze large datasets to extract insights.",
+        "Collaborate with product teams to integrate AI solutions.",
+        "Publish research findings and contribute to open-source projects."
+      ],
+      "diversity_statement": "Google believes in the power of a diverse workforce.",
+      "english_proficiency": "English proficiency is required.",
+      "note_for_agencies": "Google does not accept unsolicited CVs from agencies."
+    },
+    {
+      "id": "3",
+      "title": "Consumer Hardware",
+      "description": "Design and build the systems that are at the heart of the world\"s largest and most powerful computing infrastructure and products.",
+      "image": "/spot3.jpg",
+      "details": "Join our consumer hardware team to help design cutting-edge products used worldwide...",
+      "company": "Google",
+      "minimum_qualifications": {
+        "degree": "Bachelor's degree in Electrical Engineering or related field.",
+        "experience": [
+          "4+ years of experience in hardware design and development.",
+          "Knowledge of digital and analog circuit design."
+        ]
+      },
+      "preferred_qualifications": {
+        "coding_experience": "Experience with embedded systems programming.",
+        "programming_skills": "Proficiency in CAD tools and simulation software.",
+        "passion": "Desire to innovate and improve hardware products."
+      },
+      "job_description": {
+        "philosophy": "Create devices that enhance people's lives.",
+        "role_overview": "Develop consumer hardware that integrates seamlessly with software products.",
+        "impact": "Your work will directly influence the usability and functionality of our devices.",
+        "mission": "Building products that improve daily life."
+      },
+      "responsibilities": [
+        "Design and prototype new hardware products.",
+        "Collaborate with software teams to ensure integration and performance.",
+        "Conduct testing and validation of hardware prototypes.",
+        "Stay updated with industry trends and technology advancements."
+      ],
+      "diversity_statement": "Google values diversity in our workforce.",
+      "english_proficiency": "English proficiency is required.",
+      "note_for_agencies": "Google does not accept unsolicited CVs from agencies."
+    },
+    {
+      "id": "4",
+      "title": "Platforms & Ecosystems",
+      "description": "Work on our innovative software products that have an impact on people’s lives across the world.",
+      "image": "/spot1.jpg",
+      "details": "In this role, you will be part of a team that develops platform and ecosystem software to enhance global impact...",
+      "company": "Google",
+      "minimum_qualifications": {
+        "degree": "Bachelor's degree in Computer Science or a related field.",
+        "experience": [
+          "3+ years of experience in software development.",
+          "Experience with cloud platforms and APIs."
+        ]
+      },
+      "preferred_qualifications": {
+        "coding_experience": "Experience with Java, Python, or Go.",
+        "programming_skills": "Familiarity with microservices and containerization.",
+        "passion": "A strong interest in developing scalable software solutions."
+      },
+      "job_description": {
+        "philosophy": "Empower developers with robust tools and frameworks.",
+        "role_overview": "Build and maintain software platforms that serve millions.",
+        "impact": "Your contributions will enhance the developer experience and user satisfaction.",
+        "mission": "Providing platforms that enable innovation and growth."
+      },
+      "responsibilities": [
+        "Develop and maintain platform services and APIs.",
+        "Collaborate with product teams to define platform requirements.",
+        "Monitor and improve system performance and reliability.",
+        "Engage with the developer community to gather feedback and iterate."
+      ],
+      "diversity_statement": "Google is dedicated to a diverse workforce.",
+      "english_proficiency": "English proficiency is required.",
+      "note_for_agencies": "Google does not accept unsolicited CVs from agencies."
+    }
+  ],
+"achievements": [
+  {
+    "id": "1",
+    "name": "John Doe",
+    "job": "Software Engineer at Google",
+    "project": "Developed an AI-based chatbot",
+    "testimonial": "GDSC gave me the platform to grow and showcase my skills.",
+    "imageUrl": "/Mentor 1.jpeg",
+    "date": "2023-08-15",
+    "location": "Mountain View, CA",
+    "description": "John developed an AI-driven chatbot for customer support, designed to handle thousands of queries per day with over 90% accuracy. The project was part of a larger initiative to streamline user engagement and enhance the user experience on Google platforms.",
+    "skills": ["Machine Learning", "NLP", "Python", "TensorFlow"],
+    "achievementsDetails": [
+      "Improved customer query response time by 40%",
+      "Achieved 90% accuracy in understanding and resolving user issues",
+      "Presented project at the GDSC annual tech conference"
+    ],
+    "challenges": [
+      "Handling high volumes of data with low latency",
+      "Ensuring chatbot responses were contextually accurate and helpful",
+      "Integrating the chatbot seamlessly with existing support systems"
+    ],
+    "lessonsLearned": [
+      "The importance of data preprocessing for accurate NLP results",
+      "Balancing response time with model complexity",
+      "Optimizing performance for real-time applications"
+    ],
+    "teamSize": 5,
+    "duration": "6 months",
+    "link": "https://linkedin.com/in/johndoe"
+  },
+  {
+    "id": "2",
+    "name": "Jane Smith",
+    "job": "Product Manager at Microsoft",
+    "project": "Led a successful product launch",
+    "testimonial": "I gained hands-on experience and met incredible people.",
+    "imageUrl": "/Mentor 2.jpeg",
+    "date": "2023-05-10",
+    "location": "Seattle, WA",
+    "description": "Jane led the product development and launch of a new Microsoft application, focusing on cross-functional collaboration between engineering, marketing, and design teams. Her strategic planning helped secure a 20% market share within the first six months of launch.",
+    "skills": ["Product Management", "Team Leadership", "Strategic Planning", "Agile"],
+    "achievementsDetails": [
+      "Achieved 20% market share in six months",
+      "Collaborated with cross-functional teams to meet tight deadlines",
+      "Increased user engagement by 30% through user-centered design"
+    ],
+    "challenges": [
+      "Coordinating across multiple departments with differing priorities",
+      "Keeping the project on schedule despite unforeseen delays",
+      "Balancing feature set with the initial release timeline"
+    ],
+    "lessonsLearned": [
+      "Effective communication is key to cross-functional success",
+      "Prioritizing features based on user needs leads to better product reception",
+      "Flexibility is essential when dealing with changing project requirements"
+    ],
+    "teamSize": 10,
+    "duration": "9 months",
+    "link": "https://linkedin.com/in/janesmith"
+  },
+  {
+    "id": "3",
+    "name": "Alex Lee",
+    "job": "Data Scientist at Amazon",
+    "project": "Created a recommendation engine for e-commerce",
+    "testimonial": "Being part of GDSC taught me valuable technical and collaboration skills.",
+    "imageUrl": "/Mentor 3.png",
+    "date": "2023-09-01",
+    "location": "San Francisco, CA",
+    "description": "Alex developed a recommendation engine that improved product discovery on Amazon's e-commerce platform. By analyzing customer purchase patterns and preferences, he was able to create personalized product suggestions, boosting sales and customer satisfaction.",
+    "skills": ["Data Science", "Python", "Machine Learning", "SQL"],
+    "achievementsDetails": [
+      "Increased product click-through rate by 25%",
+      "Implemented real-time data processing for instant recommendations",
+      "Contributed to a 15% increase in sales for recommended products"
+    ],
+    "challenges": [
+      "Handling large volumes of data efficiently",
+      "Maintaining recommendation accuracy across diverse user groups",
+      "Integrating the engine with existing Amazon systems"
+    ],
+    "lessonsLearned": [
+      "Data cleaning is crucial for accurate recommendations",
+      "Real-time processing requires significant optimization",
+      "Personalized recommendations improve customer satisfaction"
+    ],
+    "teamSize": 7,
+    "duration": "4 months",
+    "link": "https://linkedin.com/in/alexlee"
+  },
+  {
+    "id": "4",
+    "name": "Lisa Wong",
+    "job": "Frontend Developer at Adobe",
+    "project": "Built a responsive UI for a flagship product",
+    "testimonial": "GDSC provided me with a platform to learn and connect with amazing tech enthusiasts.",
+    "imageUrl": "/Mentor 1.jpeg",
+    "date": "2023-07-20",
+    "location": "San Jose, CA",
+    "description": "Lisa worked on designing and implementing a responsive user interface for Adobe’s flagship product, enhancing usability and aesthetics for millions of users globally. Her work emphasized performance optimization and accessibility, aligning with Adobe's commitment to inclusive design.",
+    "skills": ["HTML", "CSS", "JavaScript", "React"],
+    "achievementsDetails": [
+      "Enhanced page load speed by 35%",
+      "Ensured WCAG 2.1 accessibility compliance",
+      "Received recognition in Adobe’s annual performance review"
+    ],
+    "challenges": [
+      "Ensuring compatibility across a wide range of devices and screen sizes",
+      "Optimizing UI performance without compromising functionality",
+      "Meeting accessibility standards"
+    ],
+    "lessonsLearned": [
+      "Accessibility should be a priority from the beginning",
+      "Efficient UI design improves both performance and user experience",
+      "Cross-device compatibility testing is essential"
+    ],
+    "teamSize": 4,
+    "duration": "3 months",
+    "link": "https://linkedin.com/in/lisawong"
+  }
+],
+  "mentors": [
+    {
+      "id": "1",
+      "name": "Mark Johnson",
+      "position": "Senior Developer at Meta",
+      "bio": "I am excited to mentor students interested in software engineering and AI.",
+      "imageUrl": "/Mentor 3.png",
+      "linkedinProfile": "https://www.linkedin.com/in/janvi-choudhary/"
+    },
+    {
+      "id": "2",
+      "name": "Emily Davis",
+      "position": "UX Designer at Spotify",
+      "bio": "Happy to guide GDSC members in design thinking and user research.",
+      "imageUrl": "/Mentor 1.jpeg",
+      "linkedinProfile": "https://www.linkedin.com/feed/"
+    },
+    {
+      "id": "3",
+      "name": "Sarah Lee",
+      "position": "Data Scientist at Google",
+      "bio": "Passionate about helping others understand data analysis and machine learning.",
+      "imageUrl": "/Mentor 2.jpeg",
+      "linkedinProfile": "https://www.linkedin.com/feed/"
+    },
+    {
+      "id": "4",
+      "name": "James Smith",
+      "position": "Frontend Engineer at Amazon",
+      "bio": "Eager to share my knowledge in React and modern web development practices.",
+      "imageUrl": "/Mentor 3.png",
+      "linkedinProfile": "https://www.linkedin.com/feed/"
+    }
+  ]
 }

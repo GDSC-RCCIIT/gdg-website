@@ -27,6 +27,11 @@
 │   ├── certi 3.svg
 │   ├── certi 4.png
 │   ├── certi 5.png
+│   ├── cicd1.png
+│   ├── cicd2.jpg
+│   ├── cicd3.jpg
+│   ├── cicd4.jpg
+│   ├── cicd5.jpg
 │   ├── dev1.jpeg
 │   ├── dev2.jpeg
 │   ├── dev3.jpeg
@@ -48,9 +53,28 @@
 │   ├── exp6.jpeg
 │   ├── exp7.jpeg
 │   ├── goal.webp
+│   ├── gro1.png
+│   ├── gro2.png
+│   ├── gro3.svg
+│   ├── gro4.svg
 │   ├── hack1.jpg
 │   ├── img1.jpg
+│   ├── inovate1.png
+│   ├── inovate2.png
+│   ├── inovate3.png
 │   ├── mission.webp
+│   ├── os1.png
+│   ├── os2.ico
+│   ├── os3.svg
+│   ├── os4.png
+│   ├── sdk1.png
+│   ├── sdk2.png
+│   ├── sdk3.png
+│   ├── sdk4.png
+│   ├── ser1.png
+│   ├── ser2.png
+│   ├── ser3.svg
+│   ├── ser4.svg
 │   ├── sopt4.jpg
 │   ├── spot1.jpg
 │   ├── spot2.jpg
@@ -62,18 +86,32 @@
 │   ├── story5.png
 │   ├── story6.png
 │   ├── story7.png
+│   ├── techeq1.webp
+│   ├── techeq2.webp
 │   └── vision.webp
 ├── repo_structure.txt
+├── security.md
 ├── src/
 │   ├── app/
 │   │   ├── (pages)/
 │   │   │   ├── About/
 │   │   │   │   └── page.jsx
+│   │   │   ├── AddEvent/
+│   │   │   │   └── page.jsx
 │   │   │   ├── AddHackathon/
+│   │   │   │   └── page.jsx
+│   │   │   ├── AddProjects/
+│   │   │   │   └── page.jsx
+│   │   │   ├── AddSpotlight/
+│   │   │   │   └── page.jsx
+│   │   │   ├── AddStories/
 │   │   │   │   └── page.jsx
 │   │   │   ├── Certifications/
 │   │   │   │   └── page.jsx
 │   │   │   ├── Chapters/
+│   │   │   │   └── page.jsx
+│   │   │   ├── Contact/
+│   │   │   │   ├── Contactus.svg
 │   │   │   │   └── page.jsx
 │   │   │   ├── Events/
 │   │   │   │   ├── EventItem.js
@@ -91,10 +129,14 @@
 │   │   │   │   ├── [id]/
 │   │   │   │   │   └── page.jsx
 │   │   │   │   └── page.jsx
+│   │   │   ├── Practitioners/
+│   │   │   │   └── page.jsx
 │   │   │   ├── PrivacyPolicy/
 │   │   │   │   └── page.jsx
 │   │   │   ├── Projects/
 │   │   │   │   ├── Card.jsx
+│   │   │   │   ├── [id]/
+│   │   │   │   │   └── page.jsx
 │   │   │   │   └── page.jsx
 │   │   │   ├── Resources/
 │   │   │   │   ├── [id]/
@@ -112,7 +154,6 @@
 │   │   │   │       └── page.jsx
 │   │   │   ├── Stories-Achievements/
 │   │   │   │   ├── achievements.js
-│   │   │   │   ├── mentors.js
 │   │   │   │   └── page.jsx
 │   │   │   ├── Subscribe/
 │   │   │   │   └── page.jsx
@@ -124,23 +165,16 @@
 │   │   │   │   └── techStacks.js
 │   │   │   ├── TermsAndConditions/
 │   │   │   │   └── page.jsx
-│   │   │   ├── api/
-│   │   │   │   ├── Certifications/
-│   │   │   │   │   ├── data.js
-│   │   │   │   │   └── route.js
-│   │   │   │   ├── chapters/
-│   │   │   │   │   ├── data.js
-│   │   │   │   │   └── route.js
-│   │   │   │   ├── generate-content/
-│   │   │   │   │   └── route.js
-│   │   │   │   └── subscribe/
-│   │   │   │       └── route.js
 │   │   │   ├── careers/
 │   │   │   │   ├── [id]/
 │   │   │   │   │   └── page.jsx
 │   │   │   │   ├── opportunities.js
 │   │   │   │   └── page.jsx
+│   │   │   ├── cicd/
+│   │   │   │   └── page.jsx
 │   │   │   ├── devStudent/
+│   │   │   │   └── page.jsx
+│   │   │   ├── devfest/
 │   │   │   │   └── page.jsx
 │   │   │   ├── devprod/
 │   │   │   │   └── page.jsx
@@ -150,23 +184,35 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── gitContributors/
 │   │   │   │   └── page.jsx
+│   │   │   ├── growth/
+│   │   │   │   └── page.jsx
 │   │   │   ├── helpCenter/
 │   │   │   │   └── page.jsx
 │   │   │   ├── how-apply/
 │   │   │   │   └── page.jsx
+│   │   │   ├── inovate/
+│   │   │   │   └── page.jsx
+│   │   │   ├── ioext/
+│   │   │   │   └── page.jsx
 │   │   │   ├── localdev/
+│   │   │   │   └── page.jsx
+│   │   │   ├── operating-system/
 │   │   │   │   └── page.jsx
 │   │   │   ├── orginizer/
 │   │   │   │   └── page.jsx
-│   │   │   ├── participation-terms/
-│   │   │   │   └── page.jsx
 │   │   │   ├── participationterms/
+│   │   │   │   └── page.jsx
+│   │   │   ├── sdk/
+│   │   │   │   └── page.jsx
+│   │   │   ├── services/
 │   │   │   │   └── page.jsx
 │   │   │   ├── stories/
 │   │   │   │   └── page.jsx
 │   │   │   ├── student-challenge/
 │   │   │   │   └── page.jsx
 │   │   │   ├── sustainable/
+│   │   │   │   └── page.jsx
+│   │   │   ├── techequity/
 │   │   │   │   └── page.jsx
 │   │   │   ├── timeline/
 │   │   │   │   └── page.jsx
@@ -175,6 +221,18 @@
 │   │   │   └── womentechmakers/
 │   │   │       └── page.jsx
 │   │   ├── api/
+│   │   │   ├── Certifications/
+│   │   │   │   ├── data.js
+│   │   │   │   └── route.js
+│   │   │   ├── addhackathon/
+│   │   │   │   └── route.js
+│   │   │   ├── addstoriesapi/
+│   │   │   │   └── route.js
+│   │   │   ├── chapters/
+│   │   │   │   ├── data.js
+│   │   │   │   └── route.js
+│   │   │   ├── generate-content/
+│   │   │   │   └── route.js
 │   │   │   └── subscribe/
 │   │   │       └── route.js
 │   │   ├── favicon.ico
@@ -184,6 +242,7 @@
 │   │   ├── globals.css
 │   │   ├── images/
 │   │   │   ├── ai_img.jpg
+│   │   │   ├── gdsc-logo.png
 │   │   │   └── teamMember.jpg
 │   │   ├── layout.js
 │   │   ├── not-found.jsx
@@ -192,10 +251,16 @@
 │   │   ├── Chatbot.jsx
 │   │   ├── GTranslateLoader.js
 │   │   ├── Global/
+│   │   │   ├── AddEventForm.jsx
 │   │   │   ├── AddHackathonForm.jsx
+│   │   │   ├── AddProjectsForm.jsx
+│   │   │   ├── AddSpotlightForm.jsx
+│   │   │   ├── AddStoriesForm.jsx
 │   │   │   ├── Footer.jsx
 │   │   │   ├── Header.jsx
-│   │   │   └── Hero.jsx
+│   │   │   ├── Hero.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   └── ProductsNavbar.jsx
 │   │   └── ui/
 │   │       ├── aspect-ratio.jsx
 │   │       ├── back2top.jsx
@@ -209,6 +274,7 @@
 │   │       ├── dialog.jsx
 │   │       ├── drawer.jsx
 │   │       ├── dropdown-menu.jsx
+│   │       ├── form.jsx
 │   │       ├── homepage.jsx
 │   │       ├── hover-card.jsx
 │   │       ├── input.jsx
@@ -235,9 +301,6 @@
 │   ├── lib/
 │   │   ├── Hackathon.js
 │   │   ├── Projects.js
-│   │   ├── cpp-content.js
-│   │   ├── dsa-content.js
-│   │   ├── dsa-track-content.js
 │   │   └── utils.js
 │   └── public/
 │       └── GDSC-RCIIT Logo.png

@@ -46,6 +46,8 @@ _(Screenshots will be added as the development progresses)_
 ## 🤝 Contribution Guidelines
 We welcome everyone to contribute to the GDG RCCIIT website! Please review our [CONTRIBUTING.md](link-to-your-contributing-guidelines) and [CODE_OF_CONDUCT.md](link-to-your-code-of-conduct) for more details on how to get involved.
 
+Each contributor can only have 3 issues assigned or created at a time. Any additional issues will be considered spam and will be closed.
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -78,11 +80,40 @@ We welcome everyone to contribute to the GDG RCCIIT website! Please review our [
 
 ## 🛠️ Technologies Used
 - **Next.js**: For server-side rendering (SSR) and static site generation (SSG).
-
+- **Json-Server**: For the backend and running the project locally.
 - **Tailwind CSS**: For responsive, utility-first CSS design.
 - **Supabase**: Provides real-time backend services and user authentication.
 - **Cloudinary**: Handles cloud-based image storage and media optimization.
- 
+
+## 📂 How to Run the JSON Server
+
+To set up and run a JSON server for testing or development purposes, follow these steps:
+
+### Prerequisites
+- **Node.js**: Ensure you have Node.js installed on your machine.
+
+### Installation
+1. **Install JSON Server and CORS**:
+   Open your terminal and run the following command to install `json-server` and `cors`:
+   ```bash
+   npm install -g json-server cors
+   ```
+
+### Running the JSON Server
+1. **Navigate to your project directory**:
+   ```bash
+   cd path/to/your/project
+   ```
+
+2. **Run the JSON Server**:
+   Execute the following command to start the JSON server:
+   ```bash
+   npx json-server data.json --port 5000
+   ```
+
+3. **Access the Server**:
+   You can now access the JSON server at [http://localhost:5000](http://localhost:5000). This will serve your `data.json` file, and you can interact with it via API endpoints.
+
 
 ## 👀 Our Valuable Contributors 💖✨
 
@@ -90,6 +121,16 @@ We welcome everyone to contribute to the GDG RCCIIT website! Please review our [
   <a href="https://github.com/GDSC-RCCIIT/gdg-website/graphs/contributors">
     <img src="https://contrib.rocks/image?repo=GDSC-RCCIIT/gdg-website&max=100" />
   </a>
+</div>
+
+## 💗 Forkers
+
+[![Forkers repo roster for @GDSC-RCCIIT/gdg-website](https://reporoster.com/forks/GDSC-RCCIIT/gdg-website)](https://github.com/GDSC-RCCIIT/gdg-website/network/members)
+
+## ⭐ Stargazers
+
+<div align='left'>
+    [![Stargazers repo roster for @GDSC-RCCIIT/gdg-website](https://reporoster.com/stars/GDSC-RCCIIT/gdg-website)](https://github.com/GDSC-RCCIIT/gdg-website/stargazers)
 </div>
 
 
@@ -108,6 +149,13 @@ We welcome everyone to contribute to the GDG RCCIIT website! Please review our [
 </div>
 
 ---
-
 Thank you for visiting! Feel free to reach out through any of the links above.
+
+Let me know if you'd like to add or modify any details!
+
+<div align="center">
+    <a href="#top">
+        <img src="https://img.shields.io/badge/Back%20to%20Top-000000?style=for-the-badge&logo=github&logoColor=white" alt="Back to Top">
+    </a>
+</div>
 

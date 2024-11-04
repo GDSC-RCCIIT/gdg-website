@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-const EventItem = ({ title, date, description, videoSrc, id }) => {
+const EventItem = ({ title, date, heading, description1, description2, videoSrc, id }) => {
 
     return (
         <div className="timeline-item" style={{ position: 'relative' }}>
@@ -18,7 +18,9 @@ const EventItem = ({ title, date, description, videoSrc, id }) => {
                 </div>
                 <h2 className="event-title">{title}</h2>
                 <p className="event-date">Date: {date}</p>
-                <p className="event-description">{description}</p>
+                <p className="event-description">{heading}</p>
+                <p className="event-description">{description1}</p>
+                <p className="event-description">{description2}</p>
                 <Link href={`/SingleEvent/${id}`} passHref className="event-link">
                     Learn More
                 </Link>

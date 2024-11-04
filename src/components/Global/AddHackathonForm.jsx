@@ -34,10 +34,12 @@ const AddHackathonForm = () => {
       );
   }, []);
 
-  const onSubmit = (data) => {
+  const onSubmit = (data,e) => {
+    e.preventDefault();
+    
     const hackathonData = {
-      id: nextId.toString(),
       basicInformation: {
+        id: nextId.toString(),
         hackathonTitle: data.hackathonTitle,
         description: data.description,
         dateAndTime: {
@@ -94,10 +96,10 @@ const AddHackathonForm = () => {
     };
     console.log("hackathonData", hackathonData);
 
-//     axios
-//       .post("http://localhost:5000/hackathons", hackathonData)
-//       .then(() => alert("Hackathon added successfully!"))
-//       .catch((error) => console.error("Error adding hackathon:", error));
+    axios
+      .post("/api/addhackathon", hackathonData)
+      .then(() => alert("Hackathon added successfully!"))
+      .catch((error) => console.error("Error adding hackathon:", error));
   };
 
   return (

@@ -99,12 +99,16 @@ const GDSCLanding = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
+            <a href="/SignUp">
             <button className="px-8 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors">
               Join Us
             </button>
+            </a>
+            <a href="./Contact">
             <button className="px-8 py-3 border-2 border-blue-500 text-blue-500 rounded-full hover:bg-blue-50 transition-colors">
               Contact Us
             </button>
+            </a>
           </motion.div>
         </div>
       </section>

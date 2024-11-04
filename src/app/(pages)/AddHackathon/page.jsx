@@ -105,7 +105,7 @@ const AddHackathon = () => {
 
       {/* Centered White Box */}
       <div className="relative z-10 bg-white -mt-60 -mb-24 rounded-lg shadow-lg p-12 w-[1200px] h-[2500px] flex ">
-        <form className="w-full">
+        <div className="w-full">
         <div className="text-center">
           <motion.h1
             className="text-5xl font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
@@ -127,7 +127,7 @@ const AddHackathon = () => {
         </div>
           <AddHackathonForm/>
           {/* Your form content goes here */}
-        </form>
+        </div>
       </div>
     </div>
   );
