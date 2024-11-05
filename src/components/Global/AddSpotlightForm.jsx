@@ -5,21 +5,13 @@ import { useForm, useFieldArray } from 'react-hook-form';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectTrigger,
-  SelectContent,
-  SelectItem,
-} from "@/components/ui/select";
 
 export default function AddSpotlightForm() {
   const { register, handleSubmit, control } = useForm();
   const [nextId, setNextId] = useState(null);
 
   useEffect(() => {
-    // Fetch current count of hackathons for unique ID assignment
     axios
       .get("http://localhost:5000/spotlightJobs")
       .then((response) => {
@@ -35,19 +27,32 @@ export default function AddSpotlightForm() {
   const onSubmit = (data) => {
     console.log("Submitted Data:", data);
     const SpotlightData = {
-        id: nextId.toString(),
-        title: data.title,
-          description: data.description,
-          date: {
-            start: data.startDate,
-            end: data.endDate,
-          },
-          location: data.location,
-          status: data.status,
-          registrationLink: data.registrationLink,
-          organizers: data.organizers.split(", "),
-          participants: data.participants,
-      };
+      id: nextId.toString(),
+      title: data.title,
+      description: data.description,
+      location: data.location,
+      office: data.office,
+      company: data.company,
+      minimum_qualifications: {
+        degree: data.degree,
+        experience: data.experience.split(", ")
+      },
+      preferred_qualifications: {
+        coding_experience: data.coding_experience,
+        programming_skills: data.programming_skills,
+        passion: data.passion,
+      },
+      job_description: {
+        philosophy: data.philosophy,
+        role_overview: data.role_overview,
+        impact: data.impact,
+        mission: data.mission,
+      },
+      responsibilities: data.responsibilities.split(", "),
+      diversity_statement: data.diversity_statement,
+      english_proficiency: data.english_proficiency,
+      note_for_agencies: data.note_for_agencies
+    };
     console.log("SpotlightData", SpotlightData);
   };
 
@@ -74,87 +79,137 @@ export default function AddSpotlightForm() {
           className="p-6 text-md"
         />
 
-        <div className="flex space-x-4 mt-4">
-          <div className="flex-1">
-            <Label htmlFor="startDate" className="font-bold text-lg mb-1">
-              Start Date
-            </Label>
-            <div className="flex items-center">
-              <Input
-                id="startDate"
-                type="datetime-local"
-                {...register("startDate")}
-                className="p-6 text-md"
-              />
-            </div>
-          </div>
-
-          <div className="flex-1">
-            <Label htmlFor="endDate" className="font-bold text-lg mb-1">
-              End Date
-            </Label>
-            <div className="flex items-center">
-              <Input
-                id="endDate"
-                type="datetime-local"
-                {...register("endDate")}
-                className="p-6 text-md"
-              />
-            </div>
-          </div>
-        </div>
-
         <Label htmlFor="location" className="font-bold text-lg mt-4">
           Location
         </Label>
         <Input
           id="location"
           {...register("location")}
-          placeholder="e.g., 48 hours"
+          placeholder="Location"
           className="p-6 text-md"
         />
 
-        <Label htmlFor="status" className="font-bold text-lg mt-4">
-          Status
+        <Label htmlFor="office" className="font-bold text-lg mt-4">
+          Office
         </Label>
         <Input
-          id="status"
-          {...register("status")}
-          placeholder="e.g., Online or Physical Address"
+          id="office"
+          {...register("office")}
+          placeholder="Office location(s)"
           className="p-6 text-md"
         />
 
-        <Label htmlFor="registrationLink" className="font-bold text-lg mt-4">
-          Registration Link
+        <Label htmlFor="company" className="font-bold text-lg mt-4">
+          Company
         </Label>
         <Input
-          id="registrationLink"
-          {...register("registrationLink")}
-          placeholder="Registration Link"
+          id="company"
+          {...register("company")}
+          placeholder="Company name"
           className="p-6 text-md"
         />
 
-        <Label htmlFor="organizers" className="font-bold text-lg mt-4">
-          Organizers
+        <Label htmlFor="degree" className="font-bold text-lg mt-4">
+          Minimum Qualifications - Degree
         </Label>
-        <Textarea
-          id="organizers"
-          {...register("organizers")}
-          placeholder="Comma-separated categories"
+        <Input
+          id="degree"
+          {...register("degree")}
+          placeholder="Required degree"
           className="p-6 text-md"
         />
 
-        <Label htmlFor="participants" className="font-bold text-lg mt-4">
-          Participants
+        <Label htmlFor="experience" className="font-bold text-lg mt-4">
+          Minimum Qualifications - Experience
         </Label>
         <Textarea
-          id="participants"
-          {...register("participants")}
-          placeholder="Participants"
+          id="experience"
+          {...register("experience")}
+          placeholder="Experience (comma-separated)"
           className="p-6 text-md"
         />
-        </div>
-        <Button type="submit" className="w-full mt-6">
+
+        <Label htmlFor="coding_experience" className="font-bold text-lg mt-4">
+          Preferred Qualifications - Coding Experience
+        </Label>
+        <Input
+          id="coding_experience"
+          {...register("coding_experience")}
+          placeholder="Coding experience"
+          className="p-6 text-md"
+        />
+
+        <Label htmlFor="programming_skills" className="font-bold text-lg mt-4">
+          Preferred Qualifications - Programming Skills
+        </Label>
+        <Input
+          id="programming_skills"
+          {...register("programming_skills")}
+          placeholder="Programming skills"
+          className="p-6 text-md"
+        />
+
+        <Label htmlFor="passion" className="font-bold text-lg mt-4">
+          Preferred Qualifications - Passion
+        </Label>
+        <Input
+          id="passion"
+          {...register("passion")}
+          placeholder="Passion for the field"
+          className="p-6 text-md"
+        />
+
+        <Label htmlFor="philosophy" className="font-bold text-lg mt-4">
+          Job Description - Philosophy
+        </Label>
+        <Textarea
+          id="philosophy"
+          {...register("philosophy")}
+          placeholder="Philosophy statement"
+          className="p-6 text-md"
+        />
+
+        <Label htmlFor="responsibilities" className="font-bold text-lg mt-4">
+          Responsibilities
+        </Label>
+        <Textarea
+          id="responsibilities"
+          {...register("responsibilities")}
+          placeholder="Responsibilities (comma-separated)"
+          className="p-6 text-md"
+        />
+
+        <Label htmlFor="diversity_statement" className="font-bold text-lg mt-4">
+          Diversity Statement
+        </Label>
+        <Textarea
+          id="diversity_statement"
+          {...register("diversity_statement")}
+          placeholder="Company's diversity statement"
+          className="p-6 text-md"
+        />
+
+        <Label htmlFor="english_proficiency" className="font-bold text-lg mt-4">
+          English Proficiency
+        </Label>
+        <Input
+          id="english_proficiency"
+          {...register("english_proficiency")}
+          placeholder="Required English proficiency level"
+          className="p-6 text-md"
+        />
+
+        <Label htmlFor="note_for_agencies" className="font-bold text-lg mt-4">
+          Note for Agencies
+        </Label>
+        <Textarea
+          id="note_for_agencies"
+          {...register("note_for_agencies")}
+          placeholder="Message for agencies"
+          className="p-6 text-md"
+        />
+      </div>
+      <Button type="submit" className="w-full mt-6">
         Submit
       </Button>
     </form>
