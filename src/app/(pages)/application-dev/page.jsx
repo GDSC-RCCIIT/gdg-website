@@ -137,20 +137,6 @@ const ApplicationDevelopmentPage = () => {
                     </div>
                 </section>
             </main>
-
-            {/* Footer Section */}
-            <footer className="bg-gray-900 text-white py-8">
-                <div className="container mx-auto px-6 text-center">
-                    <div className="flex justify-center space-x-6 mb-4">
-                        <a href="#" className="hover:text-blue-400">About Google</a>
-                        <a href="#" className="hover:text-blue-400">Google products</a>
-                        <a href="#" className="hover:text-blue-400">Privacy</a>
-                        <a href="#" className="hover:text-blue-400">Terms</a>
-                        <a href="#" className="hover:text-blue-400">Code of Conduct</a>
-                    </div>
-                    <p>Built on Google Cloud | With support from YouTube</p>
-                </div>
-            </footer>
         </div>
     );
 };
