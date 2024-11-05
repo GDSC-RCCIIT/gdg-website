@@ -123,25 +123,39 @@ To set up and run a JSON server for testing or development purposes, follow thes
   </a>
 </div>
 
-
 ## 💗 Forkers
 
 [![Forkers repo roster for @GDSC-RCCIIT/gdg-website](https://reporoster.com/forks/GDSC-RCCIIT/gdg-website)](https://github.com/GDSC-RCCIIT/gdg-website/network/members)
 
-
 ## ⭐ Stargazers
 
 <div align='left'>
-
-[![Stargazers repo roster for @GDSC-RCCIIT/gdg-website](https://reporoster.com/stars/GDSC-RCCIIT/gdg-website)](https://github.com/GDSC-RCCIIT/gdg-website/stargazers)
-
+    [![Stargazers repo roster for @GDSC-RCCIIT/gdg-website](https://reporoster.com/stars/GDSC-RCCIIT/gdg-website)](https://github.com/GDSC-RCCIIT/gdg-website/stargazers)
 </div>
 
 
-## 🎉 Happy Coding!
+## 🌐 Connect with Me
 
-Explore, contribute, and let’s build an awesome GDG RCCIIT website together!
+<div align="center">
+    <a href="https://www.linkedin.com/in/rishi-paul04/">
+        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" width="100" height="30"/>
+    </a>
+    <a href="mailto:rishi.404@outlook.com">
+        <img src="https://img.shields.io/badge/Outlook-0078D4?style=flat-square&logo=microsoft-outlook&logoColor=white" alt="Outlook" width="100" height="30"/>
+    </a>
+    <a href="https://discord.com/">
+        <img src="https://img.shields.io/badge/Discord-7289DA?style=flat-square&logo=discord&logoColor=white" alt="Discord" width="100" height="30"/>
+    </a>
+</div>
 
 ---
+Thank you for visiting! Feel free to reach out through any of the links above.
 
 Let me know if you'd like to add or modify any details!
+
+<div align="center">
+    <a href="#top">
+        <img src="https://img.shields.io/badge/Back%20to%20Top-000000?style=for-the-badge&logo=github&logoColor=white" alt="Back to Top">
+    </a>
+</div>
+

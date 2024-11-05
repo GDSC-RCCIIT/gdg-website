@@ -862,132 +862,160 @@
       "note_for_agencies": "Google does not accept unsolicited CVs from agencies."
     }
   ],
-    "spotlightJobs":[
-        {
-            "id": "1",
-            "title": "Tech Innovations Summit 2024",
-            "description": "An annual event bringing together innovators and thought leaders in technology to discuss the latest advancements and opportunities.",
-            "date": {
-                "start": "2024-11-15",
-                "end": "2024-11-17"
-            },
-            "location": "San Francisco, CA",
-            "status": "Open",
-            "registrationLink": "https://techsummit2024.com/register",
-            "organizers": ["Tech Innovators", "Global Science Foundation"],
-            "participants": 500
-        },
-        {
-            "id": "2",
-            "title": "AI for Social Good Hackathon",
-            "description": "A weekend hackathon focused on developing AI solutions for social impact, open to students and professionals alike.",
-            "date": {
-                "start": "2024-12-02",
-                "end": "2024-12-04"
-            },
-            "location": "Virtual",
-            "status": "Closed",
-            "registrationLink": "https://aisocialgoodhackathon.com",
-            "organizers": ["AI4Good Foundation", "OpenAI"],
-            "participants": 300
-        },
-        {
-            "id": "3",
-            "title": "Blockchain & Cryptocurrency Workshop",
-            "description": "A hands-on workshop introducing participants to blockchain technology and cryptocurrency basics.",
-            "date": {
-                "start": "2024-11-22",
-                "end": "2024-11-23"
-            },
-            "location": "New York, NY",
-            "status": "Open",
-            "registrationLink": "https://blockchainworkshop.com",
-            "organizers": ["Crypto Academy", "Blockchain Innovators"],
-            "participants": 200
-        },
-        {
-            "id": "4",
-            "title": "Women in Tech Leadership Conference",
-            "description": "An empowering conference for women in tech to connect, learn, and lead in the technology sector.",
-            "date": {
-                "start": "2025-01-10",
-                "end": "2025-01-11"
-            },
-            "location": "Los Angeles, CA",
-            "status": "Upcoming",
-            "registrationLink": "https://womenintechconference.com",
-            "organizers": ["Women Who Code", "TechStars"],
-            "participants": 400
-        },
-        {
-            "id": "5",
-            "title": "Data Science Bootcamp",
-            "description": "A five-day bootcamp covering data science fundamentals, machine learning, and data analytics tools.",
-            "date": {
-                "start": "2025-02-05",
-                "end": "2025-02-10"
-            },
-            "location": "London, UK",
-            "status": "Open",
-            "registrationLink": "https://datasciencebootcamp.com",
-            "organizers": ["DataCamp", "Tech Academy"],
-            "participants": 150
-        }
+"achievements": [
+  {
+    "id": "1",
+    "name": "John Doe",
+    "job": "Software Engineer at Google",
+    "project": "Developed an AI-based chatbot",
+    "testimonial": "GDSC gave me the platform to grow and showcase my skills.",
+    "imageUrl": "/Mentor 1.jpeg",
+    "date": "2023-08-15",
+    "location": "Mountain View, CA",
+    "description": "John developed an AI-driven chatbot for customer support, designed to handle thousands of queries per day with over 90% accuracy. The project was part of a larger initiative to streamline user engagement and enhance the user experience on Google platforms.",
+    "skills": ["Machine Learning", "NLP", "Python", "TensorFlow"],
+    "achievementsDetails": [
+      "Improved customer query response time by 40%",
+      "Achieved 90% accuracy in understanding and resolving user issues",
+      "Presented project at the GDSC annual tech conference"
     ],
-  "achievements": [
-        {
-            "name": "John Doe",
-            "job": "Software Engineer at Google",
-            "project": "Developed an AI-based chatbot",
-            "testimonial": "GDSC gave me the platform to grow and showcase my skills.",
-            "imageUrl": "/Mentor 1.jpeg"
-        },
-        {
-            "name": "Jane Smith",
-            "job": "Product Manager at Microsoft",
-            "project": "Led a successful product launch",
-            "testimonial": "I gained hands-on experience and met incredible people.",
-            "imageUrl": "/Mentor 2.jpeg"
-        },
-        {
-            "name": "Alex Lee",
-            "job": "Data Scientist at Amazon",
-            "project": "Created a recommendation engine for e-commerce",
-            "testimonial": "Being part of GDSC taught me valuable technical and collaboration skills.",
-            "imageUrl": "/Mentor 3.png"
-        },
-        {
-            "name": "Lisa Wong",
-            "job": "Frontend Developer at Adobe",
-            "project": "Built a responsive UI for a flagship product",
-            "testimonial": "GDSC provided me with a platform to learn and connect with amazing tech enthusiasts.",
-            "imageUrl": "/Mentor 1.jpeg"
-        }
+    "challenges": [
+      "Handling high volumes of data with low latency",
+      "Ensuring chatbot responses were contextually accurate and helpful",
+      "Integrating the chatbot seamlessly with existing support systems"
     ],
-    "mentors": [
-        {
-            "name": "Mark Johnson",
-            "position": "Senior Developer at Meta",
-            "bio": "I am excited to mentor students interested in software engineering and AI.",
-            "imageUrl": "/Mentor 3.png"
-        },
-        {
-            "name": "Emily Davis",
-            "position": "UX Designer at Spotify",
-            "bio": "Happy to guide GDSC members in design thinking and user research.",
-            "imageUrl": "/Mentor 1.jpeg"
-        },
-        {
-            "name": "Sarah Lee",
-            "position": "Data Scientist at Google",
-            "bio": "Passionate about helping others understand data analysis and machine learning.",
-            "imageUrl": "/Mentor 2.jpeg"
-        },
-        {
-            "name": "James Smith",
-            "position": "Frontend Engineer at Amazon",
-            "bio": "Eager to share my knowledge in React and modern web development practices.",
-            "imageUrl": "/Mentor 3.png"
-        }
-    ]
+    "lessonsLearned": [
+      "The importance of data preprocessing for accurate NLP results",
+      "Balancing response time with model complexity",
+      "Optimizing performance for real-time applications"
+    ],
+    "teamSize": 5,
+    "duration": "6 months",
+    "link": "https://linkedin.com/in/johndoe"
+  },
+  {
+    "id": "2",
+    "name": "Jane Smith",
+    "job": "Product Manager at Microsoft",
+    "project": "Led a successful product launch",
+    "testimonial": "I gained hands-on experience and met incredible people.",
+    "imageUrl": "/Mentor 2.jpeg",
+    "date": "2023-05-10",
+    "location": "Seattle, WA",
+    "description": "Jane led the product development and launch of a new Microsoft application, focusing on cross-functional collaboration between engineering, marketing, and design teams. Her strategic planning helped secure a 20% market share within the first six months of launch.",
+    "skills": ["Product Management", "Team Leadership", "Strategic Planning", "Agile"],
+    "achievementsDetails": [
+      "Achieved 20% market share in six months",
+      "Collaborated with cross-functional teams to meet tight deadlines",
+      "Increased user engagement by 30% through user-centered design"
+    ],
+    "challenges": [
+      "Coordinating across multiple departments with differing priorities",
+      "Keeping the project on schedule despite unforeseen delays",
+      "Balancing feature set with the initial release timeline"
+    ],
+    "lessonsLearned": [
+      "Effective communication is key to cross-functional success",
+      "Prioritizing features based on user needs leads to better product reception",
+      "Flexibility is essential when dealing with changing project requirements"
+    ],
+    "teamSize": 10,
+    "duration": "9 months",
+    "link": "https://linkedin.com/in/janesmith"
+  },
+  {
+    "id": "3",
+    "name": "Alex Lee",
+    "job": "Data Scientist at Amazon",
+    "project": "Created a recommendation engine for e-commerce",
+    "testimonial": "Being part of GDSC taught me valuable technical and collaboration skills.",
+    "imageUrl": "/Mentor 3.png",
+    "date": "2023-09-01",
+    "location": "San Francisco, CA",
+    "description": "Alex developed a recommendation engine that improved product discovery on Amazon's e-commerce platform. By analyzing customer purchase patterns and preferences, he was able to create personalized product suggestions, boosting sales and customer satisfaction.",
+    "skills": ["Data Science", "Python", "Machine Learning", "SQL"],
+    "achievementsDetails": [
+      "Increased product click-through rate by 25%",
+      "Implemented real-time data processing for instant recommendations",
+      "Contributed to a 15% increase in sales for recommended products"
+    ],
+    "challenges": [
+      "Handling large volumes of data efficiently",
+      "Maintaining recommendation accuracy across diverse user groups",
+      "Integrating the engine with existing Amazon systems"
+    ],
+    "lessonsLearned": [
+      "Data cleaning is crucial for accurate recommendations",
+      "Real-time processing requires significant optimization",
+      "Personalized recommendations improve customer satisfaction"
+    ],
+    "teamSize": 7,
+    "duration": "4 months",
+    "link": "https://linkedin.com/in/alexlee"
+  },
+  {
+    "id": "4",
+    "name": "Lisa Wong",
+    "job": "Frontend Developer at Adobe",
+    "project": "Built a responsive UI for a flagship product",
+    "testimonial": "GDSC provided me with a platform to learn and connect with amazing tech enthusiasts.",
+    "imageUrl": "/Mentor 1.jpeg",
+    "date": "2023-07-20",
+    "location": "San Jose, CA",
+    "description": "Lisa worked on designing and implementing a responsive user interface for Adobe’s flagship product, enhancing usability and aesthetics for millions of users globally. Her work emphasized performance optimization and accessibility, aligning with Adobe's commitment to inclusive design.",
+    "skills": ["HTML", "CSS", "JavaScript", "React"],
+    "achievementsDetails": [
+      "Enhanced page load speed by 35%",
+      "Ensured WCAG 2.1 accessibility compliance",
+      "Received recognition in Adobe’s annual performance review"
+    ],
+    "challenges": [
+      "Ensuring compatibility across a wide range of devices and screen sizes",
+      "Optimizing UI performance without compromising functionality",
+      "Meeting accessibility standards"
+    ],
+    "lessonsLearned": [
+      "Accessibility should be a priority from the beginning",
+      "Efficient UI design improves both performance and user experience",
+      "Cross-device compatibility testing is essential"
+    ],
+    "teamSize": 4,
+    "duration": "3 months",
+    "link": "https://linkedin.com/in/lisawong"
+  }
+],
+  "mentors": [
+    {
+      "id": "1",
+      "name": "Mark Johnson",
+      "position": "Senior Developer at Meta",
+      "bio": "I am excited to mentor students interested in software engineering and AI.",
+      "imageUrl": "/Mentor 3.png",
+      "linkedinProfile": "https://www.linkedin.com/in/janvi-choudhary/"
+    },
+    {
+      "id": "2",
+      "name": "Emily Davis",
+      "position": "UX Designer at Spotify",
+      "bio": "Happy to guide GDSC members in design thinking and user research.",
+      "imageUrl": "/Mentor 1.jpeg",
+      "linkedinProfile": "https://www.linkedin.com/feed/"
+    },
+    {
+      "id": "3",
+      "name": "Sarah Lee",
+      "position": "Data Scientist at Google",
+      "bio": "Passionate about helping others understand data analysis and machine learning.",
+      "imageUrl": "/Mentor 2.jpeg",
+      "linkedinProfile": "https://www.linkedin.com/feed/"
+    },
+    {
+      "id": "4",
+      "name": "James Smith",
+      "position": "Frontend Engineer at Amazon",
+      "bio": "Eager to share my knowledge in React and modern web development practices.",
+      "imageUrl": "/Mentor 3.png",
+      "linkedinProfile": "https://www.linkedin.com/feed/"
+    }
+  ]
 }

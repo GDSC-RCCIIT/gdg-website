@@ -1,36 +1,30 @@
-import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.SMTP_EMAIL,
-    pass: process.env.SMTP_PASSWORD,
-  },
+    service: "gmail",
+    auth: {
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS,
+    },
 });
 
-export async function POST(req, res) {
-  const { email } = await req.json();
+export async function POST(req) {
+    const { email } = await req.json();
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    return NextResponse.json({ message: "Invalid email format" });
-  }
+    if (!email) {
+        return NextResponse.json({ message: "Email is required" }, { status: 400 });
+    }
 
-  try {
-    await transporter.sendMail({
-      from: process.env.SMTP_EMAIL,
-      to: email,
-      subject: "Thank you for subscribing gdg-website!",
-      html: `
-          <h1>Thank you for subscribing!</h1>
-          <p>We're glad to have you on board. Stay tuned for updates!</p>
-        `,
-    });
-
-    return NextResponse.json({ message: "Thank you for subscribing!" });
-  } catch (error) {
-    console.error("Error sending email:", error);
-    return NextResponse.json({ message: "Error sending email" });
-  }
+    try {
+        await transporter.sendMail({
+            from: process.env.GMAIL_USER,
+            to: email,
+            subject: "Subscription Confirmation",
+            text: "Thank you for subscribing to our newsletter!",
+        });
+        return NextResponse.json({ message: "Subscription successful!" });
+    } catch (error) {
+        console.error("Error sending email:", error);
+        return NextResponse.json({ message: "Failed to send email" }, { status: 500 });
+    }
 }

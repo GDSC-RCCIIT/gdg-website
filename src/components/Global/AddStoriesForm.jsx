@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 
 export default function AddAchievementForm() {
-  const { register, handleSubmit } = useForm();
+  const { register } = useForm();
   const [nextId, setNextId] = useState(null);
 
   useEffect(() => {
@@ -23,7 +23,9 @@ export default function AddAchievementForm() {
       );
   }, []);
 
-  const onSubmit = (data) => {
+  const handleSubmit = async(data,e) => {
+    e.preventDefault();
+
     const achievementData = {
       id: nextId.toString(),
       name: data.name,
@@ -33,10 +35,32 @@ export default function AddAchievementForm() {
       imageUrl: data.imageUrl,
     };
     console.log("Achievement Data:", achievementData);
+
+    try {
+      // const response = await axios.post(
+      //   "/api/addstoriesapi",
+      //   achievementData
+      // );
+      const res = await fetch('/api/addstoriesapi', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          achievementData: achievementData
+        }),
+    });
+      console.log("Achievement created successfully:", res.data);
+      // Handle successful submission (e.g., show a success message)
+    } catch (error) {
+      console.error("Error creating achievement:", error);
+      // Handle errors (e.g., show an error message)
+    }
+
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <form onSubmit={() => handleSubmit()} method="POST" className="space-y-6">
       <div className="grid w-full max-w-full items-center gap-1.5">
 
         <Label htmlFor="name" className="font-bold text-lg mt-4">
@@ -89,6 +113,10 @@ export default function AddAchievementForm() {
           className="p-6 text-md"
         />
       </div>
+
+      <button>
+        submit
+      </button>
 
       <Button type="submit" className="w-full mt-6">
         Submit Achievement

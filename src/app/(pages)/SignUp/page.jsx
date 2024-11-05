@@ -1,9 +1,9 @@
 "use client";
-import { useState } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import 'react-toastify/dist/ReactToastify.css';
+import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import "react-toastify/dist/ReactToastify.css";
 
 function SignUp() {
     const router = useRouter();
@@ -15,6 +15,10 @@ function SignUp() {
         password_confirmation: '',
         marketing_accept: false,
     });
+    const [passwordStrength, setPasswordStrength] = useState('');
+    const [touchedFields, setTouchedFields] = useState({});
+    const [showPasswordErrors, setShowPasswordErrors] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -22,56 +26,116 @@ function SignUp() {
             ...prev,
             [name]: type === 'checkbox' ? checked : value,
         }));
+
+        if (name === 'password') {
+            setPasswordStrength(getPasswordStrength(value));
+        }
+
+        setTouchedFields((prev) => ({ ...prev, [name]: true }));
     };
 
-    const handleSubmit = (e) => {
+    const getPasswordStrength = (password) => {
+        if (!password) return '';
+        const lengthCriteria = password.length >= 8;
+        const numberCriteria = /\d/.test(password);
+        const upperCaseCriteria = /[A-Z]/.test(password);
+        const lowerCaseCriteria = /[a-z]/.test(password);
+        const specialCharacterCriteria = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+        const hasRepeats = /(.)\1{2,}/.test(password);
+
+        if (
+            lengthCriteria &&
+            numberCriteria &&
+            upperCaseCriteria &&
+            lowerCaseCriteria &&
+            specialCharacterCriteria &&
+            !hasRepeats
+        ) {
+            return 'strong';
+        }
+
+        if (lengthCriteria && (numberCriteria || specialCharacterCriteria)) {
+            return 'medium';
+        }
+
+        if (hasRepeats || !lengthCriteria) {
+            return 'weak';
+        }
+
+        return 'weak';
+    };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setShowPasswordErrors(true);
+        setIsSubmitting(true);
 
         const { first_name, last_name, email, password, password_confirmation } = formData;
 
         if (!first_name || !last_name || !email || !password || !password_confirmation) {
-            toast.error('All Fields are Required');
+            toast.error('All fields are required');
+            setIsSubmitting(false);
+            return;
+        }
+
+        const emailRegex = /\S+@\S+\.\S+/;
+        if (!emailRegex.test(email)) {
+            toast.error('Invalid email format');
+            setIsSubmitting(false);
+            return;
+        }
+
+        if (passwordStrength === 'weak') {
+            toast.error('Your password is too weak. Please choose a stronger password.');
+            setIsSubmitting(false);
             return;
         }
 
         if (password !== password_confirmation) {
-            toast.error('Passwords Do Not Match');
+            toast.error('Passwords do not match');
+            setIsSubmitting(false);
             return;
         }
 
-        localStorage.setItem('user', JSON.stringify(formData));
-        toast.success('Account created successfully!');
+        try {
+            localStorage.setItem('user', JSON.stringify(formData));
+            toast.success('Account created successfully!');
 
-        setFormData({
-            first_name: '',
-            last_name: '',
-            email: '',
-            password: '',
-            password_confirmation: '',
-            marketing_accept: false,
-        });
+            setFormData({
+                first_name: '',
+                last_name: '',
+                email: '',
+                password: '',
+                password_confirmation: '',
+                marketing_accept: false,
+            });
 
-        router.push('/SignIn');
+            router.push('/SignIn');
+        } catch (error) {
+            toast.error('Failed to create account. Please try again.');
+            console.error('Account creation error:', error);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
         <>
-            <section className="bg-white">
-                <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
-                    <aside className="relative block h-16 lg:order-first lg:col-span-5 lg:h-full xl:col-span-6">
+            <ToastContainer />
+            <section className="bg-gray-50">
+                <div className="lg:flex lg:h-screen">
+                    <aside className="relative lg:flex-grow lg:w-1/2">
                         <img
-                            alt=""
+                            alt="Signup Background"
                             src="https://i.pinimg.com/originals/b6/58/39/b658391177941f5b1e486874e7b18702.png"
-                            className="absolute inset-0 h-full w-full object-cover"
+                            className="absolute inset-0 h-full w-full object-cover rounded-l-lg shadow-lg"
                         />
                     </aside>
-                    <main className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
-                        <div className="max-w-xl lg:max-w-3xl">
-                            <h1 className="text-3xl font-semibold text-gray-900 sm:text-4xl">
-                                Welcome to GDSC
-                            </h1>
-                            <p className="mt-4 text-gray-600 leading-relaxed">
-                                GDSC leads are passionate about helping their peers learn technology and connect. Leads pursue various degrees within undergraduate and graduate programs.
+                    <main className="flex items-center justify-center px-8 py-8 sm:px-12 lg:flex-grow lg:w-1/2 bg-gradient-to-r from-blue-200 to-white">
+                        <div className="max-w-xl lg:max-w-3xl bg-white rounded-lg shadow-xl p-10">
+                            <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 sm:text-5xl text-center">Welcome to GDSC</h1>
+                            <p className="mt-4 text-gray-600 leading-relaxed text-center">
+                                GDSC leads are passionate about helping their peers learn technology and connect.
                             </p>
                             <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-6 gap-6" noValidate>
                                 <div className="col-span-6 sm:col-span-3">
@@ -82,8 +146,9 @@ function SignUp() {
                                         name="first_name"
                                         value={formData.first_name}
                                         onChange={handleChange}
-                                        className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-gray-900 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition duration-150"
+                                        className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-gray-900 shadow-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition duration-200 hover:shadow-lg"
                                         placeholder="Enter your first name"
+                                        autoComplete="given-name"
                                     />
                                 </div>
                                 <div className="col-span-6 sm:col-span-3">
@@ -94,8 +159,9 @@ function SignUp() {
                                         name="last_name"
                                         value={formData.last_name}
                                         onChange={handleChange}
-                                        className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-gray-900 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition duration-150"
+                                        className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-gray-900 shadow-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition duration-200 hover:shadow-lg"
                                         placeholder="Enter your last name"
+                                        autoComplete="family-name"
                                     />
                                 </div>
                                 <div className="col-span-6">
@@ -106,9 +172,13 @@ function SignUp() {
                                         name="email"
                                         value={formData.email}
                                         onChange={handleChange}
-                                        className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-gray-900 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition duration-150"
+                                        className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-gray-900 shadow-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition duration-200 hover:shadow-lg"
                                         placeholder="Enter your email"
+                                        autoComplete="email"
                                     />
+                                    {touchedFields.email && formData.email && !/\S+@\S+\.\S+/.test(formData.email) && (
+                                        <p className="mt-2 text-red-500 text-sm">Invalid email format</p>
+                                    )}
                                 </div>
                                 <div className="col-span-6 sm:col-span-3">
                                     <label htmlFor="Password" className="block text-sm font-medium text-gray-700">Password</label>
@@ -118,57 +188,62 @@ function SignUp() {
                                         name="password"
                                         value={formData.password}
                                         onChange={handleChange}
-                                        className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-gray-900 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition duration-150"
+                                        className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-gray-900 shadow-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition duration-200 hover:shadow-lg"
                                         placeholder="Enter your password"
+                                        autoComplete="new-password"
                                     />
+                                    {showPasswordErrors && formData.password.length === 0 && (
+                                        <p className="mt-2 text-red-500 text-sm">Password is required</p>
+                                    )}
+                                    {passwordStrength === 'weak' && (
+                                        <p className="mt-2 text-red-500 text-sm">Your password is too weak. Please choose a stronger password.</p>
+                                    )}
                                 </div>
                                 <div className="col-span-6 sm:col-span-3">
-                                    <label htmlFor="PasswordConfirmation" className="block text-sm font-medium text-gray-700">Confirm Password</label>
+                                    <label htmlFor="ConfirmPassword" className="block text-sm font-medium text-gray-700">Confirm Password</label>
                                     <input
                                         type="password"
-                                        id="PasswordConfirmation"
+                                        id="ConfirmPassword"
                                         name="password_confirmation"
                                         value={formData.password_confirmation}
                                         onChange={handleChange}
-                                        className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-gray-900 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition duration-150"
-                                        placeholder="Confirm your password"
+                                        className="mt-2 w-full rounded-lg border border-gray-300 p-3 text-gray-900 shadow-md focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition duration-200 hover:shadow-lg"
+                                        placeholder="Re-enter your password"
+                                        autoComplete="new-password"
+                                        onFocus={() => setTouchedFields((prev) => ({ ...prev, password_confirmation: true }))}
                                     />
+                                    {touchedFields.password_confirmation && formData.password_confirmation && formData.password_confirmation !== formData.password && (
+                                        <p className="mt-2 text-red-500 text-sm">Passwords do not match</p>
+                                    )}
                                 </div>
-                                <div className="col-span-6">
-                                    <label htmlFor="MarketingAccept" className="flex items-center gap-4">
+                                <div className="col-span-6 flex items-start">
+                                    <div className="flex h-5 items-center">
                                         <input
-                                            type="checkbox"
-                                            id="MarketingAccept"
+                                            id="marketing_accept"
                                             name="marketing_accept"
+                                            type="checkbox"
                                             checked={formData.marketing_accept}
                                             onChange={handleChange}
-                                            className="h-5 w-5 rounded border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                                            className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                                         />
-                                        <span className="text-sm text-gray-700">
-                                            I want to receive emails about events, product updates, and company announcements.
-                                        </span>
-                                    </label>
+                                    </div>
+                                    <div className="ml-3 text-sm">
+                                        <label htmlFor="marketing_accept" className="font-medium text-gray-700">I want to receive updates about GDSC and upcoming events.</label>
+                                    </div>
                                 </div>
                                 <div className="col-span-6">
-                                    <p className="text-sm text-gray-500">
-                                        By creating an account, you agree to our{' '}
-                                        <a href="#" className="text-blue-600 underline">terms and conditions</a> and{' '}
-                                        <a href="#" className="text-blue-600 underline">privacy policy</a>.
-                                    </p>
-                                </div>
-                                <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
                                     <button
                                         type="submit"
-                                        className="inline-block shrink-0 w-full sm:w-auto bg-blue-600 border border-blue-600 text-white px-12 py-3 rounded-lg font-medium hover:bg-blue-700 hover:border-blue-700 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-blue-300"
+                                        disabled={isSubmitting}
+                                        className="w-full rounded-lg bg-blue-600 py-3 text-white font-semibold shadow-md hover:bg-blue-700 transition duration-200 disabled:opacity-50"
                                     >
-                                        Create an account
+                                        {isSubmitting ? 'Creating...' : 'Create Account'}
                                     </button>
-                                    <Link href="/SignIn" className="mt-4 sm:mt-0 text-sm text-gray-500">
-                                        Already have an account?{' '}
-                                        <span className="text-blue-600 underline">Log in</span>.
-                                    </Link>
                                 </div>
                             </form>
+                            <p className="mt-4 text-center text-gray-600">
+                                Already have an account? <Link href="/SignIn" className="text-blue-600 hover:underline">Sign In</Link>
+                            </p>
                         </div>
                     </main>
                 </div>

@@ -4,6 +4,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 export async function POST(req) {
     const { prompt } = await req.json();
+    console.log('first reached here ');
     try {
         const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
         const result = await model.generateContent(prompt);
