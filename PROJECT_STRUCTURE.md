@@ -20,6 +20,8 @@
 │   ├── Mentor 2.jpeg
 │   ├── Mentor 3.png
 │   ├── Newsletter.png
+│   ├── arcade1.png
+│   ├── arcade2.png
 │   ├── avatar.png
 │   ├── avatar1.png
 │   ├── certi 1.svg
@@ -52,6 +54,8 @@
 │   ├── exp5.jpeg
 │   ├── exp6.jpeg
 │   ├── exp7.jpeg
+│   ├── genai1.jpg
+│   ├── genai2.webp
 │   ├── goal.webp
 │   ├── gro1.png
 │   ├── gro2.png
@@ -86,6 +90,7 @@
 │   ├── story5.png
 │   ├── story6.png
 │   ├── story7.png
+│   ├── summer_learning_hero.png
 │   ├── techeq1.webp
 │   ├── techeq2.webp
 │   └── vision.webp
@@ -129,6 +134,8 @@
 │   │   │   │   ├── [id]/
 │   │   │   │   │   └── page.jsx
 │   │   │   │   └── page.jsx
+│   │   │   ├── HelpWithFuture/
+│   │   │   │   └── page.jsx
 │   │   │   ├── Practitioners/
 │   │   │   │   └── page.jsx
 │   │   │   ├── PrivacyPolicy/
@@ -153,6 +160,8 @@
 │   │   │   │   └── [id]/
 │   │   │   │       └── page.jsx
 │   │   │   ├── Stories-Achievements/
+│   │   │   │   ├── [id]/
+│   │   │   │   │   └── page.jsx
 │   │   │   │   ├── achievements.js
 │   │   │   │   └── page.jsx
 │   │   │   ├── Subscribe/
@@ -164,6 +173,8 @@
 │   │   │   │   ├── page.jsx
 │   │   │   │   └── techStacks.js
 │   │   │   ├── TermsAndConditions/
+│   │   │   │   └── page.jsx
+│   │   │   ├── arcade/
 │   │   │   │   └── page.jsx
 │   │   │   ├── careers/
 │   │   │   │   ├── [id]/
@@ -182,7 +193,11 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── explore/
 │   │   │   │   └── page.jsx
+│   │   │   ├── genai/
+│   │   │   │   └── page.jsx
 │   │   │   ├── gitContributors/
+│   │   │   │   └── page.jsx
+│   │   │   ├── google-cloud-learning/
 │   │   │   │   └── page.jsx
 │   │   │   ├── growth/
 │   │   │   │   └── page.jsx
@@ -202,6 +217,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── participationterms/
 │   │   │   │   └── page.jsx
+│   │   │   ├── partners/
+│   │   │   │   └── page.jsx
 │   │   │   ├── sdk/
 │   │   │   │   └── page.jsx
 │   │   │   ├── services/
@@ -215,6 +232,8 @@
 │   │   │   ├── techequity/
 │   │   │   │   └── page.jsx
 │   │   │   ├── timeline/
+│   │   │   │   └── page.jsx
+│   │   │   ├── transform/
 │   │   │   │   └── page.jsx
 │   │   │   ├── who-apply/
 │   │   │   │   └── page.jsx
@@ -258,6 +277,7 @@
 │   │   │   ├── AddStoriesForm.jsx
 │   │   │   ├── Footer.jsx
 │   │   │   ├── Header.jsx
+│   │   │   ├── HelpWithFutureForm.jsx
 │   │   │   ├── Hero.jsx
 │   │   │   ├── Navbar.jsx
 │   │   │   └── ProductsNavbar.jsx
