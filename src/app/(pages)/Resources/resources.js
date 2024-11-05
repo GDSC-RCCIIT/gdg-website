@@ -9570,6 +9570,996 @@ abstract class AppDatabase : RoomDatabase() {
         ]
     }   
 }
+},
+{
+    id: 9,
+    title: "Cybersecurity",
+    description: "To learn cybersecurity, follow this roadmap",
+    extendedContent: `
+        Master the fundamentals of cybersecurity including network security, 
+        cryptography, and security protocols. Learn about threat detection, 
+        vulnerability assessment, and incident response.
+        
+        This roadmap covers web security, application security testing, 
+        penetration testing, and security best practices. You'll also learn 
+        about security tools, frameworks, and compliance standards.
+        
+        Advanced topics include ethical hacking, forensics, secure coding practices, 
+        and security architecture design. Focus on both offensive and defensive 
+        security techniques.
+    `,
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        prerequisites: [
+            "Basic understanding of computer networks",
+            "Knowledge of operating systems (Linux/Windows)",
+            "Basic programming skills",
+            "Understanding of web technologies",
+            "Command line proficiency",
+            "Basic system administration skills",
+            "Problem-solving and analytical thinking"
+        ],
+        outcomes: [
+            "Understand and implement network security measures",
+            "Perform vulnerability assessments and penetration testing",
+            "Implement security controls and countermeasures",
+            "Conduct security audits and risk assessments",
+            "Handle incident response and forensics",
+            "Implement secure coding practices",
+            "Configure security tools and frameworks",
+            "Understand compliance and security standards",
+            "Perform threat modeling and analysis",
+            "Implement cryptographic solutions"
+        ],
+        sections: [
+            {
+                title: "Security Fundamentals",
+                content: "Master core security concepts including CIA triad, authentication, authorization, and access control. Learn about common security threats, attack vectors, and basic defense mechanisms. Understand security policies, procedures, and best practices."
+            },
+            {
+                title: "Network Security",
+                content: "Learn network security protocols, firewall configuration, IDS/IPS systems, and VPN setup. Understand network attacks and defenses, packet analysis, and secure network architecture. Master tools like Wireshark, tcpdump, and network security monitoring."
+            },
+            {
+                title: "Application Security",
+                content: "Study web application security, secure coding practices, and common vulnerabilities (OWASP Top 10). Learn about input validation, output encoding, and secure session management. Practice secure software development lifecycle and security testing."
+            },
+            {
+                title: "Ethical Hacking",
+                content: "Learn penetration testing methodologies, vulnerability assessment, and exploitation techniques. Master tools like Metasploit, Burp Suite, and Nmap. Understand social engineering, wireless security, and web application hacking."
+            },
+            {
+                title: "Cryptography",
+                content: "Understand cryptographic algorithms, protocols, and implementations. Learn about encryption, digital signatures, and PKI. Study hash functions, random number generation, and cryptographic attack methods."
+            },
+            {
+                title: "Incident Response",
+                content: "Master incident handling procedures, digital forensics, and malware analysis. Learn about security incident management, evidence collection, and analysis. Practice incident documentation and reporting."
+            },
+            {
+                title: "Security Operations",
+                content: "Learn about Security Operations Center (SOC), SIEM systems, and security monitoring. Understand log analysis, security metrics, and continuous monitoring. Study threat intelligence and security automation."
+            },
+            {
+                title: "Compliance & Governance",
+                content: "Understand security frameworks (ISO 27001, NIST), compliance requirements (GDPR, HIPAA), and security policies. Learn about risk management, security auditing, and documentation. Study security awareness and training programs."
+            }
+        ]
+    },
+    content: {
+        examples: [
+            {
+                title: "Network Security Configuration",
+                code: `# Configuring a Basic Firewall with iptables
+    
+    # Flush existing rules
+    iptables -F
+    iptables -X
+    
+    # Set default chain policies
+    iptables -P INPUT DROP
+    iptables -P FORWARD DROP
+    iptables -P OUTPUT ACCEPT
+    
+    # Allow loopback traffic
+    iptables -A INPUT -i lo -j ACCEPT
+    iptables -A OUTPUT -o lo -j ACCEPT
+    
+    # Allow established sessions
+    iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+    
+    # Allow SSH (port 22)
+    iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+    iptables -A OUTPUT -p tcp --sport 22 -m conntrack --ctstate ESTABLISHED -j ACCEPT
+    
+    # Allow HTTP/HTTPS
+    iptables -A INPUT -p tcp --dport 80 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+    iptables -A INPUT -p tcp --dport 443 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+    
+    # Allow DNS resolution
+    iptables -A OUTPUT -p udp --dport 53 -j ACCEPT
+    iptables -A INPUT -p udp --sport 53 -j ACCEPT
+    
+    # Drop invalid packets
+    iptables -A INPUT -m conntrack --ctstate INVALID -j DROP
+    
+    # Log dropped packets
+    iptables -A INPUT -j LOG --log-prefix "IPTables-Dropped: "
+    
+    # Save rules
+    service iptables save
+    
+    # Additional security measures
+    # Enable SYN flood protection
+    echo 1 > /proc/sys/net/ipv4/tcp_syncookies
+    
+    # Disable IP forwarding
+    echo 0 > /proc/sys/net/ipv4/ip_forward
+    
+    # Ignore ICMP broadcast requests
+    echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_broadcasts
+    
+    # Ignore bogus error responses
+    echo 1 > /proc/sys/net/ipv4/icmp_ignore_bogus_error_responses`,
+                explanation: "This example demonstrates basic firewall configuration using iptables, including setting up security rules, allowing specific services, and implementing basic DDoS protection."
+            },
+            {
+                title: "Web Application Security Implementation",
+                code: `// Secure API Endpoint Implementation
+    
+    const express = require('express');
+    const rateLimit = require('express-rate-limit');
+    const helmet = require('helmet');
+    const jwt = require('jsonwebtoken');
+    const bcrypt = require('bcrypt');
+    
+    const app = express();
+    
+    // Security Headers
+    app.use(helmet());
+    
+    // Rate Limiting
+    const limiter = rateLimit({
+        windowMs: 15 * 60 * 1000, // 15 minutes
+        max: 100 // limit each IP to 100 requests per windowMs
+    });
+    app.use(limiter);
+    
+    // JWT Middleware
+    const verifyToken = (req, res, next) => {
+        const token = req.headers['authorization'];
+        
+        if (!token) {
+            return res.status(403).json({ error: 'No token provided' });
+        }
+        
+        try {
+            const decoded = jwt.verify(token.split(' ')[1], process.env.JWT_SECRET);
+            req.user = decoded;
+            next();
+        } catch (error) {
+            return res.status(401).json({ error: 'Invalid token' });
+        }
+    };
+    
+    // Secure Password Hashing
+    const hashPassword = async (password) => {
+        const salt = await bcrypt.genSalt(10);
+        return bcrypt.hash(password, salt);
+    };
+    
+    // Input Validation
+    const validateInput = (input) => {
+        // Remove any potential XSS
+        input = input.replace(/[<>]/g, '');
+        // Validate length
+        if (input.length < 3 || input.length > 50) {
+            throw new Error('Invalid input length');
+        }
+        return input;
+    };
+    
+    // Secure Login Endpoint
+    app.post('/api/login', async (req, res) => {
+        try {
+            const { username, password } = req.body;
+            
+            // Validate input
+            const sanitizedUsername = validateInput(username);
+            
+            // Implement brute force protection
+            if (await checkBruteForce(sanitizedUsername)) {
+                return res.status(429).json({
+                    error: 'Too many login attempts'
+                });
+            }
+            
+            // Check credentials
+            const user = await User.findOne({ username: sanitizedUsername });
+            if (!user) {
+                return res.status(401).json({
+                    error: 'Invalid credentials'
+                });
+            }
+            
+            const validPassword = await bcrypt.compare(password, user.password);
+            if (!validPassword) {
+                await recordFailedAttempt(sanitizedUsername);
+                return res.status(401).json({
+                    error: 'Invalid credentials'
+                });
+            }
+            
+            // Generate JWT
+            const token = jwt.sign(
+                { userId: user._id },
+                process.env.JWT_SECRET,
+                { expiresIn: '1h' }
+            );
+            
+            // Set secure cookie
+            res.cookie('token', token, {
+                httpOnly: true,
+                secure: true,
+                sameSite: 'strict',
+                maxAge: 3600000 // 1 hour
+            });
+            
+            res.json({ token });
+            
+        } catch (error) {
+            res.status(500).json({
+                error: 'Internal server error'
+            });
+        }
+    });
+    
+    // Protected Endpoint Example
+    app.get('/api/protected', verifyToken, async (req, res) => {
+        try {
+            // Implement RBAC
+            if (!await checkPermission(req.user.userId, 'read')) {
+                return res.status(403).json({
+                    error: 'Insufficient permissions'
+                });
+            }
+            
+            // Implement SQL Injection Protection
+            const data = await db.query(
+                'SELECT * FROM sensitive_data WHERE user_id = $1',
+                [req.user.userId]
+            );
+            
+            res.json(data);
+            
+        } catch (error) {
+            res.status(500).json({
+                error: 'Internal server error'
+            });
+        }
+    });
+    
+    // Security Logging
+    const logSecurityEvent = async (event) => {
+        const logEntry = {
+            timestamp: new Date(),
+            event: event.type,
+            user: event.user,
+            ip: event.ip,
+            details: event.details
+        };
+        
+        await SecurityLog.create(logEntry);
+        
+        // Alert on suspicious activity
+        if (event.severity === 'high') {
+            await sendSecurityAlert(logEntry);
+        }
+    };
+    
+    // Error Handling
+    app.use((err, req, res, next) => {
+        // Log error securely
+        logSecurityEvent({
+            type: 'error',
+            severity: 'high',
+            details: err.message,
+            user: req.user?.userId,
+            ip: req.ip
+        });
+        
+        // Don't leak error details
+        res.status(500).json({
+            error: 'An unexpected error occurred'
+        });
+    });`,
+                explanation: "This example showcases secure API implementation including authentication, authorization, input validation, and security best practices."
+            },
+            {
+                title: "Security Audit Script",
+                code: `#!/bin/bash
+    
+    # System Security Audit Script
+    
+    echo "Starting Security Audit..."
+    echo "========================="
+    date
+    echo "========================="
+    
+    # System Information
+    echo "System Information:"
+    echo "------------------------"
+    uname -a
+    echo "------------------------"
+    
+    # Check Users with UID 0
+    echo "Checking for users with UID 0:"
+    echo "------------------------"
+    awk -F: '($3 == "0") {print}' /etc/passwd
+    echo "------------------------"
+    
+    # Check for Empty Passwords
+    echo "Checking for empty passwords:"
+    echo "------------------------"
+    awk -F: '($2 == "") {print}' /etc/shadow
+    echo "------------------------"
+    
+    # List Open Ports
+    echo "Open Ports:"
+    echo "------------------------"
+    netstat -tuln
+    echo "------------------------"
+    
+    # Check SSH Configuration
+    echo "SSH Configuration:"
+    echo "------------------------"
+    grep -i "PermitRootLogin\|PasswordAuthentication" /etc/ssh/sshd_config
+    echo "------------------------"
+    
+    # Check File Permissions
+    echo "Checking sensitive file permissions:"
+    echo "------------------------"
+    ls -l /etc/passwd /etc/shadow /etc/group
+    echo "------------------------"
+    
+    # Check Running Services
+    echo "Running Services:"
+    echo "------------------------"
+    systemctl list-units --type=service --state=running
+    echo "------------------------"
+    
+    # Check Failed Login Attempts
+    echo "Failed Login Attempts:"
+    echo "------------------------"
+    grep "Failed password" /var/log/auth.log | tail -n 10
+    echo "------------------------"
+    
+    # Check Sudo Access
+    echo "Users with Sudo Access:"
+    echo "------------------------"
+    grep -Po '^sudo.+:\K.*$' /etc/group
+    echo "------------------------"
+    
+    # Check for Unowned Files
+    echo "Checking for unowned files:"
+    echo "------------------------"
+    find / -nouser -o -nogroup 2>/dev/null
+    echo "------------------------"
+    
+    # Check Firewall Status
+    echo "Firewall Status:"
+    echo "------------------------"
+    if command -v ufw >/dev/null; then
+        ufw status
+    elif command -v firewall-cmd >/dev/null; then
+        firewall-cmd --list-all
+    else
+        echo "No firewall found"
+    fi
+    echo "------------------------"
+    
+    # Check System Updates
+    echo "Available System Updates:"
+    echo "------------------------"
+    if command -v apt >/dev/null; then
+        apt list --upgradable
+    elif command -v yum >/dev/null; then
+        yum check-update
+    fi
+    echo "------------------------"
+    
+    # Check for Suspicious Processes
+    echo "Checking for suspicious processes:"
+    echo "------------------------"
+    ps aux | awk '{if($3 > 50.0) print $0}'
+    echo "------------------------"
+    
+    # Check Disk Usage
+    echo "Disk Usage:"
+    echo "------------------------"
+    df -h
+    echo "------------------------"
+    
+    # Generate Report
+    echo "Generating detailed report..."
+    {
+        echo "Security Audit Report"
+        echo "Date: $(date)"
+        echo "System: $(uname -a)"
+        echo ""
+        echo "== Findings Summary =="
+        echo "1. Users with root access: $(grep -c '^sudo' /etc/group)"
+        echo "2. Open ports: $(netstat -tuln | grep -c 'LISTEN')"
+        echo "3. Failed login attempts: $(grep -c "Failed password" /var/log/auth.log)"
+        echo "4. Running services: $(systemctl list-units --type=service --state=running | grep -c "running")"
+        echo ""
+        echo "== Recommendations =="
+        echo "1. Review all users with sudo access"
+        echo "2. Close unnecessary open ports"
+        echo "3. Implement stronger password policies"
+        echo "4. Regular security updates"
+    } > security_audit_report_$(date +%Y%m%d).txt
+    
+    echo "Audit complete. Report generated."`,
+                explanation: "This script performs a basic security audit of a Linux system, checking for common security issues and generating a detailed report."
+            }
+        ],
+    
+        roadmap: [
+            {
+                title: "1. Security Fundamentals",
+                description: "Master core security concepts and principles",
+                topics: [
+                    "CIA Triad and Security Principles",
+                    "Authentication and Authorization",
+                    "Security Policies and Procedures",
+                    "Risk Assessment and Management",
+                    "Security Controls and Frameworks",
+                    "Basic Cryptography Concepts",
+                    "Security Architecture Basics"
+                ]
+            },
+            {
+                title: "2. Network Security",
+                description: "Learn network security concepts and implementation",
+                topics: [
+                    "Network Protocols and Security",
+                    "Firewall Configuration",
+                    "IDS/IPS Systems",
+                    "VPN Implementation",
+                    "Network Monitoring Tools",
+                    "Wireless Network Security",
+                    "Network Attacks and Defenses"
+                ]
+            },
+            {
+                title: "3. Application Security",
+                description: "Master application security testing and secure development",
+                topics: [
+                    "Web Application Security",
+                    "OWASP Top 10",
+                    "Secure Coding Practices",
+                    "API Security",
+                    "Input Validation",
+                    "Session Management",
+                    "Security Testing"
+                ]
+            },
+            {
+                title: "4. Ethical Hacking",
+                description: "Learn penetration testing and vulnerability assessment",
+                topics: [
+                    "Penetration Testing Methodology",
+                    "Vulnerability Assessment",
+                    "Exploitation Techniques",
+                    "Social Engineering",
+                    "Web Application Hacking",
+                    "Wireless Hacking",
+                    "Mobile Security Testing"
+                ]
+            },
+            {
+                title: "5. Cryptography",
+                description: "Understand cryptographic algorithms and implementations",
+                topics: [
+                    "Symmetric Encryption",
+                    "Asymmetric Encryption",
+                    "Hash Functions",
+                    "Digital Signatures",
+                    "PKI and Certificates",
+                    "Cryptographic Protocols",
+                    "Crypto Implementation"
+                ]
+            },
+            {
+                title: "6. Incident Response",
+                description: "Master incident handling and digital forensics",
+                topics: [
+                    "Incident Response Process",
+                    "Digital Forensics",
+                    "Malware Analysis",
+                    "Log Analysis",
+                    "Evidence Collection",
+                    "Incident Documentation",
+                    "Recovery Procedures"
+                ]
+            },
+            {
+                title: "7. Security Operations",
+                description: "Learn security operations and monitoring",
+                topics: [
+                    "Security Operations Center",
+                    "SIEM Implementation",
+                    "Threat Intelligence",
+                    "Security Automation",
+                    "Continuous Monitoring",
+                    "Alert Management",
+                    "Security Metrics"
+                ]
+            }
+        ],
+        resources: {
+            documentation: [
+            {
+            title: "OWASP Web Security Testing Guide",
+            url: "https://owasp.org/www-project-web-security-testing-guide/",
+            description: "Comprehensive guide for web application security testing",
+            type: "Testing Guide"
+            },
+            {
+            title: "NIST Cybersecurity Framework",
+            url: "https://www.nist.gov/cyberframework",
+            description: "Framework for improving critical infrastructure cybersecurity",
+            type: "Framework"
+            },
+            {
+            title: "MITRE ATT&CK",
+            url: "https://attack.mitre.org/",
+            description: "Knowledge base of adversary tactics and techniques",
+            type: "Knowledge Base"
+            },
+            {
+            title: "CIS Controls",
+            url: "https://www.cisecurity.org/controls/",
+            description: "Best practices for defending against common attacks",
+            type: "Security Controls"
+            },
+            {
+            title: "SANS Reading Room",
+            url: "https://www.sans.org/reading-room/",
+            description: "Collection of research papers on various security topics",
+            type: "Research Papers"
+            }
+            ],
+            tutorials: [
+            {
+            title: "Hack The Box",
+            url: "https://www.hackthebox.eu/",
+            description: "Online platform for practicing penetration testing skills",
+            type: "Hands-on Platform"
+            },
+            {
+            title: "PortSwigger Web Security Academy",
+            url: "https://portswigger.net/web-security",
+            description: "Free online web security training",
+            type: "Online Course"
+            },
+            {
+            title: "Metasploit Unleashed",
+            url: "https://www.offensive-security.com/metasploit-unleashed/",
+            description: "Free Metasploit training course",
+            type: "Online Course"
+            },
+            {
+            title: "Cybrary",
+            url: "https://www.cybrary.it/",
+            description: "Online platform for cybersecurity courses and training",
+            type: "Learning Platform"
+            },
+            {
+            title: "CTFtime",
+            url: "https://ctftime.org/",
+            description: "Collection of Capture The Flag (CTF) competitions and write-ups",
+            type: "Practice Platform"
+            }
+            ],
+            videos: [
+            {
+            title: "Computerphile",
+            url: "https://www.youtube.com/user/Computerphile",
+            description: "Videos on various computer science topics, including security",
+            platform: "YouTube"
+            },
+            {
+            title: "John Hammond",
+            url: "https://www.youtube.com/c/JohnHammond010",
+            description: "Tutorials on ethical hacking, CTFs, and security tools",
+            platform: "YouTube"
+            },
+            {
+            title: "LiveOverflow",
+            url: "https://www.youtube.com/c/LiveOverflowCTF",
+            description: "In-depth explanations of CTF challenges and security concepts",
+            platform: "YouTube"
+            },
+            {
+            title: "IppSec",
+            url: "https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA",
+            description: "Walkthroughs of Hack The Box machines",
+            platform: "YouTube"
+            },
+            {
+            title: "DEFCONConference",
+            url: "https://www.youtube.com/user/DEFCONConference",
+            description: "Recordings of DEFCON conference talks",
+            platform: "YouTube"
+            }
+            ],
+            books: [
+            {
+            title: "The Web Application Hacker's Handbook",
+            author: "Dafydd Stuttard, Marcus Pinto",
+            description: "Comprehensive guide to web application security testing",
+            level: "Intermediate"
+            },
+            {
+            title: "The Shellcoder's Handbook",
+            author: "Chris Anley, John Heasman, Felix Lindner, Gerardo Richarte",
+            description: "Techniques for writing exploits and understanding low-level attacks",
+            level: "Advanced"
+            },
+            {
+            title: "Penetration Testing: A Hands-On Introduction to Hacking",
+            author: "Georgia Weidman",
+            description: "Guide to the fundamentals of penetration testing",
+            level: "Beginner"
+            },
+            {
+            title: "The Basics of Hacking and Penetration Testing",
+            author: "Patrick Engebretson",
+            description: "Introduction to ethical hacking and penetration testing",
+            level: "Beginner"
+            },
+            {
+            title: "Applied Cryptography",
+            author: "Bruce Schneier",
+            description: "Comprehensive guide to cryptography and its applications",
+            level: "Advanced"
+            }
+            ],
+            tools: [
+            {
+            title: "Burp Suite",
+            url: "https://portswigger.net/burp",
+            description: "Web application security testing tool",
+            type: "Testing Tool",
+            category: "Essential"
+            },
+            {
+            title: "Nmap",
+            url: "https://nmap.org/",
+            description: "Network discovery and security auditing tool",
+            type: "Network Tool",
+            category: "Essential"
+            },
+            {
+            title: "Metasploit",
+            url: "https://www.metasploit.com/",
+            description: "Penetration testing framework",
+            type: "Exploitation Framework",
+            category: "Essential"
+            },
+            {
+            title: "Wireshark",
+            url: "https://www.wireshark.org/",
+            description: "Network protocol analyzer",
+            type: "Network Tool",
+            category: "Essential"
+            },
+            {
+            title: "John the Ripper",
+            url: "https://www.openwall.com/john/",
+            description: "Password cracking tool",
+            type: "Password Cracker",
+            category: "Essential"
+            }
+            ],
+            communities: [
+            {
+            title: "Reddit r/netsec",
+            url: "https://www.reddit.com/r/netsec/",
+            description: "Subreddit for technical information security discussion",
+            type: "Forum"
+            },
+            {
+            title: "Security StackExchange",
+            url: "https://security.stackexchange.com/",
+            description: "Q&A community for information security professionals",
+            type: "Q&A Forum"
+            },
+            {
+            title: "OWASP Slack",
+            url: "https://owasp.slack.com/",
+            description: "Slack workspace for OWASP community discussions",
+            type: "Slack Community"
+            },
+            {
+            title: "Security BSides",
+            url: "http://www.securitybsides.com/",
+            description: "Community-driven security conferences worldwide",
+            type: "Conference Series"
+            },
+            {
+            title: "Null Byte",
+            url: "https://null-byte.wonderhowto.com/",
+            description: "Community for aspiring white hat hackers and security professionals",
+            type: "Forum"
+            }
+            ],
+            podcasts: [
+            {
+            title: "Darknet Diaries",
+            url: "https://darknetdiaries.com/",
+            description: "True stories from the dark side of the internet",
+            platform: "Podcast"
+            },
+            {
+            title: "Risky Business",
+            url: "https://risky.biz/",
+            description: "News and in-depth commentary from security industry experts",
+            platform: "Podcast"
+            },
+            {
+            title: "Defensive Security Podcast",
+            url: "https://defensivesecurity.org/",
+            description: "Podcast covering breaches, strategies, tools, and techniques",
+            platform: "Podcast"
+            },
+            {
+            title: "Security Now",
+            url: "https://twit.tv/shows/security-now",
+            description: "Deep dive into security topics with Steve Gibson",
+            platform: "Podcast"
+            }
+            ],
+            blogs: [
+            {
+            title: "Krebs on Security",
+            url: "https://krebsonsecurity.com/",
+            description: "In-depth security news and investigation",
+            type: "Blog"
+            },
+            {
+            title: "Schneier on Security",
+            url: "https://www.schneier.com/",
+            description: "Blog by renowned security expert Bruce Schneier",
+            type: "Blog"
+            },
+            {
+            title: "Troy Hunt's Blog",
+            url: "https://www.troyhunt.com/",
+            description: "Blog by security researcher and founder of Have I Been Pwned",
+            type: "Blog"
+            },
+            {
+            title: "Graham Cluley",
+            url: "https://grahamcluley.com/",
+            description: "Award-winning computer security news, advice, and opinion",
+            type: "Blog"
+            }
+            ]
+            },
+            practice: {
+                beginnerExercises: [
+                {
+                title: "Basic Network Scanning",
+                difficulty: "Easy",
+                description: "Perform a basic network scan using Nmap to identify live hosts and open ports.",
+                hints: [
+                "Use Nmap's default settings for a simple scan",
+                "Specify the target IP address or IP range",
+                "Analyze the scan results to identify potential vulnerabilities"
+                ],
+                solution: {
+                code: `# Basic Nmap scan
+                nmap -sV -O <target_IP_or_range>
+                # Example:
+                nmap -sV -O 192.168.1.0/24`,
+            explanation: "This exercise introduces the basics of network scanning using Nmap. It demonstrates how to perform a simple scan to identify live hosts, open ports, and service versions."
+        }
+    },
+    {
+        title: "Password Strength Checker",
+        difficulty: "Easy",
+        description: "Create a Python script to check the strength of a given password.",
+        hints: [
+        "Define criteria for password strength (e.g., length, complexity)",
+        "Use conditional statements to evaluate the password",
+        "Provide feedback to the user on password strength"
+        ],
+        solution: {
+        code: `def check_password_strength(password):
+        # Define criteria for password strength
+        min_length = 8
+        has_uppercase = any(char.isupper() for char in password)
+        has_lowercase = any(char.islower() for char in password)
+        has_digit = any(char.isdigit() for char in password)
+        has_special_char = any(char in "!@#$%^&*()_+-=[]{}|;:,.<>?" for char in password)
+        # Check password strength
+        if len(password) < min_length:
+            return "Weak: Password is too short"
+        elif not (has_uppercase and has_lowercase and has_digit and has_special_char):
+            return "Moderate: Password should contain uppercase, lowercase, digits, 
+            and special characters"
+        else:
+            return "Strong: Password meets all strength criteria"
+        #Example usage
+        password = input("Enter a password: ")
+        strength = check_password_strength(password)
+        print("Password Strength:", strength)`,
+        explanation: "This exercise focuses on creating a basic password strength checker using Python. It defines criteria for password strength, such as minimum length and character complexity. The script evaluates the given password against these criteria and provides feedback to the user on the password's strength."
+}
+}
+],
+        intermediateExercises: [
+            {
+                title: "Web Application Vulnerability Assessment",
+                difficulty: "Medium",
+                description: "Perform a vulnerability assessment of a web application using OWASP ZAP.",
+                hints: [
+                    "Configure ZAP to use your browser as a proxy",
+                    "Explore the application manually to discover functionalities",
+                    "Use ZAP's automated scanners to identify potential vulnerabilities",
+                    "Analyze the scan results and prioritize the findings"
+                ],
+                solution: {
+                    code: `1. Launch OWASP ZAP and configure your browser to use ZAP as a proxy
+2. Browse the target web application manually, exploring all functionalities
+3. In ZAP, go to the "Active Scan" tab and select the target URL
+4. Click "Start Scan" to initiate the automated vulnerability scanners
+5. Once the scan is complete, review the alerts in the "Alerts" tab
+6. Analyze the findings, prioritize them based on risk, and generate a report`,
+                    explanation: "This exercise focuses on web application vulnerability assessment using OWASP ZAP. It guides you through the process of setting up ZAP, manually exploring the application, running automated scans, and analyzing the results to identify potential vulnerabilities."
+                }
+            },
+            {
+                title: "File Integrity Monitoring",
+                difficulty: "Medium",
+                description: "Develop a script to monitor the integrity of critical system files.",
+                hints: [
+                "Use a hashing algorithm (e.g., SHA-256) to calculate file hashes",
+                "Store the initial file hashes in a database or file",
+                "Periodically recalculate the hashes and compare them with the stored values",
+                "Alert the user if any file modifications are detected"
+                ],
+                solution: {
+                code: `import os
+import hashlib
+import json
+import time
+def calculate_file_hash(file_path):
+sha256_hash = hashlib.sha256()
+with open(file_path, "rb") as file:
+for chunk in iter(lambda: file.read(4096), b""):
+sha256_hash.update(chunk)
+return sha256_hash.hexdigest()
+def load_baseline_hashes(baseline_file):
+if os.path.exists(baseline_file):
+with open(baseline_file, "r") as file:
+return json.load(file)
+return {}
+def save_baseline_hashes(baseline_file, baseline_hashes):
+with open(baseline_file, "w") as file:
+json.dump(baseline_hashes, file, indent=4)
+def monitor_files(file_list, baseline_file):
+baseline_hashes = load_baseline_hashes(baseline_file)
+for file_path in file_list:
+    current_hash = calculate_file_hash(file_path)
+    if file_path in baseline_hashes:
+            if current_hash != baseline_hashes[file_path]:
+                print(f"Alert: File integrity compromised - {file_path}")
+    else:
+        baseline_hashes[file_path] = current_hash
+
+save_baseline_hashes(baseline_file, baseline_hashes)
+Example usage
+critical_files = [
+"/path/to/file1",
+"/path/to/file2",
+"/path/to/file3"
+]
+baseline_file = "baseline_hashes.json"
+while True:
+monitor_files(critical_files, baseline_file)
+time.sleep(3600)  # Monitor every hour`,
+                explanation: "This exercise focuses on developing a basic file integrity monitoring script. It calculates the hashes of critical system files and compares them with previously stored baseline hashes. If any file modifications are detected, the script alerts the user. The exercise demonstrates the use of hashing algorithms, file I/O operations, and periodic monitoring techniques."
+}
+}
+],
+        advancedExercises: [
+            {
+                title: "Buffer Overflow Exploitation",
+                difficulty: "Hard",
+                description: "Exploit a buffer overflow vulnerability in a simple C program.",
+                hints: [
+                    "Analyze the source code to identify the vulnerability",
+                    "Determine the offset to overwrite the return address",
+                    "Craft a malicious payload to spawn a shell",
+                    "Use a debugger to test and refine the exploit"
+                ],
+                solution: {
+                    code: `1. Analyze the vulnerable C program:
+        #include <stdio.h>
+        #include <string.h>
+
+        void vuln_func(char *input) {
+            char buffer[100];
+            strcpy(buffer, input);
+            printf("Input: %s\\n", buffer);
+        }
+
+        int main(int argc, char *argv[]) {
+            if (argc < 2) {
+                printf("Usage: %s <input>\\n", argv[0]);
+                return 1;
+            }
+            vuln_func(argv[1]);
+            return 0;
+        }
+
+2. Determine the offset to overwrite the return address using a pattern
+3. Craft a malicious payload to spawn a shell (e.g., using msfvenom)
+4. Exploit the vulnerability:
+./vuln_program $(python -c 'print "A"*<offset>+"<return_address>"+"<nop_sled>"+"<shellcode>"')
+5. Refine the exploit as needed and test it in a debugger`,
+                    explanation: "This advanced exercise focuses on exploiting a buffer overflow vulnerability in a simple C program. It requires understanding of low-level memory concepts, debugging skills, and exploit development techniques. The exercise guides you through analyzing the vulnerable code, determining the right offset, crafting a malicious payload, and exploiting the vulnerability to gain unauthorized access."
+                }
+            },
+            {
+                title: "Custom Protocol Fuzzer",
+                difficulty: "Hard",
+                description: "Implement a custom protocol fuzzer to identify vulnerabilities in a network application.",
+                hints: [
+                "Choose a target protocol and understand its specification",
+                "Generate random or semi-valid test cases to fuzz the protocol",
+                "Send the fuzzed data to the target application",
+                "Monitor the application for crashes, errors, or unexpected behavior",
+                "Log and analyze the results to identify potential vulnerabilities"
+                ],
+                solution: {
+                code: `import socket
+import random
+import string
+def generate_fuzz_data(length):
+fuzz_data = ''.join(random.choice(string.ascii_letters+string.digits) for _ in range(length))
+return fuzz_data.encode()
+def send_fuzz_data(target_ip, target_port, fuzz_data):
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+sock.connect((target_ip, target_port))
+sock.send(fuzz_data)
+response = sock.recv(1024)
+sock.close()
+return response
+def protocol_fuzzer(target_ip, target_port, num_tests):
+for i in range(num_tests):
+fuzz_length = random.randint(100, 1000)
+fuzz_data = generate_fuzz_data(fuzz_length)
+try:
+    response = send_fuzz_data(target_ip, target_port, fuzz_data)
+    print(f"Test {i+1}: Sent {len(fuzz_data)} bytes, Received {len(response)} bytes")
+except Exception as e:
+    print(f"Test {i+1}: Exception occurred - {str(e)}")
+Example usage
+target_ip = "192.168.1.100"
+target_port = 1234
+num_tests = 100
+protocol_fuzzer(target_ip, target_port, num_tests)`,
+                explanation: "This advanced exercise focuses on implementing a custom protocol fuzzer to identify vulnerabilities in a network application. It involves generating random or semi-valid test cases based on the protocol specification and sending the fuzzed data to the target application. The fuzzer monitors the application's behavior and logs any crashes, errors, or unexpected responses. The exercise requires a deeper understanding of network protocols, socket programming, and fuzzing techniques."
+}
+}
+        ]
+    }
+}
 }
 ];
 
