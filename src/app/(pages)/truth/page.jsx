@@ -167,21 +167,6 @@ const GroundingGenAIPage = () => {
                     </form>
                 </section>
             </main>
-
-            {/* Footer Section */}
-            <footer className="bg-gray-900 text-white py-8">
-                <div className="container mx-auto px-6 text-center">
-                    <div className="flex justify-center space-x-6 mb-4">
-                        <a href="#" className="hover:text-blue-400">Blog</a>
-                        <a href="#" className="hover:text-blue-400">GitHub</a>
-                        <a href="#" className="hover:text-blue-400">LinkedIn</a>
-                        <a href="#" className="hover:text-blue-400">Twitter</a>
-                        <a href="#" className="hover:text-blue-400">Facebook</a>
-                        <a href="#" className="hover:text-blue-400">YouTube</a>
-                    </div>
-                    <p>Google Cloud logo &copy; 2024 Google LLC Google LLC | <a href="#" className="hover:underline">Privacy</a> | <a href="#" className="hover:underline">Terms</a></p>
-                </div>
-            </footer>
         </div>
     );
 };
