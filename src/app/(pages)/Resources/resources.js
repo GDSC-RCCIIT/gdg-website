@@ -10931,7 +10931,1872 @@ protocol_fuzzer(target_ip, target_port, num_tests)`,
         ]
     }
 }
+},
+{
+    id: 11,
+    title: "Java Programming",
+    description: "To master Java programming, follow this roadmap",
+    extendedContent: `
+        Master the fundamentals of Java programming including core concepts,
+        object-oriented programming, and essential APIs. Learn about data structures,
+        algorithms, and best practices in Java development.
+        
+        This roadmap covers Java SE fundamentals, enterprise Java development,
+        testing frameworks, build tools, and modern Java features. You'll also learn
+        about Java frameworks, libraries, and development best practices.
+        
+        Advanced topics include concurrent programming, memory management,
+        design patterns, and microservices development. Focus on both core Java
+        and enterprise application development.
+    `,
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        prerequisites: [
+            "Basic understanding of programming concepts",
+            "Knowledge of computer fundamentals",
+            "Basic command line skills",
+            "Understanding of basic algorithms",
+            "Familiarity with any text editor/IDE",
+            "Problem-solving abilities",
+            "Basic understanding of databases"
+        ],
+        outcomes: [
+            "Write efficient Java programs using OOP principles",
+            "Develop robust applications with error handling",
+            "Implement data structures and algorithms in Java",
+            "Create multithreaded applications",
+            "Work with Java collections framework",
+            "Develop database applications using JDBC",
+            "Implement design patterns effectively",
+            "Write unit tests for Java applications",
+            "Build web applications using Java",
+            "Deploy Java applications efficiently"
+        ],
+        sections: [
+            {
+                title: "Java Fundamentals",
+                content: "Master core Java concepts including variables, data types, control structures, and basic I/O. Learn about OOP concepts like classes, objects, inheritance, polymorphism, and encapsulation. Understand exception handling, packages, and basic file operations."
+            },
+            {
+                title: "Data Structures & Collections",
+                content: "Learn Java collections framework including Lists, Sets, Maps, and Queues. Understand implementation of basic data structures, collection hierarchy, and choosing appropriate collections. Master working with generics and type safety."
+            },
+            {
+                title: "Java APIs & Libraries",
+                content: "Study essential Java APIs including String handling, I/O streams, NIO, Regular expressions, and Date/Time API. Learn about logging, reflection API, and working with external libraries. Understand Java Modules system and dependency management."
+            },
+            {
+                title: "Multithreading & Concurrency",
+                content: "Master thread lifecycle, synchronization, and thread safety. Learn about concurrent collections, executor framework, and thread pools. Understand deadlock prevention, race conditions, and concurrent design patterns."
+            },
+            {
+                title: "Database Programming",
+                content: "Learn JDBC for database connectivity, connection pooling, and transaction management. Understand ORM concepts using JPA and Hibernate. Master working with different databases and implementing DAO pattern."
+            },
+            {
+                title: "Testing & Debugging",
+                content: "Master unit testing with JUnit, mocking with Mockito, and integration testing. Learn debugging techniques, profiling tools, and performance optimization. Understand test-driven development and continuous integration."
+            },
+            {
+                title: "Build Tools & DevOps",
+                content: "Learn project management with Maven and Gradle, dependency management, and build automation. Understand CI/CD pipelines, containerization with Docker, and deployment strategies. Master working with version control systems."
+            },
+            {
+                title: "Enterprise Java",
+                content: "Study enterprise frameworks like Spring and Jakarta EE. Learn microservices architecture, RESTful web services, and API design. Understand security implementation, caching strategies, and enterprise integration patterns."
+            }
+        ]
+    },
+    content: {
+        examples: [
+            {
+                title: "Object-Oriented Programming Implementation",
+                code: `// Example of inheritance, encapsulation, and polymorphism
+public abstract class Animal {
+    private String name;
+    protected int age;
+    
+    public Animal(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    public abstract void makeSound();
+    
+    public String getName() {
+        return name;
+    }
+    
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
 }
+
+public class Dog extends Animal {
+    private String breed;
+    
+    public Dog(String name, int age, String breed) {
+        super(name, age);
+        this.breed = breed;
+    }
+    
+    @Override
+    public void makeSound() {
+        System.out.println(getName() + " says: Woof!");
+    }
+    
+    public void fetch() {
+        System.out.println(getName() + " is fetching the ball.");
+    }
+}
+
+public class Cat extends Animal {
+    private boolean isIndoor;
+    
+    public Cat(String name, int age, boolean isIndoor) {
+        super(name, age);
+        this.isIndoor = isIndoor;
+    }
+    
+    @Override
+    public void makeSound() {
+        System.out.println(getName() + " says: Meow!");
+    }
+    
+    public void climb() {
+        System.out.println(getName() + " is climbing.");
+    }
+}
+
+// Usage Example
+public class Main {
+    public static void main(String[] args) {
+        Animal[] animals = new Animal[] {
+            new Dog("Rex", 3, "German Shepherd"),
+            new Cat("Whiskers", 2, true)
+        };
+        
+        for (Animal animal : animals) {
+            animal.displayInfo();
+            animal.makeSound();
+        }
+    }
+}`,
+                explanation: "This example demonstrates core OOP concepts in Java including inheritance (Animal superclass with Dog and Cat subclasses), encapsulation (private fields with getter methods), and polymorphism (makeSound method being overridden)."
+            },
+            {
+                title: "Multithreading and Synchronization",
+                code: `import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.Condition;
+
+public class BoundedBuffer<T> {
+    private final T[] buffer;
+    private int count, putIndex, takeIndex;
+    private final ReentrantLock lock;
+    private final Condition notFull;
+    private final Condition notEmpty;
+    
+    @SuppressWarnings("unchecked")
+    public BoundedBuffer(int capacity) {
+        buffer = (T[]) new Object[capacity];
+        lock = new ReentrantLock();
+        notFull = lock.newCondition();
+        notEmpty = lock.newCondition();
+    }
+    
+    public void put(T item) throws InterruptedException {
+        lock.lock();
+        try {
+            while (count == buffer.length) {
+                notFull.await();
+            }
+            buffer[putIndex] = item;
+            putIndex = (putIndex + 1) % buffer.length;
+            count++;
+            notEmpty.signal();
+        } finally {
+            lock.unlock();
+        }
+    }
+    
+    public T take() throws InterruptedException {
+        lock.lock();
+        try {
+            while (count == 0) {
+                notEmpty.await();
+            }
+            T item = buffer[takeIndex];
+            buffer[takeIndex] = null;
+            takeIndex = (takeIndex + 1) % buffer.length;
+            count--;
+            notFull.signal();
+            return item;
+        } finally {
+            lock.unlock();
+        }
+    }
+}
+
+// Usage Example
+class Producer implements Runnable {
+    private final BoundedBuffer<Integer> buffer;
+    
+    public Producer(BoundedBuffer<Integer> buffer) {
+        this.buffer = buffer;
+    }
+    
+    public void run() {
+        try {
+            for (int i = 0; i < 100; i++) {
+                buffer.put(i);
+                System.out.println("Produced: " + i);
+                Thread.sleep(100);
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+}
+
+class Consumer implements Runnable {
+    private final BoundedBuffer<Integer> buffer;
+    
+    public Consumer(BoundedBuffer<Integer> buffer) {
+        this.buffer = buffer;
+    }
+    
+    public void run() {
+        try {
+            while (true) {
+                int item = buffer.take();
+                System.out.println("Consumed: " + item);
+                Thread.sleep(200);
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+}`,
+                explanation: "This example shows thread synchronization using ReentrantLock and Conditions to implement a bounded buffer with producer-consumer pattern. It demonstrates proper thread safety, lock handling, and condition signaling."
+            },
+            {
+                title: "Database Connectivity with JDBC",
+                code: `import java.sql.*;
+import java.util.Properties;
+
+public class DatabaseManager {
+    private static final String URL = "jdbc:postgresql://localhost:5432/mydb";
+    private Connection connection;
+    
+    public void connect() throws SQLException {
+        Properties props = new Properties();
+        props.setProperty("user", "username");
+        props.setProperty("password", "password");
+        props.setProperty("ssl", "true");
+        
+        connection = DriverManager.getConnection(URL, props);
+    }
+    
+    public void executeQuery(String sql, Object... params) throws SQLException {
+        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+            // Set parameters
+            for (int i = 0; i < params.length; i++) {
+                pstmt.setObject(i + 1, params[i]);
+            }
+            
+            // Execute and process results
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    // Process each row
+                    processRow(rs);
+                }
+            }
+        }
+    }
+    
+    public int executeUpdate(String sql, Object... params) throws SQLException {
+        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+            // Set parameters
+            for (int i = 0; i < params.length; i++) {
+                pstmt.setObject(i + 1, params[i]);
+            }
+            
+            // Execute update and return affected rows
+            return pstmt.executeUpdate();
+        }
+    }
+    
+    public void executeTransaction(String... sqlStatements) throws SQLException {
+        boolean autoCommit = connection.getAutoCommit();
+        connection.setAutoCommit(false);
+        
+        try {
+            for (String sql : sqlStatements) {
+                try (Statement stmt = connection.createStatement()) {
+                    stmt.execute(sql);
+                }
+            }
+            connection.commit();
+        } catch (SQLException e) {
+            connection.rollback();
+            throw e;
+        } finally {
+            connection.setAutoCommit(autoCommit);
+        }
+    }
+    
+    private void processRow(ResultSet rs) throws SQLException {
+        // Example row processing
+        int id = rs.getInt("id");
+        String name = rs.getString("name");
+        System.out.println("Row: " + id + ", " + name);
+    }
+    
+    public void close() {
+        try {
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}`,
+                explanation: "This example demonstrates proper JDBC usage including connection management, prepared statements to prevent SQL injection, transaction handling, and resource cleanup."
+            }
+        ],
+        roadmap: [
+            {
+                title: "1. Java Basics",
+                description: "Master core Java syntax and concepts",
+                topics: [
+                    "JDK Installation and IDE Setup",
+                    "Variables, Data Types, and Operators",
+                    "Control Flow Statements",
+                    "Arrays and Basic Data Structures",
+                    "Methods and Parameters",
+                    "Basic Input/Output Operations",
+                    "Exception Handling Basics"
+                ]
+            },
+            {
+                title: "2. Object-Oriented Programming",
+                description: "Learn OOP principles and implementation in Java",
+                topics: [
+                    "Classes and Objects",
+                    "Inheritance and Polymorphism",
+                    "Encapsulation and Access Modifiers",
+                    "Interfaces and Abstract Classes",
+                    "Package Management",
+                    "Java Beans and Properties",
+                    "SOLID Principles"
+                ]
+            },
+            {
+                title: "3. Java Standard Edition APIs",
+                description: "Master essential Java SE APIs and features",
+                topics: [
+                    "Collections Framework",
+                    "Generics",
+                    "I/O Streams and NIO",
+                    "Exception Handling Advanced",
+                    "Lambda Expressions",
+                    "Stream API",
+                    "Optional Class"
+                ]
+            },
+            {
+                title: "4. Concurrency & Multithreading",
+                description: "Learn concurrent programming in Java",
+                topics: [
+                    "Thread Basics and Lifecycle",
+                    "Synchronization and Locks",
+                    "Executor Framework",
+                    "Concurrent Collections",
+                    "CompletableFuture",
+                    "Fork/Join Framework",
+                    "Reactive Programming Basics"
+                ]
+            },
+            {
+                title: "5. Database Programming",
+                description: "Master database connectivity and ORM",
+                topics: [
+                    "JDBC Fundamentals",
+                    "Connection Pooling",
+                    "Transaction Management",
+                    "JPA Basics",
+                    "Hibernate ORM",
+                    "Query Languages (SQL/JPQL)",
+                    "Database Design Patterns"
+                ]
+            },
+            {
+                title: "6. Testing & Debugging",
+                description: "Learn testing methodologies and tools",
+                topics: [
+                    "Unit Testing with JUnit",
+                    "Mocking with Mockito",
+                    "Integration Testing",
+                    "Test-Driven Development",
+                    "Debugging Techniques",
+                    "Logging and Monitoring",
+                    "Code Coverage Tools"
+                ]
+            },
+            {
+                title: "7. Build Tools & Version Control",
+                description: "Master project management and version control",
+                topics: [
+                    "Maven Basics",
+                    "Gradle Fundamentals",
+                    "Dependency Management",
+                    "Git Version Control",
+                    "CI/CD Basics",
+                    "Docker for Java Apps",
+                    "Deployment Strategies"
+                ]
+            }
+        ],
+        resources: {
+            documentation: [
+                {
+                    title: "Java SE Documentation",
+                    url: "https://docs.oracle.com/en/java/javase/",
+                    description: "Official Java SE documentation and tutorials from Oracle",
+                    type: "Official Documentation"
+                },
+                {
+                    title: "Spring Framework Documentation",
+                    url: "https://docs.spring.io/spring-framework/reference/",
+                    description: "Comprehensive guide for Spring Framework development",
+                    type: "Framework Documentation"
+                },
+                {
+                    title: "Java Design Patterns",
+                    url: "https://java-design-patterns.com/",
+                    description: "Collection of implemented design patterns in Java",
+                    type: "Pattern Catalog"
+                },
+                {
+                    title: "JUnit 5 User Guide",
+                    url: "https://junit.org/junit5/docs/current/user-guide/",
+                    description: "Official documentation for JUnit testing framework",
+                    type: "Testing Documentation"
+                },
+                {
+                    title: "Maven Documentation",
+                    url: "https://maven.apache.org/guides/",
+                    description: "Official Apache Maven project documentation and guides",
+                    type: "Build Tool Documentation"
+                }
+            ],
+            tutorials: [
+                {
+                    title: "Baeldung",
+                    url: "https://www.baeldung.com/",
+                    description: "In-depth tutorials on Java and Spring ecosystem",
+                    type: "Tutorial Website"
+                },
+                {
+                    title: "Java Code Geeks",
+                    url: "https://www.javacodegeeks.com/",
+                    description: "Tutorials, articles, and code examples for Java developers",
+                    type: "Learning Platform"
+                },
+                {
+                    title: "Codecademy Java Course",
+                    url: "https://www.codecademy.com/learn/learn-java",
+                    description: "Interactive Java programming course for beginners",
+                    type: "Online Course"
+                },
+                {
+                    title: "Java Brains",
+                    url: "https://javabrains.io/",
+                    description: "Video tutorials on Java, Spring, and related technologies",
+                    type: "Video Tutorials"
+                },
+                {
+                    title: "JetBrains Academy",
+                    url: "https://www.jetbrains.com/academy/",
+                    description: "Project-based learning platform for Java development",
+                    type: "Learning Platform"
+                }
+            ],
+            videos: [
+                {
+                    title: "Java Programming by University of Helsinki",
+                    url: "https://java-programming.mooc.fi/",
+                    description: "Free, comprehensive Java programming course",
+                    platform: "MOOC"
+                },
+                {
+                    title: "Cave of Programming",
+                    url: "https://www.caveofprogramming.com/",
+                    description: "Video courses on Java fundamentals and advanced topics",
+                    platform: "Course Platform"
+                },
+                {
+                    title: "Derek Banas Java Tutorial",
+                    url: "https://www.youtube.com/playlist?list=PLE7E8B7F4856C9B19",
+                    description: "Comprehensive Java tutorial series",
+                    platform: "YouTube"
+                },
+                {
+                    title: "Coding with John",
+                    url: "https://www.youtube.com/c/CodingwithJohn",
+                    description: "Java programming tutorials and best practices",
+                    platform: "YouTube"
+                },
+                {
+                    title: "Amigoscode",
+                    url: "https://www.youtube.com/c/amigoscode",
+                    description: "Modern Java tutorials and Spring Framework content",
+                    platform: "YouTube"
+                }
+            ],
+            books: [
+                {
+                    title: "Effective Java",
+                    author: "Joshua Bloch",
+                    description: "Best practices and design patterns for Java programming",
+                    level: "Intermediate to Advanced"
+                },
+                {
+                    title: "Head First Java",
+                    author: "Kathy Sierra, Bert Bates",
+                    description: "Beginner-friendly introduction to Java programming",
+                    level: "Beginner"
+                },
+                {
+                    title: "Java Concurrency in Practice",
+                    author: "Brian Goetz",
+                    description: "Comprehensive guide to writing concurrent Java applications",
+                    level: "Advanced"
+                },
+                {
+                    title: "Clean Code: A Handbook of Agile Software Craftsmanship",
+                    author: "Robert C. Martin",
+                    description: "Writing clean and maintainable Java code",
+                    level: "Intermediate"
+                },
+                {
+                    title: "Spring in Action",
+                    author: "Craig Walls",
+                    description: "Comprehensive guide to Spring Framework development",
+                    level: "Intermediate"
+                }
+            ],
+            tools: [
+                {
+                    title: "IntelliJ IDEA",
+                    url: "https://www.jetbrains.com/idea/",
+                    description: "Powerful IDE for Java development",
+                    type: "Development Tool",
+                    category: "Essential"
+                },
+                {
+                    title: "Eclipse",
+                    url: "https://www.eclipse.org/",
+                    description: "Popular open-source Java IDE",
+                    type: "Development Tool",
+                    category: "Essential"
+                },
+                {
+                    title: "Apache Maven",
+                    url: "https://maven.apache.org/",
+                    description: "Project management and build automation tool",
+                    type: "Build Tool",
+                    category: "Essential"
+                },
+                {
+                    title: "JUnit",
+                    url: "https://junit.org/",
+                    description: "Testing framework for Java applications",
+                    type: "Testing Tool",
+                    category: "Essential"
+                },
+                {
+                    title: "VisualVM",
+                    url: "https://visualvm.github.io/",
+                    description: "Java application monitoring and profiling tool",
+                    type: "Profiling Tool",
+                    category: "Essential"
+                }
+            ],
+            communities: [
+                {
+                    title: "Stack Overflow - Java",
+                    url: "https://stackoverflow.com/questions/tagged/java",
+                    description: "Q&A community for Java programming",
+                    type: "Q&A Forum"
+                },
+                {
+                    title: "Reddit r/java",
+                    url: "https://www.reddit.com/r/java/",
+                    description: "Subreddit for Java developers and enthusiasts",
+                    type: "Forum"
+                },
+                {
+                    title: "Java User Groups (JUGs)",
+                    url: "https://www.java.net/jugs/java-user-groups",
+                    description: "Local Java developer communities worldwide",
+                    type: "Local Community"
+                },
+                {
+                    title: "Dev.to Java Community",
+                    url: "https://dev.to/t/java",
+                    description: "Java-related articles and discussions",
+                    type: "Online Community"
+                },
+                {
+                    title: "Oracle Java Community",
+                    url: "https://community.oracle.com/tech/developers/categories/java",
+                    description: "Official Oracle Java community forums",
+                    type: "Forum"
+                }
+            ],
+            podcasts: [
+                {
+                    title: "Inside Java",
+                    url: "https://inside.java/podcast/",
+                    description: "Official podcast from the Java team at Oracle",
+                    platform: "Podcast"
+                },
+                {
+                    title: "Java Off Heap",
+                    url: "https://www.javaoffheap.com/",
+                    description: "Discussion of Java news and developments",
+                    platform: "Podcast"
+                },
+                {
+                    title: "Airhacks.fm",
+                    url: "http://airhacks.fm/",
+                    description: "Java EE, Jakarta EE, and cloud-native development",
+                    platform: "Podcast"
+                },
+                {
+                    title: "The Java Posse (Archive)",
+                    url: "http://javaposse.com/",
+                    description: "Classic Java development podcast (archived)",
+                    platform: "Podcast"
+                }
+            ],
+            blogs: [
+                {
+                    title: "DZone Java Zone",
+                    url: "https://dzone.com/java",
+                    description: "Articles, tutorials, and news about Java development",
+                    type: "Blog"
+                },
+                {
+                    title: "Thorben Janssen",
+                    url: "https://thorben-janssen.com/",
+                    description: "Blog focusing on Hibernate and JPA",
+                    type: "Blog"
+                },
+                {
+                    title: "Vlad Mihalcea's Blog",
+                    url: "https://vladmihalcea.com/",
+                    description: "High-performance Java and database programming",
+                    type: "Blog"
+                },
+                {
+                    title: "Mkyong",
+                    url: "https://mkyong.com/",
+                    description: "Java tutorials and code examples",
+                    type: "Blog"
+                }
+            ]
+        },
+        practice: {
+            beginnerExercises: [
+                {
+                    title: "Student Grade Calculator",
+                    difficulty: "Easy",
+                    description: "Create a program to calculate student grades based on marks in different subjects.",
+                    hints: [
+                        "Use arrays or collections to store subject marks",
+                        "Implement methods for average calculation",
+                        "Use conditional statements for grade determination",
+                        "Consider input validation"
+                    ],
+                    solution: {
+                        code: `public class StudentGradeCalculator {
+        private String studentName;
+        private double[] marks;
+    
+        public StudentGradeCalculator(String studentName, double[] marks) {
+            this.studentName = studentName;
+            this.marks = marks;
+        }
+    
+        public double calculateAverage() {
+            if (marks == null || marks.length == 0) {
+                return 0.0;
+            }
+            
+            double sum = 0;
+            for (double mark : marks) {
+                sum += mark;
+            }
+            return sum / marks.length;
+        }
+    
+        public char calculateGrade() {
+            double average = calculateAverage();
+            
+            if (average >= 90) return 'A';
+            if (average >= 80) return 'B';
+            if (average >= 70) return 'C';
+            if (average >= 60) return 'D';
+            return 'F';
+        }
+    
+        public void displayResult() {
+            System.out.println("Student Name: " + studentName);
+            System.out.println("Average Score: " + String.format("%.2f", calculateAverage()));
+            System.out.println("Grade: " + calculateGrade());
+        }
+    
+        public static void main(String[] args) {
+            double[] studentMarks = {85.5, 77.0, 91.5, 76.0, 88.0};
+            StudentGradeCalculator calculator = 
+                new StudentGradeCalculator("John Doe", studentMarks);
+            calculator.displayResult();
+        }
+    }`,
+                        explanation: "This beginner exercise demonstrates basic Java concepts including classes, arrays, loops, conditional statements, and method implementation. It includes input validation and formatted output."
+                    }
+                },
+                {
+                    title: "Bank Account Management",
+                    difficulty: "Easy",
+                    description: "Implement a simple bank account system with deposit, withdrawal, and balance check functionality.",
+                    hints: [
+                        "Create a class to represent bank account",
+                        "Implement methods for transactions",
+                        "Add validation for negative amounts",
+                        "Include proper exception handling"
+                    ],
+                    solution: {
+                        code: `public class BankAccount {
+        private String accountNumber;
+        private String accountHolder;
+        private double balance;
+    
+        public BankAccount(String accountNumber, String accountHolder) {
+            this.accountNumber = accountNumber;
+            this.accountHolder = accountHolder;
+            this.balance = 0.0;
+        }
+    
+        public void deposit(double amount) throws IllegalArgumentException {
+            if (amount <= 0) {
+                throw new IllegalArgumentException("Deposit amount must be positive");
+            }
+            balance += amount;
+            System.out.printf("Deposited: $%.2f. New balance: $%.2f%n", 
+                             amount, balance);
+        }
+    
+        public void withdraw(double amount) throws IllegalArgumentException {
+            if (amount <= 0) {
+                throw new IllegalArgumentException("Withdrawal amount must be positive");
+            }
+            if (amount > balance) {
+                throw new IllegalArgumentException("Insufficient funds");
+            }
+            balance -= amount;
+            System.out.printf("Withdrawn: $%.2f. New balance: $%.2f%n", 
+                             amount, balance);
+        }
+    
+        public double getBalance() {
+            return balance;
+        }
+    
+        public void displayAccount() {
+            System.out.println("Account Details:");
+            System.out.println("Account Number: " + accountNumber);
+            System.out.println("Account Holder: " + accountHolder);
+            System.out.printf("Current Balance: $%.2f%n", balance);
+        }
+    
+        public static void main(String[] args) {
+            try {
+                BankAccount account = new BankAccount("1234567890", "Jane Smith");
+                account.deposit(1000.0);
+                account.withdraw(500.0);
+                account.displayAccount();
+                account.withdraw(600.0); // This should throw an exception
+            } catch (IllegalArgumentException e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+        }
+    }`,
+                        explanation: "This exercise covers object-oriented programming basics, exception handling, and formatted output. It implements basic banking operations with proper validation."
+                    }
+                },
+                {
+                    title: "Shopping Cart System",
+                    difficulty: "Easy",
+                    description: "Create a simple shopping cart system that allows adding items, removing items, and calculating total price.",
+                    hints: [
+                        "Use ArrayList to store cart items",
+                        "Create a class for cart items with name, price, and quantity",
+                        "Implement methods for cart operations",
+                        "Add input validation"
+                    ],
+                    solution: {
+                        code: `class CartItem {
+        private String name;
+        private double price;
+        private int quantity;
+    
+        public CartItem(String name, double price, int quantity) {
+            if (price < 0 || quantity < 0) {
+                throw new IllegalArgumentException("Price and quantity must be positive");
+            }
+            this.name = name;
+            this.price = price;
+            this.quantity = quantity;
+        }
+    
+        public double getSubtotal() {
+            return price * quantity;
+        }
+    
+        // Getters and setters
+        public String getName() { return name; }
+        public double getPrice() { return price; }
+        public int getQuantity() { return quantity; }
+        public void setQuantity(int quantity) { this.quantity = quantity; }
+    }
+    
+    public class ShoppingCart {
+        private List<CartItem> items;
+    
+        public ShoppingCart() {
+            this.items = new ArrayList<>();
+        }
+    
+        public void addItem(String name, double price, int quantity) {
+            // Check if item already exists
+            for (CartItem item : items) {
+                if (item.getName().equalsIgnoreCase(name)) {
+                    item.setQuantity(item.getQuantity() + quantity);
+                    return;
+                }
+            }
+            items.add(new CartItem(name, price, quantity));
+        }
+    
+        public void removeItem(String name) {
+            items.removeIf(item -> item.getName().equalsIgnoreCase(name));
+        }
+    
+        public void updateQuantity(String name, int newQuantity) {
+            if (newQuantity < 0) {
+                throw new IllegalArgumentException("Quantity cannot be negative");
+            }
+            for (CartItem item : items) {
+                if (item.getName().equalsIgnoreCase(name)) {
+                    item.setQuantity(newQuantity);
+                    if (newQuantity == 0) {
+                        removeItem(name);
+                    }
+                    return;
+                }
+            }
+        }
+    
+        public double calculateTotal() {
+            return items.stream()
+                       .mapToDouble(CartItem::getSubtotal)
+                       .sum();
+        }
+    
+        public void displayCart() {
+            if (items.isEmpty()) {
+                System.out.println("Cart is empty");
+                return;
+            }
+    
+            System.out.println("\nShopping Cart:");
+            System.out.println("----------------------------------------");
+            System.out.printf("%-20s %-10s %-10s %-10s%n", 
+                             "Item", "Price", "Quantity", "Subtotal");
+            System.out.println("----------------------------------------");
+    
+            for (CartItem item : items) {
+                System.out.printf("%-20s $%-9.2f %-10d $%-9.2f%n",
+                                item.getName(),
+                                item.getPrice(),
+                                item.getQuantity(),
+                                item.getSubtotal());
+            }
+            System.out.println("----------------------------------------");
+            System.out.printf("Total: $%.2f%n", calculateTotal());
+        }
+    
+        public static void main(String[] args) {
+            try {
+                ShoppingCart cart = new ShoppingCart();
+                
+                // Add items
+                cart.addItem("Laptop", 999.99, 1);
+                cart.addItem("Mouse", 29.99, 2);
+                cart.addItem("Keyboard", 59.99, 1);
+                
+                // Display initial cart
+                cart.displayCart();
+                
+                // Update quantity
+                cart.updateQuantity("Mouse", 3);
+                
+                // Remove item
+                cart.removeItem("Keyboard");
+                
+                // Display updated cart
+                System.out.println("\nAfter updates:");
+                cart.displayCart();
+                
+            } catch (IllegalArgumentException e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+        }
+    }`,
+                        explanation: "This beginner exercise demonstrates ArrayList usage, basic object-oriented principles, input validation, and formatted output. It includes methods for adding, removing, and updating items in a shopping cart."
+                    }
+                }
+            ],
+            intermediateExercises: [
+                {
+                    title: "Library Management System",
+                    difficulty: "Medium",
+                    description: "Create a library management system with books, members, and borrowing functionality.",
+                    hints: [
+                        "Use collections to store books and members",
+                        "Implement book borrowing and return logic",
+                        "Add due date tracking",
+                        "Include search functionality"
+                    ],
+                    solution: {
+                        code: `import java.time.LocalDate;
+    import java.util.*;
+    
+    class Book {
+        private String isbn;
+        private String title;
+        private String author;
+        private boolean isAvailable;
+    
+        public Book(String isbn, String title, String author) {
+            this.isbn = isbn;
+            this.title = title;
+            this.author = author;
+            this.isAvailable = true;
+        }
+    
+        // Getters, setters, and toString()
+    }
+    
+    class Member {
+        private int memberId;
+        private String name;
+        private List<BorrowRecord> borrowHistory;
+    
+        public Member(int memberId, String name) {
+            this.memberId = memberId;
+            this.name = name;
+            this.borrowHistory = new ArrayList<>();
+        }
+    
+        // Getters, setters, and toString()
+    }
+    
+    class BorrowRecord {
+        private Book book;
+        private Member member;
+        private LocalDate borrowDate;
+        private LocalDate dueDate;
+        private LocalDate returnDate;
+    
+        public BorrowRecord(Book book, Member member) {
+            this.book = book;
+            this.member = member;
+            this.borrowDate = LocalDate.now();
+            this.dueDate = borrowDate.plusDays(14); // 2-week loan period
+        }
+    
+        // Getters, setters, and toString()
+    }
+    
+    public class LibraryManagementSystem {
+        private Map<String, Book> books;
+        private Map<Integer, Member> members;
+        private List<BorrowRecord> borrowRecords;
+    
+        public LibraryManagementSystem() {
+            this.books = new HashMap<>();
+            this.members = new HashMap<>();
+            this.borrowRecords = new ArrayList<>();
+        }
+    
+        public void addBook(Book book) {
+            books.put(book.getIsbn(), book);
+        }
+    
+        public void addMember(Member member) {
+            members.put(member.getMemberId(), member);
+        }
+    
+        public void borrowBook(String isbn, int memberId) throws Exception {
+            Book book = books.get(isbn);
+            Member member = members.get(memberId);
+    
+            if (book == null || member == null) {
+                throw new Exception("Book or member not found");
+            }
+    
+            if (!book.isAvailable()) {
+                throw new Exception("Book is not available");
+            }
+    
+            BorrowRecord record = new BorrowRecord(book, member);
+            borrowRecords.add(record);
+            book.setAvailable(false);
+            member.getBorrowHistory().add(record);
+        }
+    
+        public void returnBook(String isbn, int memberId) throws Exception {
+            Book book = books.get(isbn);
+            Member member = members.get(memberId);
+    
+            if (book == null || member == null) {
+                throw new Exception("Book or member not found");
+            }
+    
+            BorrowRecord record = findActiveBorrowRecord(isbn, memberId);
+            if (record == null) {
+                throw new Exception("No active borrow record found");
+            }
+    
+            record.setReturnDate(LocalDate.now());
+            book.setAvailable(true);
+        }
+    
+        public List<Book> searchBooks(String keyword) {
+            return books.values().stream()
+                    .filter(book -> book.getTitle().toLowerCase()
+                            .contains(keyword.toLowerCase()) ||
+                            book.getAuthor().toLowerCase()
+                            .contains(keyword.toLowerCase()))
+                    .toList();
+        }
+    
+        private BorrowRecord findActiveBorrowRecord(String isbn, int memberId) {
+            return borrowRecords.stream()
+                    .filter(record -> record.getBook().getIsbn().equals(isbn) &&
+                            record.getMember().getMemberId() == memberId &&
+                            record.getReturnDate() == null)
+                    .findFirst()
+                    .orElse(null);
+        }
+    
+        public List<BorrowRecord> getOverdueBooks() {
+            LocalDate today = LocalDate.now();
+            return borrowRecords.stream()
+                    .filter(record -> record.getReturnDate() == null &&
+                            record.getDueDate().isBefore(today))
+                    .toList();
+        }
+    }`,
+                        explanation: "This intermediate exercise demonstrates the use of collections, object relationships, date handling, and stream operations in Java. It implements a basic library system with book management and borrowing functionality."
+                    }
+                },
+                {
+                    title: "Task Management System",
+                    difficulty: "Medium",
+                    description: "Create a task management system with support for projects, tasks, and user assignments.",
+                    hints: [
+                        "Use enums for task status and priority",
+                        "Implement task filtering and sorting",
+                        "Add deadline management",
+                        "Include task dependencies"
+                    ],
+                    solution: {
+                        code: `import java.time.LocalDateTime;
+    import java.util.*;
+    import java.util.stream.Collectors;
+    
+    enum TaskStatus { TODO, IN_PROGRESS, COMPLETED, BLOCKED }
+    enum TaskPriority { LOW, MEDIUM, HIGH, URGENT }
+    
+    class User {
+        private String id;
+        private String name;
+        private List<Task> assignedTasks;
+    
+        public User(String id, String name) {
+            this.id = id;
+            this.name = name;
+            this.assignedTasks = new ArrayList<>();
+        }
+    
+        // Getters and setters
+    }
+    
+    class Task implements Comparable<Task> {
+        private String id;
+        private String title;
+        private String description;
+        private TaskStatus status;
+        private TaskPriority priority;
+        private LocalDateTime deadline;
+        private User assignee;
+        private Set<Task> dependencies;
+        private LocalDateTime createdAt;
+    
+        public Task(String id, String title, String description, 
+                    TaskPriority priority, LocalDateTime deadline) {
+            this.id = id;
+            this.title = title;
+            this.description = description;
+            this.status = TaskStatus.TODO;
+            this.priority = priority;
+            this.deadline = deadline;
+            this.dependencies = new HashSet<>();
+            this.createdAt = LocalDateTime.now();
+        }
+    
+        @Override
+        public int compareTo(Task other) {
+            // Compare by priority first, then deadline
+            int priorityCompare = other.priority.compareTo(this.priority);
+            if (priorityCompare != 0) return priorityCompare;
+            return this.deadline.compareTo(other.deadline);
+        }
+    
+        // Getters and setters
+    }
+    
+    class Project {
+        private String id;
+        private String name;
+        private List<Task> tasks;
+        private List<User> members;
+    
+        public Project(String id, String name) {
+            this.id = id;
+            this.name = name;
+            this.tasks = new ArrayList<>();
+            this.members = new ArrayList<>();
+        }
+    
+        // Project methods
+    }
+    
+    public class TaskManagementSystem {
+        private Map<String, Project> projects;
+        private Map<String, User> users;
+    
+        public TaskManagementSystem() {
+            this.projects = new HashMap<>();
+            this.users = new HashMap<>();
+        }
+    
+        public void addProject(Project project) {
+            projects.put(project.getId(), project);
+        }
+    
+        public void addUser(User user) {
+            users.put(user.getId(), user);
+        }
+    
+        public void addTaskToProject(String projectId, Task task) {
+            Project project = projects.get(projectId);
+            if (project == null) {
+                throw new IllegalArgumentException("Project not found");
+            }
+            project.getTasks().add(task);
+        }
+    
+        public void assignTask(String taskId, String userId, String projectId) {
+            Project project = projects.get(projectId);
+            User user = users.get(userId);
+            
+            if (project == null || user == null) {
+                throw new IllegalArgumentException("Project or user not found");
+            }
+    
+            Task task = findTask(taskId, project);
+            if (task == null) {
+                throw new IllegalArgumentException("Task not found");
+            }
+    
+            task.setAssignee(user);
+            user.getAssignedTasks().add(task);
+        }
+    
+        public void updateTaskStatus(String taskId, String projectId, 
+                                   TaskStatus newStatus) {
+            Project project = projects.get(projectId);
+            if (project == null) {
+                throw new IllegalArgumentException("Project not found");
+            }
+    
+            Task task = findTask(taskId, project);
+            if (task == null) {
+                throw new IllegalArgumentException("Task not found");
+            }
+    
+            // Check if all dependencies are completed
+            if (newStatus == TaskStatus.IN_PROGRESS) {
+                boolean hasBlockedDependencies = task.getDependencies().stream()
+                    .anyMatch(dep -> dep.getStatus() != TaskStatus.COMPLETED);
+                if (hasBlockedDependencies) {
+                    throw new IllegalStateException(
+                        "Cannot start task with incomplete dependencies");
+                }
+            }
+    
+            task.setStatus(newStatus);
+        }
+    
+        public void addTaskDependency(String taskId, String dependencyId, 
+                                    String projectId) {
+            Project project = projects.get(projectId);
+            if (project == null) {
+                throw new IllegalArgumentException("Project not found");
+            }
+    
+            Task task = findTask(taskId, project);
+            Task dependency = findTask(dependencyId, project);
+            
+            if (task == null || dependency == null) {
+                throw new IllegalArgumentException("Task or dependency not found");
+            }
+    
+            // Check for circular dependencies
+            if (wouldCreateCircularDependency(task, dependency)) {
+                throw new IllegalArgumentException("Circular dependency detected");
+            }
+    
+            task.getDependencies().add(dependency);
+        }
+    
+        private boolean wouldCreateCircularDependency(Task task, Task dependency) {
+            Set<Task> visited = new HashSet<>();
+            return checkCircularDependency(dependency, task, visited);
+        }
+    
+        private boolean checkCircularDependency(Task current, Task target, 
+                                              Set<Task> visited) {
+            if (current == target) return true;
+            if (visited.contains(current)) return false;
+            
+            visited.add(current);
+            for (Task dep : current.getDependencies()) {
+                if (checkCircularDependency(dep, target, visited)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    
+        public List<Task> getOverdueTasks(String projectId) {
+            Project project = projects.get(projectId);
+            if (project == null) {
+                throw new IllegalArgumentException("Project not found");
+            }
+    
+            LocalDateTime now = LocalDateTime.now();
+            return project.getTasks().stream()
+                         .filter(task -> task.getStatus() != TaskStatus.COMPLETED
+                                 && task.getDeadline().isBefore(now))
+                         .collect(Collectors.toList());
+        }
+    
+        public List<Task> getTasksByPriority(String projectId, 
+                                           TaskPriority priority) {
+            Project project = projects.get(projectId);
+            if (project == null) {
+                throw new IllegalArgumentException("Project not found");
+            }
+    
+            return project.getTasks().stream()
+                         .filter(task -> task.getPriority() == priority)
+                         .sorted()
+                         .collect(Collectors.toList());
+        }
+    
+        private Task findTask(String taskId, Project project) {
+            return project.getTasks().stream()
+                         .filter(task -> task.getId().equals(taskId))
+                         .findFirst()
+                         .orElse(null);
+        }
+    }`,
+                        explanation: "This intermediate exercise demonstrates the use of enums, collections, dependency management, and complex business logic. It includes features like task assignments, priorities, deadlines, and dependency checking with circular dependency detection."
+                    }
+                }
+            ],
+            advancedExercises: [
+                {
+                    title: "Task Scheduler with Thread Pool",
+                    difficulty: "Hard",
+                    description: "Implement a task scheduler that can execute tasks concurrently using a thread pool.",
+                    hints: [
+                        "Use ExecutorService for thread pool management",
+                        "Implement priority queue for task scheduling",
+                        "Add support for recurring tasks",
+                        "Include task cancellation and monitoring"
+                    ],
+                    solution: {
+                        code: `import java.time.*;
+    import java.util.concurrent.*;
+    import java.util.*;
+    
+    class ScheduledTask {
+        private final String id;
+        private final Runnable task;
+        private final LocalDateTime scheduledTime;
+        private final Duration repeatInterval;
+        private boolean isCancelled;
+    
+        public ScheduledTask(String id, Runnable task, 
+                            LocalDateTime scheduledTime, 
+                            Duration repeatInterval) {
+            this.id = id;
+            this.task = task;
+            this.scheduledTime = scheduledTime;
+            this.repeatInterval = repeatInterval;
+            this.isCancelled = false;
+        }
+    
+        // Getters and setters
+    }
+    
+    public class CustomTaskScheduler {
+        private final ExecutorService executorService;
+        private final PriorityQueue<ScheduledTask> taskQueue;
+        private final Map<String, ScheduledTask> taskMap;
+        private final Object lock = new Object();
+        private volatile boolean isRunning;
+    
+        public CustomTaskScheduler(int poolSize) {
+            this.executorService = Executors.newFixedThreadPool(poolSize);
+            this.taskQueue = new PriorityQueue<>(
+                Comparator.comparing(ScheduledTask::getScheduledTime));
+            this.taskMap = new ConcurrentHashMap<>();
+            this.isRunning = true;
+            startScheduler();
+        }
+    
+        public String scheduleTask(Runnable task, 
+                                 LocalDateTime scheduledTime, 
+                                 Duration repeatInterval) {
+            String taskId = UUID.randomUUID().toString();
+            ScheduledTask scheduledTask = 
+                new ScheduledTask(taskId, task, scheduledTime, repeatInterval);
+            
+            synchronized (lock) {
+                taskMap.put(taskId, scheduledTask);
+                taskQueue.offer(scheduledTask);
+                lock.notify();
+            }
+            
+            return taskId;
+        }
+    
+        public void cancelTask(String taskId) {
+            ScheduledTask task = taskMap.get(taskId);
+            if (task != null) {
+                task.setCancelled(true);
+            }
+        }
+    
+        private void startScheduler() {
+            Thread schedulerThread = new Thread(() -> {
+                while (isRunning) {
+                    try {
+                        synchronized (lock) {
+                            while (taskQueue.isEmpty() && isRunning) {
+                                lock.wait();
+                            }
+    
+                            if (!isRunning) break;
+    
+                            ScheduledTask nextTask = taskQueue.peek();
+                            if (nextTask == null) continue;
+    
+                            LocalDateTime now = LocalDateTime.now();
+                            if (now.isBefore(nextTask.getScheduledTime())) {
+                                long sleepTime = Duration.between(now, 
+                                    nextTask.getScheduledTime()).toMillis();
+                                lock.wait(sleepTime);
+                                continue;
+                            }
+    
+                            nextTask = taskQueue.poll();
+                            if (nextTask != null && !nextTask.isCancelled()) {
+                                executeTask(nextTask);
+                            }
+                        }
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                        break;
+                    }
+                }
+            });
+            schedulerThread.start();
+        }
+    
+        private void executeTask(ScheduledTask task) {
+            executorService.submit(() -> {
+                try {
+                    task.getTask().run();
+                    
+                    if (task.getRepeatInterval() != null && !task.isCancelled()) {
+                        ScheduledTask nextTask = new ScheduledTask(
+                            task.getId(),
+                            task.getTask(),
+                            task.getScheduledTime().plus(task.getRepeatInterval()),
+                            task.getRepeatInterval()
+                        );
+                        synchronized (lock) {
+                            taskQueue.offer(nextTask);
+                            taskMap.put(nextTask.getId(), nextTask);
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+    
+        public void shutdown() {
+            isRunning = false;
+            synchronized (lock) {
+                lock.notify();
+            }
+            executorService.shutdown();
+            try {
+                if (!executorService.awaitTermination(60, TimeUnit.SECONDS)) {
+                    executorService.shutdownNow();
+                }
+            } catch (InterruptedException e) {
+                executorService.shutdownNow();
+                Thread.currentThread().interrupt();
+            }
+        }
+    
+        public static void main(String[] args) {
+            CustomTaskScheduler scheduler = new CustomTaskScheduler(4);
+            
+            // Schedule a one-time task
+            scheduler.scheduleTask(
+                () -> System.out.println("One-time task executed"),
+                LocalDateTime.now().plusSeconds(5),
+                null
+            );
+            
+            // Schedule a recurring task
+            scheduler.scheduleTask(
+                () -> System.out.println("Recurring task executed"),
+                LocalDateTime.now().plusSeconds(2),
+                Duration.ofSeconds(3)
+            );
+            
+            // Let tasks run for a while
+            try {
+                Thread.sleep(15000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            
+            scheduler.shutdown();
+        }
+    }`,
+                        explanation: "This advanced exercise demonstrates concurrent programming concepts including thread pools, task scheduling, and synchronization. It implements a custom task scheduler that can handle both one-time and recurring tasks with proper thread management and cancellation support."
+                    }
+                },
+                {
+                    title: "Distributed Cache System",
+                    difficulty: "Hard",
+                    description: "Implement a distributed cache system with support for multiple nodes, cache eviction, and consistency.",
+                    hints: [
+                        "Use concurrent data structures",
+                        "Implement cache eviction policies",
+                        "Add support for distributed operations",
+                        "Handle node failures and recovery"
+                    ],
+                    solution: {
+                        code: `import java.util.concurrent.*;
+    import java.util.*;
+    import java.time.*;
+    import java.net.*;
+    import java.io.*;
+    
+    class CacheEntry<T> {
+        private T value;
+        private LocalDateTime lastAccessed;
+        private LocalDateTime expiresAt;
+        private int hitCount;
+    
+        public CacheEntry(T value, Duration ttl) {
+            this.value = value;
+            this.lastAccessed = LocalDateTime.now();
+            this.expiresAt = ttl != null ? this.lastAccessed.plus(ttl) : null;
+            this.hitCount = 0;
+        }
+    
+        public boolean isExpired() {
+            return expiresAt != null && 
+                   LocalDateTime.now().isAfter(expiresAt);
+        }
+    
+        // Getters and setters
+    }
+    
+    class Node {
+        private String id;
+        private InetSocketAddress address;
+        private boolean isAlive;
+        private LocalDateTime lastHeartbeat;
+    
+        public Node(String id, InetSocketAddress address) {
+            this.id = id;
+            this.address = address;
+            this.isAlive = true;
+            this.lastHeartbeat = LocalDateTime.now();
+        }
+    
+        // Getters and setters
+    }
+    
+    enum EvictionPolicy { LRU, LFU, FIFO }
+    
+    public class DistributedCache<K, V> {
+        private final ConcurrentMap<K, CacheEntry<V>> localCache;
+        private final Map<String, Node> nodes;
+        private final EvictionPolicy evictionPolicy;
+        private final int maxSize;
+        private final Duration ttl;
+        private final ScheduledExecutorService scheduler;
+        private final Node localNode;
+        private final ReentrantReadWriteLock lock;
+    
+        public DistributedCache(int maxSize, Duration ttl, 
+                              EvictionPolicy evictionPolicy) {
+            this.localCache = new ConcurrentHashMap<>();
+            this.nodes = new ConcurrentHashMap<>();
+            this.evictionPolicy = evictionPolicy;
+            this.maxSize = maxSize;
+            this.ttl = ttl;
+            this.scheduler = Executors.newScheduledThreadPool(2);
+            this.localNode = new Node(UUID.randomUUID().toString(), 
+                                    new InetSocketAddress("localhost", 8080));
+            this.lock = new ReentrantReadWriteLock();
+    
+            startMaintenanceTasks();
+        }
+    
+        private void startMaintenanceTasks() {
+            // Schedule cache cleanup
+            scheduler.scheduleAtFixedRate(
+                this::evictExpiredEntries,
+                1, 1, TimeUnit.MINUTES
+            );
+    
+            // Schedule node health check
+            scheduler.scheduleAtFixedRate(
+                this::checkNodeHealth,
+                5, 5, TimeUnit.SECONDS
+            );
+        }
+    
+        public void put(K key, V value) {
+            lock.writeLock().lock();
+            try {
+                // Check cache size and evict if necessary
+                if (localCache.size() >= maxSize) {
+                    evictEntries(1);
+                }
+    
+                CacheEntry<V> entry = new CacheEntry<>(value, ttl);
+                localCache.put(key, entry);
+    
+                // Propagate to other nodes
+                propagateUpdate(key, value);
+            } finally {
+                lock.writeLock().unlock();
+            }
+        }
+    
+        public Optional<V> get(K key) {
+            lock.readLock().lock();
+            try {
+                CacheEntry<V> entry = localCache.get(key);
+                if (entry == null) {
+                    // Try to fetch from other nodes
+                    return fetchFromOtherNodes(key);
+                }
+    
+                if (entry.isExpired()) {
+                    localCache.remove(key);
+                    return Optional.empty();
+                }
+    
+                entry.setLastAccessed(LocalDateTime.now());
+                entry.setHitCount(entry.getHitCount() + 1);
+            return Optional.of(entry.getValue());
+        } finally {
+            lock.readLock().unlock();
+        }
+    }
+
+    private void evictExpiredEntries() {
+        lock.writeLock().lock();
+        try {
+            localCache.entrySet().removeIf(entry -> 
+                entry.getValue().isExpired());
+        } finally {
+            lock.writeLock().unlock();
+        }
+    }
+
+    private void evictEntries(int count) {
+        lock.writeLock().lock();
+        try {
+            List<K> keysToEvict = switch (evictionPolicy) {
+                case LRU -> getLRUKeys(count);
+                case LFU -> getLFUKeys(count);
+                case FIFO -> getFIFOKeys(count);
+            };
+            
+            keysToEvict.forEach(localCache::remove);
+        } finally {
+            lock.writeLock().unlock();
+        }
+    }
+
+    private List<K> getLRUKeys(int count) {
+        return localCache.entrySet().stream()
+            .sorted(Comparator.comparing(e -> 
+                e.getValue().getLastAccessed()))
+            .limit(count)
+            .map(Map.Entry::getKey)
+            .collect(Collectors.toList());
+    }
+
+    private List<K> getLFUKeys(int count) {
+        return localCache.entrySet().stream()
+            .sorted(Comparator.comparing(e -> 
+                e.getValue().getHitCount()))
+            .limit(count)
+            .map(Map.Entry::getKey)
+            .collect(Collectors.toList());
+    }
+
+    private List<K> getFIFOKeys(int count) {
+        return new ArrayList<>(localCache.keySet())
+            .subList(0, Math.min(count, localCache.size()));
+    }
+
+    private void propagateUpdate(K key, V value) {
+        CompletableFuture.runAsync(() -> {
+            for (Node node : nodes.values()) {
+                if (node.isAlive() && !node.getId().equals(localNode.getId())) {
+                    try {
+                        sendUpdateToNode(node, key, value);
+                    } catch (Exception e) {
+                        node.setAlive(false);
+                    }
+                }
+            }
+        });
+    }
+
+    private void sendUpdateToNode(Node node, K key, V value) {
+        // Simplified network communication
+        try (Socket socket = new Socket()) {
+            socket.connect(node.getAddress(), 1000);
+            try (ObjectOutputStream out = 
+                     new ObjectOutputStream(socket.getOutputStream())) {
+                out.writeObject(new CacheUpdate<>(key, value));
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to send update to node: " 
+                + node.getId(), e);
+        }
+    }
+
+    private Optional<V> fetchFromOtherNodes(K key) {
+        for (Node node : nodes.values()) {
+            if (node.isAlive() && !node.getId().equals(localNode.getId())) {
+                try {
+                    Optional<V> value = fetchFromNode(node, key);
+                    if (value.isPresent()) {
+                        // Update local cache
+                        put(key, value.get());
+                        return value;
+                    }
+                } catch (Exception e) {
+                    node.setAlive(false);
+                }
+            }
+        }
+        return Optional.empty();
+    }
+
+    private Optional<V> fetchFromNode(Node node, K key) {
+        // Simplified network communication
+        try (Socket socket = new Socket()) {
+            socket.connect(node.getAddress(), 1000);
+            try (ObjectOutputStream out = 
+                     new ObjectOutputStream(socket.getOutputStream());
+                 ObjectInputStream in = 
+                     new ObjectInputStream(socket.getInputStream())) {
+                out.writeObject(new CacheRequest<>(key));
+                @SuppressWarnings("unchecked")
+                CacheResponse<V> response = 
+                    (CacheResponse<V>) in.readObject();
+                return Optional.ofNullable(response.getValue());
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException("Failed to fetch from node: " 
+                + node.getId(), e);
+        }
+    }
+
+    private void checkNodeHealth() {
+        for (Node node : nodes.values()) {
+            if (!node.getId().equals(localNode.getId())) {
+                CompletableFuture.runAsync(() -> {
+                    try {
+                        sendHeartbeat(node);
+                        node.setAlive(true);
+                        node.setLastHeartbeat(LocalDateTime.now());
+                    } catch (Exception e) {
+                        node.setAlive(false);
+                    }
+                });
+            }
+        }
+        
+        // Remove nodes that haven't sent heartbeat in a while
+        nodes.entrySet().removeIf(entry -> {
+            Node node = entry.getValue();
+            return !node.isAlive() && 
+                   node.getLastHeartbeat()
+                      .plusMinutes(5)
+                      .isBefore(LocalDateTime.now());
+        });
+    }
+
+    private void sendHeartbeat(Node node) {
+        try (Socket socket = new Socket()) {
+            socket.connect(node.getAddress(), 1000);
+            try (ObjectOutputStream out = 
+                     new ObjectOutputStream(socket.getOutputStream())) {
+                out.writeObject(new Heartbeat(localNode.getId()));
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to send heartbeat to node: " 
+                + node.getId(), e);
+        }
+    }
+
+    public void addNode(Node node) {
+        nodes.put(node.getId(), node);
+    }
+
+    public void shutdown() {
+        scheduler.shutdown();
+        try {
+            if (!scheduler.awaitTermination(10, TimeUnit.SECONDS)) {
+                scheduler.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            scheduler.shutdownNow();
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    // Message classes for node communication
+    private static class CacheUpdate<K, V> implements Serializable {
+        private final K key;
+        private final V value;
+
+        public CacheUpdate(K key, V value) {
+            this.key = key;
+            this.value = value;
+        }
+    }
+
+    private static class CacheRequest<K> implements Serializable {
+        private final K key;
+
+        public CacheRequest(K key) {
+            this.key = key;
+        }
+    }
+
+    private static class CacheResponse<V> implements Serializable {
+        private final V value;
+
+        public CacheResponse(V value) {
+            this.value = value;
+        }
+    }
+
+    private static class Heartbeat implements Serializable {
+        private final String nodeId;
+
+        public Heartbeat(String nodeId) {
+            this.nodeId = nodeId;
+        }
+    }
+
+    public static void main(String[] args) {
+        DistributedCache<String, String> cache = 
+            new DistributedCache<>(100, Duration.ofMinutes(30), 
+                                 EvictionPolicy.LRU);
+
+        // Add some nodes
+        cache.addNode(new Node("node1", 
+            new InetSocketAddress("localhost", 8081)));
+        cache.addNode(new Node("node2", 
+            new InetSocketAddress("localhost", 8082)));
+
+        // Example usage
+        cache.put("key1", "value1");
+        Optional<String> value = cache.get("key1");
+        value.ifPresent(System.out::println);
+
+        // Shutdown cache
+        cache.shutdown();
+    }
+}`,
+    explanation: "This advanced exercise demonstrates implementing a distributed cache system with features including:\n" +
+                "1. Multiple cache eviction policies (LRU, LFU, FIFO)\n" +
+                "2. TTL-based entry expiration\n" +
+                "3. Distributed node management with heartbeat mechanism\n" +
+                "4. Concurrent access handling using ReadWriteLock\n" +
+                "5. Asynchronous update propagation\n" +
+                "6. Node failure detection and recovery\n" +
+                "7. Network communication between nodes\n" +
+                "The implementation uses various Java concurrency utilities and networking features to create a robust distributed system."
+            }
+            }
+            ]
+        }
+    }
+}
+
 ];
 
 export default resources;
