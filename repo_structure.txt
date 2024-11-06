@@ -197,9 +197,15 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── devprod/
 │   │   │   │   └── page.jsx
+│   │   │   ├── distributed-hybrid/
+│   │   │   │   └── page.jsx
 │   │   │   ├── expertdev/
 │   │   │   │   └── page.jsx
 │   │   │   ├── explore/
+│   │   │   │   └── page.jsx
+│   │   │   ├── genai/
+│   │   │   │   └── page.jsx
+│   │   │   ├── generative-ai-overview/
 │   │   │   │   └── page.jsx
 │   │   │   ├── genai/
 │   │   │   │   └── page.jsx
@@ -215,11 +221,15 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── how-apply/
 │   │   │   │   └── page.jsx
+│   │   │   ├── industry-solutions/
+│   │   │   │   └── page.jsx
 │   │   │   ├── inovate/
 │   │   │   │   └── page.jsx
 │   │   │   ├── ioext/
 │   │   │   │   └── page.jsx
 │   │   │   ├── localdev/
+│   │   │   │   └── page.jsx
+│   │   │   ├── networking-overview/
 │   │   │   │   └── page.jsx
 │   │   │   ├── operating-system/
 │   │   │   │   └── page.jsx

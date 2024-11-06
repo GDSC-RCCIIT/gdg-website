@@ -9565,387 +9565,1373 @@ abstract class AppDatabase : RoomDatabase() {
                                 "7. Integration with a payment gateway like Stripe or PayPal\n" +
                                 "8. Performance optimization for handling large data and reducing memory usage"
 
-                        }
-                    }
+                }
+            }
+        ]
+    }   
+}
+},
+{
+    id: 9,
+    title: "Open Source Learning",
+    description: "Kickstart Your Journey in Open Source",
+    extendedContent: "Open source software development allows you to collaborate, contribute, and learn from real-world projects. This roadmap guides you through the skills, platforms, and tools needed to start contributing to open source, with a focus on effective collaboration, version control, and project navigation.\n\nYou'll gain practical experience working with Git, GitHub, and collaborative workflows, as well as an understanding of community standards and software licensing. This track equips you with valuable hands-on skills for career growth.",
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        title: "Open Source Learning Track",
+        description: "Learn the fundamentals of open-source contributions and community collaboration",
+        extendedContent: "Open source software development allows you to collaborate, contribute, and learn from real-world projects. This roadmap guides you through the skills, platforms, and tools needed to start contributing to open source, with a focus on effective collaboration, version control, and project navigation.\n\nYou'll gain practical experience working with Git, GitHub, and collaborative workflows, as well as an understanding of community standards and software licensing. This track equips you with valuable hands-on skills for career growth.",
+        prerequisites: [
+            "Familiarity with a programming language (e.g., Python, JavaScript, or C++)",
+            "Understanding of basic data structures and algorithms",
+            "Basic knowledge of version control systems (e.g., Git)",
+            "Interest in collaboration and teamwork",
+            "Willingness to learn and adapt to different codebases"
+        ],
+        outcomes: [
+            "Contribute to real-world open source projects",
+            "Use Git and GitHub proficiently in collaborative environments",
+            "Navigate and understand complex codebases",
+            "Communicate effectively with other contributors and maintainers"
+        ],
+        sections: [
+            {
+                title: "Introduction to Open Source",
+                content: "Understand the fundamentals of open source, including licensing, community standards, and project selection."
+            },
+            {
+                title: "Git and GitHub Essentials",
+                content: "Learn the basics of Git, GitHub workflows, and version control principles for collaborative coding."
+            },
+            {
+                title: "Finding and Choosing Projects",
+                content: "Explore strategies for finding beginner-friendly projects, reading codebases, and understanding contribution guidelines."
+            },
+            {
+                title: "Making Your First Contribution",
+                content: "Learn the process of forking, cloning, and submitting pull requests, with best practices for code submission."
+            },
+            {
+                title: "Advanced Collaboration Skills",
+                content: "Develop skills in collaborative workflows, including handling code reviews, issues, and project discussions."
+            },
+            {
+                title: "Project Maintenance and Management",
+                content: "Gain insights into maintaining open source projects, including responding to contributions, managing community interactions, and ensuring project sustainability."
+            },
+        ]
+        
+    },
+    content: {
+        examples: [
+            {
+                title: "First Contribution via Pull Request",
+                code: "// Step 1: Fork the repository\n// Step 2: Clone to local machine\n$ git clone https://github.com/username/repository.git\n\n// Step 3: Create a new branch\n$ git checkout -b new-feature\n\n// Step 4: Make changes and commit\n$ git add .\n$ git commit -m \"Add new feature\"\n\n// Step 5: Push changes to GitHub\n$ git push origin new-feature\n\n// Step 6: Create a pull request on GitHub",
+                explanation: "This example demonstrates the basic workflow for making your first contribution on GitHub, from forking a repository to creating a pull request."
+            },
+            {
+                title: "Setting Up Open Source Project Locally",
+                code: "# Clone the project repository\n$ git clone https://github.com/example/project.git\n\n# Navigate into project directory\n$ cd project\n\n# Install dependencies (using npm for Node.js projects)\n$ npm install\n\n# Run the project (for example, starting a development server)\n$ npm start",
+                explanation: "Basic steps to clone and set up a local development environment for an open source project, using a Node.js-based project as an example."
+            },
+            {
+                title: "Fixing a Bug in an Open Source Project",
+                code: "# Step 1: Identify the issue on GitHub\n# Step 2: Clone the repository\n$ git clone https://github.com/example/project.git\n\n# Step 3: Create a new branch for the bug fix\n$ git checkout -b fix-bug-issue-123\n\n# Step 4: Make necessary changes to fix the bug\n# (Edit relevant files)\n\n# Step 5: Test the changes\n$ npm test\n\n# Step 6: Commit the changes\n$ git add .\n$ git commit -m \"Fix bug in feature\"\n\n# Step 7: Push changes and create a pull request\n$ git push origin fix-bug-issue-123\n",
+                explanation: "This example illustrates how to address a bug in an open source project, from identifying the issue to submitting a pull request."
+            },
+            {
+                title: "Adding a New Feature to a Project",
+                code: "// Step 1: Fork the repository and clone it\n$ git clone https://github.com/username/repository.git\n\n// Step 2: Create a new feature branch\n$ git checkout -b feature/new-awesome-feature\n\n// Step 3: Implement the feature (e.g., adding a new function)\n// (Edit relevant files to add functionality)\n\n// Step 4: Commit your changes\n$ git add .\n$ git commit -m \"Implement new awesome feature\"\n\n// Step 5: Push the branch to GitHub\n$ git push origin feature/new-awesome-feature\n\n// Step 6: Open a pull request on GitHub and describe your feature",
+                explanation: "This example guides you through adding a new feature to an open source project, from forking to submitting a pull request."
+            },
+            {
+                title: "Creating and Running Tests for an Open Source Project",
+                code: "// Step 1: Clone the repository\n$ git clone https://github.com/example/project.git\n\n// Step 2: Navigate to the project directory\n$ cd project\n\n// Step 3: Create a new branch for the tests\n$ git checkout -b add-tests\n\n// Step 4: Write tests (using a testing framework like Jest)\n// (Edit or create test files)\n\n// Step 5: Run tests to ensure everything works\n$ npm test\n\n// Step 6: Commit your test cases\n$ git add .\n$ git commit -m \"Add tests for existing functionality\"\n\n// Step 7: Push changes and create a pull request\n$ git push origin add-tests\n",
+                explanation: "This example describes how to add tests to an open source project, ensuring the code's reliability before submitting a pull request."
+            },
+            {
+                title: "Reviewing a Pull Request",
+                code: "# Step 1: Go to the 'Pull Requests' section of the repository\n# Step 2: Click on the pull request you want to review\n# Step 3: Review the code changes by looking at the 'Files Changed' tab\n# Step 4: Add comments or suggestions on specific lines by clicking on the '+' icon next to the line\n# Step 5: Approve the pull request if it meets the criteria, or request changes if necessary\n# Step 6: Leave a comment summarizing your review and submit it",
+                explanation: "This example outlines the steps for reviewing a pull request, providing feedback, and either approving or requesting changes."
+            },
+            {
+                title: "Maintaining an Open Source Project",
+                code: "// Step 1: Monitor issues reported by users on GitHub\n// Step 2: Prioritize issues based on severity and community impact\n// Step 3: Assign issues to contributors or work on them yourself\n// Step 4: Merge pull requests after thorough review\n// Step 5: Regularly update documentation and project dependencies\n// Step 6: Communicate with the community through discussions or updates",
+                explanation: "This example explains how to maintain an open source project, including monitoring issues, merging contributions, and keeping documentation up to date."
+            },
+            {
+                title: "Updating Project Documentation",
+                code: "# Step 1: Identify the documentation that needs updating (e.g., README, Wiki)\n# Step 2: Make necessary edits or additions to clarify usage or installation\n# Step 3: Use Markdown for formatting and adding links\n# Step 4: Preview your changes in the GitHub editor\n# Step 5: Commit your changes with a clear message\n$ git commit -m \"Update README for better clarity\"\n# Step 6: Push changes to the repository\n$ git push origin main",
+                explanation: "This example describes how to update project documentation, ensuring users have accurate and helpful information."
+            }
+        ],
+        roadmap: [
+            {
+                title: "1. Understanding Open Source",
+                description: "Learn about open source principles, licensing, and communities.",
+                topics: [
+                    "What is open source software?",
+                    "Open source licenses and choosing one.",
+                    "Importance of community and collaboration.",
+                    "How to find open source projects."
+                ]
+            },
+            {
+                title: "2. Git & GitHub Basics",
+                description: "Master version control with Git and GitHub.",
+                topics: [
+                    "Git basics: clone, commit, push, and pull.",
+                    "GitHub features: issues, pull requests, and forks.",
+                    "Branching and merging in Git.",
+                    "Collaborative workflows and code reviews."
+                ]
+            },
+            {
+                title: "3. Contributing to Open Source",
+                description: "Learn how to effectively contribute to projects.",
+                topics: [
+                    "Finding beginner-friendly projects.",
+                    "Reading and understanding contribution guidelines.",
+                    "Creating pull requests and handling feedback.",
+                    "Documenting code and writing helpful commit messages."
+                ]
+            },
+            {
+                title: "4. Enhancing Contribution Skills",
+                description: "Deepen your contributions with testing, documentation, and CI/CD.",
+                topics: [
+                    "Writing tests and understanding test frameworks.",
+                    "Improving project documentation.",
+                    "Automated testing with CI/CD pipelines.",
+                    "Addressing and managing issues effectively."
+                ]
+            },
+            {
+                title: "5. Project Maintenance and Management",
+                description: "Learn about managing and maintaining open source projects.",
+                topics: [
+                    "Responding to issues and pull requests.",
+                    "Organizing project tasks and assigning roles.",
+                    "Maintaining documentation and onboarding contributors.",
+                    "Ensuring project health and community engagement."
+                ]
+            },
+            {
+                title: "6. Advanced Open Source Practices",
+                description: "Explore strategies for leading and scaling open source projects.",
+                topics: [
+                    "Scaling projects and managing large teams.",
+                    "Implementing effective governance models.",
+                    "Handling conflicts and fostering a positive community culture.",
+                    "Navigating legal aspects and compliance in open source."
                 ]
             }
-        }
-    },
-    {
-        id: 9,
-        title: "Open Source Learning",
-        description: "Kickstart Your Journey in Open Source",
-        extendedContent: "Open source software development allows you to collaborate, contribute, and learn from real-world projects. This roadmap guides you through the skills, platforms, and tools needed to start contributing to open source, with a focus on effective collaboration, version control, and project navigation.\n\nYou'll gain practical experience working with Git, GitHub, and collaborative workflows, as well as an understanding of community standards and software licensing. This track equips you with valuable hands-on skills for career growth.",
-        icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
-        trackInfo: {
-            title: "Open Source Learning Track",
-            description: "Learn the fundamentals of open-source contributions and community collaboration",
-            extendedContent: "Open source software development allows you to collaborate, contribute, and learn from real-world projects. This roadmap guides you through the skills, platforms, and tools needed to start contributing to open source, with a focus on effective collaboration, version control, and project navigation.\n\nYou'll gain practical experience working with Git, GitHub, and collaborative workflows, as well as an understanding of community standards and software licensing. This track equips you with valuable hands-on skills for career growth.",
-            prerequisites: [
-                "Familiarity with a programming language (e.g., Python, JavaScript, or C++)",
-                "Understanding of basic data structures and algorithms",
-                "Basic knowledge of version control systems (e.g., Git)",
-                "Interest in collaboration and teamwork",
-                "Willingness to learn and adapt to different codebases"
+        ],
+        
+        resources: {
+            documentation: [
+                {
+                    title: "Open Source Guides by GitHub",
+                    url: "https://opensource.guide/",
+                    description: "Comprehensive guides on how to start contributing to open source and managing projects.",
+                    type: "Guide"
+                },
+                {
+                    title: "Git Documentation",
+                    url: "https://git-scm.com/doc",
+                    description: "Official Git documentation for understanding version control.",
+                    type: "Official Documentation"
+                },
+                {
+                    title: "Choosing an Open Source License",
+                    url: "https://choosealicense.com/",
+                    description: "Helpful tool for understanding and selecting appropriate licenses for open source projects.",
+                    type: "License Guide"
+                }
             ],
-            outcomes: [
-                "Contribute to real-world open source projects",
-                "Use Git and GitHub proficiently in collaborative environments",
-                "Navigate and understand complex codebases",
-                "Communicate effectively with other contributors and maintainers"
+            tutorials: [
+                {
+                    title: "First Contributions",
+                    url: "https://firstcontributions.github.io/",
+                    description: "Beginner-friendly guide and resources to make your first contribution on GitHub.",
+                    type: "Interactive Tutorial"
+                },
+                {
+                    title: "GitHub Learning Lab",
+                    url: "https://lab.github.com/",
+                    description: "Self-paced interactive tutorials for learning GitHub, Git, and collaborative workflows.",
+                    type: "Interactive Platform"
+                },
+                {
+                    title: "Contributing to Open Source (freeCodeCamp)",
+                    url: "https://www.freecodecamp.org/news/how-to-contribute-to-open-source-projects-beginners-guide/",
+                    description: "A beginner's guide on finding and contributing to open source projects.",
+                    type: "Beginner Guide"
+                }
             ],
-            sections: [
+            videos: [
                 {
-                    title: "Introduction to Open Source",
-                    content: "Understand the fundamentals of open source, including licensing, community standards, and project selection."
+                    title: "How to Contribute to Open Source Projects on GitHub",
+                    url: "https://www.youtube.com/watch?v=MnUd31TvBoU",
+                    description: "A practical video guide for making your first open source contribution on GitHub.",
+                    platform: "YouTube"
                 },
                 {
-                    title: "Git and GitHub Essentials",
-                    content: "Learn the basics of Git, GitHub workflows, and version control principles for collaborative coding."
+                    title: "Understanding Git and GitHub",
+                    url: "https://www.youtube.com/watch?v=USjZcfj8yxE",
+                    description: "A beginner-friendly introduction to Git and GitHub by Traversy Media.",
+                    platform: "YouTube"
                 },
                 {
-                    title: "Finding and Choosing Projects",
-                    content: "Explore strategies for finding beginner-friendly projects, reading codebases, and understanding contribution guidelines."
+                    title: "The Basics of Open Source by Google",
+                    url: "https://www.youtube.com/watch?v=yzeVMecydCE",
+                    description: "Google's overview on what open source is and how to get involved.",
+                    platform: "YouTube"
+                }
+            ],
+            books: [
+                {
+                    title: "Producing Open Source Software",
+                    author: "Karl Fogel",
+                    description: "A comprehensive guide on how to build, manage, and grow successful open source projects.",
+                    level: "Intermediate"
                 },
                 {
-                    title: "Making Your First Contribution",
-                    content: "Learn the process of forking, cloning, and submitting pull requests, with best practices for code submission."
+                    title: "The Cathedral & the Bazaar",
+                    author: "Eric S. Raymond",
+                    description: "Explores the principles of open source and its impact on software development, with insights into collaborative workflows.",
+                    level: "Beginner to Intermediate"
                 },
                 {
-                    title: "Advanced Collaboration Skills",
-                    content: "Develop skills in collaborative workflows, including handling code reviews, issues, and project discussions."
+                    title: "Forge Your Future with Open Source",
+                    author: "VM (Vicky) Brasseur",
+                    description: "Practical guidance on how to contribute to open source and navigate project communities.",
+                    level: "Beginner"
+                }
+            ],
+            practice: [
+                {
+                    title: "Up For Grabs",
+                    url: "https://up-for-grabs.net/",
+                    description: "A platform to find beginner-friendly issues in open source projects, tagged by maintainers to help new contributors.",
+                    type: "Issue Finder"
                 },
                 {
-                    title: "Project Maintenance and Management",
-                    content: "Gain insights into maintaining open source projects, including responding to contributions, managing community interactions, and ensuring project sustainability."
+                    title: "First Timers Only",
+                    url: "https://www.firsttimersonly.com/",
+                    description: "Resources and projects geared towards new contributors making their first open source contribution.",
+                    type: "Resource Hub"
                 },
+                {
+                    title: "CodeTriage",
+                    url: "https://www.codetriage.com/",
+                    description: "Helps developers find open source projects to contribute to by triaging GitHub issues in need of assistance.",
+                    type: "Contribution Platform"
+                }
+            ],
+            events: [
+                {
+                    title: "Google Summer of Code (GSoC)",
+                    url: "https://summerofcode.withgoogle.com/",
+                    description: "An annual program sponsored by Google that offers stipends to university students for working on open source projects during the summer.",
+                    type: "Open Source Event"
+                },
+                {
+                    title: "GirlScript Summer of Code (GSSoC)",
+                    url: "https://gssoc.girlscript.tech/",
+                    description: "An open-source program aimed at encouraging women and underrepresented groups to participate in open source development.",
+                    type: "Open Source Event"
+                },
+                {
+                    title: "Hacktoberfest",
+                    url: "https://hacktoberfest.digitalocean.com/",
+                    description: "A month-long celebration of open source software run by DigitalOcean, encouraging contributions to open source projects.",
+                    type: "Open Source Event"
+                }
+            ]
+
+        },
+        practice: {
+            beginnerExercises: [
+                {
+                    title: "Creating Your First Pull Request",
+                    difficulty: "Easy",
+                    description: "Find a beginner-friendly repository, make a minor change, and submit a pull request.",
+                    hints: [
+                        "Look for 'good first issue' or 'help wanted' tags on GitHub",
+                        "Follow contribution guidelines carefully",
+                        "Keep your pull request simple and concise"
+                    ],
+                    solution: {
+                        code: "// Fork the repository\n$ git fork https://github.com/example/project\n\n// Clone your fork\n$ git clone https://github.com/your-username/project\n\n// Make changes, commit, and push\n$ git add .\n$ git commit -m \"Fix typo in README\"\n$ git push origin your-branch\n\n// Submit a pull request from your GitHub forked repo"
+                    }
+                },
+                {
+                    title: "Writing Useful Documentation",
+                    difficulty: "Easy",
+                    description: "Choose an open source project and improve its documentation. This could include improving README files, writing tutorials, or creating a contribution guide.",
+                    hints: [
+                        "Look for documentation improvements in popular projects",
+                        "Focus on clear, concise language and organized structure",
+                        "Add examples or images where possible for clarity"
+                    ],
+                    solution: {
+                        code: "// Example of writing a README\n# Project Name\n\n## Description\nBriefly describe the project purpose.\n\n## Installation\nList steps to install dependencies.\n\n## Usage\nExplain how to use the project.\n\n## Contribution Guidelines\nProvide guidelines for new contributors."
+                    }
+                }
+            ],
+            intermediateExercises: [
+                {
+                    title: "Creating a Feature for an Open Source Project",
+                    difficulty: "Medium",
+                    description: "Identify an existing feature request in an open source project, implement the feature, and submit it as a pull request.",
+                    hints: [
+                        "Search the repository for 'feature request' issues",
+                        "Review the project's coding standards before starting",
+                        "Write tests for your new feature to ensure its functionality"
+                    ],
+                    solution: {
+                        code: "// Step 1: Fork the repository\n$ git fork https://github.com/example/project\n\n// Step 2: Clone your fork\n$ git clone https://github.com/your-username/project\n\n// Step 3: Create a new branch for your feature\n$ git checkout -b new-feature\n\n// Step 4: Implement the feature in the codebase\n// Example code implementation here\n\n// Step 5: Add tests for your feature\n// Example test cases here\n\n// Step 6: Commit your changes\n$ git add .\n$ git commit -m \"Add new feature: description\"\n\n// Step 7: Push your branch to your fork\n$ git push origin new-feature\n\n// Step 8: Open a pull request on the original repository"
+                    }
+                },
+                {
+                    title: "Reviewing Code Contributions",
+                    difficulty: "Medium",
+                    description: "Select a pull request from an open-source project to review. Analyze the code changes, suggest improvements, and provide feedback to the contributor.",
+                    hints: [
+                        "Look for pull requests that are labeled 'needs review'",
+                        "Pay attention to code quality, style, and functionality",
+                        "Be constructive and clear in your feedback"
+                    ],
+                    solution: {
+                        code: "// Step 1: Navigate to the pull requests section of the repository\n// Step 2: Select a pull request to review\n\n// Step 3: Check the code changes\n// Example code review comments:\n// - The variable naming could be more descriptive.\n// - Consider adding error handling for edge cases.\n// - Great job on implementing the feature, but let's optimize this function.\n\n// Step 4: Leave feedback on the pull request\n// Example comment:\n// 'Thank you for your contribution! I have some suggestions to improve the code.'\n\n// Step 5: Approve the pull request if all looks good or request changes"
+                    }
+                }
+            ],
+            
+            advancedExercises: [
+                {
+                    title: "Becoming a Project Maintainer",
+                    difficulty: "Advanced",
+                    description: "Take over maintenance of an open-source project. This involves managing issues, reviewing pull requests, and coordinating with contributors.",
+                    hints: [
+                        "Start by reaching out to the current maintainers to express your interest",
+                        "Familiarize yourself with the project's contribution guidelines and codebase",
+                        "Communicate clearly and constructively with contributors to encourage engagement"
+                    ],
+                    solution: {
+                        code: "// Step 1: Contact the current maintainer via GitHub or project communication channels\n// Example message:\n// Hi [Maintainer's Name],\n// I'm interested in helping maintain [Project Name]. I have been contributing for a while and would love to take on a more active role.\n\n// Step 2: Review open issues and pull requests regularly\n// Example code for managing issues:\n// function reviewIssues() {\n//   const issues = fetchIssues();\n//   issues.forEach(issue => {\n//     if (issue.isOpen) {\n//       assignLabels(issue);\n//       respondToIssue(issue);\n//     }\n//   });\n// }\n\n// Step 3: Conduct code reviews for incoming pull requests\n// Example code for reviewing a PR:\n// function reviewPullRequest(pr) {\n//   const codeChanges = fetchCodeChanges(pr);\n//   if (isCodeQualityGood(codeChanges)) {\n//     approvePullRequest(pr);\n//   } else {\n//     requestChanges(pr);\n//   }\n// }\n"
+                    }
+                },
+                {
+                    title: "Implementing a Major Refactor",
+                    difficulty: "Advanced",
+                    description: "Select an open-source project that could benefit from a refactor. Plan and implement the refactor while maintaining existing functionality, then submit your changes as a pull request.",
+                    hints: [
+                        "Identify areas of the codebase that are difficult to maintain or understand",
+                        "Communicate your refactoring plan with the project maintainers before starting",
+                        "Ensure all existing tests pass after your refactor"
+                    ],
+                    solution: {
+                        code: "// Step 1: Fork the repository\n$ git fork https://github.com/example/project\n\n// Step 2: Clone your fork\n$ git clone https://github.com/your-username/project\n\n// Step 3: Create a new branch for the refactor\n$ git checkout -b refactor-feature\n\n// Step 4: Identify and implement refactor changes\n// Example refactor code:\n// function refactoredFunction() {\n//   // New implementation here\n// }\n\n// Step 5: Run tests to ensure functionality is maintained\n$ npm test\n\n// Step 6: Commit your changes\n$ git add .\n$ git commit -m \"Refactor: description of changes\"\n\n// Step 7: Push your branch to your fork\n$ git push origin refactor-feature\n\n// Step 8: Open a pull request on the original repository"
+                    }
+                }
             ]
             
-        },
-        content: {
-            examples: [
-                {
-                    title: "First Contribution via Pull Request",
-                    code: "// Step 1: Fork the repository\n// Step 2: Clone to local machine\n$ git clone https://github.com/username/repository.git\n\n// Step 3: Create a new branch\n$ git checkout -b new-feature\n\n// Step 4: Make changes and commit\n$ git add .\n$ git commit -m \"Add new feature\"\n\n// Step 5: Push changes to GitHub\n$ git push origin new-feature\n\n// Step 6: Create a pull request on GitHub",
-                    explanation: "This example demonstrates the basic workflow for making your first contribution on GitHub, from forking a repository to creating a pull request."
-                },
-                {
-                    title: "Setting Up Open Source Project Locally",
-                    code: "# Clone the project repository\n$ git clone https://github.com/example/project.git\n\n# Navigate into project directory\n$ cd project\n\n# Install dependencies (using npm for Node.js projects)\n$ npm install\n\n# Run the project (for example, starting a development server)\n$ npm start",
-                    explanation: "Basic steps to clone and set up a local development environment for an open source project, using a Node.js-based project as an example."
-                },
-                {
-                    title: "Fixing a Bug in an Open Source Project",
-                    code: "# Step 1: Identify the issue on GitHub\n# Step 2: Clone the repository\n$ git clone https://github.com/example/project.git\n\n# Step 3: Create a new branch for the bug fix\n$ git checkout -b fix-bug-issue-123\n\n# Step 4: Make necessary changes to fix the bug\n# (Edit relevant files)\n\n# Step 5: Test the changes\n$ npm test\n\n# Step 6: Commit the changes\n$ git add .\n$ git commit -m \"Fix bug in feature\"\n\n# Step 7: Push changes and create a pull request\n$ git push origin fix-bug-issue-123\n",
-                    explanation: "This example illustrates how to address a bug in an open source project, from identifying the issue to submitting a pull request."
-                },
-                {
-                    title: "Adding a New Feature to a Project",
-                    code: "// Step 1: Fork the repository and clone it\n$ git clone https://github.com/username/repository.git\n\n// Step 2: Create a new feature branch\n$ git checkout -b feature/new-awesome-feature\n\n// Step 3: Implement the feature (e.g., adding a new function)\n// (Edit relevant files to add functionality)\n\n// Step 4: Commit your changes\n$ git add .\n$ git commit -m \"Implement new awesome feature\"\n\n// Step 5: Push the branch to GitHub\n$ git push origin feature/new-awesome-feature\n\n// Step 6: Open a pull request on GitHub and describe your feature",
-                    explanation: "This example guides you through adding a new feature to an open source project, from forking to submitting a pull request."
-                },
-                {
-                    title: "Creating and Running Tests for an Open Source Project",
-                    code: "// Step 1: Clone the repository\n$ git clone https://github.com/example/project.git\n\n// Step 2: Navigate to the project directory\n$ cd project\n\n// Step 3: Create a new branch for the tests\n$ git checkout -b add-tests\n\n// Step 4: Write tests (using a testing framework like Jest)\n// (Edit or create test files)\n\n// Step 5: Run tests to ensure everything works\n$ npm test\n\n// Step 6: Commit your test cases\n$ git add .\n$ git commit -m \"Add tests for existing functionality\"\n\n// Step 7: Push changes and create a pull request\n$ git push origin add-tests\n",
-                    explanation: "This example describes how to add tests to an open source project, ensuring the code's reliability before submitting a pull request."
-                },
-                {
-                    title: "Reviewing a Pull Request",
-                    code: "# Step 1: Go to the 'Pull Requests' section of the repository\n# Step 2: Click on the pull request you want to review\n# Step 3: Review the code changes by looking at the 'Files Changed' tab\n# Step 4: Add comments or suggestions on specific lines by clicking on the '+' icon next to the line\n# Step 5: Approve the pull request if it meets the criteria, or request changes if necessary\n# Step 6: Leave a comment summarizing your review and submit it",
-                    explanation: "This example outlines the steps for reviewing a pull request, providing feedback, and either approving or requesting changes."
-                },
-                {
-                    title: "Maintaining an Open Source Project",
-                    code: "// Step 1: Monitor issues reported by users on GitHub\n// Step 2: Prioritize issues based on severity and community impact\n// Step 3: Assign issues to contributors or work on them yourself\n// Step 4: Merge pull requests after thorough review\n// Step 5: Regularly update documentation and project dependencies\n// Step 6: Communicate with the community through discussions or updates",
-                    explanation: "This example explains how to maintain an open source project, including monitoring issues, merging contributions, and keeping documentation up to date."
-                },
-                {
-                    title: "Updating Project Documentation",
-                    code: "# Step 1: Identify the documentation that needs updating (e.g., README, Wiki)\n# Step 2: Make necessary edits or additions to clarify usage or installation\n# Step 3: Use Markdown for formatting and adding links\n# Step 4: Preview your changes in the GitHub editor\n# Step 5: Commit your changes with a clear message\n$ git commit -m \"Update README for better clarity\"\n# Step 6: Push changes to the repository\n$ git push origin main",
-                    explanation: "This example describes how to update project documentation, ensuring users have accurate and helpful information."
-                }
-            ],
-            roadmap: [
-                {
-                    title: "1. Understanding Open Source",
-                    description: "Learn about open source principles, licensing, and communities.",
-                    topics: [
-                        "What is open source software?",
-                        "Open source licenses and choosing one.",
-                        "Importance of community and collaboration.",
-                        "How to find open source projects."
-                    ]
-                },
-                {
-                    title: "2. Git & GitHub Basics",
-                    description: "Master version control with Git and GitHub.",
-                    topics: [
-                        "Git basics: clone, commit, push, and pull.",
-                        "GitHub features: issues, pull requests, and forks.",
-                        "Branching and merging in Git.",
-                        "Collaborative workflows and code reviews."
-                    ]
-                },
-                {
-                    title: "3. Contributing to Open Source",
-                    description: "Learn how to effectively contribute to projects.",
-                    topics: [
-                        "Finding beginner-friendly projects.",
-                        "Reading and understanding contribution guidelines.",
-                        "Creating pull requests and handling feedback.",
-                        "Documenting code and writing helpful commit messages."
-                    ]
-                },
-                {
-                    title: "4. Enhancing Contribution Skills",
-                    description: "Deepen your contributions with testing, documentation, and CI/CD.",
-                    topics: [
-                        "Writing tests and understanding test frameworks.",
-                        "Improving project documentation.",
-                        "Automated testing with CI/CD pipelines.",
-                        "Addressing and managing issues effectively."
-                    ]
-                },
-                {
-                    title: "5. Project Maintenance and Management",
-                    description: "Learn about managing and maintaining open source projects.",
-                    topics: [
-                        "Responding to issues and pull requests.",
-                        "Organizing project tasks and assigning roles.",
-                        "Maintaining documentation and onboarding contributors.",
-                        "Ensuring project health and community engagement."
-                    ]
-                },
-                {
-                    title: "6. Advanced Open Source Practices",
-                    description: "Explore strategies for leading and scaling open source projects.",
-                    topics: [
-                        "Scaling projects and managing large teams.",
-                        "Implementing effective governance models.",
-                        "Handling conflicts and fostering a positive community culture.",
-                        "Navigating legal aspects and compliance in open source."
-                    ]
-                }
-            ],
             
-            resources: {
-                documentation: [
-                    {
-                        title: "Open Source Guides by GitHub",
-                        url: "https://opensource.guide/",
-                        description: "Comprehensive guides on how to start contributing to open source and managing projects.",
-                        type: "Guide"
-                    },
-                    {
-                        title: "Git Documentation",
-                        url: "https://git-scm.com/doc",
-                        description: "Official Git documentation for understanding version control.",
-                        type: "Official Documentation"
-                    },
-                    {
-                        title: "Choosing an Open Source License",
-                        url: "https://choosealicense.com/",
-                        description: "Helpful tool for understanding and selecting appropriate licenses for open source projects.",
-                        type: "License Guide"
-                    }
-                ],
-                tutorials: [
-                    {
-                        title: "First Contributions",
-                        url: "https://firstcontributions.github.io/",
-                        description: "Beginner-friendly guide and resources to make your first contribution on GitHub.",
-                        type: "Interactive Tutorial"
-                    },
-                    {
-                        title: "GitHub Learning Lab",
-                        url: "https://lab.github.com/",
-                        description: "Self-paced interactive tutorials for learning GitHub, Git, and collaborative workflows.",
-                        type: "Interactive Platform"
-                    },
-                    {
-                        title: "Contributing to Open Source (freeCodeCamp)",
-                        url: "https://www.freecodecamp.org/news/how-to-contribute-to-open-source-projects-beginners-guide/",
-                        description: "A beginner's guide on finding and contributing to open source projects.",
-                        type: "Beginner Guide"
-                    }
-                ],
-                videos: [
-                    {
-                        title: "How to Contribute to Open Source Projects on GitHub",
-                        url: "https://www.youtube.com/watch?v=MnUd31TvBoU",
-                        description: "A practical video guide for making your first open source contribution on GitHub.",
-                        platform: "YouTube"
-                    },
-                    {
-                        title: "Understanding Git and GitHub",
-                        url: "https://www.youtube.com/watch?v=USjZcfj8yxE",
-                        description: "A beginner-friendly introduction to Git and GitHub by Traversy Media.",
-                        platform: "YouTube"
-                    },
-                    {
-                        title: "The Basics of Open Source by Google",
-                        url: "https://www.youtube.com/watch?v=yzeVMecydCE",
-                        description: "Google's overview on what open source is and how to get involved.",
-                        platform: "YouTube"
-                    }
-                ],
-                books: [
-                    {
-                        title: "Producing Open Source Software",
-                        author: "Karl Fogel",
-                        description: "A comprehensive guide on how to build, manage, and grow successful open source projects.",
-                        level: "Intermediate"
-                    },
-                    {
-                        title: "The Cathedral & the Bazaar",
-                        author: "Eric S. Raymond",
-                        description: "Explores the principles of open source and its impact on software development, with insights into collaborative workflows.",
-                        level: "Beginner to Intermediate"
-                    },
-                    {
-                        title: "Forge Your Future with Open Source",
-                        author: "VM (Vicky) Brasseur",
-                        description: "Practical guidance on how to contribute to open source and navigate project communities.",
-                        level: "Beginner"
-                    }
-                ],
-                practice: [
-                    {
-                        title: "Up For Grabs",
-                        url: "https://up-for-grabs.net/",
-                        description: "A platform to find beginner-friendly issues in open source projects, tagged by maintainers to help new contributors.",
-                        type: "Issue Finder"
-                    },
-                    {
-                        title: "First Timers Only",
-                        url: "https://www.firsttimersonly.com/",
-                        description: "Resources and projects geared towards new contributors making their first open source contribution.",
-                        type: "Resource Hub"
-                    },
-                    {
-                        title: "CodeTriage",
-                        url: "https://www.codetriage.com/",
-                        description: "Helps developers find open source projects to contribute to by triaging GitHub issues in need of assistance.",
-                        type: "Contribution Platform"
-                    }
-                ],
-                events: [
-                    {
-                        title: "Google Summer of Code (GSoC)",
-                        url: "https://summerofcode.withgoogle.com/",
-                        description: "An annual program sponsored by Google that offers stipends to university students for working on open source projects during the summer.",
-                        type: "Open Source Event"
-                    },
-                    {
-                        title: "GirlScript Summer of Code (GSSoC)",
-                        url: "https://gssoc.girlscript.tech/",
-                        description: "An open-source program aimed at encouraging women and underrepresented groups to participate in open source development.",
-                        type: "Open Source Event"
-                    },
-                    {
-                        title: "Hacktoberfest",
-                        url: "https://hacktoberfest.digitalocean.com/",
-                        description: "A month-long celebration of open source software run by DigitalOcean, encouraging contributions to open source projects.",
-                        type: "Open Source Event"
-                    }
+        }
+    }
+},
+{
+    id: 10,
+    title: "Cybersecurity",
+    description: "To learn cybersecurity, follow this roadmap",
+    extendedContent: `
+        Master the fundamentals of cybersecurity including network security, 
+        cryptography, and security protocols. Learn about threat detection, 
+        vulnerability assessment, and incident response.
+        
+        This roadmap covers web security, application security testing, 
+        penetration testing, and security best practices. You'll also learn 
+        about security tools, frameworks, and compliance standards.
+        
+        Advanced topics include ethical hacking, forensics, secure coding practices, 
+        and security architecture design. Focus on both offensive and defensive 
+        security techniques.
+    `,
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        prerequisites: [
+            "Basic understanding of computer networks",
+            "Knowledge of operating systems (Linux/Windows)",
+            "Basic programming skills",
+            "Understanding of web technologies",
+            "Command line proficiency",
+            "Basic system administration skills",
+            "Problem-solving and analytical thinking"
+        ],
+        outcomes: [
+            "Understand and implement network security measures",
+            "Perform vulnerability assessments and penetration testing",
+            "Implement security controls and countermeasures",
+            "Conduct security audits and risk assessments",
+            "Handle incident response and forensics",
+            "Implement secure coding practices",
+            "Configure security tools and frameworks",
+            "Understand compliance and security standards",
+            "Perform threat modeling and analysis",
+            "Implement cryptographic solutions"
+        ],
+        sections: [
+            {
+                title: "Security Fundamentals",
+                content: "Master core security concepts including CIA triad, authentication, authorization, and access control. Learn about common security threats, attack vectors, and basic defense mechanisms. Understand security policies, procedures, and best practices."
+            },
+            {
+                title: "Network Security",
+                content: "Learn network security protocols, firewall configuration, IDS/IPS systems, and VPN setup. Understand network attacks and defenses, packet analysis, and secure network architecture. Master tools like Wireshark, tcpdump, and network security monitoring."
+            },
+            {
+                title: "Application Security",
+                content: "Study web application security, secure coding practices, and common vulnerabilities (OWASP Top 10). Learn about input validation, output encoding, and secure session management. Practice secure software development lifecycle and security testing."
+            },
+            {
+                title: "Ethical Hacking",
+                content: "Learn penetration testing methodologies, vulnerability assessment, and exploitation techniques. Master tools like Metasploit, Burp Suite, and Nmap. Understand social engineering, wireless security, and web application hacking."
+            },
+            {
+                title: "Cryptography",
+                content: "Understand cryptographic algorithms, protocols, and implementations. Learn about encryption, digital signatures, and PKI. Study hash functions, random number generation, and cryptographic attack methods."
+            },
+            {
+                title: "Incident Response",
+                content: "Master incident handling procedures, digital forensics, and malware analysis. Learn about security incident management, evidence collection, and analysis. Practice incident documentation and reporting."
+            },
+            {
+                title: "Security Operations",
+                content: "Learn about Security Operations Center (SOC), SIEM systems, and security monitoring. Understand log analysis, security metrics, and continuous monitoring. Study threat intelligence and security automation."
+            },
+            {
+                title: "Compliance & Governance",
+                content: "Understand security frameworks (ISO 27001, NIST), compliance requirements (GDPR, HIPAA), and security policies. Learn about risk management, security auditing, and documentation. Study security awareness and training programs."
+            }
+        ]
+    },
+    content: {
+        examples: [
+            {
+                title: "Network Security Configuration",
+                code: `# Configuring a Basic Firewall with iptables
+    
+    # Flush existing rules
+    iptables -F
+    iptables -X
+    
+    # Set default chain policies
+    iptables -P INPUT DROP
+    iptables -P FORWARD DROP
+    iptables -P OUTPUT ACCEPT
+    
+    # Allow loopback traffic
+    iptables -A INPUT -i lo -j ACCEPT
+    iptables -A OUTPUT -o lo -j ACCEPT
+    
+    # Allow established sessions
+    iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+    
+    # Allow SSH (port 22)
+    iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+    iptables -A OUTPUT -p tcp --sport 22 -m conntrack --ctstate ESTABLISHED -j ACCEPT
+    
+    # Allow HTTP/HTTPS
+    iptables -A INPUT -p tcp --dport 80 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+    iptables -A INPUT -p tcp --dport 443 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+    
+    # Allow DNS resolution
+    iptables -A OUTPUT -p udp --dport 53 -j ACCEPT
+    iptables -A INPUT -p udp --sport 53 -j ACCEPT
+    
+    # Drop invalid packets
+    iptables -A INPUT -m conntrack --ctstate INVALID -j DROP
+    
+    # Log dropped packets
+    iptables -A INPUT -j LOG --log-prefix "IPTables-Dropped: "
+    
+    # Save rules
+    service iptables save
+    
+    # Additional security measures
+    # Enable SYN flood protection
+    echo 1 > /proc/sys/net/ipv4/tcp_syncookies
+    
+    # Disable IP forwarding
+    echo 0 > /proc/sys/net/ipv4/ip_forward
+    
+    # Ignore ICMP broadcast requests
+    echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_broadcasts
+    
+    # Ignore bogus error responses
+    echo 1 > /proc/sys/net/ipv4/icmp_ignore_bogus_error_responses`,
+                explanation: "This example demonstrates basic firewall configuration using iptables, including setting up security rules, allowing specific services, and implementing basic DDoS protection."
+            },
+            {
+                title: "Web Application Security Implementation",
+                code: `// Secure API Endpoint Implementation
+    
+    const express = require('express');
+    const rateLimit = require('express-rate-limit');
+    const helmet = require('helmet');
+    const jwt = require('jsonwebtoken');
+    const bcrypt = require('bcrypt');
+    
+    const app = express();
+    
+    // Security Headers
+    app.use(helmet());
+    
+    // Rate Limiting
+    const limiter = rateLimit({
+        windowMs: 15 * 60 * 1000, // 15 minutes
+        max: 100 // limit each IP to 100 requests per windowMs
+    });
+    app.use(limiter);
+    
+    // JWT Middleware
+    const verifyToken = (req, res, next) => {
+        const token = req.headers['authorization'];
+        
+        if (!token) {
+            return res.status(403).json({ error: 'No token provided' });
+        }
+        
+        try {
+            const decoded = jwt.verify(token.split(' ')[1], process.env.JWT_SECRET);
+            req.user = decoded;
+            next();
+        } catch (error) {
+            return res.status(401).json({ error: 'Invalid token' });
+        }
+    };
+    
+    // Secure Password Hashing
+    const hashPassword = async (password) => {
+        const salt = await bcrypt.genSalt(10);
+        return bcrypt.hash(password, salt);
+    };
+    
+    // Input Validation
+    const validateInput = (input) => {
+        // Remove any potential XSS
+        input = input.replace(/[<>]/g, '');
+        // Validate length
+        if (input.length < 3 || input.length > 50) {
+            throw new Error('Invalid input length');
+        }
+        return input;
+    };
+    
+    // Secure Login Endpoint
+    app.post('/api/login', async (req, res) => {
+        try {
+            const { username, password } = req.body;
+            
+            // Validate input
+            const sanitizedUsername = validateInput(username);
+            
+            // Implement brute force protection
+            if (await checkBruteForce(sanitizedUsername)) {
+                return res.status(429).json({
+                    error: 'Too many login attempts'
+                });
+            }
+            
+            // Check credentials
+            const user = await User.findOne({ username: sanitizedUsername });
+            if (!user) {
+                return res.status(401).json({
+                    error: 'Invalid credentials'
+                });
+            }
+            
+            const validPassword = await bcrypt.compare(password, user.password);
+            if (!validPassword) {
+                await recordFailedAttempt(sanitizedUsername);
+                return res.status(401).json({
+                    error: 'Invalid credentials'
+                });
+            }
+            
+            // Generate JWT
+            const token = jwt.sign(
+                { userId: user._id },
+                process.env.JWT_SECRET,
+                { expiresIn: '1h' }
+            );
+            
+            // Set secure cookie
+            res.cookie('token', token, {
+                httpOnly: true,
+                secure: true,
+                sameSite: 'strict',
+                maxAge: 3600000 // 1 hour
+            });
+            
+            res.json({ token });
+            
+        } catch (error) {
+            res.status(500).json({
+                error: 'Internal server error'
+            });
+        }
+    });
+    
+    // Protected Endpoint Example
+    app.get('/api/protected', verifyToken, async (req, res) => {
+        try {
+            // Implement RBAC
+            if (!await checkPermission(req.user.userId, 'read')) {
+                return res.status(403).json({
+                    error: 'Insufficient permissions'
+                });
+            }
+            
+            // Implement SQL Injection Protection
+            const data = await db.query(
+                'SELECT * FROM sensitive_data WHERE user_id = $1',
+                [req.user.userId]
+            );
+            
+            res.json(data);
+            
+        } catch (error) {
+            res.status(500).json({
+                error: 'Internal server error'
+            });
+        }
+    });
+    
+    // Security Logging
+    const logSecurityEvent = async (event) => {
+        const logEntry = {
+            timestamp: new Date(),
+            event: event.type,
+            user: event.user,
+            ip: event.ip,
+            details: event.details
+        };
+        
+        await SecurityLog.create(logEntry);
+        
+        // Alert on suspicious activity
+        if (event.severity === 'high') {
+            await sendSecurityAlert(logEntry);
+        }
+    };
+    
+    // Error Handling
+    app.use((err, req, res, next) => {
+        // Log error securely
+        logSecurityEvent({
+            type: 'error',
+            severity: 'high',
+            details: err.message,
+            user: req.user?.userId,
+            ip: req.ip
+        });
+        
+        // Don't leak error details
+        res.status(500).json({
+            error: 'An unexpected error occurred'
+        });
+    });`,
+                explanation: "This example showcases secure API implementation including authentication, authorization, input validation, and security best practices."
+            },
+            {
+                title: "Security Audit Script",
+                code: `#!/bin/bash
+    
+    # System Security Audit Script
+    
+    echo "Starting Security Audit..."
+    echo "========================="
+    date
+    echo "========================="
+    
+    # System Information
+    echo "System Information:"
+    echo "------------------------"
+    uname -a
+    echo "------------------------"
+    
+    # Check Users with UID 0
+    echo "Checking for users with UID 0:"
+    echo "------------------------"
+    awk -F: '($3 == "0") {print}' /etc/passwd
+    echo "------------------------"
+    
+    # Check for Empty Passwords
+    echo "Checking for empty passwords:"
+    echo "------------------------"
+    awk -F: '($2 == "") {print}' /etc/shadow
+    echo "------------------------"
+    
+    # List Open Ports
+    echo "Open Ports:"
+    echo "------------------------"
+    netstat -tuln
+    echo "------------------------"
+    
+    # Check SSH Configuration
+    echo "SSH Configuration:"
+    echo "------------------------"
+    grep -i "PermitRootLogin\|PasswordAuthentication" /etc/ssh/sshd_config
+    echo "------------------------"
+    
+    # Check File Permissions
+    echo "Checking sensitive file permissions:"
+    echo "------------------------"
+    ls -l /etc/passwd /etc/shadow /etc/group
+    echo "------------------------"
+    
+    # Check Running Services
+    echo "Running Services:"
+    echo "------------------------"
+    systemctl list-units --type=service --state=running
+    echo "------------------------"
+    
+    # Check Failed Login Attempts
+    echo "Failed Login Attempts:"
+    echo "------------------------"
+    grep "Failed password" /var/log/auth.log | tail -n 10
+    echo "------------------------"
+    
+    # Check Sudo Access
+    echo "Users with Sudo Access:"
+    echo "------------------------"
+    grep -Po '^sudo.+:\K.*$' /etc/group
+    echo "------------------------"
+    
+    # Check for Unowned Files
+    echo "Checking for unowned files:"
+    echo "------------------------"
+    find / -nouser -o -nogroup 2>/dev/null
+    echo "------------------------"
+    
+    # Check Firewall Status
+    echo "Firewall Status:"
+    echo "------------------------"
+    if command -v ufw >/dev/null; then
+        ufw status
+    elif command -v firewall-cmd >/dev/null; then
+        firewall-cmd --list-all
+    else
+        echo "No firewall found"
+    fi
+    echo "------------------------"
+    
+    # Check System Updates
+    echo "Available System Updates:"
+    echo "------------------------"
+    if command -v apt >/dev/null; then
+        apt list --upgradable
+    elif command -v yum >/dev/null; then
+        yum check-update
+    fi
+    echo "------------------------"
+    
+    # Check for Suspicious Processes
+    echo "Checking for suspicious processes:"
+    echo "------------------------"
+    ps aux | awk '{if($3 > 50.0) print $0}'
+    echo "------------------------"
+    
+    # Check Disk Usage
+    echo "Disk Usage:"
+    echo "------------------------"
+    df -h
+    echo "------------------------"
+    
+    # Generate Report
+    echo "Generating detailed report..."
+    {
+        echo "Security Audit Report"
+        echo "Date: $(date)"
+        echo "System: $(uname -a)"
+        echo ""
+        echo "== Findings Summary =="
+        echo "1. Users with root access: $(grep -c '^sudo' /etc/group)"
+        echo "2. Open ports: $(netstat -tuln | grep -c 'LISTEN')"
+        echo "3. Failed login attempts: $(grep -c "Failed password" /var/log/auth.log)"
+        echo "4. Running services: $(systemctl list-units --type=service --state=running | grep -c "running")"
+        echo ""
+        echo "== Recommendations =="
+        echo "1. Review all users with sudo access"
+        echo "2. Close unnecessary open ports"
+        echo "3. Implement stronger password policies"
+        echo "4. Regular security updates"
+    } > security_audit_report_$(date +%Y%m%d).txt
+    
+    echo "Audit complete. Report generated."`,
+                explanation: "This script performs a basic security audit of a Linux system, checking for common security issues and generating a detailed report."
+            }
+        ],
+    
+        roadmap: [
+            {
+                title: "1. Security Fundamentals",
+                description: "Master core security concepts and principles",
+                topics: [
+                    "CIA Triad and Security Principles",
+                    "Authentication and Authorization",
+                    "Security Policies and Procedures",
+                    "Risk Assessment and Management",
+                    "Security Controls and Frameworks",
+                    "Basic Cryptography Concepts",
+                    "Security Architecture Basics"
                 ]
-
+            },
+            {
+                title: "2. Network Security",
+                description: "Learn network security concepts and implementation",
+                topics: [
+                    "Network Protocols and Security",
+                    "Firewall Configuration",
+                    "IDS/IPS Systems",
+                    "VPN Implementation",
+                    "Network Monitoring Tools",
+                    "Wireless Network Security",
+                    "Network Attacks and Defenses"
+                ]
+            },
+            {
+                title: "3. Application Security",
+                description: "Master application security testing and secure development",
+                topics: [
+                    "Web Application Security",
+                    "OWASP Top 10",
+                    "Secure Coding Practices",
+                    "API Security",
+                    "Input Validation",
+                    "Session Management",
+                    "Security Testing"
+                ]
+            },
+            {
+                title: "4. Ethical Hacking",
+                description: "Learn penetration testing and vulnerability assessment",
+                topics: [
+                    "Penetration Testing Methodology",
+                    "Vulnerability Assessment",
+                    "Exploitation Techniques",
+                    "Social Engineering",
+                    "Web Application Hacking",
+                    "Wireless Hacking",
+                    "Mobile Security Testing"
+                ]
+            },
+            {
+                title: "5. Cryptography",
+                description: "Understand cryptographic algorithms and implementations",
+                topics: [
+                    "Symmetric Encryption",
+                    "Asymmetric Encryption",
+                    "Hash Functions",
+                    "Digital Signatures",
+                    "PKI and Certificates",
+                    "Cryptographic Protocols",
+                    "Crypto Implementation"
+                ]
+            },
+            {
+                title: "6. Incident Response",
+                description: "Master incident handling and digital forensics",
+                topics: [
+                    "Incident Response Process",
+                    "Digital Forensics",
+                    "Malware Analysis",
+                    "Log Analysis",
+                    "Evidence Collection",
+                    "Incident Documentation",
+                    "Recovery Procedures"
+                ]
+            },
+            {
+                title: "7. Security Operations",
+                description: "Learn security operations and monitoring",
+                topics: [
+                    "Security Operations Center",
+                    "SIEM Implementation",
+                    "Threat Intelligence",
+                    "Security Automation",
+                    "Continuous Monitoring",
+                    "Alert Management",
+                    "Security Metrics"
+                ]
+            }
+        ],
+        resources: {
+            documentation: [
+            {
+            title: "OWASP Web Security Testing Guide",
+            url: "https://owasp.org/www-project-web-security-testing-guide/",
+            description: "Comprehensive guide for web application security testing",
+            type: "Testing Guide"
+            },
+            {
+            title: "NIST Cybersecurity Framework",
+            url: "https://www.nist.gov/cyberframework",
+            description: "Framework for improving critical infrastructure cybersecurity",
+            type: "Framework"
+            },
+            {
+            title: "MITRE ATT&CK",
+            url: "https://attack.mitre.org/",
+            description: "Knowledge base of adversary tactics and techniques",
+            type: "Knowledge Base"
+            },
+            {
+            title: "CIS Controls",
+            url: "https://www.cisecurity.org/controls/",
+            description: "Best practices for defending against common attacks",
+            type: "Security Controls"
+            },
+            {
+            title: "SANS Reading Room",
+            url: "https://www.sans.org/reading-room/",
+            description: "Collection of research papers on various security topics",
+            type: "Research Papers"
+            }
+            ],
+            tutorials: [
+            {
+            title: "Hack The Box",
+            url: "https://www.hackthebox.eu/",
+            description: "Online platform for practicing penetration testing skills",
+            type: "Hands-on Platform"
+            },
+            {
+            title: "PortSwigger Web Security Academy",
+            url: "https://portswigger.net/web-security",
+            description: "Free online web security training",
+            type: "Online Course"
+            },
+            {
+            title: "Metasploit Unleashed",
+            url: "https://www.offensive-security.com/metasploit-unleashed/",
+            description: "Free Metasploit training course",
+            type: "Online Course"
+            },
+            {
+            title: "Cybrary",
+            url: "https://www.cybrary.it/",
+            description: "Online platform for cybersecurity courses and training",
+            type: "Learning Platform"
+            },
+            {
+            title: "CTFtime",
+            url: "https://ctftime.org/",
+            description: "Collection of Capture The Flag (CTF) competitions and write-ups",
+            type: "Practice Platform"
+            }
+            ],
+            videos: [
+            {
+            title: "Computerphile",
+            url: "https://www.youtube.com/user/Computerphile",
+            description: "Videos on various computer science topics, including security",
+            platform: "YouTube"
+            },
+            {
+            title: "John Hammond",
+            url: "https://www.youtube.com/c/JohnHammond010",
+            description: "Tutorials on ethical hacking, CTFs, and security tools",
+            platform: "YouTube"
+            },
+            {
+            title: "LiveOverflow",
+            url: "https://www.youtube.com/c/LiveOverflowCTF",
+            description: "In-depth explanations of CTF challenges and security concepts",
+            platform: "YouTube"
+            },
+            {
+            title: "IppSec",
+            url: "https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA",
+            description: "Walkthroughs of Hack The Box machines",
+            platform: "YouTube"
+            },
+            {
+            title: "DEFCONConference",
+            url: "https://www.youtube.com/user/DEFCONConference",
+            description: "Recordings of DEFCON conference talks",
+            platform: "YouTube"
+            }
+            ],
+            books: [
+            {
+            title: "The Web Application Hacker's Handbook",
+            author: "Dafydd Stuttard, Marcus Pinto",
+            description: "Comprehensive guide to web application security testing",
+            level: "Intermediate"
+            },
+            {
+            title: "The Shellcoder's Handbook",
+            author: "Chris Anley, John Heasman, Felix Lindner, Gerardo Richarte",
+            description: "Techniques for writing exploits and understanding low-level attacks",
+            level: "Advanced"
+            },
+            {
+            title: "Penetration Testing: A Hands-On Introduction to Hacking",
+            author: "Georgia Weidman",
+            description: "Guide to the fundamentals of penetration testing",
+            level: "Beginner"
+            },
+            {
+            title: "The Basics of Hacking and Penetration Testing",
+            author: "Patrick Engebretson",
+            description: "Introduction to ethical hacking and penetration testing",
+            level: "Beginner"
+            },
+            {
+            title: "Applied Cryptography",
+            author: "Bruce Schneier",
+            description: "Comprehensive guide to cryptography and its applications",
+            level: "Advanced"
+            }
+            ],
+            tools: [
+            {
+            title: "Burp Suite",
+            url: "https://portswigger.net/burp",
+            description: "Web application security testing tool",
+            type: "Testing Tool",
+            category: "Essential"
+            },
+            {
+            title: "Nmap",
+            url: "https://nmap.org/",
+            description: "Network discovery and security auditing tool",
+            type: "Network Tool",
+            category: "Essential"
+            },
+            {
+            title: "Metasploit",
+            url: "https://www.metasploit.com/",
+            description: "Penetration testing framework",
+            type: "Exploitation Framework",
+            category: "Essential"
+            },
+            {
+            title: "Wireshark",
+            url: "https://www.wireshark.org/",
+            description: "Network protocol analyzer",
+            type: "Network Tool",
+            category: "Essential"
+            },
+            {
+            title: "John the Ripper",
+            url: "https://www.openwall.com/john/",
+            description: "Password cracking tool",
+            type: "Password Cracker",
+            category: "Essential"
+            }
+            ],
+            communities: [
+            {
+            title: "Reddit r/netsec",
+            url: "https://www.reddit.com/r/netsec/",
+            description: "Subreddit for technical information security discussion",
+            type: "Forum"
+            },
+            {
+            title: "Security StackExchange",
+            url: "https://security.stackexchange.com/",
+            description: "Q&A community for information security professionals",
+            type: "Q&A Forum"
+            },
+            {
+            title: "OWASP Slack",
+            url: "https://owasp.slack.com/",
+            description: "Slack workspace for OWASP community discussions",
+            type: "Slack Community"
+            },
+            {
+            title: "Security BSides",
+            url: "http://www.securitybsides.com/",
+            description: "Community-driven security conferences worldwide",
+            type: "Conference Series"
+            },
+            {
+            title: "Null Byte",
+            url: "https://null-byte.wonderhowto.com/",
+            description: "Community for aspiring white hat hackers and security professionals",
+            type: "Forum"
+            }
+            ],
+            podcasts: [
+            {
+            title: "Darknet Diaries",
+            url: "https://darknetdiaries.com/",
+            description: "True stories from the dark side of the internet",
+            platform: "Podcast"
+            },
+            {
+            title: "Risky Business",
+            url: "https://risky.biz/",
+            description: "News and in-depth commentary from security industry experts",
+            platform: "Podcast"
+            },
+            {
+            title: "Defensive Security Podcast",
+            url: "https://defensivesecurity.org/",
+            description: "Podcast covering breaches, strategies, tools, and techniques",
+            platform: "Podcast"
+            },
+            {
+            title: "Security Now",
+            url: "https://twit.tv/shows/security-now",
+            description: "Deep dive into security topics with Steve Gibson",
+            platform: "Podcast"
+            }
+            ],
+            blogs: [
+            {
+            title: "Krebs on Security",
+            url: "https://krebsonsecurity.com/",
+            description: "In-depth security news and investigation",
+            type: "Blog"
+            },
+            {
+            title: "Schneier on Security",
+            url: "https://www.schneier.com/",
+            description: "Blog by renowned security expert Bruce Schneier",
+            type: "Blog"
+            },
+            {
+            title: "Troy Hunt's Blog",
+            url: "https://www.troyhunt.com/",
+            description: "Blog by security researcher and founder of Have I Been Pwned",
+            type: "Blog"
+            },
+            {
+            title: "Graham Cluley",
+            url: "https://grahamcluley.com/",
+            description: "Award-winning computer security news, advice, and opinion",
+            type: "Blog"
+            }
+            ]
             },
             practice: {
                 beginnerExercises: [
-                    {
-                        title: "Creating Your First Pull Request",
-                        difficulty: "Easy",
-                        description: "Find a beginner-friendly repository, make a minor change, and submit a pull request.",
-                        hints: [
-                            "Look for 'good first issue' or 'help wanted' tags on GitHub",
-                            "Follow contribution guidelines carefully",
-                            "Keep your pull request simple and concise"
-                        ],
-                        solution: {
-                            code: "// Fork the repository\n$ git fork https://github.com/example/project\n\n// Clone your fork\n$ git clone https://github.com/your-username/project\n\n// Make changes, commit, and push\n$ git add .\n$ git commit -m \"Fix typo in README\"\n$ git push origin your-branch\n\n// Submit a pull request from your GitHub forked repo"
-                        }
-                    },
-                    {
-                        title: "Writing Useful Documentation",
-                        difficulty: "Easy",
-                        description: "Choose an open source project and improve its documentation. This could include improving README files, writing tutorials, or creating a contribution guide.",
-                        hints: [
-                            "Look for documentation improvements in popular projects",
-                            "Focus on clear, concise language and organized structure",
-                            "Add examples or images where possible for clarity"
-                        ],
-                        solution: {
-                            code: "// Example of writing a README\n# Project Name\n\n## Description\nBriefly describe the project purpose.\n\n## Installation\nList steps to install dependencies.\n\n## Usage\nExplain how to use the project.\n\n## Contribution Guidelines\nProvide guidelines for new contributors."
-                        }
-                    }
+                {
+                title: "Basic Network Scanning",
+                difficulty: "Easy",
+                description: "Perform a basic network scan using Nmap to identify live hosts and open ports.",
+                hints: [
+                "Use Nmap's default settings for a simple scan",
+                "Specify the target IP address or IP range",
+                "Analyze the scan results to identify potential vulnerabilities"
                 ],
-                intermediateExercises: [
-                    {
-                        title: "Creating a Feature for an Open Source Project",
-                        difficulty: "Medium",
-                        description: "Identify an existing feature request in an open source project, implement the feature, and submit it as a pull request.",
-                        hints: [
-                            "Search the repository for 'feature request' issues",
-                            "Review the project's coding standards before starting",
-                            "Write tests for your new feature to ensure its functionality"
-                        ],
-                        solution: {
-                            code: "// Step 1: Fork the repository\n$ git fork https://github.com/example/project\n\n// Step 2: Clone your fork\n$ git clone https://github.com/your-username/project\n\n// Step 3: Create a new branch for your feature\n$ git checkout -b new-feature\n\n// Step 4: Implement the feature in the codebase\n// Example code implementation here\n\n// Step 5: Add tests for your feature\n// Example test cases here\n\n// Step 6: Commit your changes\n$ git add .\n$ git commit -m \"Add new feature: description\"\n\n// Step 7: Push your branch to your fork\n$ git push origin new-feature\n\n// Step 8: Open a pull request on the original repository"
-                        }
-                    },
-                    {
-                        title: "Reviewing Code Contributions",
-                        difficulty: "Medium",
-                        description: "Select a pull request from an open-source project to review. Analyze the code changes, suggest improvements, and provide feedback to the contributor.",
-                        hints: [
-                            "Look for pull requests that are labeled 'needs review'",
-                            "Pay attention to code quality, style, and functionality",
-                            "Be constructive and clear in your feedback"
-                        ],
-                        solution: {
-                            code: "// Step 1: Navigate to the pull requests section of the repository\n// Step 2: Select a pull request to review\n\n// Step 3: Check the code changes\n// Example code review comments:\n// - The variable naming could be more descriptive.\n// - Consider adding error handling for edge cases.\n// - Great job on implementing the feature, but let's optimize this function.\n\n// Step 4: Leave feedback on the pull request\n// Example comment:\n// 'Thank you for your contribution! I have some suggestions to improve the code.'\n\n// Step 5: Approve the pull request if all looks good or request changes"
-                        }
-                    }
-                ],
-                
-                advancedExercises: [
-                    {
-                        title: "Becoming a Project Maintainer",
-                        difficulty: "Advanced",
-                        description: "Take over maintenance of an open-source project. This involves managing issues, reviewing pull requests, and coordinating with contributors.",
-                        hints: [
-                            "Start by reaching out to the current maintainers to express your interest",
-                            "Familiarize yourself with the project's contribution guidelines and codebase",
-                            "Communicate clearly and constructively with contributors to encourage engagement"
-                        ],
-                        solution: {
-                            code: "// Step 1: Contact the current maintainer via GitHub or project communication channels\n// Example message:\n// Hi [Maintainer's Name],\n// I'm interested in helping maintain [Project Name]. I have been contributing for a while and would love to take on a more active role.\n\n// Step 2: Review open issues and pull requests regularly\n// Example code for managing issues:\n// function reviewIssues() {\n//   const issues = fetchIssues();\n//   issues.forEach(issue => {\n//     if (issue.isOpen) {\n//       assignLabels(issue);\n//       respondToIssue(issue);\n//     }\n//   });\n// }\n\n// Step 3: Conduct code reviews for incoming pull requests\n// Example code for reviewing a PR:\n// function reviewPullRequest(pr) {\n//   const codeChanges = fetchCodeChanges(pr);\n//   if (isCodeQualityGood(codeChanges)) {\n//     approvePullRequest(pr);\n//   } else {\n//     requestChanges(pr);\n//   }\n// }\n"
-                        }
-                    },
-                    {
-                        title: "Implementing a Major Refactor",
-                        difficulty: "Advanced",
-                        description: "Select an open-source project that could benefit from a refactor. Plan and implement the refactor while maintaining existing functionality, then submit your changes as a pull request.",
-                        hints: [
-                            "Identify areas of the codebase that are difficult to maintain or understand",
-                            "Communicate your refactoring plan with the project maintainers before starting",
-                            "Ensure all existing tests pass after your refactor"
-                        ],
-                        solution: {
-                            code: "// Step 1: Fork the repository\n$ git fork https://github.com/example/project\n\n// Step 2: Clone your fork\n$ git clone https://github.com/your-username/project\n\n// Step 3: Create a new branch for the refactor\n$ git checkout -b refactor-feature\n\n// Step 4: Identify and implement refactor changes\n// Example refactor code:\n// function refactoredFunction() {\n//   // New implementation here\n// }\n\n// Step 5: Run tests to ensure functionality is maintained\n$ npm test\n\n// Step 6: Commit your changes\n$ git add .\n$ git commit -m \"Refactor: description of changes\"\n\n// Step 7: Push your branch to your fork\n$ git push origin refactor-feature\n\n// Step 8: Open a pull request on the original repository"
-                        }
-                    }
-                ]
-                
-                
-            }
+                solution: {
+                code: `# Basic Nmap scan
+                nmap -sV -O <target_IP_or_range>
+                # Example:
+                nmap -sV -O 192.168.1.0/24`,
+            explanation: "This exercise introduces the basics of network scanning using Nmap. It demonstrates how to perform a simple scan to identify live hosts, open ports, and service versions."
         }
+    },
+    {
+        title: "Password Strength Checker",
+        difficulty: "Easy",
+        description: "Create a Python script to check the strength of a given password.",
+        hints: [
+        "Define criteria for password strength (e.g., length, complexity)",
+        "Use conditional statements to evaluate the password",
+        "Provide feedback to the user on password strength"
+        ],
+        solution: {
+        code: `def check_password_strength(password):
+        # Define criteria for password strength
+        min_length = 8
+        has_uppercase = any(char.isupper() for char in password)
+        has_lowercase = any(char.islower() for char in password)
+        has_digit = any(char.isdigit() for char in password)
+        has_special_char = any(char in "!@#$%^&*()_+-=[]{}|;:,.<>?" for char in password)
+        # Check password strength
+        if len(password) < min_length:
+            return "Weak: Password is too short"
+        elif not (has_uppercase and has_lowercase and has_digit and has_special_char):
+            return "Moderate: Password should contain uppercase, lowercase, digits, 
+            and special characters"
+        else:
+            return "Strong: Password meets all strength criteria"
+        #Example usage
+        password = input("Enter a password: ")
+        strength = check_password_strength(password)
+        print("Password Strength:", strength)`,
+        explanation: "This exercise focuses on creating a basic password strength checker using Python. It defines criteria for password strength, such as minimum length and character complexity. The script evaluates the given password against these criteria and provides feedback to the user on the password's strength."
+}
+}
+],
+        intermediateExercises: [
+            {
+                title: "Web Application Vulnerability Assessment",
+                difficulty: "Medium",
+                description: "Perform a vulnerability assessment of a web application using OWASP ZAP.",
+                hints: [
+                    "Configure ZAP to use your browser as a proxy",
+                    "Explore the application manually to discover functionalities",
+                    "Use ZAP's automated scanners to identify potential vulnerabilities",
+                    "Analyze the scan results and prioritize the findings"
+                ],
+                solution: {
+                    code: `1. Launch OWASP ZAP and configure your browser to use ZAP as a proxy
+2. Browse the target web application manually, exploring all functionalities
+3. In ZAP, go to the "Active Scan" tab and select the target URL
+4. Click "Start Scan" to initiate the automated vulnerability scanners
+5. Once the scan is complete, review the alerts in the "Alerts" tab
+6. Analyze the findings, prioritize them based on risk, and generate a report`,
+                    explanation: "This exercise focuses on web application vulnerability assessment using OWASP ZAP. It guides you through the process of setting up ZAP, manually exploring the application, running automated scans, and analyzing the results to identify potential vulnerabilities."
+                }
+            },
+            {
+                title: "File Integrity Monitoring",
+                difficulty: "Medium",
+                description: "Develop a script to monitor the integrity of critical system files.",
+                hints: [
+                "Use a hashing algorithm (e.g., SHA-256) to calculate file hashes",
+                "Store the initial file hashes in a database or file",
+                "Periodically recalculate the hashes and compare them with the stored values",
+                "Alert the user if any file modifications are detected"
+                ],
+                solution: {
+                code: `import os
+import hashlib
+import json
+import time
+def calculate_file_hash(file_path):
+sha256_hash = hashlib.sha256()
+with open(file_path, "rb") as file:
+for chunk in iter(lambda: file.read(4096), b""):
+sha256_hash.update(chunk)
+return sha256_hash.hexdigest()
+def load_baseline_hashes(baseline_file):
+if os.path.exists(baseline_file):
+with open(baseline_file, "r") as file:
+return json.load(file)
+return {}
+def save_baseline_hashes(baseline_file, baseline_hashes):
+with open(baseline_file, "w") as file:
+json.dump(baseline_hashes, file, indent=4)
+def monitor_files(file_list, baseline_file):
+baseline_hashes = load_baseline_hashes(baseline_file)
+for file_path in file_list:
+    current_hash = calculate_file_hash(file_path)
+    if file_path in baseline_hashes:
+            if current_hash != baseline_hashes[file_path]:
+                print(f"Alert: File integrity compromised - {file_path}")
+    else:
+        baseline_hashes[file_path] = current_hash
+
+save_baseline_hashes(baseline_file, baseline_hashes)
+Example usage
+critical_files = [
+"/path/to/file1",
+"/path/to/file2",
+"/path/to/file3"
+]
+baseline_file = "baseline_hashes.json"
+while True:
+monitor_files(critical_files, baseline_file)
+time.sleep(3600)  # Monitor every hour`,
+                explanation: "This exercise focuses on developing a basic file integrity monitoring script. It calculates the hashes of critical system files and compares them with previously stored baseline hashes. If any file modifications are detected, the script alerts the user. The exercise demonstrates the use of hashing algorithms, file I/O operations, and periodic monitoring techniques."
+}
+}
+],
+        advancedExercises: [
+            {
+                title: "Buffer Overflow Exploitation",
+                difficulty: "Hard",
+                description: "Exploit a buffer overflow vulnerability in a simple C program.",
+                hints: [
+                    "Analyze the source code to identify the vulnerability",
+                    "Determine the offset to overwrite the return address",
+                    "Craft a malicious payload to spawn a shell",
+                    "Use a debugger to test and refine the exploit"
+                ],
+                solution: {
+                    code: `1. Analyze the vulnerable C program:
+        #include <stdio.h>
+        #include <string.h>
+
+        void vuln_func(char *input) {
+            char buffer[100];
+            strcpy(buffer, input);
+            printf("Input: %s\\n", buffer);
+        }
+
+        int main(int argc, char *argv[]) {
+            if (argc < 2) {
+                printf("Usage: %s <input>\\n", argv[0]);
+                return 1;
+            }
+            vuln_func(argv[1]);
+            return 0;
+        }
+
+2. Determine the offset to overwrite the return address using a pattern
+3. Craft a malicious payload to spawn a shell (e.g., using msfvenom)
+4. Exploit the vulnerability:
+./vuln_program $(python -c 'print "A"*<offset>+"<return_address>"+"<nop_sled>"+"<shellcode>"')
+5. Refine the exploit as needed and test it in a debugger`,
+                    explanation: "This advanced exercise focuses on exploiting a buffer overflow vulnerability in a simple C program. It requires understanding of low-level memory concepts, debugging skills, and exploit development techniques. The exercise guides you through analyzing the vulnerable code, determining the right offset, crafting a malicious payload, and exploiting the vulnerability to gain unauthorized access."
+                }
+            },
+            {
+                title: "Custom Protocol Fuzzer",
+                difficulty: "Hard",
+                description: "Implement a custom protocol fuzzer to identify vulnerabilities in a network application.",
+                hints: [
+                "Choose a target protocol and understand its specification",
+                "Generate random or semi-valid test cases to fuzz the protocol",
+                "Send the fuzzed data to the target application",
+                "Monitor the application for crashes, errors, or unexpected behavior",
+                "Log and analyze the results to identify potential vulnerabilities"
+                ],
+                solution: {
+                code: `import socket
+import random
+import string
+def generate_fuzz_data(length):
+fuzz_data = ''.join(random.choice(string.ascii_letters+string.digits) for _ in range(length))
+return fuzz_data.encode()
+def send_fuzz_data(target_ip, target_port, fuzz_data):
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+sock.connect((target_ip, target_port))
+sock.send(fuzz_data)
+response = sock.recv(1024)
+sock.close()
+return response
+def protocol_fuzzer(target_ip, target_port, num_tests):
+for i in range(num_tests):
+fuzz_length = random.randint(100, 1000)
+fuzz_data = generate_fuzz_data(fuzz_length)
+try:
+    response = send_fuzz_data(target_ip, target_port, fuzz_data)
+    print(f"Test {i+1}: Sent {len(fuzz_data)} bytes, Received {len(response)} bytes")
+except Exception as e:
+    print(f"Test {i+1}: Exception occurred - {str(e)}")
+Example usage
+target_ip = "192.168.1.100"
+target_port = 1234
+num_tests = 100
+protocol_fuzzer(target_ip, target_port, num_tests)`,
+                explanation: "This advanced exercise focuses on implementing a custom protocol fuzzer to identify vulnerabilities in a network application. It involves generating random or semi-valid test cases based on the protocol specification and sending the fuzzed data to the target application. The fuzzer monitors the application's behavior and logs any crashes, errors, or unexpected responses. The exercise requires a deeper understanding of network protocols, socket programming, and fuzzing techniques."
+}
+}
+        ]
     }
-
-
-
-
+}
+}
 ];
 
 export default resources;
