@@ -261,7 +261,7 @@ const resources = [
                     explanation: "A Todo application demonstrating React Hooks usage, including useState for state management, useEffect for side effects, and local storage integration. Shows proper component organization and event handling."
                 }
             ],
-        
+
             roadmap: [
                 {
                     title: "1. HTML & CSS Fundamentals",
@@ -443,7 +443,7 @@ const resources = [
                     }
                 ]
             },
-        
+
             practice: {
                 beginnerExercises: [
                     {
@@ -537,8 +537,8 @@ const resources = [
                             "Ensure accessibility with ARIA attributes"
                         ],
                         solution: {
-                        code:
-                         `<!-- HTML -->
+                            code:
+                                `<!-- HTML -->
                         <nav class="navbar">
                             <div class="nav-brand">Brand Logo</div>
                             <button class="nav-toggle" aria-label="Toggle navigation"\naria-expanded="false">
@@ -709,7 +709,7 @@ const resources = [
                                 "   - No layout shifts"
                         }
                     }
-                    
+
 
                 ],
                 intermediateExercises: [
@@ -1025,23 +1025,23 @@ form.addEventListener('submit', (e) => {
         console.log('Form submitted successfully');
     }
         });`,
-        explanation: "This form validation solution includes several advanced features:\n\n" +
-        "1. Real-time Validation:\n" +
-        "   - Immediate feedback on input\n" +
-        "   - Password strength indicator\n" +
-        "   - Visual requirement checklist\n\n" +
-        "2. Security Features:\n" +
-        "   - Strong password requirements\n" +
-        "   - Proper password confirmation\n" +
-        "   - Input sanitization\n\n" +
-        "3. User Experience:\n" +
-        "   - Clear error messages\n" +
-        "   - Visual feedback\n" +
-        "   - Disabled submit until valid\n\n" +
-        "4. Accessibility:\n" +
-        "   - ARIA attributes\n" +
-        "   - Proper form labeling\n" +
-        "   - Keyboard navigation support"
+                            explanation: "This form validation solution includes several advanced features:\n\n" +
+                                "1. Real-time Validation:\n" +
+                                "   - Immediate feedback on input\n" +
+                                "   - Password strength indicator\n" +
+                                "   - Visual requirement checklist\n\n" +
+                                "2. Security Features:\n" +
+                                "   - Strong password requirements\n" +
+                                "   - Proper password confirmation\n" +
+                                "   - Input sanitization\n\n" +
+                                "3. User Experience:\n" +
+                                "   - Clear error messages\n" +
+                                "   - Visual feedback\n" +
+                                "   - Disabled submit until valid\n\n" +
+                                "4. Accessibility:\n" +
+                                "   - ARIA attributes\n" +
+                                "   - Proper form labeling\n" +
+                                "   - Keyboard navigation support"
 
                         }
                     }
@@ -1328,27 +1328,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });`,
-    explanation: "This advanced implementation includes several key features:\n\n" +
-        "1. Performance Optimization:\n" +
-        "   - Image lazy loading using Intersection Observer\n" +
-        "   - Image caching mechanism\n" +
-        "   - Efficient DOM manipulation\n" +
-        "   - Debounced scroll handling\n\n" +
-        "2. User Experience:\n" +
-        "   - Smooth loading animations\n" +
-        "   - Loading indicators\n" +
-        "   - Error handling\n" +
-        "   - Responsive design\n\n" +
-        "3. Technical Features:\n" +
-        "   - CSS Grid masonry layout\n" +
-        "   - Intersection Observer for infinite scroll\n" +
-        "   - Image preloading\n" +
-        "   - Memory management\n\n" +
-        "4. Code Organization:\n" +
-        "   - Class-based architecture\n" +
-        "   - Configurable options\n" +
-        "   - Clean separation of concerns\n" +
-        "   - Extensible design"
+                            explanation: "This advanced implementation includes several key features:\n\n" +
+                                "1. Performance Optimization:\n" +
+                                "   - Image lazy loading using Intersection Observer\n" +
+                                "   - Image caching mechanism\n" +
+                                "   - Efficient DOM manipulation\n" +
+                                "   - Debounced scroll handling\n\n" +
+                                "2. User Experience:\n" +
+                                "   - Smooth loading animations\n" +
+                                "   - Loading indicators\n" +
+                                "   - Error handling\n" +
+                                "   - Responsive design\n\n" +
+                                "3. Technical Features:\n" +
+                                "   - CSS Grid masonry layout\n" +
+                                "   - Intersection Observer for infinite scroll\n" +
+                                "   - Image preloading\n" +
+                                "   - Memory management\n\n" +
+                                "4. Code Organization:\n" +
+                                "   - Class-based architecture\n" +
+                                "   - Configurable options\n" +
+                                "   - Clean separation of concerns\n" +
+                                "   - Extensible design"
                         }
                     }
                 ]
@@ -1672,7 +1672,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     explanation: "Shows implementation of API rate limiting and Redis-based response caching to improve API performance and prevent abuse."
                 }
             ],
-            
+
             roadmap: [
                 {
                     title: "1. Backend Fundamentals",
@@ -1740,183 +1740,183 @@ document.addEventListener('DOMContentLoaded', () => {
                     ]
                 }
             ],
-        
-        resources: {
-            documentation: [
-                {
-                    title: "Node.js Documentation",
-                    url: "https://nodejs.org/docs/",
-                    description: "Official Node.js documentation and API reference guide",
-                    type: "Official Documentation"
-                },
-                {
-                    title: "Express.js Guide",
-                    url: "https://expressjs.com/",
-                    description: "Comprehensive guide for Express.js framework",
-                    type: "Framework Documentation"
-                },
-                {
-                    title: "MongoDB Manual",
-                    url: "https://docs.mongodb.com/manual/",
-                    description: "Complete MongoDB documentation with tutorials and best practices",
-                    type: "Database Documentation"
-                },
-                {
-                    title: "PostgreSQL Documentation",
-                    url: "https://www.postgresql.org/docs/",
-                    description: "Official PostgreSQL database documentation and tutorials",
-                    type: "Database Documentation"
-                },
-                {
-                    title: "Docker Documentation",
-                    url: "https://docs.docker.com/",
-                    description: "Official Docker documentation for containerization",
-                    type: "DevOps Documentation"
-                }
-            ],
-            tutorials: [
-                {
-                    title: "Node.js Backend Masterclass",
-                    url: "https://www.udemy.com/course/nodejs-api-masterclass/",
-                    description: "Complete Node.js backend development course with real-world projects",
-                    type: "Video Course"
-                },
-                {
-                    title: "Learn SQL and Database Design",
-                    url: "https://www.codecademy.com/learn/learn-sql",
-                    description: "Interactive SQL course covering database fundamentals",
-                    type: "Interactive Course"
-                },
-                {
-                    title: "Backend Development with Python and Django",
-                    url: "https://www.djangoproject.com/start/",
-                    description: "Official Django tutorial for building web applications",
-                    type: "Framework Tutorial"
-                },
-                {
-                    title: "Microservices with Node.js",
-                    url: "https://www.youtube.com/watch?v=XUSHH0E-7zk",
-                    description: "Practical guide to building microservices architecture",
-                    type: "Video Series"
-                },
-                {
-                    title: "AWS for Backend Developers",
-                    url: "https://aws.amazon.com/getting-started/hands-on/",
-                    description: "Hands-on tutorials for AWS services and cloud deployment",
-                    type: "Cloud Platform Tutorial"
-                }
-            ],
-            videos: [
-                {
-                    title: "Traversy Media Backend Series",
-                    url: "https://www.youtube.com/c/TraversyMedia",
-                    description: "Practical backend development tutorials and project builds",
-                    platform: "YouTube"
-                },
-                {
-                    title: "The Net Ninja Backend Tutorials",
-                    url: "https://www.youtube.com/c/TheNetNinja",
-                    description: "In-depth tutorials on various backend technologies",
-                    platform: "YouTube"
-                },
-                {
-                    title: "freeCodeCamp Backend Development",
-                    url: "https://www.youtube.com/c/Freecodecamp",
-                    description: "Comprehensive backend development courses and tutorials",
-                    platform: "YouTube"
-                },
-                {
-                    title: "Hussein Nasser Database Engineering",
-                    url: "https://www.youtube.com/c/HusseinNasser-software-engineering",
-                    description: "Deep dives into database engineering and system design",
-                    platform: "YouTube"
-                }
-            ],
-            books: [
-                {
-                    title: "Node.js Design Patterns",
-                    author: "Mario Casciaro & Luciano Mammino",
-                    description: "Comprehensive guide to Node.js application design and patterns",
-                    level: "Intermediate to Advanced"
-                },
-                {
-                    title: "Designing Data-Intensive Applications",
-                    author: "Martin Kleppmann",
-                    description: "Deep dive into database systems and distributed architecture",
-                    level: "Advanced"
-                },
-                {
-                    title: "Clean Architecture",
-                    author: "Robert C. Martin",
-                    description: "Principles of software architecture and clean code practices",
-                    level: "Intermediate to Advanced"
-                },
-                {
-                    title: "Database Design for Mere Mortals",
-                    author: "Michael J. Hernandez",
-                    description: "Practical guide to relational database design",
-                    level: "Beginner to Intermediate"
-                },
-                {
-                    title: "Web Scalability for Startup Engineers",
-                    author: "Artur Ejsmont",
-                    description: "Scalable architecture design for web applications",
-                    level: "Intermediate"
-                }
-            ],
-            practice: [
-                {
-                    title: "Backend Development Projects on GitHub",
-                    url: "https://github.com/topics/backend",
-                    description: "Open source backend projects for learning and contribution",
-                    type: "Project Repository"
-                },
-                {
-                    title: "HackerRank Backend Challenges",
-                    url: "https://www.hackerrank.com/domains/databases",
-                    description: "Practice problems for SQL and database concepts",
-                    type: "Practice Platform"
-                },
-                {
-                    title: "MongoDB University",
-                    url: "https://university.mongodb.com/",
-                    description: "Free courses and certifications for MongoDB",
-                    type: "Learning Platform"
-                },
-                {
-                    title: "Exercism Backend Track",
-                    url: "https://exercism.io/tracks/javascript",
-                    description: "Mentored code practice and feedback",
-                    type: "Practice Platform"
-                },
-                {
-                    title: "PostgreSQL Exercises",
-                    url: "https://pgexercises.com/",
-                    description: "Interactive PostgreSQL tutorial and exercises",
-                    type: "Practice Platform"
-                },
-                {
-                    title: "API Design Challenges",
-                    url: "https://github.com/public-apis/public-apis",
-                    description: "Collection of public APIs for practice integration",
-                    type: "API Practice"
-                }
-            ]
-        },
-        practice: {
-            beginnerExercises: [
-                {
-                    title: "Basic REST API Server",
-                    difficulty: "Easy",
-                    description: "Create a simple REST API server with CRUD operations for a todo list using Express.js and in-memory storage.",
-                    hints: [
-                        "Use Express.js router for organizing routes",
-                        "Implement proper HTTP status codes",
-                        "Add input validation",
-                        "Use middleware for error handling"
-                    ],
-                    solution: {
-                        code: `const express = require('express');
+
+            resources: {
+                documentation: [
+                    {
+                        title: "Node.js Documentation",
+                        url: "https://nodejs.org/docs/",
+                        description: "Official Node.js documentation and API reference guide",
+                        type: "Official Documentation"
+                    },
+                    {
+                        title: "Express.js Guide",
+                        url: "https://expressjs.com/",
+                        description: "Comprehensive guide for Express.js framework",
+                        type: "Framework Documentation"
+                    },
+                    {
+                        title: "MongoDB Manual",
+                        url: "https://docs.mongodb.com/manual/",
+                        description: "Complete MongoDB documentation with tutorials and best practices",
+                        type: "Database Documentation"
+                    },
+                    {
+                        title: "PostgreSQL Documentation",
+                        url: "https://www.postgresql.org/docs/",
+                        description: "Official PostgreSQL database documentation and tutorials",
+                        type: "Database Documentation"
+                    },
+                    {
+                        title: "Docker Documentation",
+                        url: "https://docs.docker.com/",
+                        description: "Official Docker documentation for containerization",
+                        type: "DevOps Documentation"
+                    }
+                ],
+                tutorials: [
+                    {
+                        title: "Node.js Backend Masterclass",
+                        url: "https://www.udemy.com/course/nodejs-api-masterclass/",
+                        description: "Complete Node.js backend development course with real-world projects",
+                        type: "Video Course"
+                    },
+                    {
+                        title: "Learn SQL and Database Design",
+                        url: "https://www.codecademy.com/learn/learn-sql",
+                        description: "Interactive SQL course covering database fundamentals",
+                        type: "Interactive Course"
+                    },
+                    {
+                        title: "Backend Development with Python and Django",
+                        url: "https://www.djangoproject.com/start/",
+                        description: "Official Django tutorial for building web applications",
+                        type: "Framework Tutorial"
+                    },
+                    {
+                        title: "Microservices with Node.js",
+                        url: "https://www.youtube.com/watch?v=XUSHH0E-7zk",
+                        description: "Practical guide to building microservices architecture",
+                        type: "Video Series"
+                    },
+                    {
+                        title: "AWS for Backend Developers",
+                        url: "https://aws.amazon.com/getting-started/hands-on/",
+                        description: "Hands-on tutorials for AWS services and cloud deployment",
+                        type: "Cloud Platform Tutorial"
+                    }
+                ],
+                videos: [
+                    {
+                        title: "Traversy Media Backend Series",
+                        url: "https://www.youtube.com/c/TraversyMedia",
+                        description: "Practical backend development tutorials and project builds",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "The Net Ninja Backend Tutorials",
+                        url: "https://www.youtube.com/c/TheNetNinja",
+                        description: "In-depth tutorials on various backend technologies",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "freeCodeCamp Backend Development",
+                        url: "https://www.youtube.com/c/Freecodecamp",
+                        description: "Comprehensive backend development courses and tutorials",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Hussein Nasser Database Engineering",
+                        url: "https://www.youtube.com/c/HusseinNasser-software-engineering",
+                        description: "Deep dives into database engineering and system design",
+                        platform: "YouTube"
+                    }
+                ],
+                books: [
+                    {
+                        title: "Node.js Design Patterns",
+                        author: "Mario Casciaro & Luciano Mammino",
+                        description: "Comprehensive guide to Node.js application design and patterns",
+                        level: "Intermediate to Advanced"
+                    },
+                    {
+                        title: "Designing Data-Intensive Applications",
+                        author: "Martin Kleppmann",
+                        description: "Deep dive into database systems and distributed architecture",
+                        level: "Advanced"
+                    },
+                    {
+                        title: "Clean Architecture",
+                        author: "Robert C. Martin",
+                        description: "Principles of software architecture and clean code practices",
+                        level: "Intermediate to Advanced"
+                    },
+                    {
+                        title: "Database Design for Mere Mortals",
+                        author: "Michael J. Hernandez",
+                        description: "Practical guide to relational database design",
+                        level: "Beginner to Intermediate"
+                    },
+                    {
+                        title: "Web Scalability for Startup Engineers",
+                        author: "Artur Ejsmont",
+                        description: "Scalable architecture design for web applications",
+                        level: "Intermediate"
+                    }
+                ],
+                practice: [
+                    {
+                        title: "Backend Development Projects on GitHub",
+                        url: "https://github.com/topics/backend",
+                        description: "Open source backend projects for learning and contribution",
+                        type: "Project Repository"
+                    },
+                    {
+                        title: "HackerRank Backend Challenges",
+                        url: "https://www.hackerrank.com/domains/databases",
+                        description: "Practice problems for SQL and database concepts",
+                        type: "Practice Platform"
+                    },
+                    {
+                        title: "MongoDB University",
+                        url: "https://university.mongodb.com/",
+                        description: "Free courses and certifications for MongoDB",
+                        type: "Learning Platform"
+                    },
+                    {
+                        title: "Exercism Backend Track",
+                        url: "https://exercism.io/tracks/javascript",
+                        description: "Mentored code practice and feedback",
+                        type: "Practice Platform"
+                    },
+                    {
+                        title: "PostgreSQL Exercises",
+                        url: "https://pgexercises.com/",
+                        description: "Interactive PostgreSQL tutorial and exercises",
+                        type: "Practice Platform"
+                    },
+                    {
+                        title: "API Design Challenges",
+                        url: "https://github.com/public-apis/public-apis",
+                        description: "Collection of public APIs for practice integration",
+                        type: "API Practice"
+                    }
+                ]
+            },
+            practice: {
+                beginnerExercises: [
+                    {
+                        title: "Basic REST API Server",
+                        difficulty: "Easy",
+                        description: "Create a simple REST API server with CRUD operations for a todo list using Express.js and in-memory storage.",
+                        hints: [
+                            "Use Express.js router for organizing routes",
+                            "Implement proper HTTP status codes",
+                            "Add input validation",
+                            "Use middleware for error handling"
+                        ],
+                        solution: {
+                            code: `const express = require('express');
         const app = express();
         const port = 3000;
         
@@ -1997,36 +1997,36 @@ document.addEventListener('DOMContentLoaded', () => {
         app.listen(port, () => {
             console.log(\`Server running at http://localhost:\${port}\`);
         });`,
-                        explanation: "This solution demonstrates a basic REST API implementation with the following features:\n\n" +
-                            "1. CRUD Operations:\n" +
-                            "   - GET /todos - List all todos\n" +
-                            "   - GET /todos/:id - Get single todo\n" +
-                            "   - POST /todos - Create new todo\n" +
-                            "   - PUT /todos/:id - Update todo\n" +
-                            "   - DELETE /todos/:id - Delete todo\n\n" +
-                            "2. Best Practices:\n" +
-                            "   - Proper HTTP status codes\n" +
-                            "   - Error handling middleware\n" +
-                            "   - Input validation\n" +
-                            "   - RESTful routing conventions\n\n" +
-                            "3. Code Organization:\n" +
-                            "   - Middleware setup\n" +
-                            "   - Route handlers\n" +
-                            "   - In-memory data storage"
-                    }
-                },
-                {
-                    title: "Database Connection and Basic CRUD",
-                    difficulty: "Easy",
-                    description: "Implement basic CRUD operations using MongoDB and Mongoose for a user management system.",
-                    hints: [
-                        "Set up MongoDB connection with proper error handling",
-                        "Create a User schema with validation",
-                        "Implement async/await for database operations",
-                        "Add basic error handling for database operations"
-                    ],
-                    solution: {
-                        code: `const mongoose = require('mongoose');
+                            explanation: "This solution demonstrates a basic REST API implementation with the following features:\n\n" +
+                                "1. CRUD Operations:\n" +
+                                "   - GET /todos - List all todos\n" +
+                                "   - GET /todos/:id - Get single todo\n" +
+                                "   - POST /todos - Create new todo\n" +
+                                "   - PUT /todos/:id - Update todo\n" +
+                                "   - DELETE /todos/:id - Delete todo\n\n" +
+                                "2. Best Practices:\n" +
+                                "   - Proper HTTP status codes\n" +
+                                "   - Error handling middleware\n" +
+                                "   - Input validation\n" +
+                                "   - RESTful routing conventions\n\n" +
+                                "3. Code Organization:\n" +
+                                "   - Middleware setup\n" +
+                                "   - Route handlers\n" +
+                                "   - In-memory data storage"
+                        }
+                    },
+                    {
+                        title: "Database Connection and Basic CRUD",
+                        difficulty: "Easy",
+                        description: "Implement basic CRUD operations using MongoDB and Mongoose for a user management system.",
+                        hints: [
+                            "Set up MongoDB connection with proper error handling",
+                            "Create a User schema with validation",
+                            "Implement async/await for database operations",
+                            "Add basic error handling for database operations"
+                        ],
+                        solution: {
+                            code: `const mongoose = require('mongoose');
         const express = require('express');
         const app = express();
         
@@ -2168,37 +2168,37 @@ document.addEventListener('DOMContentLoaded', () => {
         app.listen(port, () => {
             console.log(\`Server running at http://localhost:\${port}\`);
         });`,
-                        explanation: "This solution demonstrates MongoDB integration with the following features:\n\n" +
-                            "1. Database Setup:\n" +
-                            "   - MongoDB connection with error handling\n" +
-                            "   - Mongoose schema with validation\n" +
-                            "   - Data model definition\n\n" +
-                            "2. CRUD Operations:\n" +
-                            "   - Create: POST /users\n" +
-                            "   - Read: GET /users and GET /users/:id\n" +
-                            "   - Update: PUT /users/:id\n" +
-                            "   - Delete: DELETE /users/:id\n\n" +
-                            "3. Best Practices:\n" +
-                            "   - Async/await usage\n" +
-                            "   - Error handling\n" +
-                            "   - Input validation\n" +
-                            "   - Proper status codes"
+                            explanation: "This solution demonstrates MongoDB integration with the following features:\n\n" +
+                                "1. Database Setup:\n" +
+                                "   - MongoDB connection with error handling\n" +
+                                "   - Mongoose schema with validation\n" +
+                                "   - Data model definition\n\n" +
+                                "2. CRUD Operations:\n" +
+                                "   - Create: POST /users\n" +
+                                "   - Read: GET /users and GET /users/:id\n" +
+                                "   - Update: PUT /users/:id\n" +
+                                "   - Delete: DELETE /users/:id\n\n" +
+                                "3. Best Practices:\n" +
+                                "   - Async/await usage\n" +
+                                "   - Error handling\n" +
+                                "   - Input validation\n" +
+                                "   - Proper status codes"
+                        }
                     }
-                }
-            ],
-            intermediateExercises: [
-                {
-                    title: "Authentication System",
-                    difficulty: "Medium",
-                    description: "Implement a complete authentication system with JWT, password hashing, and protected routes.",
-                    hints: [
-                        "Use bcrypt for password hashing",
-                        "Implement JWT for authentication",
-                        "Create middleware for route protection",
-                        "Add refresh token functionality"
-                    ],
-                    solution: {
-                        code: `const express = require('express');
+                ],
+                intermediateExercises: [
+                    {
+                        title: "Authentication System",
+                        difficulty: "Medium",
+                        description: "Implement a complete authentication system with JWT, password hashing, and protected routes.",
+                        hints: [
+                            "Use bcrypt for password hashing",
+                            "Implement JWT for authentication",
+                            "Create middleware for route protection",
+                            "Add refresh token functionality"
+                        ],
+                        solution: {
+                            code: `const express = require('express');
         const jwt = require('jsonwebtoken');
         const bcrypt = require('bcrypt');
         const mongoose = require('mongoose');
@@ -2416,55 +2416,55 @@ document.addEventListener('DOMContentLoaded', () => {
                 message: 'Access granted to protected resource' 
             });
         });`,
-        explanation: "This authentication system implements:\n\n" +
-        "1. Security Features:\n" +
-        "   - Password hashing with bcrypt\n" +
-        "   - JWT-based authentication\n" +
-        "   - Refresh token rotation\n" +
-        "   - Secure password storage\n" +
-        "   - Token blacklisting on logout\n\n" +
-        "2. Authentication Flow:\n" +
-        "   - User registration with validation\n" +
-        "   - User login with credentials\n" +
-        "   - Access token generation and validation\n" +
-        "   - Refresh token mechanism\n" +
-        "   - Secure logout process\n\n" +
-        "3. Best Practices:\n" +
-        "   - Environment variable usage\n" +
-        "   - Middleware for route protection\n" +
-        "   - Error handling\n" +
-        "   - Token expiration\n" +
-        "   - MongoDB integration\n\n" +
-        "4. Advanced Features:\n" +
-        "   - Multiple device support\n" +
-        "   - Token refresh mechanism\n" +
-        "   - Session management\n" +
-        "   - Concurrent login handling\n\n" +
-        "5. API Endpoints:\n" +
-        "   - POST /auth/register - New user registration\n" +
-        "   - POST /auth/login - User login\n" +
-        "   - POST /auth/refresh-token - Token refresh\n" +
-        "   - POST /auth/logout - User logout\n" +
-        "   - GET /protected - Protected route example"
-                }
-           }
-        ],
-        advancedExercises: [
-            {
-                title: "Real-time Chat System with Microservices",
-                difficulty: "Hard",
-                description: "Implement a scalable real-time chat system using Socket.IO, Redis for pub/sub, and MongoDB for message persistence. Include features like user presence, message delivery status, and chat rooms.",
-                hints: [
-                    "Use Socket.IO for real-time communication",
-                    "Implement Redis for message broker and caching",
-                    "Use MongoDB for message persistence",
-                    "Handle user presence and disconnections",
-                    "Implement message delivery acknowledgments",
-                    "Add room-based chat functionality",
-                    "Include error handling and reconnection logic"
+                            explanation: "This authentication system implements:\n\n" +
+                                "1. Security Features:\n" +
+                                "   - Password hashing with bcrypt\n" +
+                                "   - JWT-based authentication\n" +
+                                "   - Refresh token rotation\n" +
+                                "   - Secure password storage\n" +
+                                "   - Token blacklisting on logout\n\n" +
+                                "2. Authentication Flow:\n" +
+                                "   - User registration with validation\n" +
+                                "   - User login with credentials\n" +
+                                "   - Access token generation and validation\n" +
+                                "   - Refresh token mechanism\n" +
+                                "   - Secure logout process\n\n" +
+                                "3. Best Practices:\n" +
+                                "   - Environment variable usage\n" +
+                                "   - Middleware for route protection\n" +
+                                "   - Error handling\n" +
+                                "   - Token expiration\n" +
+                                "   - MongoDB integration\n\n" +
+                                "4. Advanced Features:\n" +
+                                "   - Multiple device support\n" +
+                                "   - Token refresh mechanism\n" +
+                                "   - Session management\n" +
+                                "   - Concurrent login handling\n\n" +
+                                "5. API Endpoints:\n" +
+                                "   - POST /auth/register - New user registration\n" +
+                                "   - POST /auth/login - User login\n" +
+                                "   - POST /auth/refresh-token - Token refresh\n" +
+                                "   - POST /auth/logout - User logout\n" +
+                                "   - GET /protected - Protected route example"
+                        }
+                    }
                 ],
-                solution: {
-                    code: `const express = require('express');
+                advancedExercises: [
+                    {
+                        title: "Real-time Chat System with Microservices",
+                        difficulty: "Hard",
+                        description: "Implement a scalable real-time chat system using Socket.IO, Redis for pub/sub, and MongoDB for message persistence. Include features like user presence, message delivery status, and chat rooms.",
+                        hints: [
+                            "Use Socket.IO for real-time communication",
+                            "Implement Redis for message broker and caching",
+                            "Use MongoDB for message persistence",
+                            "Handle user presence and disconnections",
+                            "Implement message delivery acknowledgments",
+                            "Add room-based chat functionality",
+                            "Include error handling and reconnection logic"
+                        ],
+                        solution: {
+                            code: `const express = require('express');
         const http = require('http');
         const socketIO = require('socket.io');
         const mongoose = require('mongoose');
@@ -2691,38 +2691,38 @@ document.addEventListener('DOMContentLoaded', () => {
         server.listen(PORT, () => {
             console.log(\`Server running on port \${PORT}\`);
         });`,
-                    explanation: "This advanced chat system implementation demonstrates:\n\n" +
-                        "1. Real-time Features:\n" +
-                        "   - WebSocket communication using Socket.IO\n" +
-                        "   - User presence tracking\n" +
-                        "   - Typing indicators\n" +
-                        "   - Message delivery/read receipts\n" +
-                        "   - Room-based chat functionality\n\n" +
-                        "2. Scalability Solutions:\n" +
-                        "   - Redis pub/sub for message broadcasting\n" +
-                        "   - MongoDB for message persistence\n" +
-                        "   - User presence management\n" +
-                        "   - Efficient message delivery\n\n" +
-                        "3. Advanced Concepts:\n" +
-                        "   - Event-driven architecture\n" +
-                        "   - Message acknowledgment system\n" +
-                        "   - Error handling and recovery\n" +
-                        "   - Connection state management\n\n" +
-                        "4. Best Practices:\n" +
-                        "   - Authentication middleware\n" +
-                        "   - Database schema design\n" +
-                        "   - Real-time event handling\n" +
-                        "   - Error broadcasting\n\n" +
-                        "5. Performance Optimizations:\n" +
-                        "   - Message caching\n" +
-                        "   - Efficient room management\n" +
-                        "   - Optimized database queries\n" +
-                        "   - Connection pooling"
-                }
+                            explanation: "This advanced chat system implementation demonstrates:\n\n" +
+                                "1. Real-time Features:\n" +
+                                "   - WebSocket communication using Socket.IO\n" +
+                                "   - User presence tracking\n" +
+                                "   - Typing indicators\n" +
+                                "   - Message delivery/read receipts\n" +
+                                "   - Room-based chat functionality\n\n" +
+                                "2. Scalability Solutions:\n" +
+                                "   - Redis pub/sub for message broadcasting\n" +
+                                "   - MongoDB for message persistence\n" +
+                                "   - User presence management\n" +
+                                "   - Efficient message delivery\n\n" +
+                                "3. Advanced Concepts:\n" +
+                                "   - Event-driven architecture\n" +
+                                "   - Message acknowledgment system\n" +
+                                "   - Error handling and recovery\n" +
+                                "   - Connection state management\n\n" +
+                                "4. Best Practices:\n" +
+                                "   - Authentication middleware\n" +
+                                "   - Database schema design\n" +
+                                "   - Real-time event handling\n" +
+                                "   - Error broadcasting\n\n" +
+                                "5. Performance Optimizations:\n" +
+                                "   - Message caching\n" +
+                                "   - Efficient room management\n" +
+                                "   - Optimized database queries\n" +
+                                "   - Connection pooling"
+                        }
+                    }
+                ]
             }
-        ]
         }
-    }
     },
 
     {
@@ -3223,7 +3223,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     explanation: "A prototype interaction system similar to what you might find in design tools like Figma. It demonstrates how to structure interactive prototypes with complex animations, conditions, and state management."
                 }
             ],
-        
+
             roadmap: [
                 {
                     title: "1. UX Research & Design Thinking",
@@ -4154,31 +4154,31 @@ document.addEventListener('DOMContentLoaded', () => {
        window.location.href = '/dashboard';
    }
 }`,
-               explanation: "This interactive prototype solution demonstrates:\n" +
-                   "1. Comprehensive screen management and transitions\n" +
-                   "2. Configurable animations and micro-interactions\n" +
-                   "3. Progress tracking and navigation controls\n" +
-                   "4. Touch gesture support for mobile\n" +
-                   "5. Clean architecture with separation of concerns\n" +
-                   "6. Extensible configuration system\n" +
-                   "7. Error handling and state management"
-           }
-       }
-   ],
-   advancedExercises: [
-       {
-           title: "Design System Creation",
-           difficulty: "Hard",
-           description: "Create a comprehensive design system including components, tokens, documentation, and usage guidelines.",
-           hints: [
-               "Define clear design principles",
-               "Create reusable components",
-               "Document accessibility guidelines",
-               "Include interactive examples",
-               "Create implementation guides"
-           ],
-           solution: {
-               code: `// Design System Definition
+                            explanation: "This interactive prototype solution demonstrates:\n" +
+                                "1. Comprehensive screen management and transitions\n" +
+                                "2. Configurable animations and micro-interactions\n" +
+                                "3. Progress tracking and navigation controls\n" +
+                                "4. Touch gesture support for mobile\n" +
+                                "5. Clean architecture with separation of concerns\n" +
+                                "6. Extensible configuration system\n" +
+                                "7. Error handling and state management"
+                        }
+                    }
+                ],
+                advancedExercises: [
+                    {
+                        title: "Design System Creation",
+                        difficulty: "Hard",
+                        description: "Create a comprehensive design system including components, tokens, documentation, and usage guidelines.",
+                        hints: [
+                            "Define clear design principles",
+                            "Create reusable components",
+                            "Document accessibility guidelines",
+                            "Include interactive examples",
+                            "Create implementation guides"
+                        ],
+                        solution: {
+                            code: `// Design System Definition
 const designSystem = {
    // Design Tokens
    tokens: {
@@ -4436,20 +4436,20 @@ const designSystem = {
        }
    }
 };`,
-               explanation: "This design system solution includes:\n" +
-                   "1. Comprehensive token system for colors, typography, spacing\n" +
-                   "2. Detailed component definitions with variants and states\n" +
-                   "3. Common UI patterns and layouts\n" +
-                   "4. Extensive documentation and usage guidelines\n" +
-                   "5. Accessibility considerations\n" +
-                   "6. Animation and interaction definitions\n" +
-                   "7. Responsive design tokens\n" +
-                   "8. Component composition patterns"
-           }
-       }
-   ]
-}
+                            explanation: "This design system solution includes:\n" +
+                                "1. Comprehensive token system for colors, typography, spacing\n" +
+                                "2. Detailed component definitions with variants and states\n" +
+                                "3. Common UI patterns and layouts\n" +
+                                "4. Extensive documentation and usage guidelines\n" +
+                                "5. Accessibility considerations\n" +
+                                "6. Animation and interaction definitions\n" +
+                                "7. Responsive design tokens\n" +
+                                "8. Component composition patterns"
+                        }
+                    }
+                ]
             }
+        }
     },
     {
         id: 4,
@@ -4632,8 +4632,8 @@ const designSystem = {
                     explanation: "Shows how to create and use functions in C++. Includes examples of different return types and parameters."
                 }
             ],
-        
-            
+
+
             //roadmap section
             roadmap: [
                 {
@@ -4702,7 +4702,7 @@ const designSystem = {
                     description: "Dive into advanced C++ features and modern C++ concepts."
                 }
             ],
-        
+
             //resources section
             resources: {
                 documentation: [
@@ -4776,8 +4776,8 @@ const designSystem = {
                     }
                 ]
             },
-        
-        
+
+
             //practice section
             practice: {
                 beginnerExercises: [
@@ -6089,7 +6089,7 @@ const designSystem = {
                     explanation: "Advanced implementation of Segment Tree with lazy propagation for efficient range updates and queries. Essential for problems involving range operations."
                 }
             ],
-        
+
             roadmap: [
                 {
                     title: "1. Programming Fundamentals",
@@ -6157,7 +6157,7 @@ const designSystem = {
                     ]
                 }
             ],
-        
+
             resources: {
                 documentation: [
                     {
@@ -6260,7 +6260,7 @@ const designSystem = {
                     }
                 ]
             },
-        
+
             practice: {
                 beginnerExercises: [
                     {
@@ -6514,36 +6514,36 @@ const designSystem = {
                     return 0;
                 }`,
                             explanation: "The Centroid Decomposition implementation provides several key functionalities:\\n\\n" +
-                "1. Tree Construction:\\n" +
-                "   - Uses adjacency list representation\\n" +
-                "   - Supports adding undirected edges\\n" +
-                "   - Maintains parent-child relationships\\n\\n" +
-                "2. Core Decomposition Process:\\n" +
-                "   - getSize(): Calculates subtree sizes using DFS\\n" +
-                "   - getCentroid(): Finds the centroid of current component\\n" +
-                "   - decompose(): Recursively builds the centroid tree\\n\\n" +
-                "3. Distance Queries:\\n" +
-                "   - Preprocesses paths to all centroids for each node\\n" +
-                "   - Efficiently finds distances between any two nodes\\n" +
-                "   - Uses centroid tree properties for optimization\\n\\n" +
-                "Time Complexities:\\n" +
-                "- Building decomposition: O(N log N)\\n" +
-                "- Distance queries: O(log N)\\n" +
-                "- Preprocessing: O(N log N)\\n\\n" +
-                "The implementation is particularly useful for:\\n" +
-                "- Path queries on trees\\n" +
-                "- Distance calculations\\n" +
-                "- Tree center problems\\n" +
-                "- Subtree queries\\n\\n" +
-                "Common applications include solving problems involving:\\n" +
-                "- Tree distances\\n" +
-                "- Path updates\\n" +
-                "- Subtree modifications\\n" +
-                "- Tree diameter queries"
+                                "1. Tree Construction:\\n" +
+                                "   - Uses adjacency list representation\\n" +
+                                "   - Supports adding undirected edges\\n" +
+                                "   - Maintains parent-child relationships\\n\\n" +
+                                "2. Core Decomposition Process:\\n" +
+                                "   - getSize(): Calculates subtree sizes using DFS\\n" +
+                                "   - getCentroid(): Finds the centroid of current component\\n" +
+                                "   - decompose(): Recursively builds the centroid tree\\n\\n" +
+                                "3. Distance Queries:\\n" +
+                                "   - Preprocesses paths to all centroids for each node\\n" +
+                                "   - Efficiently finds distances between any two nodes\\n" +
+                                "   - Uses centroid tree properties for optimization\\n\\n" +
+                                "Time Complexities:\\n" +
+                                "- Building decomposition: O(N log N)\\n" +
+                                "- Distance queries: O(log N)\\n" +
+                                "- Preprocessing: O(N log N)\\n\\n" +
+                                "The implementation is particularly useful for:\\n" +
+                                "- Path queries on trees\\n" +
+                                "- Distance calculations\\n" +
+                                "- Tree center problems\\n" +
+                                "- Subtree queries\\n\\n" +
+                                "Common applications include solving problems involving:\\n" +
+                                "- Tree distances\\n" +
+                                "- Path updates\\n" +
+                                "- Subtree modifications\\n" +
+                                "- Tree diameter queries"
+                        }
+                    }
+                ]
             }
-        }
-        ]
-        }
         }
     },
     {
@@ -7015,7 +7015,7 @@ const designSystem = {
                     explanation: "This example demonstrates setting up a complete monitoring stack with Prometheus, Grafana, AlertManager, and Node Exporter, including alert configurations and dashboard definitions."
                 }
             ],
-        
+
             roadmap: [
                 {
                     title: "1. Cloud Computing Fundamentals",
@@ -8103,44 +8103,44 @@ else
    echo "Deployment failed"
    exit 1
 fi`,
-               explanation: "This advanced exercise demonstrates a complete DevOps pipeline including:\n\n" +
-                   "1. CI/CD Pipeline:\n" +
-                   "   - Automated testing\n" +
-                   "   - Security scanning\n" +
-                   "   - Container building\n" +
-                   "   - Deployment automation\n\n" +
-                   "2. Monitoring Setup:\n" +
-                   "   - Prometheus configuration\n" +
-                   "   - Grafana dashboards\n" +
-                   "   - Custom metrics\n" +
-                   "   - Alert management\n\n" +
-                   "3. Logging System:\n" +
-                   "   - Centralized logging\n" +
-                   "   - Log aggregation\n" +
-                   "   - Search and analysis\n\n" +
-                   "4. Auto-scaling:\n" +
-                   "   - Horizontal Pod Autoscaling\n" +
-                   "   - Resource-based scaling\n" +
-                   "   - Custom metrics scaling\n\n" +
-                   "5. Security:\n" +
-                   "   - Network policies\n" +
-                   "   - Security scanning\n" +
-                   "   - Access controls\n\n" +
-                   "6. Infrastructure:\n" +
-                   "   - EKS cluster setup\n" +
-                   "   - Monitoring infrastructure\n" +
-                   "   - Terraform automation"
-           }
-       }
-   ]
-}
-    }
-},
-{
-    id: 8,
-    title: "Mobile App Development",
-    description: "To learn mobile development, follow this roadmap",
-    extendedContent: `
+                            explanation: "This advanced exercise demonstrates a complete DevOps pipeline including:\n\n" +
+                                "1. CI/CD Pipeline:\n" +
+                                "   - Automated testing\n" +
+                                "   - Security scanning\n" +
+                                "   - Container building\n" +
+                                "   - Deployment automation\n\n" +
+                                "2. Monitoring Setup:\n" +
+                                "   - Prometheus configuration\n" +
+                                "   - Grafana dashboards\n" +
+                                "   - Custom metrics\n" +
+                                "   - Alert management\n\n" +
+                                "3. Logging System:\n" +
+                                "   - Centralized logging\n" +
+                                "   - Log aggregation\n" +
+                                "   - Search and analysis\n\n" +
+                                "4. Auto-scaling:\n" +
+                                "   - Horizontal Pod Autoscaling\n" +
+                                "   - Resource-based scaling\n" +
+                                "   - Custom metrics scaling\n\n" +
+                                "5. Security:\n" +
+                                "   - Network policies\n" +
+                                "   - Security scanning\n" +
+                                "   - Access controls\n\n" +
+                                "6. Infrastructure:\n" +
+                                "   - EKS cluster setup\n" +
+                                "   - Monitoring infrastructure\n" +
+                                "   - Terraform automation"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    {
+        id: 8,
+        title: "Mobile App Development",
+        description: "To learn mobile development, follow this roadmap",
+        extendedContent: `
         Learn to build native and cross-platform mobile applications for iOS and Android. 
         Start with fundamental mobile UI/UX principles and progress to native development 
         using Swift/SwiftUI for iOS and Kotlin for Android.
@@ -8152,69 +8152,69 @@ fi`,
         Advanced topics include mobile security, offline storage, push notifications, 
         app store deployment, and mobile-specific design patterns.
     `,
-    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
-    trackInfo: {
-        prerequisites: [
-            "Basic programming knowledge in any language",
-            "Understanding of object-oriented programming",
-            "Familiarity with version control (Git)",
-            "Basic understanding of UI/UX principles",
-            "Knowledge of REST APIs and web services",
-            "Basic understanding of databases",
-            "Familiarity with JSON and data formats"
-        ],
-        outcomes: [
-            "Build native iOS applications using Swift/SwiftUI",
-            "Develop Android apps using Kotlin/Jetpack Compose",
-            "Create cross-platform applications with React Native or Flutter",
-            "Implement responsive and adaptive UI designs",
-            "Integrate with backend services and APIs",
-            "Handle data persistence and state management",
-            "Implement push notifications and background tasks",
-            "Optimize app performance and battery usage",
-            "Deploy apps to App Store and Google Play",
-            "Implement mobile security best practices"
-        ],
-        sections: [
-            {
-                title: "Mobile Development Fundamentals",
-                content: "Learn core mobile development concepts including platform-specific architecture, UI components, layouts, and navigation patterns. Understand mobile app lifecycle, permissions, and platform guidelines. Master debugging tools and development environments."
-            },
-            {
-                title: "Native iOS Development",
-                content: "Master iOS development using Swift and SwiftUI. Learn Xcode, Interface Builder, Auto Layout, and iOS frameworks. Understand iOS app architecture, Core Data, and platform-specific features. Implement authentication, notifications, and background processing."
-            },
-            {
-                title: "Native Android Development",
-                content: "Learn Android development with Kotlin and Jetpack Compose. Master Android Studio, Material Design, and Android SDK. Understand Android architecture components, data storage, and platform integration. Implement services, broadcast receivers, and background tasks."
-            },
-            {
-                title: "Cross-Platform Development",
-                content: "Explore cross-platform development using React Native and Flutter. Learn shared codebase architecture, platform-specific adaptations, and native module integration. Understand state management, navigation libraries, and cross-platform UI components."
-            },
-            {
-                title: "Data & State Management",
-                content: "Master mobile data persistence using SQLite, Realm, or Core Data. Implement state management solutions using Redux, MobX, or Provider. Learn offline-first architecture, data synchronization, and caching strategies."
-            },
-            {
-                title: "App Performance & Security",
-                content: "Optimize app performance through profiling, caching, and lazy loading. Implement security best practices including encryption, secure storage, and API security. Learn about app signing, code obfuscation, and vulnerability testing."
-            },
-            {
-                title: "App Store & Production",
-                content: "Learn app store guidelines, submission processes, and deployment strategies. Master continuous integration and delivery for mobile apps. Understand analytics integration, crash reporting, and user feedback management."
-            },
-            {
-                title: "Advanced Mobile Features",
-                content: "Implement advanced features like maps integration, payment processing, and social media integration. Learn about AR/VR capabilities, machine learning integration, and IoT device connectivity. Understand platform-specific advanced features and APIs."
-            }
-        ]
-    },
-    content: {
-        examples: [
-            {
-                title: "iOS UI Implementation with SwiftUI",
-                code: `// Custom Card View in SwiftUI
+        icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+        trackInfo: {
+            prerequisites: [
+                "Basic programming knowledge in any language",
+                "Understanding of object-oriented programming",
+                "Familiarity with version control (Git)",
+                "Basic understanding of UI/UX principles",
+                "Knowledge of REST APIs and web services",
+                "Basic understanding of databases",
+                "Familiarity with JSON and data formats"
+            ],
+            outcomes: [
+                "Build native iOS applications using Swift/SwiftUI",
+                "Develop Android apps using Kotlin/Jetpack Compose",
+                "Create cross-platform applications with React Native or Flutter",
+                "Implement responsive and adaptive UI designs",
+                "Integrate with backend services and APIs",
+                "Handle data persistence and state management",
+                "Implement push notifications and background tasks",
+                "Optimize app performance and battery usage",
+                "Deploy apps to App Store and Google Play",
+                "Implement mobile security best practices"
+            ],
+            sections: [
+                {
+                    title: "Mobile Development Fundamentals",
+                    content: "Learn core mobile development concepts including platform-specific architecture, UI components, layouts, and navigation patterns. Understand mobile app lifecycle, permissions, and platform guidelines. Master debugging tools and development environments."
+                },
+                {
+                    title: "Native iOS Development",
+                    content: "Master iOS development using Swift and SwiftUI. Learn Xcode, Interface Builder, Auto Layout, and iOS frameworks. Understand iOS app architecture, Core Data, and platform-specific features. Implement authentication, notifications, and background processing."
+                },
+                {
+                    title: "Native Android Development",
+                    content: "Learn Android development with Kotlin and Jetpack Compose. Master Android Studio, Material Design, and Android SDK. Understand Android architecture components, data storage, and platform integration. Implement services, broadcast receivers, and background tasks."
+                },
+                {
+                    title: "Cross-Platform Development",
+                    content: "Explore cross-platform development using React Native and Flutter. Learn shared codebase architecture, platform-specific adaptations, and native module integration. Understand state management, navigation libraries, and cross-platform UI components."
+                },
+                {
+                    title: "Data & State Management",
+                    content: "Master mobile data persistence using SQLite, Realm, or Core Data. Implement state management solutions using Redux, MobX, or Provider. Learn offline-first architecture, data synchronization, and caching strategies."
+                },
+                {
+                    title: "App Performance & Security",
+                    content: "Optimize app performance through profiling, caching, and lazy loading. Implement security best practices including encryption, secure storage, and API security. Learn about app signing, code obfuscation, and vulnerability testing."
+                },
+                {
+                    title: "App Store & Production",
+                    content: "Learn app store guidelines, submission processes, and deployment strategies. Master continuous integration and delivery for mobile apps. Understand analytics integration, crash reporting, and user feedback management."
+                },
+                {
+                    title: "Advanced Mobile Features",
+                    content: "Implement advanced features like maps integration, payment processing, and social media integration. Learn about AR/VR capabilities, machine learning integration, and IoT device connectivity. Understand platform-specific advanced features and APIs."
+                }
+            ]
+        },
+        content: {
+            examples: [
+                {
+                    title: "iOS UI Implementation with SwiftUI",
+                    code: `// Custom Card View in SwiftUI
     import SwiftUI
     
     struct CardView: View {
@@ -8281,11 +8281,11 @@ fi`,
             }
         }
     }`,
-                explanation: "This example demonstrates modern iOS UI development using SwiftUI, including async image loading, animations, and responsive layout design."
-            },
-            {
-                title: "Android Jetpack Compose UI",
-                code: `// Material Design Card in Jetpack Compose
+                    explanation: "This example demonstrates modern iOS UI development using SwiftUI, including async image loading, animations, and responsive layout design."
+                },
+                {
+                    title: "Android Jetpack Compose UI",
+                    code: `// Material Design Card in Jetpack Compose
     import androidx.compose.material.*
     import androidx.compose.runtime.*
     import androidx.compose.ui.layout.*
@@ -8363,11 +8363,11 @@ fi`,
             }
         }
     }`,
-                explanation: "This example shows modern Android UI development using Jetpack Compose, implementing Material Design principles and state management."
-            },
-            {
-                title: "React Native Cross-Platform Implementation",
-                code: `// Custom Card Component in React Native
+                    explanation: "This example shows modern Android UI development using Jetpack Compose, implementing Material Design principles and state management."
+                },
+                {
+                    title: "React Native Cross-Platform Implementation",
+                    code: `// Custom Card Component in React Native
     import React, { useState } from 'react';
     import {
         View,
@@ -8476,11 +8476,11 @@ fi`,
             </ScrollView>
         );
     }`,
-                explanation: "This example shows cross-platform development with React Native, including animated components and shared styling."
-            },
-            {
-                title: "Flutter Cross-Platform UI",
-                code: `// Custom Card Widget in Flutter
+                    explanation: "This example shows cross-platform development with React Native, including animated components and shared styling."
+                },
+                {
+                    title: "Flutter Cross-Platform UI",
+                    code: `// Custom Card Widget in Flutter
     import 'package:flutter/material.dart';
     
     class CustomCard extends StatefulWidget {
@@ -8593,369 +8593,369 @@ fi`,
         );
       }
     }`,
-                explanation: "This example demonstrates Flutter's cross-platform UI development capabilities with Material Design components and animations."
-            }
-        ],
-    
-        roadmap: [
-            {
-                title: "1. Mobile Development Fundamentals",
-                description: "Master core concepts of mobile development",
-                topics: [
-                    "Mobile app architecture patterns",
-                    "UI/UX principles for mobile",
-                    "Platform-specific guidelines",
-                    "Development environment setup",
-                    "Version control and collaboration",
-                    "Mobile app lifecycle",
-                    "Debugging and testing basics"
-                ]
-            },
-            {
-                title: "2. iOS Development",
-                description: "Learn native iOS development",
-                topics: [
-                    "Swift programming fundamentals",
-                    "SwiftUI and UIKit",
-                    "iOS app architecture",
-                    "Core Data and persistence",
-                    "iOS networking and security",
-                    "App Store guidelines",
-                    "iOS testing and debugging"
-                ]
-            },
-            {
-                title: "3. Android Development",
-                description: "Master Android app development",
-                topics: [
-                    "Kotlin programming",
-                    "Jetpack Compose and XML layouts",
-                    "Android architecture components",
-                    "Room database and SQLite",
-                    "Android networking",
-                    "Play Store guidelines",
-                    "Android testing frameworks"
-                ]
-            },
-            {
-                title: "4. Cross-Platform Development",
-                description: "Explore cross-platform solutions",
-                topics: [
-                    "React Native fundamentals",
-                    "Flutter development",
-                    "Cross-platform architecture",
-                    "Shared codebase management",
-                    "Native modules integration",
-                    "Platform-specific adaptations",
-                    "Performance optimization"
-                ]
-            },
-            {
-                title: "5. Data Management & Storage",
-                description: "Handle data in mobile applications",
-                topics: [
-                    "Local data persistence",
-                    "State management solutions",
-                    "API integration",
-                    "Offline support",
-                    "Data synchronization",
-                    "Cache management",
-                    "Security best practices"
-                ]
-            },
-            {
-                title: "6. Advanced Features",
-                description: "Implement advanced mobile capabilities",
-                topics: [
-                    "Push notifications",
-                    "Background processing",
-                    "Location services",
-                    "Camera and media",
-                    "Social media integration",
-                    "Payment processing",
-                    "Analytics and tracking"
-                ]
-            },
-            {
-                title: "7. Testing & Deployment",
-                description: "Master testing and deployment processes",
-                topics: [
-                    "Unit and integration testing",
-                    "UI automation testing",
-                    "Continuous integration",
-                    "App store deployment",
-                    "Beta testing",
-                    "App signing and provisioning",
-                    "Release management"
-                ]
-            }
-        ],
-        resources: {
-            documentation: [
-                {
-                    title: "iOS Developer Documentation",
-                    url: "https://developer.apple.com/documentation/",
-                    description: "Official Apple documentation for iOS development including SwiftUI and UIKit",
-                    type: "Platform Documentation"
-                },
-                {
-                    title: "Android Developer Guides",
-                    url: "https://developer.android.com/guide",
-                    description: "Official Android development documentation including Kotlin and Jetpack",
-                    type: "Platform Documentation"
-                },
-                {
-                    title: "React Native Documentation",
-                    url: "https://reactnative.dev/docs/getting-started",
-                    description: "Official React Native documentation and guides",
-                    type: "Framework Documentation"
-                },
-                {
-                    title: "Flutter Documentation",
-                    url: "https://flutter.dev/docs",
-                    description: "Comprehensive Flutter development documentation and cookbooks",
-                    type: "Framework Documentation"
-                },
-                {
-                    title: "Material Design Guidelines",
-                    url: "https://material.io/design",
-                    description: "Design guidelines for creating mobile interfaces",
-                    type: "Design Guidelines"
+                    explanation: "This example demonstrates Flutter's cross-platform UI development capabilities with Material Design components and animations."
                 }
             ],
-            tutorials: [
-                {
-                    title: "SwiftUI Tutorial",
-                    url: "https://developer.apple.com/tutorials/swiftui/",
-                    description: "Official Apple tutorials for SwiftUI development",
-                    type: "Platform Tutorial"
-                },
-                {
-                    title: "Android Kotlin Fundamentals",
-                    url: "https://developer.android.com/courses/kotlin-android-fundamentals/overview",
-                    description: "Official Android Kotlin development course",
-                    type: "Course"
-                },
-                {
-                    title: "React Native Crash Course",
-                    url: "https://www.youtube.com/watch?v=Hf4MJH0jDb4",
-                    description: "Comprehensive React Native tutorial for beginners",
-                    type: "Video Tutorial"
-                },
-                {
-                    title: "Flutter App Development",
-                    url: "https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart",
-                    description: "Complete Flutter development bootcamp",
-                    type: "Course"
-                },
-                {
-                    title: "Mobile UI/UX Design Course",
-                    url: "https://www.coursera.org/learn/mobile-app-design",
-                    description: "Mobile app design principles and best practices",
-                    type: "Design Course"
-                }
-            ],
-            videos: [
-                {
-                    title: "Sean Allen",
-                    url: "https://www.youtube.com/c/SeanAllen",
-                    description: "iOS development tutorials and career advice",
-                    platform: "YouTube"
-                },
-                {
-                    title: "Philipp Lackner",
-                    url: "https://www.youtube.com/c/PhilippLackner",
-                    description: "Android development tutorials with Kotlin",
-                    platform: "YouTube"
-                },
-                {
-                    title: "Flutter Mapp",
-                    url: "https://www.youtube.com/c/FlutterMapp",
-                    description: "Flutter development tutorials and projects",
-                    platform: "YouTube"
-                },
-                {
-                    title: "William Candillon",
-                    url: "https://www.youtube.com/c/wcandillon",
-                    description: "Advanced React Native tutorials and animations",
-                    platform: "YouTube"
-                },
-                {
-                    title: "London App Brewery",
-                    url: "https://www.youtube.com/c/Londonappbrewery",
-                    description: "Mobile app development tutorials and courses",
-                    platform: "YouTube"
-                }
-            ],
-            books: [
-                {
-                    title: "iOS Programming: The Big Nerd Ranch Guide",
-                    author: "Christian Keur, Aaron Hillegass",
-                    description: "Comprehensive guide to iOS development",
-                    level: "Intermediate"
-                },
-                {
-                    title: "Android Programming: The Big Nerd Ranch Guide",
-                    author: "Bill Phillips, Chris Stewart",
-                    description: "In-depth Android development guide",
-                    level: "Intermediate"
-                },
-                {
-                    title: "Flutter in Action",
-                    author: "Eric Windmill",
-                    description: "Practical Flutter development guide",
-                    level: "Intermediate"
-                },
-                {
-                    title: "React Native in Action",
-                    author: "Nader Dabit",
-                    description: "Building mobile apps with React Native",
-                    level: "Intermediate"
-                },
-                {
-                    title: "Mobile App Development with Swift",
-                    author: "Apple Education",
-                    description: "Official Apple guide to Swift development",
-                    level: "Beginner"
-                }
-            ],
-            tools: [
-                {
-                    title: "Xcode",
-                    url: "https://developer.apple.com/xcode/",
-                    description: "Official IDE for iOS development",
-                    type: "Development IDE",
-                    category: "Essential"
-                },
-                {
-                    title: "Android Studio",
-                    url: "https://developer.android.com/studio",
-                    description: "Official IDE for Android development",
-                    type: "Development IDE",
-                    category: "Essential"
-                },
-                {
-                    title: "Visual Studio Code",
-                    url: "https://code.visualstudio.com/",
-                    description: "Popular editor for React Native and Flutter",
-                    type: "Code Editor",
-                    category: "Essential"
-                },
-                {
-                    title: "Figma",
-                    url: "https://www.figma.com/",
-                    description: "Design and prototyping tool",
-                    type: "Design Tool",
-                    category: "Design"
-                },
-                {
-                    title: "Firebase",
-                    url: "https://firebase.google.com/",
-                    description: "Mobile app development platform",
-                    type: "Development Platform",
-                    category: "Backend"
-                }
-            ],
-            communities: [
-                {
-                    title: "iOS Developers",
-                    url: "https://developer.apple.com/forums/",
-                    description: "Official Apple developer forums",
-                    type: "Forum"
-                },
-                {
-                    title: "Android Developers",
-                    url: "https://reddit.com/r/androiddev",
-                    description: "Android development community on Reddit",
-                    type: "Forum"
-                },
-                {
-                    title: "React Native Community",
-                    url: "https://reactnative.dev/community/overview",
-                    description: "Official React Native community resources",
-                    type: "Community"
-                },
-                {
-                    title: "Flutter Dev",
-                    url: "https://discord.gg/flutter",
-                    description: "Flutter development community on Discord",
-                    type: "Discord"
-                },
-                {
-                    title: "Mobile Dev Weekly",
-                    url: "https://mobiledevweekly.com/",
-                    description: "Weekly newsletter for mobile developers",
-                    type: "Newsletter"
-                }
-            ],
-            podcasts: [
-                {
-                    title: "Swift by Sundell",
-                    url: "https://www.swiftbysundell.com/podcast/",
-                    description: "Weekly podcast about Swift development",
-                    platform: "Podcast"
-                },
-                {
-                    title: "Android Developers Backstage",
-                    url: "http://androidbackstage.blogspot.com/",
-                    description: "Official Android developers podcast",
-                    platform: "Podcast"
-                },
-                {
-                    title: "React Native Radio",
-                    url: "https://reactnativeradio.com/",
-                    description: "Weekly podcast about React Native development",
-                    platform: "Podcast"
-                },
-                {
-                    title: "Flutter Widget of the Week",
-                    url: "https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG",
-                    description: "Short videos about Flutter widgets",
-                    platform: "Video Series"
-                }
-            ],
-            blogs: [
-                {
-                    title: "Swift with Majid",
-                    url: "https://swiftwithmajid.com/",
-                    description: "Weekly blog about Swift development",
-                    type: "Blog"
-                },
-                {
-                    title: "Android Weekly",
-                    url: "https://androidweekly.net/",
-                    description: "Weekly Android development newsletter",
-                    type: "Newsletter"
-                },
-                {
-                    title: "React Native Blog",
-                    url: "https://reactnative.dev/blog",
-                    description: "Official React Native blog",
-                    type: "Blog"
-                },
-                {
-                    title: "Flutter Medium Publication",
-                    url: "https://medium.com/flutter",
-                    description: "Official Flutter blog on Medium",
-                    type: "Blog"
-                }
-            ]
-        },
 
-practice: {
-    beginnerExercises: [
-        {
-            title: "To-Do List App",
-            difficulty: "Easy",
-            description: "Create a basic to-do list application with local storage capabilities and basic UI features.",
-            hints: [
-                "Start with a simple list view",
-                "Implement add/delete functionality",
-                "Use local storage for data persistence",
-                "Add basic input validation"
+            roadmap: [
+                {
+                    title: "1. Mobile Development Fundamentals",
+                    description: "Master core concepts of mobile development",
+                    topics: [
+                        "Mobile app architecture patterns",
+                        "UI/UX principles for mobile",
+                        "Platform-specific guidelines",
+                        "Development environment setup",
+                        "Version control and collaboration",
+                        "Mobile app lifecycle",
+                        "Debugging and testing basics"
+                    ]
+                },
+                {
+                    title: "2. iOS Development",
+                    description: "Learn native iOS development",
+                    topics: [
+                        "Swift programming fundamentals",
+                        "SwiftUI and UIKit",
+                        "iOS app architecture",
+                        "Core Data and persistence",
+                        "iOS networking and security",
+                        "App Store guidelines",
+                        "iOS testing and debugging"
+                    ]
+                },
+                {
+                    title: "3. Android Development",
+                    description: "Master Android app development",
+                    topics: [
+                        "Kotlin programming",
+                        "Jetpack Compose and XML layouts",
+                        "Android architecture components",
+                        "Room database and SQLite",
+                        "Android networking",
+                        "Play Store guidelines",
+                        "Android testing frameworks"
+                    ]
+                },
+                {
+                    title: "4. Cross-Platform Development",
+                    description: "Explore cross-platform solutions",
+                    topics: [
+                        "React Native fundamentals",
+                        "Flutter development",
+                        "Cross-platform architecture",
+                        "Shared codebase management",
+                        "Native modules integration",
+                        "Platform-specific adaptations",
+                        "Performance optimization"
+                    ]
+                },
+                {
+                    title: "5. Data Management & Storage",
+                    description: "Handle data in mobile applications",
+                    topics: [
+                        "Local data persistence",
+                        "State management solutions",
+                        "API integration",
+                        "Offline support",
+                        "Data synchronization",
+                        "Cache management",
+                        "Security best practices"
+                    ]
+                },
+                {
+                    title: "6. Advanced Features",
+                    description: "Implement advanced mobile capabilities",
+                    topics: [
+                        "Push notifications",
+                        "Background processing",
+                        "Location services",
+                        "Camera and media",
+                        "Social media integration",
+                        "Payment processing",
+                        "Analytics and tracking"
+                    ]
+                },
+                {
+                    title: "7. Testing & Deployment",
+                    description: "Master testing and deployment processes",
+                    topics: [
+                        "Unit and integration testing",
+                        "UI automation testing",
+                        "Continuous integration",
+                        "App store deployment",
+                        "Beta testing",
+                        "App signing and provisioning",
+                        "Release management"
+                    ]
+                }
             ],
-            solution: {
-                code: `// React Native Implementation
+            resources: {
+                documentation: [
+                    {
+                        title: "iOS Developer Documentation",
+                        url: "https://developer.apple.com/documentation/",
+                        description: "Official Apple documentation for iOS development including SwiftUI and UIKit",
+                        type: "Platform Documentation"
+                    },
+                    {
+                        title: "Android Developer Guides",
+                        url: "https://developer.android.com/guide",
+                        description: "Official Android development documentation including Kotlin and Jetpack",
+                        type: "Platform Documentation"
+                    },
+                    {
+                        title: "React Native Documentation",
+                        url: "https://reactnative.dev/docs/getting-started",
+                        description: "Official React Native documentation and guides",
+                        type: "Framework Documentation"
+                    },
+                    {
+                        title: "Flutter Documentation",
+                        url: "https://flutter.dev/docs",
+                        description: "Comprehensive Flutter development documentation and cookbooks",
+                        type: "Framework Documentation"
+                    },
+                    {
+                        title: "Material Design Guidelines",
+                        url: "https://material.io/design",
+                        description: "Design guidelines for creating mobile interfaces",
+                        type: "Design Guidelines"
+                    }
+                ],
+                tutorials: [
+                    {
+                        title: "SwiftUI Tutorial",
+                        url: "https://developer.apple.com/tutorials/swiftui/",
+                        description: "Official Apple tutorials for SwiftUI development",
+                        type: "Platform Tutorial"
+                    },
+                    {
+                        title: "Android Kotlin Fundamentals",
+                        url: "https://developer.android.com/courses/kotlin-android-fundamentals/overview",
+                        description: "Official Android Kotlin development course",
+                        type: "Course"
+                    },
+                    {
+                        title: "React Native Crash Course",
+                        url: "https://www.youtube.com/watch?v=Hf4MJH0jDb4",
+                        description: "Comprehensive React Native tutorial for beginners",
+                        type: "Video Tutorial"
+                    },
+                    {
+                        title: "Flutter App Development",
+                        url: "https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart",
+                        description: "Complete Flutter development bootcamp",
+                        type: "Course"
+                    },
+                    {
+                        title: "Mobile UI/UX Design Course",
+                        url: "https://www.coursera.org/learn/mobile-app-design",
+                        description: "Mobile app design principles and best practices",
+                        type: "Design Course"
+                    }
+                ],
+                videos: [
+                    {
+                        title: "Sean Allen",
+                        url: "https://www.youtube.com/c/SeanAllen",
+                        description: "iOS development tutorials and career advice",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Philipp Lackner",
+                        url: "https://www.youtube.com/c/PhilippLackner",
+                        description: "Android development tutorials with Kotlin",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Flutter Mapp",
+                        url: "https://www.youtube.com/c/FlutterMapp",
+                        description: "Flutter development tutorials and projects",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "William Candillon",
+                        url: "https://www.youtube.com/c/wcandillon",
+                        description: "Advanced React Native tutorials and animations",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "London App Brewery",
+                        url: "https://www.youtube.com/c/Londonappbrewery",
+                        description: "Mobile app development tutorials and courses",
+                        platform: "YouTube"
+                    }
+                ],
+                books: [
+                    {
+                        title: "iOS Programming: The Big Nerd Ranch Guide",
+                        author: "Christian Keur, Aaron Hillegass",
+                        description: "Comprehensive guide to iOS development",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "Android Programming: The Big Nerd Ranch Guide",
+                        author: "Bill Phillips, Chris Stewart",
+                        description: "In-depth Android development guide",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "Flutter in Action",
+                        author: "Eric Windmill",
+                        description: "Practical Flutter development guide",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "React Native in Action",
+                        author: "Nader Dabit",
+                        description: "Building mobile apps with React Native",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "Mobile App Development with Swift",
+                        author: "Apple Education",
+                        description: "Official Apple guide to Swift development",
+                        level: "Beginner"
+                    }
+                ],
+                tools: [
+                    {
+                        title: "Xcode",
+                        url: "https://developer.apple.com/xcode/",
+                        description: "Official IDE for iOS development",
+                        type: "Development IDE",
+                        category: "Essential"
+                    },
+                    {
+                        title: "Android Studio",
+                        url: "https://developer.android.com/studio",
+                        description: "Official IDE for Android development",
+                        type: "Development IDE",
+                        category: "Essential"
+                    },
+                    {
+                        title: "Visual Studio Code",
+                        url: "https://code.visualstudio.com/",
+                        description: "Popular editor for React Native and Flutter",
+                        type: "Code Editor",
+                        category: "Essential"
+                    },
+                    {
+                        title: "Figma",
+                        url: "https://www.figma.com/",
+                        description: "Design and prototyping tool",
+                        type: "Design Tool",
+                        category: "Design"
+                    },
+                    {
+                        title: "Firebase",
+                        url: "https://firebase.google.com/",
+                        description: "Mobile app development platform",
+                        type: "Development Platform",
+                        category: "Backend"
+                    }
+                ],
+                communities: [
+                    {
+                        title: "iOS Developers",
+                        url: "https://developer.apple.com/forums/",
+                        description: "Official Apple developer forums",
+                        type: "Forum"
+                    },
+                    {
+                        title: "Android Developers",
+                        url: "https://reddit.com/r/androiddev",
+                        description: "Android development community on Reddit",
+                        type: "Forum"
+                    },
+                    {
+                        title: "React Native Community",
+                        url: "https://reactnative.dev/community/overview",
+                        description: "Official React Native community resources",
+                        type: "Community"
+                    },
+                    {
+                        title: "Flutter Dev",
+                        url: "https://discord.gg/flutter",
+                        description: "Flutter development community on Discord",
+                        type: "Discord"
+                    },
+                    {
+                        title: "Mobile Dev Weekly",
+                        url: "https://mobiledevweekly.com/",
+                        description: "Weekly newsletter for mobile developers",
+                        type: "Newsletter"
+                    }
+                ],
+                podcasts: [
+                    {
+                        title: "Swift by Sundell",
+                        url: "https://www.swiftbysundell.com/podcast/",
+                        description: "Weekly podcast about Swift development",
+                        platform: "Podcast"
+                    },
+                    {
+                        title: "Android Developers Backstage",
+                        url: "http://androidbackstage.blogspot.com/",
+                        description: "Official Android developers podcast",
+                        platform: "Podcast"
+                    },
+                    {
+                        title: "React Native Radio",
+                        url: "https://reactnativeradio.com/",
+                        description: "Weekly podcast about React Native development",
+                        platform: "Podcast"
+                    },
+                    {
+                        title: "Flutter Widget of the Week",
+                        url: "https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG",
+                        description: "Short videos about Flutter widgets",
+                        platform: "Video Series"
+                    }
+                ],
+                blogs: [
+                    {
+                        title: "Swift with Majid",
+                        url: "https://swiftwithmajid.com/",
+                        description: "Weekly blog about Swift development",
+                        type: "Blog"
+                    },
+                    {
+                        title: "Android Weekly",
+                        url: "https://androidweekly.net/",
+                        description: "Weekly Android development newsletter",
+                        type: "Newsletter"
+                    },
+                    {
+                        title: "React Native Blog",
+                        url: "https://reactnative.dev/blog",
+                        description: "Official React Native blog",
+                        type: "Blog"
+                    },
+                    {
+                        title: "Flutter Medium Publication",
+                        url: "https://medium.com/flutter",
+                        description: "Official Flutter blog on Medium",
+                        type: "Blog"
+                    }
+                ]
+            },
+
+            practice: {
+                beginnerExercises: [
+                    {
+                        title: "To-Do List App",
+                        difficulty: "Easy",
+                        description: "Create a basic to-do list application with local storage capabilities and basic UI features.",
+                        hints: [
+                            "Start with a simple list view",
+                            "Implement add/delete functionality",
+                            "Use local storage for data persistence",
+                            "Add basic input validation"
+                        ],
+                        solution: {
+                            code: `// React Native Implementation
 import React, { useState, useEffect } from 'react';
 import {
     View,
@@ -9152,30 +9152,30 @@ const styles = StyleSheet.create({
 });
 
 export default TodoApp;`,
-                explanation: "This beginner exercise demonstrates:\n" +
-                    "1. Basic mobile UI components and layout\n" +
-                    "2. State management using React hooks\n" +
-                    "3. Local data persistence with AsyncStorage\n" +
-                    "4. User input handling and validation\n" +
-                    "5. List rendering and item manipulation\n" +
-                    "6. Basic styling and animations"
-            }
-        }
-    ],
-    intermediateExercises: [
-        {
-            title: "Social Media Feed App",
-            difficulty: "Medium",
-            description: "Create a social media feed with infinite scrolling, image loading, and interactions.",
-            hints: [
-                "Implement infinite scroll pagination",
-                "Add pull-to-refresh functionality",
-                "Handle image caching",
-                "Implement like/comment actions",
-                "Add skeleton loading states"
-            ],
-            solution: {
-                code: `// Social Feed Implementation in Flutter
+                            explanation: "This beginner exercise demonstrates:\n" +
+                                "1. Basic mobile UI components and layout\n" +
+                                "2. State management using React hooks\n" +
+                                "3. Local data persistence with AsyncStorage\n" +
+                                "4. User input handling and validation\n" +
+                                "5. List rendering and item manipulation\n" +
+                                "6. Basic styling and animations"
+                        }
+                    }
+                ],
+                intermediateExercises: [
+                    {
+                        title: "Social Media Feed App",
+                        difficulty: "Medium",
+                        description: "Create a social media feed with infinite scrolling, image loading, and interactions.",
+                        hints: [
+                            "Implement infinite scroll pagination",
+                            "Add pull-to-refresh functionality",
+                            "Handle image caching",
+                            "Implement like/comment actions",
+                            "Add skeleton loading states"
+                        ],
+                        solution: {
+                            code: `// Social Feed Implementation in Flutter
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
@@ -9430,31 +9430,31 @@ class CommentsSheet extends StatelessWidget {
     );
   }
 }`,
-                explanation: "This intermediate exercise demonstrates:\n" +
-                    "1. Complex UI implementation with multiple components\n" +
-                    "2. Infinite scroll pagination\n" +
-                    "3. Image caching and loading states\n" +
-                    "4. User interactions and state management\n" +
-                    "5. Modal views and bottom sheets\n" +
-                    "6. Performance optimization techniques"
-            }
-        }
-    ],
-    advancedExercises: [
-        {
-            title: "E-Commerce App",
-            difficulty: "Hard",
-            description: "Build a full-featured e-commerce application with product catalog, cart management, and checkout process.",
-            hints: [
-                "Implement state management (Redux/BLoC)",
-                "Add offline support with local storage",
-                "Implement payment gateway integration",
-                "Add animations and transitions",
-                "Implement push notifications",
-                "Add user authentication"
-            ],
-            solution: {
-            code: `// Android e-commerce app implementation code with core components
+                            explanation: "This intermediate exercise demonstrates:\n" +
+                                "1. Complex UI implementation with multiple components\n" +
+                                "2. Infinite scroll pagination\n" +
+                                "3. Image caching and loading states\n" +
+                                "4. User interactions and state management\n" +
+                                "5. Modal views and bottom sheets\n" +
+                                "6. Performance optimization techniques"
+                        }
+                    }
+                ],
+                advancedExercises: [
+                    {
+                        title: "E-Commerce App",
+                        difficulty: "Hard",
+                        description: "Build a full-featured e-commerce application with product catalog, cart management, and checkout process.",
+                        hints: [
+                            "Implement state management (Redux/BLoC)",
+                            "Add offline support with local storage",
+                            "Implement payment gateway integration",
+                            "Add animations and transitions",
+                            "Implement push notifications",
+                            "Add user authentication"
+                        ],
+                        solution: {
+                            code: `// Android e-commerce app implementation code with core components
 
 // 1. ViewModel and LiveData for State Management
 class ProductViewModel(application: Application) : AndroidViewModel(application) {
@@ -9555,22 +9555,397 @@ abstract class AppDatabase : RoomDatabase() {
     }
 }
 `,
-            explanation: "This advanced exercise demonstrates:\n" +
-                "1. Complex UI and state management with ViewModel and LiveData (or Jetpack Compose State)\n" +
-                "2. Offline capabilities with Room database for caching data\n" +
-                "3. Secure user authentication using Firebase Auth or a custom API\n" +
-                "4. Real-time data fetching and creation with Retrofit and API integration\n" +
-                "5. Push notifications through Firebase Cloud Messaging\n" +
-                "6. Smooth animations and transitions using MotionLayout\n" +
-                "7. Integration with a payment gateway like Stripe or PayPal\n" +
-                "8. Performance optimization for handling large data and reducing memory usage"
+                            explanation: "This advanced exercise demonstrates:\n" +
+                                "1. Complex UI and state management with ViewModel and LiveData (or Jetpack Compose State)\n" +
+                                "2. Offline capabilities with Room database for caching data\n" +
+                                "3. Secure user authentication using Firebase Auth or a custom API\n" +
+                                "4. Real-time data fetching and creation with Retrofit and API integration\n" +
+                                "5. Push notifications through Firebase Cloud Messaging\n" +
+                                "6. Smooth animations and transitions using MotionLayout\n" +
+                                "7. Integration with a payment gateway like Stripe or PayPal\n" +
+                                "8. Performance optimization for handling large data and reducing memory usage"
 
-                }
+                        }
+                    }
+                ]
             }
-        ]
-    }   
-}
-}
+        }
+    },
+    {
+        id: 9,
+        title: "Open Source Learning",
+        description: "Kickstart Your Journey in Open Source",
+        extendedContent: "Open source software development allows you to collaborate, contribute, and learn from real-world projects. This roadmap guides you through the skills, platforms, and tools needed to start contributing to open source, with a focus on effective collaboration, version control, and project navigation.\n\nYou'll gain practical experience working with Git, GitHub, and collaborative workflows, as well as an understanding of community standards and software licensing. This track equips you with valuable hands-on skills for career growth.",
+        icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+        trackInfo: {
+            title: "Open Source Learning Track",
+            description: "Learn the fundamentals of open-source contributions and community collaboration",
+            extendedContent: "Open source software development allows you to collaborate, contribute, and learn from real-world projects. This roadmap guides you through the skills, platforms, and tools needed to start contributing to open source, with a focus on effective collaboration, version control, and project navigation.\n\nYou'll gain practical experience working with Git, GitHub, and collaborative workflows, as well as an understanding of community standards and software licensing. This track equips you with valuable hands-on skills for career growth.",
+            prerequisites: [
+                "Familiarity with a programming language (e.g., Python, JavaScript, or C++)",
+                "Understanding of basic data structures and algorithms",
+                "Basic knowledge of version control systems (e.g., Git)",
+                "Interest in collaboration and teamwork",
+                "Willingness to learn and adapt to different codebases"
+            ],
+            outcomes: [
+                "Contribute to real-world open source projects",
+                "Use Git and GitHub proficiently in collaborative environments",
+                "Navigate and understand complex codebases",
+                "Communicate effectively with other contributors and maintainers"
+            ],
+            sections: [
+                {
+                    title: "Introduction to Open Source",
+                    content: "Understand the fundamentals of open source, including licensing, community standards, and project selection."
+                },
+                {
+                    title: "Git and GitHub Essentials",
+                    content: "Learn the basics of Git, GitHub workflows, and version control principles for collaborative coding."
+                },
+                {
+                    title: "Finding and Choosing Projects",
+                    content: "Explore strategies for finding beginner-friendly projects, reading codebases, and understanding contribution guidelines."
+                },
+                {
+                    title: "Making Your First Contribution",
+                    content: "Learn the process of forking, cloning, and submitting pull requests, with best practices for code submission."
+                },
+                {
+                    title: "Advanced Collaboration Skills",
+                    content: "Develop skills in collaborative workflows, including handling code reviews, issues, and project discussions."
+                },
+                {
+                    title: "Project Maintenance and Management",
+                    content: "Gain insights into maintaining open source projects, including responding to contributions, managing community interactions, and ensuring project sustainability."
+                },
+            ]
+            
+        },
+        content: {
+            examples: [
+                {
+                    title: "First Contribution via Pull Request",
+                    code: "// Step 1: Fork the repository\n// Step 2: Clone to local machine\n$ git clone https://github.com/username/repository.git\n\n// Step 3: Create a new branch\n$ git checkout -b new-feature\n\n// Step 4: Make changes and commit\n$ git add .\n$ git commit -m \"Add new feature\"\n\n// Step 5: Push changes to GitHub\n$ git push origin new-feature\n\n// Step 6: Create a pull request on GitHub",
+                    explanation: "This example demonstrates the basic workflow for making your first contribution on GitHub, from forking a repository to creating a pull request."
+                },
+                {
+                    title: "Setting Up Open Source Project Locally",
+                    code: "# Clone the project repository\n$ git clone https://github.com/example/project.git\n\n# Navigate into project directory\n$ cd project\n\n# Install dependencies (using npm for Node.js projects)\n$ npm install\n\n# Run the project (for example, starting a development server)\n$ npm start",
+                    explanation: "Basic steps to clone and set up a local development environment for an open source project, using a Node.js-based project as an example."
+                },
+                {
+                    title: "Fixing a Bug in an Open Source Project",
+                    code: "# Step 1: Identify the issue on GitHub\n# Step 2: Clone the repository\n$ git clone https://github.com/example/project.git\n\n# Step 3: Create a new branch for the bug fix\n$ git checkout -b fix-bug-issue-123\n\n# Step 4: Make necessary changes to fix the bug\n# (Edit relevant files)\n\n# Step 5: Test the changes\n$ npm test\n\n# Step 6: Commit the changes\n$ git add .\n$ git commit -m \"Fix bug in feature\"\n\n# Step 7: Push changes and create a pull request\n$ git push origin fix-bug-issue-123\n",
+                    explanation: "This example illustrates how to address a bug in an open source project, from identifying the issue to submitting a pull request."
+                },
+                {
+                    title: "Adding a New Feature to a Project",
+                    code: "// Step 1: Fork the repository and clone it\n$ git clone https://github.com/username/repository.git\n\n// Step 2: Create a new feature branch\n$ git checkout -b feature/new-awesome-feature\n\n// Step 3: Implement the feature (e.g., adding a new function)\n// (Edit relevant files to add functionality)\n\n// Step 4: Commit your changes\n$ git add .\n$ git commit -m \"Implement new awesome feature\"\n\n// Step 5: Push the branch to GitHub\n$ git push origin feature/new-awesome-feature\n\n// Step 6: Open a pull request on GitHub and describe your feature",
+                    explanation: "This example guides you through adding a new feature to an open source project, from forking to submitting a pull request."
+                },
+                {
+                    title: "Creating and Running Tests for an Open Source Project",
+                    code: "// Step 1: Clone the repository\n$ git clone https://github.com/example/project.git\n\n// Step 2: Navigate to the project directory\n$ cd project\n\n// Step 3: Create a new branch for the tests\n$ git checkout -b add-tests\n\n// Step 4: Write tests (using a testing framework like Jest)\n// (Edit or create test files)\n\n// Step 5: Run tests to ensure everything works\n$ npm test\n\n// Step 6: Commit your test cases\n$ git add .\n$ git commit -m \"Add tests for existing functionality\"\n\n// Step 7: Push changes and create a pull request\n$ git push origin add-tests\n",
+                    explanation: "This example describes how to add tests to an open source project, ensuring the code's reliability before submitting a pull request."
+                },
+                {
+                    title: "Reviewing a Pull Request",
+                    code: "# Step 1: Go to the 'Pull Requests' section of the repository\n# Step 2: Click on the pull request you want to review\n# Step 3: Review the code changes by looking at the 'Files Changed' tab\n# Step 4: Add comments or suggestions on specific lines by clicking on the '+' icon next to the line\n# Step 5: Approve the pull request if it meets the criteria, or request changes if necessary\n# Step 6: Leave a comment summarizing your review and submit it",
+                    explanation: "This example outlines the steps for reviewing a pull request, providing feedback, and either approving or requesting changes."
+                },
+                {
+                    title: "Maintaining an Open Source Project",
+                    code: "// Step 1: Monitor issues reported by users on GitHub\n// Step 2: Prioritize issues based on severity and community impact\n// Step 3: Assign issues to contributors or work on them yourself\n// Step 4: Merge pull requests after thorough review\n// Step 5: Regularly update documentation and project dependencies\n// Step 6: Communicate with the community through discussions or updates",
+                    explanation: "This example explains how to maintain an open source project, including monitoring issues, merging contributions, and keeping documentation up to date."
+                },
+                {
+                    title: "Updating Project Documentation",
+                    code: "# Step 1: Identify the documentation that needs updating (e.g., README, Wiki)\n# Step 2: Make necessary edits or additions to clarify usage or installation\n# Step 3: Use Markdown for formatting and adding links\n# Step 4: Preview your changes in the GitHub editor\n# Step 5: Commit your changes with a clear message\n$ git commit -m \"Update README for better clarity\"\n# Step 6: Push changes to the repository\n$ git push origin main",
+                    explanation: "This example describes how to update project documentation, ensuring users have accurate and helpful information."
+                }
+            ],
+            roadmap: [
+                {
+                    title: "1. Understanding Open Source",
+                    description: "Learn about open source principles, licensing, and communities.",
+                    topics: [
+                        "What is open source software?",
+                        "Open source licenses and choosing one.",
+                        "Importance of community and collaboration.",
+                        "How to find open source projects."
+                    ]
+                },
+                {
+                    title: "2. Git & GitHub Basics",
+                    description: "Master version control with Git and GitHub.",
+                    topics: [
+                        "Git basics: clone, commit, push, and pull.",
+                        "GitHub features: issues, pull requests, and forks.",
+                        "Branching and merging in Git.",
+                        "Collaborative workflows and code reviews."
+                    ]
+                },
+                {
+                    title: "3. Contributing to Open Source",
+                    description: "Learn how to effectively contribute to projects.",
+                    topics: [
+                        "Finding beginner-friendly projects.",
+                        "Reading and understanding contribution guidelines.",
+                        "Creating pull requests and handling feedback.",
+                        "Documenting code and writing helpful commit messages."
+                    ]
+                },
+                {
+                    title: "4. Enhancing Contribution Skills",
+                    description: "Deepen your contributions with testing, documentation, and CI/CD.",
+                    topics: [
+                        "Writing tests and understanding test frameworks.",
+                        "Improving project documentation.",
+                        "Automated testing with CI/CD pipelines.",
+                        "Addressing and managing issues effectively."
+                    ]
+                },
+                {
+                    title: "5. Project Maintenance and Management",
+                    description: "Learn about managing and maintaining open source projects.",
+                    topics: [
+                        "Responding to issues and pull requests.",
+                        "Organizing project tasks and assigning roles.",
+                        "Maintaining documentation and onboarding contributors.",
+                        "Ensuring project health and community engagement."
+                    ]
+                },
+                {
+                    title: "6. Advanced Open Source Practices",
+                    description: "Explore strategies for leading and scaling open source projects.",
+                    topics: [
+                        "Scaling projects and managing large teams.",
+                        "Implementing effective governance models.",
+                        "Handling conflicts and fostering a positive community culture.",
+                        "Navigating legal aspects and compliance in open source."
+                    ]
+                }
+            ],
+            
+            resources: {
+                documentation: [
+                    {
+                        title: "Open Source Guides by GitHub",
+                        url: "https://opensource.guide/",
+                        description: "Comprehensive guides on how to start contributing to open source and managing projects.",
+                        type: "Guide"
+                    },
+                    {
+                        title: "Git Documentation",
+                        url: "https://git-scm.com/doc",
+                        description: "Official Git documentation for understanding version control.",
+                        type: "Official Documentation"
+                    },
+                    {
+                        title: "Choosing an Open Source License",
+                        url: "https://choosealicense.com/",
+                        description: "Helpful tool for understanding and selecting appropriate licenses for open source projects.",
+                        type: "License Guide"
+                    }
+                ],
+                tutorials: [
+                    {
+                        title: "First Contributions",
+                        url: "https://firstcontributions.github.io/",
+                        description: "Beginner-friendly guide and resources to make your first contribution on GitHub.",
+                        type: "Interactive Tutorial"
+                    },
+                    {
+                        title: "GitHub Learning Lab",
+                        url: "https://lab.github.com/",
+                        description: "Self-paced interactive tutorials for learning GitHub, Git, and collaborative workflows.",
+                        type: "Interactive Platform"
+                    },
+                    {
+                        title: "Contributing to Open Source (freeCodeCamp)",
+                        url: "https://www.freecodecamp.org/news/how-to-contribute-to-open-source-projects-beginners-guide/",
+                        description: "A beginner's guide on finding and contributing to open source projects.",
+                        type: "Beginner Guide"
+                    }
+                ],
+                videos: [
+                    {
+                        title: "How to Contribute to Open Source Projects on GitHub",
+                        url: "https://www.youtube.com/watch?v=MnUd31TvBoU",
+                        description: "A practical video guide for making your first open source contribution on GitHub.",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Understanding Git and GitHub",
+                        url: "https://www.youtube.com/watch?v=USjZcfj8yxE",
+                        description: "A beginner-friendly introduction to Git and GitHub by Traversy Media.",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "The Basics of Open Source by Google",
+                        url: "https://www.youtube.com/watch?v=yzeVMecydCE",
+                        description: "Google's overview on what open source is and how to get involved.",
+                        platform: "YouTube"
+                    }
+                ],
+                books: [
+                    {
+                        title: "Producing Open Source Software",
+                        author: "Karl Fogel",
+                        description: "A comprehensive guide on how to build, manage, and grow successful open source projects.",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "The Cathedral & the Bazaar",
+                        author: "Eric S. Raymond",
+                        description: "Explores the principles of open source and its impact on software development, with insights into collaborative workflows.",
+                        level: "Beginner to Intermediate"
+                    },
+                    {
+                        title: "Forge Your Future with Open Source",
+                        author: "VM (Vicky) Brasseur",
+                        description: "Practical guidance on how to contribute to open source and navigate project communities.",
+                        level: "Beginner"
+                    }
+                ],
+                practice: [
+                    {
+                        title: "Up For Grabs",
+                        url: "https://up-for-grabs.net/",
+                        description: "A platform to find beginner-friendly issues in open source projects, tagged by maintainers to help new contributors.",
+                        type: "Issue Finder"
+                    },
+                    {
+                        title: "First Timers Only",
+                        url: "https://www.firsttimersonly.com/",
+                        description: "Resources and projects geared towards new contributors making their first open source contribution.",
+                        type: "Resource Hub"
+                    },
+                    {
+                        title: "CodeTriage",
+                        url: "https://www.codetriage.com/",
+                        description: "Helps developers find open source projects to contribute to by triaging GitHub issues in need of assistance.",
+                        type: "Contribution Platform"
+                    }
+                ],
+                events: [
+                    {
+                        title: "Google Summer of Code (GSoC)",
+                        url: "https://summerofcode.withgoogle.com/",
+                        description: "An annual program sponsored by Google that offers stipends to university students for working on open source projects during the summer.",
+                        type: "Open Source Event"
+                    },
+                    {
+                        title: "GirlScript Summer of Code (GSSoC)",
+                        url: "https://gssoc.girlscript.tech/",
+                        description: "An open-source program aimed at encouraging women and underrepresented groups to participate in open source development.",
+                        type: "Open Source Event"
+                    },
+                    {
+                        title: "Hacktoberfest",
+                        url: "https://hacktoberfest.digitalocean.com/",
+                        description: "A month-long celebration of open source software run by DigitalOcean, encouraging contributions to open source projects.",
+                        type: "Open Source Event"
+                    }
+                ]
+
+            },
+            practice: {
+                beginnerExercises: [
+                    {
+                        title: "Creating Your First Pull Request",
+                        difficulty: "Easy",
+                        description: "Find a beginner-friendly repository, make a minor change, and submit a pull request.",
+                        hints: [
+                            "Look for 'good first issue' or 'help wanted' tags on GitHub",
+                            "Follow contribution guidelines carefully",
+                            "Keep your pull request simple and concise"
+                        ],
+                        solution: {
+                            code: "// Fork the repository\n$ git fork https://github.com/example/project\n\n// Clone your fork\n$ git clone https://github.com/your-username/project\n\n// Make changes, commit, and push\n$ git add .\n$ git commit -m \"Fix typo in README\"\n$ git push origin your-branch\n\n// Submit a pull request from your GitHub forked repo"
+                        }
+                    },
+                    {
+                        title: "Writing Useful Documentation",
+                        difficulty: "Easy",
+                        description: "Choose an open source project and improve its documentation. This could include improving README files, writing tutorials, or creating a contribution guide.",
+                        hints: [
+                            "Look for documentation improvements in popular projects",
+                            "Focus on clear, concise language and organized structure",
+                            "Add examples or images where possible for clarity"
+                        ],
+                        solution: {
+                            code: "// Example of writing a README\n# Project Name\n\n## Description\nBriefly describe the project purpose.\n\n## Installation\nList steps to install dependencies.\n\n## Usage\nExplain how to use the project.\n\n## Contribution Guidelines\nProvide guidelines for new contributors."
+                        }
+                    }
+                ],
+                intermediateExercises: [
+                    {
+                        title: "Creating a Feature for an Open Source Project",
+                        difficulty: "Medium",
+                        description: "Identify an existing feature request in an open source project, implement the feature, and submit it as a pull request.",
+                        hints: [
+                            "Search the repository for 'feature request' issues",
+                            "Review the project's coding standards before starting",
+                            "Write tests for your new feature to ensure its functionality"
+                        ],
+                        solution: {
+                            code: "// Step 1: Fork the repository\n$ git fork https://github.com/example/project\n\n// Step 2: Clone your fork\n$ git clone https://github.com/your-username/project\n\n// Step 3: Create a new branch for your feature\n$ git checkout -b new-feature\n\n// Step 4: Implement the feature in the codebase\n// Example code implementation here\n\n// Step 5: Add tests for your feature\n// Example test cases here\n\n// Step 6: Commit your changes\n$ git add .\n$ git commit -m \"Add new feature: description\"\n\n// Step 7: Push your branch to your fork\n$ git push origin new-feature\n\n// Step 8: Open a pull request on the original repository"
+                        }
+                    },
+                    {
+                        title: "Reviewing Code Contributions",
+                        difficulty: "Medium",
+                        description: "Select a pull request from an open-source project to review. Analyze the code changes, suggest improvements, and provide feedback to the contributor.",
+                        hints: [
+                            "Look for pull requests that are labeled 'needs review'",
+                            "Pay attention to code quality, style, and functionality",
+                            "Be constructive and clear in your feedback"
+                        ],
+                        solution: {
+                            code: "// Step 1: Navigate to the pull requests section of the repository\n// Step 2: Select a pull request to review\n\n// Step 3: Check the code changes\n// Example code review comments:\n// - The variable naming could be more descriptive.\n// - Consider adding error handling for edge cases.\n// - Great job on implementing the feature, but let's optimize this function.\n\n// Step 4: Leave feedback on the pull request\n// Example comment:\n// 'Thank you for your contribution! I have some suggestions to improve the code.'\n\n// Step 5: Approve the pull request if all looks good or request changes"
+                        }
+                    }
+                ],
+                
+                advancedExercises: [
+                    {
+                        title: "Becoming a Project Maintainer",
+                        difficulty: "Advanced",
+                        description: "Take over maintenance of an open-source project. This involves managing issues, reviewing pull requests, and coordinating with contributors.",
+                        hints: [
+                            "Start by reaching out to the current maintainers to express your interest",
+                            "Familiarize yourself with the project's contribution guidelines and codebase",
+                            "Communicate clearly and constructively with contributors to encourage engagement"
+                        ],
+                        solution: {
+                            code: "// Step 1: Contact the current maintainer via GitHub or project communication channels\n// Example message:\n// Hi [Maintainer's Name],\n// I'm interested in helping maintain [Project Name]. I have been contributing for a while and would love to take on a more active role.\n\n// Step 2: Review open issues and pull requests regularly\n// Example code for managing issues:\n// function reviewIssues() {\n//   const issues = fetchIssues();\n//   issues.forEach(issue => {\n//     if (issue.isOpen) {\n//       assignLabels(issue);\n//       respondToIssue(issue);\n//     }\n//   });\n// }\n\n// Step 3: Conduct code reviews for incoming pull requests\n// Example code for reviewing a PR:\n// function reviewPullRequest(pr) {\n//   const codeChanges = fetchCodeChanges(pr);\n//   if (isCodeQualityGood(codeChanges)) {\n//     approvePullRequest(pr);\n//   } else {\n//     requestChanges(pr);\n//   }\n// }\n"
+                        }
+                    },
+                    {
+                        title: "Implementing a Major Refactor",
+                        difficulty: "Advanced",
+                        description: "Select an open-source project that could benefit from a refactor. Plan and implement the refactor while maintaining existing functionality, then submit your changes as a pull request.",
+                        hints: [
+                            "Identify areas of the codebase that are difficult to maintain or understand",
+                            "Communicate your refactoring plan with the project maintainers before starting",
+                            "Ensure all existing tests pass after your refactor"
+                        ],
+                        solution: {
+                            code: "// Step 1: Fork the repository\n$ git fork https://github.com/example/project\n\n// Step 2: Clone your fork\n$ git clone https://github.com/your-username/project\n\n// Step 3: Create a new branch for the refactor\n$ git checkout -b refactor-feature\n\n// Step 4: Identify and implement refactor changes\n// Example refactor code:\n// function refactoredFunction() {\n//   // New implementation here\n// }\n\n// Step 5: Run tests to ensure functionality is maintained\n$ npm test\n\n// Step 6: Commit your changes\n$ git add .\n$ git commit -m \"Refactor: description of changes\"\n\n// Step 7: Push your branch to your fork\n$ git push origin refactor-feature\n\n// Step 8: Open a pull request on the original repository"
+                        }
+                    }
+                ]
+                
+                
+            }
+        }
+    }
+
+
+
+
 ];
 
 export default resources;
