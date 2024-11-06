@@ -93,7 +93,9 @@
 │   ├── summer_learning_hero.png
 │   ├── techeq1.webp
 │   ├── techeq2.webp
-│   └── vision.webp
+│   ├── truth1.png
+│   ├── vision.webp
+│   └── week1.png
 ├── repo_structure.txt
 ├── security.md
 ├── src/
@@ -174,6 +176,12 @@
 │   │   │   │   └── techStacks.js
 │   │   │   ├── TermsAndConditions/
 │   │   │   │   └── page.jsx
+│   │   │   ├── ai-ml/
+│   │   │   │   └── page.jsx
+│   │   │   ├── analytics-pipelines/
+│   │   │   │   └── page.jsx
+│   │   │   ├── application-dev/
+│   │   │   │   └── page.jsx
 │   │   │   ├── arcade/
 │   │   │   │   └── page.jsx
 │   │   │   ├── careers/
@@ -182,6 +190,10 @@
 │   │   │   │   ├── opportunities.js
 │   │   │   │   └── page.jsx
 │   │   │   ├── cicd/
+│   │   │   │   └── page.jsx
+│   │   │   ├── compute-tech/
+│   │   │   │   └── page.jsx
+│   │   │   ├── db-overview/
 │   │   │   │   └── page.jsx
 │   │   │   ├── devStudent/
 │   │   │   │   └── page.jsx
@@ -202,6 +214,8 @@
 │   │   │   ├── growth/
 │   │   │   │   └── page.jsx
 │   │   │   ├── helpCenter/
+│   │   │   │   └── page.jsx
+│   │   │   ├── hosting/
 │   │   │   │   └── page.jsx
 │   │   │   ├── how-apply/
 │   │   │   │   └── page.jsx
@@ -234,6 +248,10 @@
 │   │   │   ├── timeline/
 │   │   │   │   └── page.jsx
 │   │   │   ├── transform/
+│   │   │   │   └── page.jsx
+│   │   │   ├── truth/
+│   │   │   │   └── page.jsx
+│   │   │   ├── weekly/
 │   │   │   │   └── page.jsx
 │   │   │   ├── who-apply/
 │   │   │   │   └── page.jsx
