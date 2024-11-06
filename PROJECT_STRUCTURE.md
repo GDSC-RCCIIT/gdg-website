@@ -178,6 +178,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── ai-ml/
 │   │   │   │   └── page.jsx
+│   │   │   ├── analyst-reports/
+│   │   │   │   └── page.jsx
 │   │   │   ├── analytics-pipelines/
 │   │   │   │   └── page.jsx
 │   │   │   ├── application-dev/
@@ -211,7 +213,7 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── generative-ai-overview/
 │   │   │   │   └── page.jsx
-│   │   │   ├── genai/
+│   │   │   ├── get-started/
 │   │   │   │   └── page.jsx
 │   │   │   ├── gitContributors/
 │   │   │   │   └── page.jsx
@@ -230,6 +232,8 @@
 │   │   │   ├── inovate/
 │   │   │   │   └── page.jsx
 │   │   │   ├── ioext/
+│   │   │   │   └── page.jsx
+│   │   │   ├── join-partner/
 │   │   │   │   └── page.jsx
 │   │   │   ├── localdev/
 │   │   │   │   └── page.jsx
@@ -314,7 +318,8 @@
 │   │   │   ├── HelpWithFutureForm.jsx
 │   │   │   ├── Hero.jsx
 │   │   │   ├── Navbar.jsx
-│   │   │   └── ProductsNavbar.jsx
+│   │   │   ├── ProductsNavbar.jsx
+│   │   │   └── SuspenseLoader.jsx
 │   │   └── ui/
 │   │       ├── aspect-ratio.jsx
 │   │       ├── back2top.jsx
