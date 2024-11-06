@@ -211,6 +211,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── generative-ai-overview/
 │   │   │   │   └── page.jsx
+│   │   │   ├── genai/
+│   │   │   │   └── page.jsx
 │   │   │   ├── gitContributors/
 │   │   │   │   └── page.jsx
 │   │   │   ├── google-cloud-learning/
