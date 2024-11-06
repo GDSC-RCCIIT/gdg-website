@@ -93,7 +93,9 @@
 │   ├── summer_learning_hero.png
 │   ├── techeq1.webp
 │   ├── techeq2.webp
-│   └── vision.webp
+│   ├── truth1.png
+│   ├── vision.webp
+│   └── week1.png
 ├── repo_structure.txt
 ├── security.md
 ├── src/
@@ -174,6 +176,12 @@
 │   │   │   │   └── techStacks.js
 │   │   │   ├── TermsAndConditions/
 │   │   │   │   └── page.jsx
+│   │   │   ├── ai-ml/
+│   │   │   │   └── page.jsx
+│   │   │   ├── analytics-pipelines/
+│   │   │   │   └── page.jsx
+│   │   │   ├── application-dev/
+│   │   │   │   └── page.jsx
 │   │   │   ├── arcade/
 │   │   │   │   └── page.jsx
 │   │   │   ├── careers/
@@ -183,17 +191,25 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── cicd/
 │   │   │   │   └── page.jsx
+│   │   │   ├── compute-tech/
+│   │   │   │   └── page.jsx
+│   │   │   ├── db-overview/
+│   │   │   │   └── page.jsx
 │   │   │   ├── devStudent/
 │   │   │   │   └── page.jsx
 │   │   │   ├── devfest/
 │   │   │   │   └── page.jsx
 │   │   │   ├── devprod/
 │   │   │   │   └── page.jsx
+│   │   │   ├── distributed-hybrid/
+│   │   │   │   └── page.jsx
 │   │   │   ├── expertdev/
 │   │   │   │   └── page.jsx
 │   │   │   ├── explore/
 │   │   │   │   └── page.jsx
 │   │   │   ├── genai/
+│   │   │   │   └── page.jsx
+│   │   │   ├── generative-ai-overview/
 │   │   │   │   └── page.jsx
 │   │   │   ├── gitContributors/
 │   │   │   │   └── page.jsx
@@ -203,13 +219,19 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── helpCenter/
 │   │   │   │   └── page.jsx
+│   │   │   ├── hosting/
+│   │   │   │   └── page.jsx
 │   │   │   ├── how-apply/
+│   │   │   │   └── page.jsx
+│   │   │   ├── industry-solutions/
 │   │   │   │   └── page.jsx
 │   │   │   ├── inovate/
 │   │   │   │   └── page.jsx
 │   │   │   ├── ioext/
 │   │   │   │   └── page.jsx
 │   │   │   ├── localdev/
+│   │   │   │   └── page.jsx
+│   │   │   ├── networking-overview/
 │   │   │   │   └── page.jsx
 │   │   │   ├── operating-system/
 │   │   │   │   └── page.jsx
@@ -234,6 +256,10 @@
 │   │   │   ├── timeline/
 │   │   │   │   └── page.jsx
 │   │   │   ├── transform/
+│   │   │   │   └── page.jsx
+│   │   │   ├── truth/
+│   │   │   │   └── page.jsx
+│   │   │   ├── weekly/
 │   │   │   │   └── page.jsx
 │   │   │   ├── who-apply/
 │   │   │   │   └── page.jsx
