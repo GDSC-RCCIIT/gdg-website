@@ -113,6 +113,9 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── AddStories/
 │   │   │   │   └── page.jsx
+│   │   │   ├── Blogs/
+│   │   │   │   ├── Blogs.js
+│   │   │   │   └── page.jsx
 │   │   │   ├── Certifications/
 │   │   │   │   └── page.jsx
 │   │   │   ├── Chapters/

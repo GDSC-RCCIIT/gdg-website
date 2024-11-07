@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Container, Card, CardContent, Typography, TextField, MenuItem, Select, FormControl, InputLabel } from '@mui/material';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import blogs from './Blogs';
 
 const BlogPage = () => {
@@ -67,6 +68,7 @@ const BlogPage = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.1 * blog.id }}
                         >
+                            <Link href={`/Blogs/${blog.id}`} passHref>
                             <Card className="bg-white shadow-lg rounded-2xl hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
                                 <CardContent className="p-6 flex-grow">
                                     <Typography variant="h5" className="text-2xl font-semibold text-gray-800">
@@ -80,6 +82,7 @@ const BlogPage = () => {
                                     </div>
                                 </CardContent>
                             </Card>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>
