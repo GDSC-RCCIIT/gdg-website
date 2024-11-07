@@ -115,6 +115,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── Blogs/
 │   │   │   │   ├── Blogs.js
+│   │   │   │   ├── [id]/
+│   │   │   │   │   └── page.jsx
 │   │   │   │   └── page.jsx
 │   │   │   ├── Certifications/
 │   │   │   │   └── page.jsx
@@ -138,6 +140,8 @@
 │   │   │   │   ├── Card.jsx
 │   │   │   │   ├── [id]/
 │   │   │   │   │   └── page.jsx
+│   │   │   │   └── page.jsx
+│   │   │   ├── HelpDesk/
 │   │   │   │   └── page.jsx
 │   │   │   ├── HelpWithFuture/
 │   │   │   │   └── page.jsx
