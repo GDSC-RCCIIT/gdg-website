@@ -200,7 +200,7 @@ const resources = [
             }, [todos]);
         
             const addTodo = (e) => {
-                e.preventDefault();
+                e.preventdefault();
                 if (!inputValue.trim()) return;
                 
                 setTodos([
@@ -1019,7 +1019,7 @@ passwordInput.addEventListener('input', validateForm);
 confirmPasswordInput.addEventListener('input', validateForm);
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    e.preventdefault();
     if (!submitButton.disabled) {
         // Handle form submission
         console.log('Form submitted successfully');
@@ -2947,7 +2947,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     explanation: "A basic wireframe component library showcasing common UI elements in their simplest form. This helps in rapid prototyping and maintaining consistency across designs."
                 },
                 {
-                    title: "Color System Definition",
+                    title: "Color System definition",
                     code: `// Design System - Color Tokens
         const colorSystem = {
             // Primary Brand Colors
@@ -3571,7 +3571,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         hints: [
                             "Consider accessibility and contrast ratios",
                             "Include different shades for each primary color",
-                            "Define semantic colors for success/error states",
+                            "define semantic colors for success/error states",
                             "Create dark mode variations"
                         ],
                         solution: {
@@ -4171,14 +4171,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         difficulty: "Hard",
                         description: "Create a comprehensive design system including components, tokens, documentation, and usage guidelines.",
                         hints: [
-                            "Define clear design principles",
+                            "define clear design principles",
                             "Create reusable components",
                             "Document accessibility guidelines",
                             "Include interactive examples",
                             "Create implementation guides"
                         ],
                         solution: {
-                            code: `// Design System Definition
+                            code: `// Design System definition
 const designSystem = {
    // Design Tokens
    tokens: {
@@ -4291,7 +4291,7 @@ const designSystem = {
        }
    },
    
-   // Component Definitions
+   // Component definitions
    components: {
        Button: {
            variants: {
@@ -5766,7 +5766,7 @@ const designSystem = {
                         difficulty: "Medium",
                         description: "Implement a binary search tree with insert and search operations.",
                         hints: [
-                            "Define a Node structure first",
+                            "define a Node structure first",
                             "Handle the empty tree case",
                             "Remember BST properties",
                             "Use recursion for insertion"
@@ -9529,7 +9529,7 @@ class FCMService : FirebaseMessagingService() {
     android:layout_height="match_parent"
     app:layoutDescription="@xml/scene"
     >
-    <!-- Define cart and checkout transitions here -->
+    <!-- define cart and checkout transitions here -->
 </MotionLayout>
 */
 
@@ -9656,7 +9656,7 @@ abstract class AppDatabase : RoomDatabase() {
             },
             {
                 title: "Maintaining an Open Source Project",
-                code: "// Step 1: Monitor issues reported by users on GitHub\n// Step 2: Prioritize issues based on severity and community impact\n// Step 3: Assign issues to contributors or work on them yourself\n// Step 4: Merge pull requests after thorough review\n// Step 5: Regularly update documentation and project dependencies\n// Step 6: Communicate with the community through discussions or updates",
+                code: "// Step 1: Monitor issues reported by users on GitHub\n// Step 2: Prioritize issues based on severity and community impact\n// Step 3: Assign issues to contributors or work on them yourSelf\n// Step 4: Merge pull requests after thorough review\n// Step 5: Regularly update documentation and project dependencies\n// Step 6: Communicate with the community through discussions or updates",
                 explanation: "This example explains how to maintain an open source project, including monitoring issues, merging contributions, and keeping documentation up to date."
             },
             {
@@ -9916,7 +9916,7 @@ abstract class AppDatabase : RoomDatabase() {
                     description: "Take over maintenance of an open-source project. This involves managing issues, reviewing pull requests, and coordinating with contributors.",
                     hints: [
                         "Start by reaching out to the current maintainers to express your interest",
-                        "Familiarize yourself with the project's contribution guidelines and codebase",
+                        "Familiarize yourSelf with the project's contribution guidelines and codebase",
                         "Communicate clearly and constructively with contributors to encourage engagement"
                     ],
                     solution: {
@@ -10400,7 +10400,7 @@ abstract class AppDatabase : RoomDatabase() {
                     "VPN Implementation",
                     "Network Monitoring Tools",
                     "Wireless Network Security",
-                    "Network Attacks and Defenses"
+                    "Network Attacks and defenses"
                 ]
             },
             {
@@ -10681,7 +10681,7 @@ abstract class AppDatabase : RoomDatabase() {
             platform: "Podcast"
             },
             {
-            title: "Defensive Security Podcast",
+            title: "defensive Security Podcast",
             url: "https://defensivesecurity.org/",
             description: "Podcast covering breaches, strategies, tools, and techniques",
             platform: "Podcast"
@@ -10744,13 +10744,13 @@ abstract class AppDatabase : RoomDatabase() {
         difficulty: "Easy",
         description: "Create a Python script to check the strength of a given password.",
         hints: [
-        "Define criteria for password strength (e.g., length, complexity)",
+        "define criteria for password strength (e.g., length, complexity)",
         "Use conditional statements to evaluate the password",
         "Provide feedback to the user on password strength"
         ],
         solution: {
         code: `def check_password_strength(password):
-        # Define criteria for password strength
+        # define criteria for password strength
         min_length = 8
         has_uppercase = any(char.isupper() for char in password)
         has_lowercase = any(char.islower() for char in password)
@@ -12795,6 +12795,1873 @@ public class DatabaseManager {
             ]
         }
     }
+},
+{
+    id: 12,
+    title: "Machine Learning & AI",
+    description: "To learn ML and AI, follow this roadmap",
+    extendedContent: `
+        Dive into the world of Machine Learning and Artificial Intelligence. Start with fundamental 
+        mathematics, statistics, and Python programming. Progress through classical ML algorithms, 
+        deep learning, and neural networks. Learn popular frameworks like TensorFlow and PyTorch, 
+        and explore computer vision, natural language processing, and reinforcement learning. 
+        Understand data preprocessing, model training, and evaluation techniques. Advanced topics 
+        include GANs, transformers, ML ops, and ethical AI development. Practice with real-world 
+        projects and datasets.
+    `,
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        prerequisites: [
+            "Strong foundation in mathematics (calculus, linear algebra)",
+            "Understanding of probability and statistics",
+            "Python programming proficiency",
+            "Basic data structures and algorithms",
+            "Familiarity with data analysis concepts",
+            "Command line and Git basics",
+            "Basic understanding of computational thinking"
+        ],
+        outcomes: [
+            "Implement and train machine learning models",
+            "Develop deep learning solutions",
+            "Process and prepare data for ML models",
+            "Evaluate and optimize model performance",
+            "Build neural networks using modern frameworks",
+            "Apply ML to computer vision and NLP tasks",
+            "Deploy ML models to production",
+            "Understand and implement AI ethics",
+            "Create end-to-end ML pipelines",
+            "Develop reinforcement learning solutions"
+        ],
+        sections: [
+            {
+                title: "Mathematical Foundations",
+                content: "Master essential mathematics including linear algebra, calculus, probability theory, and statistical concepts. Learn optimization techniques, matrix operations, derivatives, probability distributions, and statistical inference. Understand information theory and numerical computation basics."
+            },
+            {
+                title: "Machine Learning Fundamentals",
+                content: "Study core ML concepts including supervised and unsupervised learning, model evaluation, cross-validation, and regularization. Learn about feature engineering, dimensionality reduction, and common algorithms like regression, decision trees, and clustering."
+            },
+            {
+                title: "Deep Learning",
+                content: "Master neural networks architecture, backpropagation, activation functions, and optimization algorithms. Learn convolutional neural networks (CNNs), recurrent neural networks (RNNs), and modern architectures like transformers. Understand training techniques, batch normalization, and dropout."
+            },
+            {
+                title: "Computer Vision",
+                content: "Learn image processing, feature detection, and object recognition techniques. Master CNN architectures for vision tasks, transfer learning, and image segmentation. Study object detection frameworks, facial recognition, and video analysis."
+            },
+            {
+                title: "Natural Language Processing",
+                content: "Understand text processing, tokenization, and word embeddings. Learn sequence models, attention mechanisms, and transformer architectures. Study language modeling, machine translation, sentiment analysis, and question answering systems."
+            },
+            {
+                title: "Reinforcement Learning",
+                content: "Master RL fundamentals including Markov Decision Processes, Q-learning, and policy gradients. Study deep reinforcement learning, multi-agent systems, and practical applications. Learn about exploration vs exploitation and reward engineering."
+            },
+            {
+                title: "ML Engineering & Operations",
+                content: "Learn model deployment, scaling, and monitoring in production. Understand ML pipelines, version control for ML, and model serving. Study distributed training, model optimization, and MLOps best practices."
+            },
+            {
+                title: "AI Ethics & Responsible AI",
+                content: "Understand bias in AI, fairness metrics, and model interpretability. Learn about privacy-preserving ML, ethical guidelines, and responsible AI development. Study the societal impact of AI and regulatory compliance."
+            }
+        ]
+    },
+    content: {
+        examples: [
+            {
+                title: "Image Classification with CNN",
+                code: `import tensorflow as tf
+from tensorflow.keras import layers, models
+import numpy as np
+
+def build_cnn_classifier():
+    # Create a CNN model for image classification
+    model = models.Sequential([
+        # Convolutional layers
+        layers.Conv2D(32, (3, 3), activation='relu', input_shape=(64, 64, 3)),
+        layers.MaxPooling2D((2, 2)),
+        layers.Conv2D(64, (3, 3), activation='relu'),
+        layers.MaxPooling2D((2, 2)),
+        layers.Conv2D(64, (3, 3), activation='relu'),
+        
+        # Flatten and dense layers
+        layers.Flatten(),
+        layers.Dense(64, activation='relu'),
+        layers.Dropout(0.5),
+        layers.Dense(10, activation='softmax')
+    ])
+
+    # Compile the model
+    model.compile(optimizer='adam',
+                 loss='sparse_categorical_crossentropy',
+                 metrics=['accuracy'])
+    
+    return model
+
+def preprocess_data(images, labels):
+    # Normalize pixel values
+    images = images.astype('float32') / 255.0
+    
+    # Reshape if needed
+    if len(images.shape) == 3:
+        images = np.expand_dims(images, axis=-1)
+    
+    return images, labels
+
+def train_model(model, train_images, train_labels, validation_data=None):
+    # Train the model
+    history = model.fit(
+        train_images, train_labels,
+        epochs=10,
+        batch_size=32,
+        validation_data=validation_data,
+        callbacks=[
+            tf.keras.callbacks.EarlyStopping(
+                monitor='val_loss',
+                patience=3,
+                restore_best_weights=True
+            )
+        ]
+    )
+    return history
+
+def evaluate_model(model, test_images, test_labels):
+    # Evaluate the model
+    test_loss, test_accuracy = model.evaluate(test_images, test_labels)
+    print(f"Test accuracy: {test_accuracy:.4f}")
+    print(f"Test loss: {test_loss:.4f}")
+    return test_loss, test_accuracy
+
+# Example usage
+if __name__ == "__main__":
+    # Load and preprocess data (example with random data)
+    train_images = np.random.rand(1000, 64, 64, 3)
+    train_labels = np.random.randint(0, 10, 1000)
+    test_images = np.random.rand(200, 64, 64, 3)
+    test_labels = np.random.randint(0, 10, 200)
+    
+    # Preprocess data
+    train_images, train_labels = preprocess_data(train_images, train_labels)
+    test_images, test_labels = preprocess_data(test_images, test_labels)
+    
+    # Build and train model
+    model = build_cnn_classifier()
+    history = train_model(model, train_images, train_labels,
+                         validation_data=(test_images, test_labels))
+    
+    # Evaluate model
+    evaluate_model(model, test_images, test_labels)`,
+                explanation: "This example demonstrates building a convolutional neural network for image classification using TensorFlow. It includes model architecture, data preprocessing, training with early stopping, and evaluation."
+            },
+            {
+                title: "Natural Language Processing with Transformers",
+                code: `import torch
+from torch import nn
+from transformers import BertTokenizer, BertModel
+import numpy as np
+
+class TextClassifier(nn.Module):
+    def __init__(Self, num_classes, dropout=0.1):
+        super(TextClassifier, Self).__init__()
+        Self.bert = BertModel.from_pretrained('bert-base-uncased')
+        Self.dropout = nn.Dropout(dropout)
+        Self.classifier = nn.Linear(768, num_classes)
+        
+    def forward(Self, input_ids, attention_mask):
+        # Get BERT outputs
+        outputs = Self.bert(
+            input_ids=input_ids,
+            attention_mask=attention_mask
+        )
+        
+        # Use the [CLS] token representation
+        pooled_output = outputs.pooler_output
+        
+        # Apply dropout and classification layer
+        x = Self.dropout(pooled_output)
+        logits = Self.classifier(x)
+        return logits
+
+class TextClassificationPipeline:
+    def __init__(Self, num_classes, max_length=128):
+        Self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        Self.tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+        Self.model = TextClassifier(num_classes).to(Self.device)
+        Self.max_length = max_length
+        
+    def preprocess(Self, texts):
+        # Tokenize texts
+        encoded = Self.tokenizer.batch_encode_plus(
+            texts,
+            padding=True,
+            truncation=True,
+            max_length=Self.max_length,
+            return_attention_mask=True,
+            return_tensors='pt'
+        )
+        return {
+            'input_ids': encoded['input_ids'].to(Self.device),
+            'attention_mask': encoded['attention_mask'].to(Self.device)
+        }
+    
+    def train(Self, train_texts, train_labels, epochs=3):
+        # Set model to training mode
+        Self.model.train()
+        optimizer = torch.optim.AdamW(Self.model.parameters(), lr=2e-5)
+        criterion = nn.CrossEntropyLoss()
+        
+        for epoch in range(epochs):
+            # Process data in batches
+            batch_size = 16
+            for i in range(0, len(train_texts), batch_size):
+                batch_texts = train_texts[i:i+batch_size]
+                batch_labels = torch.tensor(
+                    train_labels[i:i+batch_size]).to(Self.device)
+                
+                # Preprocess batch
+                inputs = Self.preprocess(batch_texts)
+                
+                # Forward pass
+                outputs = Self.model(**inputs)
+                loss = criterion(outputs, batch_labels)
+                
+                # Backward pass
+                optimizer.zero_grad()
+                loss.backward()
+                optimizer.step()
+                
+                if i % 100 == 0:
+                    print(f'Epoch {epoch+1}, Batch {i}, Loss: {loss.item():.4f}')
+    
+    def predict(Self, texts):
+        # Set model to evaluation mode
+        Self.model.eval()
+        
+        with torch.no_grad():
+            # Preprocess texts
+            inputs = Self.preprocess(texts)
+            
+            # Get predictions
+            outputs = Self.model(**inputs)
+            predictions = torch.argmax(outputs, dim=1)
+            
+        return predictions.cpu().numpy()
+
+# Example usage
+def main():
+    # Example data
+    texts = [
+        "This movie was fantastic!",
+        "Terrible waste of time.",
+        "Great performance by the actors.",
+        "I fell asleep during the show."
+    ]
+    labels = [1, 0, 1, 0]  # 1: positive, 0: negative
+    
+    # Initialize pipeline
+    pipeline = TextClassificationPipeline(num_classes=2)
+    
+    # Train model
+    pipeline.train(texts, labels)
+    
+    # Make predictions
+    test_texts = [
+        "Amazing experience!",
+        "Would not recommend."
+    ]
+    predictions = pipeline.predict(test_texts)
+    
+    # Print results
+    for text, pred in zip(test_texts, predictions):
+        sentiment = "positive" if pred == 1 else "negative"
+        print(f"Text: {text}")
+        print(f"Prediction: {sentiment}\n")
+
+if __name__ == "__main__":
+    main()`,
+                explanation: "This example shows text classification using BERT transformer model. It includes implementing a custom PyTorch model, preprocessing text data, training the model, and making predictions."
+            },
+            {
+                title: "Reinforcement Learning Agent",
+                code: `import numpy as np
+import gym
+from collections import deque
+import random
+
+class DQNAgent:
+    def __init__(Self, state_size, action_size):
+        Self.state_size = state_size
+        Self.action_size = action_size
+        Self.memory = deque(maxlen=2000)
+        Self.gamma = 0.95    # discount rate
+        Self.epsilon = 1.0   # exploration rate
+        Self.epsilon_min = 0.01
+        Self.epsilon_decay = 0.995
+        Self.learning_rate = 0.001
+        Self.model = Self._build_model()
+    
+    def _build_model(Self):
+        from tensorflow.keras.models import Sequential
+        from tensorflow.keras.layers import Dense
+        
+        model = Sequential()
+        model.add(Dense(24, input_dim=Self.state_size, activation='relu'))
+        model.add(Dense(24, activation='relu'))
+        model.add(Dense(Self.action_size, activation='linear'))
+        model.compile(loss='mse', optimizer='adam')
+        return model
+    
+    def remember(Self, state, action, reward, next_state, done):
+        Self.memory.append((state, action, reward, next_state, done))
+    
+    def act(Self, state):
+        if np.random.rand() <= Self.epsilon:
+            return random.randrange(Self.action_size)
+        act_values = Self.model.predict(state)
+        return np.argmax(act_values[0])
+    
+    def replay(Self, batch_size):
+        minibatch = random.sample(Self.memory, batch_size)
+        for state, action, reward, next_state, done in minibatch:
+            target = reward
+            if not done:
+                target = (reward + Self.gamma * 
+                         np.amax(Self.model.predict(next_state)[0]))
+            target_f = Self.model.predict(state)
+            target_f[0][action] = target
+            Self.model.fit(state, target_f, epochs=1, verbose=0)
+        if Self.epsilon > Self.epsilon_min:
+            Self.epsilon *= Self.epsilon_decay
+
+def train_agent():
+    # Initialize environment and agent
+    env = gym.make('CartPole-v1')
+    state_size = env.observation_space.shape[0]
+    action_size = env.action_space.n
+    agent = DQNAgent(state_size, action_size)
+    batch_size = 32
+    
+    # Training loop
+    for episode in range(500):
+        state = env.reset()
+        state = np.reshape(state, [1, state_size])
+        
+        for time in range(500):
+            # Render environment (optional)
+            # env.render()
+            
+            # Agent selects action
+            action = agent.act(state)
+            
+            # Environment step
+            next_state, reward, done, _ = env.step(action)
+            reward = reward if not done else -10
+            next_state = np.reshape(next_state, [1, state_size])
+            
+            # Remember the experience
+            agent.remember(state, action, reward, next_state, done)
+            
+            state = next_state
+            
+            if done:
+                print(f"Episode: {episode+1}/{500}, Score: {time+1}")
+                break
+            
+            # Training
+            if len(agent.memory) > batch_size:
+                agent.replay(batch_size)
+    
+    return agent
+
+def test_agent(agent, episodes=10):
+    env = gym.make('CartPole-v1')
+    state_size = env.observation_space.shape[0]
+    
+    for episode in range(episodes):
+        state = env.reset()
+        state = np.reshape(state, [1, state_size])
+        
+        for time in range(500):
+            env.render()
+            action = agent.act(state)
+            next_state, reward, done, _ = env.step(action)
+            next_state = np.reshape(next_state, [1, state_size])
+            state = next_state
+            
+            if done:
+                print(f"Test Episode: {episode+1}/{episodes}, Score: {time+1}")
+                break
+    
+    env.close()
+
+if __name__ == "__main__":
+    # Train the agent
+    trained_agent = train_agent()
+    
+    # Test the trained agent
+    test_agent(trained_agent)`,
+                explanation: "This example implements a Deep Q-Learning agent for reinforcement learning using the OpenAI Gym environment. It includes the DQN algorithm implementation, experience replay, and epsilon-greedy exploration."
+            }
+        ],
+        roadmap: [
+            {
+                title: "1. Prerequisites & Math Foundations",
+                description: "Master the mathematical foundations required for ML/AI",
+                topics: [
+                    "Linear Algebra (vectors, matrices, eigenvalues)",
+                    "Calculus (derivatives, gradients, optimization)",
+                    "Probability Theory and Statistics",
+                    "Python Programming and NumPy",
+                    "Data Structures and Algorithms",
+                    "Data Analysis with Pandas",
+                    "Data Visualization (Matplotlib, Seaborn)"
+                ]
+            },
+            {
+                title: "2. Machine Learning Basics",
+                description: "Learn fundamental ML concepts and algorithms",
+                topics: [
+                    "Supervised vs Unsupervised Learning",
+                    "Linear Regression and Logistic Regression",
+                    "Decision Trees and Random Forests",
+                    "Support Vector Machines",
+                    "K-Means and Hierarchical Clustering",
+                    "Dimensionality Reduction (PCA, t-SNE)",
+                    "Model Evaluation and Validation"
+                ]
+            },
+            {
+                title: "3. Deep Learning Fundamentals",
+                description: "Master neural networks and deep learning concepts",
+                topics: [
+                    "Neural Network Architecture",
+                    "Backpropagation and Gradient Descent",
+                    "Activation Functions",
+                    "Loss Functions and Optimizers",
+                    "Regularization Techniques",
+                    "TensorFlow and PyTorch Basics",
+                    "GPU Acceleration"
+                ]
+            },
+            {
+                title: "4. Computer Vision",
+                description: "Learn image processing and vision tasks",
+                topics: [
+                    "Convolutional Neural Networks",
+                    "Image Classification and Detection",
+                    "Semantic Segmentation",
+                    "Transfer Learning",
+                    "Object Detection Frameworks",
+                    "Face Recognition",
+                    "Image Generation (GANs)"
+                ]
+            },
+            {
+                title: "5. Natural Language Processing",
+                description: "Master text processing and language understanding",
+                topics: [
+                    "Text Preprocessing and Embeddings",
+                    "RNNs and LSTMs",
+                    "Attention Mechanisms",
+                    "Transformer Architecture",
+                    "BERT and GPT Models",
+                    "Named Entity Recognition",
+                    "Machine Translation"
+                ]
+            },
+            {
+                title: "6. Reinforcement Learning",
+                description: "Learn decision-making and control",
+                topics: [
+                    "Markov Decision Processes",
+                    "Q-Learning and SARSA",
+                    "Policy Gradients",
+                    "Deep Q-Networks (DQN)",
+                    "Actor-Critic Methods",
+                    "Multi-Agent Systems",
+                    "RL in Real-world Applications"
+                ]
+            },
+            {
+                title: "7. ML Engineering",
+                description: "Master deployment and production aspects",
+                topics: [
+                    "Model Deployment Strategies",
+                    "MLOps and CI/CD",
+                    "Model Monitoring and Maintenance",
+                    "Scalable ML Systems",
+                    "Model Optimization",
+                    "API Development",
+                    "Cloud ML Services"
+                ]
+            }
+        ],
+        resources: {
+        documentation: [
+            {
+                title: "TensorFlow Documentation",
+                url: "https://www.tensorflow.org/docs",
+                description: "Official documentation for TensorFlow framework",
+                type: "Framework Documentation"
+            },
+            {
+                title: "PyTorch Documentation",
+                url: "https://pytorch.org/docs",
+                description: "Comprehensive guide for PyTorch development",
+                type: "Framework Documentation"
+            },
+            {
+                title: "Scikit-learn Documentation",
+                url: "https://scikit-learn.org/stable/documentation.html",
+                description: "Documentation for classical ML algorithms",
+                type: "ML Library Documentation"
+            },
+            {
+                title: "Hugging Face Documentation",
+                url: "https://huggingface.co/docs",
+                description: "Transformers library and models documentation",
+                type: "NLP Documentation"
+            },
+            {
+                title: "OpenAI Gym Documentation",
+                url: "https://gym.openai.com/docs/",
+                description: "Documentation for reinforcement learning environments",
+                type: "RL Documentation"
+            }
+        ],
+        tutorials: [
+            {
+                title: "Fast.ai Courses",
+                url: "https://www.fast.ai/",
+                description: "Practical deep learning for coders",
+                type: "Online Course"
+            },
+            {
+                title: "Google Machine Learning Crash Course",
+                url: "https://developers.google.com/machine-learning/crash-course",
+                description: "Google's ML course with TensorFlow",
+                type: "Online Course"
+            },
+            {
+                title: "Kaggle Learn",
+                url: "https://www.kaggle.com/learn",
+                description: "Interactive ML tutorials and competitions",
+                type: "Learning Platform"
+            },
+            {
+                title: "DeepLearning.AI Specializations",
+                url: "https://www.deeplearning.ai/",
+                description: "Deep learning specialization courses",
+                type: "Course Series"
+            },
+            {
+                title: "Stanford CS231n",
+                url: "http://cs231n.stanford.edu/",
+                description: "Convolutional Neural Networks for Visual Recognition",
+                type: "University Course"
+            }
+        ],
+        videos: [
+            {
+                title: "3Blue1Brown Neural Networks",
+                url: "https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi",
+                description: "Visual explanation of neural networks",
+                platform: "YouTube"
+            },
+            {
+                title: "Stanford CS224N NLP Course",
+                url: "https://www.youtube.com/playlist?list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z",
+                description: "Natural Language Processing with Deep Learning",
+                platform: "YouTube"
+            },
+            {
+                title: "MIT Introduction to Deep Learning",
+                url: "http://introtodeeplearning.com/",
+                description: "MIT's deep learning lecture series",
+                platform: "University Course"
+            },
+            {
+                title: "Yannic Kilcher",
+                url: "https://www.youtube.com/c/YannicKilcher",
+                description: "ML paper explanations and discussions",
+                platform: "YouTube"
+            },
+            {
+                title: "Two Minute Papers",
+                url: "https://www.youtube.com/user/keeroyz",
+                description: "AI research paper summaries",
+                platform: "YouTube"
+            }
+        ],
+        books: [
+            {
+                title: "Deep Learning",
+                author: "Ian Goodfellow, Yoshua Bengio, Aaron Courville",
+                description: "Comprehensive textbook on deep learning",
+                level: "Advanced"
+            },
+            {
+                title: "Hands-On Machine Learning with Scikit-Learn and TensorFlow",
+                author: "Aurélien Géron",
+                description: "Practical guide to ML implementation",
+                level: "Intermediate"
+            },
+            {
+                title: "Pattern Recognition and Machine Learning",
+                author: "Christopher Bishop",
+                description: "Classical ML concepts and mathematics",
+                level: "Advanced"
+            },
+            {
+                title: "Natural Language Processing with Transformers",
+                author: "Lewis Tunstall, Leandro von Werra, Thomas Wolf",
+                description: "Guide to using transformers for NLP",
+                level: "Intermediate"
+            },
+            {
+                title: "Reinforcement Learning: An Introduction",
+                author: "Richard S. Sutton, Andrew G. Barto",
+                description: "Foundational text on reinforcement learning",
+                level: "Advanced"
+            }
+        ],
+        tools: [
+            {
+                title: "Jupyter Notebooks",
+                url: "https://jupyter.org/",
+                description: "Interactive development environment for ML",
+                type: "Development Tool",
+                category: "Essential"
+            },
+            {
+                title: "Google Colab",
+                url: "https://colab.research.google.com/",
+                description: "Free cloud-based Jupyter environment with GPU",
+                type: "Cloud Platform",
+                category: "Essential"
+            },
+            {
+                title: "Weights & Biases",
+                url: "https://wandb.ai/",
+                description: "ML experiment tracking and visualization",
+                type: "MLOps Tool",
+                category: "Essential"
+            },
+            {
+                title: "DVC (Data Version Control)",
+                url: "https://dvc.org/",
+                description: "Version control for ML projects",
+                type: "MLOps Tool",
+                category: "Essential"
+            },
+            {
+                title: "MLflow",
+                url: "https://mlflow.org/",
+                description: "Platform for ML lifecycle management",
+                type: "MLOps Tool",
+                category: "Essential"
+            }
+        ],
+        communities: [
+            {
+                title: "Reddit r/MachineLearning",
+                url: "https://www.reddit.com/r/MachineLearning/",
+                description: "Discussion forum for ML topics",
+                type: "Forum"
+            },
+            {
+                title: "Papers with Code",
+                url: "https://paperswithcode.com/",
+                description: "ML papers with implementation code",
+                type: "Research Community"
+            },
+            {
+                title: "AI Stack Exchange",
+                url: "https://ai.stackexchange.com/",
+                description: "Q&A platform for AI and ML",
+                type: "Q&A Forum"
+            },
+            {
+                title: "Hugging Face Community",
+                url: "https://discuss.huggingface.co/",
+                description: "NLP and ML model community",
+                type: "Forum"
+            },
+            {
+                title: "PyTorch Discussion Forums",
+                url: "https://discuss.pytorch.org/",
+                description: "Official PyTorch community forum",
+                type: "Forum"
+            }
+        ],
+        podcasts: [
+            {
+                title: "Machine Learning Guide",
+                url: "http://ocdevel.com/mlg",
+                description: "Beginner-friendly ML concepts",
+                platform: "Podcast"
+            },
+            {
+                title: "Lex Fridman Podcast",
+                url: "https://lexfridman.com/podcast/",
+                description: "In-depth discussions with AI researchers",
+                platform: "Podcast"
+            },
+            {
+                title: "TWIML AI Podcast",
+                url: "https://twimlai.com/podcast/",
+                description: "This Week in Machine Learning & AI",
+                platform: "Podcast"
+            },
+            {
+                title: "Practical AI",
+                url: "https://changelog.com/practicalai",
+                description: "Making artificial intelligence practical",
+                platform: "Podcast"
+            }
+        ],
+        blogs: [
+            {
+                title: "OpenAI Blog",
+                url: "https://openai.com/blog/",
+                description: "Research updates from OpenAI",
+                type: "Research Blog"
+            },
+            {
+                title: "Google AI Blog",
+                url: "https://ai.googleblog.com/",
+                description: "Latest AI research from Google",
+                type: "Research Blog"
+            },
+            {
+                title: "Distill.pub",
+                url: "https://distill.pub/",
+                description: "Clear explanations of ML concepts",
+                type: "Educational Blog"
+            },
+            {
+                title: "Sebastian Ruder's Blog",
+                url: "https://ruder.io/",
+                description: "NLP and deep learning insights",
+                type: "Personal Blog"
+            }
+        ]
+    },
+    practice: {
+        beginnerExercises: [
+            {
+                title: "House Price Prediction",
+                difficulty: "Easy",
+                description: "Create a linear regression model to predict house prices based on features like size, bedrooms, and location.",
+                hints: [
+                    "Use pandas for data preprocessing",
+                    "Handle categorical variables properly",
+                    "Split data into training and testing sets",
+                    "Evaluate model using RMSE and R-squared"
+                ],
+                solution: {
+                    code: `import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+
+def prepare_housing_data():
+    # Create sample data
+    data = {
+        'size': np.random.uniform(1000, 5000, 1000),
+        'bedrooms': np.random.randint(1, 6, 1000),
+        'location': np.random.choice(['urban', 'suburban', 'rural'], 1000),
+        'age': np.random.uniform(0, 50, 1000),
+        'price': np.zeros(1000)
+    }
+    
+    # Generate target variable with some noise
+    data['price'] = (
+        200 * data['size'] +
+        50000 * data['bedrooms'] +
+        np.random.normal(0, 10000, 1000)
+    )
+    
+    # Convert to DataFrame
+    return pd.DataFrame(data)
+
+def create_model_pipeline():
+    # define numeric and categorical features
+    numeric_features = ['size', 'bedrooms', 'age']
+    categorical_features = ['location']
+    
+    # Create preprocessing steps
+    numeric_transformer = Pipeline(steps=[
+        ('scaler', StandardScaler())
+    ])
+    
+    categorical_transformer = Pipeline(steps=[
+        ('onehot', OneHotEncoder(drop='first', sparse=False))
+    ])
+    
+    # Combine preprocessing steps
+    preprocessor = ColumnTransformer(
+        transformers=[
+            ('num', numeric_transformer, numeric_features),
+            ('cat', categorical_transformer, categorical_features)
+        ])
+    
+    # Create pipeline
+    model = Pipeline(steps=[
+        ('preprocessor', preprocessor),
+        ('regressor', LinearRegression())
+    ])
+    
+    return model
+
+def train_and_evaluate():
+    # Prepare data
+    df = prepare_housing_data()
+    X = df.drop('price', axis=1)
+    y = df['price']
+    
+    # Split data
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42
+    )
+    
+    # Create and train model
+    model = create_model_pipeline()
+    model.fit(X_train, y_train)
+    
+    # Make predictions
+    y_pred = model.predict(X_test)
+    
+    # Evaluate model
+    rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+    r2 = r2_score(y_test, y_pred)
+    
+    print(f"Model Performance:")
+    print(f"RMSE: rmse:.2f"
+    print(f"R² Score: {r2:.3f}")
+    
+    return model
+
+if __name__ == "__main__":
+    model = train_and_evaluate()`,
+                    explanation: "This exercise demonstrates basic regression modeling using scikit-learn. It includes data preprocessing, feature engineering, model pipeline creation, and evaluation metrics."
+                }
+            },
+            {
+                title: "Spam Detection",
+                difficulty: "Easy",
+                description: "Build a text classification model to identify spam messages using basic NLP techniques.",
+                hints: [
+                    "Use TF-IDF for text vectorization",
+                    "Implement basic text preprocessing",
+                    "Apply Naive Bayes classifier",
+                    "Evaluate using classification metrics"
+                ],
+                solution: {
+                    code: `import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.pipeline import Pipeline
+from sklearn.metrics import classification_report
+import re
+
+def prepare_text_data():
+    # Create sample data
+    messages = [
+        "WINNER! You have won $1000 prize",
+        "Meeting at 3pm tomorrow",
+        "Claim your free gift now!",
+        "Project deadline reminder",
+        "Get rich quick opportunity!!!",
+        "Dinner at home tonight"
+    ]
+    labels = [1, 0, 1, 0, 1, 0]  # 1: spam, 0: not spam
+    
+    return messages, labels
+
+def preprocess_text(text):
+    # Convert to lowercase
+    text = text.lower()
+    
+    # Remove special characters and extra whitespace
+    text = re.sub(r'[^a-zA-Z\s]', '', text)
+    text = re.sub(r'\s+', ' ', text).strip()
+    
+    return text
+
+def create_spam_detector():
+    # Create pipeline
+    model = Pipeline([
+        ('vectorizer', TfidfVectorizer(
+            preprocessor=preprocess_text,
+            stop_words='english',
+            max_features=5000
+        )),
+        ('classifier', MultinomialNB())
+    ])
+    
+    return model
+
+def train_and_evaluate_spam_detector():
+    # Prepare data
+    messages, labels = prepare_text_data()
+    
+    # Split data
+    X_train, X_test, y_train, y_test = train_test_split(
+        messages, labels, test_size=0.2, random_state=42
+    )
+    
+    # Create and train model
+    model = create_spam_detector()
+    model.fit(X_train, y_train)
+    
+    # Make predictions
+    y_pred = model.predict(X_test)
+    
+    # Print classification report
+    print("Classification Report:")
+    print(classification_report(y_test, y_pred, 
+          target_names=['Not Spam', 'Spam']))
+    
+    return model
+
+def test_spam_detector(model, new_messages):
+    predictions = model.predict(new_messages)
+    for message, prediction in zip(new_messages, predictions):
+        status = "SPAM" if prediction == 1 else "NOT SPAM"
+        print(f"Message: {message}")
+        print(f"Prediction: {status}\n")
+
+if __name__ == "__main__":
+    # Train model
+    model = train_and_evaluate_spam_detector()
+    
+    # Test with new messages
+    test_messages = [
+        "Congratulations! You've won a new iPhone!",
+        "Can you pick up milk on your way home?",
+        "URGENT: Your account needs verification",
+        "Here's the report you requested yesterday"
+    ]
+    
+    test_spam_detector(model, test_messages)`,
+                    explanation: "This exercise shows basic text classification using TF-IDF and Naive Bayes. It includes text preprocessing, model pipeline creation, and evaluation using classification metrics."
+                }
+            }
+        ],
+        intermediateExercises: [
+            {
+                title: "Customer Churn Prediction",
+                difficulty: "Medium",
+                description: "Build a model to predict customer churn using historical customer data with feature engineering and model optimization.",
+                hints: [
+                    "Handle class imbalance",
+                    "Create custom features",
+                    "Implement cross-validation",
+                    "Use feature importance analysis"
+                ],
+                solution: {
+                    code: `import pandas as pd
+import numpy as np
+from sklearn.model_selection import cross_val_score
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import roc_auc_score
+from imblearn.over_sampling import SMOTE
+import shap
+
+class ChurnPredictor:
+    def __init__(Self):
+        Self.model = None
+        Self.feature_importance = None
+        
+    def prepare_features(Self, df):
+        # Create features
+        feature_engineering = {
+            'tenure_months': lambda x: x['tenure'],
+            'total_charges': lambda x: x['monthly_charges'] * x['tenure'],
+            'contract_score': lambda x: x['contract'].map({
+                'Month-to-month': 0, 
+                'One year': 1, 
+                'Two year': 2
+            }),
+            'services_count': lambda x: x[[
+                'internet_service', 'phone_service', 
+                'online_security', 'online_backup'
+            ]].notna().sum(axis=1),
+            'payment_rating': lambda x: x['payment_method'].map({
+                'Electronic check': 0,
+                'Mailed check': 1,
+                'Bank transfer': 2,
+                'Credit card': 2
+            })
+        }
+        
+        # Apply feature engineering
+        features = pd.DataFrame()
+        for name, function in feature_engineering.items():
+            features[name] = function(df)
+            
+        return features
+        
+    def create_pipeline(Self):
+        return Pipeline([
+            ('scaler', StandardScaler()),
+            ('classifier', RandomForestClassifier(
+                n_estimators=100,
+                random_state=42
+            ))
+        ])
+        
+    def handle_imbalance(Self, X, y):
+        smote = SMOTE(random_state=42)
+        X_balanced, y_balanced = smote.fit_resample(X, y)
+        return X_balanced, y_balanced
+        
+    def train(Self, X, y):
+        # Handle class imbalance
+        X_balanced, y_balanced = Self.handle_imbalance(X, y)
+        
+        # Create and optimize model
+        Self.model = Self.create_pipeline()
+        param_grid = {
+            'classifier__n_estimators': [100, 200],
+            'classifier__max_depth': [10, 20, None],
+            'classifier__min_samples_split': [2, 5],
+            'classifier__min_samples_leaf': [1, 2]
+        }
+        
+        grid_search = GridSearchCV(
+            Self.model, param_grid, cv=5, 
+            scoring='roc_auc', n_jobs=-1
+        )
+        grid_search.fit(X_balanced, y_balanced)
+        
+        Self.model = grid_search.best_estimator_
+        print(f"Best parameters: {grid_search.best_params_}")
+        
+        # Calculate feature importance
+        Self.analyze_feature_importance(X_balanced)
+        
+    def analyze_feature_importance(Self, X):
+        # SHAP values for feature importance
+        explainer = shap.TreeExplainer(
+            Self.model.named_steps['classifier']
+        )
+        shap_values = explainer.shap_values(
+            Self.model.named_steps['scaler'].transform(X)
+        )
+        
+        # Store feature importance
+        Self.feature_importance = pd.DataFrame(
+            np.abs(shap_values).mean(axis=0),
+            index=X.columns,
+            columns=['importance']
+        ).sort_values('importance', ascending=False)
+        
+    def predict(Self, X):
+        return Self.model.predict_proba(X)[:, 1]
+        
+    def evaluate(Self, X, y):
+        # Cross-validation
+        cv_scores = cross_val_score(
+            Self.model, X, y, cv=5, 
+            scoring='roc_auc'
+        )
+        
+        print("\nCross-validation ROC-AUC scores:")
+        print(f"Mean: {cv_scores.mean():.3f} "
+              f"(+/- {cv_scores.std() * 2:.3f})")
+        
+        # Feature importance
+        print("\nTop 5 important features:")
+        print(Self.feature_importance.head())
+
+# Example usage
+def main():
+    # Generate sample data
+    np.random.seed(42)
+    n_samples = 1000
+    
+    data = {
+        'tenure': np.random.randint(1, 72, n_samples),
+        'monthly_charges': np.random.uniform(20, 200, n_samples),
+        'contract': np.random.choice(
+            ['Month-to-month', 'One year', 'Two year'], 
+            n_samples
+        ),
+        'internet_service': np.random.choice(
+            ['DSL', 'Fiber optic', None], 
+            n_samples
+        ),
+        'phone_service': np.random.choice(
+            ['Yes', 'No'], 
+            n_samples
+        ),
+        'online_security': np.random.choice(
+            ['Yes', 'No', None], 
+            n_samples
+        ),
+        'online_backup': np.random.choice(
+            ['Yes', 'No', None], 
+            n_samples
+        ),
+        'payment_method': np.random.choice(
+            ['Electronic check', 'Mailed check', 
+             'Bank transfer', 'Credit card'], 
+            n_samples
+        )
+    }
+    
+    # Create churn labels (imbalanced)
+    churn_prob = 0.2 * (72 - data['tenure'])/72
+    0.3 * (data['monthly_charges'] > 100)
+    data['churn'] = np.random.binomial(1, churn_prob)
+    
+    # Create predictor
+    predictor = ChurnPredictor()
+    
+    # Prepare features
+    df = pd.DataFrame(data)
+    X = predictor.prepare_features(df)
+    y = df['churn']
+    
+    # Train and evaluate
+    predictor.train(X, y)
+    predictor.evaluate(X, y)
+
+if __name__ == "__main__":
+    main()`,
+                    explanation: "This intermediate exercise demonstrates advanced classification techniques including feature engineering, handling class imbalance, hyperparameter optimization, and model interpretation using SHAP values."
+                }
+            },
+            {
+                title: "Time Series Forecasting",
+                difficulty: "Medium",
+                description: "Implement a time series forecasting model for sales prediction using both statistical and deep learning approaches.",
+                hints: [
+                    "Handle seasonal patterns",
+                    "Create time-based features",
+                    "Implement both SARIMA and LSTM models",
+                    "Compare different forecasting approaches"
+                ],
+                solution: {
+                    code: `import pandas as pd
+import numpy as np
+from statsmodels.tsa.statespace.sarimax import SARIMAX
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dense
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+import matplotlib.pyplot as plt
+
+class TimeSeriesForecaster:
+    def __init__(Self):
+        Self.sarima_model = None
+        Self.lstm_model = None
+        Self.scaler = MinMaxScaler()
+        
+    def prepare_data(Self, data, seq_length=12):
+        # Scale data
+        scaled_data = Self.scaler.fit_transform(
+            data.reshape(-1, 1)
+        )
+        
+        # Create sequences for LSTM
+        X, y = [], []
+        for i in range(len(scaled_data) - seq_length):
+            X.append(scaled_data[i:(i + seq_length), 0])
+            y.append(scaled_data[i + seq_length, 0])
+            
+        return np.array(X), np.array(y)
+        
+    def create_lstm_model(Self, seq_length):
+        model = Sequential([
+            LSTM(50, activation='relu', 
+                 input_shape=(seq_length, 1)),
+                 Dense(25, activation='relu'),
+            Dense(1)
+        ])
+        
+        model.compile(optimizer='adam', loss='mse')
+        return model
+        
+    def train_sarima(Self, data, order=(1,1,1), 
+                     seasonal_order=(1,1,1,12)):
+        # Fit SARIMA model
+        Self.sarima_model = SARIMAX(
+            data, 
+            order=order,
+            seasonal_order=seasonal_order
+        ).fit(disp=False)
+        
+    def train_lstm(Self, data, seq_length=12, epochs=100):
+        # Prepare sequences
+        X, y = Self.prepare_data(data, seq_length)
+        X = X.reshape((X.shape[0], X.shape[1], 1))
+        
+        # Create and train model
+        Self.lstm_model = Self.create_lstm_model(seq_length)
+        Self.lstm_model.fit(
+            X, y,
+            epochs=epochs,
+            batch_size=32,
+            verbose=0
+        )
+        
+    def forecast_sarima(Self, steps):
+        # Generate SARIMA forecast
+        forecast = Self.sarima_model.forecast(steps)
+        return forecast
+        
+    def forecast_lstm(Self, data, steps):
+        # Prepare input sequence
+        sequence = Self.scaler.transform(
+            data[-12:].reshape(-1, 1)
+        )
+        
+        # Generate predictions
+        predictions = []
+        current_sequence = sequence.flatten()
+        
+        for _ in range(steps):
+            # Reshape sequence
+            X = current_sequence[-12:].reshape(1, 12, 1)
+            
+            # Predict next value
+            next_pred = Self.lstm_model.predict(X, verbose=0)
+            predictions.append(next_pred[0, 0])
+            
+            # Update sequence
+            current_sequence = np.append(
+                current_sequence, 
+                next_pred
+            )
+            
+        # Inverse transform predictions
+        predictions = np.array(predictions).reshape(-1, 1)
+        predictions = Self.scaler.inverse_transform(predictions)
+        
+        return predictions.flatten()
+        
+    def evaluate_models(Self, test_data, predictions_sarima, 
+                       predictions_lstm):
+        # Calculate metrics
+        mae_sarima = mean_absolute_error(
+            test_data, 
+            predictions_sarima
+        )
+        rmse_sarima = np.sqrt(mean_squared_error(
+            test_data, 
+            predictions_sarima
+        ))
+        
+        mae_lstm = mean_absolute_error(
+            test_data, 
+            predictions_lstm
+        )
+        rmse_lstm = np.sqrt(mean_squared_error(
+            test_data, 
+            predictions_lstm
+        ))
+        
+        print("\nModel Evaluation:")
+        print("SARIMA:")
+        print(f"MAE: {mae_sarima:.2f}")
+        print(f"RMSE: {rmse_sarima:.2f}")
+        print("\nLSTM:")
+        print(f"MAE: {mae_lstm:.2f}")
+        print(f"RMSE: {rmse_lstm:.2f}")
+        
+    def plot_forecasts(Self, actual, predictions_sarima, 
+                      predictions_lstm):
+        plt.figure(figsize=(12, 6))
+        plt.plot(actual, label='Actual', color='black')
+        plt.plot(predictions_sarima, label='SARIMA', 
+                color='blue', linestyle='--')
+        plt.plot(predictions_lstm, label='LSTM', 
+                color='red', linestyle='--')
+        plt.legend()
+        plt.title('Time Series Forecasting Comparison')
+        plt.show()
+
+def generate_sample_data(n_points=500):
+    # Generate time series with trend and seasonality
+    time = np.arange(n_points)
+    trend = 0.1 * time
+    seasonality = 10 * np.sin(2 * np.pi * time / 12)
+    noise = np.random.normal(0, 1, n_points)
+    
+    data = trend + seasonality + noise
+    return data
+
+def main():
+    # Generate sample data
+    data = generate_sample_data()
+    train_size = int(len(data) * 0.8)
+    train_data = data[:train_size]
+    test_data = data[train_size:]
+    
+    # Create and train forecaster
+    forecaster = TimeSeriesForecaster()
+    
+    # Train models
+    forecaster.train_sarima(train_data)
+    forecaster.train_lstm(train_data)
+    
+    # Generate forecasts
+    forecast_steps = len(test_data)
+    predictions_sarima = forecaster.forecast_sarima(
+        forecast_steps
+    )
+    predictions_lstm = forecaster.forecast_lstm(
+        train_data, 
+        forecast_steps
+    )
+    
+    # Evaluate and visualize
+    forecaster.evaluate_models(
+        test_data, 
+        predictions_sarima, 
+        predictions_lstm
+    )
+    forecaster.plot_forecasts(
+        test_data, 
+        predictions_sarima, 
+        predictions_lstm
+    )
+
+if __name__ == "__main__":
+    main()`,
+    explanation: "This intermediate exercise demonstrates time series forecasting using both statistical (SARIMA) and deep learning (LSTM) approaches. It includes data preparation, model training, forecasting, and comparison of different methods. The implementation handles seasonal patterns and provides visualization of results."
+                }
+            }
+        ],
+        advancedExercises: [
+            {
+                title: "Generative Adversarial Network (GAN)",
+                difficulty: "Hard",
+                description: "Implement a GAN to generate synthetic images using deep convolutional networks.",
+                hints: [
+                    "Use convolutional layers for generator and discriminator",
+                    "Implement proper loss functions",
+                    "Add batch normalization and dropout",
+                    "Monitor training stability"
+                ],
+                solution: {
+                    code: `import tensorflow as tf
+from tensorflow.keras import layers, models
+import numpy as np
+import matplotlib.pyplot as plt
+
+class DCGAN:
+    def __init__(Self, image_shape, latent_dim=100):
+        Self.image_shape = image_shape
+        Self.latent_dim = latent_dim
+        
+        Self.generator = Self._build_generator()
+        Self.discriminator = Self._build_discriminator()
+        Self.gan = Self._build_gan()
+        
+    def _build_generator(Self):
+        model = models.Sequential([
+            # Foundation for 7x7 image
+            layers.Dense(7*7*256, input_dim=Self.latent_dim),
+            layers.Reshape((7, 7, 256)),
+            
+            # Upsampling
+            layers.Conv2DTranspose(128, 3, strides=2, padding='same'),
+            layers.BatchNormalization(),
+            layers.LeakyReLU(alpha=0.2),
+            
+            layers.Conv2DTranspose(64, 3, strides=2, padding='same'),
+            layers.BatchNormalization(),
+            layers.LeakyReLU(alpha=0.2),
+            
+            layers.Conv2D(Self.image_shape[-1], 3, 
+                         padding='same', activation='tanh')
+        ])
+        
+        return model
+        
+    def _build_discriminator(Self):
+        model = models.Sequential([
+            layers.Conv2D(64, 3, strides=2, padding='same',
+                         input_shape=Self.image_shape),
+            layers.LeakyReLU(alpha=0.2),
+            layers.Dropout(0.3),
+            
+            layers.Conv2D(128, 3, strides=2, padding='same'),
+            layers.LeakyReLU(alpha=0.2),
+            layers.Dropout(0.3),
+            
+            layers.Flatten(),
+            layers.Dense(1, activation='sigmoid')
+        ])
+        
+        return model
+        
+    def _build_gan(Self):
+        # Freeze discriminator
+        Self.discriminator.trainable = False
+        
+        # GAN input (noise) will generate images
+        gan_input = layers.Input(shape=(Self.latent_dim,))
+        
+        # Generator creates images
+        x = Self.generator(gan_input)
+        
+        # Discriminator judges images
+        gan_output = Self.discriminator(x)
+        
+        # Combine them
+        model = models.Model(gan_input, gan_output)
+        return model
+        
+    def compile_models(Self):
+        # Compile discriminator
+        Self.discriminator.compile(
+            optimizer=tf.keras.optimizers.Adam(
+                learning_rate=0.0002,
+                beta_1=0.5
+            ),
+            loss='binary_crossentropy',
+            metrics=['accuracy']
+        )
+        
+        # Compile GAN
+        Self.gan.compile(
+            optimizer=tf.keras.optimizers.Adam(
+                learning_rate=0.0002,
+                beta_1=0.5
+            ),
+            loss='binary_crossentropy'
+        )
+        
+    def train(Self, x_train, epochs=10000, batch_size=128, 
+              save_interval=1000):
+        # Rescale images to [-1, 1]
+        x_train = (x_train.astype('float32') - 127.5) / 127.5
+        
+        # Labels for real and fake images
+        real = np.ones((batch_size, 1))
+        fake = np.zeros((batch_size, 1))
+        
+        for epoch in range(epochs):
+            # Train discriminator
+            # Select random real images
+            idx = np.random.randint(0, x_train.shape[0], batch_size)
+            real_imgs = x_train[idx]
+            
+            # Generate fake images
+            noise = np.random.normal(0, 1, 
+                                   (batch_size, Self.latent_dim))
+            fake_imgs = Self.generator.predict(noise)
+            
+            # Train discriminator
+            d_loss_real = Self.discriminator.train_on_batch(
+                real_imgs, 
+                real
+            )
+            d_loss_fake = Self.discriminator.train_on_batch(
+                fake_imgs, 
+                fake
+            )
+            d_loss = 0.5 * np.add(d_loss_real, d_loss_fake)
+            
+            # Train generator
+            noise = np.random.normal(0, 1, 
+                                   (batch_size, Self.latent_dim))
+            g_loss = Self.gan.train_on_batch(noise, real)
+            
+            # Print progress
+            if epoch % 100 == 0:
+                print(f"Epoch {epoch}, "
+                      f"D Loss: {d_loss[0]:.4f}, "
+                      f"D Acc: {100*d_loss[1]:.1f}%, "
+                      f"G Loss: {g_loss:.4f}")
+            
+            # Save images
+            if epoch % save_interval == 0:
+                Self.save_imgs(epoch)
+                
+    def save_imgs(Self, epoch):
+        r, c = 5, 5
+        noise = np.random.normal(0, 1, 
+                               (r * c, Self.latent_dim))
+        gen_imgs = Self.generator.predict(noise)
+        
+        # Rescale images 0 - 1
+        gen_imgs = 0.5 * gen_imgs + 0.5
+        
+        fig, axs = plt.subplots(r, c)
+        cnt = 0
+        for i in range(r):
+            for j in range(c):
+                axs[i,j].imshow(gen_imgs[cnt, :,:,0], cmap='gray')
+                axs[i,j].axis('off')
+                cnt += 1
+        fig.savefig(f"gan_images/epoch_{epoch}.png")
+        plt.close()
+
+def prepare_mnist_data():
+    # Load MNIST dataset
+    (x_train, _), (_, _) = tf.keras.datasets.mnist.load_data()
+    
+    # Expand dimensions and normalize
+    x_train = np.expand_dims(x_train, axis=-1)
+    
+    return x_train
+
+def main():
+    # Prepare data
+    x_train = prepare_mnist_data()
+    
+    # Create and train GAN
+    gan = DCGAN(image_shape=(28, 28, 1))
+    gan.compile_models()
+    gan.train(x_train, epochs=30000, batch_size=32, 
+              save_interval=1000)
+
+if __name__ == "__main__":
+    main()`,
+                    explanation: "This advanced exercise implements a Deep Convolutional GAN (DCGAN) for generating synthetic images. It includes proper architecture design, loss functions, training loop implementation, and visualization of generated images throughout training."
+                }
+            },
+            {
+                title: "Transformer for Machine Translation",
+                difficulty: "Hard",
+                description: "Implement a transformer model for language translation with attention mechanisms.",
+                hints: [
+                    "Implement multi-head attention",
+                    "Create positional encoding",
+                    "Handle tokenization and padding",
+                    "Implement beam search decoding"
+                ],
+                solution: {
+                    code: `import tensorflow as tf
+import numpy as np
+
+class TransformerEncoderLayer(tf.keras.layers.Layer):
+    def __init__(Self, d_model, num_heads, dff, rate=0.1):
+        super().__init__()
+        
+        Self.mha = tf.keras.layers.MultiHeadAttention(
+            num_heads=num_heads, 
+            key_dim=d_model
+        )
+        Self.ffn = tf.keras.Sequential([
+            tf.keras.layers.Dense(dff, activation='relu'),
+            tf.keras.layers.Dense(d_model)
+        ])
+        
+        Self.layernorm1 = tf.keras.layers.LayerNormalization(
+            epsilon=1e-6
+        )
+        Self.layernorm2 = tf.keras.layers.LayerNormalization(
+            epsilon=1e-6
+        )
+        
+        Self.dropout1 = tf.keras.layers.Dropout(rate)
+        Self.dropout2 = tf.keras.layers.Dropout(rate)
+        
+    def call(Self, x, training, mask):
+        attn_output = Self.mha(x, x, x, mask)
+        attn_output = Self.dropout1(attn_output, training=training)
+        out1 = Self.layernorm1(x + attn_output)
+        
+        ffn_output = Self.ffn(out1)
+        ffn_output = Self.dropout2(ffn_output, training=training)
+        return Self.layernorm2(out1 + ffn_output)
+
+class TransformerDecoderLayer(tf.keras.layers.Layer):
+    def __init__(Self, d_model, num_heads, dff, rate=0.1):
+        super().__init__()
+        
+        Self.mha1 = tf.keras.layers.MultiHeadAttention(
+            num_heads=num_heads, 
+            key_dim=d_model
+        )
+        Self.mha2 = tf.keras.layers.MultiHeadAttention(
+            num_heads=num_heads, 
+            key_dim=d_model
+        )
+        
+        Self.ffn = tf.keras.Sequential([
+            tf.keras.layers.Dense(dff, activation='relu'),
+            tf.keras.layers.Dense(d_model)
+        ])
+        
+        Self.layernorm1 = tf.keras.layers.LayerNormalization(
+            epsilon=1e-6
+        )
+        Self.layernorm2 = tf.keras.layers.LayerNormalization(
+            epsilon=1e-6
+        )
+         Self.layernorm3 = tf.keras.layers.LayerNormalization(
+            epsilon=1e-6
+        )
+        
+        Self.dropout1 = tf.keras.layers.Dropout(rate)
+        Self.dropout2 = tf.keras.layers.Dropout(rate)
+        Self.dropout3 = tf.keras.layers.Dropout(rate)
+    
+    def call(Self, x, enc_output, training, 
+             look_ahead_mask, padding_mask):
+        # Self attention
+        attn1 = Self.mha1(x, x, x, look_ahead_mask)
+        attn1 = Self.dropout1(attn1, training=training)
+        out1 = Self.layernorm1(attn1 + x)
+        
+        # Encoder-decoder attention
+        attn2 = Self.mha2(
+            out1, enc_output, enc_output, padding_mask)
+        attn2 = Self.dropout2(attn2, training=training)
+        out2 = Self.layernorm2(attn2 + out1)
+        
+        # Feed forward
+        ffn_output = Self.ffn(out2)
+        ffn_output = Self.dropout3(ffn_output, training=training)
+        return Self.layernorm3(ffn_output + out2)
+
+class Transformer(tf.keras.Model):
+    def __init__(Self, num_layers, d_model, num_heads, dff,
+                 input_vocab_size, target_vocab_size,
+                 max_position_encoding, rate=0.1):
+        super().__init__()
+        
+        Self.d_model = d_model
+        Self.num_layers = num_layers
+        
+        Self.embedding = tf.keras.layers.Embedding(
+            input_vocab_size, 
+            d_model
+        )
+        Self.pos_encoding = Self.positional_encoding(
+            max_position_encoding, 
+            d_model
+        )
+        
+        Self.enc_layers = [
+            TransformerEncoderLayer(d_model, num_heads, dff, rate)
+            for in range(num_layers)
+        ]
+        
+        Self.dec_layers = [
+            TransformerDecoderLayer(d_model, num_heads, dff, rate)
+            for in range(num_layers)
+        ]
+        
+        Self.final_layer = tf.keras.layers.Dense(
+            target_vocab_size
+        )
+        
+        Self.dropout = tf.keras.layers.Dropout(rate)
+    
+    def positional_encoding(Self, position, d_model):
+        # Create positional encoding matrix
+        angle_rads = Self.get_angles(
+            np.arange(position)[:, np.newaxis],
+            np.arange(d_model)[np.newaxis, :],
+            d_model
+        )
+        
+        # Apply sin to even indices
+        angle_rads[:, 0::2] = np.sin(angle_rads[:, 0::2])
+        
+        # Apply cos to odd indices
+        angle_rads[:, 1::2] = np.cos(angle_rads[:, 1::2])
+        
+        pos_encoding = angle_rads[np.newaxis, ...]
+        return tf.cast(pos_encoding, dtype=tf.float32)
+    
+    def get_angles(Self, pos, i, d_model):
+        angle_rates = 1 / np.power(
+            10000, 
+            (2 * (i//2)) / np.float32(d_model)
+        )
+        return pos * angle_rates
+    
+    def create_padding_mask(Self, seq):
+        seq = tf.cast(tf.math.equal(seq, 0), tf.float32)
+        return seq[:, tf.newaxis, tf.newaxis, :]
+    
+    def create_look_ahead_mask(Self, size):
+        mask = 1 - tf.linalg.band_part(tf.ones((size, size)), -1, 0)
+        return mask
+    
+    def call(Self, inputs, training):
+        # Unpack inputs
+        inp, tar = inputs
+        
+        # Create masks
+        enc_padding_mask = Self.create_padding_mask(inp)
+        dec_padding_mask = Self.create_padding_mask(inp)
+        look_ahead_mask = Self.create_look_ahead_mask(
+            tf.shape(tar)[1]
+        )
+        dec_target_padding_mask = Self.create_padding_mask(tar)
+        combined_mask = tf.maximum(
+            dec_target_padding_mask, 
+            look_ahead_mask
+        )
+        
+        # Encoder
+        enc_output = Self.encode(inp, training, enc_padding_mask)
+        
+        # Decoder
+        dec_output = Self.decode(
+            tar, enc_output, training, 
+            combined_mask, dec_padding_mask
+        )
+        
+        # Final linear layer
+        final_output = Self.final_layer(dec_output)
+        return final_output
+    
+    def encode(Self, x, training, mask):
+        seq_len = tf.shape(x)[1]
+        
+        # Embedding and positional encoding
+        x = Self.embedding(x)
+        x *= tf.math.sqrt(tf.cast(Self.d_model, tf.float32))
+        x += Self.pos_encoding[:, :seq_len, :]
+        x = Self.dropout(x, training=training)
+        
+        # Encoder layers
+        for i in range(Self.num_layers):
+            x = Self.enc_layers[i](x, training, mask)
+            
+        return x
+    
+    def decode(Self, x, enc_output, training, 
+              look_ahead_mask, padding_mask):
+        seq_len = tf.shape(x)[1]
+        
+        # Embedding and positional encoding
+        x = Self.embedding(x)
+        x *= tf.math.sqrt(tf.cast(Self.d_model, tf.float32))
+        x += Self.pos_encoding[:, :seq_len, :]
+        x = Self.dropout(x, training=training)
+        
+        # Decoder layers
+        for i in range(Self.num_layers):
+            x = Self.dec_layers[i](
+                x, enc_output, training, 
+                look_ahead_mask, padding_mask
+            )
+            
+        return x
+
+    def __init__(Self, transformer, tokenizer_src, tokenizer_tgt,
+                 max_length=128):
+        Self.transformer = transformer
+        Self.tokenizer_src = tokenizer_src
+        Self.tokenizer_tgt = tokenizer_tgt
+        Self.max_length = max_length
+    
+    def translate(Self, text, beam_size=4):
+        # Tokenize input
+        encoder_input = Self.tokenizer_src.encode(text)
+        encoder_input = tf.expand_dims(encoder_input, 0)
+        
+        # Initialize decoder input
+        decoder_input = [Self.tokenizer_tgt.vocab_size]
+        output = tf.expand_dims(decoder_input, 0)
+        
+        for i in range(Self.max_length):
+            predictions = Self.transformer(
+                [encoder_input, output],
+                training=False
+            )
+            
+            # Get the last token predictions
+            predictions = predictions[:, -1:, :]
+            predicted_id = tf.cast(
+                tf.argmax(predictions, axis=-1),
+                tf.int32
+            )
+            
+            # Break if end token is predicted
+            if predicted_id == Self.tokenizer_tgt.vocab_size + 1:
+                break
+                
+            # Concatenate predicted token
+            output = tf.concat([output, predicted_id], axis=-1)
+        
+        # Convert to text
+        text = Self.tokenizer_tgt.decode(
+            [i for i in output[0] if i < Self.tokenizer_tgt.vocab_size]
+        )
+        
+        return text
+
+def main():
+    # Example parameters
+    num_layers = 4
+    d_model = 128
+    dff = 512
+    num_heads = 8
+    dropout_rate = 0.1
+    
+    # Example vocab sizes
+    input_vocab_size = 8500
+    target_vocab_size = 8000
+    max_position_encoding = 10000
+    
+    # Create transformer model
+    transformer = transformer(
+        num_layers=num_layers,
+        d_model=d_model,
+        num_heads=num_heads,
+        dff=dff,
+        input_vocab_size=input_vocab_size,
+        target_vocab_size=target_vocab_size,
+        max_position_encoding=max_position_encoding,
+        rate=dropout_rate
+    )
+    
+    # Example training (simplified)
+    learning_rate = CustomSchedule(d_model)
+    optimizer = tf.keras.optimizers.Adam(
+        learning_rate,
+        beta_1=0.9,
+        beta_2=0.98,
+        epsilon=1e-9
+    )
+    
+    loss_object = tf.keras.losses.SparseCategoricalCrossentropy(
+        from_logits=True,
+        reduction='none'
+    )
+    
+    train_loss = tf.keras.metrics.Mean(fname='train_loss')
+    train_accuracy = tf.keras.metrics.SparseCategoricalAccuracy(
+        fname='train_accuracy'
+    )
+
+if __name__ == "__main__":
+    main()`,
+    explanation: "This advanced exercise implements a Transformer model for machine translation. It includes:\n" +
+                "1. Encoder and decoder layers with multi-head attention\n" +
+                "2. Positional encoding for sequence order\n" +
+                "3. Mask creation for padding and future tokens\n" +
+                "4. Translation class with basic beam search\n" +
+                "The implementation follows the architecture from 'Attention Is All You Need' paper and includes proper attention mechanisms, layer normalization, and residual connections."
+}
+            }
+        ]
+    }
+}
 }
 
 ];
