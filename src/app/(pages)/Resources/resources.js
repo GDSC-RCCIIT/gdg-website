@@ -16313,18 +16313,18 @@ contract LiquidityPool is ERC20, ReentrancyGuard {
         amountOut = numerator / denominator;
     }
 }`,
-                explanation: "This advanced exercise implements a basic AMM with constant product formula, liquidity provision, and swap functionality. It includes slippage protection, fees, and proper handling of liquidity provider tokens."
+                            explanation: "This advanced exercise implements a basic AMM with constant product formula, liquidity provision, and swap functionality. It includes slippage protection, fees, and proper handling of liquidity provider tokens."
+                        }
+                    }
+                ]
             }
-        }     
-        ]
-    }
-}
-},
-{
-    id: 14,
-    title: "Data Engineering",
-    description: "To learn data engineering, follow this roadmap",
-    extendedContent: `
+        }
+    },
+    {
+        id: 14,
+        title: "Data Engineering",
+        description: "To learn data engineering, follow this roadmap",
+        extendedContent: `
         Master the fundamentals of data engineering and build robust data pipelines. Start with 
         programming fundamentals, SQL, and database systems. Learn about data warehousing, ETL 
         processes, and big data technologies. Progress through distributed systems, cloud platforms, 
@@ -16332,69 +16332,69 @@ contract LiquidityPool is ERC20, ReentrancyGuard {
         systems. Advanced topics include data governance, security, optimization techniques, and 
         MLOps integration. Practice with real-world scenarios and industry-standard tools.
     `,
-    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
-    trackInfo: {
-        prerequisites: [
-            "Basic programming knowledge (Python preferred)",
-            "Understanding of databases and SQL",
-            "Familiarity with command line operations",
-            "Basic understanding of algorithms and data structures",
-            "Knowledge of version control systems",
-            "Basic mathematics and statistics",
-            "Problem-solving aptitude"
-        ],
-        outcomes: [
-            "Design and implement efficient data pipelines",
-            "Build scalable data warehousing solutions",
-            "Develop ETL/ELT processes",
-            "Implement data quality and testing frameworks",
-            "Deploy cloud-based data solutions",
-            "Manage big data processing systems",
-            "Create data governance frameworks",
-            "Optimize data infrastructure performance",
-            "Handle real-time data streaming",
-            "Build data lakes and lakehouses"
-        ],
-        sections: [
-            {
-                title: "Data Processing Fundamentals",
-                content: "Master core data processing concepts including ETL/ELT, data cleaning, and transformation. Learn about data quality, validation techniques, and best practices. Understand different file formats, compression methods, and data serialization."
-            },
-            {
-                title: "Database Systems",
-                content: "Study relational and NoSQL databases, data modeling techniques, and query optimization. Learn about database administration, indexing strategies, and transaction management. Master data warehouse design principles and columnar storage systems."
-            },
-            {
-                title: "Big Data Technologies",
-                content: "Learn distributed computing frameworks, batch processing systems, and big data storage solutions. Understand Hadoop ecosystem, Spark architecture, and distributed file systems. Study data partitioning, parallel processing, and resource management."
-            },
-            {
-                title: "Data Pipeline Development",
-                content: "Master pipeline orchestration tools, workflow management, and scheduling systems. Learn about data pipeline patterns, error handling, and monitoring strategies. Understand CI/CD for data pipelines and infrastructure as code."
-            },
-            {
-                title: "Cloud Data Platforms",
-                content: "Study cloud services for data engineering, serverless architectures, and cloud-native solutions. Learn about cloud storage options, compute services, and managed data services. Master multi-cloud strategies and cloud cost optimization."
-            },
-            {
-                title: "Stream Processing",
-                content: "Understand real-time data processing, streaming architectures, and event-driven systems. Learn about stream processing frameworks, message queues, and pub/sub systems. Study exactly-once processing and state management."
-            },
-            {
-                title: "Data Governance & Security",
-                content: "Learn data governance frameworks, compliance requirements, and security best practices. Understand data privacy regulations, access control, and encryption methods. Study data lineage, metadata management, and data catalogs."
-            },
-            {
-                title: "Performance Optimization",
-                content: "Master query optimization, performance tuning, and resource management. Learn about caching strategies, data partitioning, and distributed system optimization. Study monitoring tools, profiling techniques, and bottleneck identification."
-            }
-        ]
-    },
-    content: {
-        examples: [
-            {
-                title: "ETL Pipeline with Error Handling",
-                code: `import pandas as pd
+        icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+        trackInfo: {
+            prerequisites: [
+                "Basic programming knowledge (Python preferred)",
+                "Understanding of databases and SQL",
+                "Familiarity with command line operations",
+                "Basic understanding of algorithms and data structures",
+                "Knowledge of version control systems",
+                "Basic mathematics and statistics",
+                "Problem-solving aptitude"
+            ],
+            outcomes: [
+                "Design and implement efficient data pipelines",
+                "Build scalable data warehousing solutions",
+                "Develop ETL/ELT processes",
+                "Implement data quality and testing frameworks",
+                "Deploy cloud-based data solutions",
+                "Manage big data processing systems",
+                "Create data governance frameworks",
+                "Optimize data infrastructure performance",
+                "Handle real-time data streaming",
+                "Build data lakes and lakehouses"
+            ],
+            sections: [
+                {
+                    title: "Data Processing Fundamentals",
+                    content: "Master core data processing concepts including ETL/ELT, data cleaning, and transformation. Learn about data quality, validation techniques, and best practices. Understand different file formats, compression methods, and data serialization."
+                },
+                {
+                    title: "Database Systems",
+                    content: "Study relational and NoSQL databases, data modeling techniques, and query optimization. Learn about database administration, indexing strategies, and transaction management. Master data warehouse design principles and columnar storage systems."
+                },
+                {
+                    title: "Big Data Technologies",
+                    content: "Learn distributed computing frameworks, batch processing systems, and big data storage solutions. Understand Hadoop ecosystem, Spark architecture, and distributed file systems. Study data partitioning, parallel processing, and resource management."
+                },
+                {
+                    title: "Data Pipeline Development",
+                    content: "Master pipeline orchestration tools, workflow management, and scheduling systems. Learn about data pipeline patterns, error handling, and monitoring strategies. Understand CI/CD for data pipelines and infrastructure as code."
+                },
+                {
+                    title: "Cloud Data Platforms",
+                    content: "Study cloud services for data engineering, serverless architectures, and cloud-native solutions. Learn about cloud storage options, compute services, and managed data services. Master multi-cloud strategies and cloud cost optimization."
+                },
+                {
+                    title: "Stream Processing",
+                    content: "Understand real-time data processing, streaming architectures, and event-driven systems. Learn about stream processing frameworks, message queues, and pub/sub systems. Study exactly-once processing and state management."
+                },
+                {
+                    title: "Data Governance & Security",
+                    content: "Learn data governance frameworks, compliance requirements, and security best practices. Understand data privacy regulations, access control, and encryption methods. Study data lineage, metadata management, and data catalogs."
+                },
+                {
+                    title: "Performance Optimization",
+                    content: "Master query optimization, performance tuning, and resource management. Learn about caching strategies, data partitioning, and distributed system optimization. Study monitoring tools, profiling techniques, and bottleneck identification."
+                }
+            ]
+        },
+        content: {
+            examples: [
+                {
+                    title: "ETL Pipeline with Error Handling",
+                    code: `import pandas as pd
 import sqlite3
 from datetime import datetime
 import logging
@@ -16582,11 +16582,11 @@ if __name__ == "__main__":
     config_path = "pipeline_config.json"
     pipeline = DataPipeline(config_path)
     pipeline.run_pipeline()`,
-                explanation: "This example demonstrates a configurable ETL pipeline with robust error handling, logging, data validation, and support for multiple data sources and targets."
-            },
-            {
-                title: "Real-Time Data Streaming Pipeline",
-                code: `from kafka import KafkaConsumer, KafkaProducer
+                    explanation: "This example demonstrates a configurable ETL pipeline with robust error handling, logging, data validation, and support for multiple data sources and targets."
+                },
+                {
+                    title: "Real-Time Data Streaming Pipeline",
+                    code: `from kafka import KafkaConsumer, KafkaProducer
 import json
 from datetime import datetime
 import logging
@@ -16808,11 +16808,11 @@ if __name__ == "__main__":
     # Start processor
     processor = StreamProcessor(config)
     processor.start_processing()`,
-                explanation: "This example shows a real-time data streaming pipeline using Kafka, Redis, and PostgreSQL. It includes message processing, buffering for batch operations, and proper error handling."
-            },
-            {
-                title: "Data Lake Management System",
-                code: `import boto3
+                    explanation: "This example shows a real-time data streaming pipeline using Kafka, Redis, and PostgreSQL. It includes message processing, buffering for batch operations, and proper error handling."
+                },
+                {
+                    title: "Data Lake Management System",
+                    code: `import boto3
 import pandas as pd
 from datetime import datetime, timedelta
 import pyarrow as pa
@@ -17053,367 +17053,367 @@ if __name__ == "__main__":
     # Query data
     result_df = lake_manager.query_data_lake('SELECT * FROM example_dataset LIMIT 10')
 `,
-    explanation: "This example demonstrates a Data Lake management system using AWS services (S3, Glue, and Athena). It includes features for data upload, partitioning, small file optimization, and querying."
-        }
-    ],
-    roadmap: [
-        {
-            title: "1. Programming and SQL",
-            description: "Master core programming and database skills",
-            topics: [
-                "Python Programming",
-                "SQL Fundamentals and Advanced Queries",
-                "Data Structures and Algorithms",
-                "Version Control (Git)",
-                "Shell Scripting",
-                "Basic Linux Administration",
-                "Testing and Documentation"
-            ]
-        },
-        {
-            title: "2. Data Storage Systems",
-            description: "Learn various data storage solutions",
-            topics: [
-                "Relational Databases",
-                "NoSQL Databases",
-                "Data Warehouses",
-                "Data Lakes",
-                "OLTP vs OLAP Systems",
-                "Storage Formats (Parquet, ORC)",
-                "Indexing and Partitioning"
-            ]
-        },
-        {
-            title: "3. Data Processing",
-            description: "Master data processing frameworks",
-            topics: [
-                "Batch Processing Systems",
-                "Stream Processing",
-                "ETL/ELT Tools",
-                "Apache Spark",
-                "Data Quality and Validation",
-                "Error Handling",
-                "Performance Optimization"
-            ]
-        },
-        {
-            title: "4. Data Pipeline Orchestration",
-            description: "Learn workflow management and scheduling",
-            topics: [
-                "Apache Airflow",
-                "Workflow Design Patterns",
-                "Dependency Management",
-                "Pipeline Monitoring",
-                "Error Recovery",
-                "Resource Management",
-                "CI/CD for Pipelines"
-            ]
-        },
-        {
-            title: "5. Cloud Platforms",
-            description: "Master cloud data services",
-            topics: [
-                "AWS Data Services",
-                "GCP Data Services",
-                "Azure Data Services",
-                "Cloud Storage Solutions",
-                "Serverless Computing",
-                "Cloud Security",
-                "Cost Optimization"
-            ]
-        },
-        {
-            title: "6. Data Governance",
-            description: "Learn data management and compliance",
-            topics: [
-                "Data Quality Framework",
-                "Metadata Management",
-                "Data Catalogs",
-                "Security and Privacy",
-                "Compliance (GDPR, CCPA)",
-                "Data Lineage",
-                "Access Control"
-            ]
-        },
-        {
-            title: "7. Advanced Topics",
-            description: "Master advanced data engineering concepts",
-            topics: [
-                "Real-time Analytics",
-                "Machine Learning Pipelines",
-                "Data Mesh Architecture",
-                "DataOps Practices",
-                "Distributed Systems",
-                "Performance Tuning",
-                "System Design"
-            ]
-        }
-    ],
-    resources: {
-        documentation: [
-            {
-                title: "Apache Spark Documentation",
-                url: "https://spark.apache.org/docs/latest/",
-                description: "Official documentation for Apache Spark",
-                type: "Framework Documentation"
-            },
-            {
-                title: "Apache Airflow Documentation",
-                url: "https://airflow.apache.org/docs/",
-                description: "Comprehensive guide for Airflow",
-                type: "Tool Documentation"
-            },
-            {
-                title: "AWS Data Analytics",
-                url: "https://docs.aws.amazon.com/analytics/",
-                description: "AWS data services documentation",
-                type: "Cloud Documentation"
-            },
-            {
-                title: "Snowflake Documentation",
-                url: "https://docs.snowflake.com/",
-                description: "Data warehouse platform documentation",
-                type: "Platform Documentation"
-            },
-            {
-                title: "dbt Documentation",
-                url: "https://docs.getdbt.com/",
-                description: "Data transformation tool documentation",
-                type: "Tool Documentation"
-            }
-        ],
-        tutorials: [
-            {
-                title: "DataCamp Data Engineering Track",
-                url: "https://www.datacamp.com/tracks/data-engineer",
-                description: "Interactive data engineering courses",
-                type: "Online Course"
-            },
-            {
-                title: "Coursera Data Engineering Specialization",
-                url: "https://www.coursera.org/specializations/gcp-data-engineering",
-                description: "Google Cloud data engineering courses",
-                type: "Course Series"
-            },
-            {
-                title: "Mode SQL Tutorial",
-                url: "https://mode.com/sql-tutorial/",
-                description: "Interactive SQL learning platform",
-                type: "Tutorial"
-            },
-            {
-                title: "Databricks Academy",
-                url: "https://academy.databricks.com/",
-                description: "Spark and data engineering tutorials",
-                type: "Learning Platform"
-            },
-            {
-                title: "AWS Data Analytics Learning Plan",
-                url: "https://aws.amazon.com/training/learn-about/data-analytics/",
-                description: "AWS data analytics training",
-                type: "Training Program"
-            }
-        ],
-        videos: [
-            {
-                title: "Data Engineering Full Course",
-                url: "https://www.youtube.com/c/SeattleDataGuy",
-                description: "Comprehensive data engineering tutorials",
-                platform: "YouTube"
-            },
-            {
-                title: "Apache Spark Tutorial",
-                url: "https://www.youtube.com/c/SparkByExamples",
-                description: "Spark programming tutorials",
-                platform: "YouTube"
-            },
-            {
-                title: "DataTalks.Club",
-                url: "https://www.youtube.com/c/DataTalksClub",
-                description: "Data engineering talks and interviews",
-                platform: "YouTube"
-            },
-            {
-                title: "Snowflake Training",
-                url: "https://www.youtube.com/c/SnowflakeInc",
-                description: "Official Snowflake tutorials",
-                platform: "YouTube"
-            },
-            {
-                title: "Airflow Summit",
-                url: "https://www.youtube.com/c/AirflowSummit",
-                description: "Airflow conference talks",
-                platform: "YouTube"
-            }
-        ],
-        books: [
-            {
-                title: "Fundamentals of Data Engineering",
-                author: "Joe Reis, Matt Housley",
-                description: "Comprehensive guide to data engineering",
-                level: "Intermediate"
-            },
-            {
-                title: "Designing Data-Intensive Applications",
-                author: "Martin Kleppmann",
-                description: "Deep dive into data systems",
-                level: "Advanced"
-            },
-            {
-                title: "Data Pipelines Pocket Reference",
-                author: "James Densmore",
-                description: "Practical guide to building data pipelines",
-                level: "Intermediate"
-            },
-            {
-                title: "Learning Spark",
-                author: "Jules Damji, Brooke Wenig, Tathagata Das",
-                description: "Guide to Apache Spark",
-                level: "Intermediate"
-            },
-            {
-                title: "The Data Warehouse Toolkit",
-                author: "Ralph Kimball, Margy Ross",
-                description: "Data warehouse design principles",
-                level: "Advanced"
-            }
-        ],
-        tools: [
-            {
-                title: "Apache Spark",
-                url: "https://spark.apache.org/",
-                description: "Unified analytics engine",
-                type: "Processing Engine",
-                category: "Essential"
-            },
-            {
-                title: "Apache Airflow",
-                url: "https://airflow.apache.org/",
-                description: "Workflow orchestration platform",
-                type: "Orchestration Tool",
-                category: "Essential"
-            },
-            {
-                title: "dbt",
-                url: "https://www.getdbt.com/",
-                description: "Data transformation tool",
-                type: "Transformation Tool",
-                category: "Essential"
-            },
-            {
-                title: "Snowflake",
-                url: "https://www.snowflake.com/",
-                description: "Cloud data warehouse",
-                type: "Data Warehouse",
-                category: "Essential"
-            },
-            {
-                title: "Great Expectations",
-                url: "https://greatexpectations.io/",
-                description: "Data validation framework",
-                type: "Testing Tool",
-                category: "Essential"
-            }
-        ],
-        communities: [
-            {
-                title: "DataTalks.Club",
-                url: "https://datatalks.club/",
-                description: "Data engineering community",
-                type: "Community Platform"
-            },
-            {
-                title: "Reddit r/dataengineering",
-                url: "https://www.reddit.com/r/dataengineering/",
-                description: "Data engineering subreddit",
-                type: "Forum"
-            },
-            {
-                title: "Apache Spark User List",
-                url: "https://spark.apache.org/community.html",
-                description: "Spark community discussions",
-                type: "Mailing List"
-            },
-            {
-                title: "dbt Community",
-                url: "https://community.getdbt.com/",
-                description: "dbt user community",
-                type: "Forum"
-            },
-            {
-                title: "Data Engineering Weekly",
-                url: "https://dataengineeringweekly.com/",
-                description: "Weekly newsletter for data engineers",
-                type: "Newsletter"
-            }
-        ],
-        podcasts: [
-            {
-                title: "Data Engineering Podcast",
-                url: "https://www.dataengineeringpodcast.com/",
-                description: "Weekly data engineering discussions",
-                platform: "Podcast"
-            },
-            {
-                title: "Drill to Detail",
-                url: "https://www.drilltodetail.com/",
-                description: "Data analytics and engineering podcast",
-                platform: "Podcast"
-            },
-            {
-                title: "The Data Stack Show",
-                url: "https://datastackshow.com/",
-                description: "Modern data stack discussions",
-                platform: "Podcast"
-            },
-            {
-                title: "Data Management Monthly",
-                url: "https://www.datamanagementmonthly.com/",
-                description: "Data management and engineering topics",
-                platform: "Podcast"
-            }
-        ],
-        blogs: [
-            {
-                title: "Towards Data Science",
-                url: "https://towardsdatascience.com/data-engineering/home",
-                description: "Data engineering articles and tutorials",
-                type: "Publication"
-            },
-            {
-                title: "Seattle Data Guy",
-                url: "https://seattledataguy.com/",
-                description: "Data engineering best practices",
-                type: "Personal Blog"
-            },
-            {
-                title: "Databricks Blog",
-                url: "https://databricks.com/blog",
-                description: "Technical articles on Spark and data",
-                type: "Company Blog"
-            },
-            {
-                title: "AWS Big Data Blog",
-                url: "https://aws.amazon.com/blogs/big-data/",
-                description: "AWS data engineering solutions",
-                type: "Technical Blog"
-            }
-        ]
-    },
-    practice: {
-        beginnerExercises: [
-            {
-                title: "Log File Parser",
-                difficulty: "Easy",
-                description: "Create a log file parser that processes web server logs and generates summary statistics.",
-                hints: [
-                    "Use regular expressions for parsing",
-                    "Handle different log formats",
-                    "Implement basic error handling",
-                    "Generate summary statistics"
+                    explanation: "This example demonstrates a Data Lake management system using AWS services (S3, Glue, and Athena). It includes features for data upload, partitioning, small file optimization, and querying."
+                }
+            ],
+            roadmap: [
+                {
+                    title: "1. Programming and SQL",
+                    description: "Master core programming and database skills",
+                    topics: [
+                        "Python Programming",
+                        "SQL Fundamentals and Advanced Queries",
+                        "Data Structures and Algorithms",
+                        "Version Control (Git)",
+                        "Shell Scripting",
+                        "Basic Linux Administration",
+                        "Testing and Documentation"
+                    ]
+                },
+                {
+                    title: "2. Data Storage Systems",
+                    description: "Learn various data storage solutions",
+                    topics: [
+                        "Relational Databases",
+                        "NoSQL Databases",
+                        "Data Warehouses",
+                        "Data Lakes",
+                        "OLTP vs OLAP Systems",
+                        "Storage Formats (Parquet, ORC)",
+                        "Indexing and Partitioning"
+                    ]
+                },
+                {
+                    title: "3. Data Processing",
+                    description: "Master data processing frameworks",
+                    topics: [
+                        "Batch Processing Systems",
+                        "Stream Processing",
+                        "ETL/ELT Tools",
+                        "Apache Spark",
+                        "Data Quality and Validation",
+                        "Error Handling",
+                        "Performance Optimization"
+                    ]
+                },
+                {
+                    title: "4. Data Pipeline Orchestration",
+                    description: "Learn workflow management and scheduling",
+                    topics: [
+                        "Apache Airflow",
+                        "Workflow Design Patterns",
+                        "Dependency Management",
+                        "Pipeline Monitoring",
+                        "Error Recovery",
+                        "Resource Management",
+                        "CI/CD for Pipelines"
+                    ]
+                },
+                {
+                    title: "5. Cloud Platforms",
+                    description: "Master cloud data services",
+                    topics: [
+                        "AWS Data Services",
+                        "GCP Data Services",
+                        "Azure Data Services",
+                        "Cloud Storage Solutions",
+                        "Serverless Computing",
+                        "Cloud Security",
+                        "Cost Optimization"
+                    ]
+                },
+                {
+                    title: "6. Data Governance",
+                    description: "Learn data management and compliance",
+                    topics: [
+                        "Data Quality Framework",
+                        "Metadata Management",
+                        "Data Catalogs",
+                        "Security and Privacy",
+                        "Compliance (GDPR, CCPA)",
+                        "Data Lineage",
+                        "Access Control"
+                    ]
+                },
+                {
+                    title: "7. Advanced Topics",
+                    description: "Master advanced data engineering concepts",
+                    topics: [
+                        "Real-time Analytics",
+                        "Machine Learning Pipelines",
+                        "Data Mesh Architecture",
+                        "DataOps Practices",
+                        "Distributed Systems",
+                        "Performance Tuning",
+                        "System Design"
+                    ]
+                }
+            ],
+            resources: {
+                documentation: [
+                    {
+                        title: "Apache Spark Documentation",
+                        url: "https://spark.apache.org/docs/latest/",
+                        description: "Official documentation for Apache Spark",
+                        type: "Framework Documentation"
+                    },
+                    {
+                        title: "Apache Airflow Documentation",
+                        url: "https://airflow.apache.org/docs/",
+                        description: "Comprehensive guide for Airflow",
+                        type: "Tool Documentation"
+                    },
+                    {
+                        title: "AWS Data Analytics",
+                        url: "https://docs.aws.amazon.com/analytics/",
+                        description: "AWS data services documentation",
+                        type: "Cloud Documentation"
+                    },
+                    {
+                        title: "Snowflake Documentation",
+                        url: "https://docs.snowflake.com/",
+                        description: "Data warehouse platform documentation",
+                        type: "Platform Documentation"
+                    },
+                    {
+                        title: "dbt Documentation",
+                        url: "https://docs.getdbt.com/",
+                        description: "Data transformation tool documentation",
+                        type: "Tool Documentation"
+                    }
                 ],
-                solution: {
-                    code: `import pandas as pd
+                tutorials: [
+                    {
+                        title: "DataCamp Data Engineering Track",
+                        url: "https://www.datacamp.com/tracks/data-engineer",
+                        description: "Interactive data engineering courses",
+                        type: "Online Course"
+                    },
+                    {
+                        title: "Coursera Data Engineering Specialization",
+                        url: "https://www.coursera.org/specializations/gcp-data-engineering",
+                        description: "Google Cloud data engineering courses",
+                        type: "Course Series"
+                    },
+                    {
+                        title: "Mode SQL Tutorial",
+                        url: "https://mode.com/sql-tutorial/",
+                        description: "Interactive SQL learning platform",
+                        type: "Tutorial"
+                    },
+                    {
+                        title: "Databricks Academy",
+                        url: "https://academy.databricks.com/",
+                        description: "Spark and data engineering tutorials",
+                        type: "Learning Platform"
+                    },
+                    {
+                        title: "AWS Data Analytics Learning Plan",
+                        url: "https://aws.amazon.com/training/learn-about/data-analytics/",
+                        description: "AWS data analytics training",
+                        type: "Training Program"
+                    }
+                ],
+                videos: [
+                    {
+                        title: "Data Engineering Full Course",
+                        url: "https://www.youtube.com/c/SeattleDataGuy",
+                        description: "Comprehensive data engineering tutorials",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Apache Spark Tutorial",
+                        url: "https://www.youtube.com/c/SparkByExamples",
+                        description: "Spark programming tutorials",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "DataTalks.Club",
+                        url: "https://www.youtube.com/c/DataTalksClub",
+                        description: "Data engineering talks and interviews",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Snowflake Training",
+                        url: "https://www.youtube.com/c/SnowflakeInc",
+                        description: "Official Snowflake tutorials",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Airflow Summit",
+                        url: "https://www.youtube.com/c/AirflowSummit",
+                        description: "Airflow conference talks",
+                        platform: "YouTube"
+                    }
+                ],
+                books: [
+                    {
+                        title: "Fundamentals of Data Engineering",
+                        author: "Joe Reis, Matt Housley",
+                        description: "Comprehensive guide to data engineering",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "Designing Data-Intensive Applications",
+                        author: "Martin Kleppmann",
+                        description: "Deep dive into data systems",
+                        level: "Advanced"
+                    },
+                    {
+                        title: "Data Pipelines Pocket Reference",
+                        author: "James Densmore",
+                        description: "Practical guide to building data pipelines",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "Learning Spark",
+                        author: "Jules Damji, Brooke Wenig, Tathagata Das",
+                        description: "Guide to Apache Spark",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "The Data Warehouse Toolkit",
+                        author: "Ralph Kimball, Margy Ross",
+                        description: "Data warehouse design principles",
+                        level: "Advanced"
+                    }
+                ],
+                tools: [
+                    {
+                        title: "Apache Spark",
+                        url: "https://spark.apache.org/",
+                        description: "Unified analytics engine",
+                        type: "Processing Engine",
+                        category: "Essential"
+                    },
+                    {
+                        title: "Apache Airflow",
+                        url: "https://airflow.apache.org/",
+                        description: "Workflow orchestration platform",
+                        type: "Orchestration Tool",
+                        category: "Essential"
+                    },
+                    {
+                        title: "dbt",
+                        url: "https://www.getdbt.com/",
+                        description: "Data transformation tool",
+                        type: "Transformation Tool",
+                        category: "Essential"
+                    },
+                    {
+                        title: "Snowflake",
+                        url: "https://www.snowflake.com/",
+                        description: "Cloud data warehouse",
+                        type: "Data Warehouse",
+                        category: "Essential"
+                    },
+                    {
+                        title: "Great Expectations",
+                        url: "https://greatexpectations.io/",
+                        description: "Data validation framework",
+                        type: "Testing Tool",
+                        category: "Essential"
+                    }
+                ],
+                communities: [
+                    {
+                        title: "DataTalks.Club",
+                        url: "https://datatalks.club/",
+                        description: "Data engineering community",
+                        type: "Community Platform"
+                    },
+                    {
+                        title: "Reddit r/dataengineering",
+                        url: "https://www.reddit.com/r/dataengineering/",
+                        description: "Data engineering subreddit",
+                        type: "Forum"
+                    },
+                    {
+                        title: "Apache Spark User List",
+                        url: "https://spark.apache.org/community.html",
+                        description: "Spark community discussions",
+                        type: "Mailing List"
+                    },
+                    {
+                        title: "dbt Community",
+                        url: "https://community.getdbt.com/",
+                        description: "dbt user community",
+                        type: "Forum"
+                    },
+                    {
+                        title: "Data Engineering Weekly",
+                        url: "https://dataengineeringweekly.com/",
+                        description: "Weekly newsletter for data engineers",
+                        type: "Newsletter"
+                    }
+                ],
+                podcasts: [
+                    {
+                        title: "Data Engineering Podcast",
+                        url: "https://www.dataengineeringpodcast.com/",
+                        description: "Weekly data engineering discussions",
+                        platform: "Podcast"
+                    },
+                    {
+                        title: "Drill to Detail",
+                        url: "https://www.drilltodetail.com/",
+                        description: "Data analytics and engineering podcast",
+                        platform: "Podcast"
+                    },
+                    {
+                        title: "The Data Stack Show",
+                        url: "https://datastackshow.com/",
+                        description: "Modern data stack discussions",
+                        platform: "Podcast"
+                    },
+                    {
+                        title: "Data Management Monthly",
+                        url: "https://www.datamanagementmonthly.com/",
+                        description: "Data management and engineering topics",
+                        platform: "Podcast"
+                    }
+                ],
+                blogs: [
+                    {
+                        title: "Towards Data Science",
+                        url: "https://towardsdatascience.com/data-engineering/home",
+                        description: "Data engineering articles and tutorials",
+                        type: "Publication"
+                    },
+                    {
+                        title: "Seattle Data Guy",
+                        url: "https://seattledataguy.com/",
+                        description: "Data engineering best practices",
+                        type: "Personal Blog"
+                    },
+                    {
+                        title: "Databricks Blog",
+                        url: "https://databricks.com/blog",
+                        description: "Technical articles on Spark and data",
+                        type: "Company Blog"
+                    },
+                    {
+                        title: "AWS Big Data Blog",
+                        url: "https://aws.amazon.com/blogs/big-data/",
+                        description: "AWS data engineering solutions",
+                        type: "Technical Blog"
+                    }
+                ]
+            },
+            practice: {
+                beginnerExercises: [
+                    {
+                        title: "Log File Parser",
+                        difficulty: "Easy",
+                        description: "Create a log file parser that processes web server logs and generates summary statistics.",
+                        hints: [
+                            "Use regular expressions for parsing",
+                            "Handle different log formats",
+                            "Implement basic error handling",
+                            "Generate summary statistics"
+                        ],
+                        solution: {
+                            code: `import pandas as pd
 import re
 from datetime import datetime
 from typing import Dict, List
@@ -17510,21 +17510,21 @@ if __name__ == "__main__":
     print("Top 5 Paths:")
     for path, count in summary['top_paths'].items():
         print(f"  {path}: {count} requests")`,
-                    explanation: "This exercise demonstrates log file processing, data parsing with regex, error handling, and basic data analysis using pandas."
-                }
-            },
-            {
-                title: "CSV Data Cleaner",
-                difficulty: "Easy",
-                description: "Create a data cleaning tool for CSV files with validation and transformation capabilities.",
-                hints: [
-                    "Implement data type validation",
-                    "Handle missing values",
-                    "Add data transformation functions",
-                    "Include data quality checks"
-                ],
-                solution: {
-                    code: `import pandas as pd
+                            explanation: "This exercise demonstrates log file processing, data parsing with regex, error handling, and basic data analysis using pandas."
+                        }
+                    },
+                    {
+                        title: "CSV Data Cleaner",
+                        difficulty: "Easy",
+                        description: "Create a data cleaning tool for CSV files with validation and transformation capabilities.",
+                        hints: [
+                            "Implement data type validation",
+                            "Handle missing values",
+                            "Add data transformation functions",
+                            "Include data quality checks"
+                        ],
+                        solution: {
+                            code: `import pandas as pd
 import numpy as np
 from typing import Dict, List, Callable
 import logging
@@ -17662,23 +17662,23 @@ if __name__ == "__main__":
     
     # Save cleaned data
     df_cleaned.to_csv('cleaned_output.csv', index=False)`,
-                    explanation: "This exercise shows data cleaning operations, including handling missing values, data validation, and transformation. It includes reporting functionality to track cleaning operations."
-                }
-            }
-        ],
-        intermediateExercises: [
-            {
-                title: "Data Pipeline with Change Data Capture",
-                difficulty: "Medium",
-                description: "Create a CDC pipeline that tracks and processes database changes incrementally.",
-                hints: [
-                    "Implement change tracking mechanism",
-                    "Handle different change types (insert/update/delete)",
-                    "Include error recovery",
-                    "Add audit logging"
+                            explanation: "This exercise shows data cleaning operations, including handling missing values, data validation, and transformation. It includes reporting functionality to track cleaning operations."
+                        }
+                    }
                 ],
-                solution: {
-                    code: `import pandas as pd
+                intermediateExercises: [
+                    {
+                        title: "Data Pipeline with Change Data Capture",
+                        difficulty: "Medium",
+                        description: "Create a CDC pipeline that tracks and processes database changes incrementally.",
+                        hints: [
+                            "Implement change tracking mechanism",
+                            "Handle different change types (insert/update/delete)",
+                            "Include error recovery",
+                            "Add audit logging"
+                        ],
+                        solution: {
+                            code: `import pandas as pd
 import sqlalchemy as sa
 from datetime import datetime, timedelta
 import logging
@@ -17896,21 +17896,21 @@ if __name__ == "__main__":
     
     summary = pipeline.run_pipeline()
     print(json.dumps(summary, indent=2, default=str))`,
-    explanation: "This intermediate exercise implements a Change Data Capture (CDC) pipeline that efficiently tracks and processes database changes. It includes checksum-based change detection, incremental processing, and error handling."
-                }
-            },
-            {
-                title: "Data Quality Framework",
-                difficulty: "Medium",
-                description: "Create a framework for implementing and monitoring data quality rules.",
-                hints: [
-                    "Implement different types of quality checks",
-                    "Add support for custom rules",
-                    "Include reporting functionality",
-                    "Handle rule dependencies"
-                ],
-                solution: {
-                    code: `import pandas as pd
+                            explanation: "This intermediate exercise implements a Change Data Capture (CDC) pipeline that efficiently tracks and processes database changes. It includes checksum-based change detection, incremental processing, and error handling."
+                        }
+                    },
+                    {
+                        title: "Data Quality Framework",
+                        difficulty: "Medium",
+                        description: "Create a framework for implementing and monitoring data quality rules.",
+                        hints: [
+                            "Implement different types of quality checks",
+                            "Add support for custom rules",
+                            "Include reporting functionality",
+                            "Handle rule dependencies"
+                        ],
+                        solution: {
+                            code: `import pandas as pd
 import numpy as np
 from typing import Dict, List, Callable, Optional
 from datetime import datetime
@@ -18182,23 +18182,23 @@ if __name__ == "__main__":
     print(f"Failed Checks: {len(summary['failed_checks'])}")
     if summary['critical_failures']:
         print("Critical Failures:", summary['critical_failures'])`,
-    explanation: "This intermediate exercise implements a flexible data quality framework with support for custom rules, dependencies, and detailed reporting. It includes example quality checks and a comprehensive reporting system."
-                }
-            }
-        ],
-        advancedExercises: [
-            {
-                title: "Distributed Data Processing Framework",
-                difficulty: "Hard",
-                description: "Create a framework for distributed data processing with support for parallel execution and fault tolerance.",
-                hints: [
-                    "Implement data partitioning",
-                    "Add worker management",
-                    "Include fault tolerance",
-                    "Handle data aggregation"
+                            explanation: "This intermediate exercise implements a flexible data quality framework with support for custom rules, dependencies, and detailed reporting. It includes example quality checks and a comprehensive reporting system."
+                        }
+                    }
                 ],
-                solution: {
-                    code: `import multiprocessing as mp
+                advancedExercises: [
+                    {
+                        title: "Distributed Data Processing Framework",
+                        difficulty: "Hard",
+                        description: "Create a framework for distributed data processing with support for parallel execution and fault tolerance.",
+                        hints: [
+                            "Implement data partitioning",
+                            "Add worker management",
+                            "Include fault tolerance",
+                            "Handle data aggregation"
+                        ],
+                        solution: {
+                            code: `import multiprocessing as mp
 from typing import Dict, List, Callable, Any
 import pandas as pd
 import numpy as np
@@ -18526,15 +18526,630 @@ if __name__ == "__main__":
     
     print("\nProcessing Results:")
     print(result)`,
-    explanation: "This advanced exercise implements a distributed data processing framework that handles parallel execution, fault tolerance, and data partitioning. It includes features like task dependencies, retry logic, and result aggregation. The framework supports different types of operations and can efficiently process large datasets using multiple worker processes."
-                }
+                            explanation: "This advanced exercise implements a distributed data processing framework that handles parallel execution, fault tolerance, and data partitioning. It includes features like task dependencies, retry logic, and result aggregation. The framework supports different types of operations and can efficiently process large datasets using multiple worker processes."
+                        }
+                    }
+                ]
             }
-        ]
+        }
+    },
+    {
+        id: 15,
+        title: "IoT Development",
+        description: "To learn IoT development, follow this roadmap",
+        extendedContent: `
+This roadmap covers everything you need to know about IoT (Internet of Things) development. 
+You'll start by learning the fundamentals of electronics, including basic components like resistors, capacitors, 
+and microcontrollers. Then, you'll dive into embedded systems programming using languages like C and C++, 
+essential for interacting with hardware.
+
+After getting comfortable with the basics, the roadmap introduces IoT protocols and standards like MQTT, CoAP, 
+and HTTP, which are critical for communication between devices and cloud platforms. You'll also learn about 
+sensors and actuators, and how to interface them with microcontrollers like Arduino and Raspberry Pi.
+
+As you advance, you'll explore cloud platforms (e.g., AWS IoT, Google Cloud IoT) for data storage, analysis, 
+and visualization. You'll also learn about network security and how to protect IoT devices from vulnerabilities.
+
+Advanced topics include edge computing, machine learning for IoT, and building complete IoT solutions with 
+real-time monitoring, device management, and automation. By the end of this roadmap, you'll be able to design 
+and develop sophisticated IoT systems, including smart homes, industrial IoT applications, and connected devices.
+`,
+
+        icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+        trackInfo: {
+            prerequisites: [
+                "Basic computer skills and familiarity with hardware components",
+                "Understanding of electronics and circuits",
+                "Knowledge of programming languages like C, C++, or Python",
+                "Problem-solving aptitude",
+                "Attention to detail in hardware and software integration"
+            ],
+            outcomes: [
+                "Design and build embedded systems using microcontrollers",
+                "Master IoT communication protocols like MQTT, CoAP, and HTTP",
+                "Work with IoT sensors and actuators for real-world applications",
+                "Build cloud-based IoT solutions using platforms like AWS IoT or Google Cloud IoT",
+                "Ensure IoT device security and data privacy",
+                "Implement real-time monitoring and automation using IoT systems",
+                "Understand edge computing and integrate machine learning in IoT"
+            ],
+            sections: [
+                {
+                    title: "IoT Fundamentals",
+                    content: "Learn the basics of IoT, including an introduction to embedded systems, sensors, actuators, and microcontrollers. Understand how devices communicate and how to interface with hardware using languages like C and Python."
+                },
+                {
+                    title: "IoT Communication Protocols",
+                    content: "Explore communication protocols essential for IoT, such as MQTT, CoAP, HTTP, and WebSockets. Learn how to send and receive data between devices and cloud platforms."
+                },
+                {
+                    title: "Cloud Platforms & Data Management",
+                    content: "Understand cloud services for IoT such as AWS IoT, Microsoft Azure IoT, and Google Cloud IoT. Learn to manage data storage, processing, and real-time analysis for connected devices."
+                },
+                {
+                    title: "Security & Privacy in IoT",
+                    content: "Learn about IoT security challenges, encryption, and device authentication. Understand how to protect IoT devices from potential vulnerabilities and ensure secure communication."
+                },
+                {
+                    title: "Advanced Topics in IoT",
+                    content: "Explore advanced IoT concepts like edge computing, machine learning for IoT, and real-time data processing. Work on automating processes and implementing intelligent systems using IoT technologies."
+                }
+            ]
+        },
+        content: {
+            examples: [
+                {
+                    title: "Sensor Data Collection with Arduino",
+                    code: `// Arduino Code to Read Temperature and Humidity from DHT11 Sensor
+    #include <DHT.h>
+    
+    #define DHTPIN 2    // Pin for the DHT11 sensor
+    #define DHTTYPE DHT11
+    DHT dht(DHTPIN, DHTTYPE);
+    
+    void setup() {
+        Serial.begin(9600);
+        dht.begin();
     }
-}
-}
+    
+    void loop() {
+        float humidity = dht.readHumidity();
+        float temperature = dht.readTemperature();
+        
+        if (isnan(humidity) || isnan(temperature)) {
+            Serial.println("Failed to read from DHT sensor!");
+            return;
+        }
+        
+        Serial.print("Humidity: ");
+        Serial.print(humidity);
+        Serial.print(" %\t");
+        Serial.print("Temperature: ");
+        Serial.print(temperature);
+        Serial.println(" *C");
+    
+        delay(2000); // Wait 2 seconds before reading again
+    }`,
+                    explanation: "This example demonstrates how to use an Arduino and a DHT11 sensor to collect temperature and humidity data. The data is read continuously, and sensor values are printed to the serial monitor."
+                },
+                {
+                    title: "Sending Sensor Data to the Cloud with MQTT",
+                    code: `// Node.js Code to Send Sensor Data to MQTT Broker
+    const mqtt = require('mqtt');
+    const client = mqtt.connect('mqtt://broker.hivemq.com');
+    
+    // Sample sensor data
+    const sensorData = {
+        temperature: 22.5,
+        humidity: 60.0
+    };
+    
+    client.on('connect', () => {
+        console.log('Connected to MQTT Broker');
+        client.publish('iot/sensor/data', JSON.stringify(sensorData), () => {
+            console.log('Sensor data sent to broker');
+        });
+        client.end();
+    });`,
+                    explanation: "In this example, Node.js is used to send sensor data to an MQTT broker. MQTT is a lightweight protocol commonly used in IoT for sending and receiving small amounts of data between devices and cloud platforms."
+                },
+                {
+                    title: "Controlling IoT Devices with a Web Interface",
+                    code: `// HTML for Controlling LED via Web Interface
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Control IoT Device</title>
+    </head>
+    <body>
+        <h1>Control IoT LED</h1>
+        <button id="toggleBtn">Toggle LED</button>
+        <script>
+            const toggleBtn = document.getElementById('toggleBtn');
+            toggleBtn.addEventListener('click', () => {
+                fetch('/toggle-led', { method: 'POST' })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('LED toggled successfully!');
+                        }
+                    });
+            });
+        </script>
+    </body>
+    </html>`,
+                    explanation: "This example demonstrates a simple web interface to control an IoT device, such as an LED connected to a microcontroller. When the user clicks the 'Toggle LED' button, it sends a POST request to the server to toggle the LED's state."
+                }
+            ],
+
+            roadmap: [
+                {
+                    title: "1. Electronics & Hardware Basics",
+                    description: "Master the fundamentals of electronics essential for IoT",
+                    topics: [
+                        "Basic electronic components (resistors, capacitors, diodes)",
+                        "Analog vs digital signals",
+                        "Microcontrollers (Arduino, ESP32, Raspberry Pi)",
+                        "Sensors and actuators",
+                        "Power management for IoT devices",
+                        "PCB design basics",
+                        "Understanding GPIO, ADC, and PWM"
+                    ]
+                },
+                {
+                    title: "2. Embedded Systems Programming",
+                    description: "Learn to program embedded devices for IoT",
+                    topics: [
+                        "Introduction to C and C++ for embedded systems",
+                        "Microcontroller programming (Arduino, ESP32)",
+                        "Interfacing sensors and actuators",
+                        "Interrupt handling and timers",
+                        "Communication protocols (SPI, I2C, UART)",
+                        "Power optimization for embedded systems"
+                    ]
+                },
+                {
+                    title: "3. IoT Networking & Communication",
+                    description: "Connect devices to create a networked IoT system",
+                    topics: [
+                        "Introduction to IoT protocols (MQTT, CoAP)",
+                        "WiFi and Bluetooth communication",
+                        "Cellular and LoRaWAN connectivity",
+                        "Zigbee and Z-Wave protocols",
+                        "IPv6 and 6LoWPAN",
+                        "Setting up an IoT gateway",
+                        "Understanding cloud integration for IoT"
+                    ]
+                },
+                {
+                    title: "4. Cloud Platforms & Data Processing",
+                    description: "Explore cloud services and data processing for IoT",
+                    topics: [
+                        "Introduction to cloud platforms (AWS IoT, Google IoT Core, Azure IoT Hub)",
+                        "Data ingestion and storage in the cloud",
+                        "Real-time data processing",
+                        "Stream analytics and IoT data pipelines",
+                        "Setting up dashboards and visualizations",
+                        "Edge computing and local data processing"
+                    ]
+                },
+                {
+                    title: "5. Security & Best Practices",
+                    description: "Learn how to secure IoT devices and data",
+                    topics: [
+                        "IoT security basics",
+                        "Data encryption and device authentication",
+                        "Secure communication protocols (HTTPS, SSL/TLS)",
+                        "Firmware update best practices",
+                        "Managing device credentials and access control",
+                        "Implementing security in IoT cloud platforms",
+                        "Testing and troubleshooting security vulnerabilities"
+                    ]
+                }
+            ],
+            resources: {
+                documentation: [
+                    {
+                        title: "Arduino Documentation",
+                        url: "https://www.arduino.cc/reference/en/",
+                        description: "Official Arduino documentation for programming and hardware integration",
+                        type: "Platform Documentation"
+                    },
+                    {
+                        title: "ESP32 Documentation",
+                        url: "https://docs.espressif.com/projects/esp-idf/en/latest/esp32/",
+                        description: "Comprehensive ESP32 documentation for IoT development",
+                        type: "Hardware Documentation"
+                    },
+                    {
+                        title: "MQTT Protocol Documentation",
+                        url: "https://mqtt.org/documentation",
+                        description: "Guide to understanding and implementing the MQTT protocol for IoT",
+                        type: "Protocol Documentation"
+                    },
+                    {
+                        title: "AWS IoT Core Documentation",
+                        url: "https://docs.aws.amazon.com/iot/latest/developerguide/what-is-aws-iot.html",
+                        description: "AWS guide for connecting IoT devices to the cloud and managing data",
+                        type: "Cloud Platform Documentation"
+                    }
+                ],
+                tutorials: [
+                    {
+                        title: "freeCodeCamp IoT Basics",
+                        url: "https://www.freecodecamp.org/",
+                        description: "Beginner-friendly tutorials on electronics and IoT projects",
+                        type: "Interactive Course"
+                    },
+                    {
+                        title: "Edge Impulse for Embedded ML",
+                        url: "https://edgeimpulse.com/",
+                        description: "Learn to create machine learning models for IoT devices",
+                        type: "Platform Tutorial"
+                    },
+                    {
+                        title: "Random Nerd Tutorials",
+                        url: "https://randomnerdtutorials.com/",
+                        description: "Practical tutorials for building IoT projects with ESP32 and Arduino",
+                        type: "Project-Based Tutorials"
+                    },
+                    {
+                        title: "Google Cloud IoT Tutorials",
+                        url: "https://cloud.google.com/iot/docs/tutorials",
+                        description: "Tutorials for using Google Cloud services with IoT devices",
+                        type: "Cloud Integration Tutorials"
+                    }
+                ],
+                videos: [
+                    {
+                        title: "Andreas Spiess",
+                        url: "https://www.youtube.com/c/AndreasSpiess",
+                        description: "IoT tutorials and deep dives into microcontroller projects",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Simply Explained",
+                        url: "https://www.youtube.com/c/SimplyExplained",
+                        description: "Explains IoT concepts, protocols, and technology simply and effectively",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Tech with Tim",
+                        url: "https://www.youtube.com/c/TechWithTim",
+                        description: "IoT and programming tutorials for beginners and advanced users",
+                        platform: "YouTube"
+                    }
+                ],
+                books: [
+                    {
+                        title: "Designing the Internet of Things",
+                        author: "Adrian McEwen & Hakim Cassimally",
+                        description: "Guide to IoT design principles and real-world applications",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "IoT Inc: How Your Company Can Use the Internet of Things to Win in the Outcome Economy",
+                        author: "Bruce Sinclair",
+                        description: "IoT business applications and strategies",
+                        level: "Advanced"
+                    },
+                    {
+                        title: "The Internet of Things: Key Applications and Protocols",
+                        author: "Olivier Hersent, David Boswarthick, & Omar Elloumi",
+                        description: "In-depth guide to IoT protocols and communication",
+                        level: "Intermediate"
+                    }
+                ],
+                practice: [
+                    {
+                        title: "Hackster.io",
+                        url: "https://www.hackster.io/",
+                        description: "Platform with thousands of community IoT projects and tutorials",
+                        type: "Project Platform"
+                    },
+                    {
+                        title: "Circuit Digest",
+                        url: "https://circuitdigest.com/",
+                        description: "Electronics and IoT tutorials, circuits, and projects",
+                        type: "IoT Learning Platform"
+                    },
+                    {
+                        title: "ThingSpeak",
+                        url: "https://thingspeak.com/",
+                        description: "IoT platform for data collection, analysis, and visualization",
+                        type: "Practice Platform"
+                    }
+                ]
+            },
+            practice: {
+
+                beginnerExercises: [
+                    {
+                        title: "Set Up Raspberry Pi or ESP32",
+                        difficulty: "Easy",
+                        description: "Learn how to set up a Raspberry Pi or ESP32 for IoT projects, including installing the OS and necessary software.",
+                        hints: [
+                            "Get a microSD card and load the OS (Raspberry Pi OS for Pi or MicroPython for ESP32)",
+                            "Set up Wi-Fi and SSH for remote access",
+                            "Use the Raspberry Pi Imager or Arduino IDE for flashing"
+                        ],
+                        solution: {
+                            code: `// Basic Python setup for Raspberry Pi
+        # Update and upgrade packages
+        sudo apt update && sudo apt upgrade -y
+        
+        # Install necessary libraries for IoT
+        sudo apt install python3-pip
+        pip3 install RPi.GPIO`,
+                            explanation: "This setup provides a basic foundation for working with a Raspberry Pi. Updating packages ensures your device is secure and up-to-date. Installing the RPi.GPIO library allows you to control the Pi's GPIO pins."
+                        }
+                    },
+                    {
+                        title: "Blink an LED",
+                        difficulty: "Easy",
+                        description: "Write a simple program to blink an LED connected to the Raspberry Pi or ESP32.",
+                        hints: [
+                            "Use the GPIO pins on your device",
+                            "Remember to use a resistor to prevent short circuits",
+                            "Use a loop to create the blinking effect"
+                        ],
+                        solution: {
+                            code: `# Python code for Raspberry Pi
+        import RPi.GPIO as GPIO
+        import time
+        
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(18, GPIO.OUT)
+        
+        try:
+            while True:
+                GPIO.output(18, GPIO.HIGH)
+                time.sleep(1)
+                GPIO.output(18, GPIO.LOW)
+                time.sleep(1)
+        except KeyboardInterrupt:
+            GPIO.cleanup()`,
+                            explanation: "This Python program toggles an LED connected to GPIO pin 18 on and off every second. GPIO.cleanup() is used to reset the pins after execution to avoid pin conflicts."
+                        }
+                    },
+                    {
+                        title: "Temperature Sensor with DHT11",
+                        difficulty: "Easy",
+                        description: "Set up and read temperature and humidity data from a DHT11 sensor connected to your device.",
+                        hints: [
+                            "Connect the DHT11 sensor to the correct GPIO pins",
+                            "Install the Adafruit_DHT library for Python",
+                            "Print readings in intervals"
+                        ],
+                        solution: {
+                            code: `# Python code for Raspberry Pi
+        import Adafruit_DHT
+        import time
+        
+        DHT_SENSOR = Adafruit_DHT.DHT11
+        DHT_PIN = 4
+        
+        while True:
+            humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT_PIN)
+            if humidity is not None and temperature is not None:
+                print(f"Temp: {temperature}C, Humidity: {humidity}%")
+            else:
+                print("Failed to retrieve data")
+            time.sleep(2)`,
+                            explanation: "This program reads and prints the temperature and humidity every 2 seconds from a DHT11 sensor. The Adafruit_DHT library helps manage communication with the DHT sensor."
+                        }
+                    },
+
+                ],
+
+                intermediateExercises: [
+                    {
+                        title: "Environment Monitoring System",
+                        difficulty: "Medium",
+                        description: "Build an IoT system for monitoring environmental conditions (e.g., temperature, humidity, air quality) using sensors connected to a microcontroller, with real-time data updates to a cloud dashboard.",
+                        hints: [
+                            "Use an IoT platform like AWS IoT, Google Cloud IoT, or an open-source option like ThingSpeak.",
+                            "Configure your sensors to send data at regular intervals.",
+                            "Implement data processing on the cloud to filter, analyze, and display data.",
+                            "Use MQTT protocol for efficient communication."
+                        ],
+                        solution: {
+                            code:
+                                "hardware: ESP32/ESP8266, DHT22 (temperature & humidity sensor), MQ-135 (air quality sensor),   firmware: Arduino code for ESP32 to read sensor data and send it via MQTT., cloud: Cloud functions to process data and update a real-time dashboard.",
+                            explanation: "This IoT project solution involves several key steps:\n\n" +
+                                "1. **Sensor Configuration:**\n" +
+                                "   - Connect DHT22 and MQ-135 sensors to ESP32/ESP8266.\n" +
+                                "   - Read data from sensors using GPIO pins.\n\n" +
+                                "2. **Data Transmission:**\n" +
+                                "   - Send sensor data to a cloud platform via MQTT.\n" +
+                                "   - Set a reasonable data transmission interval to avoid network overload.\n\n" +
+                                "3. **Cloud Integration:**\n" +
+                                "   - Use cloud functions to process incoming data.\n" +
+                                "   - Store data in a database for historical analysis and display on a real-time dashboard.\n\n" +
+                                "4. **Data Visualization:**\n" +
+                                "   - Create a dashboard with charts and real-time metrics.\n" +
+                                "   - Implement alerts for unusual readings (e.g., high humidity or poor air quality).\n\n" +
+                                "5. **Security & Scalability:**\n" +
+                                "   - Implement secure MQTT connections with SSL/TLS.\n" +
+                                "   - Use a cloud-based service with auto-scaling to handle data bursts."
+                        }
+                    },
+                ],
+
+                advancedExercises: [
+                    {
+                        title: "Smart Home Automation System",
+                        debuggerifficulty: "Hard",
+                        description: "Build a smart home automation system that controls lights, fans, and security cameras. The system will monitor environmental conditions (temperature, humidity, motion) and allow remote control via a mobile app or web interface.",
+                        hints: [
+                            "Use MQTT or HTTP protocol for communication between devices",
+                            "Implement cloud services (like AWS or Firebase) for remote monitoring",
+                            "Integrate environmental sensors like DHT11 for temperature and humidity",
+                            "Use a motion sensor to detect presence and control lighting or security cameras",
+                            "Control devices using relays, smart plugs, or microcontrollers like Arduino or Raspberry Pi"
+                        ],
+                        solution: {
+                            "code": `
+              <!-- HTML -->
+              <div id="smart-home-container">
+                <div id="device-controls">
+                  <h2>Smart Home Controls</h2>
+                  <div id="lights-control">
+                    <button id="toggle-lights">Toggle Lights</button>
+                  </div>
+                  <div id="fan-control">
+                    <button id="toggle-fan">Toggle Fan</button>
+                  </div>
+                  <div id="camera-control">
+                    <button id="toggle-camera">Toggle Camera</button>
+                  </div>
+                </div>
+                <div id="sensor-status">
+                  <h3>Sensor Status</h3>
+                  <p>Temperature: <span id="temperature"></span> °C</p>
+                  <p>Humidity: <span id="humidity"></span> %</p>
+                  <p>Motion: <span id="motion-status"></span></p>
+                </div>
+              </div>
+              
+              <!-- CSS -->
+              #smart-home-container {
+                width: 80%;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #f4f4f9;
+                border-radius: 8px;
+              }
+              
+              #device-controls {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+              }
+              
+              button {
+                padding: 15px;
+                font-size: 16px;
+                background-color: #4caf50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+              }
+              
+              button:hover {
+                background-color: #45a049;
+              }
+              
+              #sensor-status {
+                margin-top: 40px;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              }
+              
+              #sensor-status p {
+                font-size: 18px;
+              }
+              
+              /* JavaScript */
+              // Placeholder MQTT or HTTP API endpoints (replace with actual URLs)
+              const mqttServer = 'wss://your-mqtt-broker.com';
+              const temperatureSensorAPI = 'https://your-api.com/temperature';
+              const humiditySensorAPI = 'https://your-api.com/humidity';
+              const motionSensorAPI = 'https://your-api.com/motion';
+              const lightsAPI = 'https://your-api.com/lights';
+              const fanAPI = 'https://your-api.com/fan';
+              const cameraAPI = 'https://your-api.com/camera';
+              
+              const toggleLightsButton = document.getElementById('toggle-lights');
+              const toggleFanButton = document.getElementById('toggle-fan');
+              const toggleCameraButton = document.getElementById('toggle-camera');
+              
+              const temperatureDisplay = document.getElementById('temperature');
+              const humidityDisplay = document.getElementById('humidity');
+              const motionStatusDisplay = document.getElementById('motion-status');
+              
+              let mqttClient = new WebSocket(mqttServer);
+              
+              mqttClient.onopen = () => {
+                console.log('Connected to MQTT broker');
+                // Subscribe to sensor data topics
+                mqttClient.send('SUBSCRIBE /home/sensors/temperature');
+                mqttClient.send('SUBSCRIBE /home/sensors/humidity');
+                mqttClient.send('SUBSCRIBE /home/sensors/motion');
+              };
+              
+              mqttClient.onmessage = (message) => {
+                const data = JSON.parse(message.data);
+                if (data.type === 'temperature') {
+                  temperatureDisplay.textContent = data.value;
+                } else if (data.type === 'humidity') {
+                  humidityDisplay.textContent = data.value;
+                } else if (data.type === 'motion') {
+                  motionStatusDisplay.textContent = data.value ? 'Motion detected' : 'No motion';
+                }
+              };
+              
+              toggleLightsButton.addEventListener('click', () => {
+                fetch(lightsAPI, { method: 'POST', body: JSON.stringify({ action: 'toggle' }) })
+                  .then(response => response.json())
+                  .then(data => console.log('Lights toggled:', data));
+              });
+              
+              toggleFanButton.addEventListener('click', () => {
+                fetch(fanAPI, { method: 'POST', body: JSON.stringify({ action: 'toggle' }) })
+                  .then(response => response.json())
+                  .then(data => console.log('Fan toggled:', data));
+              });
+              
+              toggleCameraButton.addEventListener('click', () => {
+                fetch(cameraAPI, { method: 'POST', body: JSON.stringify({ action: 'toggle' }) })
+                  .then(response => response.json())
+                  .then(data => console.log('Camera toggled:', data));
+              });
+              
+              // Polling temperature and humidity data
+              setInterval(() => {
+                fetch(temperatureSensorAPI)
+                  .then(response => response.json())
+                  .then(data => {
+                    temperatureDisplay.textContent = data.temperature;
+                  });
+              
+                fetch(humiditySensorAPI)
+                  .then(response => response.json())
+                  .then(data => {
+                    humidityDisplay.textContent = data.humidity;
+                  });
+              }, 5000);  // Update every 5 seconds
+              `,
+                            "explanation": "This advanced IoT project creates a comprehensive smart home automation system with:\n\n" +
+                                "1. **Device Control:**\n" +
+                                "   - Allows toggling of lights, fans, and cameras via HTTP API or WebSocket.\n\n" +
+                                "2. **Environmental Monitoring:**\n" +
+                                "   - Temperature and humidity data is fetched from external APIs or sensors.\n" +
+                                "   - Motion detection using PIR sensor is monitored via WebSocket.\n\n" +
+                                "3. **Cloud Communication:**\n" +
+                                "   - Real-time data is sent and received using WebSocket and MQTT protocols for efficient two-way communication.\n\n" +
+                                "4. **User Interface:**\n" +
+                                "   - A simple web interface for controlling devices and viewing sensor status (temperature, humidity, motion).\n\n" +
+                                "5. **Scalability:**\n" +
+                                "   - The project can easily be scaled by adding more devices, such as smart locks, thermostats, or additional cameras.\n\n" +
+                                "6. **Real-Time Monitoring:**\n" +
+                                "   - Uses MQTT/WebSocket for live sensor data updates to enhance user experience."
+                        }
+                    }
+                ]
+            }
 
 
+
+        }
+    }
 ];
 
 export default resources;
