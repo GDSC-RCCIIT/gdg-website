@@ -24,7 +24,7 @@ const DeveloperPressCornerPage = () => {
                 <h2 className="text-2xl font-semibold">Latest News</h2>
                 <div className="mt-4 flex items-center justify-between">
                     <img
-                        src="/images/sample-banner.jpg" // Placeholder image for banner
+                        src="/press1.jpg"// Placeholder image for banner
                         alt="Press Highlight"
                         className="w-1/3 rounded-md shadow-md"
                     />
