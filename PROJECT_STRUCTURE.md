@@ -54,6 +54,8 @@
 │   ├── exp5.jpeg
 │   ├── exp6.jpeg
 │   ├── exp7.jpeg
+│   ├── gen-studio.png
+│   ├── gen-studio2.svg
 │   ├── genai1.jpg
 │   ├── genai2.webp
 │   ├── goal.webp
@@ -71,6 +73,7 @@
 │   ├── os2.ico
 │   ├── os3.svg
 │   ├── os4.png
+│   ├── press1.jpg
 │   ├── sdk1.png
 │   ├── sdk2.png
 │   ├── sdk3.png
@@ -200,6 +203,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── cicd/
 │   │   │   │   └── page.jsx
+│   │   │   ├── code-exchange/
+│   │   │   │   └── page.jsx
 │   │   │   ├── compute-tech/
 │   │   │   │   └── page.jsx
 │   │   │   ├── db-overview/
@@ -215,6 +220,8 @@
 │   │   │   ├── expertdev/
 │   │   │   │   └── page.jsx
 │   │   │   ├── explore/
+│   │   │   │   └── page.jsx
+│   │   │   ├── gen-studio/
 │   │   │   │   └── page.jsx
 │   │   │   ├── genai/
 │   │   │   │   └── page.jsx
@@ -244,6 +251,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── localdev/
 │   │   │   │   └── page.jsx
+│   │   │   ├── moonshots/
+│   │   │   │   └── page.jsx
 │   │   │   ├── networking-overview/
 │   │   │   │   └── page.jsx
 │   │   │   ├── observability-view/
@@ -256,15 +265,23 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── partners/
 │   │   │   │   └── page.jsx
+│   │   │   ├── press-corner/
+│   │   │   │   └── page.jsx
+│   │   │   ├── sandbox/
+│   │   │   │   └── page.jsx
 │   │   │   ├── sdk/
 │   │   │   │   └── page.jsx
 │   │   │   ├── security-overview/
+│   │   │   │   └── page.jsx
+│   │   │   ├── service-health/
 │   │   │   │   └── page.jsx
 │   │   │   ├── services/
 │   │   │   │   └── page.jsx
 │   │   │   ├── storage-overview/
 │   │   │   │   └── page.jsx
 │   │   │   ├── stories/
+│   │   │   │   └── page.jsx
+│   │   │   ├── storytime/
 │   │   │   │   └── page.jsx
 │   │   │   ├── student-challenge/
 │   │   │   │   └── page.jsx
@@ -279,6 +296,8 @@
 │   │   │   ├── truth/
 │   │   │   │   └── page.jsx
 │   │   │   ├── weekly/
+│   │   │   │   └── page.jsx
+│   │   │   ├── whitepapers/
 │   │   │   │   └── page.jsx
 │   │   │   ├── who-apply/
 │   │   │   │   └── page.jsx
@@ -326,8 +345,10 @@
 │   │   │   ├── Hero.jsx
 │   │   │   ├── Navbar.jsx
 │   │   │   ├── ProductsNavbar.jsx
+│   │   │   ├── Sidebar.jsx
 │   │   │   └── SuspenseLoader.jsx
 │   │   └── ui/
+│   │       ├── achievements.jsx
 │   │       ├── aspect-ratio.jsx
 │   │       ├── back2top.jsx
 │   │       ├── badge.jsx
@@ -356,6 +377,7 @@
 │   │       ├── sheet.jsx
 │   │       ├── skeleton.jsx
 │   │       ├── sonner.jsx
+│   │       ├── stories.jsx
 │   │       ├── switch.jsx
 │   │       ├── tabs.jsx
 │   │       ├── textarea.jsx
