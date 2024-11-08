@@ -14662,6 +14662,1663 @@ if __name__ == "__main__":
         ]
     }
 }
+},
+{
+    id: 13,
+    title: "Blockchain Development",
+    description: "To learn blockchain development, follow this roadmap",
+    extendedContent: `
+        Master blockchain technology and decentralized application development. Start with blockchain 
+        fundamentals, cryptography, and distributed systems. Learn Solidity programming and smart 
+        contract development. Explore popular blockchain platforms like Ethereum, build DApps, and 
+        understand Web3 development. Learn about consensus mechanisms, tokenomics, and blockchain 
+        architecture. Advanced topics include DeFi protocols, NFTs, cross-chain development, and 
+        blockchain security best practices.
+    `,
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        prerequisites: [
+            "Strong programming fundamentals",
+            "Understanding of data structures and algorithms",
+            "Basic knowledge of cryptography",
+            "JavaScript/TypeScript proficiency",
+            "Understanding of web development",
+            "Basic networking concepts",
+            "Command line proficiency"
+        ],
+        outcomes: [
+            "Develop smart contracts using Solidity",
+            "Build decentralized applications (DApps)",
+            "Implement blockchain security measures",
+            "Create and deploy tokens and NFTs",
+            "Integrate Web3 functionality",
+            "Design DeFi protocols and applications",
+            "Implement cross-chain solutions",
+            "Deploy and manage blockchain networks",
+            "Conduct smart contract testing and auditing",
+            "Build secure and scalable blockchain systems"
+        ],
+        sections: [
+            {
+                title: "Blockchain Fundamentals",
+                content: "Master core blockchain concepts including distributed ledger technology, consensus mechanisms, and cryptographic primitives. Understand blockchain architecture, network types, and transaction processing. Learn about mining, nodes, and blockchain scalability solutions."
+            },
+            {
+                title: "Smart Contract Development",
+                content: "Learn Solidity programming language, smart contract development, and deployment processes. Understand contract security, gas optimization, and best practices. Master testing frameworks, debugging tools, and contract upgradeability patterns."
+            },
+            {
+                title: "Web3 Development",
+                content: "Study Web3.js and Ethers.js libraries for blockchain interaction. Learn about wallet integration, transaction management, and event handling. Understand decentralized storage solutions and oracle implementations."
+            },
+            {
+                title: "DApp Development",
+                content: "Build full-stack decentralized applications using modern frameworks. Learn about frontend integration, state management, and user interface design for blockchain applications. Master IPFS integration and decentralized identity solutions."
+            },
+            {
+                title: "DeFi Development",
+                content: "Understand decentralized finance protocols, token standards, and automated market makers. Learn about lending protocols, yield farming, and liquidity pools. Master flash loans, protocol integration, and DeFi security."
+            },
+            {
+                title: "NFT Development",
+                content: "Learn NFT token standards, metadata management, and marketplace development. Understand NFT minting, trading mechanics, and royalty implementations. Study NFT gaming, generative art, and cross-platform compatibility."
+            },
+            {
+                title: "Blockchain Security",
+                content: "Master smart contract security patterns, common vulnerabilities, and audit processes. Learn about secure development practices, testing methodologies, and security tools. Understand attack vectors and prevention strategies."
+            },
+            {
+                title: "Blockchain Architecture",
+                content: "Study advanced blockchain architectures, scalability solutions, and cross-chain protocols. Learn about sharding, sidechains, and layer 2 solutions. Understand consensus mechanisms and network governance."
+            }
+        ]
+    },
+    content: {
+        examples: [
+            {
+                title: "ERC20 Token Implementation",
+                code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract CustomToken is ERC20, Ownable {
+    uint256 private constant INITIAL_SUPPLY = 1000000 * 10**18; // 1 million tokens
+    uint256 public maxSupply;
+    mapping(address => bool) public blacklisted;
+    
+    event AddressBlacklisted(address indexed account);
+    event AddressUnblacklisted(address indexed account);
+    
+    constructor(string memory name, string memory symbol) 
+        ERC20(name, symbol) {
+        maxSupply = INITIAL_SUPPLY * 2; // Max supply is double initial supply
+        _mint(msg.sender, INITIAL_SUPPLY);
+    }
+    
+    function mint(address to, uint256 amount) public onlyOwner {
+        require(totalSupply() + amount <= maxSupply, 
+                "Would exceed max supply");
+        _mint(to, amount);
+    }
+    
+    function burn(uint256 amount) public {
+        _burn(msg.sender, amount);
+    }
+    
+    function blacklistAddress(address account) public onlyOwner {
+        blacklisted[account] = true;
+        emit AddressBlacklisted(account);
+    }
+    
+    function unblacklistAddress(address account) public onlyOwner {
+        blacklisted[account] = false;
+        emit AddressUnblacklisted(account);
+    }
+    
+    function _beforeTokenTransfer(
+        address from,
+        address to,
+        uint256 amount
+    ) internal virtual override {
+        super._beforeTokenTransfer(from, to, amount);
+        
+        require(!blacklisted[from] && !blacklisted[to], 
+                "Address is blacklisted");
+    }
+    
+    // Additional security features
+    function recoverERC20(address tokenAddress, uint256 amount) 
+        public onlyOwner {
+        IERC20(tokenAddress).transfer(owner(), amount);
+    }
+    
+    // Snapshot and governance features could be added here
+}`,
+                explanation: "This example demonstrates the implementation of an ERC20 token with additional features including maxSupply, blacklisting, and token recovery. It uses OpenZeppelin contracts for security and standard compliance."
+            },
+            {
+                title: "NFT Collection with Whitelist",
+                code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
+
+contract NFTCollection is ERC721, ReentrancyGuard, Ownable {
+    using Counters for Counters.Counter;
+    using Strings for uint256;
+    
+    Counters.Counter private _tokenIds;
+    
+    uint256 public constant PRICE = 0.08 ether;
+    uint256 public constant MAX_SUPPLY = 10000;
+    uint256 public constant MAX_PER_MINT = 5;
+    uint256 public constant MAX_PER_WALLET = 10;
+    
+    bool public saleIsActive = false;
+    bool public whitelistOnly = true;
+    
+    bytes32 public merkleRoot;
+    string private _baseTokenURI;
+    
+    mapping(address => uint256) public walletMints;
+    
+    event Minted(address indexed to, uint256 indexed tokenId);
+    
+    constructor(
+        string memory name,
+        string memory symbol,
+        string memory baseTokenURI,
+        bytes32 _merkleRoot
+    ) ERC721(name, symbol) {
+        _baseTokenURI = baseTokenURI;
+        merkleRoot = _merkleRoot;
+    }
+    
+    modifier callerIsUser() {
+        require(tx.origin == msg.sender, "Caller is a contract");
+        _;
+    }
+    
+    function mint(uint256 numberOfTokens, bytes32[] calldata proof) 
+        public payable callerIsUser nonReentrant {
+        require(saleIsActive, "Sale must be active");
+        require(numberOfTokens <= MAX_PER_MINT, "Too many requested");
+        require(totalSupply() + numberOfTokens <= MAX_SUPPLY, 
+                "Would exceed max supply");
+        require(PRICE * numberOfTokens <= msg.value, 
+                "Insufficient payment");
+        require(walletMints[msg.sender] + numberOfTokens <= MAX_PER_WALLET,
+                "Would exceed max per wallet");
+        
+        if (whitelistOnly) {
+            require(isWhitelisted(msg.sender, proof), 
+                    "Not whitelisted");
+        }
+        
+        for (uint256 i = 0; i < numberOfTokens; i++) {
+            _tokenIds.increment();
+            uint256 newTokenId = _tokenIds.current();
+            _safeMint(msg.sender, newTokenId);
+            emit Minted(msg.sender, newTokenId);
+        }
+        
+        walletMints[msg.sender] += numberOfTokens;
+    }
+    
+    function isWhitelisted(address account, bytes32[] calldata proof) 
+        public view returns (bool) {
+        bytes32 leaf = keccak256(abi.encodePacked(account));
+        return MerkleProof.verify(proof, merkleRoot, leaf);
+    }
+    
+    function totalSupply() public view returns (uint256) {
+        return _tokenIds.current();
+    }
+    
+    function setBaseURI(string memory baseURI) public onlyOwner {
+        _baseTokenURI = baseURI;
+    }
+    
+    function _baseURI() internal view override returns (string memory) {
+        return _baseTokenURI;
+    }
+    
+    function toggleSale() public onlyOwner {
+        saleIsActive = !saleIsActive;
+    }
+    
+    function toggleWhitelistOnly() public onlyOwner {
+        whitelistOnly = !whitelistOnly;
+    }
+    
+    function setMerkleRoot(bytes32 _merkleRoot) public onlyOwner {
+        merkleRoot = _merkleRoot;
+    }
+    
+    function withdraw() public onlyOwner {
+        uint256 balance = address(this).balance;
+        payable(msg.sender).transfer(balance);
+    }
+    
+    // Royalties implementation
+    function supportsInterface(bytes4 interfaceId)
+        public view virtual override returns (bool) {
+        return interfaceId == 0x2a55205a || // ERC2981
+               super.supportsInterface(interfaceId);
+    }
+}`,
+                explanation: "This example shows an NFT collection implementation with whitelist functionality using Merkle trees, minting limits, and security features. It includes proper access control, reentrancy protection, and support for metadata and royalties."
+            },
+            {
+                title: "DeFi Lending Protocol",
+                code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/security/Pausable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract LendingPool is ReentrancyGuard, Pausable, Ownable {
+    struct UserAccount {
+        uint256 deposited;
+        uint256 borrowed;
+        uint256 lastInterestBlock;
+        uint256 interestRate;
+    }
+    
+    struct Asset {
+        address tokenAddress;
+        uint256 totalDeposited;
+        uint256 totalBorrowed;
+        uint256 utilizationRate;
+        uint256 baseInterestRate;
+        uint256 maxLTV; // Loan to Value ratio
+    }
+    
+    mapping(address => mapping(address => UserAccount)) 
+        public userAccounts; // user => token => account
+    mapping(address => Asset) public supportedAssets;
+    address[] public assetList;
+    
+    uint256 public constant UTILIZATION_PRECISION = 1e6;
+    uint256 public constant INTEREST_PRECISION = 1e6;
+    
+    event Deposited(
+        address indexed user,
+        address indexed token,
+        uint256 amount
+    );
+    event Borrowed(
+        address indexed user,
+        address indexed token,
+        uint256 amount
+    );
+    event Repaid(
+        address indexed user,
+        address indexed token,
+        uint256 amount
+    );
+    event Withdrawn(
+        address indexed user,
+        address indexed token,
+        uint256 amount
+    );
+    
+    constructor() {
+        // Initialize with supported assets if needed
+    }
+    
+    function addSupportedAsset(
+        address tokenAddress,
+        uint256 baseInterestRate,
+        uint256 maxLTV
+    ) external onlyOwner {
+        require(supportedAssets[tokenAddress].tokenAddress == address(0),
+                "Asset already supported");
+                
+        Asset storage newAsset = supportedAssets[tokenAddress];
+        newAsset.tokenAddress = tokenAddress;
+        newAsset.baseInterestRate = baseInterestRate;
+        newAsset.maxLTV = maxLTV;
+        
+        assetList.push(tokenAddress);
+    }
+    
+    function deposit(address token, uint256 amount) 
+        external nonReentrant whenNotPaused {
+        require(amount > 0, "Amount must be greater than 0");
+        require(supportedAssets[token].tokenAddress != address(0),
+                "Asset not supported");
+                
+        UserAccount storage account = userAccounts[msg.sender][token];
+        Asset storage asset = supportedAssets[token];
+        
+        // Update interest before deposit
+        _updateInterest(msg.sender, token);
+        
+        // Transfer tokens to contract
+        IERC20(token).transferFrom(msg.sender, address(this), amount);
+        
+        // Update user account and asset state
+        account.deposited += amount;
+        asset.totalDeposited += amount;
+        
+        // Update utilization rate
+        _updateUtilizationRate(token);
+        
+        emit Deposited(msg.sender, token, amount);
+    }
+    
+    function borrow(address token, uint256 amount)
+        external nonReentrant whenNotPaused {
+        require(amount > 0, "Amount must be greater than 0");
+        require(supportedAssets[token].tokenAddress != address(0),
+                "Asset not supported");
+                
+        UserAccount storage account = userAccounts[msg.sender][token];
+        Asset storage asset = supportedAssets[token];
+        
+        // Update interest before borrow
+        _updateInterest(msg.sender, token);
+        
+        // Check borrowing capacity
+        require(_canBorrow(msg.sender, token, amount),
+                "Insufficient collateral");
+                
+        // Update user account and asset state
+        account.borrowed += amount;
+        asset.totalBorrowed += amount;
+        
+        // Update utilization and interest rates
+        _updateUtilizationRate(token);
+        account.interestRate = _calculateInterestRate(token);
+        account.lastInterestBlock = block.number;
+        
+        // Transfer tokens to borrower
+        IERC20(token).transfer(msg.sender, amount);
+        
+        emit Borrowed(msg.sender, token, amount);
+    }
+    
+    function repay(address token, uint256 amount)
+        external nonReentrant whenNotPaused {
+        require(amount > 0, "Amount must be greater than 0");
+        
+        UserAccount storage account = userAccounts[msg.sender][token];
+        Asset storage asset = supportedAssets[token];
+        
+        // Update interest before repayment
+        _updateInterest(msg.sender, token);
+        
+        uint256 totalOwed = account.borrowed;
+        require(totalOwed > 0, "No outstanding loan");
+        
+        uint256 repayAmount = amount > totalOwed ? totalOwed : amount;
+        
+        // Transfer tokens from user
+        IERC20(token).transferFrom(
+            msg.sender,
+            address(this),
+            repayAmount
+        );
+        
+        // Update user account and asset state
+        account.borrowed -= repayAmount;
+        asset.totalBorrowed -= repayAmount;
+        
+        // Update utilization rate
+        _updateUtilizationRate(token);
+        
+        emit Repaid(msg.sender, token, repayAmount);
+    }
+    
+    function withdraw(address token, uint256 amount)
+        external nonReentrant whenNotPaused {
+        UserAccount storage account = userAccounts[msg.sender][token];
+        Asset storage asset = supportedAssets[token];
+        
+        // Update interest before withdrawal
+        _updateInterest(msg.sender, token);
+        
+        require(account.deposited >= amount,
+                "Insufficient balance");
+                
+        // Check if withdrawal would affect collateral requirements
+        require(_canWithdraw(msg.sender, token, amount),
+                "Withdrawal would exceed collateral requirements");
+                
+        // Update user account and asset state
+        account.deposited -= amount;
+        asset.totalDeposited -= amount;
+        
+        // Update utilization rate
+        _updateUtilizationRate(token);
+        
+        // Transfer tokens to user
+        IERC20(token).transfer(msg.sender, amount);
+        
+        emit Withdrawn(msg.sender, token, amount);
+    }
+    
+    function _updateInterest(address user, address token) internal {
+        UserAccount storage account = userAccounts[user][token];
+        if (account.borrowed == 0) return;
+        
+        uint256 blocksPassed = block.number - account.lastInterestBlock;
+        if (blocksPassed == 0) return;
+        
+        uint256 interest = account.borrowed * 
+                          account.interestRate *
+                          blocksPassed /
+                          INTEREST_PRECISION;
+                          
+        account.borrowed += interest;
+        account.lastInterestBlock = block.number;
+    }
+    
+    function _updateUtilizationRate(address token) internal {
+        Asset storage asset = supportedAssets[token];
+        
+        if (asset.totalDeposited == 0) {
+            asset.utilizationRate = 0;
+            return;
+        }
+        
+        asset.utilizationRate = asset.totalBorrowed *
+                              UTILIZATION_PRECISION /
+                              asset.totalDeposited;
+    }
+    
+    function _calculateInterestRate(address token)
+        internal view returns (uint256) {
+        Asset storage asset = supportedAssets[token];
+        
+        return asset.baseInterestRate +
+               (asset.utilizationRate * asset.baseInterestRate /
+                UTILIZATION_PRECISION);
+    }
+    
+    function _canBorrow(address user, address token, uint256 amount)
+        internal view returns (bool) {
+        UserAccount storage account = userAccounts[user][token];
+        Asset storage asset = supportedAssets[token];
+        
+        uint256 totalValue = account.deposited;
+        uint256 totalBorrowed = account.borrowed + amount;
+        
+        return totalBorrowed <= 
+               (totalValue * asset.maxLTV / UTILIZATION_PRECISION);
+    }
+    
+    function _canWithdraw(address user, address token, uint256 amount)
+        internal view returns (bool) {
+        UserAccount storage account = userAccounts[user][token];
+        Asset storage asset = supportedAssets[token];
+        
+        uint256 remainingDeposit = account.deposited - amount;
+        uint256 totalBorrowed = account.borrowed;
+        
+        return totalBorrowed <= 
+               (remainingDeposit * asset.maxLTV / UTILIZATION_PRECISION);
+    }
+    
+    // View functions
+    function getAccountInfo(address user, address token)
+        external view returns (
+            uint256 deposited,
+            uint256 borrowed,
+            uint256 interestRate
+        )
+    {
+        UserAccount storage account = userAccounts[user][token];
+        return (
+            account.deposited,
+            account.borrowed,
+            account.interestRate
+        );
+    }
+    
+    function getAssetInfo(address token)
+        external view returns (
+            uint256 totalDeposited,
+            uint256 totalBorrowed,
+            uint256 utilizationRate,
+            uint256 currentInterestRate
+        )
+    {
+        Asset storage asset = supportedAssets[token];
+        return (
+            asset.totalDeposited,
+            asset.totalBorrowed,
+            asset.utilizationRate,
+            _calculateInterestRate(token)
+        );
+    }
+    
+    // Emergency functions
+    function pause() external onlyOwner {
+        _pause();
+    }
+    
+    function unpause() external onlyOwner {
+        _unpause();
+    }
+    
+    function updateMaxLTV(address token, uint256 newMaxLTV) 
+        external onlyOwner {
+        require(supportedAssets[token].tokenAddress != address(0),
+                "Asset not supported");
+        supportedAssets[token].maxLTV = newMaxLTV;
+    }
+    
+    // Recovery function for stuck tokens
+    function rescueToken(address token, uint256 amount) 
+        external onlyOwner {
+        IERC20(token).transfer(owner(), amount);
+    }
+}`,
+    explanation: "This example demonstrates a basic DeFi lending protocol implementation with features including:\n" +
+                "1. Multiple asset support\n" +
+                "2. Interest rate calculation based on utilization\n" +
+                "3. Collateral management\n" +
+                "4. Security features including reentrancy protection\n" +
+                "5. Emergency controls and token recovery\n" +
+                "The protocol allows users to deposit assets, borrow against their collateral, and manages interest rates dynamically."
+            }
+        ],
+        roadmap: [
+        {
+            title: "1. Blockchain Fundamentals",
+            description: "Learn core blockchain concepts and architecture",
+            topics: [
+                "Distributed Ledger Technology",
+                "Cryptographic Primitives",
+                "Consensus Mechanisms",
+                "Block Structure and Validation",
+                "Network Types and Protocols",
+                "Public vs Private Blockchains",
+                "Blockchain Scalability Solutions"
+            ]
+        },
+        {
+            title: "2. Smart Contract Development",
+            description: "Master smart contract programming and best practices",
+            topics: [
+                "Solidity Programming Language",
+                "Smart Contract Security",
+                "Testing and Debugging",
+                "Gas Optimization",
+                "Contract Design Patterns",
+                "Contract Upgradability",
+                "Development Frameworks (Hardhat/Truffle)"
+            ]
+        },
+        {
+            title: "3. Web3 Development",
+            description: "Learn Web3 integration and development",
+            topics: [
+                "Web3.js and Ethers.js",
+                "Wallet Integration",
+                "Transaction Management",
+                "Event Handling",
+                "IPFS Integration",
+                "Oracles and Data Feeds",
+                "Provider Management"
+            ]
+        },
+        {
+            title: "4. DApp Architecture",
+            description: "Build full-stack decentralized applications",
+            topics: [
+                "Frontend Frameworks (React/Vue)",
+                "State Management",
+                "MetaMask Integration",
+                "Backend Services",
+                "Decentralized Storage",
+                "Testing and Deployment",
+                "User Experience Design"
+            ]
+        },
+        {
+            title: "5. DeFi Development",
+            description: "Master decentralized finance protocols",
+            topics: [
+                "Token Standards (ERC20/ERC721)",
+                "Automated Market Makers",
+                "Lending Protocols",
+                "Yield Farming",
+                "Flash Loans",
+                "Price Oracles",
+                "Protocol Integration"
+            ]
+        },
+        {
+            title: "6. Cross-Chain Development",
+            description: "Learn cross-chain protocols and bridges",
+            topics: [
+                "Cross-Chain Bridges",
+                "Layer 2 Solutions",
+                "State Channels",
+                "Sidechains",
+                "Cross-Chain Messaging",
+                "Chain Interoperability",
+                "Multi-Chain Applications"
+            ]
+        },
+        {
+            title: "7. Security & Auditing",
+            description: "Master blockchain security and auditing",
+            topics: [
+                "Smart Contract Auditing",
+                "Common Vulnerabilities",
+                "Security Tools",
+                "Testing Methodologies",
+                "Code Review Practices",
+                "Security Patterns",
+                "Incident Response"
+            ]
+        }
+    ],
+    resources: {
+        documentation: [
+            {
+                title: "Ethereum Documentation",
+                url: "https://ethereum.org/developers",
+                description: "Official Ethereum documentation for developers",
+                type: "Platform Documentation"
+            },
+            {
+                title: "Solidity Documentation",
+                url: "https://docs.soliditylang.org/",
+                description: "Official Solidity programming language documentation",
+                type: "Language Documentation"
+            },
+            {
+                title: "OpenZeppelin Docs",
+                url: "https://docs.openzeppelin.com/",
+                description: "Smart contract security standards and libraries",
+                type: "Framework Documentation"
+            },
+            {
+                title: "Hardhat Documentation",
+                url: "https://hardhat.org/getting-started/",
+                description: "Development environment documentation",
+                type: "Tool Documentation"
+            },
+            {
+                title: "Web3.js Documentation",
+                url: "https://web3js.readthedocs.io/",
+                description: "Ethereum JavaScript API documentation",
+                type: "Library Documentation"
+            }
+        ],
+        tutorials: [
+            {
+                title: "CryptoZombies",
+                url: "https://cryptozombies.io/",
+                description: "Interactive Solidity tutorial through game development",
+                type: "Interactive Course"
+            },
+            {
+                title: "Ethereum Developer Program",
+                url: "https://consensys.net/academy/",
+                description: "ConsenSys Academy's developer program",
+                type: "Online Course"
+            },
+            {
+                title: "Buildspace",
+                url: "https://buildspace.so/",
+                description: "Project-based Web3 development tutorials",
+                type: "Project Tutorials"
+            },
+            {
+                title: "Chainshot",
+                url: "https://www.chainshot.com/",
+                description: "Guided blockchain development learning",
+                type: "Interactive Platform"
+            },
+            {
+                title: "DappUniversity",
+                url: "https://www.dappuniversity.com/",
+                description: "Blockchain development video tutorials",
+                type: "Video Tutorials"
+            }
+        ],
+        videos: [
+            {
+                title: "Smart Contract Programmer",
+                url: "https://www.youtube.com/channel/UCJWh7F3AFyQ_x01VKzr9eyA",
+                description: "Smart contract development tutorials",
+                platform: "YouTube"
+            },
+            {
+                title: "Eat the Blocks",
+                url: "https://www.youtube.com/c/EatTheBlocks",
+                description: "DApp development and blockchain tutorials",
+                platform: "YouTube"
+            },
+            {
+                title: "Finematics",
+                url: "https://www.youtube.com/c/Finematics",
+                description: "DeFi concepts and implementations",
+                platform: "YouTube"
+            },
+            {
+                title: "Nader Dabit",
+                url: "https://www.youtube.com/c/naderdabit",
+                description: "Web3 development tutorials",
+                platform: "YouTube"
+            },
+            {
+                title: "Patrick Collins",
+                url: "https://www.youtube.com/c/PatrickCollins",
+                description: "Smart contract development courses",
+                platform: "YouTube"
+            }
+        ],
+        books: [
+            {
+                title: "Mastering Ethereum",
+                author: "Andreas M. Antonopoulos, Gavin Wood",
+                description: "Comprehensive guide to Ethereum development",
+                level: "Intermediate to Advanced"
+            },
+            {
+                title: "Token Economy",
+                author: "Shermin Voshmgir",
+                description: "Web3 and tokenomics principles",
+                level: "Intermediate"
+            },
+            {
+                title: "Building Games with Ethereum Smart Contracts",
+                author: "Kedar Iyer, Chris Dannen",
+                description: "Smart contract game development",
+                level: "Intermediate"
+            },
+            {
+                title: "How to DeFi",
+                author: "CoinGecko",
+                description: "Comprehensive guide to DeFi protocols",
+                level: "Beginner to Intermediate"
+            },
+            {
+                title: "Smart Contract Patterns",
+                author: "Kévin Vogel",
+                description: "Design patterns for smart contracts",
+                level: "Advanced"
+            }
+        ],
+        tools: [
+            {
+                title: "Hardhat",
+                url: "https://hardhat.org/",
+                description: "Ethereum development environment",
+                type: "Development Tool",
+                category: "Essential"
+            },
+            {
+                title: "Remix IDE",
+                url: "https://remix.ethereum.org/",
+                description: "Browser-based Solidity IDE",
+                type: "Development Tool",
+                category: "Essential"
+            },
+            {
+                title: "Truffle Suite",
+                url: "https://trufflesuite.com/",
+                description: "Development framework for Ethereum",
+                type: "Framework",
+                category: "Essential"
+            },
+            {
+                title: "Metamask",
+                url: "https://metamask.io/",
+                description: "Ethereum wallet and gateway",
+                type: "Wallet",
+                category: "Essential"
+            },
+            {
+                title: "OpenZeppelin",
+                url: "https://openzeppelin.com/",
+                description: "Smart contract security library",
+                type: "Library",
+                category: "Essential"
+            }
+        ],
+        communities: [
+            {
+                title: "Ethereum StackExchange",
+                url: "https://ethereum.stackexchange.com/",
+                description: "Q&A for Ethereum developers",
+                type: "Q&A Forum"
+            },
+            {
+                title: "r/ethdev",
+                url: "https://www.reddit.com/r/ethdev/",
+                description: "Ethereum development subreddit",
+                type: "Forum"
+            },
+            {
+                title: "ETHGlobal",
+                url: "https://ethglobal.co/",
+                description: "Ethereum hackathons and events",
+                type: "Events Platform"
+            },
+            {
+                title: "DeFi Pulse",
+                url: "https://defipulse.com/",
+                description: "DeFi analytics and community",
+                type: "Analytics Platform"
+            },
+            {
+                title: "Ethereum Research",
+                url: "https://ethresear.ch/",
+                description: "Ethereum research discussions",
+                type: "Research Forum"
+            }
+        ],
+        podcasts: [
+            {
+                title: "Epicenter",
+                url: "https://epicenter.tv/",
+                description: "Blockchain technology discussions",
+                platform: "Podcast"
+            },
+            {
+                title: "Unchained",
+                url: "https://unchainedpodcast.com/",
+                description: "Interviews with blockchain leaders",
+                platform: "Podcast"
+            },
+            {
+                title: "Zero Knowledge",
+                url: "https://zeroknowledge.fm/",
+                description: "Technical blockchain discussions",
+                platform: "Podcast"
+            },
+            {
+                title: "The Defiant",
+                url: "https://thedefiant.io/podcast",
+                description: "DeFi news and analysis",
+                platform: "Podcast"
+            }
+        ],
+        blogs: [
+            {
+                title: "Ethereum Blog",
+                url: "https://blog.ethereum.org/",
+                description: "Official Ethereum Foundation blog",
+                type: "Official Blog"
+            },
+            {
+                title: "Vitalik Buterin's Blog",
+                url: "https://vitalik.ca/",
+                description: "Ethereum co-founder's personal blog",
+                type: "Personal Blog"
+            },
+            {
+                title: "Week in Ethereum",
+                url: "https://weekinethereumnews.com/",
+                description: "Weekly Ethereum ecosystem updates",
+                type: "Newsletter"
+            },
+            {
+                title: "SmartContractResearch",
+                url: "https://github.com/ethereum/wiki/wiki/Smart-Contract-Research",
+                description: "Smart contract research papers and articles",
+                type: "Research Blog"
+            }
+        ]
+    },
+    practice: {
+        beginnerExercises: [
+            {
+                title: "Basic Token Voting System",
+                difficulty: "Easy",
+                description: "Create a simple voting system where users can create proposals and vote using tokens.",
+                hints: [
+                    "Use a mapping for vote tracking",
+                    "Implement basic access control",
+                    "Add proposal creation and voting functions",
+                    "Track voting periods"
+                ],
+                solution: {
+                    code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract TokenVoting {
+    struct Proposal {
+        string description;
+        uint256 voteCount;
+        bool isActive;
+        uint256 endTime;
+    }
+    
+    mapping(uint256 => Proposal) public proposals;
+    mapping(address => mapping(uint256 => bool)) public hasVoted;
+    mapping(address => uint256) public tokenBalance;
+    
+    uint256 public proposalCount;
+    uint256 public constant VOTING_PERIOD = 3 days;
+    
+    event ProposalCreated(uint256 indexed proposalId, string description);
+    event Voted(address indexed voter, uint256 indexed proposalId);
+    event TokensIssued(address indexed to, uint256 amount);
+    
+    constructor() {
+        // Issue initial tokens to contract deployer
+        tokenBalance[msg.sender] = 100;
+        emit TokensIssued(msg.sender, 100);
+    }
+    
+    function createProposal(string memory _description) public {
+        require(tokenBalance[msg.sender] >= 10, "Need at least 10 tokens to create proposal");
+        
+        proposalCount++;
+        proposals[proposalCount] = Proposal({
+            description: _description,
+            voteCount: 0,
+            isActive: true,
+            endTime: block.timestamp + VOTING_PERIOD
+        });
+        
+        emit ProposalCreated(proposalCount, _description);
+    }
+    
+    function vote(uint256 _proposalId) public {
+        require(_proposalId <= proposalCount, "Proposal does not exist");
+        require(!hasVoted[msg.sender][_proposalId], "Already voted");
+        require(proposals[_proposalId].isActive, "Proposal is not active");
+        require(block.timestamp < proposals[_proposalId].endTime, "Voting period ended");
+        require(tokenBalance[msg.sender] > 0, "No tokens to vote");
+        
+        proposals[_proposalId].voteCount += tokenBalance[msg.sender];
+        hasVoted[msg.sender][_proposalId] = true;
+        
+        emit Voted(msg.sender, _proposalId);
+    }
+    
+    function endProposal(uint256 _proposalId) public {
+        require(_proposalId <= proposalCount, "Proposal does not exist");
+        require(block.timestamp >= proposals[_proposalId].endTime, "Voting period not ended");
+        require(proposals[_proposalId].isActive, "Proposal already ended");
+        
+        proposals[_proposalId].isActive = false;
+    }
+    
+    function getProposal(uint256 _proposalId) public view returns (
+        string memory description,
+        uint256 voteCount,
+        bool isActive,
+        uint256 endTime
+    ) {
+        Proposal storage proposal = proposals[_proposalId];
+        return (
+            proposal.description,
+            proposal.voteCount,
+            proposal.isActive,
+            proposal.endTime
+        );
+    }
+}`,
+                    explanation: "This beginner exercise demonstrates basic contract structure, state variables, mappings, structs, events, and time-based functionality in Solidity."
+                }
+            },
+            {
+                title: "Simple Asset Registry",
+                difficulty: "Easy",
+                description: "Create a registry for tracking ownership of digital assets with basic transfer functionality.",
+                hints: [
+                    "Use structs for asset data",
+                    "Implement ownership tracking",
+                    "Add transfer functionality",
+                    "Include basic validation"
+                ],
+                solution: {
+                    code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract AssetRegistry {
+    struct Asset {
+        string name;
+        string description;
+        address owner;
+        bool isActive;
+        uint256 registrationDate;
+    }
+    
+    mapping(uint256 => Asset) public assets;
+    mapping(address => uint256[]) public ownerAssets;
+    
+    uint256 public assetCount;
+    
+    event AssetRegistered(uint256 indexed assetId, address indexed owner);
+    event AssetTransferred(uint256 indexed assetId, address indexed from, address indexed to);
+    event AssetDeactivated(uint256 indexed assetId);
+    
+    modifier onlyAssetOwner(uint256 _assetId) {
+        require(assets[_assetId].owner == msg.sender, "Not the asset owner");
+        _;
+    }
+    
+    function registerAsset(string memory _name, string memory _description) 
+    public returns (uint256) {
+        assetCount++;
+        
+        assets[assetCount] = Asset({
+            name: _name,
+            description: _description,
+            owner: msg.sender,
+            isActive: true,
+            registrationDate: block.timestamp
+        });
+        
+        ownerAssets[msg.sender].push(assetCount);
+        
+        emit AssetRegistered(assetCount, msg.sender);
+        return assetCount;
+    }
+    
+    function transferAsset(uint256 _assetId, address _to) 
+    public onlyAssetOwner(_assetId) {
+        require(_to != address(0), "Invalid recipient address");
+        require(assets[_assetId].isActive, "Asset is not active");
+        
+        address previousOwner = assets[_assetId].owner;
+        assets[_assetId].owner = _to;
+        
+        // Update owner asset lists
+        _removeFromOwnerAssets(previousOwner, _assetId);
+        ownerAssets[_to].push(_assetId);
+        
+        emit AssetTransferred(_assetId, previousOwner, _to);
+    }
+    
+    function deactivateAsset(uint256 _assetId) public onlyAssetOwner(_assetId) {
+        require(assets[_assetId].isActive, "Asset already deactivated");
+        
+        assets[_assetId].isActive = false;
+        emit AssetDeactivated(_assetId);
+    }
+    
+    function getAssetsByOwner(address _owner) public view 
+    returns (uint256[] memory) {
+        return ownerAssets[_owner];
+    }
+    
+    function getAsset(uint256 _assetId) public view returns (
+        string memory name,
+        string memory description,
+        address owner,
+        bool isActive,
+        uint256 registrationDate
+    ) {
+        Asset storage asset = assets[_assetId];
+        return (
+            asset.name,
+            asset.description,
+            asset.owner,
+            asset.isActive,
+            asset.registrationDate
+        );
+    }
+    
+    function _removeFromOwnerAssets(address _owner, uint256 _assetId) private {
+        uint256[] storage ownerAssetList = ownerAssets[_owner];
+        for (uint256 i = 0; i < ownerAssetList.length; i++) {
+            if (ownerAssetList[i] == _assetId) {
+                ownerAssetList[i] = ownerAssetList[ownerAssetList.length - 1];
+                ownerAssetList.pop();
+                break;
+            }
+        }
+    }
+}`,
+                    explanation: "This exercise shows basic array manipulation, struct usage, event emission, and ownership management in Solidity. It includes modifiers for access control and helper functions for array management."
+                }
+            }
+        ],
+        intermediateExercises: [
+            {
+                title: "Staking Rewards Contract",
+                difficulty: "Medium",
+                description: "Create a staking contract where users can stake tokens and earn rewards based on time and amount staked.",
+                hints: [
+                    "Implement reward calculation based on time",
+                    "Handle multiple staking positions",
+                    "Include compound interest",
+                    "Add emergency withdrawal"
+                ],
+                solution: {
+                    code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/security/Pausable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract StakingRewards is ReentrancyGuard, Pausable, Ownable {
+    struct StakePosition {
+        uint256 amount;
+        uint256 startTime;
+        uint256 lastUpdateTime;
+        uint256 accumulatedRewards;
+    }
+    
+    IERC20 public immutable stakingToken;
+    IERC20 public immutable rewardsToken;
+    
+    uint256 public constant REWARD_RATE = 10; // 10% APR
+    uint256 public constant MINIMUM_STAKE = 100e18; // 100 tokens
+    uint256 public constant REWARD_PRECISION = 1e18;
+    
+    mapping(address => StakePosition) public stakes;
+    uint256 public totalStaked;
+    
+    event Staked(address indexed user, uint256 amount);
+    event Withdrawn(address indexed user, uint256 amount);
+    event RewardsClaimed(address indexed user, uint256 amount);
+    
+    constructor(address _stakingToken, address _rewardsToken) {
+        stakingToken = IERC20(_stakingToken);
+        rewardsToken = IERC20(_rewardsToken);
+    }
+    
+    function stake(uint256 _amount) public nonReentrant whenNotPaused {
+        require(_amount >= MINIMUM_STAKE, "Amount below minimum stake");
+        
+        // Update rewards before modifying stake
+        _updateRewards(msg.sender);
+        
+        // Transfer tokens
+        stakingToken.transferFrom(msg.sender, address(this), _amount);
+        
+        // Update stake
+        stakes[msg.sender].amount += _amount;
+        if (stakes[msg.sender].startTime == 0) {
+            stakes[msg.sender].startTime = block.timestamp;
+        }
+        totalStaked += _amount;
+        
+        emit Staked(msg.sender, _amount);
+    }
+    
+    function withdraw(uint256 _amount) public nonReentrant {
+        require(stakes[msg.sender].amount >= _amount, "Insufficient stake");
+        
+        // Update rewards before modifying stake
+        _updateRewards(msg.sender);
+        
+        // Update stake
+        stakes[msg.sender].amount -= _amount;
+        totalStaked -= _amount;
+        
+        // Transfer tokens
+        stakingToken.transfer(msg.sender, _amount);
+        
+        emit Withdrawn(msg.sender, _amount);
+    }
+    
+    function claimRewards() public nonReentrant {
+        _updateRewards(msg.sender);
+        
+        uint256 rewards = stakes[msg.sender].accumulatedRewards;
+        require(rewards > 0, "No rewards to claim");
+        
+        stakes[msg.sender].accumulatedRewards = 0;
+        rewardsToken.transfer(msg.sender, rewards);
+        
+        emit RewardsClaimed(msg.sender, rewards);
+    }
+    
+    function calculateRewards(address _staker) public view returns (uint256) {
+        StakePosition storage stake = stakes[_staker];
+        if (stake.amount == 0) return 0;
+        
+        uint256 timeElapsed = block.timestamp - stake.lastUpdateTime;
+        return (stake.amount * REWARD_RATE * timeElapsed) / 
+               (365 days * REWARD_PRECISION);
+    }
+    
+    function _updateRewards(address _staker) private {
+        uint256 rewards = calculateRewards(_staker);
+        if (rewards > 0) {
+            stakes[_staker].accumulatedRewards += rewards;
+        }
+        stakes[_staker].lastUpdateTime = block.timestamp;
+    }
+    
+    // Emergency functions
+    function pause() external onlyOwner {
+        _pause();
+    }
+    
+    function unpause() external onlyOwner {
+        _unpause();
+    }
+    
+    function emergencyWithdraw() external nonReentrant {
+        uint256 amount = stakes[msg.sender].amount;
+        require(amount > 0, "No stake to withdraw");
+        
+        // Reset stake
+        stakes[msg.sender].amount = 0;
+        totalStaked -= amount;
+        
+        // Transfer tokens
+        stakingToken.transfer(msg.sender, amount);
+        
+        emit Withdrawn(msg.sender, amount);
+    }
+    
+    // View functions
+    function getStakeInfo(address _staker) public view returns (
+        uint256 amount,
+        uint256 startTime,
+        uint256 accumulatedRewards,
+        uint256 pendingRewards
+    ) {
+        StakePosition storage stake = stakes[_staker];
+        return (
+            stake.amount,
+            stake.startTime,
+            stake.accumulatedRewards,
+            calculateRewards(_staker)
+        );
+    }
+}`,
+                    explanation: "This intermediate exercise demonstrates implementation of a staking system with reward calculations, security features, and emergency functions. It includes proper handling of decimals, time-based calculations, and state management."
+                }
+            },
+            {
+                title: "Multi-Signature Wallet",
+                difficulty: "Medium",
+                description: "Create a multi-signature wallet contract that requires multiple approvals for transactions.",
+                hints: [
+                    "Implement owner management",
+                    "Add transaction proposal system",
+                    "Include approval tracking",
+                    "Handle transaction execution"
+                ],
+                solution: {
+                    code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract MultiSigWallet {
+    struct Transaction {
+        address to;
+        uint256 value;
+        bytes data;
+        bool executed;
+        uint256 numConfirmations;
+    }
+    
+    event Deposit(address indexed sender, uint256 amount);
+    event SubmitTransaction(
+        address indexed owner,
+        uint256 indexed txIndex,
+        address indexed to,
+        uint256 value,
+        bytes data
+    );
+    event ConfirmTransaction(address indexed owner, uint256 indexed txIndex);
+    event RevokeConfirmation(address indexed owner, uint256 indexed txIndex);
+    event ExecuteTransaction(address indexed owner, uint256 indexed txIndex);
+    
+    address[] public owners;
+    mapping(address => bool) public isOwner;
+    uint256 public numConfirmationsRequired;
+    
+    Transaction[] public transactions;
+    mapping(uint256 => mapping(address => bool)) public isConfirmed;
+    
+    modifier onlyOwner() {
+        require(isOwner[msg.sender], "Not owner");
+        _;
+    }
+    
+    modifier txExists(uint256 _txIndex) {
+        require(_txIndex < transactions.length, "Transaction does not exist");
+        _;
+    }
+    
+    modifier notExecuted(uint256 _txIndex) {
+        require(!transactions[_txIndex].executed, "Transaction already executed");
+        _;
+    }
+    
+    modifier notConfirmed(uint256 _txIndex) {
+        require(!isConfirmed[_txIndex][msg.sender], "Transaction already confirmed");
+        _;
+    }
+    
+    constructor(address[] memory _owners, uint256 _numConfirmationsRequired) {
+        require(_owners.length > 0, "Owners required");
+        require(
+            _numConfirmationsRequired > 0 &&
+            _numConfirmationsRequired <= _owners.length,
+            "Invalid number of required confirmations"
+        );
+         for (uint256 i = 0; i < _owners.length; i++) {
+            address owner = _owners[i];
+            
+            require(owner != address(0), "Invalid owner");
+            require(!isOwner[owner], "Owner not unique");
+            
+            isOwner[owner] = true;
+            owners.push(owner);
+        }
+        
+        numConfirmationsRequired = _numConfirmationsRequired;
+    }
+    
+    receive() external payable {
+        emit Deposit(msg.sender, msg.value);
+    }
+    
+    function submitTransaction(
+        address _to,
+        uint256 _value,
+        bytes memory _data
+    ) public onlyOwner {
+        uint256 txIndex = transactions.length;
+        
+        transactions.push(Transaction({
+            to: _to,
+            value: _value,
+            data: _data,
+            executed: false,
+            numConfirmations: 0
+        }));
+        
+        emit SubmitTransaction(msg.sender, txIndex, _to, _value, _data);
+    }
+    
+    function confirmTransaction(uint256 _txIndex)
+        public
+        onlyOwner
+        txExists(_txIndex)
+        notExecuted(_txIndex)
+        notConfirmed(_txIndex)
+    {
+        Transaction storage transaction = transactions[_txIndex];
+        transaction.numConfirmations += 1;
+        isConfirmed[_txIndex][msg.sender] = true;
+        
+        emit ConfirmTransaction(msg.sender, _txIndex);
+    }
+    
+    function executeTransaction(uint256 _txIndex)
+        public
+        onlyOwner
+        txExists(_txIndex)
+        notExecuted(_txIndex)
+    {
+        Transaction storage transaction = transactions[_txIndex];
+        
+        require(
+            transaction.numConfirmations >= numConfirmationsRequired,
+            "Cannot execute tx"
+        );
+        
+        transaction.executed = true;
+        
+        (bool success, ) = transaction.to.call{value: transaction.value}(
+            transaction.data
+        );
+        require(success, "Transaction failed");
+        
+        emit ExecuteTransaction(msg.sender, _txIndex);
+    }
+    
+    function revokeConfirmation(uint256 _txIndex)
+        public
+        onlyOwner
+        txExists(_txIndex)
+        notExecuted(_txIndex)
+    {
+        Transaction storage transaction = transactions[_txIndex];
+        
+        require(isConfirmed[_txIndex][msg.sender], "Tx not confirmed");
+        
+        transaction.numConfirmations -= 1;
+        isConfirmed[_txIndex][msg.sender] = false;
+        
+        emit RevokeConfirmation(msg.sender, _txIndex);
+    }
+    
+    function getOwners() public view returns (address[] memory) {
+        return owners;
+    }
+    
+    function getTransactionCount() public view returns (uint256) {
+        return transactions.length;
+    }
+    
+    function getTransaction(uint256 _txIndex)
+        public
+        view
+        returns (
+            address to,
+            uint256 value,
+            bytes memory data,
+            bool executed,
+            uint256 numConfirmations
+        )
+    {
+        Transaction storage transaction = transactions[_txIndex];
+        
+        return (
+            transaction.to,
+            transaction.value,
+            transaction.data,
+            transaction.executed,
+            transaction.numConfirmations
+        );
+    }
+    
+    function isTransactionConfirmed(
+        uint256 _txIndex,
+        address _owner
+    ) public view returns (bool) {
+        return isConfirmed[_txIndex][_owner];
+    }
+}`,
+    explanation: "This intermediate exercise implements a multi-signature wallet with features including:\n" +
+                "1. Multiple owner management\n" +
+                "2. Transaction proposal and confirmation system\n" +
+                "3. Secure execution of approved transactions\n" +
+                "4. Confirmation tracking and revocation\n" +
+                "5. Various view functions for wallet state inspection"
+}
+            }
+        ],
+        advancedExercises: [
+        {
+            title: "Automated Market Maker (AMM)",
+            difficulty: "Hard",
+            description: "Create a basic AMM protocol with liquidity provision and trading functionality.",
+            hints: [
+                "Implement constant product formula",
+                "Handle liquidity provider tokens",
+                "Include slippage protection",
+                "Add price oracle functionality"
+            ],
+            solution: {
+                code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract LiquidityPool is ERC20, ReentrancyGuard {
+    IERC20 public immutable token0;
+    IERC20 public immutable token1;
+    
+    uint256 private reserve0;
+    uint256 private reserve1;
+    
+    uint256 private constant MINIMUM_LIQUIDITY = 1000;
+    uint256 public constant FEE_DENOMINATOR = 1000;
+    uint256 public fee = 3; // 0.3%
+    
+    constructor(
+        address _token0,
+        address _token1
+    ) ERC20("LP Token", "LP") {
+        token0 = IERC20(_token0);
+        token1 = IERC20(_token1);
+    }
+    
+    function addLiquidity(
+        uint256 amount0Desired,
+        uint256 amount1Desired,
+        uint256 amount0Min,
+        uint256 amount1Min
+    ) external nonReentrant returns (uint256 liquidity) {
+        require(amount0Desired > 0 && amount1Desired > 0, 
+               "Insufficient input amounts");
+               
+        uint256 _totalSupply = totalSupply();
+        if (_totalSupply == 0) {
+            liquidity = sqrt(amount0Desired * amount1Desired) - MINIMUM_LIQUIDITY;
+            _mint(address(0), MINIMUM_LIQUIDITY);
+        } else {
+            liquidity = min(
+                (amount0Desired * _totalSupply) / reserve0,
+                (amount1Desired * _totalSupply) / reserve1
+            );
+        }
+        require(liquidity > 0, "Insufficient liquidity minted");
+        
+        uint256 amount0 = (liquidity * reserve0) / _totalSupply;
+        uint256 amount1 = (liquidity * reserve1) / _totalSupply;
+        
+        require(amount0 >= amount0Min, "Amount0 below minimum");
+        require(amount1 >= amount1Min, "Amount1 below minimum");
+        
+        token0.transferFrom(msg.sender, address(this), amount0);
+        token1.transferFrom(msg.sender, address(this), amount1);
+        
+        _update(reserve0 + amount0, reserve1 + amount1);
+        _mint(msg.sender, liquidity);
+    }
+    
+    function removeLiquidity(
+        uint256 liquidity,
+        uint256 amount0Min,
+        uint256 amount1Min
+    ) external nonReentrant returns (uint256 amount0, uint256 amount1) {
+        require(liquidity > 0, "Insufficient liquidity burned");
+        
+        amount0 = (liquidity * reserve0) / totalSupply();
+        amount1 = (liquidity * reserve1) / totalSupply();
+        require(amount0 >= amount0Min, "Amount0 below minimum");
+        require(amount1 >= amount1Min, "Amount1 below minimum");
+        
+        _burn(msg.sender, liquidity);
+        _update(reserve0 - amount0, reserve1 - amount1);
+        
+        token0.transfer(msg.sender, amount0);
+        token1.transfer(msg.sender, amount1);
+    }
+    
+    function swap(
+        uint256 amount0In,
+        uint256 amount1In,
+        uint256 amount0Out,
+        uint256 amount1Out,
+        address to
+    ) external nonReentrant {
+        require(amount0In > 0 || amount1In > 0, "Insufficient input amount");
+        require(amount0Out > 0 || amount1Out > 0, "Insufficient output amount");
+        
+        uint256 balance0 = token0.balanceOf(address(this));
+        uint256 balance1 = token1.balanceOf(address(this));
+        
+        if (amount0In > 0) 
+            token0.transferFrom(msg.sender, address(this), amount0In);
+        if (amount1In > 0)
+            token1.transferFrom(msg.sender, address(this), amount1In);
+            
+        balance0 = token0.balanceOf(address(this)) - balance0;
+        balance1 = token1.balanceOf(address(this)) - balance1;
+        
+        uint256 amount0InWithFee = (balance0 * (FEE_DENOMINATOR - fee)) / 
+                                  FEE_DENOMINATOR;
+        uint256 amount1InWithFee = (balance1 * (FEE_DENOMINATOR - fee)) / 
+                                  FEE_DENOMINATOR;
+        
+        require((reserve0 + amount0InWithFee) * 
+                (reserve1 + amount1InWithFee) >= 
+                reserve0 * reserve1, "K");
+                
+        _update(reserve0 + amount0InWithFee, 
+               reserve1 + amount1InWithFee);
+               
+        if (amount0Out > 0) token0.transfer(to, amount0Out);
+        if (amount1Out > 0) token1.transfer(to, amount1Out);
+    }
+    
+    function _update(uint256 _reserve0, uint256 _reserve1) private {
+        reserve0 = _reserve0;
+        reserve1 = _reserve1;
+    }
+    
+    function sqrt(uint256 y) internal pure returns (uint256 z) {
+        if (y > 3) {
+            z = y;
+            uint256 x = y / 2 + 1;
+            while (x < z) {
+                z = x;
+                x = (y / x + x) / 2;
+            }
+        } else if (y != 0) {
+            z = 1;
+        }
+    }
+    
+    function min(uint256 x, uint256 y) internal pure returns (uint256) {
+        return x < y ? x : y;
+    }
+    
+    // View functions
+    function getReserves() public view returns (
+        uint256 _reserve0, 
+        uint256 _reserve1
+    ) {
+        return (reserve0, reserve1);
+    }
+    
+    function getAmountOut(
+        uint256 amountIn,
+        uint256 reserveIn,
+        uint256 reserveOut
+    ) public view returns (uint256 amountOut) {
+        require(amountIn > 0, "Insufficient input amount");
+        require(reserveIn > 0 && reserveOut > 0, "Insufficient liquidity");
+        
+        uint256 amountInWithFee = amountIn * (FEE_DENOMINATOR - fee);
+        uint256 numerator = amountInWithFee * reserveOut;
+        uint256 denominator = reserveIn * FEE_DENOMINATOR + amountInWithFee;
+        amountOut = numerator / denominator;
+    }
+}`,
+                explanation: "This advanced exercise implements a basic AMM with constant product formula, liquidity provision, and swap functionality. It includes slippage protection, fees, and proper handling of liquidity provider tokens."
+            }
+        }     
+        ]
+    }
+}
 }
 
 ];
