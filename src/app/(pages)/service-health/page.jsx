@@ -2,38 +2,40 @@
 import React from 'react';
 
 const services = [
-    { name: "Access Approval", regions: ["Available", "", "Available", "", "", "Available", "Available"] },
-    { name: "Access Context Manager", regions: ["Available", "Available", "Available", "Available", "Available", "Available", "Available"] },
-    { name: "Agent Assist", regions: ["Available", "", "Available", "Service information", "", "", "One or more regions affected"] },
+    { name: "Google Maps API", regions: ["Available", "", "Available", "Service information", "", "Available", "Available"] },
+    { name: "Firebase Authentication", regions: ["Available", "Available", "Service information", "Available", "Available", "", "One or more regions affected"] },
+    { name: "Cloud Functions", regions: ["Available", "Available", "Available", "", "Service information", "", "Available"] },
+    { name: "BigQuery", regions: ["One or more regions affected", "Available", "Available", "Available", "", "", "Service information"] },
+    { name: "Cloud Run", regions: ["Available", "", "Available", "", "Available", "", "Available"] },
     // Add more services as needed
 ];
 
-const ServiceHealthPage = () => {
+const DeveloperServiceHealthPage = () => {
     return (
         <div className="bg-gray-50 min-h-screen p-6">
             {/* Header Section */}
             <header className="flex items-center justify-between p-4 border-b border-gray-300">
-                <h1 className="text-3xl font-bold text-blue-700">Google Cloud</h1>
+                <h1 className="text-3xl font-bold text-blue-700">Google Developers</h1>
                 <a href="#" className="text-blue-600 underline">Console</a>
             </header>
 
             <div className="p-6 bg-white shadow-md rounded-md mt-6">
-                <h2 className="text-xl font-semibold">Service Health</h2>
+                <h2 className="text-xl font-semibold">Developer Service Health</h2>
                 <p className="mt-2 text-gray-700">
-                    This page provides status information on the services that are part of Google Cloud. Check back here to view the current status of the services listed below. If you are experiencing an issue not listed here, please <a href="#" className="text-blue-600 underline">contact Support</a>. Learn more about what's posted on the dashboard in this <a href="#" className="text-blue-600 underline">FAQ</a>.
+                    This page provides status information on the Google Developer services and APIs. Check back here to view the current status of these services. If you are experiencing an issue not listed here, please <a href="#" className="text-blue-600 underline">contact Support</a>. Learn more about what's posted on the dashboard in this <a href="#" className="text-blue-600 underline">FAQ</a>.
                 </p>
             </div>
 
             <div className="bg-blue-100 p-4 rounded-md mt-4 flex justify-between items-center">
                 <div>
                     <p className="text-blue-900 font-medium">
-                        See incidents that impact your workloads and resources
+                        See incidents impacting your projects and resources
                     </p>
                     <p className="text-blue-700 text-sm">
-                        Use Personalized Service Health for a more detailed overview of incidents affecting your Google Cloud projects, including custom alerts, API data, and logs. <a href="#" className="underline">Learn more</a>
+                        Use Personalized Developer Service Health for a more detailed view of incidents affecting your Google Developer tools, including custom alerts, API data, and logs. <a href="#" className="underline">Learn more</a>
                     </p>
                 </div>
-                <button className="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold">Go to your account</button>
+                <button className="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold">Go to Developer Console</button>
             </div>
 
             {/* Tabs Section */}
@@ -47,9 +49,9 @@ const ServiceHealthPage = () => {
 
             <div className="text-sm text-gray-700 mt-4">
                 <p>
-                    Check status by product and location. Click the other tabs to check the status for specific regions and multi-regions. <br />
+                    Check status by product and location. Click the other tabs to view the status for specific regions and multi-regions. <br />
                     <span className="font-semibold">Multi-regions:</span> Services in a multi-region location are managed by Google to be redundant and distributed across multiple regions in a large geographic area. <a href="#" className="text-blue-600 underline">Learn more</a><br />
-                    <span className="font-semibold">Global:</span> status for a specific globally distributed service offered to the product. This status does not refer to all product service around the world, just the specific global service.
+                    <span className="font-semibold">Global:</span> Status for globally distributed services. This status does not indicate availability worldwide, but for the specific global service.
                 </p>
             </div>
 
@@ -74,7 +76,7 @@ const ServiceHealthPage = () => {
                 <table className="min-w-full bg-white border border-gray-200">
                     <thead>
                         <tr className="text-left bg-gray-100">
-                            <th className="p-3 border-b border-gray-200">Products</th>
+                            <th className="p-3 border-b border-gray-200">Services / APIs</th>
                             {["Americas", "Europe", "Asia Pacific", "Middle East", "Africa", "Multi-regions", "Global"].map((region, index) => (
                                 <th key={index} className="p-3 border-b border-gray-200">{region} (regions)</th>
                             ))}
@@ -100,4 +102,4 @@ const ServiceHealthPage = () => {
     );
 };
 
-export default ServiceHealthPage;
+export default DeveloperServiceHealthPage;
