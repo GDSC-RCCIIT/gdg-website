@@ -242,7 +242,7 @@ function SignUp() {
                                 </div>
                             </form>
                             <p className="mt-4 text-center text-gray-600">
-                                Already have an account? <Link href="/SignIn" className="text-blue-600 hover:underline">Sign In</Link>
+                                Already have an account? <Link href="/SignIn" className="text-blue-600 hover:underline">Login</Link>
                             </p>
                         </div>
                     </main>
