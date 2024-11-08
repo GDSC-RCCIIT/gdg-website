@@ -16319,7 +16319,2221 @@ contract LiquidityPool is ERC20, ReentrancyGuard {
         ]
     }
 }
+},
+{
+    id: 14,
+    title: "Data Engineering",
+    description: "To learn data engineering, follow this roadmap",
+    extendedContent: `
+        Master the fundamentals of data engineering and build robust data pipelines. Start with 
+        programming fundamentals, SQL, and database systems. Learn about data warehousing, ETL 
+        processes, and big data technologies. Progress through distributed systems, cloud platforms, 
+        and modern data stack. Understand data modeling, pipeline orchestration, and streaming 
+        systems. Advanced topics include data governance, security, optimization techniques, and 
+        MLOps integration. Practice with real-world scenarios and industry-standard tools.
+    `,
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        prerequisites: [
+            "Basic programming knowledge (Python preferred)",
+            "Understanding of databases and SQL",
+            "Familiarity with command line operations",
+            "Basic understanding of algorithms and data structures",
+            "Knowledge of version control systems",
+            "Basic mathematics and statistics",
+            "Problem-solving aptitude"
+        ],
+        outcomes: [
+            "Design and implement efficient data pipelines",
+            "Build scalable data warehousing solutions",
+            "Develop ETL/ELT processes",
+            "Implement data quality and testing frameworks",
+            "Deploy cloud-based data solutions",
+            "Manage big data processing systems",
+            "Create data governance frameworks",
+            "Optimize data infrastructure performance",
+            "Handle real-time data streaming",
+            "Build data lakes and lakehouses"
+        ],
+        sections: [
+            {
+                title: "Data Processing Fundamentals",
+                content: "Master core data processing concepts including ETL/ELT, data cleaning, and transformation. Learn about data quality, validation techniques, and best practices. Understand different file formats, compression methods, and data serialization."
+            },
+            {
+                title: "Database Systems",
+                content: "Study relational and NoSQL databases, data modeling techniques, and query optimization. Learn about database administration, indexing strategies, and transaction management. Master data warehouse design principles and columnar storage systems."
+            },
+            {
+                title: "Big Data Technologies",
+                content: "Learn distributed computing frameworks, batch processing systems, and big data storage solutions. Understand Hadoop ecosystem, Spark architecture, and distributed file systems. Study data partitioning, parallel processing, and resource management."
+            },
+            {
+                title: "Data Pipeline Development",
+                content: "Master pipeline orchestration tools, workflow management, and scheduling systems. Learn about data pipeline patterns, error handling, and monitoring strategies. Understand CI/CD for data pipelines and infrastructure as code."
+            },
+            {
+                title: "Cloud Data Platforms",
+                content: "Study cloud services for data engineering, serverless architectures, and cloud-native solutions. Learn about cloud storage options, compute services, and managed data services. Master multi-cloud strategies and cloud cost optimization."
+            },
+            {
+                title: "Stream Processing",
+                content: "Understand real-time data processing, streaming architectures, and event-driven systems. Learn about stream processing frameworks, message queues, and pub/sub systems. Study exactly-once processing and state management."
+            },
+            {
+                title: "Data Governance & Security",
+                content: "Learn data governance frameworks, compliance requirements, and security best practices. Understand data privacy regulations, access control, and encryption methods. Study data lineage, metadata management, and data catalogs."
+            },
+            {
+                title: "Performance Optimization",
+                content: "Master query optimization, performance tuning, and resource management. Learn about caching strategies, data partitioning, and distributed system optimization. Study monitoring tools, profiling techniques, and bottleneck identification."
+            }
+        ]
+    },
+    content: {
+        examples: [
+            {
+                title: "ETL Pipeline with Error Handling",
+                code: `import pandas as pd
+import sqlite3
+from datetime import datetime
+import logging
+import json
+from typing import Dict, List, Optional
+import requests
+from concurrent.futures import ThreadPoolExecutor
+
+class DataPipeline:
+    def __init__(self, config_path: str):
+        self.load_config(config_path)
+        self.setup_logging()
+        
+    def load_config(self, config_path: str) -> None:
+        """Load pipeline configuration from JSON file."""
+        try:
+            with open(config_path, 'r') as f:
+                self.config = json.load(f)
+        except Exception as e:
+            raise RuntimeError(f"Failed to load config: {str(e)}")
+            
+    def setup_logging(self) -> None:
+        """Configure logging with timestamp and level."""
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s',
+            handlers=[
+                logging.FileHandler('pipeline.log'),
+                logging.StreamHandler()
+            ]
+        )
+        
+    def extract_data(self, source_type: str, source_path: str) -> pd.DataFrame:
+        """Extract data from various sources with error handling."""
+        try:
+            if source_type == 'csv':
+                df = pd.read_csv(source_path)
+            elif source_type == 'api':
+                response = requests.get(source_path)
+                response.raise_for_status()
+                df = pd.DataFrame(response.json())
+            elif source_type == 'database':
+                conn = sqlite3.connect(source_path)
+                df = pd.read_sql(self.config['extraction_query'], conn)
+                conn.close()
+            else:
+                raise ValueError(f"Unsupported source type: {source_type}")
+                
+            logging.info(f"Successfully extracted {len(df)} records")
+            return df
+            
+        except Exception as e:
+            logging.error(f"Data extraction failed: {str(e)}")
+            raise
+            
+    def transform_data(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Apply transformations with validation and error handling."""
+        try:
+            # Data validation
+            self._validate_data(df)
+            
+            # Apply transformations
+            df = self._clean_data(df)
+            df = self._enrich_data(df)
+            df = self._aggregate_data(df)
+            
+            logging.info("Data transformation completed successfully")
+            return df
+            
+        except Exception as e:
+            logging.error(f"Data transformation failed: {str(e)}")
+            raise
+            
+    def _validate_data(self, df: pd.DataFrame) -> None:
+        """Validate data quality and completeness."""
+        # Check for required columns
+        missing_cols = set(self.config['required_columns']) - set(df.columns)
+        if missing_cols:
+            raise ValueError(f"Missing required columns: {missing_cols}")
+            
+        # Check for null values in critical columns
+        null_counts = df[self.config['required_columns']].isnull().sum()
+        if null_counts.any():
+            logging.warning(f"Null values found: {null_counts[null_counts > 0]}")
+            
+        # Check data types
+        for col, dtype in self.config['column_types'].items():
+            if df[col].dtype != dtype:
+                logging.warning(f"Column {col} has incorrect type: {df[col].dtype}")
+                
+    def _clean_data(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Clean and standardize data."""
+        # Handle missing values
+        for col, strategy in self.config['missing_value_strategy'].items():
+            if strategy == 'drop':
+                df = df.dropna(subset=[col])
+            elif strategy == 'mean':
+                df[col] = df[col].fillna(df[col].mean())
+            elif strategy == 'mode':
+                df[col] = df[col].fillna(df[col].mode()[0])
+                
+        # Remove duplicates
+        df = df.drop_duplicates(subset=self.config['unique_columns'])
+        
+        # Standardize text columns
+        for col in self.config['text_columns']:
+            df[col] = df[col].str.strip().str.lower()
+            
+        return df
+        
+    def _enrich_data(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Add derived columns and external data."""
+        # Add timestamp columns
+        df['processed_at'] = datetime.now()
+        
+        # Calculate derived metrics
+        for metric in self.config['derived_metrics']:
+            df[metric['name']] = eval(metric['formula'])
+            
+        # Add external data if configured
+        if 'external_data' in self.config:
+            df = self._add_external_data(df)
+            
+        return df
+        
+    def _aggregate_data(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Perform aggregations based on configuration."""
+        if 'aggregations' in self.config:
+            agg_dfs = []
+            for agg in self.config['aggregations']:
+                agg_df = df.groupby(agg['group_by']).agg(agg['metrics'])
+                agg_dfs.append(agg_df)
+            df = pd.concat([df] + agg_dfs, axis=1)
+        return df
+        
+    def load_data(self, df: pd.DataFrame, target_type: str, 
+                  target_path: str) -> None:
+        """Load transformed data to target destination."""
+        try:
+            if target_type == 'csv':
+                df.to_csv(target_path, index=False)
+            elif target_type == 'database':
+                conn = sqlite3.connect(target_path)
+                df.to_sql(self.config['target_table'], conn, 
+                         if_exists='replace', index=False)
+                conn.close()
+            elif target_type == 'parquet':
+                df.to_parquet(target_path, index=False)
+            else:
+                raise ValueError(f"Unsupported target type: {target_type}")
+                
+            logging.info(f"Successfully loaded {len(df)} records")
+            
+        except Exception as e:
+            logging.error(f"Data loading failed: {str(e)}")
+            raise
+            
+    def run_pipeline(self) -> None:
+        """Execute the complete ETL pipeline."""
+        try:
+            # Extract
+            df = self.extract_data(
+                self.config['source_type'],
+                self.config['source_path']
+            )
+            
+            # Transform
+            df = self.transform_data(df)
+            
+            # Load
+            self.load_data(
+                df,
+                self.config['target_type'],
+                self.config['target_path']
+            )
+            
+            logging.info("Pipeline completed successfully")
+            
+        except Exception as e:
+            logging.error(f"Pipeline failed: {str(e)}")
+            raise
+            
+if __name__ == "__main__":
+    # Example usage
+    config_path = "pipeline_config.json"
+    pipeline = DataPipeline(config_path)
+    pipeline.run_pipeline()`,
+                explanation: "This example demonstrates a configurable ETL pipeline with robust error handling, logging, data validation, and support for multiple data sources and targets."
+            },
+            {
+                title: "Real-Time Data Streaming Pipeline",
+                code: `from kafka import KafkaConsumer, KafkaProducer
+import json
+from datetime import datetime
+import logging
+from typing import Dict, List, Optional
+import threading
+from collections import defaultdict
+import redis
+import psycopg2
+from psycopg2.extras import execute_batch
+
+class StreamProcessor:
+    def __init__(self, config: Dict):
+        self.config = config
+        self.setup_logging()
+        self.setup_connections()
+        self.buffer = defaultdict(list)
+        self.buffer_lock = threading.Lock()
+        
+    def setup_logging(self) -> None:
+        """Configure logging system."""
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def setup_connections(self) -> None:
+        """Initialize connections to external systems."""
+        try:
+            # Kafka consumer
+            self.consumer = KafkaConsumer(
+                self.config['kafka_topic'],
+                bootstrap_servers=self.config['kafka_servers'],
+                auto_offset_reset='latest',
+                enable_auto_commit=False,
+                group_id=self.config['consumer_group'],
+                value_deserializer=lambda x: json.loads(x.decode('utf-8'))
+            )
+            
+            # Redis connection for caching
+            self.redis_client = redis.Redis(
+                host=self.config['redis_host'],
+                port=self.config['redis_port'],
+                db=0
+            )
+            
+            # Postgres connection for persistence
+            self.pg_conn = psycopg2.connect(
+                self.config['postgres_uri']
+            )
+            
+            logging.info("All connections established successfully")
+            
+        except Exception as e:
+            logging.error(f"Connection setup failed: {str(e)}")
+            raise
+            
+    def process_message(self, message: Dict) -> Dict:
+        """Process individual messages with business logic."""
+        try:
+            # Add processing timestamp
+            message['processed_at'] = datetime.now().isoformat()
+            
+            # Enrich with cached data
+            cached_data = self.redis_client.get(
+                f"user:{message['user_id']}"
+            )
+            if cached_data:
+                user_data = json.loads(cached_data)
+                message.update(user_data)
+            
+            # Apply transformations
+            if 'amount' in message:
+                message['amount_usd'] = self.convert_currency(
+                    message['amount'],
+                    message['currency']
+                )
+                
+            return message
+            
+        except Exception as e:
+            logging.error(f"Message processing failed: {str(e)}")
+            raise
+            
+    def convert_currency(self, amount: float, currency: str) -> float:
+        """Convert amount to USD using cached rates."""
+        if currency == 'USD':
+            return amount
+            
+        rate = self.redis_client.get(f"rate:{currency}")
+        if not rate:
+            logging.warning(f"Missing rate for {currency}")
+            return amount
+            
+        return amount * float(rate)
+        
+    def buffer_message(self, message: Dict) -> None:
+        """Add message to buffer for batch processing."""
+        with self.buffer_lock:
+            self.buffer[message['type']].append(message)
+            
+        # Check if buffer threshold is reached
+        if len(self.buffer[message['type']]) >= \
+           self.config['batch_size']:
+            self.flush_buffer(message['type'])
+            
+    def flush_buffer(self, message_type: str) -> None:
+        """Flush buffered messages to database."""
+        with self.buffer_lock:
+            messages = self.buffer[message_type]
+            if not messages:
+                return
+                
+            try:
+                # Prepare batch insert
+                table_name = f"events_{message_type}"
+                columns = messages[0].keys()
+                values = [
+                    [str(msg[col]) for col in columns]
+                    for msg in messages
+                ]
+                
+                query = f"""
+                    INSERT INTO {table_name}
+                    ({', '.join(columns)})
+                    VALUES %s
+                """
+                
+                with self.pg_conn.cursor() as cur:
+                    execute_batch(cur, query, values)
+                self.pg_conn.commit()
+                
+                # Clear buffer
+                self.buffer[message_type] = []
+                logging.info(f"Flushed {len(messages)} messages to {table_name}")
+                
+            except Exception as e:
+                logging.error(f"Buffer flush failed: {str(e)}")
+                self.pg_conn.rollback()
+                raise
+                
+    def start_processing(self) -> None:
+        """Main processing loop."""
+        try:
+            # Start background thread for periodic buffer flushing
+            timer = threading.Timer(
+                self.config['flush_interval'],
+                self.periodic_flush
+            )
+            timer.daemon = True
+            timer.start()
+            
+            # Process messages
+            for message in self.consumer:
+                try:
+                    # Process message
+                    processed_msg = self.process_message(
+                        message.value
+                    )
+                    
+                    # Buffer for batch processing
+                    self.buffer_message(processed_msg)
+                    
+                    # Commit offset
+                    self.consumer.commit()
+                    
+                except Exception as e:
+                    logging.error(f"Message processing failed: {str(e)}")
+                    continue
+                    
+        except KeyboardInterrupt:
+            logging.info("Shutting down stream processor")
+            self.shutdown()
+            
+    def periodic_flush(self) -> None:
+        """Periodically flush buffers regardless of size."""
+        while True:
+            try:
+                for message_type in self.buffer.keys():
+                    self.flush_buffer(message_type)
+                    
+                threading.Event().wait(
+                    self.config['flush_interval']
+                )
+                
+            except Exception as e:
+                logging.error(f"Periodic flush failed: {str(e)}")
+                
+    def shutdown(self) -> None:
+        """Clean shutdown of processor."""
+        try:
+            # Flush remaining messages
+            for message_type in self.buffer.keys():
+                self.flush_buffer(message_type)
+                
+            # Close connections
+            self.consumer.close()
+            self.redis_client.close()
+            self.pg_conn.close()
+            
+            logging.info("Stream processor shut down successfully")
+            
+        except Exception as e:
+            logging.error(f"Shutdown failed: {str(e)}")
+            raise
+            
+if __name__ == "__main__":
+    # Example configuration
+    config = {
+        'kafka_topic': 'events',
+        'kafka_servers': ['localhost:9092'],
+        'consumer_group': 'stream_processor',
+        'redis_host': 'localhost',
+        'redis_port': 6379,
+        'postgres_uri': 'postgresql://user:pass@localhost/db',
+        'batch_size': 1000,
+        'flush_interval': 60  # seconds
+    }
+    
+    # Start processor
+    processor = StreamProcessor(config)
+    processor.start_processing()`,
+                explanation: "This example shows a real-time data streaming pipeline using Kafka, Redis, and PostgreSQL. It includes message processing, buffering for batch operations, and proper error handling."
+            },
+            {
+                title: "Data Lake Management System",
+                code: `import boto3
+import pandas as pd
+from datetime import datetime, timedelta
+import pyarrow as pa
+import pyarrow.parquet as pq
+from typing import Dict, List, Optional
+import logging
+import json
+import hashlib
+from concurrent.futures import ThreadPoolExecutor
+
+class DataLakeManager:
+    def __init__(self, config: Dict):
+        self.config = config
+        self.setup_logging()
+        self.setup_connections()
+        
+    def setup_logging(self) -> None:
+        """Configure logging system."""
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s',
+            handlers=[
+                logging.FileHandler('datalake.log'),
+                logging.StreamHandler()
+            ]
+        )
+        
+    def setup_connections(self) -> None:
+        """Initialize AWS connections."""
+        try:
+            self.s3 = boto3.client(
+                's3',
+                aws_access_key_id=self.config['aws_access_key'],
+                aws_secret_access_key=self.config['aws_secret_key'],
+                region_name=self.config['aws_region']
+            )
+        self.glue = boto3.client(
+                'glue',
+                aws_access_key_id=self.config['aws_access_key'],
+                aws_secret_access_key=self.config['aws_secret_key'],
+                region_name=self.config['aws_region']
+            )
+            
+            self.athena = boto3.client(
+                'athena',
+                aws_access_key_id=self.config['aws_access_key'],
+                aws_secret_access_key=self.config['aws_secret_key'],
+                region_name=self.config['aws_region']
+            )
+            
+            logging.info("AWS connections established successfully")
+            
+        except Exception as e:
+            logging.error(f"AWS connection setup failed: {str(e)}")
+            raise
+            
+    def generate_partition_path(self, dataset: str, date: datetime) -> str:
+        """Generate S3 partition path based on date."""
+        return f"{dataset}/year={date.year}/month={date.month:02d}/day={date.day:02d}"
+        
+    def upload_to_data_lake(self, df: pd.DataFrame, dataset: str,
+                           partition_date: datetime) -> None:
+        """Upload dataframe to S3 in Parquet format with partitioning."""
+        try:
+            # Convert to PyArrow Table
+            table = pa.Table.from_pandas(df)
+            
+            # Generate partition path
+            partition_path = self.generate_partition_path(dataset, partition_date)
+            file_path = f"{partition_path}/{dataset}_{partition_date.strftime('%Y%m%d_%H%M%S')}.parquet"
+            
+            # Write to buffer
+            buffer = pa.BufferOutputStream()
+            pq.write_table(table, buffer)
+            
+            # Upload to S3
+            self.s3.put_object(
+                Bucket=self.config['data_lake_bucket'],
+                Key=file_path,
+                Body=buffer.getvalue().to_pybytes()
+            )
+            
+            # Update metadata
+            self._update_metadata(dataset, partition_path, df.shape[0])
+            
+            logging.info(f"Successfully uploaded {df.shape[0]} records to {file_path}")
+            
+        except Exception as e:
+            logging.error(f"Upload failed: {str(e)}")
+            raise
+            
+    def _update_metadata(self, dataset: str, partition_path: str,
+                        record_count: int) -> None:
+        """Update metadata catalog with partition information."""
+        try:
+            self.glue.update_partition(
+                DatabaseName=self.config['glue_database'],
+                TableName=dataset,
+                PartitionValueList=partition_path.split('/')[1:],
+                PartitionInput={
+                    'Parameters': {
+                        'record_count': str(record_count),
+                        'last_updated': datetime.now().isoformat()
+                    }
+                }
+            )
+        except Exception as e:
+            logging.warning(f"Metadata update failed: {str(e)}")
+            
+    def optimize_partitions(self, dataset: str, date_range: tuple) -> None:
+        """Optimize partitions by combining small files."""
+        try:
+            start_date, end_date = date_range
+            current_date = start_date
+            
+            while current_date <= end_date:
+                partition_path = self.generate_partition_path(dataset, current_date)
+                self._combine_small_files(dataset, partition_path)
+                current_date += timedelta(days=1)
+                
+        except Exception as e:
+            logging.error(f"Partition optimization failed: {str(e)}")
+            raise
+            
+    def _combine_small_files(self, dataset: str, partition_path: str,
+                           min_file_size_mb: int = 100) -> None:
+        """Combine small files in a partition."""
+        try:
+            # List all files in partition
+            response = self.s3.list_objects_v2(
+                Bucket=self.config['data_lake_bucket'],
+                Prefix=partition_path
+            )
+            
+            small_files = []
+            for obj in response.get('Contents', []):
+                if obj['Size'] < min_file_size_mb * 1024 * 1024:
+                    small_files.append(obj['Key'])
+                    
+            if not small_files:
+                return
+                
+            # Read and combine small files
+            dfs = []
+            for file in small_files:
+                response = self.s3.get_object(
+                    Bucket=self.config['data_lake_bucket'],
+                    Key=file
+                )
+                df = pd.read_parquet(response['Body'])
+                dfs.append(df)
+                
+            combined_df = pd.concat(dfs, ignore_index=True)
+            
+            # Upload combined file
+            new_file = f"{partition_path}/combined_{datetime.now().strftime('%Y%m%d_%H%M%S')}.parquet"
+            self.upload_to_data_lake(combined_df, dataset, datetime.now())
+            
+            # Delete old files
+            for file in small_files:
+                self.s3.delete_object(
+                    Bucket=self.config['data_lake_bucket'],
+                    Key=file
+                )
+                
+            logging.info(f"Combined {len(small_files)} small files in {partition_path}")
+            
+        except Exception as e:
+            logging.error(f"File combination failed: {str(e)}")
+            raise
+            
+    def query_data_lake(self, query: str) -> pd.DataFrame:
+        """Query data lake using Athena."""
+        try:
+            # Start query execution
+            response = self.athena.start_query_execution(
+                QueryString=query,
+                QueryExecutionContext={
+                    'Database': self.config['glue_database']
+                },
+                ResultConfiguration={
+                    'OutputLocation': f"s3://{self.config['athena_output_bucket']}/query_results/"
+                }
+            )
+            
+            query_execution_id = response['QueryExecutionId']
+            
+            # Wait for query completion
+            while True:
+                response = self.athena.get_query_execution(
+                    QueryExecutionId=query_execution_id
+                )
+                state = response['QueryExecution']['Status']['State']
+                
+                if state in ['SUCCEEDED', 'FAILED', 'CANCELLED']:
+                    break
+                    
+                time.sleep(1)
+                
+            if state == 'SUCCEEDED':
+                # Get results
+                response = self.athena.get_query_results(
+                    QueryExecutionId=query_execution_id
+                )
+                
+                # Convert to DataFrame
+                columns = [col['Label'] for col in response['ResultSet']['ResultSetMetadata']['ColumnInfo']]
+                data = []
+                for row in response['ResultSet']['Rows'][1:]:  # Skip header
+                    data.append([field.get('VarCharValue', '') for field in row['Data']])
+                    
+                return pd.DataFrame(data, columns=columns)
+            else:
+                raise Exception(f"Query failed with state: {state}")
+                
+        except Exception as e:
+            logging.error(f"Query execution failed: {str(e)}")
+            raise
+            
+if __name__ == "__main__":
+    # Example configuration
+    config = {
+        'aws_access_key': 'your_access_key',
+        'aws_secret_key': 'your_secret_key',
+        'aws_region': 'us-west-2',
+        'data_lake_bucket': 'your-data-lake-bucket',
+        'glue_database': 'your_database',
+        'athena_output_bucket': 'your-athena-output-bucket'
+    }
+    
+    # Initialize manager
+    lake_manager = DataLakeManager(config)
+    
+    # Example usage
+    df = pd.DataFrame({'col1': range(10), 'col2': range(10)})
+    lake_manager.upload_to_data_lake(df, 'example_dataset', datetime.now())
+    
+    # Query data
+    result_df = lake_manager.query_data_lake('SELECT * FROM example_dataset LIMIT 10')
+`,
+    explanation: "This example demonstrates a Data Lake management system using AWS services (S3, Glue, and Athena). It includes features for data upload, partitioning, small file optimization, and querying."
+        }
+    ],
+    roadmap: [
+        {
+            title: "1. Programming and SQL",
+            description: "Master core programming and database skills",
+            topics: [
+                "Python Programming",
+                "SQL Fundamentals and Advanced Queries",
+                "Data Structures and Algorithms",
+                "Version Control (Git)",
+                "Shell Scripting",
+                "Basic Linux Administration",
+                "Testing and Documentation"
+            ]
+        },
+        {
+            title: "2. Data Storage Systems",
+            description: "Learn various data storage solutions",
+            topics: [
+                "Relational Databases",
+                "NoSQL Databases",
+                "Data Warehouses",
+                "Data Lakes",
+                "OLTP vs OLAP Systems",
+                "Storage Formats (Parquet, ORC)",
+                "Indexing and Partitioning"
+            ]
+        },
+        {
+            title: "3. Data Processing",
+            description: "Master data processing frameworks",
+            topics: [
+                "Batch Processing Systems",
+                "Stream Processing",
+                "ETL/ELT Tools",
+                "Apache Spark",
+                "Data Quality and Validation",
+                "Error Handling",
+                "Performance Optimization"
+            ]
+        },
+        {
+            title: "4. Data Pipeline Orchestration",
+            description: "Learn workflow management and scheduling",
+            topics: [
+                "Apache Airflow",
+                "Workflow Design Patterns",
+                "Dependency Management",
+                "Pipeline Monitoring",
+                "Error Recovery",
+                "Resource Management",
+                "CI/CD for Pipelines"
+            ]
+        },
+        {
+            title: "5. Cloud Platforms",
+            description: "Master cloud data services",
+            topics: [
+                "AWS Data Services",
+                "GCP Data Services",
+                "Azure Data Services",
+                "Cloud Storage Solutions",
+                "Serverless Computing",
+                "Cloud Security",
+                "Cost Optimization"
+            ]
+        },
+        {
+            title: "6. Data Governance",
+            description: "Learn data management and compliance",
+            topics: [
+                "Data Quality Framework",
+                "Metadata Management",
+                "Data Catalogs",
+                "Security and Privacy",
+                "Compliance (GDPR, CCPA)",
+                "Data Lineage",
+                "Access Control"
+            ]
+        },
+        {
+            title: "7. Advanced Topics",
+            description: "Master advanced data engineering concepts",
+            topics: [
+                "Real-time Analytics",
+                "Machine Learning Pipelines",
+                "Data Mesh Architecture",
+                "DataOps Practices",
+                "Distributed Systems",
+                "Performance Tuning",
+                "System Design"
+            ]
+        }
+    ],
+    resources: {
+        documentation: [
+            {
+                title: "Apache Spark Documentation",
+                url: "https://spark.apache.org/docs/latest/",
+                description: "Official documentation for Apache Spark",
+                type: "Framework Documentation"
+            },
+            {
+                title: "Apache Airflow Documentation",
+                url: "https://airflow.apache.org/docs/",
+                description: "Comprehensive guide for Airflow",
+                type: "Tool Documentation"
+            },
+            {
+                title: "AWS Data Analytics",
+                url: "https://docs.aws.amazon.com/analytics/",
+                description: "AWS data services documentation",
+                type: "Cloud Documentation"
+            },
+            {
+                title: "Snowflake Documentation",
+                url: "https://docs.snowflake.com/",
+                description: "Data warehouse platform documentation",
+                type: "Platform Documentation"
+            },
+            {
+                title: "dbt Documentation",
+                url: "https://docs.getdbt.com/",
+                description: "Data transformation tool documentation",
+                type: "Tool Documentation"
+            }
+        ],
+        tutorials: [
+            {
+                title: "DataCamp Data Engineering Track",
+                url: "https://www.datacamp.com/tracks/data-engineer",
+                description: "Interactive data engineering courses",
+                type: "Online Course"
+            },
+            {
+                title: "Coursera Data Engineering Specialization",
+                url: "https://www.coursera.org/specializations/gcp-data-engineering",
+                description: "Google Cloud data engineering courses",
+                type: "Course Series"
+            },
+            {
+                title: "Mode SQL Tutorial",
+                url: "https://mode.com/sql-tutorial/",
+                description: "Interactive SQL learning platform",
+                type: "Tutorial"
+            },
+            {
+                title: "Databricks Academy",
+                url: "https://academy.databricks.com/",
+                description: "Spark and data engineering tutorials",
+                type: "Learning Platform"
+            },
+            {
+                title: "AWS Data Analytics Learning Plan",
+                url: "https://aws.amazon.com/training/learn-about/data-analytics/",
+                description: "AWS data analytics training",
+                type: "Training Program"
+            }
+        ],
+        videos: [
+            {
+                title: "Data Engineering Full Course",
+                url: "https://www.youtube.com/c/SeattleDataGuy",
+                description: "Comprehensive data engineering tutorials",
+                platform: "YouTube"
+            },
+            {
+                title: "Apache Spark Tutorial",
+                url: "https://www.youtube.com/c/SparkByExamples",
+                description: "Spark programming tutorials",
+                platform: "YouTube"
+            },
+            {
+                title: "DataTalks.Club",
+                url: "https://www.youtube.com/c/DataTalksClub",
+                description: "Data engineering talks and interviews",
+                platform: "YouTube"
+            },
+            {
+                title: "Snowflake Training",
+                url: "https://www.youtube.com/c/SnowflakeInc",
+                description: "Official Snowflake tutorials",
+                platform: "YouTube"
+            },
+            {
+                title: "Airflow Summit",
+                url: "https://www.youtube.com/c/AirflowSummit",
+                description: "Airflow conference talks",
+                platform: "YouTube"
+            }
+        ],
+        books: [
+            {
+                title: "Fundamentals of Data Engineering",
+                author: "Joe Reis, Matt Housley",
+                description: "Comprehensive guide to data engineering",
+                level: "Intermediate"
+            },
+            {
+                title: "Designing Data-Intensive Applications",
+                author: "Martin Kleppmann",
+                description: "Deep dive into data systems",
+                level: "Advanced"
+            },
+            {
+                title: "Data Pipelines Pocket Reference",
+                author: "James Densmore",
+                description: "Practical guide to building data pipelines",
+                level: "Intermediate"
+            },
+            {
+                title: "Learning Spark",
+                author: "Jules Damji, Brooke Wenig, Tathagata Das",
+                description: "Guide to Apache Spark",
+                level: "Intermediate"
+            },
+            {
+                title: "The Data Warehouse Toolkit",
+                author: "Ralph Kimball, Margy Ross",
+                description: "Data warehouse design principles",
+                level: "Advanced"
+            }
+        ],
+        tools: [
+            {
+                title: "Apache Spark",
+                url: "https://spark.apache.org/",
+                description: "Unified analytics engine",
+                type: "Processing Engine",
+                category: "Essential"
+            },
+            {
+                title: "Apache Airflow",
+                url: "https://airflow.apache.org/",
+                description: "Workflow orchestration platform",
+                type: "Orchestration Tool",
+                category: "Essential"
+            },
+            {
+                title: "dbt",
+                url: "https://www.getdbt.com/",
+                description: "Data transformation tool",
+                type: "Transformation Tool",
+                category: "Essential"
+            },
+            {
+                title: "Snowflake",
+                url: "https://www.snowflake.com/",
+                description: "Cloud data warehouse",
+                type: "Data Warehouse",
+                category: "Essential"
+            },
+            {
+                title: "Great Expectations",
+                url: "https://greatexpectations.io/",
+                description: "Data validation framework",
+                type: "Testing Tool",
+                category: "Essential"
+            }
+        ],
+        communities: [
+            {
+                title: "DataTalks.Club",
+                url: "https://datatalks.club/",
+                description: "Data engineering community",
+                type: "Community Platform"
+            },
+            {
+                title: "Reddit r/dataengineering",
+                url: "https://www.reddit.com/r/dataengineering/",
+                description: "Data engineering subreddit",
+                type: "Forum"
+            },
+            {
+                title: "Apache Spark User List",
+                url: "https://spark.apache.org/community.html",
+                description: "Spark community discussions",
+                type: "Mailing List"
+            },
+            {
+                title: "dbt Community",
+                url: "https://community.getdbt.com/",
+                description: "dbt user community",
+                type: "Forum"
+            },
+            {
+                title: "Data Engineering Weekly",
+                url: "https://dataengineeringweekly.com/",
+                description: "Weekly newsletter for data engineers",
+                type: "Newsletter"
+            }
+        ],
+        podcasts: [
+            {
+                title: "Data Engineering Podcast",
+                url: "https://www.dataengineeringpodcast.com/",
+                description: "Weekly data engineering discussions",
+                platform: "Podcast"
+            },
+            {
+                title: "Drill to Detail",
+                url: "https://www.drilltodetail.com/",
+                description: "Data analytics and engineering podcast",
+                platform: "Podcast"
+            },
+            {
+                title: "The Data Stack Show",
+                url: "https://datastackshow.com/",
+                description: "Modern data stack discussions",
+                platform: "Podcast"
+            },
+            {
+                title: "Data Management Monthly",
+                url: "https://www.datamanagementmonthly.com/",
+                description: "Data management and engineering topics",
+                platform: "Podcast"
+            }
+        ],
+        blogs: [
+            {
+                title: "Towards Data Science",
+                url: "https://towardsdatascience.com/data-engineering/home",
+                description: "Data engineering articles and tutorials",
+                type: "Publication"
+            },
+            {
+                title: "Seattle Data Guy",
+                url: "https://seattledataguy.com/",
+                description: "Data engineering best practices",
+                type: "Personal Blog"
+            },
+            {
+                title: "Databricks Blog",
+                url: "https://databricks.com/blog",
+                description: "Technical articles on Spark and data",
+                type: "Company Blog"
+            },
+            {
+                title: "AWS Big Data Blog",
+                url: "https://aws.amazon.com/blogs/big-data/",
+                description: "AWS data engineering solutions",
+                type: "Technical Blog"
+            }
+        ]
+    },
+    practice: {
+        beginnerExercises: [
+            {
+                title: "Log File Parser",
+                difficulty: "Easy",
+                description: "Create a log file parser that processes web server logs and generates summary statistics.",
+                hints: [
+                    "Use regular expressions for parsing",
+                    "Handle different log formats",
+                    "Implement basic error handling",
+                    "Generate summary statistics"
+                ],
+                solution: {
+                    code: `import pandas as pd
+import re
+from datetime import datetime
+from typing import Dict, List
+import logging
+
+class LogParser:
+    def __init__(self, log_format: str):
+        self.log_format = log_format
+        self.setup_logging()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def parse_line(self, line: str) -> Dict:
+        """Parse a single log line based on format."""
+        try:
+            # Common Apache log format pattern
+            pattern = r'(\d+\.\d+\.\d+\.\d+) - - \[(.*?)\] "(.*?)" (\d+) (\d+)'
+            match = re.match(pattern, line)
+            
+            if match:
+                ip, timestamp, request, status, bytes_sent = match.groups()
+                method, path, protocol = request.split()
+                
+                return {
+                    'ip_address': ip,
+                    'timestamp': datetime.strptime(timestamp, '%d/%b/%Y:%H:%M:%S %z'),
+                    'method': method,
+                    'path': path,
+                    'protocol': protocol,
+                    'status_code': int(status),
+                    'bytes_sent': int(bytes_sent)
+                }
+            return None
+            
+        except Exception as e:
+            logging.error(f"Error parsing line: {line}, Error: {str(e)}")
+            return None
+            
+    def process_file(self, file_path: str) -> pd.DataFrame:
+        """Process entire log file and return DataFrame."""
+        records = []
+        
+        try:
+            with open(file_path, 'r') as f:
+                for line in f:
+                    parsed = self.parse_line(line.strip())
+                    if parsed:
+                        records.append(parsed)
+                        
+            df = pd.DataFrame(records)
+            return df
+            
+        except Exception as e:
+            logging.error(f"Error processing file: {str(e)}")
+            raise
+            
+    def generate_summary(self, df: pd.DataFrame) -> Dict:
+        """Generate summary statistics from parsed logs."""
+        summary = {
+            'total_requests': len(df),
+            'unique_ips': df['ip_address'].nunique(),
+            'status_codes': df['status_code'].value_counts().to_dict(),
+            'top_paths': df['path'].value_counts().head(5).to_dict(),
+            'avg_bytes_sent': df['bytes_sent'].mean(),
+            'requests_per_hour': df.groupby(df['timestamp'].dt.hour)['method']
+            .count().to_dict()
+        }
+        return summary
+        
+    def export_summary(self, summary: Dict, output_path: str):
+        """Export summary to JSON file."""
+        try:
+            with open(output_path, 'w') as f:
+                json.dump(summary, f, indent=4, default=str)
+            logging.info(f"Summary exported to {output_path}")
+        except Exception as e:
+            logging.error(f"Error exporting summary: {str(e)}")
+            raise
+
+if __name__ == "__main__":
+    # Example usage
+    parser = LogParser("common")
+    df = parser.process_file("access.log")
+    summary = parser.generate_summary(df)
+    parser.export_summary(summary, "log_summary.json")
+    
+    # Print some insights
+    print(f"Total Requests: {summary['total_requests']}")
+    print(f"Unique IPs: {summary['unique_ips']}")
+    print("Top 5 Paths:")
+    for path, count in summary['top_paths'].items():
+        print(f"  {path}: {count} requests")`,
+                    explanation: "This exercise demonstrates log file processing, data parsing with regex, error handling, and basic data analysis using pandas."
+                }
+            },
+            {
+                title: "CSV Data Cleaner",
+                difficulty: "Easy",
+                description: "Create a data cleaning tool for CSV files with validation and transformation capabilities.",
+                hints: [
+                    "Implement data type validation",
+                    "Handle missing values",
+                    "Add data transformation functions",
+                    "Include data quality checks"
+                ],
+                solution: {
+                    code: `import pandas as pd
+import numpy as np
+from typing import Dict, List, Callable
+import logging
+from datetime import datetime
+
+class DataCleaner:
+    def __init__(self):
+        self.setup_logging()
+        self.transformations = {}
+        self.validations = {}
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def add_transformation(self, column: str, func: Callable):
+        """Add transformation function for a column."""
+        self.transformations[column] = func
+        
+    def add_validation(self, column: str, func: Callable):
+        """Add validation function for a column."""
+        self.validations[column] = func
+        
+    def clean_data(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Apply cleaning operations to DataFrame."""
+        df_clean = df.copy()
+        
+        # Apply transformations
+        for column, transform in self.transformations.items():
+            if column in df_clean.columns:
+                try:
+                    df_clean[column] = df_clean[column].apply(transform)
+                    logging.info(f"Transformed column: {column}")
+                except Exception as e:
+                    logging.error(f"Error transforming {column}: {str(e)}")
+                    
+        # Handle missing values
+        self._handle_missing_values(df_clean)
+        
+        # Remove duplicates
+        df_clean = df_clean.drop_duplicates()
+        
+        # Validate data
+        self._validate_data(df_clean)
+        
+        return df_clean
+        
+    def _handle_missing_values(self, df: pd.DataFrame):
+        """Handle missing values based on data types."""
+        for column in df.columns:
+            missing_count = df[column].isna().sum()
+            if missing_count > 0:
+                dtype = df[column].dtype
+                
+                if pd.api.types.is_numeric_dtype(dtype):
+                    df[column].fillna(df[column].mean(), inplace=True)
+                elif pd.api.types.is_datetime64_dtype(dtype):
+                    df[column].fillna(df[column].mode()[0], inplace=True)
+                else:
+                    df[column].fillna('UNKNOWN', inplace=True)
+                    
+                logging.info(f"Filled {missing_count} missing values in {column}")
+                
+    def _validate_data(self, df: pd.DataFrame):
+        """Run validations on cleaned data."""
+        validation_results = []
+        
+        for column, validate in self.validations.items():
+            if column in df.columns:
+                try:
+                    invalid_mask = ~df[column].apply(validate)
+                    invalid_count = invalid_mask.sum()
+                    
+                    if invalid_count > 0:
+                        validation_results.append({
+                            'column': column,
+                            'invalid_count': invalid_count,
+                            'example_values': df[column][invalid_mask].head().tolist()
+                        })
+                except Exception as e:
+                    logging.error(f"Error validating {column}: {str(e)}")
+                    
+        if validation_results:
+            logging.warning("Validation issues found:")
+            for result in validation_results:
+                logging.warning(f"Column {result['column']}: "
+                              f"{result['invalid_count']} invalid values")
+                
+    def generate_report(self, df_original: pd.DataFrame, 
+                       df_cleaned: pd.DataFrame) -> Dict:
+        """Generate cleaning report with statistics."""
+        report = {
+            'original_rows': len(df_original),
+            'cleaned_rows': len(df_cleaned),
+            'dropped_rows': len(df_original) - len(df_cleaned),
+            'missing_values': {
+                col: df_original[col].isna().sum()
+                for col in df_original.columns
+            },
+            'unique_values': {
+                col: df_cleaned[col].nunique()
+                for col in df_cleaned.columns
+            },
+            'data_types': df_cleaned.dtypes.astype(str).to_dict()
+        }
+        return report
+
+if __name__ == "__main__":
+    # Example usage
+    cleaner = DataCleaner()
+    
+    # Add transformations
+    cleaner.add_transformation('name', str.strip)
+    cleaner.add_transformation('age', 
+        lambda x: int(x) if pd.notnull(x) else x)
+    cleaner.add_transformation('email',
+        lambda x: x.lower() if pd.notnull(x) else x)
+        
+    # Add validations
+    cleaner.add_validation('age', 
+        lambda x: pd.isnull(x) or (x >= 0 and x <= 120))
+    cleaner.add_validation('email',
+        lambda x: pd.isnull(x) or '@' in str(x))
+        
+    # Read and clean data
+    df = pd.read_csv('input.csv')
+    df_cleaned = cleaner.clean_data(df)
+    
+    # Generate and print report
+    report = cleaner.generate_report(df, df_cleaned)
+    print("Cleaning Report:")
+    print(json.dumps(report, indent=2, default=str))
+    
+    # Save cleaned data
+    df_cleaned.to_csv('cleaned_output.csv', index=False)`,
+                    explanation: "This exercise shows data cleaning operations, including handling missing values, data validation, and transformation. It includes reporting functionality to track cleaning operations."
+                }
+            }
+        ],
+        intermediateExercises: [
+            {
+                title: "Data Pipeline with Change Data Capture",
+                difficulty: "Medium",
+                description: "Create a CDC pipeline that tracks and processes database changes incrementally.",
+                hints: [
+                    "Implement change tracking mechanism",
+                    "Handle different change types (insert/update/delete)",
+                    "Include error recovery",
+                    "Add audit logging"
+                ],
+                solution: {
+                    code: `import pandas as pd
+import sqlalchemy as sa
+from datetime import datetime, timedelta
+import logging
+from typing import Dict, List, Optional
+import hashlib
+import json
+
+class CDCPipeline:
+    def __init__(self, source_conn: str, target_conn: str, 
+                 schema: str, tables: List[str]):
+        self.source_engine = sa.create_engine(source_conn)
+        self.target_engine = sa.create_engine(target_conn)
+        self.schema = schema
+        self.tables = tables
+        self.setup_logging()
+        self.setup_tracking_table()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def setup_tracking_table(self):
+        """Create CDC tracking table if not exists."""
+        tracking_table = sa.Table(
+            'cdc_tracking',
+            sa.MetaData(),
+            sa.Column('table_name', sa.String(100)),
+            sa.Column('last_sync', sa.DateTime),
+            sa.Column('last_key', sa.String(100)),
+            sa.Column('checksum', sa.String(64))
+        )
+        
+        tracking_table.create(self.target_engine, checkfirst=True)
+        
+    def get_table_checksum(self, table: str) -> str:
+        """Calculate table checksum."""
+        query = f"""
+            SELECT COUNT(*) as row_count,
+                   COALESCE(MAX(updated_at), '1900-01-01') as max_update
+            FROM {self.schema}.{table}
+        """
+        result = pd.read_sql(query, self.source_engine)
+        checksum_str = f"{result['row_count'].iloc[0]}:{result['max_update'].iloc[0]}"
+        return hashlib.sha256(checksum_str.encode()).hexdigest()
+        
+    def get_changes(self, table: str, last_sync: datetime) -> pd.DataFrame:
+        """Get changed records since last sync."""
+        query = f"""
+            SELECT *
+            FROM {self.schema}.{table}
+            WHERE updated_at > %s
+            ORDER BY updated_at, id
+        """
+        return pd.read_sql(query, self.source_engine, params=[last_sync])
+        
+    def apply_changes(self, table: str, changes: pd.DataFrame):
+        """Apply changes to target table."""
+        if len(changes) == 0:
+            return
+            
+        # Create table if not exists
+        changes.head(0).to_sql(
+            table,
+            self.target_engine,
+            if_exists='append',
+            index=False
+        )
+        
+        # Apply changes in batches
+        batch_size = 1000
+        for i in range(0, len(changes), batch_size):
+            batch = changes.iloc[i:i+batch_size]
+            
+            # Upsert changes
+            self.upsert_batch(table, batch)
+            logging.info(f"Processed {i + len(batch)}/{len(changes)} records")
+            
+    def upsert_batch(self, table: str, batch: pd.DataFrame):
+        """Upsert batch of records."""
+        temp_table = f"temp_{table}"
+        
+        # Load to temp table
+        batch.to_sql(
+            temp_table,
+            self.target_engine,
+            if_exists='replace',
+            index=False
+        )
+        
+        # Perform upsert
+        query = f"""
+            MERGE INTO {table} t
+            USING {temp_table} s
+            ON t.id = s.id
+            WHEN MATCHED THEN
+                UPDATE SET {
+                    ', '.join(f"t.{col} = s.{col}"
+                             for col in batch.columns
+                             if col != 'id')
+                }
+            WHEN NOT MATCHED THEN
+                INSERT ({', '.join(batch.columns)})
+                VALUES ({', '.join(f's.{col}' for col in batch.columns)})
+        """
+        
+        with self.target_engine.begin() as conn:
+            conn.execute(query)
+            conn.execute(f"DROP TABLE {temp_table}")
+            
+    def update_tracking(self, table: str, sync_time: datetime, 
+                       last_key: str, checksum: str):
+        """Update CDC tracking information."""
+        query = """
+            INSERT INTO cdc_tracking 
+                (table_name, last_sync, last_key, checksum)
+            VALUES (%s, %s, %s, %s)
+            ON CONFLICT (table_name) DO UPDATE
+            SET last_sync = EXCLUDED.last_sync,
+                last_key = EXCLUDED.last_key,
+                checksum = EXCLUDED.checksum
+        """
+        
+        with self.target_engine.begin() as conn:
+            conn.execute(query, [table, sync_time, last_key, checksum])
+            
+    def process_table(self, table: str):
+        """Process changes for a single table."""
+        try:
+            # Get current table state
+            current_checksum = self.get_table_checksum(table)
+            
+            # Get last sync info
+            query = "SELECT * FROM cdc_tracking WHERE table_name = %s
+            tracking_info = pd.read_sql(query, self.target_engine, params=[table])
+            
+            last_sync = (tracking_info['last_sync'].iloc[0] 
+                        if not tracking_info.empty 
+                        else datetime(1900, 1, 1))
+            last_checksum = (tracking_info['checksum'].iloc[0] 
+                           if not tracking_info.empty 
+                           else None)
+            
+            # Check if changes exist
+            if current_checksum == last_checksum:
+                logging.info(f"No changes detected for {table}")
+                return
+                
+            # Get and apply changes
+            changes = self.get_changes(table, last_sync)
+            self.apply_changes(table, changes)
+            
+            # Update tracking
+            last_key = str(changes['id'].max()) if len(changes) > 0 else ''
+            self.update_tracking(
+                table,
+                datetime.now(),
+                last_key,
+                current_checksum
+            )
+            
+            logging.info(f"Processed {len(changes)} changes for {table}")
+            
+        except Exception as e:
+            logging.error(f"Error processing {table}: {str(e)}")
+            raise
+            
+    def run_pipeline(self):
+        """Run CDC pipeline for all tables."""
+        start_time = datetime.now()
+        errors = []
+        
+        for table in self.tables:
+            try:
+                logging.info(f"Processing table: {table}")
+                self.process_table(table)
+            except Exception as e:
+                errors.append({
+                    'table': table,
+                    'error': str(e)
+                })
+                
+        # Generate run summary
+        summary = {
+            'start_time': start_time,
+            'end_time': datetime.now(),
+            'tables_processed': len(self.tables),
+            'errors': errors
+        }
+        
+        if errors:
+            logging.error(f"Pipeline completed with {len(errors)} errors")
+        else:
+            logging.info("Pipeline completed successfully")
+            
+        return summary
+
+if __name__ == "__main__":
+    # Example configuration
+    config = {
+        'source_conn': 'postgresql://user:pass@localhost:5432/source_db',
+        'target_conn': 'postgresql://user:pass@localhost:5432/target_db',
+        'schema': 'public',
+        'tables': ['customers', 'orders', 'products']
+    }
+    
+    # Initialize and run pipeline
+    pipeline = CDCPipeline(
+        config['source_conn'],
+        config['target_conn'],
+        config['schema'],
+        config['tables']
+    )
+    
+    summary = pipeline.run_pipeline()
+    print(json.dumps(summary, indent=2, default=str))`,
+    explanation: "This intermediate exercise implements a Change Data Capture (CDC) pipeline that efficiently tracks and processes database changes. It includes checksum-based change detection, incremental processing, and error handling."
+                }
+            },
+            {
+                title: "Data Quality Framework",
+                difficulty: "Medium",
+                description: "Create a framework for implementing and monitoring data quality rules.",
+                hints: [
+                    "Implement different types of quality checks",
+                    "Add support for custom rules",
+                    "Include reporting functionality",
+                    "Handle rule dependencies"
+                ],
+                solution: {
+                    code: `import pandas as pd
+import numpy as np
+from typing import Dict, List, Callable, Optional
+from datetime import datetime
+import logging
+import json
+from dataclasses import dataclass
+
+@dataclass
+class QualityRule:
+    name: str
+    description: str
+    rule_type: str
+    check_function: Callable
+    severity: str
+    dependencies: List[str] = None
+    parameters: Dict = None
+
+class DataQualityFramework:
+    def __init__(self):
+        self.rules = {}
+        self.results = {}
+        self.setup_logging()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def add_rule(self, rule: QualityRule):
+        """Add a quality check rule."""
+        self.rules[rule.name] = rule
+        logging.info(f"Added rule: {rule.name}")
+        
+    def check_dependencies(self, rule: QualityRule) -> bool:
+        """Check if rule dependencies are satisfied."""
+        if not rule.dependencies:
+            return True
+            
+        for dep in rule.dependencies:
+            if dep not in self.results:
+                return False
+            if not self.results[dep]['passed']:
+                return False
+                
+        return True
+        
+    def run_checks(self, df: pd.DataFrame) -> Dict:
+        """Run all quality checks on the DataFrame."""
+        start_time = datetime.now()
+        self.results = {}
+        
+        # Sort rules by dependencies
+        sorted_rules = self._sort_rules_by_dependencies()
+        
+        for rule in sorted_rules:
+            if not self.check_dependencies(rule):
+                logging.warning(f"Skipping {rule.name} due to failed dependencies")
+                continue
+                
+            try:
+                result = self._run_single_check(df, rule)
+                self.results[rule.name] = result
+            except Exception as e:
+                logging.error(f"Error running {rule.name}: {str(e)}")
+                self.results[rule.name] = {
+                    'passed': False,
+                    'error': str(e),
+                    'timestamp': datetime.now()
+                }
+                
+        # Generate summary
+        summary = self._generate_summary(start_time)
+        return summary
+        
+    def _sort_rules_by_dependencies(self) -> List[QualityRule]:
+        """Sort rules based on dependencies."""
+        sorted_rules = []
+        processed = set()
+        
+        def process_rule(rule: QualityRule):
+            if rule.name in processed:
+                return
+            if rule.dependencies:
+                for dep in rule.dependencies:
+                    if dep not in processed:
+                        dep_rule = self.rules[dep]
+                        process_rule(dep_rule)
+            sorted_rules.append(rule)
+            processed.add(rule.name)
+            
+        for rule in self.rules.values():
+            process_rule(rule)
+            
+        return sorted_rules
+        
+    def _run_single_check(self, df: pd.DataFrame, 
+                         rule: QualityRule) -> Dict:
+        """Run a single quality check."""
+        logging.info(f"Running check: {rule.name}")
+        
+        try:
+            if rule.parameters:
+                result = rule.check_function(df, **rule.parameters)
+            else:
+                result = rule.check_function(df)
+                
+            if isinstance(result, bool):
+                details = None
+            else:
+                passed, details = result
+                result = passed
+                
+            return {
+                'passed': result,
+                'details': details,
+                'timestamp': datetime.now(),
+                'severity': rule.severity
+            }
+            
+        except Exception as e:
+            raise Exception(f"Check failed: {str(e)}")
+            
+    def _generate_summary(self, start_time: datetime) -> Dict:
+        """Generate quality check summary."""
+        failed_checks = [
+            name for name, result in self.results.items()
+            if not result['passed']
+        ]
+        
+        critical_failures = [
+            name for name, result in self.results.items()
+            if not result['passed'] and 
+               self.rules[name].severity == 'critical'
+        ]
+        
+        return {
+            'start_time': start_time,
+            'end_time': datetime.now(),
+            'total_checks': len(self.rules),
+            'passed_checks': len(self.rules) - len(failed_checks),
+            'failed_checks': failed_checks,
+            'critical_failures': critical_failures,
+            'results': self.results
+        }
+        
+    def generate_report(self, summary: Dict, 
+                       output_path: str) -> None:
+        """Generate detailed quality report."""
+        report = {
+            'summary': {
+                'total_checks': summary['total_checks'],
+                'passed_checks': summary['passed_checks'],
+                'failed_checks': len(summary['failed_checks']),
+                'critical_failures': len(summary['critical_failures']),
+                'run_duration': (summary['end_time'] - 
+                               summary['start_time']).total_seconds()
+            },
+            'failed_checks': [{
+                'name': name,
+                'description': self.rules[name].description,
+                'severity': self.rules[name].severity,
+                'details': summary['results'][name]['details']
+            } for name in summary['failed_checks']],
+            'all_results': [{
+                'name': name,
+                'description': self.rules[name].description,
+                'severity': self.rules[name].severity,
+                'passed': result['passed'],
+                'timestamp': result['timestamp'],
+                'details': result.get('details')
+            } for name, result in summary['results'].items()]
+        }
+        
+        with open(output_path, 'w') as f:
+            json.dump(report, f, indent=2, default=str)
+            
+def example_checks():
+    """Example quality check functions."""
+    
+    def check_nulls(df: pd.DataFrame, threshold: float = 0.1) -> tuple:
+        null_fractions = df.isnull().mean()
+        columns_above_threshold = null_fractions[
+            null_fractions > threshold
+        ].index.tolist()
+        return (len(columns_above_threshold) == 0, {
+            'columns_above_threshold': columns_above_threshold,
+            'null_fractions': null_fractions.to_dict()
+        })
+        
+    def check_uniqueness(df: pd.DataFrame, 
+                        columns: List[str]) -> tuple:
+        duplicate_count = (
+            df[columns].duplicated().sum()
+        )
+        return (duplicate_count == 0, {
+            'duplicate_count': duplicate_count
+        })
+        
+    def check_value_range(df: pd.DataFrame, 
+                         column: str,
+                         min_value: float,
+                         max_value: float) -> tuple:
+        out_of_range = df[
+            (df[column] < min_value) | 
+            (df[column] > max_value)
+        ]
+        return (len(out_of_range) == 0, {
+            'out_of_range_count': len(out_of_range),
+            'min_found': df[column].min(),
+            'max_found': df[column].max()
+        })
+    
+    return [
+        QualityRule(
+            name='null_check',
+            description='Check for null values in columns',
+            rule_type='completeness',
+            check_function=check_nulls,
+            severity='critical',
+            parameters={'threshold': 0.05}
+        ),
+        QualityRule(
+            name='uniqueness_check',
+            description='Check for duplicate records',
+            rule_type='uniqueness',
+            check_function=check_uniqueness,
+            severity='critical',
+            parameters={'columns': ['id']}
+        ),
+        QualityRule(
+            name='age_range_check',
+            description='Check age values are within valid range',
+            rule_type='validity',
+            check_function=check_value_range,
+            severity='warning',
+            parameters={
+                'column': 'age',
+                'min_value': 0,
+                'max_value': 120
+            }
+        )
+    ]
+
+if __name__ == "__main__":
+    # Create framework
+    framework = DataQualityFramework()
+    
+    # Add example rules
+    for rule in example_checks():
+        framework.add_rule(rule)
+    
+    # Example data
+    df = pd.DataFrame({
+        'id': range(100),
+        'name': [f'User {i}' for i in range(100)],
+        'age': np.random.randint(0, 100, 100)
+    })
+    
+    # Run checks
+    summary = framework.run_checks(df)
+    
+    # Generate report
+    framework.generate_report(summary, 'quality_report.json')
+    
+    print("Quality Check Summary:")
+    print(f"Total Checks: {summary['total_checks']}")
+    print(f"Passed Checks: {summary['passed_checks']}")
+    print(f"Failed Checks: {len(summary['failed_checks'])}")
+    if summary['critical_failures']:
+        print("Critical Failures:", summary['critical_failures'])`,
+    explanation: "This intermediate exercise implements a flexible data quality framework with support for custom rules, dependencies, and detailed reporting. It includes example quality checks and a comprehensive reporting system."
+                }
+            }
+        ],
+        advancedExercises: [
+            {
+                title: "Distributed Data Processing Framework",
+                difficulty: "Hard",
+                description: "Create a framework for distributed data processing with support for parallel execution and fault tolerance.",
+                hints: [
+                    "Implement data partitioning",
+                    "Add worker management",
+                    "Include fault tolerance",
+                    "Handle data aggregation"
+                ],
+                solution: {
+                    code: `import multiprocessing as mp
+from typing import Dict, List, Callable, Any
+import pandas as pd
+import numpy as np
+import logging
+import queue
+import time
+from dataclasses import dataclass
+import threading
+import json
+from datetime import datetime
+import hashlib
+
+@dataclass
+class Task:
+    id: str
+    function: Callable
+    data: Any
+    dependencies: List[str] = None
+    retry_count: int = 0
+    max_retries: int = 3
+
+@dataclass
+class TaskResult:
+    task_id: str
+    status: str
+    result: Any = None
+    error: str = None
+    processing_time: float = None
+
+class DistributedProcessor:
+    def __init__(self, num_workers: int = None):
+        self.num_workers = num_workers or mp.cpu_count()
+        self.task_queue = mp.Queue()
+        self.result_queue = mp.Queue()
+        self.workers = []
+        self.tasks = {}
+        self.results = {}
+        self.setup_logging()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(processName)s - %(levelname)s - %(message)s'
+        )
+        
+    def start_workers(self):
+        """Start worker processes."""
+        for i in range(self.num_workers):
+            worker = mp.Process(
+                target=self._worker_process,
+                args=(self.task_queue, self.result_queue),
+                name=f"Worker-{i}"
+            )
+            worker.start()
+            self.workers.append(worker)
+            
+    def stop_workers(self):
+        """Stop all worker processes."""
+        # Send termination signal
+        for _ in self.workers:
+            self.task_queue.put(None)
+            
+        # Wait for workers to finish
+        for worker in self.workers:
+            worker.join()
+            
+        # Clear queues
+        while not self.task_queue.empty():
+            try:
+                self.task_queue.get_nowait()
+            except queue.Empty:
+                break
+                
+        while not self.result_queue.empty():
+            try:
+                self.result_queue.get_nowait()
+            except queue.Empty:
+                break
+                
+    def add_task(self, task: Task):
+        """Add task to processing queue."""
+        self.tasks[task.id] = task
+        if not task.dependencies or all(
+            dep in self.results and 
+            self.results[dep].status == 'completed'
+            for dep in task.dependencies
+        ):
+            self.task_queue.put(task)
+        
+     def process_data(self, data: pd.DataFrame, 
+                    operations: List[Dict]) -> pd.DataFrame:
+        """Process data using distributed operations."""
+        try:
+            start_time = time.time()
+            
+            # Start worker processes
+            self.start_workers()
+            
+            # Initialize result collector thread
+            collector = threading.Thread(
+                target=self._collect_results
+            )
+            collector.start()
+            
+            # Partition data
+            partitions = self._partition_data(data)
+            logging.info(f"Created {len(partitions)} partitions")
+            
+            # Create tasks for each operation and partition
+            for op_idx, operation in enumerate(operations):
+                for part_idx, partition in enumerate(partitions):
+                    task_id = f"task_{op_idx}_{part_idx}"
+                    dependencies = []
+                    
+                    # Add dependencies from previous operation
+                    if op_idx > 0:
+                        dependencies = [
+                            f"task_{op_idx-1}_{part_idx}"
+                        ]
+                    
+                    task = Task(
+                        id=task_id,
+                        function=self._get_operation_function(
+                            operation
+                        ),
+                        data=partition,
+                        dependencies=dependencies
+                    )
+                    self.add_task(task)
+            
+            # Wait for all tasks to complete
+            while len(self.results) < len(self.tasks):
+                time.sleep(0.1)
+                
+            # Stop workers and collector
+            self.stop_workers()
+            collector.join()
+            
+            # Combine results
+            final_result = self._combine_results(
+                operations,
+                len(partitions)
+            )
+            
+            processing_time = time.time() - start_time
+            logging.info(
+                f"Processing completed in {processing_time:.2f} seconds"
+            )
+            
+            return final_result
+            
+        except Exception as e:
+            logging.error(f"Processing failed: {str(e)}")
+            raise
+            
+    def _worker_process(self, task_queue: mp.Queue,
+                       result_queue: mp.Queue):
+        """Worker process function."""
+        while True:
+            try:
+                # Get task from queue
+                task = task_queue.get()
+                if task is None:
+                    break
+                    
+                start_time = time.time()
+                
+                try:
+                    # Execute task function
+                    result = task.function(task.data)
+                    status = 'completed'
+                    error = None
+                except Exception as e:
+                    result = None
+                    error = str(e)
+                    status = 'failed'
+                    
+                    # Retry logic
+                    if task.retry_count < task.max_retries:
+                        task.retry_count += 1
+                        logging.warning(
+                            f"Retrying task {task.id} "
+                            f"(attempt {task.retry_count})"
+                        )
+                        self.task_queue.put(task)
+                        continue
+                
+                processing_time = time.time() - start_time
+                
+                # Send result
+                task_result = TaskResult(
+                    task_id=task.id,
+                    status=status,
+                    result=result,
+                    error=error,
+                    processing_time=processing_time
+                )
+                result_queue.put(task_result)
+                
+            except Exception as e:
+                logging.error(
+                    f"Worker process error: {str(e)}"
+                )
+                
+    def _collect_results(self):
+        """Collect and process task results."""
+        while True:
+            try:
+                # Get result from queue
+                result = self.result_queue.get(timeout=1)
+                self.results[result.task_id] = result
+                
+                # Check for dependent tasks
+                self._process_dependent_tasks(result.task_id)
+                
+            except queue.Empty:
+                # Check if all workers are done
+                if not any(w.is_alive() for w in self.workers):
+                    break
+                    
+    def _process_dependent_tasks(self, completed_task_id: str):
+        """Process tasks that depend on the completed task."""
+        for task_id, task in self.tasks.items():
+            if (task_id not in self.results and
+                task.dependencies and
+                completed_task_id in task.dependencies):
+                
+                # Check if all dependencies are completed
+                if all(
+                    dep in self.results and
+                    self.results[dep].status == 'completed'
+                    for dep in task.dependencies
+                ):
+                    self.task_queue.put(task)
+                    
+    def _partition_data(self, data: pd.DataFrame) -> List[pd.DataFrame]:
+        """Partition data for parallel processing."""
+        partition_size = max(
+            1,
+            len(data) // (self.num_workers * 2)
+        )
+        return [
+            data.iloc[i:i + partition_size]
+            for i in range(0, len(data), partition_size)
+        ]
+        
+    def _get_operation_function(self, operation: Dict) -> Callable:
+        """Create function for the specified operation."""
+        op_type = operation['type']
+        params = operation.get('parameters', {})
+        
+        if op_type == 'transform':
+            return lambda df: df.apply(
+                eval(operation['function']),
+                axis=1 if operation.get('axis') == 1 else 0
+            )
+        elif op_type == 'filter':
+            return lambda df: df[
+                df.eval(operation['condition'])
+            ]
+        elif op_type == 'aggregate':
+            return lambda df: df.groupby(
+                operation['group_by']
+            ).agg(operation['aggregations'])
+        else:
+            raise ValueError(f"Unknown operation type: {op_type}")
+            
+    def _combine_results(self, operations: List[Dict],
+                        num_partitions: int) -> pd.DataFrame:
+        """Combine results from all partitions."""
+        final_results = []
+        
+        # Get results for the last operation
+        last_op_idx = len(operations) - 1
+        for part_idx in range(num_partitions):
+            task_id = f"task_{last_op_idx}_{part_idx}"
+            if (task_id in self.results and 
+                self.results[task_id].status == 'completed'):
+                final_results.append(
+                    self.results[task_id].result
+                )
+        
+        # Combine based on last operation type
+        last_op = operations[-1]
+        if last_op['type'] == 'aggregate':
+            return pd.concat(final_results).groupby(
+                last_op['group_by']
+            ).agg(last_op['aggregations'])
+        else:
+            return pd.concat(final_results, ignore_index=True)
+            
+if __name__ == "__main__":
+    # Example usage
+    
+    # Create sample data
+    data = pd.DataFrame({
+        'id': range(1000000),
+        'value': np.random.randn(1000000),
+        'category': np.random.choice(['A', 'B', 'C'], 1000000)
+    })
+    
+    # Define operations
+    operations = [
+        {
+            'type': 'filter',
+            'condition': 'value > 0'
+        },
+        {
+            'type': 'transform',
+            'function': 'lambda x: x * 2',
+            'column': 'value'
+        },
+        {
+            'type': 'aggregate',
+            'group_by': ['category'],
+            'aggregations': {
+                'value': ['mean', 'std', 'count']
+            }
+        }
+    ]
+    
+    # Initialize and run processor
+    processor = DistributedProcessor()
+    result = processor.process_data(data, operations)
+    
+    print("\nProcessing Results:")
+    print(result)`,
+    explanation: "This advanced exercise implements a distributed data processing framework that handles parallel execution, fault tolerance, and data partitioning. It includes features like task dependencies, retry logic, and result aggregation. The framework supports different types of operations and can efficiently process large datasets using multiple worker processes."
+                }
+            }
+        ]
+    }
 }
+}
+
 
 ];
 
