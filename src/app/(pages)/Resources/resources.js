@@ -9565,388 +9565,388 @@ abstract class AppDatabase : RoomDatabase() {
                                 "7. Integration with a payment gateway like Stripe or PayPal\n" +
                                 "8. Performance optimization for handling large data and reducing memory usage"
 
-                }
+                        }
+                    }
+                ]
             }
-        ]
-    }   
-}
-},
-{
-    id: 9,
-    title: "Open Source Learning",
-    description: "Kickstart Your Journey in Open Source",
-    extendedContent: "Open source software development allows you to collaborate, contribute, and learn from real-world projects. This roadmap guides you through the skills, platforms, and tools needed to start contributing to open source, with a focus on effective collaboration, version control, and project navigation.\n\nYou'll gain practical experience working with Git, GitHub, and collaborative workflows, as well as an understanding of community standards and software licensing. This track equips you with valuable hands-on skills for career growth.",
-    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
-    trackInfo: {
-        title: "Open Source Learning Track",
-        description: "Learn the fundamentals of open-source contributions and community collaboration",
-        extendedContent: "Open source software development allows you to collaborate, contribute, and learn from real-world projects. This roadmap guides you through the skills, platforms, and tools needed to start contributing to open source, with a focus on effective collaboration, version control, and project navigation.\n\nYou'll gain practical experience working with Git, GitHub, and collaborative workflows, as well as an understanding of community standards and software licensing. This track equips you with valuable hands-on skills for career growth.",
-        prerequisites: [
-            "Familiarity with a programming language (e.g., Python, JavaScript, or C++)",
-            "Understanding of basic data structures and algorithms",
-            "Basic knowledge of version control systems (e.g., Git)",
-            "Interest in collaboration and teamwork",
-            "Willingness to learn and adapt to different codebases"
-        ],
-        outcomes: [
-            "Contribute to real-world open source projects",
-            "Use Git and GitHub proficiently in collaborative environments",
-            "Navigate and understand complex codebases",
-            "Communicate effectively with other contributors and maintainers"
-        ],
-        sections: [
-            {
-                title: "Introduction to Open Source",
-                content: "Understand the fundamentals of open source, including licensing, community standards, and project selection."
-            },
-            {
-                title: "Git and GitHub Essentials",
-                content: "Learn the basics of Git, GitHub workflows, and version control principles for collaborative coding."
-            },
-            {
-                title: "Finding and Choosing Projects",
-                content: "Explore strategies for finding beginner-friendly projects, reading codebases, and understanding contribution guidelines."
-            },
-            {
-                title: "Making Your First Contribution",
-                content: "Learn the process of forking, cloning, and submitting pull requests, with best practices for code submission."
-            },
-            {
-                title: "Advanced Collaboration Skills",
-                content: "Develop skills in collaborative workflows, including handling code reviews, issues, and project discussions."
-            },
-            {
-                title: "Project Maintenance and Management",
-                content: "Gain insights into maintaining open source projects, including responding to contributions, managing community interactions, and ensuring project sustainability."
-            },
-        ]
-        
+        }
     },
-    content: {
-        examples: [
-            {
-                title: "First Contribution via Pull Request",
-                code: "// Step 1: Fork the repository\n// Step 2: Clone to local machine\n$ git clone https://github.com/username/repository.git\n\n// Step 3: Create a new branch\n$ git checkout -b new-feature\n\n// Step 4: Make changes and commit\n$ git add .\n$ git commit -m \"Add new feature\"\n\n// Step 5: Push changes to GitHub\n$ git push origin new-feature\n\n// Step 6: Create a pull request on GitHub",
-                explanation: "This example demonstrates the basic workflow for making your first contribution on GitHub, from forking a repository to creating a pull request."
-            },
-            {
-                title: "Setting Up Open Source Project Locally",
-                code: "# Clone the project repository\n$ git clone https://github.com/example/project.git\n\n# Navigate into project directory\n$ cd project\n\n# Install dependencies (using npm for Node.js projects)\n$ npm install\n\n# Run the project (for example, starting a development server)\n$ npm start",
-                explanation: "Basic steps to clone and set up a local development environment for an open source project, using a Node.js-based project as an example."
-            },
-            {
-                title: "Fixing a Bug in an Open Source Project",
-                code: "# Step 1: Identify the issue on GitHub\n# Step 2: Clone the repository\n$ git clone https://github.com/example/project.git\n\n# Step 3: Create a new branch for the bug fix\n$ git checkout -b fix-bug-issue-123\n\n# Step 4: Make necessary changes to fix the bug\n# (Edit relevant files)\n\n# Step 5: Test the changes\n$ npm test\n\n# Step 6: Commit the changes\n$ git add .\n$ git commit -m \"Fix bug in feature\"\n\n# Step 7: Push changes and create a pull request\n$ git push origin fix-bug-issue-123\n",
-                explanation: "This example illustrates how to address a bug in an open source project, from identifying the issue to submitting a pull request."
-            },
-            {
-                title: "Adding a New Feature to a Project",
-                code: "// Step 1: Fork the repository and clone it\n$ git clone https://github.com/username/repository.git\n\n// Step 2: Create a new feature branch\n$ git checkout -b feature/new-awesome-feature\n\n// Step 3: Implement the feature (e.g., adding a new function)\n// (Edit relevant files to add functionality)\n\n// Step 4: Commit your changes\n$ git add .\n$ git commit -m \"Implement new awesome feature\"\n\n// Step 5: Push the branch to GitHub\n$ git push origin feature/new-awesome-feature\n\n// Step 6: Open a pull request on GitHub and describe your feature",
-                explanation: "This example guides you through adding a new feature to an open source project, from forking to submitting a pull request."
-            },
-            {
-                title: "Creating and Running Tests for an Open Source Project",
-                code: "// Step 1: Clone the repository\n$ git clone https://github.com/example/project.git\n\n// Step 2: Navigate to the project directory\n$ cd project\n\n// Step 3: Create a new branch for the tests\n$ git checkout -b add-tests\n\n// Step 4: Write tests (using a testing framework like Jest)\n// (Edit or create test files)\n\n// Step 5: Run tests to ensure everything works\n$ npm test\n\n// Step 6: Commit your test cases\n$ git add .\n$ git commit -m \"Add tests for existing functionality\"\n\n// Step 7: Push changes and create a pull request\n$ git push origin add-tests\n",
-                explanation: "This example describes how to add tests to an open source project, ensuring the code's reliability before submitting a pull request."
-            },
-            {
-                title: "Reviewing a Pull Request",
-                code: "# Step 1: Go to the 'Pull Requests' section of the repository\n# Step 2: Click on the pull request you want to review\n# Step 3: Review the code changes by looking at the 'Files Changed' tab\n# Step 4: Add comments or suggestions on specific lines by clicking on the '+' icon next to the line\n# Step 5: Approve the pull request if it meets the criteria, or request changes if necessary\n# Step 6: Leave a comment summarizing your review and submit it",
-                explanation: "This example outlines the steps for reviewing a pull request, providing feedback, and either approving or requesting changes."
-            },
-            {
-                title: "Maintaining an Open Source Project",
-                code: "// Step 1: Monitor issues reported by users on GitHub\n// Step 2: Prioritize issues based on severity and community impact\n// Step 3: Assign issues to contributors or work on them yourSelf\n// Step 4: Merge pull requests after thorough review\n// Step 5: Regularly update documentation and project dependencies\n// Step 6: Communicate with the community through discussions or updates",
-                explanation: "This example explains how to maintain an open source project, including monitoring issues, merging contributions, and keeping documentation up to date."
-            },
-            {
-                title: "Updating Project Documentation",
-                code: "# Step 1: Identify the documentation that needs updating (e.g., README, Wiki)\n# Step 2: Make necessary edits or additions to clarify usage or installation\n# Step 3: Use Markdown for formatting and adding links\n# Step 4: Preview your changes in the GitHub editor\n# Step 5: Commit your changes with a clear message\n$ git commit -m \"Update README for better clarity\"\n# Step 6: Push changes to the repository\n$ git push origin main",
-                explanation: "This example describes how to update project documentation, ensuring users have accurate and helpful information."
-            }
-        ],
-        roadmap: [
-            {
-                title: "1. Understanding Open Source",
-                description: "Learn about open source principles, licensing, and communities.",
-                topics: [
-                    "What is open source software?",
-                    "Open source licenses and choosing one.",
-                    "Importance of community and collaboration.",
-                    "How to find open source projects."
-                ]
-            },
-            {
-                title: "2. Git & GitHub Basics",
-                description: "Master version control with Git and GitHub.",
-                topics: [
-                    "Git basics: clone, commit, push, and pull.",
-                    "GitHub features: issues, pull requests, and forks.",
-                    "Branching and merging in Git.",
-                    "Collaborative workflows and code reviews."
-                ]
-            },
-            {
-                title: "3. Contributing to Open Source",
-                description: "Learn how to effectively contribute to projects.",
-                topics: [
-                    "Finding beginner-friendly projects.",
-                    "Reading and understanding contribution guidelines.",
-                    "Creating pull requests and handling feedback.",
-                    "Documenting code and writing helpful commit messages."
-                ]
-            },
-            {
-                title: "4. Enhancing Contribution Skills",
-                description: "Deepen your contributions with testing, documentation, and CI/CD.",
-                topics: [
-                    "Writing tests and understanding test frameworks.",
-                    "Improving project documentation.",
-                    "Automated testing with CI/CD pipelines.",
-                    "Addressing and managing issues effectively."
-                ]
-            },
-            {
-                title: "5. Project Maintenance and Management",
-                description: "Learn about managing and maintaining open source projects.",
-                topics: [
-                    "Responding to issues and pull requests.",
-                    "Organizing project tasks and assigning roles.",
-                    "Maintaining documentation and onboarding contributors.",
-                    "Ensuring project health and community engagement."
-                ]
-            },
-            {
-                title: "6. Advanced Open Source Practices",
-                description: "Explore strategies for leading and scaling open source projects.",
-                topics: [
-                    "Scaling projects and managing large teams.",
-                    "Implementing effective governance models.",
-                    "Handling conflicts and fostering a positive community culture.",
-                    "Navigating legal aspects and compliance in open source."
-                ]
-            }
-        ],
-        
-        resources: {
-            documentation: [
-                {
-                    title: "Open Source Guides by GitHub",
-                    url: "https://opensource.guide/",
-                    description: "Comprehensive guides on how to start contributing to open source and managing projects.",
-                    type: "Guide"
-                },
-                {
-                    title: "Git Documentation",
-                    url: "https://git-scm.com/doc",
-                    description: "Official Git documentation for understanding version control.",
-                    type: "Official Documentation"
-                },
-                {
-                    title: "Choosing an Open Source License",
-                    url: "https://choosealicense.com/",
-                    description: "Helpful tool for understanding and selecting appropriate licenses for open source projects.",
-                    type: "License Guide"
-                }
+    {
+        id: 9,
+        title: "Open Source Learning",
+        description: "Kickstart Your Journey in Open Source",
+        extendedContent: "Open source software development allows you to collaborate, contribute, and learn from real-world projects. This roadmap guides you through the skills, platforms, and tools needed to start contributing to open source, with a focus on effective collaboration, version control, and project navigation.\n\nYou'll gain practical experience working with Git, GitHub, and collaborative workflows, as well as an understanding of community standards and software licensing. This track equips you with valuable hands-on skills for career growth.",
+        icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+        trackInfo: {
+            title: "Open Source Learning Track",
+            description: "Learn the fundamentals of open-source contributions and community collaboration",
+            extendedContent: "Open source software development allows you to collaborate, contribute, and learn from real-world projects. This roadmap guides you through the skills, platforms, and tools needed to start contributing to open source, with a focus on effective collaboration, version control, and project navigation.\n\nYou'll gain practical experience working with Git, GitHub, and collaborative workflows, as well as an understanding of community standards and software licensing. This track equips you with valuable hands-on skills for career growth.",
+            prerequisites: [
+                "Familiarity with a programming language (e.g., Python, JavaScript, or C++)",
+                "Understanding of basic data structures and algorithms",
+                "Basic knowledge of version control systems (e.g., Git)",
+                "Interest in collaboration and teamwork",
+                "Willingness to learn and adapt to different codebases"
             ],
-            tutorials: [
-                {
-                    title: "First Contributions",
-                    url: "https://firstcontributions.github.io/",
-                    description: "Beginner-friendly guide and resources to make your first contribution on GitHub.",
-                    type: "Interactive Tutorial"
-                },
-                {
-                    title: "GitHub Learning Lab",
-                    url: "https://lab.github.com/",
-                    description: "Self-paced interactive tutorials for learning GitHub, Git, and collaborative workflows.",
-                    type: "Interactive Platform"
-                },
-                {
-                    title: "Contributing to Open Source (freeCodeCamp)",
-                    url: "https://www.freecodecamp.org/news/how-to-contribute-to-open-source-projects-beginners-guide/",
-                    description: "A beginner's guide on finding and contributing to open source projects.",
-                    type: "Beginner Guide"
-                }
+            outcomes: [
+                "Contribute to real-world open source projects",
+                "Use Git and GitHub proficiently in collaborative environments",
+                "Navigate and understand complex codebases",
+                "Communicate effectively with other contributors and maintainers"
             ],
-            videos: [
+            sections: [
                 {
-                    title: "How to Contribute to Open Source Projects on GitHub",
-                    url: "https://www.youtube.com/watch?v=MnUd31TvBoU",
-                    description: "A practical video guide for making your first open source contribution on GitHub.",
-                    platform: "YouTube"
+                    title: "Introduction to Open Source",
+                    content: "Understand the fundamentals of open source, including licensing, community standards, and project selection."
                 },
                 {
-                    title: "Understanding Git and GitHub",
-                    url: "https://www.youtube.com/watch?v=USjZcfj8yxE",
-                    description: "A beginner-friendly introduction to Git and GitHub by Traversy Media.",
-                    platform: "YouTube"
+                    title: "Git and GitHub Essentials",
+                    content: "Learn the basics of Git, GitHub workflows, and version control principles for collaborative coding."
                 },
                 {
-                    title: "The Basics of Open Source by Google",
-                    url: "https://www.youtube.com/watch?v=yzeVMecydCE",
-                    description: "Google's overview on what open source is and how to get involved.",
-                    platform: "YouTube"
-                }
-            ],
-            books: [
-                {
-                    title: "Producing Open Source Software",
-                    author: "Karl Fogel",
-                    description: "A comprehensive guide on how to build, manage, and grow successful open source projects.",
-                    level: "Intermediate"
+                    title: "Finding and Choosing Projects",
+                    content: "Explore strategies for finding beginner-friendly projects, reading codebases, and understanding contribution guidelines."
                 },
                 {
-                    title: "The Cathedral & the Bazaar",
-                    author: "Eric S. Raymond",
-                    description: "Explores the principles of open source and its impact on software development, with insights into collaborative workflows.",
-                    level: "Beginner to Intermediate"
+                    title: "Making Your First Contribution",
+                    content: "Learn the process of forking, cloning, and submitting pull requests, with best practices for code submission."
                 },
                 {
-                    title: "Forge Your Future with Open Source",
-                    author: "VM (Vicky) Brasseur",
-                    description: "Practical guidance on how to contribute to open source and navigate project communities.",
-                    level: "Beginner"
-                }
-            ],
-            practice: [
-                {
-                    title: "Up For Grabs",
-                    url: "https://up-for-grabs.net/",
-                    description: "A platform to find beginner-friendly issues in open source projects, tagged by maintainers to help new contributors.",
-                    type: "Issue Finder"
+                    title: "Advanced Collaboration Skills",
+                    content: "Develop skills in collaborative workflows, including handling code reviews, issues, and project discussions."
                 },
                 {
-                    title: "First Timers Only",
-                    url: "https://www.firsttimersonly.com/",
-                    description: "Resources and projects geared towards new contributors making their first open source contribution.",
-                    type: "Resource Hub"
+                    title: "Project Maintenance and Management",
+                    content: "Gain insights into maintaining open source projects, including responding to contributions, managing community interactions, and ensuring project sustainability."
                 },
-                {
-                    title: "CodeTriage",
-                    url: "https://www.codetriage.com/",
-                    description: "Helps developers find open source projects to contribute to by triaging GitHub issues in need of assistance.",
-                    type: "Contribution Platform"
-                }
-            ],
-            events: [
-                {
-                    title: "Google Summer of Code (GSoC)",
-                    url: "https://summerofcode.withgoogle.com/",
-                    description: "An annual program sponsored by Google that offers stipends to university students for working on open source projects during the summer.",
-                    type: "Open Source Event"
-                },
-                {
-                    title: "GirlScript Summer of Code (GSSoC)",
-                    url: "https://gssoc.girlscript.tech/",
-                    description: "An open-source program aimed at encouraging women and underrepresented groups to participate in open source development.",
-                    type: "Open Source Event"
-                },
-                {
-                    title: "Hacktoberfest",
-                    url: "https://hacktoberfest.digitalocean.com/",
-                    description: "A month-long celebration of open source software run by DigitalOcean, encouraging contributions to open source projects.",
-                    type: "Open Source Event"
-                }
             ]
 
         },
-        practice: {
-            beginnerExercises: [
+        content: {
+            examples: [
                 {
-                    title: "Creating Your First Pull Request",
-                    difficulty: "Easy",
-                    description: "Find a beginner-friendly repository, make a minor change, and submit a pull request.",
-                    hints: [
-                        "Look for 'good first issue' or 'help wanted' tags on GitHub",
-                        "Follow contribution guidelines carefully",
-                        "Keep your pull request simple and concise"
-                    ],
-                    solution: {
-                        code: "// Fork the repository\n$ git fork https://github.com/example/project\n\n// Clone your fork\n$ git clone https://github.com/your-username/project\n\n// Make changes, commit, and push\n$ git add .\n$ git commit -m \"Fix typo in README\"\n$ git push origin your-branch\n\n// Submit a pull request from your GitHub forked repo"
-                    }
+                    title: "First Contribution via Pull Request",
+                    code: "// Step 1: Fork the repository\n// Step 2: Clone to local machine\n$ git clone https://github.com/username/repository.git\n\n// Step 3: Create a new branch\n$ git checkout -b new-feature\n\n// Step 4: Make changes and commit\n$ git add .\n$ git commit -m \"Add new feature\"\n\n// Step 5: Push changes to GitHub\n$ git push origin new-feature\n\n// Step 6: Create a pull request on GitHub",
+                    explanation: "This example demonstrates the basic workflow for making your first contribution on GitHub, from forking a repository to creating a pull request."
                 },
                 {
-                    title: "Writing Useful Documentation",
-                    difficulty: "Easy",
-                    description: "Choose an open source project and improve its documentation. This could include improving README files, writing tutorials, or creating a contribution guide.",
-                    hints: [
-                        "Look for documentation improvements in popular projects",
-                        "Focus on clear, concise language and organized structure",
-                        "Add examples or images where possible for clarity"
-                    ],
-                    solution: {
-                        code: "// Example of writing a README\n# Project Name\n\n## Description\nBriefly describe the project purpose.\n\n## Installation\nList steps to install dependencies.\n\n## Usage\nExplain how to use the project.\n\n## Contribution Guidelines\nProvide guidelines for new contributors."
-                    }
+                    title: "Setting Up Open Source Project Locally",
+                    code: "# Clone the project repository\n$ git clone https://github.com/example/project.git\n\n# Navigate into project directory\n$ cd project\n\n# Install dependencies (using npm for Node.js projects)\n$ npm install\n\n# Run the project (for example, starting a development server)\n$ npm start",
+                    explanation: "Basic steps to clone and set up a local development environment for an open source project, using a Node.js-based project as an example."
+                },
+                {
+                    title: "Fixing a Bug in an Open Source Project",
+                    code: "# Step 1: Identify the issue on GitHub\n# Step 2: Clone the repository\n$ git clone https://github.com/example/project.git\n\n# Step 3: Create a new branch for the bug fix\n$ git checkout -b fix-bug-issue-123\n\n# Step 4: Make necessary changes to fix the bug\n# (Edit relevant files)\n\n# Step 5: Test the changes\n$ npm test\n\n# Step 6: Commit the changes\n$ git add .\n$ git commit -m \"Fix bug in feature\"\n\n# Step 7: Push changes and create a pull request\n$ git push origin fix-bug-issue-123\n",
+                    explanation: "This example illustrates how to address a bug in an open source project, from identifying the issue to submitting a pull request."
+                },
+                {
+                    title: "Adding a New Feature to a Project",
+                    code: "// Step 1: Fork the repository and clone it\n$ git clone https://github.com/username/repository.git\n\n// Step 2: Create a new feature branch\n$ git checkout -b feature/new-awesome-feature\n\n// Step 3: Implement the feature (e.g., adding a new function)\n// (Edit relevant files to add functionality)\n\n// Step 4: Commit your changes\n$ git add .\n$ git commit -m \"Implement new awesome feature\"\n\n// Step 5: Push the branch to GitHub\n$ git push origin feature/new-awesome-feature\n\n// Step 6: Open a pull request on GitHub and describe your feature",
+                    explanation: "This example guides you through adding a new feature to an open source project, from forking to submitting a pull request."
+                },
+                {
+                    title: "Creating and Running Tests for an Open Source Project",
+                    code: "// Step 1: Clone the repository\n$ git clone https://github.com/example/project.git\n\n// Step 2: Navigate to the project directory\n$ cd project\n\n// Step 3: Create a new branch for the tests\n$ git checkout -b add-tests\n\n// Step 4: Write tests (using a testing framework like Jest)\n// (Edit or create test files)\n\n// Step 5: Run tests to ensure everything works\n$ npm test\n\n// Step 6: Commit your test cases\n$ git add .\n$ git commit -m \"Add tests for existing functionality\"\n\n// Step 7: Push changes and create a pull request\n$ git push origin add-tests\n",
+                    explanation: "This example describes how to add tests to an open source project, ensuring the code's reliability before submitting a pull request."
+                },
+                {
+                    title: "Reviewing a Pull Request",
+                    code: "# Step 1: Go to the 'Pull Requests' section of the repository\n# Step 2: Click on the pull request you want to review\n# Step 3: Review the code changes by looking at the 'Files Changed' tab\n# Step 4: Add comments or suggestions on specific lines by clicking on the '+' icon next to the line\n# Step 5: Approve the pull request if it meets the criteria, or request changes if necessary\n# Step 6: Leave a comment summarizing your review and submit it",
+                    explanation: "This example outlines the steps for reviewing a pull request, providing feedback, and either approving or requesting changes."
+                },
+                {
+                    title: "Maintaining an Open Source Project",
+                    code: "// Step 1: Monitor issues reported by users on GitHub\n// Step 2: Prioritize issues based on severity and community impact\n// Step 3: Assign issues to contributors or work on them yourSelf\n// Step 4: Merge pull requests after thorough review\n// Step 5: Regularly update documentation and project dependencies\n// Step 6: Communicate with the community through discussions or updates",
+                    explanation: "This example explains how to maintain an open source project, including monitoring issues, merging contributions, and keeping documentation up to date."
+                },
+                {
+                    title: "Updating Project Documentation",
+                    code: "# Step 1: Identify the documentation that needs updating (e.g., README, Wiki)\n# Step 2: Make necessary edits or additions to clarify usage or installation\n# Step 3: Use Markdown for formatting and adding links\n# Step 4: Preview your changes in the GitHub editor\n# Step 5: Commit your changes with a clear message\n$ git commit -m \"Update README for better clarity\"\n# Step 6: Push changes to the repository\n$ git push origin main",
+                    explanation: "This example describes how to update project documentation, ensuring users have accurate and helpful information."
                 }
             ],
-            intermediateExercises: [
+            roadmap: [
                 {
-                    title: "Creating a Feature for an Open Source Project",
-                    difficulty: "Medium",
-                    description: "Identify an existing feature request in an open source project, implement the feature, and submit it as a pull request.",
-                    hints: [
-                        "Search the repository for 'feature request' issues",
-                        "Review the project's coding standards before starting",
-                        "Write tests for your new feature to ensure its functionality"
-                    ],
-                    solution: {
-                        code: "// Step 1: Fork the repository\n$ git fork https://github.com/example/project\n\n// Step 2: Clone your fork\n$ git clone https://github.com/your-username/project\n\n// Step 3: Create a new branch for your feature\n$ git checkout -b new-feature\n\n// Step 4: Implement the feature in the codebase\n// Example code implementation here\n\n// Step 5: Add tests for your feature\n// Example test cases here\n\n// Step 6: Commit your changes\n$ git add .\n$ git commit -m \"Add new feature: description\"\n\n// Step 7: Push your branch to your fork\n$ git push origin new-feature\n\n// Step 8: Open a pull request on the original repository"
-                    }
+                    title: "1. Understanding Open Source",
+                    description: "Learn about open source principles, licensing, and communities.",
+                    topics: [
+                        "What is open source software?",
+                        "Open source licenses and choosing one.",
+                        "Importance of community and collaboration.",
+                        "How to find open source projects."
+                    ]
                 },
                 {
-                    title: "Reviewing Code Contributions",
-                    difficulty: "Medium",
-                    description: "Select a pull request from an open-source project to review. Analyze the code changes, suggest improvements, and provide feedback to the contributor.",
-                    hints: [
-                        "Look for pull requests that are labeled 'needs review'",
-                        "Pay attention to code quality, style, and functionality",
-                        "Be constructive and clear in your feedback"
-                    ],
-                    solution: {
-                        code: "// Step 1: Navigate to the pull requests section of the repository\n// Step 2: Select a pull request to review\n\n// Step 3: Check the code changes\n// Example code review comments:\n// - The variable naming could be more descriptive.\n// - Consider adding error handling for edge cases.\n// - Great job on implementing the feature, but let's optimize this function.\n\n// Step 4: Leave feedback on the pull request\n// Example comment:\n// 'Thank you for your contribution! I have some suggestions to improve the code.'\n\n// Step 5: Approve the pull request if all looks good or request changes"
-                    }
+                    title: "2. Git & GitHub Basics",
+                    description: "Master version control with Git and GitHub.",
+                    topics: [
+                        "Git basics: clone, commit, push, and pull.",
+                        "GitHub features: issues, pull requests, and forks.",
+                        "Branching and merging in Git.",
+                        "Collaborative workflows and code reviews."
+                    ]
+                },
+                {
+                    title: "3. Contributing to Open Source",
+                    description: "Learn how to effectively contribute to projects.",
+                    topics: [
+                        "Finding beginner-friendly projects.",
+                        "Reading and understanding contribution guidelines.",
+                        "Creating pull requests and handling feedback.",
+                        "Documenting code and writing helpful commit messages."
+                    ]
+                },
+                {
+                    title: "4. Enhancing Contribution Skills",
+                    description: "Deepen your contributions with testing, documentation, and CI/CD.",
+                    topics: [
+                        "Writing tests and understanding test frameworks.",
+                        "Improving project documentation.",
+                        "Automated testing with CI/CD pipelines.",
+                        "Addressing and managing issues effectively."
+                    ]
+                },
+                {
+                    title: "5. Project Maintenance and Management",
+                    description: "Learn about managing and maintaining open source projects.",
+                    topics: [
+                        "Responding to issues and pull requests.",
+                        "Organizing project tasks and assigning roles.",
+                        "Maintaining documentation and onboarding contributors.",
+                        "Ensuring project health and community engagement."
+                    ]
+                },
+                {
+                    title: "6. Advanced Open Source Practices",
+                    description: "Explore strategies for leading and scaling open source projects.",
+                    topics: [
+                        "Scaling projects and managing large teams.",
+                        "Implementing effective governance models.",
+                        "Handling conflicts and fostering a positive community culture.",
+                        "Navigating legal aspects and compliance in open source."
+                    ]
                 }
             ],
-            
-            advancedExercises: [
-                {
-                    title: "Becoming a Project Maintainer",
-                    difficulty: "Advanced",
-                    description: "Take over maintenance of an open-source project. This involves managing issues, reviewing pull requests, and coordinating with contributors.",
-                    hints: [
-                        "Start by reaching out to the current maintainers to express your interest",
-                        "Familiarize yourSelf with the project's contribution guidelines and codebase",
-                        "Communicate clearly and constructively with contributors to encourage engagement"
-                    ],
-                    solution: {
-                        code: "// Step 1: Contact the current maintainer via GitHub or project communication channels\n// Example message:\n// Hi [Maintainer's Name],\n// I'm interested in helping maintain [Project Name]. I have been contributing for a while and would love to take on a more active role.\n\n// Step 2: Review open issues and pull requests regularly\n// Example code for managing issues:\n// function reviewIssues() {\n//   const issues = fetchIssues();\n//   issues.forEach(issue => {\n//     if (issue.isOpen) {\n//       assignLabels(issue);\n//       respondToIssue(issue);\n//     }\n//   });\n// }\n\n// Step 3: Conduct code reviews for incoming pull requests\n// Example code for reviewing a PR:\n// function reviewPullRequest(pr) {\n//   const codeChanges = fetchCodeChanges(pr);\n//   if (isCodeQualityGood(codeChanges)) {\n//     approvePullRequest(pr);\n//   } else {\n//     requestChanges(pr);\n//   }\n// }\n"
+
+            resources: {
+                documentation: [
+                    {
+                        title: "Open Source Guides by GitHub",
+                        url: "https://opensource.guide/",
+                        description: "Comprehensive guides on how to start contributing to open source and managing projects.",
+                        type: "Guide"
+                    },
+                    {
+                        title: "Git Documentation",
+                        url: "https://git-scm.com/doc",
+                        description: "Official Git documentation for understanding version control.",
+                        type: "Official Documentation"
+                    },
+                    {
+                        title: "Choosing an Open Source License",
+                        url: "https://choosealicense.com/",
+                        description: "Helpful tool for understanding and selecting appropriate licenses for open source projects.",
+                        type: "License Guide"
                     }
-                },
-                {
-                    title: "Implementing a Major Refactor",
-                    difficulty: "Advanced",
-                    description: "Select an open-source project that could benefit from a refactor. Plan and implement the refactor while maintaining existing functionality, then submit your changes as a pull request.",
-                    hints: [
-                        "Identify areas of the codebase that are difficult to maintain or understand",
-                        "Communicate your refactoring plan with the project maintainers before starting",
-                        "Ensure all existing tests pass after your refactor"
-                    ],
-                    solution: {
-                        code: "// Step 1: Fork the repository\n$ git fork https://github.com/example/project\n\n// Step 2: Clone your fork\n$ git clone https://github.com/your-username/project\n\n// Step 3: Create a new branch for the refactor\n$ git checkout -b refactor-feature\n\n// Step 4: Identify and implement refactor changes\n// Example refactor code:\n// function refactoredFunction() {\n//   // New implementation here\n// }\n\n// Step 5: Run tests to ensure functionality is maintained\n$ npm test\n\n// Step 6: Commit your changes\n$ git add .\n$ git commit -m \"Refactor: description of changes\"\n\n// Step 7: Push your branch to your fork\n$ git push origin refactor-feature\n\n// Step 8: Open a pull request on the original repository"
+                ],
+                tutorials: [
+                    {
+                        title: "First Contributions",
+                        url: "https://firstcontributions.github.io/",
+                        description: "Beginner-friendly guide and resources to make your first contribution on GitHub.",
+                        type: "Interactive Tutorial"
+                    },
+                    {
+                        title: "GitHub Learning Lab",
+                        url: "https://lab.github.com/",
+                        description: "Self-paced interactive tutorials for learning GitHub, Git, and collaborative workflows.",
+                        type: "Interactive Platform"
+                    },
+                    {
+                        title: "Contributing to Open Source (freeCodeCamp)",
+                        url: "https://www.freecodecamp.org/news/how-to-contribute-to-open-source-projects-beginners-guide/",
+                        description: "A beginner's guide on finding and contributing to open source projects.",
+                        type: "Beginner Guide"
                     }
-                }
-            ]
-            
-            
+                ],
+                videos: [
+                    {
+                        title: "How to Contribute to Open Source Projects on GitHub",
+                        url: "https://www.youtube.com/watch?v=MnUd31TvBoU",
+                        description: "A practical video guide for making your first open source contribution on GitHub.",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Understanding Git and GitHub",
+                        url: "https://www.youtube.com/watch?v=USjZcfj8yxE",
+                        description: "A beginner-friendly introduction to Git and GitHub by Traversy Media.",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "The Basics of Open Source by Google",
+                        url: "https://www.youtube.com/watch?v=yzeVMecydCE",
+                        description: "Google's overview on what open source is and how to get involved.",
+                        platform: "YouTube"
+                    }
+                ],
+                books: [
+                    {
+                        title: "Producing Open Source Software",
+                        author: "Karl Fogel",
+                        description: "A comprehensive guide on how to build, manage, and grow successful open source projects.",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "The Cathedral & the Bazaar",
+                        author: "Eric S. Raymond",
+                        description: "Explores the principles of open source and its impact on software development, with insights into collaborative workflows.",
+                        level: "Beginner to Intermediate"
+                    },
+                    {
+                        title: "Forge Your Future with Open Source",
+                        author: "VM (Vicky) Brasseur",
+                        description: "Practical guidance on how to contribute to open source and navigate project communities.",
+                        level: "Beginner"
+                    }
+                ],
+                practice: [
+                    {
+                        title: "Up For Grabs",
+                        url: "https://up-for-grabs.net/",
+                        description: "A platform to find beginner-friendly issues in open source projects, tagged by maintainers to help new contributors.",
+                        type: "Issue Finder"
+                    },
+                    {
+                        title: "First Timers Only",
+                        url: "https://www.firsttimersonly.com/",
+                        description: "Resources and projects geared towards new contributors making their first open source contribution.",
+                        type: "Resource Hub"
+                    },
+                    {
+                        title: "CodeTriage",
+                        url: "https://www.codetriage.com/",
+                        description: "Helps developers find open source projects to contribute to by triaging GitHub issues in need of assistance.",
+                        type: "Contribution Platform"
+                    }
+                ],
+                events: [
+                    {
+                        title: "Google Summer of Code (GSoC)",
+                        url: "https://summerofcode.withgoogle.com/",
+                        description: "An annual program sponsored by Google that offers stipends to university students for working on open source projects during the summer.",
+                        type: "Open Source Event"
+                    },
+                    {
+                        title: "GirlScript Summer of Code (GSSoC)",
+                        url: "https://gssoc.girlscript.tech/",
+                        description: "An open-source program aimed at encouraging women and underrepresented groups to participate in open source development.",
+                        type: "Open Source Event"
+                    },
+                    {
+                        title: "Hacktoberfest",
+                        url: "https://hacktoberfest.digitalocean.com/",
+                        description: "A month-long celebration of open source software run by DigitalOcean, encouraging contributions to open source projects.",
+                        type: "Open Source Event"
+                    }
+                ]
+
+            },
+            practice: {
+                beginnerExercises: [
+                    {
+                        title: "Creating Your First Pull Request",
+                        difficulty: "Easy",
+                        description: "Find a beginner-friendly repository, make a minor change, and submit a pull request.",
+                        hints: [
+                            "Look for 'good first issue' or 'help wanted' tags on GitHub",
+                            "Follow contribution guidelines carefully",
+                            "Keep your pull request simple and concise"
+                        ],
+                        solution: {
+                            code: "// Fork the repository\n$ git fork https://github.com/example/project\n\n// Clone your fork\n$ git clone https://github.com/your-username/project\n\n// Make changes, commit, and push\n$ git add .\n$ git commit -m \"Fix typo in README\"\n$ git push origin your-branch\n\n// Submit a pull request from your GitHub forked repo"
+                        }
+                    },
+                    {
+                        title: "Writing Useful Documentation",
+                        difficulty: "Easy",
+                        description: "Choose an open source project and improve its documentation. This could include improving README files, writing tutorials, or creating a contribution guide.",
+                        hints: [
+                            "Look for documentation improvements in popular projects",
+                            "Focus on clear, concise language and organized structure",
+                            "Add examples or images where possible for clarity"
+                        ],
+                        solution: {
+                            code: "// Example of writing a README\n# Project Name\n\n## Description\nBriefly describe the project purpose.\n\n## Installation\nList steps to install dependencies.\n\n## Usage\nExplain how to use the project.\n\n## Contribution Guidelines\nProvide guidelines for new contributors."
+                        }
+                    }
+                ],
+                intermediateExercises: [
+                    {
+                        title: "Creating a Feature for an Open Source Project",
+                        difficulty: "Medium",
+                        description: "Identify an existing feature request in an open source project, implement the feature, and submit it as a pull request.",
+                        hints: [
+                            "Search the repository for 'feature request' issues",
+                            "Review the project's coding standards before starting",
+                            "Write tests for your new feature to ensure its functionality"
+                        ],
+                        solution: {
+                            code: "// Step 1: Fork the repository\n$ git fork https://github.com/example/project\n\n// Step 2: Clone your fork\n$ git clone https://github.com/your-username/project\n\n// Step 3: Create a new branch for your feature\n$ git checkout -b new-feature\n\n// Step 4: Implement the feature in the codebase\n// Example code implementation here\n\n// Step 5: Add tests for your feature\n// Example test cases here\n\n// Step 6: Commit your changes\n$ git add .\n$ git commit -m \"Add new feature: description\"\n\n// Step 7: Push your branch to your fork\n$ git push origin new-feature\n\n// Step 8: Open a pull request on the original repository"
+                        }
+                    },
+                    {
+                        title: "Reviewing Code Contributions",
+                        difficulty: "Medium",
+                        description: "Select a pull request from an open-source project to review. Analyze the code changes, suggest improvements, and provide feedback to the contributor.",
+                        hints: [
+                            "Look for pull requests that are labeled 'needs review'",
+                            "Pay attention to code quality, style, and functionality",
+                            "Be constructive and clear in your feedback"
+                        ],
+                        solution: {
+                            code: "// Step 1: Navigate to the pull requests section of the repository\n// Step 2: Select a pull request to review\n\n// Step 3: Check the code changes\n// Example code review comments:\n// - The variable naming could be more descriptive.\n// - Consider adding error handling for edge cases.\n// - Great job on implementing the feature, but let's optimize this function.\n\n// Step 4: Leave feedback on the pull request\n// Example comment:\n// 'Thank you for your contribution! I have some suggestions to improve the code.'\n\n// Step 5: Approve the pull request if all looks good or request changes"
+                        }
+                    }
+                ],
+
+                advancedExercises: [
+                    {
+                        title: "Becoming a Project Maintainer",
+                        difficulty: "Advanced",
+                        description: "Take over maintenance of an open-source project. This involves managing issues, reviewing pull requests, and coordinating with contributors.",
+                        hints: [
+                            "Start by reaching out to the current maintainers to express your interest",
+                            "Familiarize yourSelf with the project's contribution guidelines and codebase",
+                            "Communicate clearly and constructively with contributors to encourage engagement"
+                        ],
+                        solution: {
+                            code: "// Step 1: Contact the current maintainer via GitHub or project communication channels\n// Example message:\n// Hi [Maintainer's Name],\n// I'm interested in helping maintain [Project Name]. I have been contributing for a while and would love to take on a more active role.\n\n// Step 2: Review open issues and pull requests regularly\n// Example code for managing issues:\n// function reviewIssues() {\n//   const issues = fetchIssues();\n//   issues.forEach(issue => {\n//     if (issue.isOpen) {\n//       assignLabels(issue);\n//       respondToIssue(issue);\n//     }\n//   });\n// }\n\n// Step 3: Conduct code reviews for incoming pull requests\n// Example code for reviewing a PR:\n// function reviewPullRequest(pr) {\n//   const codeChanges = fetchCodeChanges(pr);\n//   if (isCodeQualityGood(codeChanges)) {\n//     approvePullRequest(pr);\n//   } else {\n//     requestChanges(pr);\n//   }\n// }\n"
+                        }
+                    },
+                    {
+                        title: "Implementing a Major Refactor",
+                        difficulty: "Advanced",
+                        description: "Select an open-source project that could benefit from a refactor. Plan and implement the refactor while maintaining existing functionality, then submit your changes as a pull request.",
+                        hints: [
+                            "Identify areas of the codebase that are difficult to maintain or understand",
+                            "Communicate your refactoring plan with the project maintainers before starting",
+                            "Ensure all existing tests pass after your refactor"
+                        ],
+                        solution: {
+                            code: "// Step 1: Fork the repository\n$ git fork https://github.com/example/project\n\n// Step 2: Clone your fork\n$ git clone https://github.com/your-username/project\n\n// Step 3: Create a new branch for the refactor\n$ git checkout -b refactor-feature\n\n// Step 4: Identify and implement refactor changes\n// Example refactor code:\n// function refactoredFunction() {\n//   // New implementation here\n// }\n\n// Step 5: Run tests to ensure functionality is maintained\n$ npm test\n\n// Step 6: Commit your changes\n$ git add .\n$ git commit -m \"Refactor: description of changes\"\n\n// Step 7: Push your branch to your fork\n$ git push origin refactor-feature\n\n// Step 8: Open a pull request on the original repository"
+                        }
+                    }
+                ]
+
+
+            }
         }
-    }
-},
-{
-    id: 10,
-    title: "Cybersecurity",
-    description: "To learn cybersecurity, follow this roadmap",
-    extendedContent: `
+    },
+    {
+        id: 10,
+        title: "Cybersecurity",
+        description: "To learn cybersecurity, follow this roadmap",
+        extendedContent: `
         Master the fundamentals of cybersecurity including network security, 
         cryptography, and security protocols. Learn about threat detection, 
         vulnerability assessment, and incident response.
@@ -9959,69 +9959,69 @@ abstract class AppDatabase : RoomDatabase() {
         and security architecture design. Focus on both offensive and defensive 
         security techniques.
     `,
-    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
-    trackInfo: {
-        prerequisites: [
-            "Basic understanding of computer networks",
-            "Knowledge of operating systems (Linux/Windows)",
-            "Basic programming skills",
-            "Understanding of web technologies",
-            "Command line proficiency",
-            "Basic system administration skills",
-            "Problem-solving and analytical thinking"
-        ],
-        outcomes: [
-            "Understand and implement network security measures",
-            "Perform vulnerability assessments and penetration testing",
-            "Implement security controls and countermeasures",
-            "Conduct security audits and risk assessments",
-            "Handle incident response and forensics",
-            "Implement secure coding practices",
-            "Configure security tools and frameworks",
-            "Understand compliance and security standards",
-            "Perform threat modeling and analysis",
-            "Implement cryptographic solutions"
-        ],
-        sections: [
-            {
-                title: "Security Fundamentals",
-                content: "Master core security concepts including CIA triad, authentication, authorization, and access control. Learn about common security threats, attack vectors, and basic defense mechanisms. Understand security policies, procedures, and best practices."
-            },
-            {
-                title: "Network Security",
-                content: "Learn network security protocols, firewall configuration, IDS/IPS systems, and VPN setup. Understand network attacks and defenses, packet analysis, and secure network architecture. Master tools like Wireshark, tcpdump, and network security monitoring."
-            },
-            {
-                title: "Application Security",
-                content: "Study web application security, secure coding practices, and common vulnerabilities (OWASP Top 10). Learn about input validation, output encoding, and secure session management. Practice secure software development lifecycle and security testing."
-            },
-            {
-                title: "Ethical Hacking",
-                content: "Learn penetration testing methodologies, vulnerability assessment, and exploitation techniques. Master tools like Metasploit, Burp Suite, and Nmap. Understand social engineering, wireless security, and web application hacking."
-            },
-            {
-                title: "Cryptography",
-                content: "Understand cryptographic algorithms, protocols, and implementations. Learn about encryption, digital signatures, and PKI. Study hash functions, random number generation, and cryptographic attack methods."
-            },
-            {
-                title: "Incident Response",
-                content: "Master incident handling procedures, digital forensics, and malware analysis. Learn about security incident management, evidence collection, and analysis. Practice incident documentation and reporting."
-            },
-            {
-                title: "Security Operations",
-                content: "Learn about Security Operations Center (SOC), SIEM systems, and security monitoring. Understand log analysis, security metrics, and continuous monitoring. Study threat intelligence and security automation."
-            },
-            {
-                title: "Compliance & Governance",
-                content: "Understand security frameworks (ISO 27001, NIST), compliance requirements (GDPR, HIPAA), and security policies. Learn about risk management, security auditing, and documentation. Study security awareness and training programs."
-            }
-        ]
-    },
-    content: {
-        examples: [
-            {
-                title: "Network Security Configuration",
-                code: `# Configuring a Basic Firewall with iptables
+        icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+        trackInfo: {
+            prerequisites: [
+                "Basic understanding of computer networks",
+                "Knowledge of operating systems (Linux/Windows)",
+                "Basic programming skills",
+                "Understanding of web technologies",
+                "Command line proficiency",
+                "Basic system administration skills",
+                "Problem-solving and analytical thinking"
+            ],
+            outcomes: [
+                "Understand and implement network security measures",
+                "Perform vulnerability assessments and penetration testing",
+                "Implement security controls and countermeasures",
+                "Conduct security audits and risk assessments",
+                "Handle incident response and forensics",
+                "Implement secure coding practices",
+                "Configure security tools and frameworks",
+                "Understand compliance and security standards",
+                "Perform threat modeling and analysis",
+                "Implement cryptographic solutions"
+            ],
+            sections: [
+                {
+                    title: "Security Fundamentals",
+                    content: "Master core security concepts including CIA triad, authentication, authorization, and access control. Learn about common security threats, attack vectors, and basic defense mechanisms. Understand security policies, procedures, and best practices."
+                },
+                {
+                    title: "Network Security",
+                    content: "Learn network security protocols, firewall configuration, IDS/IPS systems, and VPN setup. Understand network attacks and defenses, packet analysis, and secure network architecture. Master tools like Wireshark, tcpdump, and network security monitoring."
+                },
+                {
+                    title: "Application Security",
+                    content: "Study web application security, secure coding practices, and common vulnerabilities (OWASP Top 10). Learn about input validation, output encoding, and secure session management. Practice secure software development lifecycle and security testing."
+                },
+                {
+                    title: "Ethical Hacking",
+                    content: "Learn penetration testing methodologies, vulnerability assessment, and exploitation techniques. Master tools like Metasploit, Burp Suite, and Nmap. Understand social engineering, wireless security, and web application hacking."
+                },
+                {
+                    title: "Cryptography",
+                    content: "Understand cryptographic algorithms, protocols, and implementations. Learn about encryption, digital signatures, and PKI. Study hash functions, random number generation, and cryptographic attack methods."
+                },
+                {
+                    title: "Incident Response",
+                    content: "Master incident handling procedures, digital forensics, and malware analysis. Learn about security incident management, evidence collection, and analysis. Practice incident documentation and reporting."
+                },
+                {
+                    title: "Security Operations",
+                    content: "Learn about Security Operations Center (SOC), SIEM systems, and security monitoring. Understand log analysis, security metrics, and continuous monitoring. Study threat intelligence and security automation."
+                },
+                {
+                    title: "Compliance & Governance",
+                    content: "Understand security frameworks (ISO 27001, NIST), compliance requirements (GDPR, HIPAA), and security policies. Learn about risk management, security auditing, and documentation. Study security awareness and training programs."
+                }
+            ]
+        },
+        content: {
+            examples: [
+                {
+                    title: "Network Security Configuration",
+                    code: `# Configuring a Basic Firewall with iptables
     
     # Flush existing rules
     iptables -F
@@ -10072,11 +10072,11 @@ abstract class AppDatabase : RoomDatabase() {
     
     # Ignore bogus error responses
     echo 1 > /proc/sys/net/ipv4/icmp_ignore_bogus_error_responses`,
-                explanation: "This example demonstrates basic firewall configuration using iptables, including setting up security rules, allowing specific services, and implementing basic DDoS protection."
-            },
-            {
-                title: "Web Application Security Implementation",
-                code: `// Secure API Endpoint Implementation
+                    explanation: "This example demonstrates basic firewall configuration using iptables, including setting up security rules, allowing specific services, and implementing basic DDoS protection."
+                },
+                {
+                    title: "Web Application Security Implementation",
+                    code: `// Secure API Endpoint Implementation
     
     const express = require('express');
     const rateLimit = require('express-rate-limit');
@@ -10244,11 +10244,11 @@ abstract class AppDatabase : RoomDatabase() {
             error: 'An unexpected error occurred'
         });
     });`,
-                explanation: "This example showcases secure API implementation including authentication, authorization, input validation, and security best practices."
-            },
-            {
-                title: "Security Audit Script",
-                code: `#!/bin/bash
+                    explanation: "This example showcases secure API implementation including authentication, authorization, input validation, and security best practices."
+                },
+                {
+                    title: "Security Audit Script",
+                    code: `#!/bin/bash
     
     # System Security Audit Script
     
@@ -10372,384 +10372,384 @@ abstract class AppDatabase : RoomDatabase() {
     } > security_audit_report_$(date +%Y%m%d).txt
     
     echo "Audit complete. Report generated."`,
-                explanation: "This script performs a basic security audit of a Linux system, checking for common security issues and generating a detailed report."
-            }
-        ],
-    
-        roadmap: [
-            {
-                title: "1. Security Fundamentals",
-                description: "Master core security concepts and principles",
-                topics: [
-                    "CIA Triad and Security Principles",
-                    "Authentication and Authorization",
-                    "Security Policies and Procedures",
-                    "Risk Assessment and Management",
-                    "Security Controls and Frameworks",
-                    "Basic Cryptography Concepts",
-                    "Security Architecture Basics"
-                ]
-            },
-            {
-                title: "2. Network Security",
-                description: "Learn network security concepts and implementation",
-                topics: [
-                    "Network Protocols and Security",
-                    "Firewall Configuration",
-                    "IDS/IPS Systems",
-                    "VPN Implementation",
-                    "Network Monitoring Tools",
-                    "Wireless Network Security",
-                    "Network Attacks and defenses"
-                ]
-            },
-            {
-                title: "3. Application Security",
-                description: "Master application security testing and secure development",
-                topics: [
-                    "Web Application Security",
-                    "OWASP Top 10",
-                    "Secure Coding Practices",
-                    "API Security",
-                    "Input Validation",
-                    "Session Management",
-                    "Security Testing"
-                ]
-            },
-            {
-                title: "4. Ethical Hacking",
-                description: "Learn penetration testing and vulnerability assessment",
-                topics: [
-                    "Penetration Testing Methodology",
-                    "Vulnerability Assessment",
-                    "Exploitation Techniques",
-                    "Social Engineering",
-                    "Web Application Hacking",
-                    "Wireless Hacking",
-                    "Mobile Security Testing"
-                ]
-            },
-            {
-                title: "5. Cryptography",
-                description: "Understand cryptographic algorithms and implementations",
-                topics: [
-                    "Symmetric Encryption",
-                    "Asymmetric Encryption",
-                    "Hash Functions",
-                    "Digital Signatures",
-                    "PKI and Certificates",
-                    "Cryptographic Protocols",
-                    "Crypto Implementation"
-                ]
-            },
-            {
-                title: "6. Incident Response",
-                description: "Master incident handling and digital forensics",
-                topics: [
-                    "Incident Response Process",
-                    "Digital Forensics",
-                    "Malware Analysis",
-                    "Log Analysis",
-                    "Evidence Collection",
-                    "Incident Documentation",
-                    "Recovery Procedures"
-                ]
-            },
-            {
-                title: "7. Security Operations",
-                description: "Learn security operations and monitoring",
-                topics: [
-                    "Security Operations Center",
-                    "SIEM Implementation",
-                    "Threat Intelligence",
-                    "Security Automation",
-                    "Continuous Monitoring",
-                    "Alert Management",
-                    "Security Metrics"
-                ]
-            }
-        ],
-        resources: {
-            documentation: [
-            {
-            title: "OWASP Web Security Testing Guide",
-            url: "https://owasp.org/www-project-web-security-testing-guide/",
-            description: "Comprehensive guide for web application security testing",
-            type: "Testing Guide"
-            },
-            {
-            title: "NIST Cybersecurity Framework",
-            url: "https://www.nist.gov/cyberframework",
-            description: "Framework for improving critical infrastructure cybersecurity",
-            type: "Framework"
-            },
-            {
-            title: "MITRE ATT&CK",
-            url: "https://attack.mitre.org/",
-            description: "Knowledge base of adversary tactics and techniques",
-            type: "Knowledge Base"
-            },
-            {
-            title: "CIS Controls",
-            url: "https://www.cisecurity.org/controls/",
-            description: "Best practices for defending against common attacks",
-            type: "Security Controls"
-            },
-            {
-            title: "SANS Reading Room",
-            url: "https://www.sans.org/reading-room/",
-            description: "Collection of research papers on various security topics",
-            type: "Research Papers"
-            }
+                    explanation: "This script performs a basic security audit of a Linux system, checking for common security issues and generating a detailed report."
+                }
             ],
-            tutorials: [
-            {
-            title: "Hack The Box",
-            url: "https://www.hackthebox.eu/",
-            description: "Online platform for practicing penetration testing skills",
-            type: "Hands-on Platform"
-            },
-            {
-            title: "PortSwigger Web Security Academy",
-            url: "https://portswigger.net/web-security",
-            description: "Free online web security training",
-            type: "Online Course"
-            },
-            {
-            title: "Metasploit Unleashed",
-            url: "https://www.offensive-security.com/metasploit-unleashed/",
-            description: "Free Metasploit training course",
-            type: "Online Course"
-            },
-            {
-            title: "Cybrary",
-            url: "https://www.cybrary.it/",
-            description: "Online platform for cybersecurity courses and training",
-            type: "Learning Platform"
-            },
-            {
-            title: "CTFtime",
-            url: "https://ctftime.org/",
-            description: "Collection of Capture The Flag (CTF) competitions and write-ups",
-            type: "Practice Platform"
-            }
+
+            roadmap: [
+                {
+                    title: "1. Security Fundamentals",
+                    description: "Master core security concepts and principles",
+                    topics: [
+                        "CIA Triad and Security Principles",
+                        "Authentication and Authorization",
+                        "Security Policies and Procedures",
+                        "Risk Assessment and Management",
+                        "Security Controls and Frameworks",
+                        "Basic Cryptography Concepts",
+                        "Security Architecture Basics"
+                    ]
+                },
+                {
+                    title: "2. Network Security",
+                    description: "Learn network security concepts and implementation",
+                    topics: [
+                        "Network Protocols and Security",
+                        "Firewall Configuration",
+                        "IDS/IPS Systems",
+                        "VPN Implementation",
+                        "Network Monitoring Tools",
+                        "Wireless Network Security",
+                        "Network Attacks and defenses"
+                    ]
+                },
+                {
+                    title: "3. Application Security",
+                    description: "Master application security testing and secure development",
+                    topics: [
+                        "Web Application Security",
+                        "OWASP Top 10",
+                        "Secure Coding Practices",
+                        "API Security",
+                        "Input Validation",
+                        "Session Management",
+                        "Security Testing"
+                    ]
+                },
+                {
+                    title: "4. Ethical Hacking",
+                    description: "Learn penetration testing and vulnerability assessment",
+                    topics: [
+                        "Penetration Testing Methodology",
+                        "Vulnerability Assessment",
+                        "Exploitation Techniques",
+                        "Social Engineering",
+                        "Web Application Hacking",
+                        "Wireless Hacking",
+                        "Mobile Security Testing"
+                    ]
+                },
+                {
+                    title: "5. Cryptography",
+                    description: "Understand cryptographic algorithms and implementations",
+                    topics: [
+                        "Symmetric Encryption",
+                        "Asymmetric Encryption",
+                        "Hash Functions",
+                        "Digital Signatures",
+                        "PKI and Certificates",
+                        "Cryptographic Protocols",
+                        "Crypto Implementation"
+                    ]
+                },
+                {
+                    title: "6. Incident Response",
+                    description: "Master incident handling and digital forensics",
+                    topics: [
+                        "Incident Response Process",
+                        "Digital Forensics",
+                        "Malware Analysis",
+                        "Log Analysis",
+                        "Evidence Collection",
+                        "Incident Documentation",
+                        "Recovery Procedures"
+                    ]
+                },
+                {
+                    title: "7. Security Operations",
+                    description: "Learn security operations and monitoring",
+                    topics: [
+                        "Security Operations Center",
+                        "SIEM Implementation",
+                        "Threat Intelligence",
+                        "Security Automation",
+                        "Continuous Monitoring",
+                        "Alert Management",
+                        "Security Metrics"
+                    ]
+                }
             ],
-            videos: [
-            {
-            title: "Computerphile",
-            url: "https://www.youtube.com/user/Computerphile",
-            description: "Videos on various computer science topics, including security",
-            platform: "YouTube"
-            },
-            {
-            title: "John Hammond",
-            url: "https://www.youtube.com/c/JohnHammond010",
-            description: "Tutorials on ethical hacking, CTFs, and security tools",
-            platform: "YouTube"
-            },
-            {
-            title: "LiveOverflow",
-            url: "https://www.youtube.com/c/LiveOverflowCTF",
-            description: "In-depth explanations of CTF challenges and security concepts",
-            platform: "YouTube"
-            },
-            {
-            title: "IppSec",
-            url: "https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA",
-            description: "Walkthroughs of Hack The Box machines",
-            platform: "YouTube"
-            },
-            {
-            title: "DEFCONConference",
-            url: "https://www.youtube.com/user/DEFCONConference",
-            description: "Recordings of DEFCON conference talks",
-            platform: "YouTube"
-            }
-            ],
-            books: [
-            {
-            title: "The Web Application Hacker's Handbook",
-            author: "Dafydd Stuttard, Marcus Pinto",
-            description: "Comprehensive guide to web application security testing",
-            level: "Intermediate"
-            },
-            {
-            title: "The Shellcoder's Handbook",
-            author: "Chris Anley, John Heasman, Felix Lindner, Gerardo Richarte",
-            description: "Techniques for writing exploits and understanding low-level attacks",
-            level: "Advanced"
-            },
-            {
-            title: "Penetration Testing: A Hands-On Introduction to Hacking",
-            author: "Georgia Weidman",
-            description: "Guide to the fundamentals of penetration testing",
-            level: "Beginner"
-            },
-            {
-            title: "The Basics of Hacking and Penetration Testing",
-            author: "Patrick Engebretson",
-            description: "Introduction to ethical hacking and penetration testing",
-            level: "Beginner"
-            },
-            {
-            title: "Applied Cryptography",
-            author: "Bruce Schneier",
-            description: "Comprehensive guide to cryptography and its applications",
-            level: "Advanced"
-            }
-            ],
-            tools: [
-            {
-            title: "Burp Suite",
-            url: "https://portswigger.net/burp",
-            description: "Web application security testing tool",
-            type: "Testing Tool",
-            category: "Essential"
-            },
-            {
-            title: "Nmap",
-            url: "https://nmap.org/",
-            description: "Network discovery and security auditing tool",
-            type: "Network Tool",
-            category: "Essential"
-            },
-            {
-            title: "Metasploit",
-            url: "https://www.metasploit.com/",
-            description: "Penetration testing framework",
-            type: "Exploitation Framework",
-            category: "Essential"
-            },
-            {
-            title: "Wireshark",
-            url: "https://www.wireshark.org/",
-            description: "Network protocol analyzer",
-            type: "Network Tool",
-            category: "Essential"
-            },
-            {
-            title: "John the Ripper",
-            url: "https://www.openwall.com/john/",
-            description: "Password cracking tool",
-            type: "Password Cracker",
-            category: "Essential"
-            }
-            ],
-            communities: [
-            {
-            title: "Reddit r/netsec",
-            url: "https://www.reddit.com/r/netsec/",
-            description: "Subreddit for technical information security discussion",
-            type: "Forum"
-            },
-            {
-            title: "Security StackExchange",
-            url: "https://security.stackexchange.com/",
-            description: "Q&A community for information security professionals",
-            type: "Q&A Forum"
-            },
-            {
-            title: "OWASP Slack",
-            url: "https://owasp.slack.com/",
-            description: "Slack workspace for OWASP community discussions",
-            type: "Slack Community"
-            },
-            {
-            title: "Security BSides",
-            url: "http://www.securitybsides.com/",
-            description: "Community-driven security conferences worldwide",
-            type: "Conference Series"
-            },
-            {
-            title: "Null Byte",
-            url: "https://null-byte.wonderhowto.com/",
-            description: "Community for aspiring white hat hackers and security professionals",
-            type: "Forum"
-            }
-            ],
-            podcasts: [
-            {
-            title: "Darknet Diaries",
-            url: "https://darknetdiaries.com/",
-            description: "True stories from the dark side of the internet",
-            platform: "Podcast"
-            },
-            {
-            title: "Risky Business",
-            url: "https://risky.biz/",
-            description: "News and in-depth commentary from security industry experts",
-            platform: "Podcast"
-            },
-            {
-            title: "defensive Security Podcast",
-            url: "https://defensivesecurity.org/",
-            description: "Podcast covering breaches, strategies, tools, and techniques",
-            platform: "Podcast"
-            },
-            {
-            title: "Security Now",
-            url: "https://twit.tv/shows/security-now",
-            description: "Deep dive into security topics with Steve Gibson",
-            platform: "Podcast"
-            }
-            ],
-            blogs: [
-            {
-            title: "Krebs on Security",
-            url: "https://krebsonsecurity.com/",
-            description: "In-depth security news and investigation",
-            type: "Blog"
-            },
-            {
-            title: "Schneier on Security",
-            url: "https://www.schneier.com/",
-            description: "Blog by renowned security expert Bruce Schneier",
-            type: "Blog"
-            },
-            {
-            title: "Troy Hunt's Blog",
-            url: "https://www.troyhunt.com/",
-            description: "Blog by security researcher and founder of Have I Been Pwned",
-            type: "Blog"
-            },
-            {
-            title: "Graham Cluley",
-            url: "https://grahamcluley.com/",
-            description: "Award-winning computer security news, advice, and opinion",
-            type: "Blog"
-            }
-            ]
+            resources: {
+                documentation: [
+                    {
+                        title: "OWASP Web Security Testing Guide",
+                        url: "https://owasp.org/www-project-web-security-testing-guide/",
+                        description: "Comprehensive guide for web application security testing",
+                        type: "Testing Guide"
+                    },
+                    {
+                        title: "NIST Cybersecurity Framework",
+                        url: "https://www.nist.gov/cyberframework",
+                        description: "Framework for improving critical infrastructure cybersecurity",
+                        type: "Framework"
+                    },
+                    {
+                        title: "MITRE ATT&CK",
+                        url: "https://attack.mitre.org/",
+                        description: "Knowledge base of adversary tactics and techniques",
+                        type: "Knowledge Base"
+                    },
+                    {
+                        title: "CIS Controls",
+                        url: "https://www.cisecurity.org/controls/",
+                        description: "Best practices for defending against common attacks",
+                        type: "Security Controls"
+                    },
+                    {
+                        title: "SANS Reading Room",
+                        url: "https://www.sans.org/reading-room/",
+                        description: "Collection of research papers on various security topics",
+                        type: "Research Papers"
+                    }
+                ],
+                tutorials: [
+                    {
+                        title: "Hack The Box",
+                        url: "https://www.hackthebox.eu/",
+                        description: "Online platform for practicing penetration testing skills",
+                        type: "Hands-on Platform"
+                    },
+                    {
+                        title: "PortSwigger Web Security Academy",
+                        url: "https://portswigger.net/web-security",
+                        description: "Free online web security training",
+                        type: "Online Course"
+                    },
+                    {
+                        title: "Metasploit Unleashed",
+                        url: "https://www.offensive-security.com/metasploit-unleashed/",
+                        description: "Free Metasploit training course",
+                        type: "Online Course"
+                    },
+                    {
+                        title: "Cybrary",
+                        url: "https://www.cybrary.it/",
+                        description: "Online platform for cybersecurity courses and training",
+                        type: "Learning Platform"
+                    },
+                    {
+                        title: "CTFtime",
+                        url: "https://ctftime.org/",
+                        description: "Collection of Capture The Flag (CTF) competitions and write-ups",
+                        type: "Practice Platform"
+                    }
+                ],
+                videos: [
+                    {
+                        title: "Computerphile",
+                        url: "https://www.youtube.com/user/Computerphile",
+                        description: "Videos on various computer science topics, including security",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "John Hammond",
+                        url: "https://www.youtube.com/c/JohnHammond010",
+                        description: "Tutorials on ethical hacking, CTFs, and security tools",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "LiveOverflow",
+                        url: "https://www.youtube.com/c/LiveOverflowCTF",
+                        description: "In-depth explanations of CTF challenges and security concepts",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "IppSec",
+                        url: "https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA",
+                        description: "Walkthroughs of Hack The Box machines",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "DEFCONConference",
+                        url: "https://www.youtube.com/user/DEFCONConference",
+                        description: "Recordings of DEFCON conference talks",
+                        platform: "YouTube"
+                    }
+                ],
+                books: [
+                    {
+                        title: "The Web Application Hacker's Handbook",
+                        author: "Dafydd Stuttard, Marcus Pinto",
+                        description: "Comprehensive guide to web application security testing",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "The Shellcoder's Handbook",
+                        author: "Chris Anley, John Heasman, Felix Lindner, Gerardo Richarte",
+                        description: "Techniques for writing exploits and understanding low-level attacks",
+                        level: "Advanced"
+                    },
+                    {
+                        title: "Penetration Testing: A Hands-On Introduction to Hacking",
+                        author: "Georgia Weidman",
+                        description: "Guide to the fundamentals of penetration testing",
+                        level: "Beginner"
+                    },
+                    {
+                        title: "The Basics of Hacking and Penetration Testing",
+                        author: "Patrick Engebretson",
+                        description: "Introduction to ethical hacking and penetration testing",
+                        level: "Beginner"
+                    },
+                    {
+                        title: "Applied Cryptography",
+                        author: "Bruce Schneier",
+                        description: "Comprehensive guide to cryptography and its applications",
+                        level: "Advanced"
+                    }
+                ],
+                tools: [
+                    {
+                        title: "Burp Suite",
+                        url: "https://portswigger.net/burp",
+                        description: "Web application security testing tool",
+                        type: "Testing Tool",
+                        category: "Essential"
+                    },
+                    {
+                        title: "Nmap",
+                        url: "https://nmap.org/",
+                        description: "Network discovery and security auditing tool",
+                        type: "Network Tool",
+                        category: "Essential"
+                    },
+                    {
+                        title: "Metasploit",
+                        url: "https://www.metasploit.com/",
+                        description: "Penetration testing framework",
+                        type: "Exploitation Framework",
+                        category: "Essential"
+                    },
+                    {
+                        title: "Wireshark",
+                        url: "https://www.wireshark.org/",
+                        description: "Network protocol analyzer",
+                        type: "Network Tool",
+                        category: "Essential"
+                    },
+                    {
+                        title: "John the Ripper",
+                        url: "https://www.openwall.com/john/",
+                        description: "Password cracking tool",
+                        type: "Password Cracker",
+                        category: "Essential"
+                    }
+                ],
+                communities: [
+                    {
+                        title: "Reddit r/netsec",
+                        url: "https://www.reddit.com/r/netsec/",
+                        description: "Subreddit for technical information security discussion",
+                        type: "Forum"
+                    },
+                    {
+                        title: "Security StackExchange",
+                        url: "https://security.stackexchange.com/",
+                        description: "Q&A community for information security professionals",
+                        type: "Q&A Forum"
+                    },
+                    {
+                        title: "OWASP Slack",
+                        url: "https://owasp.slack.com/",
+                        description: "Slack workspace for OWASP community discussions",
+                        type: "Slack Community"
+                    },
+                    {
+                        title: "Security BSides",
+                        url: "http://www.securitybsides.com/",
+                        description: "Community-driven security conferences worldwide",
+                        type: "Conference Series"
+                    },
+                    {
+                        title: "Null Byte",
+                        url: "https://null-byte.wonderhowto.com/",
+                        description: "Community for aspiring white hat hackers and security professionals",
+                        type: "Forum"
+                    }
+                ],
+                podcasts: [
+                    {
+                        title: "Darknet Diaries",
+                        url: "https://darknetdiaries.com/",
+                        description: "True stories from the dark side of the internet",
+                        platform: "Podcast"
+                    },
+                    {
+                        title: "Risky Business",
+                        url: "https://risky.biz/",
+                        description: "News and in-depth commentary from security industry experts",
+                        platform: "Podcast"
+                    },
+                    {
+                        title: "defensive Security Podcast",
+                        url: "https://defensivesecurity.org/",
+                        description: "Podcast covering breaches, strategies, tools, and techniques",
+                        platform: "Podcast"
+                    },
+                    {
+                        title: "Security Now",
+                        url: "https://twit.tv/shows/security-now",
+                        description: "Deep dive into security topics with Steve Gibson",
+                        platform: "Podcast"
+                    }
+                ],
+                blogs: [
+                    {
+                        title: "Krebs on Security",
+                        url: "https://krebsonsecurity.com/",
+                        description: "In-depth security news and investigation",
+                        type: "Blog"
+                    },
+                    {
+                        title: "Schneier on Security",
+                        url: "https://www.schneier.com/",
+                        description: "Blog by renowned security expert Bruce Schneier",
+                        type: "Blog"
+                    },
+                    {
+                        title: "Troy Hunt's Blog",
+                        url: "https://www.troyhunt.com/",
+                        description: "Blog by security researcher and founder of Have I Been Pwned",
+                        type: "Blog"
+                    },
+                    {
+                        title: "Graham Cluley",
+                        url: "https://grahamcluley.com/",
+                        description: "Award-winning computer security news, advice, and opinion",
+                        type: "Blog"
+                    }
+                ]
             },
             practice: {
                 beginnerExercises: [
-                {
-                title: "Basic Network Scanning",
-                difficulty: "Easy",
-                description: "Perform a basic network scan using Nmap to identify live hosts and open ports.",
-                hints: [
-                "Use Nmap's default settings for a simple scan",
-                "Specify the target IP address or IP range",
-                "Analyze the scan results to identify potential vulnerabilities"
-                ],
-                solution: {
-                code: `# Basic Nmap scan
+                    {
+                        title: "Basic Network Scanning",
+                        difficulty: "Easy",
+                        description: "Perform a basic network scan using Nmap to identify live hosts and open ports.",
+                        hints: [
+                            "Use Nmap's default settings for a simple scan",
+                            "Specify the target IP address or IP range",
+                            "Analyze the scan results to identify potential vulnerabilities"
+                        ],
+                        solution: {
+                            code: `# Basic Nmap scan
                 nmap -sV -O <target_IP_or_range>
                 # Example:
                 nmap -sV -O 192.168.1.0/24`,
-            explanation: "This exercise introduces the basics of network scanning using Nmap. It demonstrates how to perform a simple scan to identify live hosts, open ports, and service versions."
-        }
-    },
-    {
-        title: "Password Strength Checker",
-        difficulty: "Easy",
-        description: "Create a Python script to check the strength of a given password.",
-        hints: [
-        "define criteria for password strength (e.g., length, complexity)",
-        "Use conditional statements to evaluate the password",
-        "Provide feedback to the user on password strength"
-        ],
-        solution: {
-        code: `def check_password_strength(password):
+                            explanation: "This exercise introduces the basics of network scanning using Nmap. It demonstrates how to perform a simple scan to identify live hosts, open ports, and service versions."
+                        }
+                    },
+                    {
+                        title: "Password Strength Checker",
+                        difficulty: "Easy",
+                        description: "Create a Python script to check the strength of a given password.",
+                        hints: [
+                            "define criteria for password strength (e.g., length, complexity)",
+                            "Use conditional statements to evaluate the password",
+                            "Provide feedback to the user on password strength"
+                        ],
+                        solution: {
+                            code: `def check_password_strength(password):
         # define criteria for password strength
         min_length = 8
         has_uppercase = any(char.isupper() for char in password)
@@ -10768,43 +10768,43 @@ abstract class AppDatabase : RoomDatabase() {
         password = input("Enter a password: ")
         strength = check_password_strength(password)
         print("Password Strength:", strength)`,
-        explanation: "This exercise focuses on creating a basic password strength checker using Python. It defines criteria for password strength, such as minimum length and character complexity. The script evaluates the given password against these criteria and provides feedback to the user on the password's strength."
-}
-}
-],
-        intermediateExercises: [
-            {
-                title: "Web Application Vulnerability Assessment",
-                difficulty: "Medium",
-                description: "Perform a vulnerability assessment of a web application using OWASP ZAP.",
-                hints: [
-                    "Configure ZAP to use your browser as a proxy",
-                    "Explore the application manually to discover functionalities",
-                    "Use ZAP's automated scanners to identify potential vulnerabilities",
-                    "Analyze the scan results and prioritize the findings"
+                            explanation: "This exercise focuses on creating a basic password strength checker using Python. It defines criteria for password strength, such as minimum length and character complexity. The script evaluates the given password against these criteria and provides feedback to the user on the password's strength."
+                        }
+                    }
                 ],
-                solution: {
-                    code: `1. Launch OWASP ZAP and configure your browser to use ZAP as a proxy
+                intermediateExercises: [
+                    {
+                        title: "Web Application Vulnerability Assessment",
+                        difficulty: "Medium",
+                        description: "Perform a vulnerability assessment of a web application using OWASP ZAP.",
+                        hints: [
+                            "Configure ZAP to use your browser as a proxy",
+                            "Explore the application manually to discover functionalities",
+                            "Use ZAP's automated scanners to identify potential vulnerabilities",
+                            "Analyze the scan results and prioritize the findings"
+                        ],
+                        solution: {
+                            code: `1. Launch OWASP ZAP and configure your browser to use ZAP as a proxy
 2. Browse the target web application manually, exploring all functionalities
 3. In ZAP, go to the "Active Scan" tab and select the target URL
 4. Click "Start Scan" to initiate the automated vulnerability scanners
 5. Once the scan is complete, review the alerts in the "Alerts" tab
 6. Analyze the findings, prioritize them based on risk, and generate a report`,
-                    explanation: "This exercise focuses on web application vulnerability assessment using OWASP ZAP. It guides you through the process of setting up ZAP, manually exploring the application, running automated scans, and analyzing the results to identify potential vulnerabilities."
-                }
-            },
-            {
-                title: "File Integrity Monitoring",
-                difficulty: "Medium",
-                description: "Develop a script to monitor the integrity of critical system files.",
-                hints: [
-                "Use a hashing algorithm (e.g., SHA-256) to calculate file hashes",
-                "Store the initial file hashes in a database or file",
-                "Periodically recalculate the hashes and compare them with the stored values",
-                "Alert the user if any file modifications are detected"
-                ],
-                solution: {
-                code: `import os
+                            explanation: "This exercise focuses on web application vulnerability assessment using OWASP ZAP. It guides you through the process of setting up ZAP, manually exploring the application, running automated scans, and analyzing the results to identify potential vulnerabilities."
+                        }
+                    },
+                    {
+                        title: "File Integrity Monitoring",
+                        difficulty: "Medium",
+                        description: "Develop a script to monitor the integrity of critical system files.",
+                        hints: [
+                            "Use a hashing algorithm (e.g., SHA-256) to calculate file hashes",
+                            "Store the initial file hashes in a database or file",
+                            "Periodically recalculate the hashes and compare them with the stored values",
+                            "Alert the user if any file modifications are detected"
+                        ],
+                        solution: {
+                            code: `import os
 import hashlib
 import json
 import time
@@ -10843,23 +10843,23 @@ baseline_file = "baseline_hashes.json"
 while True:
 monitor_files(critical_files, baseline_file)
 time.sleep(3600)  # Monitor every hour`,
-                explanation: "This exercise focuses on developing a basic file integrity monitoring script. It calculates the hashes of critical system files and compares them with previously stored baseline hashes. If any file modifications are detected, the script alerts the user. The exercise demonstrates the use of hashing algorithms, file I/O operations, and periodic monitoring techniques."
-}
-}
-],
-        advancedExercises: [
-            {
-                title: "Buffer Overflow Exploitation",
-                difficulty: "Hard",
-                description: "Exploit a buffer overflow vulnerability in a simple C program.",
-                hints: [
-                    "Analyze the source code to identify the vulnerability",
-                    "Determine the offset to overwrite the return address",
-                    "Craft a malicious payload to spawn a shell",
-                    "Use a debugger to test and refine the exploit"
+                            explanation: "This exercise focuses on developing a basic file integrity monitoring script. It calculates the hashes of critical system files and compares them with previously stored baseline hashes. If any file modifications are detected, the script alerts the user. The exercise demonstrates the use of hashing algorithms, file I/O operations, and periodic monitoring techniques."
+                        }
+                    }
                 ],
-                solution: {
-                    code: `1. Analyze the vulnerable C program:
+                advancedExercises: [
+                    {
+                        title: "Buffer Overflow Exploitation",
+                        difficulty: "Hard",
+                        description: "Exploit a buffer overflow vulnerability in a simple C program.",
+                        hints: [
+                            "Analyze the source code to identify the vulnerability",
+                            "Determine the offset to overwrite the return address",
+                            "Craft a malicious payload to spawn a shell",
+                            "Use a debugger to test and refine the exploit"
+                        ],
+                        solution: {
+                            code: `1. Analyze the vulnerable C program:
         #include <stdio.h>
         #include <string.h>
 
@@ -10883,22 +10883,22 @@ time.sleep(3600)  # Monitor every hour`,
 4. Exploit the vulnerability:
 ./vuln_program $(python -c 'print "A"*<offset>+"<return_address>"+"<nop_sled>"+"<shellcode>"')
 5. Refine the exploit as needed and test it in a debugger`,
-                    explanation: "This advanced exercise focuses on exploiting a buffer overflow vulnerability in a simple C program. It requires understanding of low-level memory concepts, debugging skills, and exploit development techniques. The exercise guides you through analyzing the vulnerable code, determining the right offset, crafting a malicious payload, and exploiting the vulnerability to gain unauthorized access."
-                }
-            },
-            {
-                title: "Custom Protocol Fuzzer",
-                difficulty: "Hard",
-                description: "Implement a custom protocol fuzzer to identify vulnerabilities in a network application.",
-                hints: [
-                "Choose a target protocol and understand its specification",
-                "Generate random or semi-valid test cases to fuzz the protocol",
-                "Send the fuzzed data to the target application",
-                "Monitor the application for crashes, errors, or unexpected behavior",
-                "Log and analyze the results to identify potential vulnerabilities"
-                ],
-                solution: {
-                code: `import socket
+                            explanation: "This advanced exercise focuses on exploiting a buffer overflow vulnerability in a simple C program. It requires understanding of low-level memory concepts, debugging skills, and exploit development techniques. The exercise guides you through analyzing the vulnerable code, determining the right offset, crafting a malicious payload, and exploiting the vulnerability to gain unauthorized access."
+                        }
+                    },
+                    {
+                        title: "Custom Protocol Fuzzer",
+                        difficulty: "Hard",
+                        description: "Implement a custom protocol fuzzer to identify vulnerabilities in a network application.",
+                        hints: [
+                            "Choose a target protocol and understand its specification",
+                            "Generate random or semi-valid test cases to fuzz the protocol",
+                            "Send the fuzzed data to the target application",
+                            "Monitor the application for crashes, errors, or unexpected behavior",
+                            "Log and analyze the results to identify potential vulnerabilities"
+                        ],
+                        solution: {
+                            code: `import socket
 import random
 import string
 def generate_fuzz_data(length):
@@ -10925,18 +10925,18 @@ target_ip = "192.168.1.100"
 target_port = 1234
 num_tests = 100
 protocol_fuzzer(target_ip, target_port, num_tests)`,
-                explanation: "This advanced exercise focuses on implementing a custom protocol fuzzer to identify vulnerabilities in a network application. It involves generating random or semi-valid test cases based on the protocol specification and sending the fuzzed data to the target application. The fuzzer monitors the application's behavior and logs any crashes, errors, or unexpected responses. The exercise requires a deeper understanding of network protocols, socket programming, and fuzzing techniques."
-}
-}
-        ]
-    }
-}
-},
-{
-    id: 11,
-    title: "Java Programming",
-    description: "To master Java programming, follow this roadmap",
-    extendedContent: `
+                            explanation: "This advanced exercise focuses on implementing a custom protocol fuzzer to identify vulnerabilities in a network application. It involves generating random or semi-valid test cases based on the protocol specification and sending the fuzzed data to the target application. The fuzzer monitors the application's behavior and logs any crashes, errors, or unexpected responses. The exercise requires a deeper understanding of network protocols, socket programming, and fuzzing techniques."
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    {
+        id: 11,
+        title: "Java Programming",
+        description: "To master Java programming, follow this roadmap",
+        extendedContent: `
         Master the fundamentals of Java programming including core concepts,
         object-oriented programming, and essential APIs. Learn about data structures,
         algorithms, and best practices in Java development.
@@ -10949,69 +10949,69 @@ protocol_fuzzer(target_ip, target_port, num_tests)`,
         design patterns, and microservices development. Focus on both core Java
         and enterprise application development.
     `,
-    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
-    trackInfo: {
-        prerequisites: [
-            "Basic understanding of programming concepts",
-            "Knowledge of computer fundamentals",
-            "Basic command line skills",
-            "Understanding of basic algorithms",
-            "Familiarity with any text editor/IDE",
-            "Problem-solving abilities",
-            "Basic understanding of databases"
-        ],
-        outcomes: [
-            "Write efficient Java programs using OOP principles",
-            "Develop robust applications with error handling",
-            "Implement data structures and algorithms in Java",
-            "Create multithreaded applications",
-            "Work with Java collections framework",
-            "Develop database applications using JDBC",
-            "Implement design patterns effectively",
-            "Write unit tests for Java applications",
-            "Build web applications using Java",
-            "Deploy Java applications efficiently"
-        ],
-        sections: [
-            {
-                title: "Java Fundamentals",
-                content: "Master core Java concepts including variables, data types, control structures, and basic I/O. Learn about OOP concepts like classes, objects, inheritance, polymorphism, and encapsulation. Understand exception handling, packages, and basic file operations."
-            },
-            {
-                title: "Data Structures & Collections",
-                content: "Learn Java collections framework including Lists, Sets, Maps, and Queues. Understand implementation of basic data structures, collection hierarchy, and choosing appropriate collections. Master working with generics and type safety."
-            },
-            {
-                title: "Java APIs & Libraries",
-                content: "Study essential Java APIs including String handling, I/O streams, NIO, Regular expressions, and Date/Time API. Learn about logging, reflection API, and working with external libraries. Understand Java Modules system and dependency management."
-            },
-            {
-                title: "Multithreading & Concurrency",
-                content: "Master thread lifecycle, synchronization, and thread safety. Learn about concurrent collections, executor framework, and thread pools. Understand deadlock prevention, race conditions, and concurrent design patterns."
-            },
-            {
-                title: "Database Programming",
-                content: "Learn JDBC for database connectivity, connection pooling, and transaction management. Understand ORM concepts using JPA and Hibernate. Master working with different databases and implementing DAO pattern."
-            },
-            {
-                title: "Testing & Debugging",
-                content: "Master unit testing with JUnit, mocking with Mockito, and integration testing. Learn debugging techniques, profiling tools, and performance optimization. Understand test-driven development and continuous integration."
-            },
-            {
-                title: "Build Tools & DevOps",
-                content: "Learn project management with Maven and Gradle, dependency management, and build automation. Understand CI/CD pipelines, containerization with Docker, and deployment strategies. Master working with version control systems."
-            },
-            {
-                title: "Enterprise Java",
-                content: "Study enterprise frameworks like Spring and Jakarta EE. Learn microservices architecture, RESTful web services, and API design. Understand security implementation, caching strategies, and enterprise integration patterns."
-            }
-        ]
-    },
-    content: {
-        examples: [
-            {
-                title: "Object-Oriented Programming Implementation",
-                code: `// Example of inheritance, encapsulation, and polymorphism
+        icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+        trackInfo: {
+            prerequisites: [
+                "Basic understanding of programming concepts",
+                "Knowledge of computer fundamentals",
+                "Basic command line skills",
+                "Understanding of basic algorithms",
+                "Familiarity with any text editor/IDE",
+                "Problem-solving abilities",
+                "Basic understanding of databases"
+            ],
+            outcomes: [
+                "Write efficient Java programs using OOP principles",
+                "Develop robust applications with error handling",
+                "Implement data structures and algorithms in Java",
+                "Create multithreaded applications",
+                "Work with Java collections framework",
+                "Develop database applications using JDBC",
+                "Implement design patterns effectively",
+                "Write unit tests for Java applications",
+                "Build web applications using Java",
+                "Deploy Java applications efficiently"
+            ],
+            sections: [
+                {
+                    title: "Java Fundamentals",
+                    content: "Master core Java concepts including variables, data types, control structures, and basic I/O. Learn about OOP concepts like classes, objects, inheritance, polymorphism, and encapsulation. Understand exception handling, packages, and basic file operations."
+                },
+                {
+                    title: "Data Structures & Collections",
+                    content: "Learn Java collections framework including Lists, Sets, Maps, and Queues. Understand implementation of basic data structures, collection hierarchy, and choosing appropriate collections. Master working with generics and type safety."
+                },
+                {
+                    title: "Java APIs & Libraries",
+                    content: "Study essential Java APIs including String handling, I/O streams, NIO, Regular expressions, and Date/Time API. Learn about logging, reflection API, and working with external libraries. Understand Java Modules system and dependency management."
+                },
+                {
+                    title: "Multithreading & Concurrency",
+                    content: "Master thread lifecycle, synchronization, and thread safety. Learn about concurrent collections, executor framework, and thread pools. Understand deadlock prevention, race conditions, and concurrent design patterns."
+                },
+                {
+                    title: "Database Programming",
+                    content: "Learn JDBC for database connectivity, connection pooling, and transaction management. Understand ORM concepts using JPA and Hibernate. Master working with different databases and implementing DAO pattern."
+                },
+                {
+                    title: "Testing & Debugging",
+                    content: "Master unit testing with JUnit, mocking with Mockito, and integration testing. Learn debugging techniques, profiling tools, and performance optimization. Understand test-driven development and continuous integration."
+                },
+                {
+                    title: "Build Tools & DevOps",
+                    content: "Learn project management with Maven and Gradle, dependency management, and build automation. Understand CI/CD pipelines, containerization with Docker, and deployment strategies. Master working with version control systems."
+                },
+                {
+                    title: "Enterprise Java",
+                    content: "Study enterprise frameworks like Spring and Jakarta EE. Learn microservices architecture, RESTful web services, and API design. Understand security implementation, caching strategies, and enterprise integration patterns."
+                }
+            ]
+        },
+        content: {
+            examples: [
+                {
+                    title: "Object-Oriented Programming Implementation",
+                    code: `// Example of inheritance, encapsulation, and polymorphism
 public abstract class Animal {
     private String name;
     protected int age;
@@ -11082,11 +11082,11 @@ public class Main {
         }
     }
 }`,
-                explanation: "This example demonstrates core OOP concepts in Java including inheritance (Animal superclass with Dog and Cat subclasses), encapsulation (private fields with getter methods), and polymorphism (makeSound method being overridden)."
-            },
-            {
-                title: "Multithreading and Synchronization",
-                code: `import java.util.concurrent.locks.ReentrantLock;
+                    explanation: "This example demonstrates core OOP concepts in Java including inheritance (Animal superclass with Dog and Cat subclasses), encapsulation (private fields with getter methods), and polymorphism (makeSound method being overridden)."
+                },
+                {
+                    title: "Multithreading and Synchronization",
+                    code: `import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.Condition;
 
 public class BoundedBuffer<T> {
@@ -11177,11 +11177,11 @@ class Consumer implements Runnable {
         }
     }
 }`,
-                explanation: "This example shows thread synchronization using ReentrantLock and Conditions to implement a bounded buffer with producer-consumer pattern. It demonstrates proper thread safety, lock handling, and condition signaling."
-            },
-            {
-                title: "Database Connectivity with JDBC",
-                code: `import java.sql.*;
+                    explanation: "This example shows thread synchronization using ReentrantLock and Conditions to implement a bounded buffer with producer-consumer pattern. It demonstrates proper thread safety, lock handling, and condition signaling."
+                },
+                {
+                    title: "Database Connectivity with JDBC",
+                    code: `import java.sql.*;
 import java.util.Properties;
 
 public class DatabaseManager {
@@ -11262,367 +11262,367 @@ public class DatabaseManager {
         }
     }
 }`,
-                explanation: "This example demonstrates proper JDBC usage including connection management, prepared statements to prevent SQL injection, transaction handling, and resource cleanup."
-            }
-        ],
-        roadmap: [
-            {
-                title: "1. Java Basics",
-                description: "Master core Java syntax and concepts",
-                topics: [
-                    "JDK Installation and IDE Setup",
-                    "Variables, Data Types, and Operators",
-                    "Control Flow Statements",
-                    "Arrays and Basic Data Structures",
-                    "Methods and Parameters",
-                    "Basic Input/Output Operations",
-                    "Exception Handling Basics"
+                    explanation: "This example demonstrates proper JDBC usage including connection management, prepared statements to prevent SQL injection, transaction handling, and resource cleanup."
+                }
+            ],
+            roadmap: [
+                {
+                    title: "1. Java Basics",
+                    description: "Master core Java syntax and concepts",
+                    topics: [
+                        "JDK Installation and IDE Setup",
+                        "Variables, Data Types, and Operators",
+                        "Control Flow Statements",
+                        "Arrays and Basic Data Structures",
+                        "Methods and Parameters",
+                        "Basic Input/Output Operations",
+                        "Exception Handling Basics"
+                    ]
+                },
+                {
+                    title: "2. Object-Oriented Programming",
+                    description: "Learn OOP principles and implementation in Java",
+                    topics: [
+                        "Classes and Objects",
+                        "Inheritance and Polymorphism",
+                        "Encapsulation and Access Modifiers",
+                        "Interfaces and Abstract Classes",
+                        "Package Management",
+                        "Java Beans and Properties",
+                        "SOLID Principles"
+                    ]
+                },
+                {
+                    title: "3. Java Standard Edition APIs",
+                    description: "Master essential Java SE APIs and features",
+                    topics: [
+                        "Collections Framework",
+                        "Generics",
+                        "I/O Streams and NIO",
+                        "Exception Handling Advanced",
+                        "Lambda Expressions",
+                        "Stream API",
+                        "Optional Class"
+                    ]
+                },
+                {
+                    title: "4. Concurrency & Multithreading",
+                    description: "Learn concurrent programming in Java",
+                    topics: [
+                        "Thread Basics and Lifecycle",
+                        "Synchronization and Locks",
+                        "Executor Framework",
+                        "Concurrent Collections",
+                        "CompletableFuture",
+                        "Fork/Join Framework",
+                        "Reactive Programming Basics"
+                    ]
+                },
+                {
+                    title: "5. Database Programming",
+                    description: "Master database connectivity and ORM",
+                    topics: [
+                        "JDBC Fundamentals",
+                        "Connection Pooling",
+                        "Transaction Management",
+                        "JPA Basics",
+                        "Hibernate ORM",
+                        "Query Languages (SQL/JPQL)",
+                        "Database Design Patterns"
+                    ]
+                },
+                {
+                    title: "6. Testing & Debugging",
+                    description: "Learn testing methodologies and tools",
+                    topics: [
+                        "Unit Testing with JUnit",
+                        "Mocking with Mockito",
+                        "Integration Testing",
+                        "Test-Driven Development",
+                        "Debugging Techniques",
+                        "Logging and Monitoring",
+                        "Code Coverage Tools"
+                    ]
+                },
+                {
+                    title: "7. Build Tools & Version Control",
+                    description: "Master project management and version control",
+                    topics: [
+                        "Maven Basics",
+                        "Gradle Fundamentals",
+                        "Dependency Management",
+                        "Git Version Control",
+                        "CI/CD Basics",
+                        "Docker for Java Apps",
+                        "Deployment Strategies"
+                    ]
+                }
+            ],
+            resources: {
+                documentation: [
+                    {
+                        title: "Java SE Documentation",
+                        url: "https://docs.oracle.com/en/java/javase/",
+                        description: "Official Java SE documentation and tutorials from Oracle",
+                        type: "Official Documentation"
+                    },
+                    {
+                        title: "Spring Framework Documentation",
+                        url: "https://docs.spring.io/spring-framework/reference/",
+                        description: "Comprehensive guide for Spring Framework development",
+                        type: "Framework Documentation"
+                    },
+                    {
+                        title: "Java Design Patterns",
+                        url: "https://java-design-patterns.com/",
+                        description: "Collection of implemented design patterns in Java",
+                        type: "Pattern Catalog"
+                    },
+                    {
+                        title: "JUnit 5 User Guide",
+                        url: "https://junit.org/junit5/docs/current/user-guide/",
+                        description: "Official documentation for JUnit testing framework",
+                        type: "Testing Documentation"
+                    },
+                    {
+                        title: "Maven Documentation",
+                        url: "https://maven.apache.org/guides/",
+                        description: "Official Apache Maven project documentation and guides",
+                        type: "Build Tool Documentation"
+                    }
+                ],
+                tutorials: [
+                    {
+                        title: "Baeldung",
+                        url: "https://www.baeldung.com/",
+                        description: "In-depth tutorials on Java and Spring ecosystem",
+                        type: "Tutorial Website"
+                    },
+                    {
+                        title: "Java Code Geeks",
+                        url: "https://www.javacodegeeks.com/",
+                        description: "Tutorials, articles, and code examples for Java developers",
+                        type: "Learning Platform"
+                    },
+                    {
+                        title: "Codecademy Java Course",
+                        url: "https://www.codecademy.com/learn/learn-java",
+                        description: "Interactive Java programming course for beginners",
+                        type: "Online Course"
+                    },
+                    {
+                        title: "Java Brains",
+                        url: "https://javabrains.io/",
+                        description: "Video tutorials on Java, Spring, and related technologies",
+                        type: "Video Tutorials"
+                    },
+                    {
+                        title: "JetBrains Academy",
+                        url: "https://www.jetbrains.com/academy/",
+                        description: "Project-based learning platform for Java development",
+                        type: "Learning Platform"
+                    }
+                ],
+                videos: [
+                    {
+                        title: "Java Programming by University of Helsinki",
+                        url: "https://java-programming.mooc.fi/",
+                        description: "Free, comprehensive Java programming course",
+                        platform: "MOOC"
+                    },
+                    {
+                        title: "Cave of Programming",
+                        url: "https://www.caveofprogramming.com/",
+                        description: "Video courses on Java fundamentals and advanced topics",
+                        platform: "Course Platform"
+                    },
+                    {
+                        title: "Derek Banas Java Tutorial",
+                        url: "https://www.youtube.com/playlist?list=PLE7E8B7F4856C9B19",
+                        description: "Comprehensive Java tutorial series",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Coding with John",
+                        url: "https://www.youtube.com/c/CodingwithJohn",
+                        description: "Java programming tutorials and best practices",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Amigoscode",
+                        url: "https://www.youtube.com/c/amigoscode",
+                        description: "Modern Java tutorials and Spring Framework content",
+                        platform: "YouTube"
+                    }
+                ],
+                books: [
+                    {
+                        title: "Effective Java",
+                        author: "Joshua Bloch",
+                        description: "Best practices and design patterns for Java programming",
+                        level: "Intermediate to Advanced"
+                    },
+                    {
+                        title: "Head First Java",
+                        author: "Kathy Sierra, Bert Bates",
+                        description: "Beginner-friendly introduction to Java programming",
+                        level: "Beginner"
+                    },
+                    {
+                        title: "Java Concurrency in Practice",
+                        author: "Brian Goetz",
+                        description: "Comprehensive guide to writing concurrent Java applications",
+                        level: "Advanced"
+                    },
+                    {
+                        title: "Clean Code: A Handbook of Agile Software Craftsmanship",
+                        author: "Robert C. Martin",
+                        description: "Writing clean and maintainable Java code",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "Spring in Action",
+                        author: "Craig Walls",
+                        description: "Comprehensive guide to Spring Framework development",
+                        level: "Intermediate"
+                    }
+                ],
+                tools: [
+                    {
+                        title: "IntelliJ IDEA",
+                        url: "https://www.jetbrains.com/idea/",
+                        description: "Powerful IDE for Java development",
+                        type: "Development Tool",
+                        category: "Essential"
+                    },
+                    {
+                        title: "Eclipse",
+                        url: "https://www.eclipse.org/",
+                        description: "Popular open-source Java IDE",
+                        type: "Development Tool",
+                        category: "Essential"
+                    },
+                    {
+                        title: "Apache Maven",
+                        url: "https://maven.apache.org/",
+                        description: "Project management and build automation tool",
+                        type: "Build Tool",
+                        category: "Essential"
+                    },
+                    {
+                        title: "JUnit",
+                        url: "https://junit.org/",
+                        description: "Testing framework for Java applications",
+                        type: "Testing Tool",
+                        category: "Essential"
+                    },
+                    {
+                        title: "VisualVM",
+                        url: "https://visualvm.github.io/",
+                        description: "Java application monitoring and profiling tool",
+                        type: "Profiling Tool",
+                        category: "Essential"
+                    }
+                ],
+                communities: [
+                    {
+                        title: "Stack Overflow - Java",
+                        url: "https://stackoverflow.com/questions/tagged/java",
+                        description: "Q&A community for Java programming",
+                        type: "Q&A Forum"
+                    },
+                    {
+                        title: "Reddit r/java",
+                        url: "https://www.reddit.com/r/java/",
+                        description: "Subreddit for Java developers and enthusiasts",
+                        type: "Forum"
+                    },
+                    {
+                        title: "Java User Groups (JUGs)",
+                        url: "https://www.java.net/jugs/java-user-groups",
+                        description: "Local Java developer communities worldwide",
+                        type: "Local Community"
+                    },
+                    {
+                        title: "Dev.to Java Community",
+                        url: "https://dev.to/t/java",
+                        description: "Java-related articles and discussions",
+                        type: "Online Community"
+                    },
+                    {
+                        title: "Oracle Java Community",
+                        url: "https://community.oracle.com/tech/developers/categories/java",
+                        description: "Official Oracle Java community forums",
+                        type: "Forum"
+                    }
+                ],
+                podcasts: [
+                    {
+                        title: "Inside Java",
+                        url: "https://inside.java/podcast/",
+                        description: "Official podcast from the Java team at Oracle",
+                        platform: "Podcast"
+                    },
+                    {
+                        title: "Java Off Heap",
+                        url: "https://www.javaoffheap.com/",
+                        description: "Discussion of Java news and developments",
+                        platform: "Podcast"
+                    },
+                    {
+                        title: "Airhacks.fm",
+                        url: "http://airhacks.fm/",
+                        description: "Java EE, Jakarta EE, and cloud-native development",
+                        platform: "Podcast"
+                    },
+                    {
+                        title: "The Java Posse (Archive)",
+                        url: "http://javaposse.com/",
+                        description: "Classic Java development podcast (archived)",
+                        platform: "Podcast"
+                    }
+                ],
+                blogs: [
+                    {
+                        title: "DZone Java Zone",
+                        url: "https://dzone.com/java",
+                        description: "Articles, tutorials, and news about Java development",
+                        type: "Blog"
+                    },
+                    {
+                        title: "Thorben Janssen",
+                        url: "https://thorben-janssen.com/",
+                        description: "Blog focusing on Hibernate and JPA",
+                        type: "Blog"
+                    },
+                    {
+                        title: "Vlad Mihalcea's Blog",
+                        url: "https://vladmihalcea.com/",
+                        description: "High-performance Java and database programming",
+                        type: "Blog"
+                    },
+                    {
+                        title: "Mkyong",
+                        url: "https://mkyong.com/",
+                        description: "Java tutorials and code examples",
+                        type: "Blog"
+                    }
                 ]
             },
-            {
-                title: "2. Object-Oriented Programming",
-                description: "Learn OOP principles and implementation in Java",
-                topics: [
-                    "Classes and Objects",
-                    "Inheritance and Polymorphism",
-                    "Encapsulation and Access Modifiers",
-                    "Interfaces and Abstract Classes",
-                    "Package Management",
-                    "Java Beans and Properties",
-                    "SOLID Principles"
-                ]
-            },
-            {
-                title: "3. Java Standard Edition APIs",
-                description: "Master essential Java SE APIs and features",
-                topics: [
-                    "Collections Framework",
-                    "Generics",
-                    "I/O Streams and NIO",
-                    "Exception Handling Advanced",
-                    "Lambda Expressions",
-                    "Stream API",
-                    "Optional Class"
-                ]
-            },
-            {
-                title: "4. Concurrency & Multithreading",
-                description: "Learn concurrent programming in Java",
-                topics: [
-                    "Thread Basics and Lifecycle",
-                    "Synchronization and Locks",
-                    "Executor Framework",
-                    "Concurrent Collections",
-                    "CompletableFuture",
-                    "Fork/Join Framework",
-                    "Reactive Programming Basics"
-                ]
-            },
-            {
-                title: "5. Database Programming",
-                description: "Master database connectivity and ORM",
-                topics: [
-                    "JDBC Fundamentals",
-                    "Connection Pooling",
-                    "Transaction Management",
-                    "JPA Basics",
-                    "Hibernate ORM",
-                    "Query Languages (SQL/JPQL)",
-                    "Database Design Patterns"
-                ]
-            },
-            {
-                title: "6. Testing & Debugging",
-                description: "Learn testing methodologies and tools",
-                topics: [
-                    "Unit Testing with JUnit",
-                    "Mocking with Mockito",
-                    "Integration Testing",
-                    "Test-Driven Development",
-                    "Debugging Techniques",
-                    "Logging and Monitoring",
-                    "Code Coverage Tools"
-                ]
-            },
-            {
-                title: "7. Build Tools & Version Control",
-                description: "Master project management and version control",
-                topics: [
-                    "Maven Basics",
-                    "Gradle Fundamentals",
-                    "Dependency Management",
-                    "Git Version Control",
-                    "CI/CD Basics",
-                    "Docker for Java Apps",
-                    "Deployment Strategies"
-                ]
-            }
-        ],
-        resources: {
-            documentation: [
-                {
-                    title: "Java SE Documentation",
-                    url: "https://docs.oracle.com/en/java/javase/",
-                    description: "Official Java SE documentation and tutorials from Oracle",
-                    type: "Official Documentation"
-                },
-                {
-                    title: "Spring Framework Documentation",
-                    url: "https://docs.spring.io/spring-framework/reference/",
-                    description: "Comprehensive guide for Spring Framework development",
-                    type: "Framework Documentation"
-                },
-                {
-                    title: "Java Design Patterns",
-                    url: "https://java-design-patterns.com/",
-                    description: "Collection of implemented design patterns in Java",
-                    type: "Pattern Catalog"
-                },
-                {
-                    title: "JUnit 5 User Guide",
-                    url: "https://junit.org/junit5/docs/current/user-guide/",
-                    description: "Official documentation for JUnit testing framework",
-                    type: "Testing Documentation"
-                },
-                {
-                    title: "Maven Documentation",
-                    url: "https://maven.apache.org/guides/",
-                    description: "Official Apache Maven project documentation and guides",
-                    type: "Build Tool Documentation"
-                }
-            ],
-            tutorials: [
-                {
-                    title: "Baeldung",
-                    url: "https://www.baeldung.com/",
-                    description: "In-depth tutorials on Java and Spring ecosystem",
-                    type: "Tutorial Website"
-                },
-                {
-                    title: "Java Code Geeks",
-                    url: "https://www.javacodegeeks.com/",
-                    description: "Tutorials, articles, and code examples for Java developers",
-                    type: "Learning Platform"
-                },
-                {
-                    title: "Codecademy Java Course",
-                    url: "https://www.codecademy.com/learn/learn-java",
-                    description: "Interactive Java programming course for beginners",
-                    type: "Online Course"
-                },
-                {
-                    title: "Java Brains",
-                    url: "https://javabrains.io/",
-                    description: "Video tutorials on Java, Spring, and related technologies",
-                    type: "Video Tutorials"
-                },
-                {
-                    title: "JetBrains Academy",
-                    url: "https://www.jetbrains.com/academy/",
-                    description: "Project-based learning platform for Java development",
-                    type: "Learning Platform"
-                }
-            ],
-            videos: [
-                {
-                    title: "Java Programming by University of Helsinki",
-                    url: "https://java-programming.mooc.fi/",
-                    description: "Free, comprehensive Java programming course",
-                    platform: "MOOC"
-                },
-                {
-                    title: "Cave of Programming",
-                    url: "https://www.caveofprogramming.com/",
-                    description: "Video courses on Java fundamentals and advanced topics",
-                    platform: "Course Platform"
-                },
-                {
-                    title: "Derek Banas Java Tutorial",
-                    url: "https://www.youtube.com/playlist?list=PLE7E8B7F4856C9B19",
-                    description: "Comprehensive Java tutorial series",
-                    platform: "YouTube"
-                },
-                {
-                    title: "Coding with John",
-                    url: "https://www.youtube.com/c/CodingwithJohn",
-                    description: "Java programming tutorials and best practices",
-                    platform: "YouTube"
-                },
-                {
-                    title: "Amigoscode",
-                    url: "https://www.youtube.com/c/amigoscode",
-                    description: "Modern Java tutorials and Spring Framework content",
-                    platform: "YouTube"
-                }
-            ],
-            books: [
-                {
-                    title: "Effective Java",
-                    author: "Joshua Bloch",
-                    description: "Best practices and design patterns for Java programming",
-                    level: "Intermediate to Advanced"
-                },
-                {
-                    title: "Head First Java",
-                    author: "Kathy Sierra, Bert Bates",
-                    description: "Beginner-friendly introduction to Java programming",
-                    level: "Beginner"
-                },
-                {
-                    title: "Java Concurrency in Practice",
-                    author: "Brian Goetz",
-                    description: "Comprehensive guide to writing concurrent Java applications",
-                    level: "Advanced"
-                },
-                {
-                    title: "Clean Code: A Handbook of Agile Software Craftsmanship",
-                    author: "Robert C. Martin",
-                    description: "Writing clean and maintainable Java code",
-                    level: "Intermediate"
-                },
-                {
-                    title: "Spring in Action",
-                    author: "Craig Walls",
-                    description: "Comprehensive guide to Spring Framework development",
-                    level: "Intermediate"
-                }
-            ],
-            tools: [
-                {
-                    title: "IntelliJ IDEA",
-                    url: "https://www.jetbrains.com/idea/",
-                    description: "Powerful IDE for Java development",
-                    type: "Development Tool",
-                    category: "Essential"
-                },
-                {
-                    title: "Eclipse",
-                    url: "https://www.eclipse.org/",
-                    description: "Popular open-source Java IDE",
-                    type: "Development Tool",
-                    category: "Essential"
-                },
-                {
-                    title: "Apache Maven",
-                    url: "https://maven.apache.org/",
-                    description: "Project management and build automation tool",
-                    type: "Build Tool",
-                    category: "Essential"
-                },
-                {
-                    title: "JUnit",
-                    url: "https://junit.org/",
-                    description: "Testing framework for Java applications",
-                    type: "Testing Tool",
-                    category: "Essential"
-                },
-                {
-                    title: "VisualVM",
-                    url: "https://visualvm.github.io/",
-                    description: "Java application monitoring and profiling tool",
-                    type: "Profiling Tool",
-                    category: "Essential"
-                }
-            ],
-            communities: [
-                {
-                    title: "Stack Overflow - Java",
-                    url: "https://stackoverflow.com/questions/tagged/java",
-                    description: "Q&A community for Java programming",
-                    type: "Q&A Forum"
-                },
-                {
-                    title: "Reddit r/java",
-                    url: "https://www.reddit.com/r/java/",
-                    description: "Subreddit for Java developers and enthusiasts",
-                    type: "Forum"
-                },
-                {
-                    title: "Java User Groups (JUGs)",
-                    url: "https://www.java.net/jugs/java-user-groups",
-                    description: "Local Java developer communities worldwide",
-                    type: "Local Community"
-                },
-                {
-                    title: "Dev.to Java Community",
-                    url: "https://dev.to/t/java",
-                    description: "Java-related articles and discussions",
-                    type: "Online Community"
-                },
-                {
-                    title: "Oracle Java Community",
-                    url: "https://community.oracle.com/tech/developers/categories/java",
-                    description: "Official Oracle Java community forums",
-                    type: "Forum"
-                }
-            ],
-            podcasts: [
-                {
-                    title: "Inside Java",
-                    url: "https://inside.java/podcast/",
-                    description: "Official podcast from the Java team at Oracle",
-                    platform: "Podcast"
-                },
-                {
-                    title: "Java Off Heap",
-                    url: "https://www.javaoffheap.com/",
-                    description: "Discussion of Java news and developments",
-                    platform: "Podcast"
-                },
-                {
-                    title: "Airhacks.fm",
-                    url: "http://airhacks.fm/",
-                    description: "Java EE, Jakarta EE, and cloud-native development",
-                    platform: "Podcast"
-                },
-                {
-                    title: "The Java Posse (Archive)",
-                    url: "http://javaposse.com/",
-                    description: "Classic Java development podcast (archived)",
-                    platform: "Podcast"
-                }
-            ],
-            blogs: [
-                {
-                    title: "DZone Java Zone",
-                    url: "https://dzone.com/java",
-                    description: "Articles, tutorials, and news about Java development",
-                    type: "Blog"
-                },
-                {
-                    title: "Thorben Janssen",
-                    url: "https://thorben-janssen.com/",
-                    description: "Blog focusing on Hibernate and JPA",
-                    type: "Blog"
-                },
-                {
-                    title: "Vlad Mihalcea's Blog",
-                    url: "https://vladmihalcea.com/",
-                    description: "High-performance Java and database programming",
-                    type: "Blog"
-                },
-                {
-                    title: "Mkyong",
-                    url: "https://mkyong.com/",
-                    description: "Java tutorials and code examples",
-                    type: "Blog"
-                }
-            ]
-        },
-        practice: {
-            beginnerExercises: [
-                {
-                    title: "Student Grade Calculator",
-                    difficulty: "Easy",
-                    description: "Create a program to calculate student grades based on marks in different subjects.",
-                    hints: [
-                        "Use arrays or collections to store subject marks",
-                        "Implement methods for average calculation",
-                        "Use conditional statements for grade determination",
-                        "Consider input validation"
-                    ],
-                    solution: {
-                        code: `public class StudentGradeCalculator {
+            practice: {
+                beginnerExercises: [
+                    {
+                        title: "Student Grade Calculator",
+                        difficulty: "Easy",
+                        description: "Create a program to calculate student grades based on marks in different subjects.",
+                        hints: [
+                            "Use arrays or collections to store subject marks",
+                            "Implement methods for average calculation",
+                            "Use conditional statements for grade determination",
+                            "Consider input validation"
+                        ],
+                        solution: {
+                            code: `public class StudentGradeCalculator {
         private String studentName;
         private double[] marks;
     
@@ -11666,21 +11666,21 @@ public class DatabaseManager {
             calculator.displayResult();
         }
     }`,
-                        explanation: "This beginner exercise demonstrates basic Java concepts including classes, arrays, loops, conditional statements, and method implementation. It includes input validation and formatted output."
-                    }
-                },
-                {
-                    title: "Bank Account Management",
-                    difficulty: "Easy",
-                    description: "Implement a simple bank account system with deposit, withdrawal, and balance check functionality.",
-                    hints: [
-                        "Create a class to represent bank account",
-                        "Implement methods for transactions",
-                        "Add validation for negative amounts",
-                        "Include proper exception handling"
-                    ],
-                    solution: {
-                        code: `public class BankAccount {
+                            explanation: "This beginner exercise demonstrates basic Java concepts including classes, arrays, loops, conditional statements, and method implementation. It includes input validation and formatted output."
+                        }
+                    },
+                    {
+                        title: "Bank Account Management",
+                        difficulty: "Easy",
+                        description: "Implement a simple bank account system with deposit, withdrawal, and balance check functionality.",
+                        hints: [
+                            "Create a class to represent bank account",
+                            "Implement methods for transactions",
+                            "Add validation for negative amounts",
+                            "Include proper exception handling"
+                        ],
+                        solution: {
+                            code: `public class BankAccount {
         private String accountNumber;
         private String accountHolder;
         private double balance;
@@ -11735,21 +11735,21 @@ public class DatabaseManager {
             }
         }
     }`,
-                        explanation: "This exercise covers object-oriented programming basics, exception handling, and formatted output. It implements basic banking operations with proper validation."
-                    }
-                },
-                {
-                    title: "Shopping Cart System",
-                    difficulty: "Easy",
-                    description: "Create a simple shopping cart system that allows adding items, removing items, and calculating total price.",
-                    hints: [
-                        "Use ArrayList to store cart items",
-                        "Create a class for cart items with name, price, and quantity",
-                        "Implement methods for cart operations",
-                        "Add input validation"
-                    ],
-                    solution: {
-                        code: `class CartItem {
+                            explanation: "This exercise covers object-oriented programming basics, exception handling, and formatted output. It implements basic banking operations with proper validation."
+                        }
+                    },
+                    {
+                        title: "Shopping Cart System",
+                        difficulty: "Easy",
+                        description: "Create a simple shopping cart system that allows adding items, removing items, and calculating total price.",
+                        hints: [
+                            "Use ArrayList to store cart items",
+                            "Create a class for cart items with name, price, and quantity",
+                            "Implement methods for cart operations",
+                            "Add input validation"
+                        ],
+                        solution: {
+                            code: `class CartItem {
         private String name;
         private double price;
         private int quantity;
@@ -11867,23 +11867,23 @@ public class DatabaseManager {
             }
         }
     }`,
-                        explanation: "This beginner exercise demonstrates ArrayList usage, basic object-oriented principles, input validation, and formatted output. It includes methods for adding, removing, and updating items in a shopping cart."
+                            explanation: "This beginner exercise demonstrates ArrayList usage, basic object-oriented principles, input validation, and formatted output. It includes methods for adding, removing, and updating items in a shopping cart."
+                        }
                     }
-                }
-            ],
-            intermediateExercises: [
-                {
-                    title: "Library Management System",
-                    difficulty: "Medium",
-                    description: "Create a library management system with books, members, and borrowing functionality.",
-                    hints: [
-                        "Use collections to store books and members",
-                        "Implement book borrowing and return logic",
-                        "Add due date tracking",
-                        "Include search functionality"
-                    ],
-                    solution: {
-                        code: `import java.time.LocalDate;
+                ],
+                intermediateExercises: [
+                    {
+                        title: "Library Management System",
+                        difficulty: "Medium",
+                        description: "Create a library management system with books, members, and borrowing functionality.",
+                        hints: [
+                            "Use collections to store books and members",
+                            "Implement book borrowing and return logic",
+                            "Add due date tracking",
+                            "Include search functionality"
+                        ],
+                        solution: {
+                            code: `import java.time.LocalDate;
     import java.util.*;
     
     class Book {
@@ -12013,21 +12013,21 @@ public class DatabaseManager {
                     .toList();
         }
     }`,
-                        explanation: "This intermediate exercise demonstrates the use of collections, object relationships, date handling, and stream operations in Java. It implements a basic library system with book management and borrowing functionality."
-                    }
-                },
-                {
-                    title: "Task Management System",
-                    difficulty: "Medium",
-                    description: "Create a task management system with support for projects, tasks, and user assignments.",
-                    hints: [
-                        "Use enums for task status and priority",
-                        "Implement task filtering and sorting",
-                        "Add deadline management",
-                        "Include task dependencies"
-                    ],
-                    solution: {
-                        code: `import java.time.LocalDateTime;
+                            explanation: "This intermediate exercise demonstrates the use of collections, object relationships, date handling, and stream operations in Java. It implements a basic library system with book management and borrowing functionality."
+                        }
+                    },
+                    {
+                        title: "Task Management System",
+                        difficulty: "Medium",
+                        description: "Create a task management system with support for projects, tasks, and user assignments.",
+                        hints: [
+                            "Use enums for task status and priority",
+                            "Implement task filtering and sorting",
+                            "Add deadline management",
+                            "Include task dependencies"
+                        ],
+                        solution: {
+                            code: `import java.time.LocalDateTime;
     import java.util.*;
     import java.util.stream.Collectors;
     
@@ -12239,23 +12239,23 @@ public class DatabaseManager {
                          .orElse(null);
         }
     }`,
-                        explanation: "This intermediate exercise demonstrates the use of enums, collections, dependency management, and complex business logic. It includes features like task assignments, priorities, deadlines, and dependency checking with circular dependency detection."
+                            explanation: "This intermediate exercise demonstrates the use of enums, collections, dependency management, and complex business logic. It includes features like task assignments, priorities, deadlines, and dependency checking with circular dependency detection."
+                        }
                     }
-                }
-            ],
-            advancedExercises: [
-                {
-                    title: "Task Scheduler with Thread Pool",
-                    difficulty: "Hard",
-                    description: "Implement a task scheduler that can execute tasks concurrently using a thread pool.",
-                    hints: [
-                        "Use ExecutorService for thread pool management",
-                        "Implement priority queue for task scheduling",
-                        "Add support for recurring tasks",
-                        "Include task cancellation and monitoring"
-                    ],
-                    solution: {
-                        code: `import java.time.*;
+                ],
+                advancedExercises: [
+                    {
+                        title: "Task Scheduler with Thread Pool",
+                        difficulty: "Hard",
+                        description: "Implement a task scheduler that can execute tasks concurrently using a thread pool.",
+                        hints: [
+                            "Use ExecutorService for thread pool management",
+                            "Implement priority queue for task scheduling",
+                            "Add support for recurring tasks",
+                            "Include task cancellation and monitoring"
+                        ],
+                        solution: {
+                            code: `import java.time.*;
     import java.util.concurrent.*;
     import java.util.*;
     
@@ -12420,21 +12420,21 @@ public class DatabaseManager {
             scheduler.shutdown();
         }
     }`,
-                        explanation: "This advanced exercise demonstrates concurrent programming concepts including thread pools, task scheduling, and synchronization. It implements a custom task scheduler that can handle both one-time and recurring tasks with proper thread management and cancellation support."
-                    }
-                },
-                {
-                    title: "Distributed Cache System",
-                    difficulty: "Hard",
-                    description: "Implement a distributed cache system with support for multiple nodes, cache eviction, and consistency.",
-                    hints: [
-                        "Use concurrent data structures",
-                        "Implement cache eviction policies",
-                        "Add support for distributed operations",
-                        "Handle node failures and recovery"
-                    ],
-                    solution: {
-                        code: `import java.util.concurrent.*;
+                            explanation: "This advanced exercise demonstrates concurrent programming concepts including thread pools, task scheduling, and synchronization. It implements a custom task scheduler that can handle both one-time and recurring tasks with proper thread management and cancellation support."
+                        }
+                    },
+                    {
+                        title: "Distributed Cache System",
+                        difficulty: "Hard",
+                        description: "Implement a distributed cache system with support for multiple nodes, cache eviction, and consistency.",
+                        hints: [
+                            "Use concurrent data structures",
+                            "Implement cache eviction policies",
+                            "Add support for distributed operations",
+                            "Handle node failures and recovery"
+                        ],
+                        solution: {
+                            code: `import java.util.concurrent.*;
     import java.util.*;
     import java.time.*;
     import java.net.*;
@@ -12781,26 +12781,26 @@ public class DatabaseManager {
         cache.shutdown();
     }
 }`,
-    explanation: "This advanced exercise demonstrates implementing a distributed cache system with features including:\n" +
-                "1. Multiple cache eviction policies (LRU, LFU, FIFO)\n" +
-                "2. TTL-based entry expiration\n" +
-                "3. Distributed node management with heartbeat mechanism\n" +
-                "4. Concurrent access handling using ReadWriteLock\n" +
-                "5. Asynchronous update propagation\n" +
-                "6. Node failure detection and recovery\n" +
-                "7. Network communication between nodes\n" +
-                "The implementation uses various Java concurrency utilities and networking features to create a robust distributed system."
+                            explanation: "This advanced exercise demonstrates implementing a distributed cache system with features including:\n" +
+                                "1. Multiple cache eviction policies (LRU, LFU, FIFO)\n" +
+                                "2. TTL-based entry expiration\n" +
+                                "3. Distributed node management with heartbeat mechanism\n" +
+                                "4. Concurrent access handling using ReadWriteLock\n" +
+                                "5. Asynchronous update propagation\n" +
+                                "6. Node failure detection and recovery\n" +
+                                "7. Network communication between nodes\n" +
+                                "The implementation uses various Java concurrency utilities and networking features to create a robust distributed system."
+                        }
+                    }
+                ]
             }
-            }
-            ]
         }
-    }
-},
-{
-    id: 12,
-    title: "Machine Learning & AI",
-    description: "To learn ML and AI, follow this roadmap",
-    extendedContent: `
+    },
+    {
+        id: 12,
+        title: "Machine Learning & AI",
+        description: "To learn ML and AI, follow this roadmap",
+        extendedContent: `
         Dive into the world of Machine Learning and Artificial Intelligence. Start with fundamental 
         mathematics, statistics, and Python programming. Progress through classical ML algorithms, 
         deep learning, and neural networks. Learn popular frameworks like TensorFlow and PyTorch, 
@@ -12809,69 +12809,69 @@ public class DatabaseManager {
         include GANs, transformers, ML ops, and ethical AI development. Practice with real-world 
         projects and datasets.
     `,
-    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
-    trackInfo: {
-        prerequisites: [
-            "Strong foundation in mathematics (calculus, linear algebra)",
-            "Understanding of probability and statistics",
-            "Python programming proficiency",
-            "Basic data structures and algorithms",
-            "Familiarity with data analysis concepts",
-            "Command line and Git basics",
-            "Basic understanding of computational thinking"
-        ],
-        outcomes: [
-            "Implement and train machine learning models",
-            "Develop deep learning solutions",
-            "Process and prepare data for ML models",
-            "Evaluate and optimize model performance",
-            "Build neural networks using modern frameworks",
-            "Apply ML to computer vision and NLP tasks",
-            "Deploy ML models to production",
-            "Understand and implement AI ethics",
-            "Create end-to-end ML pipelines",
-            "Develop reinforcement learning solutions"
-        ],
-        sections: [
-            {
-                title: "Mathematical Foundations",
-                content: "Master essential mathematics including linear algebra, calculus, probability theory, and statistical concepts. Learn optimization techniques, matrix operations, derivatives, probability distributions, and statistical inference. Understand information theory and numerical computation basics."
-            },
-            {
-                title: "Machine Learning Fundamentals",
-                content: "Study core ML concepts including supervised and unsupervised learning, model evaluation, cross-validation, and regularization. Learn about feature engineering, dimensionality reduction, and common algorithms like regression, decision trees, and clustering."
-            },
-            {
-                title: "Deep Learning",
-                content: "Master neural networks architecture, backpropagation, activation functions, and optimization algorithms. Learn convolutional neural networks (CNNs), recurrent neural networks (RNNs), and modern architectures like transformers. Understand training techniques, batch normalization, and dropout."
-            },
-            {
-                title: "Computer Vision",
-                content: "Learn image processing, feature detection, and object recognition techniques. Master CNN architectures for vision tasks, transfer learning, and image segmentation. Study object detection frameworks, facial recognition, and video analysis."
-            },
-            {
-                title: "Natural Language Processing",
-                content: "Understand text processing, tokenization, and word embeddings. Learn sequence models, attention mechanisms, and transformer architectures. Study language modeling, machine translation, sentiment analysis, and question answering systems."
-            },
-            {
-                title: "Reinforcement Learning",
-                content: "Master RL fundamentals including Markov Decision Processes, Q-learning, and policy gradients. Study deep reinforcement learning, multi-agent systems, and practical applications. Learn about exploration vs exploitation and reward engineering."
-            },
-            {
-                title: "ML Engineering & Operations",
-                content: "Learn model deployment, scaling, and monitoring in production. Understand ML pipelines, version control for ML, and model serving. Study distributed training, model optimization, and MLOps best practices."
-            },
-            {
-                title: "AI Ethics & Responsible AI",
-                content: "Understand bias in AI, fairness metrics, and model interpretability. Learn about privacy-preserving ML, ethical guidelines, and responsible AI development. Study the societal impact of AI and regulatory compliance."
-            }
-        ]
-    },
-    content: {
-        examples: [
-            {
-                title: "Image Classification with CNN",
-                code: `import tensorflow as tf
+        icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+        trackInfo: {
+            prerequisites: [
+                "Strong foundation in mathematics (calculus, linear algebra)",
+                "Understanding of probability and statistics",
+                "Python programming proficiency",
+                "Basic data structures and algorithms",
+                "Familiarity with data analysis concepts",
+                "Command line and Git basics",
+                "Basic understanding of computational thinking"
+            ],
+            outcomes: [
+                "Implement and train machine learning models",
+                "Develop deep learning solutions",
+                "Process and prepare data for ML models",
+                "Evaluate and optimize model performance",
+                "Build neural networks using modern frameworks",
+                "Apply ML to computer vision and NLP tasks",
+                "Deploy ML models to production",
+                "Understand and implement AI ethics",
+                "Create end-to-end ML pipelines",
+                "Develop reinforcement learning solutions"
+            ],
+            sections: [
+                {
+                    title: "Mathematical Foundations",
+                    content: "Master essential mathematics including linear algebra, calculus, probability theory, and statistical concepts. Learn optimization techniques, matrix operations, derivatives, probability distributions, and statistical inference. Understand information theory and numerical computation basics."
+                },
+                {
+                    title: "Machine Learning Fundamentals",
+                    content: "Study core ML concepts including supervised and unsupervised learning, model evaluation, cross-validation, and regularization. Learn about feature engineering, dimensionality reduction, and common algorithms like regression, decision trees, and clustering."
+                },
+                {
+                    title: "Deep Learning",
+                    content: "Master neural networks architecture, backpropagation, activation functions, and optimization algorithms. Learn convolutional neural networks (CNNs), recurrent neural networks (RNNs), and modern architectures like transformers. Understand training techniques, batch normalization, and dropout."
+                },
+                {
+                    title: "Computer Vision",
+                    content: "Learn image processing, feature detection, and object recognition techniques. Master CNN architectures for vision tasks, transfer learning, and image segmentation. Study object detection frameworks, facial recognition, and video analysis."
+                },
+                {
+                    title: "Natural Language Processing",
+                    content: "Understand text processing, tokenization, and word embeddings. Learn sequence models, attention mechanisms, and transformer architectures. Study language modeling, machine translation, sentiment analysis, and question answering systems."
+                },
+                {
+                    title: "Reinforcement Learning",
+                    content: "Master RL fundamentals including Markov Decision Processes, Q-learning, and policy gradients. Study deep reinforcement learning, multi-agent systems, and practical applications. Learn about exploration vs exploitation and reward engineering."
+                },
+                {
+                    title: "ML Engineering & Operations",
+                    content: "Learn model deployment, scaling, and monitoring in production. Understand ML pipelines, version control for ML, and model serving. Study distributed training, model optimization, and MLOps best practices."
+                },
+                {
+                    title: "AI Ethics & Responsible AI",
+                    content: "Understand bias in AI, fairness metrics, and model interpretability. Learn about privacy-preserving ML, ethical guidelines, and responsible AI development. Study the societal impact of AI and regulatory compliance."
+                }
+            ]
+        },
+        content: {
+            examples: [
+                {
+                    title: "Image Classification with CNN",
+                    code: `import tensorflow as tf
 from tensorflow.keras import layers, models
 import numpy as np
 
@@ -12952,11 +12952,11 @@ if __name__ == "__main__":
     
     # Evaluate model
     evaluate_model(model, test_images, test_labels)`,
-                explanation: "This example demonstrates building a convolutional neural network for image classification using TensorFlow. It includes model architecture, data preprocessing, training with early stopping, and evaluation."
-            },
-            {
-                title: "Natural Language Processing with Transformers",
-                code: `import torch
+                    explanation: "This example demonstrates building a convolutional neural network for image classification using TensorFlow. It includes model architecture, data preprocessing, training with early stopping, and evaluation."
+                },
+                {
+                    title: "Natural Language Processing with Transformers",
+                    code: `import torch
 from torch import nn
 from transformers import BertTokenizer, BertModel
 import numpy as np
@@ -13080,11 +13080,11 @@ def main():
 
 if __name__ == "__main__":
     main()`,
-                explanation: "This example shows text classification using BERT transformer model. It includes implementing a custom PyTorch model, preprocessing text data, training the model, and making predictions."
-            },
-            {
-                title: "Reinforcement Learning Agent",
-                code: `import numpy as np
+                    explanation: "This example shows text classification using BERT transformer model. It includes implementing a custom PyTorch model, preprocessing text data, training the model, and making predictions."
+                },
+                {
+                    title: "Reinforcement Learning Agent",
+                    code: `import numpy as np
 import gym
 from collections import deque
 import random
@@ -13201,367 +13201,367 @@ if __name__ == "__main__":
     
     # Test the trained agent
     test_agent(trained_agent)`,
-                explanation: "This example implements a Deep Q-Learning agent for reinforcement learning using the OpenAI Gym environment. It includes the DQN algorithm implementation, experience replay, and epsilon-greedy exploration."
-            }
-        ],
-        roadmap: [
-            {
-                title: "1. Prerequisites & Math Foundations",
-                description: "Master the mathematical foundations required for ML/AI",
-                topics: [
-                    "Linear Algebra (vectors, matrices, eigenvalues)",
-                    "Calculus (derivatives, gradients, optimization)",
-                    "Probability Theory and Statistics",
-                    "Python Programming and NumPy",
-                    "Data Structures and Algorithms",
-                    "Data Analysis with Pandas",
-                    "Data Visualization (Matplotlib, Seaborn)"
-                ]
-            },
-            {
-                title: "2. Machine Learning Basics",
-                description: "Learn fundamental ML concepts and algorithms",
-                topics: [
-                    "Supervised vs Unsupervised Learning",
-                    "Linear Regression and Logistic Regression",
-                    "Decision Trees and Random Forests",
-                    "Support Vector Machines",
-                    "K-Means and Hierarchical Clustering",
-                    "Dimensionality Reduction (PCA, t-SNE)",
-                    "Model Evaluation and Validation"
-                ]
-            },
-            {
-                title: "3. Deep Learning Fundamentals",
-                description: "Master neural networks and deep learning concepts",
-                topics: [
-                    "Neural Network Architecture",
-                    "Backpropagation and Gradient Descent",
-                    "Activation Functions",
-                    "Loss Functions and Optimizers",
-                    "Regularization Techniques",
-                    "TensorFlow and PyTorch Basics",
-                    "GPU Acceleration"
-                ]
-            },
-            {
-                title: "4. Computer Vision",
-                description: "Learn image processing and vision tasks",
-                topics: [
-                    "Convolutional Neural Networks",
-                    "Image Classification and Detection",
-                    "Semantic Segmentation",
-                    "Transfer Learning",
-                    "Object Detection Frameworks",
-                    "Face Recognition",
-                    "Image Generation (GANs)"
-                ]
-            },
-            {
-                title: "5. Natural Language Processing",
-                description: "Master text processing and language understanding",
-                topics: [
-                    "Text Preprocessing and Embeddings",
-                    "RNNs and LSTMs",
-                    "Attention Mechanisms",
-                    "Transformer Architecture",
-                    "BERT and GPT Models",
-                    "Named Entity Recognition",
-                    "Machine Translation"
-                ]
-            },
-            {
-                title: "6. Reinforcement Learning",
-                description: "Learn decision-making and control",
-                topics: [
-                    "Markov Decision Processes",
-                    "Q-Learning and SARSA",
-                    "Policy Gradients",
-                    "Deep Q-Networks (DQN)",
-                    "Actor-Critic Methods",
-                    "Multi-Agent Systems",
-                    "RL in Real-world Applications"
-                ]
-            },
-            {
-                title: "7. ML Engineering",
-                description: "Master deployment and production aspects",
-                topics: [
-                    "Model Deployment Strategies",
-                    "MLOps and CI/CD",
-                    "Model Monitoring and Maintenance",
-                    "Scalable ML Systems",
-                    "Model Optimization",
-                    "API Development",
-                    "Cloud ML Services"
-                ]
-            }
-        ],
-        resources: {
-        documentation: [
-            {
-                title: "TensorFlow Documentation",
-                url: "https://www.tensorflow.org/docs",
-                description: "Official documentation for TensorFlow framework",
-                type: "Framework Documentation"
-            },
-            {
-                title: "PyTorch Documentation",
-                url: "https://pytorch.org/docs",
-                description: "Comprehensive guide for PyTorch development",
-                type: "Framework Documentation"
-            },
-            {
-                title: "Scikit-learn Documentation",
-                url: "https://scikit-learn.org/stable/documentation.html",
-                description: "Documentation for classical ML algorithms",
-                type: "ML Library Documentation"
-            },
-            {
-                title: "Hugging Face Documentation",
-                url: "https://huggingface.co/docs",
-                description: "Transformers library and models documentation",
-                type: "NLP Documentation"
-            },
-            {
-                title: "OpenAI Gym Documentation",
-                url: "https://gym.openai.com/docs/",
-                description: "Documentation for reinforcement learning environments",
-                type: "RL Documentation"
-            }
-        ],
-        tutorials: [
-            {
-                title: "Fast.ai Courses",
-                url: "https://www.fast.ai/",
-                description: "Practical deep learning for coders",
-                type: "Online Course"
-            },
-            {
-                title: "Google Machine Learning Crash Course",
-                url: "https://developers.google.com/machine-learning/crash-course",
-                description: "Google's ML course with TensorFlow",
-                type: "Online Course"
-            },
-            {
-                title: "Kaggle Learn",
-                url: "https://www.kaggle.com/learn",
-                description: "Interactive ML tutorials and competitions",
-                type: "Learning Platform"
-            },
-            {
-                title: "DeepLearning.AI Specializations",
-                url: "https://www.deeplearning.ai/",
-                description: "Deep learning specialization courses",
-                type: "Course Series"
-            },
-            {
-                title: "Stanford CS231n",
-                url: "http://cs231n.stanford.edu/",
-                description: "Convolutional Neural Networks for Visual Recognition",
-                type: "University Course"
-            }
-        ],
-        videos: [
-            {
-                title: "3Blue1Brown Neural Networks",
-                url: "https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi",
-                description: "Visual explanation of neural networks",
-                platform: "YouTube"
-            },
-            {
-                title: "Stanford CS224N NLP Course",
-                url: "https://www.youtube.com/playlist?list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z",
-                description: "Natural Language Processing with Deep Learning",
-                platform: "YouTube"
-            },
-            {
-                title: "MIT Introduction to Deep Learning",
-                url: "http://introtodeeplearning.com/",
-                description: "MIT's deep learning lecture series",
-                platform: "University Course"
-            },
-            {
-                title: "Yannic Kilcher",
-                url: "https://www.youtube.com/c/YannicKilcher",
-                description: "ML paper explanations and discussions",
-                platform: "YouTube"
-            },
-            {
-                title: "Two Minute Papers",
-                url: "https://www.youtube.com/user/keeroyz",
-                description: "AI research paper summaries",
-                platform: "YouTube"
-            }
-        ],
-        books: [
-            {
-                title: "Deep Learning",
-                author: "Ian Goodfellow, Yoshua Bengio, Aaron Courville",
-                description: "Comprehensive textbook on deep learning",
-                level: "Advanced"
-            },
-            {
-                title: "Hands-On Machine Learning with Scikit-Learn and TensorFlow",
-                author: "Aurélien Géron",
-                description: "Practical guide to ML implementation",
-                level: "Intermediate"
-            },
-            {
-                title: "Pattern Recognition and Machine Learning",
-                author: "Christopher Bishop",
-                description: "Classical ML concepts and mathematics",
-                level: "Advanced"
-            },
-            {
-                title: "Natural Language Processing with Transformers",
-                author: "Lewis Tunstall, Leandro von Werra, Thomas Wolf",
-                description: "Guide to using transformers for NLP",
-                level: "Intermediate"
-            },
-            {
-                title: "Reinforcement Learning: An Introduction",
-                author: "Richard S. Sutton, Andrew G. Barto",
-                description: "Foundational text on reinforcement learning",
-                level: "Advanced"
-            }
-        ],
-        tools: [
-            {
-                title: "Jupyter Notebooks",
-                url: "https://jupyter.org/",
-                description: "Interactive development environment for ML",
-                type: "Development Tool",
-                category: "Essential"
-            },
-            {
-                title: "Google Colab",
-                url: "https://colab.research.google.com/",
-                description: "Free cloud-based Jupyter environment with GPU",
-                type: "Cloud Platform",
-                category: "Essential"
-            },
-            {
-                title: "Weights & Biases",
-                url: "https://wandb.ai/",
-                description: "ML experiment tracking and visualization",
-                type: "MLOps Tool",
-                category: "Essential"
-            },
-            {
-                title: "DVC (Data Version Control)",
-                url: "https://dvc.org/",
-                description: "Version control for ML projects",
-                type: "MLOps Tool",
-                category: "Essential"
-            },
-            {
-                title: "MLflow",
-                url: "https://mlflow.org/",
-                description: "Platform for ML lifecycle management",
-                type: "MLOps Tool",
-                category: "Essential"
-            }
-        ],
-        communities: [
-            {
-                title: "Reddit r/MachineLearning",
-                url: "https://www.reddit.com/r/MachineLearning/",
-                description: "Discussion forum for ML topics",
-                type: "Forum"
-            },
-            {
-                title: "Papers with Code",
-                url: "https://paperswithcode.com/",
-                description: "ML papers with implementation code",
-                type: "Research Community"
-            },
-            {
-                title: "AI Stack Exchange",
-                url: "https://ai.stackexchange.com/",
-                description: "Q&A platform for AI and ML",
-                type: "Q&A Forum"
-            },
-            {
-                title: "Hugging Face Community",
-                url: "https://discuss.huggingface.co/",
-                description: "NLP and ML model community",
-                type: "Forum"
-            },
-            {
-                title: "PyTorch Discussion Forums",
-                url: "https://discuss.pytorch.org/",
-                description: "Official PyTorch community forum",
-                type: "Forum"
-            }
-        ],
-        podcasts: [
-            {
-                title: "Machine Learning Guide",
-                url: "http://ocdevel.com/mlg",
-                description: "Beginner-friendly ML concepts",
-                platform: "Podcast"
-            },
-            {
-                title: "Lex Fridman Podcast",
-                url: "https://lexfridman.com/podcast/",
-                description: "In-depth discussions with AI researchers",
-                platform: "Podcast"
-            },
-            {
-                title: "TWIML AI Podcast",
-                url: "https://twimlai.com/podcast/",
-                description: "This Week in Machine Learning & AI",
-                platform: "Podcast"
-            },
-            {
-                title: "Practical AI",
-                url: "https://changelog.com/practicalai",
-                description: "Making artificial intelligence practical",
-                platform: "Podcast"
-            }
-        ],
-        blogs: [
-            {
-                title: "OpenAI Blog",
-                url: "https://openai.com/blog/",
-                description: "Research updates from OpenAI",
-                type: "Research Blog"
-            },
-            {
-                title: "Google AI Blog",
-                url: "https://ai.googleblog.com/",
-                description: "Latest AI research from Google",
-                type: "Research Blog"
-            },
-            {
-                title: "Distill.pub",
-                url: "https://distill.pub/",
-                description: "Clear explanations of ML concepts",
-                type: "Educational Blog"
-            },
-            {
-                title: "Sebastian Ruder's Blog",
-                url: "https://ruder.io/",
-                description: "NLP and deep learning insights",
-                type: "Personal Blog"
-            }
-        ]
-    },
-    practice: {
-        beginnerExercises: [
-            {
-                title: "House Price Prediction",
-                difficulty: "Easy",
-                description: "Create a linear regression model to predict house prices based on features like size, bedrooms, and location.",
-                hints: [
-                    "Use pandas for data preprocessing",
-                    "Handle categorical variables properly",
-                    "Split data into training and testing sets",
-                    "Evaluate model using RMSE and R-squared"
+                    explanation: "This example implements a Deep Q-Learning agent for reinforcement learning using the OpenAI Gym environment. It includes the DQN algorithm implementation, experience replay, and epsilon-greedy exploration."
+                }
+            ],
+            roadmap: [
+                {
+                    title: "1. Prerequisites & Math Foundations",
+                    description: "Master the mathematical foundations required for ML/AI",
+                    topics: [
+                        "Linear Algebra (vectors, matrices, eigenvalues)",
+                        "Calculus (derivatives, gradients, optimization)",
+                        "Probability Theory and Statistics",
+                        "Python Programming and NumPy",
+                        "Data Structures and Algorithms",
+                        "Data Analysis with Pandas",
+                        "Data Visualization (Matplotlib, Seaborn)"
+                    ]
+                },
+                {
+                    title: "2. Machine Learning Basics",
+                    description: "Learn fundamental ML concepts and algorithms",
+                    topics: [
+                        "Supervised vs Unsupervised Learning",
+                        "Linear Regression and Logistic Regression",
+                        "Decision Trees and Random Forests",
+                        "Support Vector Machines",
+                        "K-Means and Hierarchical Clustering",
+                        "Dimensionality Reduction (PCA, t-SNE)",
+                        "Model Evaluation and Validation"
+                    ]
+                },
+                {
+                    title: "3. Deep Learning Fundamentals",
+                    description: "Master neural networks and deep learning concepts",
+                    topics: [
+                        "Neural Network Architecture",
+                        "Backpropagation and Gradient Descent",
+                        "Activation Functions",
+                        "Loss Functions and Optimizers",
+                        "Regularization Techniques",
+                        "TensorFlow and PyTorch Basics",
+                        "GPU Acceleration"
+                    ]
+                },
+                {
+                    title: "4. Computer Vision",
+                    description: "Learn image processing and vision tasks",
+                    topics: [
+                        "Convolutional Neural Networks",
+                        "Image Classification and Detection",
+                        "Semantic Segmentation",
+                        "Transfer Learning",
+                        "Object Detection Frameworks",
+                        "Face Recognition",
+                        "Image Generation (GANs)"
+                    ]
+                },
+                {
+                    title: "5. Natural Language Processing",
+                    description: "Master text processing and language understanding",
+                    topics: [
+                        "Text Preprocessing and Embeddings",
+                        "RNNs and LSTMs",
+                        "Attention Mechanisms",
+                        "Transformer Architecture",
+                        "BERT and GPT Models",
+                        "Named Entity Recognition",
+                        "Machine Translation"
+                    ]
+                },
+                {
+                    title: "6. Reinforcement Learning",
+                    description: "Learn decision-making and control",
+                    topics: [
+                        "Markov Decision Processes",
+                        "Q-Learning and SARSA",
+                        "Policy Gradients",
+                        "Deep Q-Networks (DQN)",
+                        "Actor-Critic Methods",
+                        "Multi-Agent Systems",
+                        "RL in Real-world Applications"
+                    ]
+                },
+                {
+                    title: "7. ML Engineering",
+                    description: "Master deployment and production aspects",
+                    topics: [
+                        "Model Deployment Strategies",
+                        "MLOps and CI/CD",
+                        "Model Monitoring and Maintenance",
+                        "Scalable ML Systems",
+                        "Model Optimization",
+                        "API Development",
+                        "Cloud ML Services"
+                    ]
+                }
+            ],
+            resources: {
+                documentation: [
+                    {
+                        title: "TensorFlow Documentation",
+                        url: "https://www.tensorflow.org/docs",
+                        description: "Official documentation for TensorFlow framework",
+                        type: "Framework Documentation"
+                    },
+                    {
+                        title: "PyTorch Documentation",
+                        url: "https://pytorch.org/docs",
+                        description: "Comprehensive guide for PyTorch development",
+                        type: "Framework Documentation"
+                    },
+                    {
+                        title: "Scikit-learn Documentation",
+                        url: "https://scikit-learn.org/stable/documentation.html",
+                        description: "Documentation for classical ML algorithms",
+                        type: "ML Library Documentation"
+                    },
+                    {
+                        title: "Hugging Face Documentation",
+                        url: "https://huggingface.co/docs",
+                        description: "Transformers library and models documentation",
+                        type: "NLP Documentation"
+                    },
+                    {
+                        title: "OpenAI Gym Documentation",
+                        url: "https://gym.openai.com/docs/",
+                        description: "Documentation for reinforcement learning environments",
+                        type: "RL Documentation"
+                    }
                 ],
-                solution: {
-                    code: `import pandas as pd
+                tutorials: [
+                    {
+                        title: "Fast.ai Courses",
+                        url: "https://www.fast.ai/",
+                        description: "Practical deep learning for coders",
+                        type: "Online Course"
+                    },
+                    {
+                        title: "Google Machine Learning Crash Course",
+                        url: "https://developers.google.com/machine-learning/crash-course",
+                        description: "Google's ML course with TensorFlow",
+                        type: "Online Course"
+                    },
+                    {
+                        title: "Kaggle Learn",
+                        url: "https://www.kaggle.com/learn",
+                        description: "Interactive ML tutorials and competitions",
+                        type: "Learning Platform"
+                    },
+                    {
+                        title: "DeepLearning.AI Specializations",
+                        url: "https://www.deeplearning.ai/",
+                        description: "Deep learning specialization courses",
+                        type: "Course Series"
+                    },
+                    {
+                        title: "Stanford CS231n",
+                        url: "http://cs231n.stanford.edu/",
+                        description: "Convolutional Neural Networks for Visual Recognition",
+                        type: "University Course"
+                    }
+                ],
+                videos: [
+                    {
+                        title: "3Blue1Brown Neural Networks",
+                        url: "https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi",
+                        description: "Visual explanation of neural networks",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Stanford CS224N NLP Course",
+                        url: "https://www.youtube.com/playlist?list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z",
+                        description: "Natural Language Processing with Deep Learning",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "MIT Introduction to Deep Learning",
+                        url: "http://introtodeeplearning.com/",
+                        description: "MIT's deep learning lecture series",
+                        platform: "University Course"
+                    },
+                    {
+                        title: "Yannic Kilcher",
+                        url: "https://www.youtube.com/c/YannicKilcher",
+                        description: "ML paper explanations and discussions",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Two Minute Papers",
+                        url: "https://www.youtube.com/user/keeroyz",
+                        description: "AI research paper summaries",
+                        platform: "YouTube"
+                    }
+                ],
+                books: [
+                    {
+                        title: "Deep Learning",
+                        author: "Ian Goodfellow, Yoshua Bengio, Aaron Courville",
+                        description: "Comprehensive textbook on deep learning",
+                        level: "Advanced"
+                    },
+                    {
+                        title: "Hands-On Machine Learning with Scikit-Learn and TensorFlow",
+                        author: "Aurélien Géron",
+                        description: "Practical guide to ML implementation",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "Pattern Recognition and Machine Learning",
+                        author: "Christopher Bishop",
+                        description: "Classical ML concepts and mathematics",
+                        level: "Advanced"
+                    },
+                    {
+                        title: "Natural Language Processing with Transformers",
+                        author: "Lewis Tunstall, Leandro von Werra, Thomas Wolf",
+                        description: "Guide to using transformers for NLP",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "Reinforcement Learning: An Introduction",
+                        author: "Richard S. Sutton, Andrew G. Barto",
+                        description: "Foundational text on reinforcement learning",
+                        level: "Advanced"
+                    }
+                ],
+                tools: [
+                    {
+                        title: "Jupyter Notebooks",
+                        url: "https://jupyter.org/",
+                        description: "Interactive development environment for ML",
+                        type: "Development Tool",
+                        category: "Essential"
+                    },
+                    {
+                        title: "Google Colab",
+                        url: "https://colab.research.google.com/",
+                        description: "Free cloud-based Jupyter environment with GPU",
+                        type: "Cloud Platform",
+                        category: "Essential"
+                    },
+                    {
+                        title: "Weights & Biases",
+                        url: "https://wandb.ai/",
+                        description: "ML experiment tracking and visualization",
+                        type: "MLOps Tool",
+                        category: "Essential"
+                    },
+                    {
+                        title: "DVC (Data Version Control)",
+                        url: "https://dvc.org/",
+                        description: "Version control for ML projects",
+                        type: "MLOps Tool",
+                        category: "Essential"
+                    },
+                    {
+                        title: "MLflow",
+                        url: "https://mlflow.org/",
+                        description: "Platform for ML lifecycle management",
+                        type: "MLOps Tool",
+                        category: "Essential"
+                    }
+                ],
+                communities: [
+                    {
+                        title: "Reddit r/MachineLearning",
+                        url: "https://www.reddit.com/r/MachineLearning/",
+                        description: "Discussion forum for ML topics",
+                        type: "Forum"
+                    },
+                    {
+                        title: "Papers with Code",
+                        url: "https://paperswithcode.com/",
+                        description: "ML papers with implementation code",
+                        type: "Research Community"
+                    },
+                    {
+                        title: "AI Stack Exchange",
+                        url: "https://ai.stackexchange.com/",
+                        description: "Q&A platform for AI and ML",
+                        type: "Q&A Forum"
+                    },
+                    {
+                        title: "Hugging Face Community",
+                        url: "https://discuss.huggingface.co/",
+                        description: "NLP and ML model community",
+                        type: "Forum"
+                    },
+                    {
+                        title: "PyTorch Discussion Forums",
+                        url: "https://discuss.pytorch.org/",
+                        description: "Official PyTorch community forum",
+                        type: "Forum"
+                    }
+                ],
+                podcasts: [
+                    {
+                        title: "Machine Learning Guide",
+                        url: "http://ocdevel.com/mlg",
+                        description: "Beginner-friendly ML concepts",
+                        platform: "Podcast"
+                    },
+                    {
+                        title: "Lex Fridman Podcast",
+                        url: "https://lexfridman.com/podcast/",
+                        description: "In-depth discussions with AI researchers",
+                        platform: "Podcast"
+                    },
+                    {
+                        title: "TWIML AI Podcast",
+                        url: "https://twimlai.com/podcast/",
+                        description: "This Week in Machine Learning & AI",
+                        platform: "Podcast"
+                    },
+                    {
+                        title: "Practical AI",
+                        url: "https://changelog.com/practicalai",
+                        description: "Making artificial intelligence practical",
+                        platform: "Podcast"
+                    }
+                ],
+                blogs: [
+                    {
+                        title: "OpenAI Blog",
+                        url: "https://openai.com/blog/",
+                        description: "Research updates from OpenAI",
+                        type: "Research Blog"
+                    },
+                    {
+                        title: "Google AI Blog",
+                        url: "https://ai.googleblog.com/",
+                        description: "Latest AI research from Google",
+                        type: "Research Blog"
+                    },
+                    {
+                        title: "Distill.pub",
+                        url: "https://distill.pub/",
+                        description: "Clear explanations of ML concepts",
+                        type: "Educational Blog"
+                    },
+                    {
+                        title: "Sebastian Ruder's Blog",
+                        url: "https://ruder.io/",
+                        description: "NLP and deep learning insights",
+                        type: "Personal Blog"
+                    }
+                ]
+            },
+            practice: {
+                beginnerExercises: [
+                    {
+                        title: "House Price Prediction",
+                        difficulty: "Easy",
+                        description: "Create a linear regression model to predict house prices based on features like size, bedrooms, and location.",
+                        hints: [
+                            "Use pandas for data preprocessing",
+                            "Handle categorical variables properly",
+                            "Split data into training and testing sets",
+                            "Evaluate model using RMSE and R-squared"
+                        ],
+                        solution: {
+                            code: `import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
@@ -13649,21 +13649,21 @@ def train_and_evaluate():
 
 if __name__ == "__main__":
     model = train_and_evaluate()`,
-                    explanation: "This exercise demonstrates basic regression modeling using scikit-learn. It includes data preprocessing, feature engineering, model pipeline creation, and evaluation metrics."
-                }
-            },
-            {
-                title: "Spam Detection",
-                difficulty: "Easy",
-                description: "Build a text classification model to identify spam messages using basic NLP techniques.",
-                hints: [
-                    "Use TF-IDF for text vectorization",
-                    "Implement basic text preprocessing",
-                    "Apply Naive Bayes classifier",
-                    "Evaluate using classification metrics"
-                ],
-                solution: {
-                    code: `import pandas as pd
+                            explanation: "This exercise demonstrates basic regression modeling using scikit-learn. It includes data preprocessing, feature engineering, model pipeline creation, and evaluation metrics."
+                        }
+                    },
+                    {
+                        title: "Spam Detection",
+                        difficulty: "Easy",
+                        description: "Build a text classification model to identify spam messages using basic NLP techniques.",
+                        hints: [
+                            "Use TF-IDF for text vectorization",
+                            "Implement basic text preprocessing",
+                            "Apply Naive Bayes classifier",
+                            "Evaluate using classification metrics"
+                        ],
+                        solution: {
+                            code: `import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -13752,23 +13752,23 @@ if __name__ == "__main__":
     ]
     
     test_spam_detector(model, test_messages)`,
-                    explanation: "This exercise shows basic text classification using TF-IDF and Naive Bayes. It includes text preprocessing, model pipeline creation, and evaluation using classification metrics."
-                }
-            }
-        ],
-        intermediateExercises: [
-            {
-                title: "Customer Churn Prediction",
-                difficulty: "Medium",
-                description: "Build a model to predict customer churn using historical customer data with feature engineering and model optimization.",
-                hints: [
-                    "Handle class imbalance",
-                    "Create custom features",
-                    "Implement cross-validation",
-                    "Use feature importance analysis"
+                            explanation: "This exercise shows basic text classification using TF-IDF and Naive Bayes. It includes text preprocessing, model pipeline creation, and evaluation using classification metrics."
+                        }
+                    }
                 ],
-                solution: {
-                    code: `import pandas as pd
+                intermediateExercises: [
+                    {
+                        title: "Customer Churn Prediction",
+                        difficulty: "Medium",
+                        description: "Build a model to predict customer churn using historical customer data with feature engineering and model optimization.",
+                        hints: [
+                            "Handle class imbalance",
+                            "Create custom features",
+                            "Implement cross-validation",
+                            "Use feature importance analysis"
+                        ],
+                        solution: {
+                            code: `import pandas as pd
 import numpy as np
 from sklearn.model_selection import cross_val_score
 from sklearn.preprocessing import StandardScaler
@@ -13941,21 +13941,21 @@ def main():
 
 if __name__ == "__main__":
     main()`,
-                    explanation: "This intermediate exercise demonstrates advanced classification techniques including feature engineering, handling class imbalance, hyperparameter optimization, and model interpretation using SHAP values."
-                }
-            },
-            {
-                title: "Time Series Forecasting",
-                difficulty: "Medium",
-                description: "Implement a time series forecasting model for sales prediction using both statistical and deep learning approaches.",
-                hints: [
-                    "Handle seasonal patterns",
-                    "Create time-based features",
-                    "Implement both SARIMA and LSTM models",
-                    "Compare different forecasting approaches"
-                ],
-                solution: {
-                    code: `import pandas as pd
+                            explanation: "This intermediate exercise demonstrates advanced classification techniques including feature engineering, handling class imbalance, hyperparameter optimization, and model interpretation using SHAP values."
+                        }
+                    },
+                    {
+                        title: "Time Series Forecasting",
+                        difficulty: "Medium",
+                        description: "Implement a time series forecasting model for sales prediction using both statistical and deep learning approaches.",
+                        hints: [
+                            "Handle seasonal patterns",
+                            "Create time-based features",
+                            "Implement both SARIMA and LSTM models",
+                            "Compare different forecasting approaches"
+                        ],
+                        solution: {
+                            code: `import pandas as pd
 import numpy as np
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 from tensorflow.keras.models import Sequential
@@ -14142,23 +14142,23 @@ def main():
 
 if __name__ == "__main__":
     main()`,
-    explanation: "This intermediate exercise demonstrates time series forecasting using both statistical (SARIMA) and deep learning (LSTM) approaches. It includes data preparation, model training, forecasting, and comparison of different methods. The implementation handles seasonal patterns and provides visualization of results."
-                }
-            }
-        ],
-        advancedExercises: [
-            {
-                title: "Generative Adversarial Network (GAN)",
-                difficulty: "Hard",
-                description: "Implement a GAN to generate synthetic images using deep convolutional networks.",
-                hints: [
-                    "Use convolutional layers for generator and discriminator",
-                    "Implement proper loss functions",
-                    "Add batch normalization and dropout",
-                    "Monitor training stability"
+                            explanation: "This intermediate exercise demonstrates time series forecasting using both statistical (SARIMA) and deep learning (LSTM) approaches. It includes data preparation, model training, forecasting, and comparison of different methods. The implementation handles seasonal patterns and provides visualization of results."
+                        }
+                    }
                 ],
-                solution: {
-                    code: `import tensorflow as tf
+                advancedExercises: [
+                    {
+                        title: "Generative Adversarial Network (GAN)",
+                        difficulty: "Hard",
+                        description: "Implement a GAN to generate synthetic images using deep convolutional networks.",
+                        hints: [
+                            "Use convolutional layers for generator and discriminator",
+                            "Implement proper loss functions",
+                            "Add batch normalization and dropout",
+                            "Monitor training stability"
+                        ],
+                        solution: {
+                            code: `import tensorflow as tf
 from tensorflow.keras import layers, models
 import numpy as np
 import matplotlib.pyplot as plt
@@ -14334,21 +14334,21 @@ def main():
 
 if __name__ == "__main__":
     main()`,
-                    explanation: "This advanced exercise implements a Deep Convolutional GAN (DCGAN) for generating synthetic images. It includes proper architecture design, loss functions, training loop implementation, and visualization of generated images throughout training."
-                }
-            },
-            {
-                title: "Transformer for Machine Translation",
-                difficulty: "Hard",
-                description: "Implement a transformer model for language translation with attention mechanisms.",
-                hints: [
-                    "Implement multi-head attention",
-                    "Create positional encoding",
-                    "Handle tokenization and padding",
-                    "Implement beam search decoding"
-                ],
-                solution: {
-                    code: `import tensorflow as tf
+                            explanation: "This advanced exercise implements a Deep Convolutional GAN (DCGAN) for generating synthetic images. It includes proper architecture design, loss functions, training loop implementation, and visualization of generated images throughout training."
+                        }
+                    },
+                    {
+                        title: "Transformer for Machine Translation",
+                        difficulty: "Hard",
+                        description: "Implement a transformer model for language translation with attention mechanisms.",
+                        hints: [
+                            "Implement multi-head attention",
+                            "Create positional encoding",
+                            "Handle tokenization and padding",
+                            "Implement beam search decoding"
+                        ],
+                        solution: {
+                            code: `import tensorflow as tf
 import numpy as np
 
 class TransformerEncoderLayer(tf.keras.layers.Layer):
@@ -14651,23 +14651,23 @@ def main():
 
 if __name__ == "__main__":
     main()`,
-    explanation: "This advanced exercise implements a Transformer model for machine translation. It includes:\n" +
-                "1. Encoder and decoder layers with multi-head attention\n" +
-                "2. Positional encoding for sequence order\n" +
-                "3. Mask creation for padding and future tokens\n" +
-                "4. Translation class with basic beam search\n" +
-                "The implementation follows the architecture from 'Attention Is All You Need' paper and includes proper attention mechanisms, layer normalization, and residual connections."
-}
+                            explanation: "This advanced exercise implements a Transformer model for machine translation. It includes:\n" +
+                                "1. Encoder and decoder layers with multi-head attention\n" +
+                                "2. Positional encoding for sequence order\n" +
+                                "3. Mask creation for padding and future tokens\n" +
+                                "4. Translation class with basic beam search\n" +
+                                "The implementation follows the architecture from 'Attention Is All You Need' paper and includes proper attention mechanisms, layer normalization, and residual connections."
+                        }
+                    }
+                ]
             }
-        ]
-    }
-}
-},
-{
-    id: 13,
-    title: "Blockchain Development",
-    description: "To learn blockchain development, follow this roadmap",
-    extendedContent: `
+        }
+    },
+    {
+        id: 13,
+        title: "Blockchain Development",
+        description: "To learn blockchain development, follow this roadmap",
+        extendedContent: `
         Master blockchain technology and decentralized application development. Start with blockchain 
         fundamentals, cryptography, and distributed systems. Learn Solidity programming and smart 
         contract development. Explore popular blockchain platforms like Ethereum, build DApps, and 
@@ -14675,69 +14675,69 @@ if __name__ == "__main__":
         architecture. Advanced topics include DeFi protocols, NFTs, cross-chain development, and 
         blockchain security best practices.
     `,
-    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
-    trackInfo: {
-        prerequisites: [
-            "Strong programming fundamentals",
-            "Understanding of data structures and algorithms",
-            "Basic knowledge of cryptography",
-            "JavaScript/TypeScript proficiency",
-            "Understanding of web development",
-            "Basic networking concepts",
-            "Command line proficiency"
-        ],
-        outcomes: [
-            "Develop smart contracts using Solidity",
-            "Build decentralized applications (DApps)",
-            "Implement blockchain security measures",
-            "Create and deploy tokens and NFTs",
-            "Integrate Web3 functionality",
-            "Design DeFi protocols and applications",
-            "Implement cross-chain solutions",
-            "Deploy and manage blockchain networks",
-            "Conduct smart contract testing and auditing",
-            "Build secure and scalable blockchain systems"
-        ],
-        sections: [
-            {
-                title: "Blockchain Fundamentals",
-                content: "Master core blockchain concepts including distributed ledger technology, consensus mechanisms, and cryptographic primitives. Understand blockchain architecture, network types, and transaction processing. Learn about mining, nodes, and blockchain scalability solutions."
-            },
-            {
-                title: "Smart Contract Development",
-                content: "Learn Solidity programming language, smart contract development, and deployment processes. Understand contract security, gas optimization, and best practices. Master testing frameworks, debugging tools, and contract upgradeability patterns."
-            },
-            {
-                title: "Web3 Development",
-                content: "Study Web3.js and Ethers.js libraries for blockchain interaction. Learn about wallet integration, transaction management, and event handling. Understand decentralized storage solutions and oracle implementations."
-            },
-            {
-                title: "DApp Development",
-                content: "Build full-stack decentralized applications using modern frameworks. Learn about frontend integration, state management, and user interface design for blockchain applications. Master IPFS integration and decentralized identity solutions."
-            },
-            {
-                title: "DeFi Development",
-                content: "Understand decentralized finance protocols, token standards, and automated market makers. Learn about lending protocols, yield farming, and liquidity pools. Master flash loans, protocol integration, and DeFi security."
-            },
-            {
-                title: "NFT Development",
-                content: "Learn NFT token standards, metadata management, and marketplace development. Understand NFT minting, trading mechanics, and royalty implementations. Study NFT gaming, generative art, and cross-platform compatibility."
-            },
-            {
-                title: "Blockchain Security",
-                content: "Master smart contract security patterns, common vulnerabilities, and audit processes. Learn about secure development practices, testing methodologies, and security tools. Understand attack vectors and prevention strategies."
-            },
-            {
-                title: "Blockchain Architecture",
-                content: "Study advanced blockchain architectures, scalability solutions, and cross-chain protocols. Learn about sharding, sidechains, and layer 2 solutions. Understand consensus mechanisms and network governance."
-            }
-        ]
-    },
-    content: {
-        examples: [
-            {
-                title: "ERC20 Token Implementation",
-                code: `// SPDX-License-Identifier: MIT
+        icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+        trackInfo: {
+            prerequisites: [
+                "Strong programming fundamentals",
+                "Understanding of data structures and algorithms",
+                "Basic knowledge of cryptography",
+                "JavaScript/TypeScript proficiency",
+                "Understanding of web development",
+                "Basic networking concepts",
+                "Command line proficiency"
+            ],
+            outcomes: [
+                "Develop smart contracts using Solidity",
+                "Build decentralized applications (DApps)",
+                "Implement blockchain security measures",
+                "Create and deploy tokens and NFTs",
+                "Integrate Web3 functionality",
+                "Design DeFi protocols and applications",
+                "Implement cross-chain solutions",
+                "Deploy and manage blockchain networks",
+                "Conduct smart contract testing and auditing",
+                "Build secure and scalable blockchain systems"
+            ],
+            sections: [
+                {
+                    title: "Blockchain Fundamentals",
+                    content: "Master core blockchain concepts including distributed ledger technology, consensus mechanisms, and cryptographic primitives. Understand blockchain architecture, network types, and transaction processing. Learn about mining, nodes, and blockchain scalability solutions."
+                },
+                {
+                    title: "Smart Contract Development",
+                    content: "Learn Solidity programming language, smart contract development, and deployment processes. Understand contract security, gas optimization, and best practices. Master testing frameworks, debugging tools, and contract upgradeability patterns."
+                },
+                {
+                    title: "Web3 Development",
+                    content: "Study Web3.js and Ethers.js libraries for blockchain interaction. Learn about wallet integration, transaction management, and event handling. Understand decentralized storage solutions and oracle implementations."
+                },
+                {
+                    title: "DApp Development",
+                    content: "Build full-stack decentralized applications using modern frameworks. Learn about frontend integration, state management, and user interface design for blockchain applications. Master IPFS integration and decentralized identity solutions."
+                },
+                {
+                    title: "DeFi Development",
+                    content: "Understand decentralized finance protocols, token standards, and automated market makers. Learn about lending protocols, yield farming, and liquidity pools. Master flash loans, protocol integration, and DeFi security."
+                },
+                {
+                    title: "NFT Development",
+                    content: "Learn NFT token standards, metadata management, and marketplace development. Understand NFT minting, trading mechanics, and royalty implementations. Study NFT gaming, generative art, and cross-platform compatibility."
+                },
+                {
+                    title: "Blockchain Security",
+                    content: "Master smart contract security patterns, common vulnerabilities, and audit processes. Learn about secure development practices, testing methodologies, and security tools. Understand attack vectors and prevention strategies."
+                },
+                {
+                    title: "Blockchain Architecture",
+                    content: "Study advanced blockchain architectures, scalability solutions, and cross-chain protocols. Learn about sharding, sidechains, and layer 2 solutions. Understand consensus mechanisms and network governance."
+                }
+            ]
+        },
+        content: {
+            examples: [
+                {
+                    title: "ERC20 Token Implementation",
+                    code: `// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
@@ -14796,11 +14796,11 @@ contract CustomToken is ERC20, Ownable {
     
     // Snapshot and governance features could be added here
 }`,
-                explanation: "This example demonstrates the implementation of an ERC20 token with additional features including maxSupply, blacklisting, and token recovery. It uses OpenZeppelin contracts for security and standard compliance."
-            },
-            {
-                title: "NFT Collection with Whitelist",
-                code: `// SPDX-License-Identifier: MIT
+                    explanation: "This example demonstrates the implementation of an ERC20 token with additional features including maxSupply, blacklisting, and token recovery. It uses OpenZeppelin contracts for security and standard compliance."
+                },
+                {
+                    title: "NFT Collection with Whitelist",
+                    code: `// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
@@ -14913,11 +14913,11 @@ contract NFTCollection is ERC721, ReentrancyGuard, Ownable {
                super.supportsInterface(interfaceId);
     }
 }`,
-                explanation: "This example shows an NFT collection implementation with whitelist functionality using Merkle trees, minting limits, and security features. It includes proper access control, reentrancy protection, and support for metadata and royalties."
-            },
-            {
-                title: "DeFi Lending Protocol",
-                code: `// SPDX-License-Identifier: MIT
+                    explanation: "This example shows an NFT collection implementation with whitelist functionality using Merkle trees, minting limits, and security features. It includes proper access control, reentrancy protection, and support for metadata and royalties."
+                },
+                {
+                    title: "DeFi Lending Protocol",
+                    code: `// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
@@ -15224,373 +15224,373 @@ contract LendingPool is ReentrancyGuard, Pausable, Ownable {
         IERC20(token).transfer(owner(), amount);
     }
 }`,
-    explanation: "This example demonstrates a basic DeFi lending protocol implementation with features including:\n" +
-                "1. Multiple asset support\n" +
-                "2. Interest rate calculation based on utilization\n" +
-                "3. Collateral management\n" +
-                "4. Security features including reentrancy protection\n" +
-                "5. Emergency controls and token recovery\n" +
-                "The protocol allows users to deposit assets, borrow against their collateral, and manages interest rates dynamically."
-            }
-        ],
-        roadmap: [
-        {
-            title: "1. Blockchain Fundamentals",
-            description: "Learn core blockchain concepts and architecture",
-            topics: [
-                "Distributed Ledger Technology",
-                "Cryptographic Primitives",
-                "Consensus Mechanisms",
-                "Block Structure and Validation",
-                "Network Types and Protocols",
-                "Public vs Private Blockchains",
-                "Blockchain Scalability Solutions"
-            ]
-        },
-        {
-            title: "2. Smart Contract Development",
-            description: "Master smart contract programming and best practices",
-            topics: [
-                "Solidity Programming Language",
-                "Smart Contract Security",
-                "Testing and Debugging",
-                "Gas Optimization",
-                "Contract Design Patterns",
-                "Contract Upgradability",
-                "Development Frameworks (Hardhat/Truffle)"
-            ]
-        },
-        {
-            title: "3. Web3 Development",
-            description: "Learn Web3 integration and development",
-            topics: [
-                "Web3.js and Ethers.js",
-                "Wallet Integration",
-                "Transaction Management",
-                "Event Handling",
-                "IPFS Integration",
-                "Oracles and Data Feeds",
-                "Provider Management"
-            ]
-        },
-        {
-            title: "4. DApp Architecture",
-            description: "Build full-stack decentralized applications",
-            topics: [
-                "Frontend Frameworks (React/Vue)",
-                "State Management",
-                "MetaMask Integration",
-                "Backend Services",
-                "Decentralized Storage",
-                "Testing and Deployment",
-                "User Experience Design"
-            ]
-        },
-        {
-            title: "5. DeFi Development",
-            description: "Master decentralized finance protocols",
-            topics: [
-                "Token Standards (ERC20/ERC721)",
-                "Automated Market Makers",
-                "Lending Protocols",
-                "Yield Farming",
-                "Flash Loans",
-                "Price Oracles",
-                "Protocol Integration"
-            ]
-        },
-        {
-            title: "6. Cross-Chain Development",
-            description: "Learn cross-chain protocols and bridges",
-            topics: [
-                "Cross-Chain Bridges",
-                "Layer 2 Solutions",
-                "State Channels",
-                "Sidechains",
-                "Cross-Chain Messaging",
-                "Chain Interoperability",
-                "Multi-Chain Applications"
-            ]
-        },
-        {
-            title: "7. Security & Auditing",
-            description: "Master blockchain security and auditing",
-            topics: [
-                "Smart Contract Auditing",
-                "Common Vulnerabilities",
-                "Security Tools",
-                "Testing Methodologies",
-                "Code Review Practices",
-                "Security Patterns",
-                "Incident Response"
-            ]
-        }
-    ],
-    resources: {
-        documentation: [
-            {
-                title: "Ethereum Documentation",
-                url: "https://ethereum.org/developers",
-                description: "Official Ethereum documentation for developers",
-                type: "Platform Documentation"
-            },
-            {
-                title: "Solidity Documentation",
-                url: "https://docs.soliditylang.org/",
-                description: "Official Solidity programming language documentation",
-                type: "Language Documentation"
-            },
-            {
-                title: "OpenZeppelin Docs",
-                url: "https://docs.openzeppelin.com/",
-                description: "Smart contract security standards and libraries",
-                type: "Framework Documentation"
-            },
-            {
-                title: "Hardhat Documentation",
-                url: "https://hardhat.org/getting-started/",
-                description: "Development environment documentation",
-                type: "Tool Documentation"
-            },
-            {
-                title: "Web3.js Documentation",
-                url: "https://web3js.readthedocs.io/",
-                description: "Ethereum JavaScript API documentation",
-                type: "Library Documentation"
-            }
-        ],
-        tutorials: [
-            {
-                title: "CryptoZombies",
-                url: "https://cryptozombies.io/",
-                description: "Interactive Solidity tutorial through game development",
-                type: "Interactive Course"
-            },
-            {
-                title: "Ethereum Developer Program",
-                url: "https://consensys.net/academy/",
-                description: "ConsenSys Academy's developer program",
-                type: "Online Course"
-            },
-            {
-                title: "Buildspace",
-                url: "https://buildspace.so/",
-                description: "Project-based Web3 development tutorials",
-                type: "Project Tutorials"
-            },
-            {
-                title: "Chainshot",
-                url: "https://www.chainshot.com/",
-                description: "Guided blockchain development learning",
-                type: "Interactive Platform"
-            },
-            {
-                title: "DappUniversity",
-                url: "https://www.dappuniversity.com/",
-                description: "Blockchain development video tutorials",
-                type: "Video Tutorials"
-            }
-        ],
-        videos: [
-            {
-                title: "Smart Contract Programmer",
-                url: "https://www.youtube.com/channel/UCJWh7F3AFyQ_x01VKzr9eyA",
-                description: "Smart contract development tutorials",
-                platform: "YouTube"
-            },
-            {
-                title: "Eat the Blocks",
-                url: "https://www.youtube.com/c/EatTheBlocks",
-                description: "DApp development and blockchain tutorials",
-                platform: "YouTube"
-            },
-            {
-                title: "Finematics",
-                url: "https://www.youtube.com/c/Finematics",
-                description: "DeFi concepts and implementations",
-                platform: "YouTube"
-            },
-            {
-                title: "Nader Dabit",
-                url: "https://www.youtube.com/c/naderdabit",
-                description: "Web3 development tutorials",
-                platform: "YouTube"
-            },
-            {
-                title: "Patrick Collins",
-                url: "https://www.youtube.com/c/PatrickCollins",
-                description: "Smart contract development courses",
-                platform: "YouTube"
-            }
-        ],
-        books: [
-            {
-                title: "Mastering Ethereum",
-                author: "Andreas M. Antonopoulos, Gavin Wood",
-                description: "Comprehensive guide to Ethereum development",
-                level: "Intermediate to Advanced"
-            },
-            {
-                title: "Token Economy",
-                author: "Shermin Voshmgir",
-                description: "Web3 and tokenomics principles",
-                level: "Intermediate"
-            },
-            {
-                title: "Building Games with Ethereum Smart Contracts",
-                author: "Kedar Iyer, Chris Dannen",
-                description: "Smart contract game development",
-                level: "Intermediate"
-            },
-            {
-                title: "How to DeFi",
-                author: "CoinGecko",
-                description: "Comprehensive guide to DeFi protocols",
-                level: "Beginner to Intermediate"
-            },
-            {
-                title: "Smart Contract Patterns",
-                author: "Kévin Vogel",
-                description: "Design patterns for smart contracts",
-                level: "Advanced"
-            }
-        ],
-        tools: [
-            {
-                title: "Hardhat",
-                url: "https://hardhat.org/",
-                description: "Ethereum development environment",
-                type: "Development Tool",
-                category: "Essential"
-            },
-            {
-                title: "Remix IDE",
-                url: "https://remix.ethereum.org/",
-                description: "Browser-based Solidity IDE",
-                type: "Development Tool",
-                category: "Essential"
-            },
-            {
-                title: "Truffle Suite",
-                url: "https://trufflesuite.com/",
-                description: "Development framework for Ethereum",
-                type: "Framework",
-                category: "Essential"
-            },
-            {
-                title: "Metamask",
-                url: "https://metamask.io/",
-                description: "Ethereum wallet and gateway",
-                type: "Wallet",
-                category: "Essential"
-            },
-            {
-                title: "OpenZeppelin",
-                url: "https://openzeppelin.com/",
-                description: "Smart contract security library",
-                type: "Library",
-                category: "Essential"
-            }
-        ],
-        communities: [
-            {
-                title: "Ethereum StackExchange",
-                url: "https://ethereum.stackexchange.com/",
-                description: "Q&A for Ethereum developers",
-                type: "Q&A Forum"
-            },
-            {
-                title: "r/ethdev",
-                url: "https://www.reddit.com/r/ethdev/",
-                description: "Ethereum development subreddit",
-                type: "Forum"
-            },
-            {
-                title: "ETHGlobal",
-                url: "https://ethglobal.co/",
-                description: "Ethereum hackathons and events",
-                type: "Events Platform"
-            },
-            {
-                title: "DeFi Pulse",
-                url: "https://defipulse.com/",
-                description: "DeFi analytics and community",
-                type: "Analytics Platform"
-            },
-            {
-                title: "Ethereum Research",
-                url: "https://ethresear.ch/",
-                description: "Ethereum research discussions",
-                type: "Research Forum"
-            }
-        ],
-        podcasts: [
-            {
-                title: "Epicenter",
-                url: "https://epicenter.tv/",
-                description: "Blockchain technology discussions",
-                platform: "Podcast"
-            },
-            {
-                title: "Unchained",
-                url: "https://unchainedpodcast.com/",
-                description: "Interviews with blockchain leaders",
-                platform: "Podcast"
-            },
-            {
-                title: "Zero Knowledge",
-                url: "https://zeroknowledge.fm/",
-                description: "Technical blockchain discussions",
-                platform: "Podcast"
-            },
-            {
-                title: "The Defiant",
-                url: "https://thedefiant.io/podcast",
-                description: "DeFi news and analysis",
-                platform: "Podcast"
-            }
-        ],
-        blogs: [
-            {
-                title: "Ethereum Blog",
-                url: "https://blog.ethereum.org/",
-                description: "Official Ethereum Foundation blog",
-                type: "Official Blog"
-            },
-            {
-                title: "Vitalik Buterin's Blog",
-                url: "https://vitalik.ca/",
-                description: "Ethereum co-founder's personal blog",
-                type: "Personal Blog"
-            },
-            {
-                title: "Week in Ethereum",
-                url: "https://weekinethereumnews.com/",
-                description: "Weekly Ethereum ecosystem updates",
-                type: "Newsletter"
-            },
-            {
-                title: "SmartContractResearch",
-                url: "https://github.com/ethereum/wiki/wiki/Smart-Contract-Research",
-                description: "Smart contract research papers and articles",
-                type: "Research Blog"
-            }
-        ]
-    },
-    practice: {
-        beginnerExercises: [
-            {
-                title: "Basic Token Voting System",
-                difficulty: "Easy",
-                description: "Create a simple voting system where users can create proposals and vote using tokens.",
-                hints: [
-                    "Use a mapping for vote tracking",
-                    "Implement basic access control",
-                    "Add proposal creation and voting functions",
-                    "Track voting periods"
+                    explanation: "This example demonstrates a basic DeFi lending protocol implementation with features including:\n" +
+                        "1. Multiple asset support\n" +
+                        "2. Interest rate calculation based on utilization\n" +
+                        "3. Collateral management\n" +
+                        "4. Security features including reentrancy protection\n" +
+                        "5. Emergency controls and token recovery\n" +
+                        "The protocol allows users to deposit assets, borrow against their collateral, and manages interest rates dynamically."
+                }
+            ],
+            roadmap: [
+                {
+                    title: "1. Blockchain Fundamentals",
+                    description: "Learn core blockchain concepts and architecture",
+                    topics: [
+                        "Distributed Ledger Technology",
+                        "Cryptographic Primitives",
+                        "Consensus Mechanisms",
+                        "Block Structure and Validation",
+                        "Network Types and Protocols",
+                        "Public vs Private Blockchains",
+                        "Blockchain Scalability Solutions"
+                    ]
+                },
+                {
+                    title: "2. Smart Contract Development",
+                    description: "Master smart contract programming and best practices",
+                    topics: [
+                        "Solidity Programming Language",
+                        "Smart Contract Security",
+                        "Testing and Debugging",
+                        "Gas Optimization",
+                        "Contract Design Patterns",
+                        "Contract Upgradability",
+                        "Development Frameworks (Hardhat/Truffle)"
+                    ]
+                },
+                {
+                    title: "3. Web3 Development",
+                    description: "Learn Web3 integration and development",
+                    topics: [
+                        "Web3.js and Ethers.js",
+                        "Wallet Integration",
+                        "Transaction Management",
+                        "Event Handling",
+                        "IPFS Integration",
+                        "Oracles and Data Feeds",
+                        "Provider Management"
+                    ]
+                },
+                {
+                    title: "4. DApp Architecture",
+                    description: "Build full-stack decentralized applications",
+                    topics: [
+                        "Frontend Frameworks (React/Vue)",
+                        "State Management",
+                        "MetaMask Integration",
+                        "Backend Services",
+                        "Decentralized Storage",
+                        "Testing and Deployment",
+                        "User Experience Design"
+                    ]
+                },
+                {
+                    title: "5. DeFi Development",
+                    description: "Master decentralized finance protocols",
+                    topics: [
+                        "Token Standards (ERC20/ERC721)",
+                        "Automated Market Makers",
+                        "Lending Protocols",
+                        "Yield Farming",
+                        "Flash Loans",
+                        "Price Oracles",
+                        "Protocol Integration"
+                    ]
+                },
+                {
+                    title: "6. Cross-Chain Development",
+                    description: "Learn cross-chain protocols and bridges",
+                    topics: [
+                        "Cross-Chain Bridges",
+                        "Layer 2 Solutions",
+                        "State Channels",
+                        "Sidechains",
+                        "Cross-Chain Messaging",
+                        "Chain Interoperability",
+                        "Multi-Chain Applications"
+                    ]
+                },
+                {
+                    title: "7. Security & Auditing",
+                    description: "Master blockchain security and auditing",
+                    topics: [
+                        "Smart Contract Auditing",
+                        "Common Vulnerabilities",
+                        "Security Tools",
+                        "Testing Methodologies",
+                        "Code Review Practices",
+                        "Security Patterns",
+                        "Incident Response"
+                    ]
+                }
+            ],
+            resources: {
+                documentation: [
+                    {
+                        title: "Ethereum Documentation",
+                        url: "https://ethereum.org/developers",
+                        description: "Official Ethereum documentation for developers",
+                        type: "Platform Documentation"
+                    },
+                    {
+                        title: "Solidity Documentation",
+                        url: "https://docs.soliditylang.org/",
+                        description: "Official Solidity programming language documentation",
+                        type: "Language Documentation"
+                    },
+                    {
+                        title: "OpenZeppelin Docs",
+                        url: "https://docs.openzeppelin.com/",
+                        description: "Smart contract security standards and libraries",
+                        type: "Framework Documentation"
+                    },
+                    {
+                        title: "Hardhat Documentation",
+                        url: "https://hardhat.org/getting-started/",
+                        description: "Development environment documentation",
+                        type: "Tool Documentation"
+                    },
+                    {
+                        title: "Web3.js Documentation",
+                        url: "https://web3js.readthedocs.io/",
+                        description: "Ethereum JavaScript API documentation",
+                        type: "Library Documentation"
+                    }
                 ],
-                solution: {
-                    code: `// SPDX-License-Identifier: MIT
+                tutorials: [
+                    {
+                        title: "CryptoZombies",
+                        url: "https://cryptozombies.io/",
+                        description: "Interactive Solidity tutorial through game development",
+                        type: "Interactive Course"
+                    },
+                    {
+                        title: "Ethereum Developer Program",
+                        url: "https://consensys.net/academy/",
+                        description: "ConsenSys Academy's developer program",
+                        type: "Online Course"
+                    },
+                    {
+                        title: "Buildspace",
+                        url: "https://buildspace.so/",
+                        description: "Project-based Web3 development tutorials",
+                        type: "Project Tutorials"
+                    },
+                    {
+                        title: "Chainshot",
+                        url: "https://www.chainshot.com/",
+                        description: "Guided blockchain development learning",
+                        type: "Interactive Platform"
+                    },
+                    {
+                        title: "DappUniversity",
+                        url: "https://www.dappuniversity.com/",
+                        description: "Blockchain development video tutorials",
+                        type: "Video Tutorials"
+                    }
+                ],
+                videos: [
+                    {
+                        title: "Smart Contract Programmer",
+                        url: "https://www.youtube.com/channel/UCJWh7F3AFyQ_x01VKzr9eyA",
+                        description: "Smart contract development tutorials",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Eat the Blocks",
+                        url: "https://www.youtube.com/c/EatTheBlocks",
+                        description: "DApp development and blockchain tutorials",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Finematics",
+                        url: "https://www.youtube.com/c/Finematics",
+                        description: "DeFi concepts and implementations",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Nader Dabit",
+                        url: "https://www.youtube.com/c/naderdabit",
+                        description: "Web3 development tutorials",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Patrick Collins",
+                        url: "https://www.youtube.com/c/PatrickCollins",
+                        description: "Smart contract development courses",
+                        platform: "YouTube"
+                    }
+                ],
+                books: [
+                    {
+                        title: "Mastering Ethereum",
+                        author: "Andreas M. Antonopoulos, Gavin Wood",
+                        description: "Comprehensive guide to Ethereum development",
+                        level: "Intermediate to Advanced"
+                    },
+                    {
+                        title: "Token Economy",
+                        author: "Shermin Voshmgir",
+                        description: "Web3 and tokenomics principles",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "Building Games with Ethereum Smart Contracts",
+                        author: "Kedar Iyer, Chris Dannen",
+                        description: "Smart contract game development",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "How to DeFi",
+                        author: "CoinGecko",
+                        description: "Comprehensive guide to DeFi protocols",
+                        level: "Beginner to Intermediate"
+                    },
+                    {
+                        title: "Smart Contract Patterns",
+                        author: "Kévin Vogel",
+                        description: "Design patterns for smart contracts",
+                        level: "Advanced"
+                    }
+                ],
+                tools: [
+                    {
+                        title: "Hardhat",
+                        url: "https://hardhat.org/",
+                        description: "Ethereum development environment",
+                        type: "Development Tool",
+                        category: "Essential"
+                    },
+                    {
+                        title: "Remix IDE",
+                        url: "https://remix.ethereum.org/",
+                        description: "Browser-based Solidity IDE",
+                        type: "Development Tool",
+                        category: "Essential"
+                    },
+                    {
+                        title: "Truffle Suite",
+                        url: "https://trufflesuite.com/",
+                        description: "Development framework for Ethereum",
+                        type: "Framework",
+                        category: "Essential"
+                    },
+                    {
+                        title: "Metamask",
+                        url: "https://metamask.io/",
+                        description: "Ethereum wallet and gateway",
+                        type: "Wallet",
+                        category: "Essential"
+                    },
+                    {
+                        title: "OpenZeppelin",
+                        url: "https://openzeppelin.com/",
+                        description: "Smart contract security library",
+                        type: "Library",
+                        category: "Essential"
+                    }
+                ],
+                communities: [
+                    {
+                        title: "Ethereum StackExchange",
+                        url: "https://ethereum.stackexchange.com/",
+                        description: "Q&A for Ethereum developers",
+                        type: "Q&A Forum"
+                    },
+                    {
+                        title: "r/ethdev",
+                        url: "https://www.reddit.com/r/ethdev/",
+                        description: "Ethereum development subreddit",
+                        type: "Forum"
+                    },
+                    {
+                        title: "ETHGlobal",
+                        url: "https://ethglobal.co/",
+                        description: "Ethereum hackathons and events",
+                        type: "Events Platform"
+                    },
+                    {
+                        title: "DeFi Pulse",
+                        url: "https://defipulse.com/",
+                        description: "DeFi analytics and community",
+                        type: "Analytics Platform"
+                    },
+                    {
+                        title: "Ethereum Research",
+                        url: "https://ethresear.ch/",
+                        description: "Ethereum research discussions",
+                        type: "Research Forum"
+                    }
+                ],
+                podcasts: [
+                    {
+                        title: "Epicenter",
+                        url: "https://epicenter.tv/",
+                        description: "Blockchain technology discussions",
+                        platform: "Podcast"
+                    },
+                    {
+                        title: "Unchained",
+                        url: "https://unchainedpodcast.com/",
+                        description: "Interviews with blockchain leaders",
+                        platform: "Podcast"
+                    },
+                    {
+                        title: "Zero Knowledge",
+                        url: "https://zeroknowledge.fm/",
+                        description: "Technical blockchain discussions",
+                        platform: "Podcast"
+                    },
+                    {
+                        title: "The Defiant",
+                        url: "https://thedefiant.io/podcast",
+                        description: "DeFi news and analysis",
+                        platform: "Podcast"
+                    }
+                ],
+                blogs: [
+                    {
+                        title: "Ethereum Blog",
+                        url: "https://blog.ethereum.org/",
+                        description: "Official Ethereum Foundation blog",
+                        type: "Official Blog"
+                    },
+                    {
+                        title: "Vitalik Buterin's Blog",
+                        url: "https://vitalik.ca/",
+                        description: "Ethereum co-founder's personal blog",
+                        type: "Personal Blog"
+                    },
+                    {
+                        title: "Week in Ethereum",
+                        url: "https://weekinethereumnews.com/",
+                        description: "Weekly Ethereum ecosystem updates",
+                        type: "Newsletter"
+                    },
+                    {
+                        title: "SmartContractResearch",
+                        url: "https://github.com/ethereum/wiki/wiki/Smart-Contract-Research",
+                        description: "Smart contract research papers and articles",
+                        type: "Research Blog"
+                    }
+                ]
+            },
+            practice: {
+                beginnerExercises: [
+                    {
+                        title: "Basic Token Voting System",
+                        difficulty: "Easy",
+                        description: "Create a simple voting system where users can create proposals and vote using tokens.",
+                        hints: [
+                            "Use a mapping for vote tracking",
+                            "Implement basic access control",
+                            "Add proposal creation and voting functions",
+                            "Track voting periods"
+                        ],
+                        solution: {
+                            code: `// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 contract TokenVoting {
@@ -15668,21 +15668,21 @@ contract TokenVoting {
         );
     }
 }`,
-                    explanation: "This beginner exercise demonstrates basic contract structure, state variables, mappings, structs, events, and time-based functionality in Solidity."
-                }
-            },
-            {
-                title: "Simple Asset Registry",
-                difficulty: "Easy",
-                description: "Create a registry for tracking ownership of digital assets with basic transfer functionality.",
-                hints: [
-                    "Use structs for asset data",
-                    "Implement ownership tracking",
-                    "Add transfer functionality",
-                    "Include basic validation"
-                ],
-                solution: {
-                    code: `// SPDX-License-Identifier: MIT
+                            explanation: "This beginner exercise demonstrates basic contract structure, state variables, mappings, structs, events, and time-based functionality in Solidity."
+                        }
+                    },
+                    {
+                        title: "Simple Asset Registry",
+                        difficulty: "Easy",
+                        description: "Create a registry for tracking ownership of digital assets with basic transfer functionality.",
+                        hints: [
+                            "Use structs for asset data",
+                            "Implement ownership tracking",
+                            "Add transfer functionality",
+                            "Include basic validation"
+                        ],
+                        solution: {
+                            code: `// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 contract AssetRegistry {
@@ -15781,23 +15781,23 @@ contract AssetRegistry {
         }
     }
 }`,
-                    explanation: "This exercise shows basic array manipulation, struct usage, event emission, and ownership management in Solidity. It includes modifiers for access control and helper functions for array management."
-                }
-            }
-        ],
-        intermediateExercises: [
-            {
-                title: "Staking Rewards Contract",
-                difficulty: "Medium",
-                description: "Create a staking contract where users can stake tokens and earn rewards based on time and amount staked.",
-                hints: [
-                    "Implement reward calculation based on time",
-                    "Handle multiple staking positions",
-                    "Include compound interest",
-                    "Add emergency withdrawal"
+                            explanation: "This exercise shows basic array manipulation, struct usage, event emission, and ownership management in Solidity. It includes modifiers for access control and helper functions for array management."
+                        }
+                    }
                 ],
-                solution: {
-                    code: `// SPDX-License-Identifier: MIT
+                intermediateExercises: [
+                    {
+                        title: "Staking Rewards Contract",
+                        difficulty: "Medium",
+                        description: "Create a staking contract where users can stake tokens and earn rewards based on time and amount staked.",
+                        hints: [
+                            "Implement reward calculation based on time",
+                            "Handle multiple staking positions",
+                            "Include compound interest",
+                            "Add emergency withdrawal"
+                        ],
+                        solution: {
+                            code: `// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
@@ -15935,21 +15935,21 @@ contract StakingRewards is ReentrancyGuard, Pausable, Ownable {
         );
     }
 }`,
-                    explanation: "This intermediate exercise demonstrates implementation of a staking system with reward calculations, security features, and emergency functions. It includes proper handling of decimals, time-based calculations, and state management."
-                }
-            },
-            {
-                title: "Multi-Signature Wallet",
-                difficulty: "Medium",
-                description: "Create a multi-signature wallet contract that requires multiple approvals for transactions.",
-                hints: [
-                    "Implement owner management",
-                    "Add transaction proposal system",
-                    "Include approval tracking",
-                    "Handle transaction execution"
-                ],
-                solution: {
-                    code: `// SPDX-License-Identifier: MIT
+                            explanation: "This intermediate exercise demonstrates implementation of a staking system with reward calculations, security features, and emergency functions. It includes proper handling of decimals, time-based calculations, and state management."
+                        }
+                    },
+                    {
+                        title: "Multi-Signature Wallet",
+                        difficulty: "Medium",
+                        description: "Create a multi-signature wallet contract that requires multiple approvals for transactions.",
+                        hints: [
+                            "Implement owner management",
+                            "Add transaction proposal system",
+                            "Include approval tracking",
+                            "Handle transaction execution"
+                        ],
+                        solution: {
+                            code: `// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 contract MultiSigWallet {
@@ -16132,28 +16132,28 @@ contract MultiSigWallet {
         return isConfirmed[_txIndex][_owner];
     }
 }`,
-    explanation: "This intermediate exercise implements a multi-signature wallet with features including:\n" +
-                "1. Multiple owner management\n" +
-                "2. Transaction proposal and confirmation system\n" +
-                "3. Secure execution of approved transactions\n" +
-                "4. Confirmation tracking and revocation\n" +
-                "5. Various view functions for wallet state inspection"
-}
-            }
-        ],
-        advancedExercises: [
-        {
-            title: "Automated Market Maker (AMM)",
-            difficulty: "Hard",
-            description: "Create a basic AMM protocol with liquidity provision and trading functionality.",
-            hints: [
-                "Implement constant product formula",
-                "Handle liquidity provider tokens",
-                "Include slippage protection",
-                "Add price oracle functionality"
-            ],
-            solution: {
-                code: `// SPDX-License-Identifier: MIT
+                            explanation: "This intermediate exercise implements a multi-signature wallet with features including:\n" +
+                                "1. Multiple owner management\n" +
+                                "2. Transaction proposal and confirmation system\n" +
+                                "3. Secure execution of approved transactions\n" +
+                                "4. Confirmation tracking and revocation\n" +
+                                "5. Various view functions for wallet state inspection"
+                        }
+                    }
+                ],
+                advancedExercises: [
+                    {
+                        title: "Automated Market Maker (AMM)",
+                        difficulty: "Hard",
+                        description: "Create a basic AMM protocol with liquidity provision and trading functionality.",
+                        hints: [
+                            "Implement constant product formula",
+                            "Handle liquidity provider tokens",
+                            "Include slippage protection",
+                            "Add price oracle functionality"
+                        ],
+                        solution: {
+                            code: `// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
@@ -16313,13 +16313,629 @@ contract LiquidityPool is ERC20, ReentrancyGuard {
         amountOut = numerator / denominator;
     }
 }`,
-                explanation: "This advanced exercise implements a basic AMM with constant product formula, liquidity provision, and swap functionality. It includes slippage protection, fees, and proper handling of liquidity provider tokens."
+                            explanation: "This advanced exercise implements a basic AMM with constant product formula, liquidity provision, and swap functionality. It includes slippage protection, fees, and proper handling of liquidity provider tokens."
+                        }
+                    }
+                ]
             }
-        }     
-        ]
-    }
-}
-}
+        }
+    },
+    {
+        id: 14,
+        title: "IoT Development",
+        description: "To learn IoT development, follow this roadmap",
+        extendedContent: `
+    This roadmap covers everything you need to know about IoT (Internet of Things) development. 
+    You'll start by learning the fundamentals of electronics, including basic components like resistors, capacitors, 
+    and microcontrollers. Then, you'll dive into embedded systems programming using languages like C and C++, 
+    essential for interacting with hardware.
+
+    After getting comfortable with the basics, the roadmap introduces IoT protocols and standards like MQTT, CoAP, 
+    and HTTP, which are critical for communication between devices and cloud platforms. You'll also learn about 
+    sensors and actuators, and how to interface them with microcontrollers like Arduino and Raspberry Pi.
+
+    As you advance, you'll explore cloud platforms (e.g., AWS IoT, Google Cloud IoT) for data storage, analysis, 
+    and visualization. You'll also learn about network security and how to protect IoT devices from vulnerabilities.
+
+    Advanced topics include edge computing, machine learning for IoT, and building complete IoT solutions with 
+    real-time monitoring, device management, and automation. By the end of this roadmap, you'll be able to design 
+    and develop sophisticated IoT systems, including smart homes, industrial IoT applications, and connected devices.
+`,
+
+        icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+        trackInfo: {
+            prerequisites: [
+                "Basic computer skills and familiarity with hardware components",
+                "Understanding of electronics and circuits",
+                "Knowledge of programming languages like C, C++, or Python",
+                "Problem-solving aptitude",
+                "Attention to detail in hardware and software integration"
+            ],
+            outcomes: [
+                "Design and build embedded systems using microcontrollers",
+                "Master IoT communication protocols like MQTT, CoAP, and HTTP",
+                "Work with IoT sensors and actuators for real-world applications",
+                "Build cloud-based IoT solutions using platforms like AWS IoT or Google Cloud IoT",
+                "Ensure IoT device security and data privacy",
+                "Implement real-time monitoring and automation using IoT systems",
+                "Understand edge computing and integrate machine learning in IoT"
+            ],
+            sections: [
+                {
+                    title: "IoT Fundamentals",
+                    content: "Learn the basics of IoT, including an introduction to embedded systems, sensors, actuators, and microcontrollers. Understand how devices communicate and how to interface with hardware using languages like C and Python."
+                },
+                {
+                    title: "IoT Communication Protocols",
+                    content: "Explore communication protocols essential for IoT, such as MQTT, CoAP, HTTP, and WebSockets. Learn how to send and receive data between devices and cloud platforms."
+                },
+                {
+                    title: "Cloud Platforms & Data Management",
+                    content: "Understand cloud services for IoT such as AWS IoT, Microsoft Azure IoT, and Google Cloud IoT. Learn to manage data storage, processing, and real-time analysis for connected devices."
+                },
+                {
+                    title: "Security & Privacy in IoT",
+                    content: "Learn about IoT security challenges, encryption, and device authentication. Understand how to protect IoT devices from potential vulnerabilities and ensure secure communication."
+                },
+                {
+                    title: "Advanced Topics in IoT",
+                    content: "Explore advanced IoT concepts like edge computing, machine learning for IoT, and real-time data processing. Work on automating processes and implementing intelligent systems using IoT technologies."
+                }
+            ]
+        },
+        content: {
+            examples: [
+                {
+                    title: "Sensor Data Collection with Arduino",
+                    code: `// Arduino Code to Read Temperature and Humidity from DHT11 Sensor
+        #include <DHT.h>
+        
+        #define DHTPIN 2    // Pin for the DHT11 sensor
+        #define DHTTYPE DHT11
+        DHT dht(DHTPIN, DHTTYPE);
+        
+        void setup() {
+            Serial.begin(9600);
+            dht.begin();
+        }
+        
+        void loop() {
+            float humidity = dht.readHumidity();
+            float temperature = dht.readTemperature();
+            
+            if (isnan(humidity) || isnan(temperature)) {
+                Serial.println("Failed to read from DHT sensor!");
+                return;
+            }
+            
+            Serial.print("Humidity: ");
+            Serial.print(humidity);
+            Serial.print(" %\t");
+            Serial.print("Temperature: ");
+            Serial.print(temperature);
+            Serial.println(" *C");
+        
+            delay(2000); // Wait 2 seconds before reading again
+        }`,
+                    explanation: "This example demonstrates how to use an Arduino and a DHT11 sensor to collect temperature and humidity data. The data is read continuously, and sensor values are printed to the serial monitor."
+                },
+                {
+                    title: "Sending Sensor Data to the Cloud with MQTT",
+                    code: `// Node.js Code to Send Sensor Data to MQTT Broker
+        const mqtt = require('mqtt');
+        const client = mqtt.connect('mqtt://broker.hivemq.com');
+        
+        // Sample sensor data
+        const sensorData = {
+            temperature: 22.5,
+            humidity: 60.0
+        };
+        
+        client.on('connect', () => {
+            console.log('Connected to MQTT Broker');
+            client.publish('iot/sensor/data', JSON.stringify(sensorData), () => {
+                console.log('Sensor data sent to broker');
+            });
+            client.end();
+        });`,
+                    explanation: "In this example, Node.js is used to send sensor data to an MQTT broker. MQTT is a lightweight protocol commonly used in IoT for sending and receiving small amounts of data between devices and cloud platforms."
+                },
+                {
+                    title: "Controlling IoT Devices with a Web Interface",
+                    code: `// HTML for Controlling LED via Web Interface
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Control IoT Device</title>
+        </head>
+        <body>
+            <h1>Control IoT LED</h1>
+            <button id="toggleBtn">Toggle LED</button>
+            <script>
+                const toggleBtn = document.getElementById('toggleBtn');
+                toggleBtn.addEventListener('click', () => {
+                    fetch('/toggle-led', { method: 'POST' })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                alert('LED toggled successfully!');
+                            }
+                        });
+                });
+            </script>
+        </body>
+        </html>`,
+                    explanation: "This example demonstrates a simple web interface to control an IoT device, such as an LED connected to a microcontroller. When the user clicks the 'Toggle LED' button, it sends a POST request to the server to toggle the LED's state."
+                }
+            ],
+
+            roadmap: [
+                {
+                    title: "1. Electronics & Hardware Basics",
+                    description: "Master the fundamentals of electronics essential for IoT",
+                    topics: [
+                        "Basic electronic components (resistors, capacitors, diodes)",
+                        "Analog vs digital signals",
+                        "Microcontrollers (Arduino, ESP32, Raspberry Pi)",
+                        "Sensors and actuators",
+                        "Power management for IoT devices",
+                        "PCB design basics",
+                        "Understanding GPIO, ADC, and PWM"
+                    ]
+                },
+                {
+                    title: "2. Embedded Systems Programming",
+                    description: "Learn to program embedded devices for IoT",
+                    topics: [
+                        "Introduction to C and C++ for embedded systems",
+                        "Microcontroller programming (Arduino, ESP32)",
+                        "Interfacing sensors and actuators",
+                        "Interrupt handling and timers",
+                        "Communication protocols (SPI, I2C, UART)",
+                        "Power optimization for embedded systems"
+                    ]
+                },
+                {
+                    title: "3. IoT Networking & Communication",
+                    description: "Connect devices to create a networked IoT system",
+                    topics: [
+                        "Introduction to IoT protocols (MQTT, CoAP)",
+                        "WiFi and Bluetooth communication",
+                        "Cellular and LoRaWAN connectivity",
+                        "Zigbee and Z-Wave protocols",
+                        "IPv6 and 6LoWPAN",
+                        "Setting up an IoT gateway",
+                        "Understanding cloud integration for IoT"
+                    ]
+                },
+                {
+                    title: "4. Cloud Platforms & Data Processing",
+                    description: "Explore cloud services and data processing for IoT",
+                    topics: [
+                        "Introduction to cloud platforms (AWS IoT, Google IoT Core, Azure IoT Hub)",
+                        "Data ingestion and storage in the cloud",
+                        "Real-time data processing",
+                        "Stream analytics and IoT data pipelines",
+                        "Setting up dashboards and visualizations",
+                        "Edge computing and local data processing"
+                    ]
+                },
+                {
+                    title: "5. Security & Best Practices",
+                    description: "Learn how to secure IoT devices and data",
+                    topics: [
+                        "IoT security basics",
+                        "Data encryption and device authentication",
+                        "Secure communication protocols (HTTPS, SSL/TLS)",
+                        "Firmware update best practices",
+                        "Managing device credentials and access control",
+                        "Implementing security in IoT cloud platforms",
+                        "Testing and troubleshooting security vulnerabilities"
+                    ]
+                }
+            ],
+            resources: {
+                documentation: [
+                    {
+                        title: "Arduino Documentation",
+                        url: "https://www.arduino.cc/reference/en/",
+                        description: "Official Arduino documentation for programming and hardware integration",
+                        type: "Platform Documentation"
+                    },
+                    {
+                        title: "ESP32 Documentation",
+                        url: "https://docs.espressif.com/projects/esp-idf/en/latest/esp32/",
+                        description: "Comprehensive ESP32 documentation for IoT development",
+                        type: "Hardware Documentation"
+                    },
+                    {
+                        title: "MQTT Protocol Documentation",
+                        url: "https://mqtt.org/documentation",
+                        description: "Guide to understanding and implementing the MQTT protocol for IoT",
+                        type: "Protocol Documentation"
+                    },
+                    {
+                        title: "AWS IoT Core Documentation",
+                        url: "https://docs.aws.amazon.com/iot/latest/developerguide/what-is-aws-iot.html",
+                        description: "AWS guide for connecting IoT devices to the cloud and managing data",
+                        type: "Cloud Platform Documentation"
+                    }
+                ],
+                tutorials: [
+                    {
+                        title: "freeCodeCamp IoT Basics",
+                        url: "https://www.freecodecamp.org/",
+                        description: "Beginner-friendly tutorials on electronics and IoT projects",
+                        type: "Interactive Course"
+                    },
+                    {
+                        title: "Edge Impulse for Embedded ML",
+                        url: "https://edgeimpulse.com/",
+                        description: "Learn to create machine learning models for IoT devices",
+                        type: "Platform Tutorial"
+                    },
+                    {
+                        title: "Random Nerd Tutorials",
+                        url: "https://randomnerdtutorials.com/",
+                        description: "Practical tutorials for building IoT projects with ESP32 and Arduino",
+                        type: "Project-Based Tutorials"
+                    },
+                    {
+                        title: "Google Cloud IoT Tutorials",
+                        url: "https://cloud.google.com/iot/docs/tutorials",
+                        description: "Tutorials for using Google Cloud services with IoT devices",
+                        type: "Cloud Integration Tutorials"
+                    }
+                ],
+                videos: [
+                    {
+                        title: "Andreas Spiess",
+                        url: "https://www.youtube.com/c/AndreasSpiess",
+                        description: "IoT tutorials and deep dives into microcontroller projects",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Simply Explained",
+                        url: "https://www.youtube.com/c/SimplyExplained",
+                        description: "Explains IoT concepts, protocols, and technology simply and effectively",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Tech with Tim",
+                        url: "https://www.youtube.com/c/TechWithTim",
+                        description: "IoT and programming tutorials for beginners and advanced users",
+                        platform: "YouTube"
+                    }
+                ],
+                books: [
+                    {
+                        title: "Designing the Internet of Things",
+                        author: "Adrian McEwen & Hakim Cassimally",
+                        description: "Guide to IoT design principles and real-world applications",
+                        level: "Intermediate"
+                    },
+                    {
+                        title: "IoT Inc: How Your Company Can Use the Internet of Things to Win in the Outcome Economy",
+                        author: "Bruce Sinclair",
+                        description: "IoT business applications and strategies",
+                        level: "Advanced"
+                    },
+                    {
+                        title: "The Internet of Things: Key Applications and Protocols",
+                        author: "Olivier Hersent, David Boswarthick, & Omar Elloumi",
+                        description: "In-depth guide to IoT protocols and communication",
+                        level: "Intermediate"
+                    }
+                ],
+                practice: [
+                    {
+                        title: "Hackster.io",
+                        url: "https://www.hackster.io/",
+                        description: "Platform with thousands of community IoT projects and tutorials",
+                        type: "Project Platform"
+                    },
+                    {
+                        title: "Circuit Digest",
+                        url: "https://circuitdigest.com/",
+                        description: "Electronics and IoT tutorials, circuits, and projects",
+                        type: "IoT Learning Platform"
+                    },
+                    {
+                        title: "ThingSpeak",
+                        url: "https://thingspeak.com/",
+                        description: "IoT platform for data collection, analysis, and visualization",
+                        type: "Practice Platform"
+                    }
+                ]
+            },
+            practice: {
+                
+                beginnerExercises: [
+                    {
+                        title: "Set Up Raspberry Pi or ESP32",
+                        difficulty: "Easy",
+                        description: "Learn how to set up a Raspberry Pi or ESP32 for IoT projects, including installing the OS and necessary software.",
+                        hints: [
+                            "Get a microSD card and load the OS (Raspberry Pi OS for Pi or MicroPython for ESP32)",
+                            "Set up Wi-Fi and SSH for remote access",
+                            "Use the Raspberry Pi Imager or Arduino IDE for flashing"
+                        ],
+                        solution: {
+                            code: `// Basic Python setup for Raspberry Pi
+            # Update and upgrade packages
+            sudo apt update && sudo apt upgrade -y
+            
+            # Install necessary libraries for IoT
+            sudo apt install python3-pip
+            pip3 install RPi.GPIO`,
+                            explanation: "This setup provides a basic foundation for working with a Raspberry Pi. Updating packages ensures your device is secure and up-to-date. Installing the RPi.GPIO library allows you to control the Pi's GPIO pins."
+                        }
+                    },
+                    {
+                        title: "Blink an LED",
+                        difficulty: "Easy",
+                        description: "Write a simple program to blink an LED connected to the Raspberry Pi or ESP32.",
+                        hints: [
+                            "Use the GPIO pins on your device",
+                            "Remember to use a resistor to prevent short circuits",
+                            "Use a loop to create the blinking effect"
+                        ],
+                        solution: {
+                            code: `# Python code for Raspberry Pi
+            import RPi.GPIO as GPIO
+            import time
+            
+            GPIO.setmode(GPIO.BCM)
+            GPIO.setup(18, GPIO.OUT)
+            
+            try:
+                while True:
+                    GPIO.output(18, GPIO.HIGH)
+                    time.sleep(1)
+                    GPIO.output(18, GPIO.LOW)
+                    time.sleep(1)
+            except KeyboardInterrupt:
+                GPIO.cleanup()`,
+                            explanation: "This Python program toggles an LED connected to GPIO pin 18 on and off every second. GPIO.cleanup() is used to reset the pins after execution to avoid pin conflicts."
+                        }
+                    },
+                    {
+                        title: "Temperature Sensor with DHT11",
+                        difficulty: "Easy",
+                        description: "Set up and read temperature and humidity data from a DHT11 sensor connected to your device.",
+                        hints: [
+                            "Connect the DHT11 sensor to the correct GPIO pins",
+                            "Install the Adafruit_DHT library for Python",
+                            "Print readings in intervals"
+                        ],
+                        solution: {
+                            code: `# Python code for Raspberry Pi
+            import Adafruit_DHT
+            import time
+            
+            DHT_SENSOR = Adafruit_DHT.DHT11
+            DHT_PIN = 4
+            
+            while True:
+                humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT_PIN)
+                if humidity is not None and temperature is not None:
+                    print(f"Temp: {temperature}C, Humidity: {humidity}%")
+                else:
+                    print("Failed to retrieve data")
+                time.sleep(2)`,
+                            explanation: "This program reads and prints the temperature and humidity every 2 seconds from a DHT11 sensor. The Adafruit_DHT library helps manage communication with the DHT sensor."
+                        }
+                    },
+                   
+                ],
+
+                    intermediateExercises: [
+                        {
+                            title: "Environment Monitoring System",
+                            difficulty: "Medium",
+                            description: "Build an IoT system for monitoring environmental conditions (e.g., temperature, humidity, air quality) using sensors connected to a microcontroller, with real-time data updates to a cloud dashboard.",
+                            hints: [
+                                "Use an IoT platform like AWS IoT, Google Cloud IoT, or an open-source option like ThingSpeak.",
+                                "Configure your sensors to send data at regular intervals.",
+                                "Implement data processing on the cloud to filter, analyze, and display data.",
+                                "Use MQTT protocol for efficient communication."
+                            ],
+                            solution: {
+                                code: 
+                                    "hardware: ESP32/ESP8266, DHT22 (temperature & humidity sensor), MQ-135 (air quality sensor),   firmware: Arduino code for ESP32 to read sensor data and send it via MQTT., cloud: Cloud functions to process data and update a real-time dashboard.",
+                                explanation: "This IoT project solution involves several key steps:\n\n" +
+                                    "1. **Sensor Configuration:**\n" +
+                                    "   - Connect DHT22 and MQ-135 sensors to ESP32/ESP8266.\n" +
+                                    "   - Read data from sensors using GPIO pins.\n\n" +
+                                    "2. **Data Transmission:**\n" +
+                                    "   - Send sensor data to a cloud platform via MQTT.\n" +
+                                    "   - Set a reasonable data transmission interval to avoid network overload.\n\n" +
+                                    "3. **Cloud Integration:**\n" +
+                                    "   - Use cloud functions to process incoming data.\n" +
+                                    "   - Store data in a database for historical analysis and display on a real-time dashboard.\n\n" +
+                                    "4. **Data Visualization:**\n" +
+                                    "   - Create a dashboard with charts and real-time metrics.\n" +
+                                    "   - Implement alerts for unusual readings (e.g., high humidity or poor air quality).\n\n" +
+                                    "5. **Security & Scalability:**\n" +
+                                    "   - Implement secure MQTT connections with SSL/TLS.\n" +
+                                    "   - Use a cloud-based service with auto-scaling to handle data bursts."
+                            }
+                        },
+                    ],
+                
+               advancedExercises:[
+                {
+                        title: "Smart Home Automation System",
+                        debuggerifficulty: "Hard",
+                        description: "Build a smart home automation system that controls lights, fans, and security cameras. The system will monitor environmental conditions (temperature, humidity, motion) and allow remote control via a mobile app or web interface.",
+                        hints: [
+                          "Use MQTT or HTTP protocol for communication between devices",
+                          "Implement cloud services (like AWS or Firebase) for remote monitoring",
+                          "Integrate environmental sensors like DHT11 for temperature and humidity",
+                          "Use a motion sensor to detect presence and control lighting or security cameras",
+                          "Control devices using relays, smart plugs, or microcontrollers like Arduino or Raspberry Pi"
+                        ],
+                        solution: {
+                          "code": `
+                  <!-- HTML -->
+                  <div id="smart-home-container">
+                    <div id="device-controls">
+                      <h2>Smart Home Controls</h2>
+                      <div id="lights-control">
+                        <button id="toggle-lights">Toggle Lights</button>
+                      </div>
+                      <div id="fan-control">
+                        <button id="toggle-fan">Toggle Fan</button>
+                      </div>
+                      <div id="camera-control">
+                        <button id="toggle-camera">Toggle Camera</button>
+                      </div>
+                    </div>
+                    <div id="sensor-status">
+                      <h3>Sensor Status</h3>
+                      <p>Temperature: <span id="temperature"></span> °C</p>
+                      <p>Humidity: <span id="humidity"></span> %</p>
+                      <p>Motion: <span id="motion-status"></span></p>
+                    </div>
+                  </div>
+                  
+                  <!-- CSS -->
+                  #smart-home-container {
+                    width: 80%;
+                    margin: 0 auto;
+                    padding: 20px;
+                    background-color: #f4f4f9;
+                    border-radius: 8px;
+                  }
+                  
+                  #device-controls {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                  }
+                  
+                  button {
+                    padding: 15px;
+                    font-size: 16px;
+                    background-color: #4caf50;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                  }
+                  
+                  button:hover {
+                    background-color: #45a049;
+                  }
+                  
+                  #sensor-status {
+                    margin-top: 40px;
+                    padding: 20px;
+                    background-color: #fff;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                  }
+                  
+                  #sensor-status p {
+                    font-size: 18px;
+                  }
+                  
+                  /* JavaScript */
+                  // Placeholder MQTT or HTTP API endpoints (replace with actual URLs)
+                  const mqttServer = 'wss://your-mqtt-broker.com';
+                  const temperatureSensorAPI = 'https://your-api.com/temperature';
+                  const humiditySensorAPI = 'https://your-api.com/humidity';
+                  const motionSensorAPI = 'https://your-api.com/motion';
+                  const lightsAPI = 'https://your-api.com/lights';
+                  const fanAPI = 'https://your-api.com/fan';
+                  const cameraAPI = 'https://your-api.com/camera';
+                  
+                  const toggleLightsButton = document.getElementById('toggle-lights');
+                  const toggleFanButton = document.getElementById('toggle-fan');
+                  const toggleCameraButton = document.getElementById('toggle-camera');
+                  
+                  const temperatureDisplay = document.getElementById('temperature');
+                  const humidityDisplay = document.getElementById('humidity');
+                  const motionStatusDisplay = document.getElementById('motion-status');
+                  
+                  let mqttClient = new WebSocket(mqttServer);
+                  
+                  mqttClient.onopen = () => {
+                    console.log('Connected to MQTT broker');
+                    // Subscribe to sensor data topics
+                    mqttClient.send('SUBSCRIBE /home/sensors/temperature');
+                    mqttClient.send('SUBSCRIBE /home/sensors/humidity');
+                    mqttClient.send('SUBSCRIBE /home/sensors/motion');
+                  };
+                  
+                  mqttClient.onmessage = (message) => {
+                    const data = JSON.parse(message.data);
+                    if (data.type === 'temperature') {
+                      temperatureDisplay.textContent = data.value;
+                    } else if (data.type === 'humidity') {
+                      humidityDisplay.textContent = data.value;
+                    } else if (data.type === 'motion') {
+                      motionStatusDisplay.textContent = data.value ? 'Motion detected' : 'No motion';
+                    }
+                  };
+                  
+                  toggleLightsButton.addEventListener('click', () => {
+                    fetch(lightsAPI, { method: 'POST', body: JSON.stringify({ action: 'toggle' }) })
+                      .then(response => response.json())
+                      .then(data => console.log('Lights toggled:', data));
+                  });
+                  
+                  toggleFanButton.addEventListener('click', () => {
+                    fetch(fanAPI, { method: 'POST', body: JSON.stringify({ action: 'toggle' }) })
+                      .then(response => response.json())
+                      .then(data => console.log('Fan toggled:', data));
+                  });
+                  
+                  toggleCameraButton.addEventListener('click', () => {
+                    fetch(cameraAPI, { method: 'POST', body: JSON.stringify({ action: 'toggle' }) })
+                      .then(response => response.json())
+                      .then(data => console.log('Camera toggled:', data));
+                  });
+                  
+                  // Polling temperature and humidity data
+                  setInterval(() => {
+                    fetch(temperatureSensorAPI)
+                      .then(response => response.json())
+                      .then(data => {
+                        temperatureDisplay.textContent = data.temperature;
+                      });
+                  
+                    fetch(humiditySensorAPI)
+                      .then(response => response.json())
+                      .then(data => {
+                        humidityDisplay.textContent = data.humidity;
+                      });
+                  }, 5000);  // Update every 5 seconds
+                  `,
+                          "explanation": "This advanced IoT project creates a comprehensive smart home automation system with:\n\n" +
+                            "1. **Device Control:**\n" +
+                            "   - Allows toggling of lights, fans, and cameras via HTTP API or WebSocket.\n\n" +
+                            "2. **Environmental Monitoring:**\n" +
+                            "   - Temperature and humidity data is fetched from external APIs or sensors.\n" +
+                            "   - Motion detection using PIR sensor is monitored via WebSocket.\n\n" +
+                            "3. **Cloud Communication:**\n" +
+                            "   - Real-time data is sent and received using WebSocket and MQTT protocols for efficient two-way communication.\n\n" +
+                            "4. **User Interface:**\n" +
+                            "   - A simple web interface for controlling devices and viewing sensor status (temperature, humidity, motion).\n\n" +
+                            "5. **Scalability:**\n" +
+                            "   - The project can easily be scaled by adding more devices, such as smart locks, thermostats, or additional cameras.\n\n" +
+                            "6. **Real-Time Monitoring:**\n" +
+                            "   - Uses MQTT/WebSocket for live sensor data updates to enhance user experience."
+                        }
+                      }
+                    ]
+            }
+        }
+    },
+
+
 
 ];
 
