@@ -1,13 +1,14 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import  NavigationMenu  from "@/components/Global/Navbar";
+import NavigationMenu from "@/components/Global/Navbar";
 import Footer from "@/components/Global/Footer";
 import ScrollToTop from "@/components/ui/back2top";
-import ScrollProgressBar from "@/components/ui/progress-bar"
+import ScrollProgressBar from "@/components/ui/progress-bar";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { Suspense } from "react";
 import Loader from "@/components/Global/SuspenseLoader";
+import Sidebar from '@/components/Global/Sidebar';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,13 +32,19 @@ export default function RootLayout({ children }) {
       <body className="antialiased">
         <ScrollProgressBar />
         <NavigationMenu />
-        <main className="mt-16">
-        <div className="gtranslate_wrapper">
-            <Suspense fallback={<Loader />}>
-              {children}
-            </Suspense>
-          </div>
+        <div className="layout-container">
+          {/* Left Sidebar */}
+          <Sidebar />
+          
+          {/* Main content area */}
+          <main className="content-area ml-20 mt-16 p-4">
+            <div className="gtranslate_wrapper">
+              <Suspense fallback={<Loader />}>
+                {children}
+              </Suspense>
+            </div>
           </main>
+        </div>
         <Footer />
         <ScrollToTop />
         <ToastContainer />
