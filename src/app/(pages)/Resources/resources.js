@@ -19941,10 +19941,6 @@ if __name__ == "__main__":
         "content": "Examine ethical and safety considerations in the field of nanotechnology. Understand issues surrounding environmental impact, human health, and the responsible use and regulation of nanotechnology in society."
     }
 ]
-
-            
-            
-        
     },
     content: {
         examples: [
