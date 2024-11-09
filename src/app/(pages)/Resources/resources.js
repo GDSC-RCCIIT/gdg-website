@@ -19288,11 +19288,13 @@ if __name__ == "__main__":
 },
 
 {
+
     id: 17,
     title: "AR/VR",
     description: "To learn AR/VR, follow this roadmap",
     extendedContent: `
        Master the fundamentals of AR/VR development and design immersive, interactive experiences. Start with programming basics, focusing on languages like C# or C++, and learn AR/VR platforms such as Unity or Unreal Engine. Explore spatial computing, 3D graphics, and interactive design techniques. Progress through understanding sensors, tracking, and user interaction in virtual and augmented environments. Learn about performance optimization for smooth AR/VR experiences, and design intuitive user interfaces for these platforms. Advanced topics include multiplayer AR/VR networking, AI for virtual agents, custom shader programming, and AR/VR hardware integration. Build hands-on experience through projects, utilizing industry-standard tools and workflows to create fully immersive AR/VR experiences.
+
     `,
     icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
     trackInfo: {
