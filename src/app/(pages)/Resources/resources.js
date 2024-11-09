@@ -19866,6 +19866,258 @@ if __name__ == "__main__":
         }
 }
 },
+     {
+            id: 14,
+            title: "Git & GitHub",
+            description: "Master version control and collaborative workflows with Git and GitHub.",
+            extendedContent: `
+                This roadmap introduces you to version control with Git and collaboration using GitHub. 
+                You'll start with the basics of setting up Git, understanding repositories, 
+                and the fundamental commands for tracking changes.
+    
+                As you progress, you'll learn about branching and merging strategies, resolving conflicts, 
+                and implementing pull requests in collaborative projects. The roadmap will also cover best 
+                practices for writing commit messages, managing repositories, and using GitHub features 
+                like issues, project boards, and actions for continuous integration.
+    
+                By the end of this roadmap, you'll be skilled at managing source code, collaborating 
+                efficiently with others, and understanding the essential tools and workflows that streamline 
+                version control.
+            `,
+            icon: "M12 2v20m10-10H2",
+            trackInfo: {
+                prerequisites: [
+                    "Basic computer skills and familiarity with command line",
+                    "Understanding of how software development works",
+                    "Familiarity with coding concepts (optional but helpful)"
+                ],
+                outcomes: [
+                    "Understand core Git concepts (repository, commit, branch)",
+                    "Collaborate on projects using GitHub",
+                    "Implement branching and merging workflows",
+                    "Manage issues and pull requests effectively",
+                    "Utilize features like GitHub Actions for CI/CD",
+                    "Write clear commit messages and maintain a clean history",
+                    "Contribute to open-source projects"
+                ],
+                sections: [
+                    {
+                        title: "Getting Started with Git",
+                        content: "Learn to set up Git on your system, create repositories, and make your first commits. Understand the basic commands: init, clone, add, commit, and status."
+                    },
+                    {
+                        title: "Branching and Merging",
+                        content: "Explore the power of Git branches to manage parallel development. Learn how to create, delete, and switch branches, handle merges, and resolve conflicts."
+                    },
+                    {
+                        title: "Collaboration with GitHub",
+                        content: "Understand how to work with GitHub for collaboration. Learn about cloning repositories, pushing and pulling changes, and the importance of forked repositories."
+                    },
+                    {
+                        title: "GitHub Features for Project Management",
+                        content: "Discover GitHub's robust features such as issues, project boards, and milestones. Understand how to track bugs and feature requests effectively."
+                    },
+                    {
+                        title: "Advanced Git and GitHub Workflows",
+                        content: "Dive into advanced topics like rebasing, cherry-picking, and using Git hooks. Learn about GitHub Actions to automate your workflow for CI/CD."
+                    }
+                ]
+            },
+            content: {
+                examples: [
+                    {
+                        title: "Basic Git Commands",
+                        code: `# Initialize a new Git repository
+                        git init
+                        
+                        # Add changes to your staging area
+                        git add .
+    
+                        # Commit the staged changes
+                        git commit -m "Initial commit"
+                        
+                        # Create a new branch
+                        git checkout -b feature-branch
+                        
+                        # Merge the feature branch into the main branch
+                        git checkout main
+                        git merge feature-branch`,
+                        explanation: "These commands demonstrate the basic operations of initializing a repository, staging changes, committing, creating branches, and merging."
+                    },
+                    {
+                        title: "Creating a Pull Request on GitHub",
+                        code: `1. Push your feature branch to GitHub:
+                        git push origin feature-branch
+                        
+                        2. Navigate to your repository on GitHub.
+                        
+                        3. Click the "Compare & pull request" button.
+                        
+                        4. Add a title and description for the pull request.
+                        
+                        5. Click "Create pull request."`,
+                        explanation: "These steps show how to push changes to GitHub and create a pull request to merge features into the main branch."
+                    },
+                    {
+                        title: "Resolving Merge Conflicts",
+                        code: `# When a merge conflict occurs, Git will mark the files with conflicts.
+                        # Open the conflicted files and look for lines marked with <<<<<<<, =======, or >>>>>>.
+                        
+                        # Edit the file to resolve the conflicts, then stage the resolved file:
+                        git add resolved-file.txt
+                        
+                        # Complete the merge
+                        git commit -m "Resolved merge conflicts"`,
+                        explanation: "This snippet illustrates how to resolve merge conflicts in Git and finalize the merge."
+                    }
+                ],
+                roadmap: [
+                    {
+                        title: "1. Introduction to Version Control",
+                        description: "Understand the principles of version control and why it's essential for software development.",
+                        topics: [
+                            "What is version control?",
+                            "Benefits of using Git",
+                            "Understanding repositories and version history",
+                            "Setting up Git on your local machine"
+                        ]
+                    },
+                    {
+                        title: "2. Basic Git Commands",
+                        description: "Learn common Git commands for navigating and managing repositories.",
+                        topics: [
+                            "git init, git clone, git add, git commit",
+                            "Viewing the status and logs with git status and git log",
+                            "Understanding the staging area"
+                        ]
+                    },
+                    {
+                        title: "3. Branching and Collaboration",
+                        description: "Master branch and collaboration workflows.",
+                        topics: [
+                            "Creating and deleting branches",
+                            "Switching between branches",
+                            "Merging branches and resolving conflicts",
+                            "Using remote repositories with GitHub"
+                        ]
+                    },
+                    {
+                        title: "4. Working with GitHub",
+                        description: "Utilize GitHub for hosting repositories and collaboration.",
+                        topics: [
+                            "Setting up a GitHub account",
+                            "Cloning repositories from GitHub",
+                            "Understanding pull requests, forks, and issues",
+                            "Collaborating on projects and code reviews"
+                        ]
+                    },
+                    {
+                        title: "5. Advanced Git Features",
+                        description: "Explore advanced features and best practices.",
+                        topics: [
+                            "Rebasing and cherry-picking",
+                            "Interactive rebase and amending commits",
+                            "Using Git hooks for automation",
+                            "Introduction to GitHub Actions for CI/CD"
+                        ]
+                    }
+                ],
+                resources: {
+                    documentation: [
+                        {
+                            title: "Pro Git Book",
+                            url: "https://git-scm.com/book/en/v2",
+                            description: "A comprehensive guide to Git, available for free online.",
+                            type: "Official Documentation"
+                        },
+                        {
+                            title: "GitHub Docs",
+                            url: "https://docs.github.com/",
+                            description: "Official documentation covering all features of GitHub.",
+                            type: "Platform Documentation"
+                        },
+                        {
+                            title: "Atlassian Git Tutorials",
+                            url: "https://www.atlassian.com/git/tutorials",
+                            description: "In-depth tutorials on Git concepts and workflows.",
+                            type: "Resource Collection"
+                        },
+                        {
+                            title: "Git Cheat Sheet",
+                            url: "https://education.github.com/git-cheat-sheet-education.pdf",
+                            description: "A handy cheat sheet for common Git commands.",
+                            type: "Quick Reference"
+                        }
+                    ],
+                    tutorials: [
+                        {
+                            title: "Try Git",
+                            url: "https://try.github.io/",
+                            description: "An interactive tutorial to learn Git basics.",
+                            type: "Interactive Course"
+                        },
+                        {
+                            title: "Git and GitHub for Beginners",
+                            url: "https://www.udemy.com/course/git-and-github-for-beginners/",
+                            description: "A comprehensive course to learn Git and GitHub.",
+                            type: "Video Course"
+                        },
+                        {
+                            title: "Version Control with Git",
+                            url: "https://www.coursera.org/learn/version-control-with-git",
+                            description: "A course offered by Atlassian on Git version control.",
+                            type: "Online Course"
+                        },
+                        {
+                            title: "Learn Git Branching",
+                            url: "https://learngitbranching.js.org/",
+                            description: "An interactive web app to visualize branching and merging in Git.",
+                            type: "Interactive Platform"
+                        }
+                    ],
+                    videos: [
+                        {
+                            title: "Git and GitHub for Beginners - Crash Course",
+                            url: "https://www.youtube.com/watch?v=RGOj5yH7evk",
+                            description: "A beginner-friendly crash course on Git and GitHub.",
+                            platform: "YouTube"
+                        },
+                        {
+                            title: "Git Tutorial for Beginners",
+                            url: "https://www.youtube.com/watch?v=HVsySaX_1b0",
+                            description: "An in-depth tutorial on the fundamentals of Git.",
+                            platform: "YouTube"
+                        },
+                        {
+                            title: "GitHub for Beginners",
+                            url: "https://www.youtube.com/watch?v=0fDer6D7Jpg",
+                            description: "A beginner's guide to using GitHub effectively.",
+                            platform: "YouTube"
+                        }
+                    ],
+                    books: [
+                        {
+                            title: "Pro Git",
+                            author: "Scott Chacon and Ben Straub",
+                            description: "An in-depth guide to Git, covering everything from basic commands to advanced features.",
+                            level: "Intermediate"
+                        },
+                        {
+                            title: "The Git Paradox",
+                            author: "Peter H. M. Jones",
+                            description: "Explores the misconceptions about Git and how to work effectively with it.",
+                            level: "Intermediate"
+                        },
+                        {
+                            title: "Git for Teams",
+                            author: "Ben Straub and Scott Chacon",
+                            description: "Learn how teams can effectively use Git for collaboration.",
+                            level: "Intermediate"
+                        }
+                    ]
+                }
+            }
+        }
 
 ];
 
