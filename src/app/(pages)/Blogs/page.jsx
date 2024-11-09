@@ -1,13 +1,27 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Card, CardContent, Typography, TextField, MenuItem, Select, FormControl, InputLabel } from '@mui/material';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import blogs from './Blogs';
 
 const BlogPage = () => {
+    const [blogs, setBlogs] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [sortOrder, setSortOrder] = useState('asc');
+
+    useEffect(() => {
+        const fetchBlogs = async () => {
+            try {
+                const response = await fetch('http://localhost:5000/blogs');
+                const data = await response.json();
+                setBlogs(data);
+            } catch (error) {
+                console.error("Error fetching blogs:", error);
+            }
+        };
+
+        fetchBlogs();
+    }, []);
 
     const filteredBlogs = blogs
         .filter((blog) => blog.title.toLowerCase().includes(searchTerm.toLowerCase()) || blog.description.toLowerCase().includes(searchTerm.toLowerCase()))

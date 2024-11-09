@@ -41,7 +41,7 @@ const blogs = [
     },
     {
         id: 5,
-        title: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMUm-zensaemw84polm_x9DwmIfRr1mDkSkg&s',
+        title: 'Visually Appealing UI using Tailwind CSS',
         description: 'Learn how to create beautiful and responsive UIs with Tailwind CSS, a utility-first CSS framework.',
         date: '2024-09-15',
         author: 'Sally Adams',
