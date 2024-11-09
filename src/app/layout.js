@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
           <Sidebar />
           
           {/* Main content area */}
-          <main className="content-area ml-20 mt-16 p-4">
+          <main className="content-area">
             <div className="gtranslate_wrapper">
               <Suspense fallback={<Loader />}>
                 {children}
