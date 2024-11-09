@@ -15,7 +15,7 @@ const resources = [
 ];
 
 const followUs = [
-  { text: "About GDSC", href: "/About" },
+  { text: "Events", href: "/Events" },
   { text: "Resources", href: "/Resources" },
   { text: "Gemini AI", href: "/GeminiAI" },
   { text: "Careers", href: "/careers" },
@@ -74,7 +74,7 @@ const Footer = () => {
       {/* Links Sections with enhanced styling */}
       <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left">
         <FooterSection title="Resources" links={resources} />
-        <FooterSection title="Follow Us" links={followUs} />
+        <FooterSection title="Explore more" links={followUs} />
         <FooterSection title="Legal" links={legal} />
       </div>
 
