@@ -47,6 +47,9 @@
 │   ├── devprod4.png
 │   ├── devprod5.jpeg
 │   ├── devprod6.jpeg
+│   ├── doodl3.png
+│   ├── doodle1.png
+│   ├── doodle2.jpeg
 │   ├── exp1.png
 │   ├── exp2.jpeg
 │   ├── exp3.jpeg
@@ -217,9 +220,15 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── distributed-hybrid/
 │   │   │   │   └── page.jsx
+│   │   │   ├── doodle/
+│   │   │   │   └── page.jsx
+│   │   │   ├── easter-egg/
+│   │   │   │   └── page.jsx
 │   │   │   ├── expertdev/
 │   │   │   │   └── page.jsx
 │   │   │   ├── explore/
+│   │   │   │   └── page.jsx
+│   │   │   ├── garage/
 │   │   │   │   └── page.jsx
 │   │   │   ├── gen-studio/
 │   │   │   │   └── page.jsx
@@ -248,6 +257,8 @@
 │   │   │   ├── ioext/
 │   │   │   │   └── page.jsx
 │   │   │   ├── join-partner/
+│   │   │   │   └── page.jsx
+│   │   │   ├── lens-page/
 │   │   │   │   └── page.jsx
 │   │   │   ├── localdev/
 │   │   │   │   └── page.jsx
