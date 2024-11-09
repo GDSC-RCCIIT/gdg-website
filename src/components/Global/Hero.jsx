@@ -172,12 +172,13 @@ const GDSCLanding = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { icon: <MapPin size={24} />, text: "Location" },
-              { icon: <Book size={24} />, text: "About GDG" },
-              { icon: <Users size={24} />, text: "How to Apply" },
-              { icon: <Phone size={24} />, text: "Who can apply?" }
+              { icon: <MapPin size={24} />, text: "Location", href: "/about-gdg" },
+              { icon: <Book size={24} />, text: "About GDG", href: "/about-gdg" },
+              { icon: <Users size={24} />, text: "How to Apply", href: "/FAQsForum" },
+              { icon: <Phone size={24} />, text: "Who can apply?", href: "/FAQsForum"  }
             ].map((item, index) => (
-              <motion.div
+               <a key={index} href={item.href} className="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-transform transform hover:scale-105">
+              <motion.di
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -188,6 +189,7 @@ const GDSCLanding = () => {
                 <div className="mb-4 text-blue-500">{item.icon}</div>
                 <p className="font-semibold text-gray-700">{item.text}</p>
               </motion.div>
+              </a>
             ))}
           </div>
         </div>
