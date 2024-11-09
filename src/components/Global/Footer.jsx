@@ -15,11 +15,11 @@ const resources = [
 ];
 
 const followUs = [
-  { text: "Github", href: "https://github.com/GDSC-RCCIIT/gdg-website" },
-  { text: "Instagram", href: "https://instagram.com/" },
-  { text: "Twitter", href: "https://x.com/gdsc_rcciit" },
-  { text: "Whatsapp", href: "https://web.whatsapp.com/" },
-  { text: "LinkedIn", href: "https://www.linkedin.com/company/gdgc-rcciit/" },
+  { text: "About GDSC", href: "/About" },
+  { text: "Resources", href: "/Resources" },
+  { text: "Gemini AI", href: "/GeminiAI" },
+  { text: "Careers", href: "/careers" },
+  { text: "Projects", href: "/Projects" },
 ];
 
 const legal = [
