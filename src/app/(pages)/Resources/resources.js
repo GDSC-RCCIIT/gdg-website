@@ -18532,9 +18532,760 @@ if __name__ == "__main__":
         ]
     }
 }
+},
+
+{
+    id: 15,
+    title: "Game Development",
+    description: "To learn game dev, follow this roadmap",
+    extendedContent: `
+        Master the fundamentals of game development and design immersive, interactive experiences. Start with programming basics, focusing on languages like C# or C++, and learn game engines like Unity or Unreal. Explore game physics, 2D and 3D graphics, and animation techniques. Progress through game architecture, asset management, and optimization for performance. Understand gameplay mechanics, user interface design, and audio integration. Advanced topics include multiplayer networking, artificial intelligence, shader programming, and VR/AR development. Build hands-on experience through projects, utilizing industry-standard tools and workflows for a complete game development journey.
+    `,
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        prerequisites: [
+            
+
+"Basic programming knowledge (C++ or C# preferred; Python helpful for scripting)",
+ "Understanding of game engines (Unity or Unreal Engine recommended)",
+ "Familiarity with 3D mathematics (vectors, matrices, transformations)",
+ "Basic understanding of algorithms and data structures",
+ "Knowledge of version control systems (e.g., Git)",
+ "Problem-solving aptitude",
+ "Basic knowledge of graphics and rendering",
+ "Understanding of physics principles for gameplay realism",
+ "Basic audio integration knowledge"
+        ],
+        outcomes: [
+ "Ability to design and implement game mechanics and systems",
+ "Proficiency in using game engines like Unity or Unreal Engine",
+ "Strong understanding of 3D mathematics for game development",
+ "Ability to work with version control systems (e.g., Git) for team collaboration",
+ "Capability to optimize game performance and troubleshoot issues",
+ "Understanding of physics and audio integration in games",
+ "Experience with developing and implementing AI behaviors in games",
+ "Ability to create engaging user interfaces and game controls",
+ "Understanding of the entire game development pipeline, from concept to deployment",
+        ],
+        sections: [
+            {
+                title: "Game Design Fundamentals",
+                content: "Master the core principles of game design including gameplay mechanics, level design, and player engagement. Learn about game genres, user experience (UX), and game balancing. Understand the design process from concept to prototype."
+            },
+            {
+                title: "Game Engines",
+                content: "Study popular game engines such as Unity and Unreal Engine. Learn about scene creation, asset management, scripting, and the game loop. Understand the importance of rendering, physics simulation, and game object management."
+            },
+            {
+                title: "3D Graphics & Animation",
+                content: "Learn the fundamentals of 3D modeling, animation, and rendering. Understand the principles of texturing, lighting, and shaders. Study the math behind 3D transformations, projections, and camera systems."
+            },
+            {
+                title: "Artificial Intelligence in Games",
+                content: "Master AI techniques used in games including pathfinding, decision trees, behavior trees, and state machines. Learn how to implement enemy AI, NPC behaviors, and procedural content generation."
+            },
+            {
+                title: "Multiplayer Game Development",
+                content: "Learn the basics of networking, client-server architecture, and real-time communication protocols. Study multiplayer game synchronization, matchmaking, and lag compensation. Understand network security and anti-cheating strategies."
+            },
+            {
+                title: "Audio & Music in Games",
+                content: "Study sound design and audio integration in games. Learn how to implement background music, sound effects, voice acting, and dynamic soundscapes. Understand the role of audio in enhancing gameplay immersion and emotional impact."
+            },
+            {
+                title: "Performance Optimization & Debugging",
+                content: "Master game performance tuning including frame rate optimization, memory management, and GPU/CPU profiling. Learn how to identify and fix common game performance bottlenecks. Study debugging tools and techniques for stable game releases."
+            },
+            {
+                title: "Game Publishing & Distribution",
+                content: "Understand the process of publishing games across multiple platforms, including PC, console, and mobile. Learn about distribution channels, app stores, and marketing strategies. Study the business side of game development including monetization models and player retention strategies."
+            }
+            
+        ]
+    },
+    content: {
+        examples: [
+            {
+                title: "Basic Enemy AI with Pathfinding",
+                code: `using UnityEngine;
+        using System.Collections;
+        
+        public class EnemyAI : MonoBehaviour
+        {
+            public Transform target;
+            public float speed = 2.0f;
+            private Vector3[] path;
+            private int targetIndex;
+        
+            void Start()
+            {
+                // Initialize path and find the path to target
+                targetIndex = 0;
+                FindPathToTarget();
+            }
+        
+            void Update()
+            {
+                // Move the enemy along the path
+                if (path != null && path.Length > 0)
+                {
+                    MoveAlongPath();
+                }
+            }
+        
+            void FindPathToTarget()
+            {
+                // Example of simple pathfinding (this could be replaced with an actual pathfinding algorithm)
+                path = new Vector3[] { transform.position, target.position };
+            }
+        
+            void MoveAlongPath()
+            {
+                if (targetIndex < path.Length)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, path[targetIndex], speed * Time.deltaTime);
+                    if (transform.position == path[targetIndex])
+                    {
+                        targetIndex++;
+                    }
+                }
+            }
+        }`
+                ,
+                explanation: "This code demonstrates a basic enemy AI that uses pathfinding to move toward a target. The pathfinding is simplified to a direct path, but it can be enhanced by integrating advanced algorithms like A* for more complex scenarios."
+            },
+            {
+                title: "Basic Player Movement Script in Unity",
+                code: `using UnityEngine;
+        
+        public class PlayerMovement : MonoBehaviour
+        {
+            public float speed = 5.0f;
+        
+            void Update()
+            {
+                // Get input from the player
+                float horizontal = Input.GetAxis("Horizontal");
+                float vertical = Input.GetAxis("Vertical");
+        
+                // Move the player based on input
+                Vector3 movement = new Vector3(horizontal, 0, vertical) * speed * Time.deltaTime;
+                transform.Translate(movement);
+            }
+        }`
+                ,
+                explanation: "This script controls basic player movement in Unity using input from the keyboard (WASD or arrow keys). The player's movement is translated along the x and z axes, with adjustable speed."
+            },
+            {
+                title: "Basic Enemy Spawning System",
+                code: `using UnityEngine;
+        
+        public class EnemySpawner : MonoBehaviour
+        {
+            public GameObject enemyPrefab;
+            public float spawnInterval = 3.0f;
+            private float nextSpawnTime = 0.0f;
+        
+            void Update()
+            {
+                // Spawn enemy at intervals
+                if (Time.time > nextSpawnTime)
+                {
+                    SpawnEnemy();
+                    nextSpawnTime = Time.time + spawnInterval;
+                }
+            }
+        
+            void SpawnEnemy()
+            {
+                // Instantiate enemy at a random position
+                float randomX = Random.Range(-10f, 10f);
+                float randomZ = Random.Range(-10f, 10f);
+                Instantiate(enemyPrefab, new Vector3(randomX, 0, randomZ), Quaternion.identity);
+            }
+        }`
+                ,
+                explanation: "This code demonstrates an enemy spawning system in Unity. Enemies are spawned at random positions within a defined range at regular intervals. The enemy prefab can be customized with different enemy types."
+            }
+        ],
+        
+    roadmap:[
+        {
+            title: "1. Introduction to Game Development",
+            description: "Learn the fundamentals of game development and game engines.",
+            topics: [
+                "Game Design Basics",
+                "Game Development Process",
+                "Overview of Game Engines (Unity, Unreal Engine)",
+                "Basic Game Programming (C#, C++)",
+                "Game Physics Concepts",
+                "User Interface (UI) Design",
+                "Basic Game Art (2D/3D Assets)"
+            ]
+        },
+        {
+            title: "2. Game Engine Mastery",
+            description: "Deep dive into game engines and their core features.",
+            topics: [
+                "Unity Engine Basics",
+                "Unreal Engine Basics",
+                "Scene Management",
+                "Prefab Systems",
+                "Scripting in Unity (C#)",
+                "Blueprints in Unreal Engine",
+                "Physics and Collision Handling"
+            ]
+        },
+        {
+            title: "3. Game Art and Asset Creation",
+            description: "Learn how to create and integrate game assets.",
+            topics: [
+                "3D Modeling and Animation",
+                "Sprite and Texture Creation",
+                "Rigging and Character Animation",
+                "Importing and Exporting Assets",
+                "Lighting and Shadows in Games",
+                "Sound Design and Music for Games",
+                "Optimizing Game Assets"
+            ]
+        },
+        {
+            title: "4. Game Mechanics and Scripting",
+            description: "Master the coding techniques to implement gameplay features.",
+            topics: [
+                "Player Input and Controls",
+                "AI and NPC Behavior",
+                "Game Physics and Movement",
+                "Combat and Interaction Systems",
+                "Inventory and Item Systems",
+                "Camera Systems",
+                "Event Handling and Game Logic"
+            ]
+        },
+        {
+            title: "5. Multiplayer Game Development",
+            description: "Learn how to create multiplayer experiences.",
+            topics: [
+                "Networking Basics (TCP/IP, UDP)",
+                "Server-Client Architecture",
+                "Multiplayer Game Modes",
+                "Networked Game Objects",
+                "Lag Compensation and Prediction",
+                "Synchronization and Data Serialization",
+                "Hosting and Matchmaking"
+            ]
+        },
+        {
+            title: "6. Game Optimization and Performance",
+            description: "Optimize games for better performance and scalability.",
+            topics: [
+                "Memory Management and Profiling",
+                "Frame Rate Optimization",
+                "Asset Loading Techniques",
+                "Level of Detail (LOD) Systems",
+                "Object Pooling and Resource Management",
+                "Physics and Collision Optimization",
+                "Code and Algorithm Optimization"
+            ]
+        },
+        {
+            title: "7. Game Publishing and Monetization",
+            description: "Understand the business side of game development.",
+            topics: [
+                "Game Distribution Platforms (Steam, Epic Store, Console)",
+                "Monetization Models (In-App Purchases, Ads)",
+                "Quality Assurance and Bug Testing",
+                "Beta Testing and User Feedback",
+                "Marketing and Community Management",
+                "Legal and Licensing for Games",
+                "Game Analytics and Metrics"
+            ]
+        },
+        {
+            title: "8. Advanced Game Development Techniques",
+            description: "Master complex game development topics.",
+            topics: [
+                "Procedural Content Generation",
+                "Advanced AI Techniques (Pathfinding, Decision Trees)",
+                "Virtual Reality (VR) and Augmented Reality (AR) Development",
+                "Game Engines Source Code Customization",
+                "Cross-Platform Development",
+                "Game Server Architecture and Scalability",
+                "Advanced Multiplayer Techniques (Matchmaking, Anti-Cheat)"
+            ]
+        }
+    ],
+            
+    resources: {
+            "documentation": [
+                {
+                    "title": "Unity Documentation",
+                    "url": "https://docs.unity3d.com/Manual/",
+                    "description": "Official documentation for Unity game engine.",
+                    "type": "Game Engine Documentation"
+                },
+                {
+                    "title": "Unreal Engine Documentation",
+                    "url": "https://docs.unrealengine.com/",
+                    "description": "Comprehensive guide for Unreal Engine.",
+                    "type": "Game Engine Documentation"
+                },
+                {
+                    "title": "Godot Documentation",
+                    "url": "https://docs.godotengine.org/",
+                    "description": "Official documentation for Godot Engine.",
+                    "type": "Game Engine Documentation"
+                },
+                {
+                    "title": "C# Game Development",
+                    "url": "https://learn.microsoft.com/en-us/dotnet/csharp/",
+                    "description": "Official C# documentation for game development.",
+                    "type": "Programming Language Documentation"
+                },
+                {
+                    "title": "Game Design Patterns",
+                    "url": "https://gameprogrammingpatterns.com/",
+                    "description": "Game development design patterns and best practices.",
+                    "type": "Design Patterns Documentation"
+                }
+            ],
+            "tutorials": [
+                {
+                    "title": "Unity Learn",
+                    "url": "https://learn.unity.com/",
+                    "description": "Interactive Unity tutorials for game development.",
+                    "type": "Online Course"
+                },
+                {
+                    "title": "Unreal Engine Learning",
+                    "url": "https://www.unrealengine.com/learn",
+                    "description": "Free tutorials and courses for Unreal Engine.",
+                    "type": "Course Series"
+                },
+                {
+                    "title": "Godot Engine Tutorials",
+                    "url": "https://docs.godotengine.org/en/stable/getting_started/step_by_step/",
+                    "description": "Beginner-friendly tutorials for learning Godot.",
+                    "type": "Tutorial"
+                },
+                {
+                    "title": "GameDev.tv",
+                    "url": "https://www.gamedev.tv/",
+                    "description": "Comprehensive game development courses for Unity, Unreal Engine, and more.",
+                    "type": "Learning Platform"
+                },
+                {
+                    "title": "Codecademy Game Development",
+                    "url": "https://www.codecademy.com/learn/paths/game-development",
+                    "description": "Learn the basics of game development with Codecademy.",
+                    "type": "Training Program"
+                }
+            ],
+            "videos": [
+                {
+                    "title": "Brackeys YouTube Channel",
+                    "url": "https://www.youtube.com/c/Brackeys",
+                    "description": "Unity tutorials and game development tips.",
+                    "platform": "YouTube"
+                },
+                {
+                    "title": "Unreal Engine YouTube Channel",
+                    "url": "https://www.youtube.com/c/UnrealEngine",
+                    "description": "Official tutorials from Unreal Engine.",
+                    "platform": "YouTube"
+                },
+                {
+                    "title": "GDQuest YouTube Channel",
+                    "url": "https://www.youtube.com/c/GDQuest",
+                    "description": "Game design and development tutorials with Godot.",
+                    "platform": "YouTube"
+                },
+                {
+                    "title": "Game Maker's Toolkit",
+                    "url": "https://www.youtube.com/c/MarkBrownGMT",
+                    "description": "Game design analysis and insights.",
+                    "platform": "YouTube"
+                },
+                {
+                    "title": "GDC Vault",
+                    "url": "https://www.youtube.com/user/gdconf",
+                    "description": "Conference talks from the Game Developers Conference.",
+                    "platform": "YouTube"
+                }
+            ],
+            "books": [
+                {
+                    "title": "Game Programming Patterns",
+                    "author": "Robert Nystrom",
+                    "description": "A book on game programming design patterns.",
+                    "level": "Intermediate"
+                },
+                {
+                    "title": "The Art of Game Design",
+                    "author": "Jesse Schell",
+                    "description": "A comprehensive book on game design principles.",
+                    "level": "Advanced"
+                },
+                {
+                    "title": "Unity in Action",
+                    "author": "Joseph Hocking",
+                    "description": "A guide to building 2D and 3D games in Unity.",
+                    "level": "Intermediate"
+                },
+                {
+                    "title": "Unreal Engine 4.x Scripting with C++",
+                    "author": "John P. Doran",
+                    "description": "A guide to programming in Unreal Engine using C++.",
+                    "level": "Intermediate"
+                },
+                {
+                    "title": "Game Design Workshop",
+                    "author": "Tracy Fullerton",
+                    "description": "An interactive approach to learning game design.",
+                    "level": "Beginner"
+                }
+            ],
+            "tools": [
+                {
+                    "title": "Unity",
+                    "url": "https://unity.com/",
+                    "description": "A powerful game engine for creating 2D and 3D games.",
+                    "type": "Game Engine",
+                    "category": "Essential"
+                },
+                {
+                    "title": "Unreal Engine",
+                    "url": "https://www.unrealengine.com/",
+                    "description": "A top-tier game engine for creating AAA-quality games.",
+                    "type": "Game Engine",
+                    "category": "Essential"
+                },
+                {
+                    "title": "Godot",
+                    "url": "https://godotengine.org/",
+                    "description": "An open-source game engine with a focus on 2D and 3D games.",
+                    "type": "Game Engine",
+                    "category": "Essential"
+                },
+                {
+                    "title": "Blender",
+                    "url": "https://www.blender.org/",
+                    "description": "Open-source 3D modeling, animation, and rendering tool.",
+                    "type": "3D Modeling Tool",
+                    "category": "Essential"
+                },
+                {
+                    "title": "Tiled",
+                    "url": "https://www.mapeditor.org/",
+                    "description": "A 2D level editor for creating tile-based maps.",
+                    "type": "Level Design Tool",
+                    "category": "Useful"
+                }
+            ],
+            "communities": [
+                {
+                    "title": "Unity Developer Community",
+                    "url": "https://forum.unity.com/",
+                    "description": "Official Unity forums for game developers.",
+                    "type": "Forum"
+                },
+                {
+                    "title": "Unreal Engine Forums",
+                    "url": "https://forums.unrealengine.com/",
+                    "description": "Official forums for Unreal Engine game developers.",
+                    "type": "Forum"
+                },
+                {
+                    "title": "Godot Community",
+                    "url": "https://godotengine.org/community",
+                    "description": "The official community for Godot Engine users.",
+                    "type": "Community Platform"
+                },
+                {
+                    "title": "GameDev.net",
+                    "url": "https://www.gamedev.net/",
+                    "description": "A platform for all types of game developers to learn and collaborate.",
+                    "type": "Community Platform"
+                },
+                {
+                    "title": "Indie Game Developers",
+                    "url": "https://www.reddit.com/r/IndieDev/",
+                    "description": "Subreddit for indie game development discussions.",
+                    "type": "Forum"
+                }
+            ],
+            "podcasts": [
+                {
+                    "title": "Game Maker's Notebook",
+                    "url": "https://www.makinggamespodcast.com/",
+                    "description": "Interviews with industry professionals about game development.",
+                    "platform": "Podcast"
+                },
+                {
+                    "title": "The GameDev Show",
+                    "url": "https://www.gamedevshow.com/",
+                    "description": "Game development discussions and interviews with experts.",
+                    "platform": "Podcast"
+                },
+                {
+                    "title": "The AI Game Developer",
+                    "url": "https://www.theaigame.com/podcast/",
+                    "description": "Podcast focusing on AI in game development.",
+                    "platform": "Podcast"
+                },
+                {
+                    "title": "GameDev Breakdown",
+                    "url": "https://www.gamedevsimple.com/podcast/",
+                    "description": "Game development topics for all levels.",
+                    "platform": "Podcast"
+                }
+            ],
+            "blogs": [
+                {
+                    "title": "Gamasutra",
+                    "url": "https://www.gamasutra.com/",
+                    "description": "Game development articles, tutorials, and job listings.",
+                    "type": "Industry Blog"
+                },
+                {
+                    "title": "Indie Game Developer Network",
+                    "url": "https://www.igdn.org/",
+                    "description": "Blog focused on indie game development.",
+                    "type": "Community Blog"
+                },
+                {
+                    "title": "Game Design Resources",
+                    "url": "https://www.gamedesignresources.com/",
+                    "description": "Articles and tools for game designers and developers.",
+                    "type": "Design Blog"
+                },
+                {
+                    "title": "Unity Blog",
+                    "url": "https://blog.unity.com/",
+                    "description": "News and insights for Unity game developers.",
+                    "type": "Official Blog"
+                }
+            ]
+        },
+        practice: {
+            beginnerExercises: [
+                {
+                    title: "Simple Pong Game",
+                    difficulty: "Easy",
+                    description: "Create a simple Pong game where two players can control paddles on either side of the screen to hit a ball back and forth.",
+                    hints: [
+                        "Use basic collision detection for paddles and ball",
+                        "Implement player-controlled paddles using keyboard inputs",
+                        "Keep track of the score and display it on the screen",
+                        "Use basic physics to make the ball bounce off walls and paddles"
+                    ],
+                    solution: {
+                        code: `
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Set up game objects
+        const paddleWidth = 10, paddleHeight = 100, ballSize = 10;
+        let leftPaddleY = (canvas.height - paddleHeight) / 2, rightPaddleY = (canvas.height - paddleHeight) / 2;
+        let ballX = canvas.width / 2, ballY = canvas.height / 2;
+        let ballSpeedX = 5, ballSpeedY = 5;
+        let leftPaddleSpeed = 0, rightPaddleSpeed = 0;
+        let leftScore = 0, rightScore = 0;
+        
+        // Key event listeners
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowUp') rightPaddleSpeed = -5;
+          if (e.key === 'ArrowDown') rightPaddleSpeed = 5;
+          if (e.key === 'w') leftPaddleSpeed = -5;
+          if (e.key === 's') leftPaddleSpeed = 5;
+        });
+        
+        document.addEventListener('keyup', (e) => {
+          if (e.key === 'ArrowUp' || e.key === 'ArrowDown') rightPaddleSpeed = 0;
+          if (e.key === 'w' || e.key === 's') leftPaddleSpeed = 0;
+        });
+        
+        // Game loop
+        function gameLoop() {
+          updateGame();
+          renderGame();
+          requestAnimationFrame(gameLoop);
+        }
+        
+        // Update game logic
+        function updateGame() {
+          // Move paddles
+          leftPaddleY += leftPaddleSpeed;
+          rightPaddleY += rightPaddleSpeed;
+          
+          // Prevent paddles from going out of bounds
+          leftPaddleY = Math.max(0, Math.min(canvas.height - paddleHeight, leftPaddleY));
+          rightPaddleY = Math.max(0, Math.min(canvas.height - paddleHeight, rightPaddleY));
+          
+          // Move ball
+          ballX += ballSpeedX;
+          ballY += ballSpeedY;
+        
+          // Ball collision with top and bottom walls
+          if (ballY <= 0 || ballY >= canvas.height) ballSpeedY = -ballSpeedY;
+        
+          // Ball collision with paddles
+          if (ballX <= paddleWidth && ballY >= leftPaddleY && ballY <= leftPaddleY + paddleHeight) ballSpeedX = -ballSpeedX;
+          if (ballX >= canvas.width - paddleWidth && ballY >= rightPaddleY && ballY <= rightPaddleY + paddleHeight) ballSpeedX = -ballSpeedX;
+        
+          // Ball out of bounds (score update)
+          if (ballX <= 0) {
+            rightScore++;
+            resetBall();
+          }
+          if (ballX >= canvas.width) {
+            leftScore++;
+            resetBall();
+          }
+        }
+        
+        // Reset ball position after scoring
+        function resetBall() {
+          ballX = canvas.width / 2;
+          ballY = canvas.height / 2;
+          ballSpeedX = -ballSpeedX;
+        }
+        
+        // Render game elements
+        function renderGame() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          
+          // Draw paddles
+          ctx.fillStyle = 'white';
+          ctx.fillRect(0, leftPaddleY, paddleWidth, paddleHeight);
+          ctx.fillRect(canvas.width - paddleWidth, rightPaddleY, paddleWidth, paddleHeight);
+          
+          // Draw ball
+          ctx.beginPath();
+          ctx.arc(ballX, ballY, ballSize, 0, Math.PI * 2);
+          ctx.fill();
+          
+          // Draw scores
+          ctx.font = '30px Arial';
+          ctx.fillText(leftScore, canvas.width / 4, 50);
+          ctx.fillText(rightScore, 3 * canvas.width / 4, 50);
+        }
+        
+        // Start the game loop
+        gameLoop();
+                        `,
+                        explanation: "This beginner-level game implements a simple Pong game where players use the keyboard to control paddles and try to prevent the ball from passing their side. The game involves basic collision detection, user input handling, and game state management like scoring."
+                    }
+                }
+            ],
+            advancedExercises: [
+                {
+                    title: "2D Platformer Game with Physics",
+                    difficulty: "Hard",
+                    description: "Create a 2D platformer game that includes player movement, gravity, jumping, and basic platform collision detection.",
+                    hints: [
+                        "Use basic physics to apply gravity to the player character",
+                        "Implement jumping with velocity and gravity",
+                        "Detect collision between the player and platforms",
+                        "Keep track of the player's position and velocity"
+                    ],
+                    solution: {
+                        code: `
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Game settings
+        const gravity = 0.5;
+        const friction = 0.9;
+        const jumpStrength = -12;
+        const playerWidth = 50, playerHeight = 50;
+        let playerX = 100, playerY = canvas.height - playerHeight;
+        let playerSpeedX = 0, playerSpeedY = 0;
+        let isJumping = false;
+        let platforms = [
+            { x: 0, y: canvas.height - 50, width: canvas.width, height: 50 },
+            { x: 200, y: canvas.height - 150, width: 200, height: 20 },
+            { x: 500, y: canvas.height - 250, width: 200, height: 20 }
+        ];
+        
+        // Key event listeners for player movement
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') playerSpeedX = -5;
+          if (e.key === 'ArrowRight') playerSpeedX = 5;
+          if (e.key === 'Space' && !isJumping) jump();
+        });
+        
+        document.addEventListener('keyup', (e) => {
+          if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') playerSpeedX = 0;
+        });
+        
+        // Jumping logic
+        function jump() {
+          isJumping = true;
+          playerSpeedY = jumpStrength;
+        }
+        
+        // Game loop
+        function gameLoop() {
+          updateGame();
+          renderGame();
+          requestAnimationFrame(gameLoop);
+        }
+        
+        // Update game logic
+        function updateGame() {
+          // Apply gravity
+          playerSpeedY += gravity;
+          playerY += playerSpeedY;
+          playerX += playerSpeedX;
+        
+          // Platform collision detection
+          platforms.forEach(platform => {
+            if (playerY + playerHeight <= platform.y && playerY + playerHeight + playerSpeedY >= platform.y) {
+              if (playerX + playerWidth > platform.x && playerX < platform.x + platform.width) {
+                playerY = platform.y - playerHeight;
+                playerSpeedY = 0;
+                isJumping = false;
+              }
+            }
+          });
+        
+          // Prevent player from going off the screen
+          if (playerX < 0) playerX = 0;
+          if (playerX + playerWidth > canvas.width) playerX = canvas.width - playerWidth;
+          if (playerY + playerHeight > canvas.height) {
+            playerY = canvas.height - playerHeight;
+            playerSpeedY = 0;
+            isJumping = false;
+          }
+        }
+        
+        // Render game elements
+        function renderGame() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+          // Draw player
+          ctx.fillStyle = 'blue';
+          ctx.fillRect(playerX, playerY, playerWidth, playerHeight);
+        
+          // Draw platforms
+          ctx.fillStyle = 'green';
+          platforms.forEach(platform => {
+            ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
+          });
+        }
+        
+        // Start the game loop
+        gameLoop();
+                        `,
+                        explanation: "This advanced exercise introduces a 2D platformer game with player movement, gravity, and collision detection. The game simulates jumping physics and includes multiple platforms the player can land on. This exercise is more complex, requiring an understanding of physics principles like gravity and velocity in a game environment."
+                    }
+                }
+            ]
+        }
+        
 }
-
-
+}
 ];
 
 export default resources;
