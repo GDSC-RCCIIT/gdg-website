@@ -10,13 +10,18 @@ import { motion } from 'framer-motion';
 export default function GeminiAI() {
     const [userInput, setUserInput] = useState('');
     const [chatHistory, setChatHistory] = useState(() => {
-        const savedHistory = localStorage.getItem('chatHistory');
-        return savedHistory ? JSON.parse(savedHistory) : [];
+        if (typeof window !== 'undefined') {
+            const savedHistory = localStorage.getItem('chatHistory');
+            return savedHistory ? JSON.parse(savedHistory) : [];
+        }
+        return [];
     });
     const chatContainerRef = useRef(null);
 
     useEffect(() => {
-        localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+        }
         if (chatContainerRef.current) {
             chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
         }

@@ -86,6 +86,8 @@
 │   ├── ser3.svg
 │   ├── ser4.svg
 │   ├── sopt4.jpg
+│   ├── sponser2.jpeg
+│   ├── sponsership1.jpeg
 │   ├── spot1.jpg
 │   ├── spot2.jpg
 │   ├── spot3.jpg
@@ -97,6 +99,15 @@
 │   ├── story6.png
 │   ├── story7.png
 │   ├── summer_learning_hero.png
+│   ├── t-shirt1.jpeg
+│   ├── t-shirt2.jpeg
+│   ├── t-shirt3.jpeg
+│   ├── t-shirt4.jpeg
+│   ├── t-shirt5.jpeg
+│   ├── t-shirt6.jpeg
+│   ├── t-shirt7.jpeg
+│   ├── t-shirt8.jpeg
+│   ├── t-shirt9.jpeg
 │   ├── techeq1.webp
 │   ├── techeq2.webp
 │   ├── truth1.png
@@ -191,6 +202,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── ai-ml/
 │   │   │   │   └── page.jsx
+│   │   │   ├── alumini/
+│   │   │   │   └── page.jsx
 │   │   │   ├── analyst-reports/
 │   │   │   │   └── page.jsx
 │   │   │   ├── analytics-pipelines/
@@ -254,6 +267,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── inovate/
 │   │   │   │   └── page.jsx
+│   │   │   ├── inovation-hub/
+│   │   │   │   └── page.jsx
 │   │   │   ├── ioext/
 │   │   │   │   └── page.jsx
 │   │   │   ├── join-partner/
@@ -261,6 +276,10 @@
 │   │   │   ├── lens-page/
 │   │   │   │   └── page.jsx
 │   │   │   ├── localdev/
+│   │   │   │   └── page.jsx
+│   │   │   ├── louge/
+│   │   │   │   └── page.jsx
+│   │   │   ├── merchendise/
 │   │   │   │   └── page.jsx
 │   │   │   ├── moonshots/
 │   │   │   │   └── page.jsx
@@ -276,6 +295,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── partners/
 │   │   │   │   └── page.jsx
+│   │   │   ├── polls/
+│   │   │   │   └── page.jsx
 │   │   │   ├── press-corner/
 │   │   │   │   └── page.jsx
 │   │   │   ├── sandbox/
@@ -288,6 +309,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── services/
 │   │   │   │   └── page.jsx
+│   │   │   ├── sponsership/
+│   │   │   │   └── page.jsx
 │   │   │   ├── storage-overview/
 │   │   │   │   └── page.jsx
 │   │   │   ├── stories/
@@ -297,6 +320,8 @@
 │   │   │   ├── student-challenge/
 │   │   │   │   └── page.jsx
 │   │   │   ├── sustainable/
+│   │   │   │   └── page.jsx
+│   │   │   ├── tech-stack-explorer/
 │   │   │   │   └── page.jsx
 │   │   │   ├── techequity/
 │   │   │   │   └── page.jsx
