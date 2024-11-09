@@ -1,290 +1,327 @@
-"use client";
-import React from "react";
+'use client'
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Card,
-  CardContent,
-  CardHeader,
-  Grid,
-  Typography,
-  IconButton,
-  Container,
-  Button,
+  Code,
+  Cloud,
+  Database,
+  Terminal,
+  Monitor,
+  Settings,
+  Server,
+  Laptop,
   Box,
-} from "@mui/material";
-import { motion } from "framer-motion";
+  Coffee,
+  Globe,
+  Tool
+} from 'lucide-react';
+import Link from 'next/link';
 
-import techStacks from "./techStacks";
+const TechToolkitHub = () => {
+  const [selectedStack, setSelectedStack] = useState(null);
 
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
+  const techStacks = [
+    {
+      id: 'mern',
+      title: 'MERN Stack',
+      icon: <Globe className="w-6 h-6" />,
+      color: '#00796B',
+      tools: [
+        { name: 'MongoDB', level: 'Database', color: '#47A248' },
+        { name: 'Express.js', level: 'Backend', color: '#000000' },
+        { name: 'React', level: 'Frontend', color: '#61DAFB' },
+        { name: 'Node.js', level: 'Runtime', color: '#339933' }
+      ]
+    },
+    {
+      id: 'mean',
+      title: 'MEAN Stack',
+      icon: <Globe className="w-6 h-6" />,
+      color: '#1976D2',
+      tools: [
+        { name: 'MongoDB', level: 'Database', color: '#47A248' },
+        { name: 'Express.js', level: 'Backend', color: '#000000' },
+        { name: 'Angular', level: 'Frontend', color: '#DD0031' },
+        { name: 'Node.js', level: 'Runtime', color: '#339933' }
+      ]
+    },
+    {
+      id: 'lamp',
+      title: 'LAMP Stack',
+      icon: <Server className="w-6 h-6" />,
+      color: '#E65100',
+      tools: [
+        { name: 'Linux', level: 'OS', color: '#FCC624' },
+        { name: 'Apache', level: 'Server', color: '#D22128' },
+        { name: 'MySQL', level: 'Database', color: '#4479A1' },
+        { name: 'PHP', level: 'Backend', color: '#777BB4' }
+      ]
+    },
+    {
+      id: 'devops',
+      title: 'DevOps Tools',
+      icon: <Settings className="w-6 h-6" />,
+      color: '#0277BD',
+      tools: [
+        { name: 'Docker', level: 'Containerization', color: '#2496ED' },
+        { name: 'Kubernetes', level: 'Orchestration', color: '#326CE5' },
+        { name: 'Jenkins', level: 'CI/CD', color: '#D24939' },
+        { name: 'Terraform', level: 'IaC', color: '#7B42BC' },
+        { name: 'Ansible', level: 'Configuration', color: '#EE0000' }
+      ]
+    },
+    {
+      id: 'cloud',
+      title: 'Cloud Platforms',
+      icon: <Cloud className="w-6 h-6" />,
+      color: '#1565C0',
+      tools: [
+        { name: 'Google Cloud', level: 'Cloud', color: '#4285F4' },
+        { name: 'AWS', level: 'Cloud', color: '#FF9900' },
+        { name: 'Azure', level: 'Cloud', color: '#0078D4' },
+        { name: 'Heroku', level: 'PaaS', color: '#430098' }
+      ]
+    },
+    {
+      id: 'editors',
+      title: 'Code Editors & IDEs',
+      icon: <Terminal className="w-6 h-6" />,
+      color: '#424242',
+      tools: [
+        { name: 'VS Code', level: 'Editor', color: '#007ACC' },
+        { name: 'IntelliJ IDEA', level: 'IDE', color: '#000000' },
+        { name: 'Sublime Text', level: 'Editor', color: '#FF9800' },
+        { name: 'PyCharm', level: 'IDE', color: '#21D789' }
+      ]
+    },
+    {
+      id: 'languages',
+      title: 'Programming Languages',
+      icon: <Code className="w-6 h-6" />,
+      color: '#673AB7',
+      tools: [
+        { name: 'Python', level: 'Backend', color: '#3776AB' },
+        { name: 'JavaScript', level: 'Full-Stack', color: '#F7DF1E' },
+        { name: 'Java', level: 'Backend', color: '#007396' },
+        { name: 'Go', level: 'Backend', color: '#00ADD8' }
+      ]
+    },
+    {
+      id: 'frontend',
+      title: 'Frontend Tools',
+      icon: <Monitor className="w-6 h-6" />,
+      color: '#C2185B',
+      tools: [
+        { name: 'Webpack', level: 'Bundler', color: '#8DD6F9' },
+        { name: 'Sass', level: 'CSS', color: '#CC6699' },
+        { name: 'TypeScript', level: 'Language', color: '#3178C6' },
+        { name: 'Tailwind', level: 'CSS', color: '#06B6D4' }
+      ]
+    }
+  ];
 
-const scaleUp = {
-  hover: { scale: 1.05 },
-};
+  const stackVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    })
+  };
 
-const TechToolkits = () => {
   return (
-    <>
-      <Container maxWidth="lg" sx={{ padding: "2rem" }}>
-        <div className="text-center mb-8">
-          <motion.h1
-            className="text-5xl font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-600 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="text-center"
           >
-            Tech Toolkits HUB
-          </motion.h1>
-
-          <motion.p
-            className="text-gray-600 text-xl mt-4 max-w-3xl mx-auto"
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Explore the essential tools and technologies for web development,
-            programming, and cloud platforms.
-          </motion.p>
-        </div>
-
-        <Grid container spacing={4} justifyContent="center">
-          {techStacks.map((stack, index) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+            <h1 className="text-4xl font-bold text-white sm:text-5xl md:text-6xl">
+              Google Developer Student Club
+            </h1>
+            <p className="mt-3 max-w-md mx-auto text-xl text-blue-100 sm:text-2xl md:mt-5 md:max-w-3xl">
+              Tech Toolkit Hub
+            </p>
+            <div className="mt-5 max-w-md mx-auto flex justify-center md:mt-8">
               <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={fadeIn}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="rounded-md shadow"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <Card
-                  variant="outlined"
-                  sx={{
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-between",
-                    padding: "1rem",
-                    backgroundColor: "#f9f9f9",
-                    boxShadow: "0 3px 6px rgba(0,0,0,0.1)",
-                    "&:hover": {
-                      transform: "scale(1.05)",
-                      boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
-                    },
-                  }}
-                  whileHover="hover"
-                  variants={scaleUp}
-                  transition={{ duration: 0.3 }}
-                >
-                  <CardHeader
-                    title={stack.title}
-                    titleTypographyProps={{
-                      align: "center",
-                      fontWeight: "bold",
-                      fontSize: "1.25rem",
-                      color: "#3c4043",
-                    }}
-                  />
-                  <CardContent>
-                    <Grid container justifyContent="center">
-                      {stack.icons.map((item, idx) => (
-                        <Box
-                          key={idx}
-                          sx={{ textAlign: "center", margin: "0.5rem" }}
-                        >
-                          <IconButton
-                            component="a"
-                            href={item.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            sx={{
-                              color: "#1a73e8",
-                              "&:hover": { color: "black" },
-                            }}
-                          >
-                            {item.icon}
-                          </IconButton>
-                          <Typography
-                            variant="caption"
-                            sx={{
-                              color: "gray",
-                              display: "block",
-                              marginTop: "0.25rem",
-                            }}
-                          >
-                            {item.name}
-                          </Typography>
-                        </Box>
-                      ))}
-                    </Grid>
-                  </CardContent>
-                </Card>
+                <Link href="#explore" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50 md:py-4 md:text-lg md:px-10">
+                  Explore Tools
+                </Link>
               </motion.div>
-            </Grid>
-          ))}
-        </Grid>
-
-        {/* Resources Section */}
-        <Box sx={{ marginTop: "4rem", textAlign: "center" }}>
-          <motion.h5
-            gutterBottom
-            sx={{ fontWeight: "bold", color: "black" }}
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Resources for Beginners
-          </motion.h5>
-          <Grid container justifyContent="center" spacing={2}>
-            {[
-              { name: "FreeCodeCamp", link: "https://www.freecodecamp.org/" },
-              { name: "Codecademy", link: "https://www.codecademy.com/" },
-              {
-                name: "MDN Web Docs",
-                link: "https://developer.mozilla.org/en-US/",
-              },
-              { name: "W3Schools", link: "https://www.w3schools.com/" },
-            ].map((resource, idx) => (
-              <Grid item key={idx}>
-                <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  variants={fadeIn}
-                  transition={{ duration: 0.5, delay: 0.5 + idx * 0.1 }}
-                >
-                  <Button
-                    variant="contained"
-                    sx={{
-                      backgroundColor: "black",
-                      color: "white",
-                      textTransform: "none",
-                      padding: "0.5rem 1.5rem",
-                      "&:hover": { backgroundColor: "#4F46E5", color: "#E0E7FF" },
-                    }}
-                    href={resource.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {resource.name}
-                  </Button>
-                </motion.div>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
-        {/* Tips Section */}
-        <Box sx={{ marginTop: "4rem", textAlign: "center" }}>
-          <motion.h5
-            gutterBottom
-            sx={{ fontWeight: "bold", color: "black" }}
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            Tips for Getting Started
-          </motion.h5>
-          <div className="text-center">
-            <ul className="mt-8 space-y-3 ml-60 font-medium">
-              {[
-                "Start with the basics: Choose a programming language and master the fundamentals.",
-                "Practice coding every day: Regular practice helps reinforce learning.",
-                "Build projects: Apply what you learn by creating your own projects.",
-                "Join coding communities: Engage with others to ask questions and share knowledge.",
-              ].map((tip, idx) => (
-                <motion.li
-                  key={idx}
-                  initial="hidden"
-                  animate="visible"
-                  variants={fadeIn}
-                  transition={{ duration: 0.5, delay: 0.7 + idx * 0.1 }}
-                  className="flex items-start lg:col-span-1"
-                >
-                  <div className="flex-shrink-0">
-                    <svg
-                      className="w-5 h-5 text-indigo-600"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                  </div>
-                  <p className="ml-3 leading-5 text-gray-600">{tip}</p>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-        </Box>
-      </Container>
-
-      <div className="relative bg-violet-600">
-        <div className="absolute inset-x-0 top-0">
-          <svg
-            viewBox="0 0 224 12"
-            fill="currentColor"
-            className="w-full -mb-1 text-white"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,0 C48.8902582,6.27314026 86.2235915,9.40971039 112,9.40971039 C137.776408,9.40971039 175.109742,6.27314026 224,0 L224,12.0441132 L0,12.0441132 L0,0 Z"
-              transform="scale(1, -1) translate(0, -12)"
-            ></path>
-          </svg>
+            </div>
+          </motion.div>
         </div>
-        <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-          <div className="relative max-w-2xl sm:mx-auto sm:max-w-xl md:max-w-2xl sm:text-center">
-            <motion.h2
-              className="mb-6 font-sans text-3xl text-center font-bold tracking-tight text-white sm:text-4xl sm:leading-none"
-              initial="hidden"
-              animate="visible"
-              variants={fadeIn}
-              transition={{ duration: 0.8, delay: 0.9 }}
-            >
-              Join Our Community
-            </motion.h2>
-            <motion.p
-              className="mb-4 text-base text-white md:text-lg"
-              initial="hidden"
-              animate="visible"
-              variants={fadeIn}
-              transition={{ duration: 0.8, delay: 1.0 }}
-            >
-              Connect with fellow tech enthusiasts, get support, and share your
-              projects.
-            </motion.p>
+      </div>
+
+      {/* Tech Stacks Grid */}
+      <div id="explore" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {techStacks.map((stack, index) => (
             <motion.div
+              key={stack.id}
+              custom={index}
               initial="hidden"
               animate="visible"
-              variants={fadeIn}
-              transition={{ duration: 0.8, delay: 1.1 }}
+              variants={stackVariants}
+              whileHover={{ scale: 1.03 }}
+              className="relative rounded-xl border border-gray-200 bg-white p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+              onClick={() => setSelectedStack(stack.id === selectedStack ? null : stack.id)}
+              style={{
+                backgroundImage: `linear-gradient(135deg, ${stack.color}10, white)`,
+              }}
             >
-              <Button
-                variant="contained"
-                sx={{
-                  backgroundColor: "white",
-                  color: "black",
-                  textTransform: "none",
-                  padding: "0.5rem 2rem",
-                  "&:hover": { backgroundColor: "#4F46E5", color: "#E0E7FF" },
-                }}
-              >
-                Get Started
-              </Button>
+              <div className="flex items-center space-x-4">
+                <div className="flex-shrink-0">
+                  <div 
+                    className="flex items-center justify-center h-12 w-12 rounded-lg text-white"
+                    style={{ backgroundColor: stack.color }}
+                  >
+                    {stack.icon}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {stack.title}
+                  </h3>
+                </div>
+              </div>
+
+              <AnimatePresence>
+                {selectedStack === stack.id && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="mt-6 space-y-4">
+                      {stack.tools.map((tool) => (
+                        <motion.div
+                          key={tool.name}
+                          className="flex items-center justify-between p-3 rounded-lg"
+                          style={{ backgroundColor: `${tool.color}15` }}
+                          whileHover={{ x: 5 }}
+                        >
+                          <span className="text-sm font-medium text-gray-900">
+                            {tool.name}
+                          </span>
+                          <span
+                            className="px-3 py-1 text-xs rounded-full"
+                            style={{ backgroundColor: tool.color + '30', color: tool.color }}
+                          >
+                            {tool.level}
+                          </span>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Learning Resources */}
+      <div className="bg-gray-50 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <h2 className="text-3xl font-bold text-gray-900">Learning Resources</h2>
+            <p className="mt-4 text-xl text-gray-600">
+              Start your development journey with these curated resources
+            </p>
+          </motion.div>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            {[
+              {
+                title: 'Google Codelabs',
+                description: 'Hands-on coding experiences',
+                icon: <Terminal className="w-6 h-6" />,
+                link: 'https://codelabs.developers.google.com'
+              },
+              {
+                title: 'FreeCodeCamp',
+                description: 'Learn to code for free',
+                icon: <Code className="w-6 h-6" />,
+                link: 'https://www.freecodecamp.org'
+              },
+              {
+                title: 'MDN Web Docs',
+                description: 'Comprehensive web documentation',
+                icon: <Globe className="w-6 h-6" />,
+                link: 'https://developer.mozilla.org'
+              }
+            ].map((resource, index) => (
+              <motion.a
+                key={resource.title}
+                href={resource.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                className="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-blue-600 text-white">
+                  {resource.icon}
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-gray-900">
+                  {resource.title}
+                </h3>
+                <p className="mt-2 text-sm text-gray-500 text-center">
+                  {resource.description}
+                </p>
+              </motion.a>
+            ))}
           </div>
         </div>
       </div>
-    </>
+
+      {/* Join Community Section */}
+      <div className="relative bg-gradient-to-r from-blue-600 to-indigo-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl font-bold text-white">Join Our Developer Community</h2>
+            <p className="mt-4 text-xl text-blue-100">
+              Connect with fellow developers, share knowledge, and grow together
+            </p>
+            <Link href='/SignUp'>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="mt-8 px-8 py-3 rounded-md bg-white text-blue-600 font-semibold hover:bg-blue-50 transition-colors duration-200"
+              >
+              Get Started Now
+            </motion.button>
+              </Link>
+          </motion.div>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default TechToolkits;
+export default TechToolkitHub;
