@@ -14,6 +14,17 @@ const codeExamples = {
         Python: `for i in range(1, 101):\n    if i % 3 == 0 and i % 5 == 0:\n        print("FizzBuzz")\n    elif i % 3 == 0:\n        print("Fizz")\n    elif i % 5 == 0:\n        print("Buzz")\n    else:\n        print(i)`,
         JavaScript: `for (let i = 1; i <= 100; i++) {\n    if (i % 3 === 0 && i % 5 === 0) {\n        console.log("FizzBuzz");\n    } else if (i % 3 === 0) {\n        console.log("Fizz");\n    } else if (i % 5 === 0) {\n        console.log("Buzz");\n    } else {\n        console.log(i);\n    }\n}`,
         Java: `for (int i = 1; i <= 100; i++) {\n    if (i % 3 == 0 && i % 5 == 0) {\n        System.out.println("FizzBuzz");\n    } else if (i % 3 == 0) {\n        System.out.println("Fizz");\n    } else if (i % 5 == 0) {\n        System.out.println("Buzz");\n    } else {\n        System.out.println(i);\n    }\n}`,
+        "C++": `for (int i = 1; i <= 100; i++) {\n    if (i % 3 == 0 && i % 5 == 0) {\n        std::cout << "FizzBuzz" << std::endl;\n    } else if (i % 3 == 0) {\n        std::cout << "Fizz" << std::endl;\n    } else if (i % 5 == 0) {\n        std::cout << "Buzz" << std::endl;\n    } else {\n        std::cout << i << std::endl;\n    }\n}`,
+    },
+    "Sorting Algorithm": {
+        Python: `arr = [64, 25, 12, 22, 11]\nfor i in range(len(arr)):\n    min_idx = i\n    for j in range(i+1, len(arr)):\n        if arr[j] < arr[min_idx]:\n            min_idx = j\n    arr[i], arr[min_idx] = arr[min_idx], arr[i]\nprint(arr)`,
+        JavaScript: `let arr = [64, 25, 12, 22, 11];\nfor (let i = 0; i < arr.length; i++) {\n    let minIdx = i;\n    for (let j = i + 1; j < arr.length; j++) {\n        if (arr[j] < arr[minIdx]) minIdx = j;\n    }\n    [arr[i], arr[minIdx]] = [arr[minIdx], arr[i]];\n}\nconsole.log(arr);`,
+        Ruby: `arr = [64, 25, 12, 22, 11]\nfor i in 0...(arr.length - 1)\n    min_idx = i\n    for j in (i + 1)...arr.length\n        min_idx = j if arr[j] < arr[min_idx]\n    arr[i], arr[min_idx] = arr[min_idx], arr[i]\nend\np arr`,
+    },
+    "HTTP Request Handling": {
+        Python: `import requests\nresponse = requests.get('https://jsonplaceholder.typicode.com/posts')\nprint(response.json())`,
+        JavaScript: `fetch('https://jsonplaceholder.typicode.com/posts')\n    .then(response => response.json())\n    .then(data => console.log(data));`,
+        Java: `import java.net.*;\nimport java.io.*;\nURL url = new URL("https://jsonplaceholder.typicode.com/posts");\nHttpURLConnection con = (HttpURLConnection) url.openConnection();\ncon.setRequestMethod("GET");\nBufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));\nString inputLine;\nStringBuffer content = new StringBuffer();\nwhile ((inputLine = in.readLine()) != null) {\n    content.append(inputLine);\n}\nin.close();\nSystem.out.println(content.toString());`,
     },
 };
 
@@ -27,7 +38,12 @@ const GlobalCodeExchange = () => {
     const [selectedProblem, setSelectedProblem] = useState(exampleProblems[0].name);
     const [sourceLanguage, setSourceLanguage] = useState("Python");
     const [targetLanguage, setTargetLanguage] = useState("JavaScript");
-
+    const [copied, setCopied] = useState(null);
+    const handleCopy = (code) => {
+        navigator.clipboard.writeText(code);
+        setCopied(code);
+        setTimeout(() => setCopied(null), 2000); // Reset copied state after 2 seconds
+    };
     return (
         <div className="bg-gray-50 min-h-screen p-6">
             {/* Hero Section with Gradient */}
@@ -84,17 +100,29 @@ const GlobalCodeExchange = () => {
                     </div>
                 </div>
                 <div className="mt-4">
-                    <div className="bg-gray-100 p-4 rounded-md shadow-sm mb-4">
+                    <div className="bg-gray-100 p-4 rounded-md shadow-sm mb-4 relative">
                         <p className="text-gray-600">Code in {sourceLanguage} for {selectedProblem}:</p>
                         <pre className="bg-gray-800 text-green-400 p-4 mt-2 rounded-md overflow-auto">
                             <code>{codeExamples[selectedProblem][sourceLanguage]}</code>
                         </pre>
+                        <button
+                            className="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded"
+                            onClick={() => handleCopy(codeExamples[selectedProblem][sourceLanguage])}
+                        >
+                            {copied === codeExamples[selectedProblem][sourceLanguage] ? "Copied!" : "Copy"}
+                        </button>
                     </div>
-                    <div className="bg-gray-100 p-4 rounded-md shadow-sm">
+                    <div className="bg-gray-100 p-4 rounded-md shadow-sm relative">
                         <p className="text-gray-600">Translated Code in {targetLanguage}:</p>
                         <pre className="bg-gray-800 text-blue-400 p-4 mt-2 rounded-md overflow-auto">
                             <code>{codeExamples[selectedProblem][targetLanguage]}</code>
                         </pre>
+                        <button
+                            className="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded"
+                            onClick={() => handleCopy(codeExamples[selectedProblem][targetLanguage])}
+                        >
+                            {copied === codeExamples[selectedProblem][targetLanguage] ? "Copied!" : "Copy"}
+                        </button>
                     </div>
                 </div>
             </section>
