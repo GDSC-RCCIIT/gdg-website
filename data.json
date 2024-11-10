@@ -48003,6 +48003,251 @@
           "content": "Yes, if you have a great idea for an event, you can propose it to the GDSC team for consideration."
       }
   ],
+  "tech-stacks":[
+      {
+          "id": 1,
+          "name": "Frontend Stack",
+          "description": "Technologies for building user interfaces.",
+          "tags": ["HTML", "CSS", "JavaScript", "React", "Angular"],
+          "details": {
+              "components": [
+                  "HTML5",
+                  "CSS3",
+                  "JavaScript",
+                  "React",
+                  "Vue.js",
+                  "Angular"
+              ],
+              "useCases": [
+                  "Web Development",
+                  "UI/UX Design",
+                  "Single Page Applications"
+              ],
+              "tutorials": [
+                  "https://reactjs.org/docs/getting-started.html",
+                  "https://angular.io/start"
+              ]
+          }
+      },
+      {
+          "id": 2,
+          "name": "Backend Stack",
+          "description": "Technologies for server-side development.",
+          "tags": ["Node.js", "Express", "MongoDB", "SQL"],
+          "details": {
+              "components": [
+                  "Node.js",
+                  "Express",
+                  "Django",
+                  "MongoDB",
+                  "PostgreSQL"
+              ],
+              "useCases": [
+                  "REST APIs",
+                  "Database Management",
+                  "Authentication"
+              ],
+              "tutorials": [
+                  "https://nodejs.org/en/docs/guides/getting-started-guide/",
+                  "https://www.djangoproject.com/start/"
+              ]
+          }
+      },
+      {
+          "id": 3,
+          "name": "DevOps Stack",
+          "description": "Tools and technologies for managing software deployment and infrastructure.",
+          "tags": ["Docker", "Kubernetes", "CI/CD", "AWS"],
+          "details": {
+              "components": [
+                  "Docker",
+                  "Kubernetes",
+                  "Jenkins",
+                  "AWS",
+                  "Terraform"
+              ],
+              "useCases": [
+                  "Containerization",
+                  "Continuous Integration/Continuous Deployment (CI/CD)",
+                  "Cloud Infrastructure"
+              ],
+              "tutorials": [
+                  "https://docs.docker.com/get-started/",
+                  "https://kubernetes.io/docs/tutorials/kubernetes-basics/",
+                  "https://aws.amazon.com/getting-started/"
+              ]
+          }
+      },
+      {
+          "id": 4,
+          "name": "Mobile Development Stack",
+          "description": "Technologies for building mobile applications.",
+          "tags": ["Flutter", "React Native", "Swift", "Kotlin"],
+          "details": {
+              "components": [
+                  "Flutter",
+                  "React Native",
+                  "Swift",
+                  "Kotlin",
+                  "Android SDK"
+              ],
+              "useCases": [
+                  "Cross-platform Development",
+                  "iOS Development",
+                  "Android Development"
+              ],
+              "tutorials": [
+                  "https://flutter.dev/docs/get-started",
+                  "https://reactnative.dev/docs/getting-started",
+                  "https://developer.apple.com/documentation/swift"
+              ]
+          }
+      },
+      {
+          "id": 5,
+          "name": "Data Science Stack",
+          "description": "Tools and libraries for data analysis and machine learning.",
+          "tags": ["Python", "Pandas", "TensorFlow", "scikit-learn"],
+          "details": {
+              "components": [
+                  "Python",
+                  "Pandas",
+                  "NumPy",
+                  "TensorFlow",
+                  "scikit-learn"
+              ],
+              "useCases": [
+                  "Data Analysis",
+                  "Machine Learning",
+                  "Deep Learning"
+              ],
+              "tutorials": [
+                  "https://www.tensorflow.org/tutorials",
+                  "https://scikit-learn.org/stable/tutorial/index.html",
+                  "https://pandas.pydata.org/pandas-docs/stable/getting_started/intro_tutorials/index.html"
+              ]
+          }
+      },
+      {
+          "id": 6,
+          "name": "Cloud Computing Stack",
+          "description": "Technologies and services for building and deploying cloud-based applications.",
+          "tags": ["AWS", "Azure", "Google Cloud", "CloudFormation"],
+          "details": {
+              "components": [
+                  "AWS",
+                  "Azure",
+                  "Google Cloud",
+                  "CloudFormation",
+                  "Terraform"
+              ],
+              "useCases": [
+                  "Cloud Hosting",
+                  "Serverless Architectures",
+                  "Infrastructure as Code (IaC)"
+              ],
+              "tutorials": [
+                  "https://aws.amazon.com/training/",
+                  "https://learn.microsoft.com/en-us/azure/",
+                  "https://cloud.google.com/training"
+              ]
+          }
+      },
+      {
+          "id": 7,
+          "name": "AI/ML Stack",
+          "description": "Technologies and frameworks for building AI and machine learning applications.",
+          "tags": ["TensorFlow", "PyTorch", "Keras", "OpenAI"],
+          "details": {
+              "components": [
+                  "TensorFlow",
+                  "PyTorch",
+                  "Keras",
+                  "OpenAI",
+                  "scikit-learn"
+              ],
+              "useCases": [
+                  "Artificial Intelligence",
+                  "Machine Learning",
+                  "Natural Language Processing (NLP)"
+              ],
+              "tutorials": [
+                  "https://www.tensorflow.org/tutorials",
+                  "https://pytorch.org/tutorials/",
+                  "https://keras.io/guides/"
+              ]
+          }
+      },
+      {
+          "id": 8,
+          "name": "Game Development Stack",
+          "description": "Tools and frameworks for creating video games.",
+          "tags": ["Unity", "Unreal Engine", "C#", "C++"],
+          "details": {
+              "components": ["Unity", "Unreal Engine", "Godot", "C#", "C++"],
+              "useCases": [
+                  "Game Development",
+                  "Virtual Reality (VR)",
+                  "Augmented Reality (AR)"
+              ],
+              "tutorials": [
+                  "https://learn.unity.com/",
+                  "https://docs.unrealengine.com/en-US/GettingStarted/index.html",
+                  "https://godotengine.org/learn"
+              ]
+          }
+      },
+      {
+          "id": 9,
+          "name": "Security Stack",
+          "description": "Technologies and frameworks focused on cybersecurity.",
+          "tags": ["OWASP", "SSL", "Kali Linux", "Burp Suite"],
+          "details": {
+              "components": [
+                  "OWASP",
+                  "SSL/TLS",
+                  "Kali Linux",
+                  "Burp Suite",
+                  "Metasploit"
+              ],
+              "useCases": [
+                  "Penetration Testing",
+                  "Vulnerability Scanning",
+                  "Encryption"
+              ],
+              "tutorials": [
+                  "https://owasp.org/www-project-top-ten/",
+                  "https://www.kali.org/docs/",
+                  "https://portswigger.net/burp/documentation"
+              ]
+          }
+      },
+      {
+          "id": 10,
+          "name": "Blockchain Development Stack",
+          "description": "Technologies for building decentralized applications and blockchain networks.",
+          "tags": ["Ethereum", "Solidity", "Web3.js", "IPFS"],
+          "details": {
+              "components": [
+                  "Ethereum",
+                  "Solidity",
+                  "Web3.js",
+                  "IPFS",
+                  "Truffle"
+              ],
+              "useCases": [
+                  "Smart Contracts",
+                  "Decentralized Finance (DeFi)",
+                  "NFTs"
+              ],
+              "tutorials": [
+                  "https://ethereum.org/en/developers/#getting-started",
+                  "https://soliditylang.org/docs/",
+                  "https://docs.ipfs.io/"
+              ]
+          }
+      }
+  ],
   "overviewProducts":[
       {
           "title": "Google Play",
