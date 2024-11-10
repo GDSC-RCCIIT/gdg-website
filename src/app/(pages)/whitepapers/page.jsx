@@ -3,7 +3,14 @@ import React, { useState, useEffect } from 'react';
 
 const WhitepapersPage = () => {
     const [whitepapers, setWhitepapers] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [filters, setFilters] = useState({
+        featured: false,
+        ai: false,
+        cloudBasics: false,
+    });
 
+    // Fetch whitepapers data
     useEffect(() => {
         const fetchWhitepapers = async () => {
             try {
@@ -17,6 +24,33 @@ const WhitepapersPage = () => {
 
         fetchWhitepapers();
     }, []);
+
+    // Filter whitepapers based on search query and selected filters
+    const filteredWhitepapers = whitepapers
+        .map(section => ({
+            ...section,
+            items: section.items.filter(item => {
+                const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    item.description.toLowerCase().includes(searchQuery.toLowerCase());
+
+                const matchesFilters = (
+                    (filters.featured && section.category === 'Featured Whitepapers') ||
+                    (filters.ai && section.category === 'AI and ML') ||
+                    (filters.cloudBasics && section.category === 'Cloud Basics') ||
+                    !Object.values(filters).includes(true)
+                );
+
+                return matchesSearch && matchesFilters;
+            })
+        }))
+        .filter(section => section.items.length > 0);  // Remove sections with no matching items
+
+    // Handle filter change
+    const handleFilterChange = (e) => {
+        const { id, checked } = e.target;
+        setFilters(prev => ({ ...prev, [id]: checked }));
+    };
+
     return (
         <div className="bg-gray-50 min-h-screen p-6">
             {/* Header Section */}
@@ -41,29 +75,34 @@ const WhitepapersPage = () => {
                     <h2 className="text-lg font-semibold mt-6 mb-4">Filter by</h2>
                     <div className="space-y-2">
                         <div className="flex items-center space-x-2">
-                            <input type="checkbox" id="featured" className="w-4 h-4" />
+                            <input type="checkbox" id="featured" checked={filters.featured} onChange={handleFilterChange} className="w-4 h-4" />
                             <label htmlFor="featured" className="text-gray-700">Featured Whitepapers</label>
                         </div>
                         <div className="flex items-center space-x-2">
-                            <input type="checkbox" id="ai" className="w-4 h-4" />
+                            <input type="checkbox" id="ai" checked={filters.ai} onChange={handleFilterChange} className="w-4 h-4" />
                             <label htmlFor="ai" className="text-gray-700">AI and ML</label>
                         </div>
                         <div className="flex items-center space-x-2">
-                            <input type="checkbox" id="cloud-basics" className="w-4 h-4" />
-                            <label htmlFor="cloud-basics" className="text-gray-700">Cloud Basics</label>
+                            <input type="checkbox" id="cloudBasics" checked={filters.cloudBasics} onChange={handleFilterChange} className="w-4 h-4" />
+                            <label htmlFor="cloudBasics" className="text-gray-700">Cloud Basics</label>
                         </div>
-                        {/* Add more filters as needed */}
                     </div>
                 </aside>
 
                 {/* Main Content */}
                 <section className="w-full lg:w-3/4">
                     <div className="flex items-center space-x-4 mb-6">
-                        <input type="text" placeholder="Search" className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none" />
+                        <input
+                            type="text"
+                            placeholder="Search"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none"
+                        />
                         <button className="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold">Search</button>
                     </div>
 
-                    {whitepapers.map((section, index) => (
+                    {filteredWhitepapers.map((section, index) => (
                         <div key={index} className="mb-8">
                             <h2 className="text-2xl font-bold mb-4">{section.category}</h2>
                             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
