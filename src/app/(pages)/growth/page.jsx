@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Search } from 'lucide-react';
 import ProductsNavbar from '../../../components/Global/ProductsNavbar';
@@ -7,6 +7,26 @@ import ProductsNavbar from '../../../components/Global/ProductsNavbar';
 // Growth and Monetization Page Component
 const GrowthMonetizationPage = () => {
     const [selectedTab, setSelectedTab] = useState("Growth and monetization");
+    const [overviewProducts, setOverviewProducts] = useState([]);
+    const [allProducts, setAllProducts] = useState([]);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const overviewResponse = await fetch('http://localhost:5000/overviewProducts');
+                const allResponse = await fetch('http://localhost:5000/allProducts');
+                const overviewData = await overviewResponse.json();
+                const allData = await allResponse.json();
+
+                setOverviewProducts(overviewData);
+                setAllProducts(allData);
+            } catch (error) {
+                console.error('Error fetching product data:', error);
+            }
+        };
+
+        fetchProducts();
+    }, []);
 
     return (
         <div className="bg-white text-black">
