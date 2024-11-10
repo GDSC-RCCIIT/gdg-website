@@ -67,6 +67,9 @@
 │   ├── gro3.svg
 │   ├── gro4.svg
 │   ├── hack1.jpg
+│   ├── hall1.jpeg
+│   ├── hall2.jpeg
+│   ├── hall3.jpeg
 │   ├── img1.jpg
 │   ├── inovate1.png
 │   ├── inovate2.png
@@ -227,6 +230,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── compute-tech/
 │   │   │   │   └── page.jsx
+│   │   │   ├── confession/
+│   │   │   │   └── page.jsx
 │   │   │   ├── db-overview/
 │   │   │   │   └── page.jsx
 │   │   │   ├── devStudent/
@@ -245,6 +250,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── explore/
 │   │   │   │   └── page.jsx
+│   │   │   ├── future-tech/
+│   │   │   │   └── page.jsx
 │   │   │   ├── garage/
 │   │   │   │   └── page.jsx
 │   │   │   ├── gen-studio/
@@ -260,6 +267,8 @@
 │   │   │   ├── google-cloud-learning/
 │   │   │   │   └── page.jsx
 │   │   │   ├── growth/
+│   │   │   │   └── page.jsx
+│   │   │   ├── hall-of-fame/
 │   │   │   │   └── page.jsx
 │   │   │   ├── helpCenter/
 │   │   │   │   └── page.jsx
@@ -287,6 +296,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── moonshots/
 │   │   │   │   └── page.jsx
+│   │   │   ├── mystery/
+│   │   │   │   └── page.jsx
 │   │   │   ├── networking-overview/
 │   │   │   │   └── page.jsx
 │   │   │   ├── observability-view/
@@ -302,6 +313,8 @@
 │   │   │   ├── polls/
 │   │   │   │   └── page.jsx
 │   │   │   ├── press-corner/
+│   │   │   │   └── page.jsx
+│   │   │   ├── retro/
 │   │   │   │   └── page.jsx
 │   │   │   ├── sandbox/
 │   │   │   │   └── page.jsx
@@ -334,6 +347,8 @@
 │   │   │   ├── transform/
 │   │   │   │   └── page.jsx
 │   │   │   ├── truth/
+│   │   │   │   └── page.jsx
+│   │   │   ├── volunteer/
 │   │   │   │   └── page.jsx
 │   │   │   ├── weekly/
 │   │   │   │   └── page.jsx
