@@ -1,14 +1,39 @@
 "use client";
-import { useState } from "react";
-import { FAQs } from "./FAQs";
-import { posts as initialPosts } from "./Posts";
+import { useState, useEffect } from "react";
+
 import "./Posts.css";
 import { motion } from "framer-motion";
 
 const FAQForum = () => {
   const [activeIndex, setActiveIndex] = useState(null);
-  const [posts, setPosts] = useState(initialPosts);
+  const [posts, setPosts] = useState([]);
   const [newPost, setNewPost] = useState({ title: "", content: "" });
+  const [faqs, setFAQs] = useState([]);
+  const [expandedPosts, setExpandedPosts] = useState([]);
+  const [sortAsc, setSortAsc] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const postsResponse = await fetch("http://localhost:5000/posts");
+        const faqsResponse = await fetch("http://localhost:5000/faqs");
+
+        if (!postsResponse.ok || !faqsResponse.ok) {
+          throw new Error("Failed to fetch data");
+        }
+
+        const postsData = await postsResponse.json();
+        const faqsData = await faqsResponse.json();
+
+        setPosts(postsData);
+        setFAQs(faqsData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -28,8 +53,6 @@ const FAQForum = () => {
       setNewPost({ title: "", content: "" });
     }
   };
-  const [expandedPosts, setExpandedPosts] = useState([]);
-  const [sortAsc, setSortAsc] = useState(true);
 
   const toggleExpand = (id) => {
     setExpandedPosts(
@@ -82,7 +105,7 @@ const FAQForum = () => {
             Frequently Asked Questions
           </h2>
           <div className="space-y-6">
-            {FAQs.map((faq, index) => (
+            {faqs.map((faq, index) => (
               <motion.div
                 key={index}
                 className={`transition duration-300 ease-in-out rounded-lg shadow-md ${cardColors[index % cardColors.length]
