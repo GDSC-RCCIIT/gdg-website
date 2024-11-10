@@ -53,7 +53,7 @@ const GDSCLanding = () => {
         <CldVideoPlayer
         width="1920"
         height="1080"
-        src="RCCIIT/xbf3u4nmqnguhwj5kuiv"
+        src="RCCIIT/oul30dt9gccawqgjvlar"   //The path of the video must be set mandatorily in the cloudinary.
         className='min-h-screen w-full h-auto'
         autoplay
         muted
