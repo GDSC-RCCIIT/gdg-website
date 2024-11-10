@@ -230,6 +230,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── compute-tech/
 │   │   │   │   └── page.jsx
+│   │   │   ├── confession/
+│   │   │   │   └── page.jsx
 │   │   │   ├── db-overview/
 │   │   │   │   └── page.jsx
 │   │   │   ├── devStudent/
@@ -247,6 +249,8 @@
 │   │   │   ├── expertdev/
 │   │   │   │   └── page.jsx
 │   │   │   ├── explore/
+│   │   │   │   └── page.jsx
+│   │   │   ├── future-tech/
 │   │   │   │   └── page.jsx
 │   │   │   ├── garage/
 │   │   │   │   └── page.jsx
@@ -292,6 +296,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── moonshots/
 │   │   │   │   └── page.jsx
+│   │   │   ├── mystery/
+│   │   │   │   └── page.jsx
 │   │   │   ├── networking-overview/
 │   │   │   │   └── page.jsx
 │   │   │   ├── observability-view/
@@ -307,6 +313,8 @@
 │   │   │   ├── polls/
 │   │   │   │   └── page.jsx
 │   │   │   ├── press-corner/
+│   │   │   │   └── page.jsx
+│   │   │   ├── retro/
 │   │   │   │   └── page.jsx
 │   │   │   ├── sandbox/
 │   │   │   │   └── page.jsx
@@ -339,6 +347,8 @@
 │   │   │   ├── transform/
 │   │   │   │   └── page.jsx
 │   │   │   ├── truth/
+│   │   │   │   └── page.jsx
+│   │   │   ├── volunteer/
 │   │   │   │   └── page.jsx
 │   │   │   ├── weekly/
 │   │   │   │   └── page.jsx
