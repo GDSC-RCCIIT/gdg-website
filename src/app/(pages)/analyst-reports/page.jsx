@@ -1,15 +1,24 @@
 "use client"
-import React from 'react';
-
-const reports = [
-  { title: "Google Cloud NGFW Enterprise Certified Secure Test Report", description: "Read Miercom's test results on Google Cloud Next Generation Firewall Enterprise." },
-  { title: "Google Cloud NGFW Enterprise CyberRisk Validation Report", description: "Read SecureIQlab's test results on Google Cloud Next Generation Firewall Enterprise." },
-  { title: "Google is a Leader in The Forrester Wave™: AI Foundation Models for Language, Q2 2024", description: "Access your complimentary copy of the report to learn why Google was named a Leader." },
-  { title: "Google is a Leader in the 2024 Gartner® Magic Quadrant™ for Cloud AI Developer Services (CAIDS)", description: "Access your complimentary copy of the report to learn why Google was named a Leader." },
-  // Add more reports as needed
-];
+import React, { useState, useEffect } from 'react';
 
 const AnalystReportsPage = () => {
+  const [reports, setReports] = useState([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const fetchReports = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/reports');
+        const data = await response.json();
+        setReports(data);
+      } catch (error) {
+        console.error("Error fetching reports:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchReports();
+  }, []);
   return (
     <div className="bg-gray-50 min-h-screen p-6">
       {/* Header Section */}
@@ -49,7 +58,9 @@ const AnalystReportsPage = () => {
           <p className="text-gray-700 mb-6">
             Read what industry analysts are saying about Google Cloud. The reports listed here are written by third-party industry analysts that cover Google Cloud’s strategy, product portfolio, and differentiation. You can also learn more by reading whitepapers written by Google and the Google community.
           </p>
-
+          {loading ? (
+            <div className="text-center">Loading reports...</div>
+          ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {reports.map((report, index) => (
               <div key={index} className="bg-white p-4 shadow-md rounded-lg hover:shadow-lg transition-shadow duration-200">
@@ -59,6 +70,7 @@ const AnalystReportsPage = () => {
               </div>
             ))}
           </div>
+          )}
         </section>
       </div>
 
