@@ -1,19 +1,17 @@
 "use client";
 import { useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
+import {toast,Toaster} from "react-hot-toast"
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import "react-toastify/dist/ReactToastify.css";
+
 
 function Forgot() {
   const router = useRouter();
   const [formData, setFormData] = useState({
     email: "",
-    password: "",
   });
   const [emailError, setEmailError] = useState("");
   const [loading, setLoading] = useState(false);
- 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,24 +35,42 @@ function Forgot() {
 
     const { email } = formData;
     if (!email) {
-      toast.error("please add email");
+      toast.error("Please add email");
       setLoading(false);
       return;
     }
-    toast.success("email sent")
+
+    try {
+      const response = await fetch("/api/SendResetPassword", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userEmail: email }), // Changed from email to userEmail
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success(result.message || "Email sent successfully!");
+        setFormData((prev) => ({
+          ...prev,
+          email: "",
+        }));
+      } else {
+        toast.error(result.message || "Failed to send email.");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast.error("An error occurred. Please try again.");
+    }
+
     setLoading(false);
-    setFormData((prev) => ({
-      ...prev,
-      email: "",
-    }));
-  }
-  
+  };
 
-
-  
   return (
     <>
-      <ToastContainer />
+      <Toaster />
       <section className="bg-gradient-to-r from-[#FFCCB6] to-[#FFF8E5] min-h-screen flex items-center justify-center">
         <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
           <aside className="relative hidden lg:block lg:order-first lg:col-span-5 lg:h-full xl:col-span-6">
@@ -67,11 +83,12 @@ function Forgot() {
           <main className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
             <div className="max-w-xl lg:max-w-3xl bg-white rounded-lg shadow-lg p-8">
               <h1 className="mt-6 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500 text-center">
-               Reset Password
+                Reset Password
               </h1>
 
               <p className="mt-4 leading-relaxed text-gray-500 text-center">
-                you will receive a link on your email by which you can reset your password
+                You will receive a link on your email by which you can reset
+                your password.
               </p>
 
               <form
@@ -105,7 +122,7 @@ function Forgot() {
                     </p>
                   )}
                 </div>
-               
+
                 <div className="flex flex-col gap-4">
                   <button
                     type="submit"
@@ -116,11 +133,7 @@ function Forgot() {
                   >
                     {loading ? "Sending..." : "Send"}
                   </button>
-                  
                 </div>
-
-                
-               
               </form>
             </div>
           </main>
