@@ -141,6 +141,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── Contact/
 │   │   │   │   ├── Contactus.svg
+│   │   │   │   ├── conatct.json
+│   │   │   │   ├── contact.css
 │   │   │   │   └── page.jsx
 │   │   │   ├── Events/
 │   │   │   │   ├── EventItem.js
