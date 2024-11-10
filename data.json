@@ -48002,5 +48002,77 @@
           "title": "Can I propose an event for GDSC?",
           "content": "Yes, if you have a great idea for an event, you can propose it to the GDSC team for consideration."
       }
+  ],
+  "overviewProducts":[
+      {
+          "title": "Google Play",
+          "description": "Publish your apps and games, grow your audience, boost engagement, and earn revenue.",
+          "image": "/gro1.png"
+      },
+      {
+          "title": "Google AdMob",
+          "description": "Monetize mobile apps with targeted, in-app advertising that respects user experience.",
+          "image": "/gro2.png"
+      },
+      {
+          "title": "Google Ads",
+          "description": "Promote your website, products, and app to the right users with Google Ads.",
+          "image": "/gro3.svg"
+      },
+      {
+          "title": "Firebase",
+          "description": "An app development platform that helps you build and grow apps and games users love.",
+          "image": "/gro4.svg"
+      }
+  ],
+  "allProducts":[
+      {
+          "title": "Firebase In-App Messaging",
+          "description": "Firebase In-App Messaging helps you engage your app's active users by sending them targeted, contextual messages that encourage them to use key app features."
+      },
+      {
+          "title": "Firebase Cloud Messaging",
+          "description": "Firebase Cloud Messaging (FCM) is a cross-platform messaging solution that lets you reliably send messages at no cost."
+      },
+      {
+          "title": "Chrome Extensions",
+          "description": "Learn how to develop Chrome extensions."
+      },
+      {
+          "title": "Google Ads API",
+          "description": "Build tools to manage large Google Ads accounts and campaigns."
+      },
+      {
+          "title": "Privacy Sandbox",
+          "description": "Privacy-focused APIs and updates for cookies, advertising, identity, personalization, and fraud prevention."
+      },
+      {
+          "title": "Google Play's billing system",
+          "description": "Google Play’s billing system Sell digital in-app products and subscriptions in your app."
+      },
+      {
+          "title": "Distribute Your Apps & Games on Google Play",
+          "description": "Utilize Google Play to distribute your apps and games, which has the ability to reach over 2 billion Android devices and increase total app downloads."
+      },
+      {
+          "title": "Google Play Console",
+          "description": "Publish your apps and games with Google Play Console and grow your business on Google Play."
+      },
+      {
+          "title": "Interactive Media Ads SDKs",
+          "description": "The IMA SDKs enable publishers to monetize video, audio, or gaming content with video advertising."
+      },
+      {
+          "title": "AdSense",
+          "description": "Google AdSense provides a free, flexible way to earn money from your websites, mobile sites, and site search results."
+      },
+      {
+          "title": "Google Ads",
+          "description": "Create and manage ads that reach users looking for your products or services on Google Search, Display, YouTube, and more."
+      },
+      {
+          "title": "AdMob",
+          "description": "Discover how to monetize your mobile apps with targeted in-app advertising that matches criteria you set."
+      }
   ]
 }
