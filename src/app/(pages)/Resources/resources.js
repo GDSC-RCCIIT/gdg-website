@@ -23194,106 +23194,107 @@ if __name__ == "__main__":
             }
         ]
     }
+}
 },
 {
-        id: 21,
-        title: "Python Development",
-        description: "To learn Python, follow this roadmap",
-        extendedContent: `
-            This roadmap covers everything aspiring Python developers need to know. 
-            You'll start by learning the basics of Python syntax and structure, including variable types and control flow. 
-            Following that, you'll explore important libraries and frameworks that enhance Python's capabilities.
+    id: 21,
+    title: "Python Development",
+    description: "To learn Python, follow this roadmap",
+    extendedContent: `
+        This roadmap covers everything aspiring Python developers need to know. 
+        You'll start by learning the basics of Python syntax and structure, including variable types and control flow. 
+        Following that, you'll explore important libraries and frameworks that enhance Python's capabilities.
 
-            After getting comfortable with the basics, we'll dive into web development with Flask and Django, data analysis with Pandas, and machine learning with libraries such as scikit-learn and TensorFlow. 
-            
-            Advanced topics cover object-oriented programming, exception handling, asynchronous programming, and testing frameworks. 
-            By the end of this roadmap, you'll be equipped to build various types of applications, ranging from web apps to data analysis scripts and machine learning models.
-        `,
-        icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
-        trackInfo: {
-            prerequisites: [
-                "Basic computer skills and familiarity with programming concepts",
-                "Understanding of how software development works",
-                "A text editor or IDE (VS Code, PyCharm recommended)",
-                "Problem-solving aptitude"
-            ],
-            outcomes: [
-                "Master Python syntax and core programming concepts",
-                "Build web applications using Flask or Django",
-                "Analyze data using Pandas and NumPy",
-                "Implement machine learning algorithms",
-                "Understand and apply object-oriented programming principles",
-                "Write unit tests and documentation for your code",
-                "Deploy applications to the cloud"
-            ],
-            sections: [
-                {
-                    title: "Python Fundamentals",
-                    content: "Get familiar with the core concepts of Python: variables, data types, control flow, functions, and file I/O. Learn about Python-specific features like list comprehensions and decorators."
-                },
-                {
-                    title: "Web Development with Python",
-                    content: "Explore web frameworks such as Flask and Django, learn about REST APIs, and understand how to work with databases using SQLAlchemy or Django ORM."
-                },
-                {
-                    title: "Data Analysis and Visualization",
-                    content: "Utilize libraries like Pandas and Matplotlib for data manipulation and visualization. Understand dataframes, series, and how to perform data cleaning and analysis."
-                },
-                {
-                    title: "Machine Learning with Python",
-                    content: "Get an introduction to machine learning concepts using libraries like scikit-learn and TensorFlow. Implement algorithms and models for data prediction and analysis."
-                },
-                {
-                    title: "Advanced Python Concepts",
-                    content: "Dive into advanced topics such as concurrency with asyncio, memory management, testing with pytest, and best practices for writing clean, maintainable code."
-                }
-            ]
-        },
-        content: {
-            examples: [
-                {
-                    title: "Simple Calculator",
-                    code: `def add(x, y):
-    return x + y
+        After getting comfortable with the basics, we'll dive into web development with Flask and Django, data analysis with Pandas, and machine learning with libraries such as scikit-learn and TensorFlow. 
+        
+        Advanced topics cover object-oriented programming, exception handling, asynchronous programming, and testing frameworks. 
+        By the end of this roadmap, you'll be equipped to build various types of applications, ranging from web apps to data analysis scripts and machine learning models.
+    `,
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        prerequisites: [
+            "Basic computer skills and familiarity with programming concepts",
+            "Understanding of how software development works",
+            "A text editor or IDE (VS Code, PyCharm recommended)",
+            "Problem-solving aptitude"
+        ],
+        outcomes: [
+            "Master Python syntax and core programming concepts",
+            "Build web applications using Flask or Django",
+            "Analyze data using Pandas and NumPy",
+            "Implement machine learning algorithms",
+            "Understand and apply object-oriented programming principles",
+            "Write unit tests and documentation for your code",
+            "Deploy applications to the cloud"
+        ],
+        sections: [
+            {
+                title: "Python Fundamentals",
+                content: "Get familiar with the core concepts of Python: variables, data types, control flow, functions, and file I/O. Learn about Python-specific features like list comprehensions and decorators."
+            },
+            {
+                title: "Web Development with Python",
+                content: "Explore web frameworks such as Flask and Django, learn about REST APIs, and understand how to work with databases using SQLAlchemy or Django ORM."
+            },
+            {
+                title: "Data Analysis and Visualization",
+                content: "Utilize libraries like Pandas and Matplotlib for data manipulation and visualization. Understand dataframes, series, and how to perform data cleaning and analysis."
+            },
+            {
+                title: "Machine Learning with Python",
+                content: "Get an introduction to machine learning concepts using libraries like scikit-learn and TensorFlow. Implement algorithms and models for data prediction and analysis."
+            },
+            {
+                title: "Advanced Python Concepts",
+                content: "Dive into advanced topics such as concurrency with asyncio, memory management, testing with pytest, and best practices for writing clean, maintainable code."
+            }
+        ]
+    },
+    content: {
+        examples: [
+            {
+                title: "Simple Calculator",
+                code: `def add(x, y):
+return x + y
 
 def subtract(x, y):
-    return x - y
+return x - y
 
 def multiply(x, y):
-    return x * y
+return x * y
 
 def divide(x, y):
-    if y == 0:
-        return "Error! Division by zero."
-    return x / y
+if y == 0:
+    return "Error! Division by zero."
+return x / y
 
 if __name__ == "__main__":
-    print("Select operation:")
-    print("1.Add")
-    print("2.Subtract")
-    print("3.Multiply")
-    print("4.Divide")
+print("Select operation:")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
 
-    choice = input("Enter choice (1/2/3/4): ")
+choice = input("Enter choice (1/2/3/4): ")
 
-    num1 = float(input("Enter first number: "))
-    num2 = float(input("Enter second number: "))
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
 
-    if choice == '1':
-        print(f"{num1} + {num2} = {add(num1, num2)}")
-    elif choice == '2':
-        print(f"{num1} - {num2} = {subtract(num1, num2)}")
-    elif choice == '3':
-        print(f"{num1} * {num2} = {multiply(num1, num2)}")
-    elif choice == '4':
-        print(f"{num1} / {num2} = {divide(num1, num2)}")
-    else:
-        print("Invalid Input")`,
-                    explanation: "A simple calculator application in Python that performs addition, subtraction, multiplication, and division operations based on user input."
-                },
-                {
-                    title: "Web Scraping with Beautiful Soup",
-                    code: `import requests
+if choice == '1':
+    print(f"{num1} + {num2} = {add(num1, num2)}")
+elif choice == '2':
+    print(f"{num1} - {num2} = {subtract(num1, num2)}")
+elif choice == '3':
+    print(f"{num1} * {num2} = {multiply(num1, num2)}")
+elif choice == '4':
+    print(f"{num1} / {num2} = {divide(num1, num2)}")
+else:
+    print("Invalid Input")`,
+                explanation: "A simple calculator application in Python that performs addition, subtraction, multiplication, and division operations based on user input."
+            },
+            {
+                title: "Web Scraping with Beautiful Soup",
+                code: `import requests
 from bs4 import BeautifulSoup
 
 URL = 'https://example.com'
@@ -23303,195 +23304,3053 @@ soup = BeautifulSoup(page.content, 'html.parser')
 results = soup.find_all('h2', class_='title')
 
 for result in results:
-    print(result.text)`,
-                    explanation: "A web scraping example using Python's requests and Beautiful Soup libraries to scrape and display titles from a web page."
-                },
-                {
-                    title: "Flask Web Application",
-                    code: `from flask import Flask
+print(result.text)`,
+                explanation: "A web scraping example using Python's requests and Beautiful Soup libraries to scrape and display titles from a web page."
+            },
+            {
+                title: "Flask Web Application",
+                code: `from flask import Flask
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return 'Welcome to My Python Web App!'
+return 'Welcome to My Python Web App!'
 
 if __name__ == '__main__':
-    app.run(debug=True)`,
-                    explanation: "A basic Flask web application that defines a single route and returns a welcome message when accessed."
-                }
-            ],
+app.run(debug=True)`,
+                explanation: "A basic Flask web application that defines a single route and returns a welcome message when accessed."
+            }
+        ],
 
-            roadmap: [
-                {
-                    title: "1. Python Basics",
-                    description: "Understand the core syntax and structures of Python.",
-                    topics: [
-                        "Variables, data types, and operators",
-                        "Control flow (if, loops)",
-                        "Functions and modules",
-                        "Error handling with try/except",
-                        "Input and output operations"
-                    ]
-                },
-                {
-                    title: "2. Object-Oriented Programming",
-                    description: "Learn principles of OOP and how to implement them in Python.",
-                    topics: [
-                        "Classes and objects",
-                        "Inheritance and polymorphism",
-                        "Encapsulation and abstraction",
-                        "Magic methods and operator overloading"
-                    ]
-                },
-                {
-                    title: "3. Web Development",
-                    description: "Build web applications and APIs using Python frameworks.",
-                    topics: [
-                        "Setting up Flask or Django",
-                        "Routing and views",
-                        "Template rendering",
-                        "Working with databases (SQLAlchemy/Django ORM)",
-                        "Building RESTful APIs"
-                    ]
-                },
-                {
-                    title: "4. Data Handling and Analysis",
-                    description: "Manipulate and analyze data using Python libraries.",
-                    topics: [
-                        "Using Pandas for data analysis",
-                        "Data cleaning and transformation",
-                        "Basic data visualization with Matplotlib and Seaborn",
-                        "Introduction to NumPy for numerical computations"
-                    ]
-                },
-                {
-                    title: "5. Machine Learning and Deployment",
-                    description: "Implement ML algorithms and deploy applications.",
-                    topics: [
-                        "Understanding machine learning concepts",
-                        "Using scikit-learn for model building",
-                        "Model evaluation and validation techniques",
-                        "Deployment options using Flask or FastAPI"
-                    ]
-                }
-            ],
-            resources: {
-                documentation: [
-                    {
-                        title: "Python Official Documentation",
-                        url: "https://docs.python.org/3/",
-                        description: "The official Python documentation covering all aspects of the language.",
-                        type: "Official Documentation"
-                    },
-                    {
-                        title: "Flask Documentation",
-                        url: "https://flask.palletsprojects.com/",
-                        description: "Official Flask documentation that includes tutorials and API references.",
-                        type: "Framework Documentation"
-                    },
-                    {
-                        title: "Pandas Documentation",
-                        url: "https://pandas.pydata.org/docs/",
-                        description: "Comprehensive documentation for the Pandas library, covering all its features.",
-                        type: "Library Documentation"
-                    },
-                    {
-                        title: "Real Python",
-                        url: "https://realpython.com/",
-                        description: "In-depth tutorials and articles on Python programming.",
-                        type: "Learning Platform"
-                    }
-                ],
-                tutorials: [
-                    {
-                        title: "Codecademy Python Course",
-                        url: "https://www.codecademy.com/learn/learn-python-3",
-                        description: "Interactive Python tutorials covering the fundamentals.",
-                        type: "Interactive Course"
-                    },
-                    {
-                        title: "Coursera: Python for Everybody",
-                        url: "https://www.coursera.org/specializations/python",
-                        description: "A series of courses on Python programming for beginners.",
-                        type: "Online Course"
-                    },
-                    {
-                        title: "The Python Challenge",
-                        url: "http://www.pythonchallenge.com/",
-                        description: "A collection of challenging puzzles that can be solved using Python.",
-                        type: "Practice Course"
-                    },
-                    {
-                        title: "edX: Introduction to Computer Science and Programming Using Python",
-                        url: "https://www.edx.org/course/introduction-to-computer-science-and-programming-using-python",
-                        description: "An introduction to computer science as a tool to solve real-world analytical problems.",
-                        type: "Online Course"
-                    }
-                ],
-                videos: [
-                    {
-                        title: "Corey Schafer",
-                        url: "https://www.youtube.com/user/schafer5",
-                        description: "Practical Python tutorials covering various topics.",
-                        platform: "YouTube"
-                    },
-                    {
-                        title: "Sentdex",
-                        url: "https://www.youtube.com/user/sentdex",
-                        description: "Python programming tutorials focusing on machine learning and web development.",
-                        platform: "YouTube"
-                    },
-                    {
-                        title: "Tech With Tim",
-                        url: "https://www.youtube.com/c/TechWithTim",
-                        description: "Python coding tutorials and project ideas.",
-                        platform: "YouTube"
-                    }
-                ],
-                books: [
-                    {
-                        title: "Automate the Boring Stuff with Python",
-                        author: "Al Sweigart",
-                        description: "A practical introduction to Python with an emphasis on automation.",
-                        level: "Beginner"
-                    },
-                    {
-                        title: "Python Crash Course",
-                        author: "Eric Matthes",
-                        description: "A hands-on introduction to programming with Python.",
-                        level: "Beginner"
-                    },
-                    {
-                        title: "Fluent Python",
-                        author: "Luciano Ramalho",
-                        description: "A deep dive into Python, focusing on its features and best practices.",
-                        level: "Intermediate"
-                    }
-                ],
-                practice: [
-                    {
-                        title: "LeetCode",
-                        url: "https://leetcode.com/",
-                        description: "Programming challenges to improve your coding skills.",
-                        type: "Challenge Platform"
-                    },
-                    {
-                        title: "HackerRank",
-                        url: "https://www.hackerrank.com/domains/tutorials/10-days-of-python",
-                        description: "Python practice challenges for all skill levels.",
-                        type: "Challenge Platform"
-                    },
-                    {
-                        title: "Codewars",
-                        url: "https://www.codewars.com/",
-                        description: "Practice coding through fun challenges and community-created problems.",
-                        type: "Challenge Platform"
-                    }
+        roadmap: [
+            {
+                title: "1. Python Basics",
+                description: "Understand the core syntax and structures of Python.",
+                topics: [
+                    "Variables, data types, and operators",
+                    "Control flow (if, loops)",
+                    "Functions and modules",
+                    "Error handling with try/except",
+                    "Input and output operations"
+                ]
+            },
+            {
+                title: "2. Object-Oriented Programming",
+                description: "Learn principles of OOP and how to implement them in Python.",
+                topics: [
+                    "Classes and objects",
+                    "Inheritance and polymorphism",
+                    "Encapsulation and abstraction",
+                    "Magic methods and operator overloading"
+                ]
+            },
+            {
+                title: "3. Web Development",
+                description: "Build web applications and APIs using Python frameworks.",
+                topics: [
+                    "Setting up Flask or Django",
+                    "Routing and views",
+                    "Template rendering",
+                    "Working with databases (SQLAlchemy/Django ORM)",
+                    "Building RESTful APIs"
+                ]
+            },
+            {
+                title: "4. Data Handling and Analysis",
+                description: "Manipulate and analyze data using Python libraries.",
+                topics: [
+                    "Using Pandas for data analysis",
+                    "Data cleaning and transformation",
+                    "Basic data visualization with Matplotlib and Seaborn",
+                    "Introduction to NumPy for numerical computations"
+                ]
+            },
+            {
+                title: "5. Machine Learning and Deployment",
+                description: "Implement ML algorithms and deploy applications.",
+                topics: [
+                    "Understanding machine learning concepts",
+                    "Using scikit-learn for model building",
+                    "Model evaluation and validation techniques",
+                    "Deployment options using Flask or FastAPI"
                 ]
             }
+        ],
+        resources: {
+            documentation: [
+                {
+                    title: "Python Official Documentation",
+                    url: "https://docs.python.org/3/",
+                    description: "The official Python documentation covering all aspects of the language.",
+                    type: "Official Documentation"
+                },
+                {
+                    title: "Flask Documentation",
+                    url: "https://flask.palletsprojects.com/",
+                    description: "Official Flask documentation that includes tutorials and API references.",
+                    type: "Framework Documentation"
+                },
+                {
+                    title: "Pandas Documentation",
+                    url: "https://pandas.pydata.org/docs/",
+                    description: "Comprehensive documentation for the Pandas library, covering all its features.",
+                    type: "Library Documentation"
+                },
+                {
+                    title: "Real Python",
+                    url: "https://realpython.com/",
+                    description: "In-depth tutorials and articles on Python programming.",
+                    type: "Learning Platform"
+                }
+            ],
+            tutorials: [
+                {
+                    title: "Codecademy Python Course",
+                    url: "https://www.codecademy.com/learn/learn-python-3",
+                    description: "Interactive Python tutorials covering the fundamentals.",
+                    type: "Interactive Course"
+                },
+                {
+                    title: "Coursera: Python for Everybody",
+                    url: "https://www.coursera.org/specializations/python",
+                    description: "A series of courses on Python programming for beginners.",
+                    type: "Online Course"
+                },
+                {
+                    title: "The Python Challenge",
+                    url: "http://www.pythonchallenge.com/",
+                    description: "A collection of challenging puzzles that can be solved using Python.",
+                    type: "Practice Course"
+                },
+                {
+                    title: "edX: Introduction to Computer Science and Programming Using Python",
+                    url: "https://www.edx.org/course/introduction-to-computer-science-and-programming-using-python",
+                    description: "An introduction to computer science as a tool to solve real-world analytical problems.",
+                    type: "Online Course"
+                }
+            ],
+            videos: [
+                {
+                    title: "Corey Schafer",
+                    url: "https://www.youtube.com/user/schafer5",
+                    description: "Practical Python tutorials covering various topics.",
+                    platform: "YouTube"
+                },
+                {
+                    title: "Sentdex",
+                    url: "https://www.youtube.com/user/sentdex",
+                    description: "Python programming tutorials focusing on machine learning and web development.",
+                    platform: "YouTube"
+                },
+                {
+                    title: "Tech With Tim",
+                    url: "https://www.youtube.com/c/TechWithTim",
+                    description: "Python coding tutorials and project ideas.",
+                    platform: "YouTube"
+                }
+            ],
+            books: [
+                {
+                    title: "Automate the Boring Stuff with Python",
+                    author: "Al Sweigart",
+                    description: "A practical introduction to Python with an emphasis on automation.",
+                    level: "Beginner"
+                },
+                {
+                    title: "Python Crash Course",
+                    author: "Eric Matthes",
+                    description: "A hands-on introduction to programming with Python.",
+                    level: "Beginner"
+                },
+                {
+                    title: "Fluent Python",
+                    author: "Luciano Ramalho",
+                    description: "A deep dive into Python, focusing on its features and best practices.",
+                    level: "Intermediate"
+                }
+            ],
+            practice: [
+                {
+                    title: "LeetCode",
+                    url: "https://leetcode.com/",
+                    description: "Programming challenges to improve your coding skills.",
+                    type: "Challenge Platform"
+                },
+                {
+                    title: "HackerRank",
+                    url: "https://www.hackerrank.com/domains/tutorials/10-days-of-python",
+                    description: "Python practice challenges for all skill levels.",
+                    type: "Challenge Platform"
+                },
+                {
+                    title: "Codewars",
+                    url: "https://www.codewars.com/",
+                    description: "Practice coding through fun challenges and community-created problems.",
+                    type: "Challenge Platform"
+                }
+            ]
         }
     }
+},
+{
+    id: 22,
+    title: "Site Reliability Engineering",
+    description: "To learn Site Reliability Engineering, follow this roadmap",
+    extendedContent: `
+        Master the principles and practices of Site Reliability Engineering (SRE). Start with system 
+        administration, networking, and distributed systems fundamentals. Learn infrastructure as code, 
+        monitoring, and observability. Progress through incident management, capacity planning, and 
+        performance optimization. Study service level objectives (SLOs), error budgets, and reliability 
+        metrics. Advanced topics include chaos engineering, automated remediation, on-call best practices, 
+        and progressive delivery. Learn about building and maintaining reliable, scalable, and resilient 
+        systems at scale.
+    `,
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        prerequisites: [
+            "Strong Linux/Unix system administration skills",
+            "Programming experience (Python, Go preferred)",
+            "Basic networking knowledge",
+            "Understanding of distributed systems",
+            "Version control and CI/CD concepts",
+            "Basic cloud computing knowledge",
+            "Problem-solving aptitude"
+        ],
+        outcomes: [
+            "Design and implement monitoring solutions",
+            "Create and maintain SLOs/SLIs",
+            "Develop automation for operations",
+            "Implement incident management processes",
+            "Build reliable distributed systems",
+            "Optimize system performance",
+            "Manage production deployments",
+            "Handle on-call responsibilities",
+            "Implement security best practices",
+            "Design scalable infrastructure"
+        ],
+        sections: [
+            {
+                title: "Core SRE Principles",
+                content: "Master fundamental SRE concepts including error budgets, SLOs/SLIs/SLAs, and reliability measurements. Learn about toil reduction, automation principles, and progressive delivery. Understand the balance between reliability and feature velocity."
+            },
+            {
+                title: "Infrastructure & Automation",
+                content: "Study infrastructure as code, configuration management, and automated deployment. Learn container orchestration, cloud platforms, and infrastructure automation tools. Master CI/CD pipelines and deployment strategies."
+            },
+            {
+                title: "Monitoring & Observability",
+                content: "Learn monitoring system design, metrics collection, and alerting strategies. Study logging, tracing, and observability practices. Understand performance monitoring, capacity planning, and trend analysis."
+            },
+            {
+                title: "Incident Management",
+                content: "Master incident response procedures, post-mortem analysis, and incident documentation. Learn about on-call management, escalation procedures, and communication during outages. Study incident prevention and mitigation strategies."
+            },
+            {
+                title: "Performance & Reliability",
+                content: "Study system performance optimization, load testing, and capacity planning. Learn about reliability engineering practices, fault tolerance, and resilience testing. Understand scalability patterns and performance bottlenecks."
+            },
+            {
+                title: "Security & Compliance",
+                content: "Learn security best practices, compliance requirements, and security monitoring. Study access management, security automation, and threat detection. Understand security incident response and regulatory compliance."
+            },
+            {
+                title: "Change Management",
+                content: "Master release engineering, deployment strategies, and change control processes. Learn about progressive delivery, feature flags, and rollback procedures. Understand risk assessment and mitigation strategies."
+            },
+            {
+                title: "Team & Process",
+                content: "Study team organization, collaboration practices, and knowledge sharing. Learn about documentation standards, postmortems, and continuous improvement processes. Understand stakeholder management and cross-team coordination."
+            }
+        ]
+    },
+    content: {
+        examples: [
+            {
+                title: "SLO Monitoring System",
+                code: `from dataclasses import dataclass
+from datetime import datetime, timedelta
+import logging
+from typing import Dict, List, Optional
+import pandas as pd
+import numpy as np
+from prometheus_client import start_http_server, Counter, Histogram, Gauge
+
+@dataclass
+class SLOConfig:
+    name: str
+    target: float
+    window: timedelta
+    description: str
+    burn_rate_threshold: float = 1.0
+
+class SLOMonitor:
+    def __init__(self):
+        self.slos: Dict[str, SLOConfig] = {}
+        self.error_budgets: Dict[str, float] = {}
+        self.setup_metrics()
+        self.setup_logging()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def setup_metrics(self):
+        """Initialize Prometheus metrics."""
+        self.request_counter = Counter(
+            'service_requests_total',
+            'Total number of requests',
+            ['service', 'status']
+        )
+        
+        self.latency_histogram = Histogram(
+            'request_latency_seconds',
+            'Request latency in seconds',
+            ['service'],
+            buckets=(0.1, 0.5, 1.0, 2.0, 5.0, 10.0)
+        )
+        
+        self.error_budget_gauge = Gauge(
+            'error_budget_remaining',
+            'Remaining error budget percentage',
+            ['slo']
+        )
+        
+        # Start Prometheus HTTP server
+        start_http_server(8000)
+        
+    def add_slo(self, config: SLOConfig):
+        """Add new SLO configuration."""
+        try:
+            self.slos[config.name] = config
+            self.error_budgets[config.name] = 100.0
+            
+            logging.info(f"Added SLO: {config.name} with target {config.target}")
+            
+        except Exception as e:
+            logging.error(f"Failed to add SLO: {str(e)}")
+            raise
+            
+    def record_request(self, service: str, 
+                      success: bool, latency: float):
+        """Record service request metrics."""
+        try:
+            # Update Prometheus metrics
+            status = 'success' if success else 'failure'
+            self.request_counter.labels(
+                service=service,
+                status=status
+            ).inc()
+            
+            self.latency_histogram.labels(
+                service=service
+            ).observe(latency)
+            
+            # Update error budgets if service has SLO
+            if service in self.slos:
+                self._update_error_budget(service, success)
+                
+        except Exception as e:
+            logging.error(f"Failed to record request: {str(e)}")
+            raise
+            
+    def _update_error_budget(self, service: str, success: bool):
+        """Update error budget based on request success."""
+        slo = self.slos[service]
+        current_budget = self.error_budgets[service]
+        
+        if not success:
+            # Calculate budget burn based on window size
+            burn_rate = 1 / (slo.window.total_seconds() / 3600)  # hourly rate
+            new_budget = max(0.0, current_budget - burn_rate)
+            
+            if new_budget < current_budget:
+                logging.warning(
+                    f"Error budget for {service} reduced to {new_budget:.2f}%"
+                )
+                
+            # Check burn rate threshold
+            if burn_rate > slo.burn_rate_threshold:
+                logging.error(
+                    f"Burn rate threshold exceeded for {service}!"
+                )
+                
+            self.error_budgets[service] = new_budget
+            
+        # Update Prometheus metric
+        self.error_budget_gauge.labels(
+            slo=service
+        ).set(self.error_budgets[service])
+        
+    def get_slo_status(self, service: str) -> Dict:
+        """Get current SLO status and metrics."""
+        try:
+            if service not in self.slos:
+                raise ValueError(f"No SLO configured for {service}")
+                
+            slo = self.slos[service]
+            current_budget = self.error_budgets[service]
+            
+            # Calculate success rate from Prometheus metrics
+            total_requests = sum(
+                self.request_counter.labels(
+                    service=service, status='success'
+                )._value.get() +
+                self.request_counter.labels(
+                    service=service, status='failure'
+                )._value.get()
+            )
+            
+            success_rate = (
+                self.request_counter.labels(
+                    service=service, status='success'
+                )._value.get() / total_requests
+                if total_requests > 0 else 1.0
+            )
+            
+            # Get latency percentiles
+            latency_data = list(
+                self.latency_histogram.labels(
+                    service=service
+                )._buckets.keys()
+            )
+            p95_latency = np.percentile(latency_data, 95)
+            p99_latency = np.percentile(latency_data, 99)
+            
+            return {
+                'service': service,
+                'slo_target': slo.target,
+                'current_success_rate': success_rate,
+                'error_budget_remaining': current_budget,
+                'window_size': slo.window.total_seconds(),
+                'total_requests': total_requests,
+                'latency_p95': p95_latency,
+                'latency_p99': p99_latency,
+                'status': 'healthy' if success_rate >= slo.target else 'violated'
+            }
+            
+        except Exception as e:
+            logging.error(f"Failed to get SLO status: {str(e)}")
+            raise
+            
+    def generate_slo_report(self, timeframe: timedelta) -> pd.DataFrame:
+        """Generate SLO compliance report."""
+        try:
+            report_data = []
+            
+            for service in self.slos:
+                status = self.get_slo_status(service)
+                compliance_period = min(
+                    timeframe,
+                    self.slos[service].window
+                )
+                
+                report_data.append({
+                    'Service': service,
+                    'SLO Target': f"{self.slos[service].target * 100}%",
+                    'Current Success Rate': f"{status['current_success_rate'] * 100:.2f}%",
+                    'Error Budget Remaining': f"{status['error_budget_remaining']:.2f}%",
+                    'P95 Latency': f"{status['latency_p95']:.2f}s",
+                    'P99 Latency': f"{status['latency_p99']:.2f}s",
+                    'Total Requests': status['total_requests'],
+                    'Status': status['status'].upper(),
+                    'Compliance Period': f"{compliance_period.days} days"
+                })
+                
+            return pd.DataFrame(report_data)
+            
+        except Exception as e:
+            logging.error(f"Failed to generate report: {str(e)}")
+            raise
+
+def run_slo_monitor_demo():
+    # Initialize monitor
+    monitor = SLOMonitor()
+    
+    # Add example SLOs
+    monitor.add_slo(SLOConfig(
+        name="api_service",
+        target=0.995,  # 99.5% availability
+        window=timedelta(days=30),
+        description="API Service Availability"
+    ))
+    
+    monitor.add_slo(SLOConfig(
+        name="payment_service",
+        target=0.9999,  # 99.99% availability
+        window=timedelta(days=30),
+        description="Payment Service Availability",
+        burn_rate_threshold=0.5
+    ))
+    
+    # Simulate some requests
+    import random
+    for _ in range(1000):
+        # API Service requests
+        monitor.record_request(
+            "api_service",
+            success=random.random() > 0.01,  # 1% error rate
+            latency=random.uniform(0.1, 2.0)
+        )
+        
+        # Payment Service requests
+        monitor.record_request(
+            "payment_service",
+            success=random.random() > 0.001,  # 0.1% error rate
+            latency=random.uniform(0.1, 1.0)
+        )
+    
+    # Generate report
+    report = monitor.generate_slo_report(timedelta(days=7))
+    
+    print("\nSLO Compliance Report:")
+    print(report)
+    
+    # Get detailed status
+    for service in ["api_service", "payment_service"]:
+        status = monitor.get_slo_status(service)
+        print(f"\nDetailed Status for {service}:")
+        for key, value in status.items():
+            print(f"{key}: {value}")
+    
+    return {
+        'report': report,
+        'status': {
+            'api_service': monitor.get_slo_status("api_service"),
+            'payment_service': monitor.get_slo_status("payment_service")
+        }
+    }`,
+                explanation: "This example demonstrates SLO monitoring implementation including metrics collection, error budget tracking, and reporting functionality using Prometheus."
+            },
+            {
+                title: "Automated Remediation System",
+                code: `from typing import Dict, List, Callable, Optional
+import logging
+import yaml
+import json
+import subprocess
+import threading
+import queue
+import time
+from dataclasses import dataclass
+from datetime import datetime
+from prometheus_client import Counter, Gauge
+
+@dataclass
+class RemediationRule:
+    name: str
+    condition: Dict
+    actions: List[Dict]
+    cooldown: int  # seconds
+    max_attempts: int
+    severity: str
+    
+@dataclass
+class Alert:
+    name: str
+    severity: str
+    labels: Dict
+    annotations: Dict
+    timestamp: datetime
+
+class RemediationSystem:
+    def __init__(self, config_path: str):
+        self.rules: Dict[str, RemediationRule] = {}
+        self.last_execution: Dict[str, datetime] = {}
+        self.attempt_counts: Dict[str, int] = {}
+        self.alert_queue = queue.Queue()
+        self.setup_logging()
+        self.setup_metrics()
+        self.load_config(config_path)
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s',
+            handlers=[
+                logging.FileHandler('remediation.log'),
+                logging.StreamHandler()
+            ]
+        )
+        
+    def setup_metrics(self):
+        """Initialize Prometheus metrics."""
+        self.remediation_counter = Counter(
+            'remediation_actions_total',
+            'Total number of remediation actions',
+            ['rule', 'status']
+        )
+        
+        self.alert_gauge = Gauge(
+            'active_alerts',
+            'Number of active alerts',
+            ['severity']
+        )
+        
+    def load_config(self, config_path: str):
+        """Load remediation rules from config file."""
+        try:
+            with open(config_path, 'r') as f:
+                config = yaml.safe_load(f)
+                
+            for rule_config in config['rules']:
+                rule = RemediationRule(
+                    name=rule_config['name'],
+                    condition=rule_config['condition'],
+                    actions=rule_config['actions'],
+                    cooldown=rule_config['cooldown'],
+                    max_attempts=rule_config['max_attempts'],
+                    severity=rule_config['severity']
+                )
+                self.rules[rule.name] = rule
+                
+            logging.info(f"Loaded {len(self.rules)} remediation rules")
+            
+        except Exception as e:
+            logging.error(f"Failed to load config: {str(e)}")
+            raise
+            
+    def process_alert(self, alert: Alert):
+        """Process incoming alert and trigger remediation if needed."""
+        try:
+            # Update metrics
+            self.alert_gauge.labels(
+                severity=alert.severity
+            ).inc()
+            
+            # Add to processing queue
+            self.alert_queue.put(alert)
+            
+            logging.info(
+                f"Received alert: {alert.name} "
+                f"[{alert.severity}]"
+            )
+            
+        except Exception as e:
+            logging.error(f"Failed to process alert: {str(e)}")
+            raise
+            
+    def check_condition(self, condition: Dict, 
+                       alert: Alert) -> bool:
+        """Check if remediation condition matches alert."""
+        try:
+            # Check alert name pattern
+            if 'alert_name' in condition:
+                if not alert.name.match(condition['alert_name']):
+                    return False
+                    
+            # Check severity
+            if 'severity' in condition:
+                if alert.severity != condition['severity']:
+                    return False
+                    
+            # Check label matchers
+            if 'label_matchers' in condition:
+                for key, pattern in condition['label_matchers'].items():
+                    if key not in alert.labels:
+                        return False
+                    if not alert.labels[key].match(pattern):
+                        return False
+                        
+            return True
+            
+        except Exception as e:
+            logging.error(f"Condition check failed: {str(e)}")
+            return False
+            
+    def execute_action(self, action: Dict, 
+                      alert: Alert) -> bool:
+        """Execute remediation action."""
+        try:
+            action_type = action['type']
+            
+            if action_type == 'command':
+                return self._execute_command(action, alert)
+            elif action_type == 'http':
+                return self._execute_http(action, alert)
+            elif action_type == 'kubernetes':
+                return self._execute_kubernetes(action, alert)
+            else:
+                raise ValueError(f"Unknown action type: {action_type}")
+                
+        except Exception as e:
+            logging.error(f"Action execution failed: {str(e)}")
+            return False
+            
+    def _execute_command(self, action: Dict, 
+                        alert: Alert) -> bool:
+        """Execute shell command action."""
+        try:
+            command = action['command'].format(
+                **alert.labels,
+                **alert.annotations
+            )
+            
+            result = subprocess.run(
+                command,
+                shell=True,
+                capture_output=True,
+                text=True
+            )
+            
+            success = result.returncode == 0
+            if not success:
+                logging.error(
+                    f"Command failed: {result.stderr}"
+                )
+                
+            return success
+            
+        except Exception as e:
+            logging.error(f"Command execution failed: {str(e)}")
+            return False
+            
+    def _execute_http(self, action: Dict, 
+                     alert: Alert) -> bool:
+        """Execute HTTP request action."""
+        try:
+            import requests
+            
+            url = action['url'].format(
+                **alert.labels,
+                **alert.annotations
+            )
+            
+            method = action.get('method', 'POST')
+            headers = action.get('headers', {})
+            data = action.get('data', {})
+            
+            response = requests.request(
+                method=method,
+                url=url,
+                headers=headers,
+                json=data,
+                timeout=30
+            )
+            
+            success = response.status_code in range(200, 300)
+            if not success:
+                logging.error(
+                    f"HTTP request failed: {response.text}"
+                )
+                
+            return success
+            
+        except Exception as e:
+        logging.error(f"HTTP request failed: {str(e)}")
+            return False
+            
+    def _execute_kubernetes(self, action: Dict,
+                          alert: Alert) -> bool:
+        """Execute Kubernetes action."""
+        try:
+            from kubernetes import client, config
+            
+            # Load kubernetes configuration
+            config.load_kube_config()
+            
+            # Get appropriate API client
+            api_type = action.get('api_version', 'v1')
+            if api_type == 'v1':
+                api = client.CoreV1Api()
+            else:
+                api = client.CustomObjectsApi()
+                
+            # Execute kubernetes action
+            namespace = action.get('namespace', 'default')
+            resource_type = action['resource_type']
+            resource_name = action['resource_name'].format(
+                **alert.labels,
+                **alert.annotations
+            )
+            
+            if action['operation'] == 'restart':
+                # Delete pod to trigger restart
+                api.delete_namespaced_pod(
+                    name=resource_name,
+                    namespace=namespace
+                )
+            elif action['operation'] == 'scale':
+                # Scale deployment
+                api.patch_namespaced_deployment_scale(
+                    name=resource_name,
+                    namespace=namespace,
+                    body={'spec': {'replicas': action['replicas']}}
+                )
+                
+            return True
+            
+        except Exception as e:
+            logging.error(f"Kubernetes action failed: {str(e)}")
+            return False
+            
+    def run_remediation(self, alert: Alert, rule: RemediationRule):
+        """Execute remediation rule for an alert."""
+        try:
+            # Check cooldown period
+            if rule.name in self.last_execution:
+                cooldown_end = self.last_execution[rule.name] + \
+                             timedelta(seconds=rule.cooldown)
+                if datetime.now() < cooldown_end:
+                    logging.info(
+                        f"Skipping rule {rule.name} due to cooldown"
+                    )
+                    return
+                    
+            # Check attempt count
+            if self.attempt_counts.get(rule.name, 0) >= rule.max_attempts:
+                logging.warning(
+                    f"Max attempts reached for rule {rule.name}"
+                )
+                return
+                
+            # Execute actions
+            success = True
+            for action in rule.actions:
+                if not self.execute_action(action, alert):
+                    success = False
+                    break
+                    
+            # Update metrics and tracking
+            self.remediation_counter.labels(
+                rule=rule.name,
+                status='success' if success else 'failure'
+            ).inc()
+            
+            self.last_execution[rule.name] = datetime.now()
+            self.attempt_counts[rule.name] = \
+                self.attempt_counts.get(rule.name, 0) + 1
+                
+            if success:
+                logging.info(
+                    f"Successfully executed rule {rule.name}"
+                )
+            else:
+                logging.error(
+                    f"Failed to execute rule {rule.name}"
+                )
+                
+        except Exception as e:
+            logging.error(
+                f"Remediation execution failed: {str(e)}"
+            )
+            self.remediation_counter.labels(
+                rule=rule.name,
+                status='failure'
+            ).inc()
+            
+    def process_alerts(self):
+        """Main alert processing loop."""
+        while True:
+            try:
+                # Get alert from queue
+                alert = self.alert_queue.get(timeout=1)
+                
+                # Find matching rules
+                for rule in self.rules.values():
+                    if self.check_condition(rule.condition, alert):
+                        self.run_remediation(alert, rule)
+                        
+                # Update metrics
+                self.alert_gauge.labels(
+                    severity=alert.severity
+                ).dec()
+                
+            except queue.Empty:
+                continue
+            except Exception as e:
+                logging.error(
+                    f"Alert processing failed: {str(e)}"
+                )
+                
+    def start(self):
+        """Start the remediation system."""
+        try:
+            # Start alert processing thread
+            processing_thread = threading.Thread(
+                target=self.process_alerts,
+                daemon=True
+            )
+            processing_thread.start()
+            
+            logging.info("Remediation system started")
+            
+        except Exception as e:
+            logging.error(f"Failed to start system: {str(e)}")
+            raise
+            
+def run_remediation_demo():
+    # Example configuration
+    config = {
+        'rules': [
+            {
+                'name': 'high_cpu_remediation',
+                'condition': {
+                    'alert_name': 'HighCPUUsage',
+                    'severity': 'critical',
+                    'label_matchers': {
+                        'service': 'web-api'
+                    }
+                },
+                'actions': [
+                    {
+                        'type': 'kubernetes',
+                        'operation': 'scale',
+                        'resource_type': 'deployment',
+                        'resource_name': '{service}',
+                        'namespace': 'default',
+                        'replicas': 3
+                    }
+                ],
+                'cooldown': 300,
+                'max_attempts': 3,
+                'severity': 'critical'
+            }
+        ]
+    }
+    
+    # Save config to file
+    with open('remediation_config.yaml', 'w') as f:
+        yaml.dump(config, f)
+        
+    # Initialize system
+    system = RemediationSystem('remediation_config.yaml')
+    system.start()
+    
+    # Simulate some alerts
+    alerts = [
+        Alert(
+            name='HighCPUUsage',
+            severity='critical',
+            labels={
+                'service': 'web-api',
+                'instance': 'pod-1'
+            },
+            annotations={
+                'description': 'High CPU usage detected'
+            },
+            timestamp=datetime.now()
+        ),
+        Alert(
+            name='HighMemoryUsage',
+            severity='warning',
+            labels={
+                'service': 'cache',
+                'instance': 'pod-2'
+            },
+            annotations={
+                'description': 'High memory usage detected'
+            },
+            timestamp=datetime.now()
+        )
+    ]
+    
+    # Process alerts
+    for alert in alerts:
+        system.process_alert(alert)
+        
+    # Wait for processing
+    time.sleep(5)
+    
+    # Print metrics
+    print("\nRemediation System Metrics:")
+    for rule in system.rules:
+        success_count = system.remediation_counter.labels(
+            rule=rule,
+            status='success'
+        )._value.get()
+        failure_count = system.remediation_counter.labels(
+            rule=rule,
+            status='failure'
+        )._value.get()
+        
+        print(f"\nRule: {rule}")
+        print(f"Successful Actions: {success_count}")
+        print(f"Failed Actions: {failure_count}")
+        
+    return {
+        'rules': len(system.rules),
+        'processed_alerts': len(alerts),
+        'metrics': {
+            'success_count': success_count,
+            'failure_count': failure_count
+        }
+    }
+
+if __name__ == "__main__":
+    results = run_remediation_demo()`,
+                explanation: "This example demonstrates an automated remediation system that can execute predefined actions in response to alerts. It includes support for different action types (command, HTTP, Kubernetes), cooldown periods, and maximum attempt limits."
+            }
+        ],
+        roadmap: [
+            {
+                title: "1. SRE Foundations",
+                description: "Master core SRE concepts and principles",
+                topics: [
+                    "SLI/SLO/SLA Fundamentals",
+                    "Error Budgets",
+                    "Toil Reduction",
+                    "Monitoring Basics",
+                    "Incident Management",
+                    "System Architecture",
+                    "Risk Management"
+                ]
+            },
+            {
+                title: "2. Infrastructure & Systems",
+                description: "Learn infrastructure and system management",
+                topics: [
+                    "Infrastructure as Code",
+                    "Configuration Management",
+                    "Container Orchestration",
+                    "Cloud Platforms",
+                    "Network Architecture",
+                    "Security Basics",
+                    "Database Management"
+                ]
+            },
+            {
+                title: "3. Monitoring & Observability",
+                description: "Master monitoring and observability practices",
+                topics: [
+                    "Metrics Collection",
+                    "Log Aggregation",
+                    "Distributed Tracing",
+                    "Alerting Design",
+                    "Visualization",
+                    "Performance Monitoring",
+                    "Capacity Planning"
+                ]
+            },
+            {
+                title: "4. Reliability Engineering",
+                description: "Learn reliability engineering practices",
+                topics: [
+                    "Fault Tolerance",
+                    "Disaster Recovery",
+                    "High Availability",
+                    "Load Balancing",
+                    "Data Replication",
+                    "Failover Strategies",
+                    "Backup Management"
+                ]
+            },
+            {
+                title: "5. Incident Response",
+                description: "Master incident management and response",
+                topics: [
+                    "Incident Classification",
+                    "On-Call Management",
+                    "Post-Mortem Analysis",
+                    "Communication Protocols",
+                    "Escalation Procedures",
+                    "Recovery Strategies",
+                    "Documentation"
+                ]
+            },
+            {
+                title: "6. Performance Engineering",
+                description: "Study system performance optimization",
+                topics: [
+                    "Performance Testing",
+                    "Bottleneck Analysis",
+                    "Resource Optimization",
+                    "Caching Strategies",
+                    "Query Optimization",
+                    "Load Testing",
+                    "Profiling Tools"
+                ]
+            },
+            {
+                title: "7. Automation & Tools",
+                description: "Learn automation and tooling",
+                topics: [
+                    "CI/CD Pipelines",
+                    "Scripting Languages",
+                    "Deployment Automation",
+                    "Testing Automation",
+                    "Configuration Management",
+                    "Monitoring Tools",
+                    "Security Automation"
+                ]
+            }
+        ],
+        resources: {
+            documentation: [
+                {
+                    title: "Google SRE Books",
+                    url: "https://sre.google/books/",
+                    description: "Official Google SRE book collection",
+                    type: "Book Collection"
+                },
+                {
+                    title: "Kubernetes Documentation",
+                    url: "https://kubernetes.io/docs/",
+                    description: "Official Kubernetes documentation",
+                    type: "Platform Documentation"
+                },
+                {
+                    title: "Prometheus Documentation",
+                    url: "https://prometheus.io/docs/",
+                    description: "Monitoring system documentation",
+                    type: "Tool Documentation"
+                },
+                {
+                    title: "AWS Well-Architected Framework",
+                    url: "https://aws.amazon.com/architecture/well-architected/",
+                    description: "Best practices for cloud architecture",
+                    type: "Best Practices"
+                },
+                {
+                    title: "Terraform Documentation",
+                    url: "https://www.terraform.io/docs/",
+                    description: "Infrastructure as Code documentation",
+                    type: "Tool Documentation"
+                }
+            ],
+            tutorials: [
+                {
+                    title: "LinkedIn SRE Fundamentals",
+                    url: "https://linkedin.github.io/school-of-sre/",
+                    description: "Comprehensive SRE learning path",
+                    type: "Learning Path"
+                },
+                {
+                    title: "Katacoda SRE Scenarios",
+                    url: "https://www.katacoda.com/courses/sre",
+                    description: "Interactive SRE tutorials",
+                    type: "Interactive Learning"
+                },
+                {
+                    title: "Cloud Native Training",
+                    url: "https://www.cncf.io/certification/training/",
+                    description: "CNCF training and certification",
+                    type: "Certification Course"
+                },
+                {
+                    title: "Datadog SRE Workshop",
+                    url: "https://learn.datadoghq.com/",
+                    description: "Observability and monitoring tutorials",
+                    type: "Workshop"
+                },
+                {
+                    title: "GitLab SRE Guide",
+                    url: "https://about.gitlab.com/handbook/engineering/infrastructure/",
+                    description: "Real-world SRE practices",
+                    type: "Guide"
+                }
+            ],
+            videos: [
+                {
+                    title: "Google Cloud SRE Series",
+                    url: "https://www.youtube.com/playlist?list=PLIivdWyY5sqJrKl7D2u-gmis8h9K66qoj",
+                    description: "SRE practices and principles",
+                    platform: "YouTube"
+                },
+                {
+                    title: "SREcon Presentations",
+                    url: "https://www.usenix.org/conference/srecon",
+                    description: "Conference talks on SRE",
+                    platform: "Conference"
+                },
+                {
+                    title: "Infrastructure as Code Tutorial",
+                    url: "https://www.youtube.com/c/HashiCorp",
+                    description: "HashiCorp infrastructure tutorials",
+                    platform: "YouTube"
+                },
+                {
+                    title: "Monitoring and Observability",
+                    url: "https://www.youtube.com/c/PrometheusIo",
+                    description: "Prometheus and monitoring tutorials",
+                    platform: "YouTube"
+                },
+                {
+                    title: "KubeCon Talks",
+                    url: "https://www.youtube.com/c/CloudNativeComputingFoundation",
+                    description: "Cloud native technologies talks",
+                    platform: "YouTube"
+                }
+            ],
+            books: [
+                {
+                    title: "Site Reliability Engineering",
+                    author: "Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Murphy",
+                    description: "Fundamental SRE concepts and practices",
+                    level: "Intermediate"
+                },
+                {
+                    title: "The Site Reliability Workbook",
+                    author: "Betsy Beyer, Niall Murphy, David K. Rensin, Kent Kawahara, Stephen Thorne",
+                    description: "Practical SRE implementation",
+                    level: "Advanced"
+                },
+                {
+                    title: "Implementing Service Level Objectives",
+                    author: "Alex Hidalgo",
+                    description: "SLO implementation guide",
+                    level: "Intermediate"
+                },
+                {
+                    title: "Cloud Native DevOps with Kubernetes",
+                    author: "John Arundel, Justin Domingus",
+                    description: "Kubernetes and cloud native practices",
+                    level: "Intermediate"
+                },
+                {
+                    title: "Observability Engineering",
+                    author: "Charity Majors, Liz Fong-Jones, George Miranda",
+                    description: "Observability principles and practices",
+                    level: "Advanced"
+                }
+            ],
+            tools: [
+                {
+                    title: "Prometheus",
+                    url: "https://prometheus.io/",
+                    description: "Monitoring and alerting toolkit",
+                    type: "Monitoring",
+                    category: "Essential"
+                },
+                {
+                    title: "Grafana",
+                    url: "https://grafana.com/",
+                    description: "Metrics visualization platform",
+                    type: "Visualization",
+                    category: "Essential"
+                },
+                {
+                    title: "Kubernetes",
+                    url: "https://kubernetes.io/",
+                    description: "Container orchestration platform",
+                    type: "Platform",
+                    category: "Essential"
+                },
+                {
+                    title: "Terraform",
+                    url: "https://www.terraform.io/",
+                    description: "Infrastructure as Code tool",
+                    type: "IaC",
+                    category: "Essential"
+                },
+                {
+                    title: "PagerDuty",
+                    url: "https://www.pagerduty.com/",
+                    description: "Incident management platform",
+                    type: "Incident Management",
+                    category: "Essential"
+                }
+            ],
+            communities: [
+                {
+                    title: "r/sre",
+                    url: "https://www.reddit.com/r/sre/",
+                    description: "SRE community on Reddit",
+                    type: "Forum"
+                },
+                {
+                    title: "SREcon",
+                    url: "https://www.usenix.org/srecon",
+                    description: "SRE conference community",
+                    type: "Conference"
+                },
+                {
+                    title: "CNCF Slack",
+                    url: "https://slack.cncf.io/",
+                    description: "Cloud Native Computing Foundation community",
+                    type: "Chat Platform"
+                },
+                {
+                    title: "DevOps Stack Exchange",
+                    url: "https://devops.stackexchange.com/",
+                    description: "Q&A for DevOps and SRE",
+                    type: "Q&A Forum"
+                },
+                {
+                    title: "SRE Weekly",
+                    url: "https://sreweekly.com/",
+                    description: "Weekly SRE newsletter",
+                    type: "Newsletter"
+                }
+            ],
+            podcasts: [
+                {
+                    title: "SRE Radio",
+                    url: "https://www.sreradio.com/",
+                    description: "Interviews with SRE practitioners",
+                    platform: "Podcast"
+                },
+                {
+                    title: "Google SRE Podcast",
+                    url: "https://sre.google/podcast/",
+                    description: "Official Google SRE podcast",
+                    platform: "Podcast"
+                },
+                {
+                    title: "On-Call Nightmares",
+                    url: "https://oncallnightmares.com/",
+                    description: "Real incident stories and learnings",
+                    platform: "Podcast"
+                },
+                {
+                    title: "The NGINX Podcast",
+                    url: "https://www.nginx.com/resources/podcasts/",
+                    description: "Infrastructure and reliability discussions",
+                    platform: "Podcast"
+                }
+            ],
+            blogs: [
+                {
+                    title: "Google SRE Blog",
+                    url: "https://sre.google/blog/",
+                    description: "Official Google SRE blog",
+                    type: "Company Blog"
+                },
+                {
+                    title: "Netflix Tech Blog",
+                    url: "https://netflixtechblog.com/",
+                    description: "Netflix engineering practices",
+                    type: "Company Blog"
+                },
+                {
+                    title: "Increment",
+                    url: "https://increment.com/",
+                    description: "In-depth engineering topics",
+                    type: "Publication"
+                },
+                {
+                    title: "Charity Majors' Blog",
+                    url: "https://charity.wtf/",
+                    description: "Observability and SRE insights",
+                    type: "Personal Blog"
+                }
+            ]
+        },
+        practice: {
+            beginnerExercises: [
+                {
+                    title: "Uptime SLO Calculator",
+                    difficulty: "Easy",
+                    description: "Create a tool to calculate service uptime SLOs, error budgets, and compliance monitoring.",
+                    hints: [
+                        "Calculate allowable downtime",
+                        "Track error budget burn rate",
+                        "Implement rolling window",
+                        "Add alerting thresholds"
+                    ],
+                    solution: {
+                        code: `from datetime import datetime, timedelta
+    import logging
+    from typing import Dict, List, Optional
+    from dataclasses import dataclass
+    
+    @dataclass
+    class SLOConfig:
+        target_percentage: float
+        rolling_window_days: int
+        burn_rate_threshold: float = 1.0
+    
+    class UptimeCalculator:
+        def __init__(self, config: SLOConfig):
+            self.config = config
+            self.incidents = []
+            self.setup_logging()
+            
+        def setup_logging(self):
+            logging.basicConfig(
+                level=logging.INFO,
+                format='%(asctime)s - %(levelname)s - %(message)s'
+            )
+            
+        def add_incident(self, start_time: datetime, 
+                        duration_minutes: int):
+            """Record a downtime incident."""
+            try:
+                incident = {
+                    'start_time': start_time,
+                    'duration': timedelta(minutes=duration_minutes),
+                    'end_time': start_time + timedelta(minutes=duration_minutes)
+                }
+                self.incidents.append(incident)
+                
+                logging.info(
+                    f"Added incident: {duration_minutes} minutes "
+                    f"starting at {start_time}"
+                )
+                
+            except Exception as e:
+                logging.error(f"Failed to add incident: {str(e)}")
+                raise
+                
+        def calculate_uptime(self, start_time: datetime, 
+                            end_time: datetime) -> Dict:
+            """Calculate uptime metrics for given time period."""
+            try:
+                # Calculate total period duration
+                period_duration = end_time - start_time
+                total_minutes = period_duration.total_seconds() / 60
+                
+                # Calculate total downtime
+                downtime_minutes = 0
+                for incident in self.incidents:
+                    if (incident['start_time'] < end_time and
+                        incident['end_time'] > start_time):
+                        # Calculate overlap
+                        overlap_start = max(
+                            incident['start_time'],
+                            start_time
+                        )
+                        overlap_end = min(
+                            incident['end_time'],
+                            end_time
+                        )
+                        downtime_minutes += (
+                            (overlap_end - overlap_start).total_seconds() / 60
+                        )
+                        
+                # Calculate metrics
+                uptime_percentage = (
+                    (total_minutes - downtime_minutes) / total_minutes * 100
+                )
+                
+                # Calculate error budget
+                allowed_downtime = total_minutes * \
+                                 (1 - self.config.target_percentage / 100)
+                remaining_budget = allowed_downtime - downtime_minutes
+                budget_percentage = (
+                    remaining_budget / allowed_downtime * 100
+                    if allowed_downtime > 0 else 0
+                )
+                
+                # Calculate burn rate
+                burn_rate = (
+                    downtime_minutes / allowed_downtime
+                    if allowed_downtime > 0 else float('inf')
+                )
+                
+                return {
+                    'period_start': start_time,
+                    'period_end': end_time,
+                    'uptime_percentage': uptime_percentage,
+                    'downtime_minutes': downtime_minutes,
+                    'remaining_budget_minutes': remaining_budget,
+                    'budget_percentage': budget_percentage,
+                    'burn_rate': burn_rate,
+                    'compliant': uptime_percentage >= self.config.target_percentage
+                }
+                
+            except Exception as e:
+                logging.error(f"Calculation failed: {str(e)}")
+                raise
+                
+        def get_current_status(self) -> Dict:
+            """Get current SLO status for rolling window."""
+            try:
+                end_time = datetime.now()
+                start_time = end_time - timedelta(
+                    days=self.config.rolling_window_days
+                )
+                
+                status = self.calculate_uptime(start_time, end_time)
+                
+                # Check burn rate alert
+                if status['burn_rate'] > self.config.burn_rate_threshold:
+                    logging.warning(
+                        f"High burn rate detected: {status['burn_rate']:.2f}"
+                    )
+                    
+                return status
+                
+            except Exception as e:
+                logging.error(f"Status check failed: {str(e)}")
+                raise
+                
+        def generate_report(self) -> Dict:
+            """Generate detailed SLO report."""
+            try:
+                current_status = self.get_current_status()
+                
+                # Calculate trending
+                previous_start = current_status['period_start'] - timedelta(
+                    days=self.config.rolling_window_days
+                )
+                previous_status = self.calculate_uptime(
+                    previous_start,
+                    current_status['period_start']
+                )
+                
+                trend = (
+                    current_status['uptime_percentage'] -
+                    previous_status['uptime_percentage']
+                )
+                
+                report = {
+                    'current_status': current_status,
+                    'trend': trend,
+                    'total_incidents': len(self.incidents),
+                    'slo_target': self.config.target_percentage,
+                    'window_days': self.config.rolling_window_days,
+                    'recommendations': []
+                }
+                
+                # Generate recommendations
+                if current_status['burn_rate'] > self.config.burn_rate_threshold:
+                    report['recommendations'].append(
+                        "High burn rate detected - review recent incidents"
+                    )
+                    
+                if current_status['budget_percentage'] < 25:
+                    report['recommendations'].append(
+                        "Low error budget remaining - consider reducing changes"
+                    )
+                    
+                return report
+                
+            except Exception as e:
+                logging.error(f"Report generation failed: {str(e)}")
+                raise
+    
+    def run_uptime_calculator_demo():
+        # Initialize calculator
+        config = SLOConfig(
+            target_percentage=99.9,  # 99.9% uptime target
+            rolling_window_days=30,
+            burn_rate_threshold=1.5
+        )
+        calculator = UptimeCalculator(config)
+        
+        # Add some sample incidents
+        now = datetime.now()
+        calculator.add_incident(
+            now - timedelta(days=5),
+            duration_minutes=45
+        )
+        calculator.add_incident(
+            now - timedelta(days=2),
+            duration_minutes=30
+        )
+        calculator.add_incident(
+            now - timedelta(hours=6),
+            duration_minutes=15
+        )
+        
+        # Generate report
+        report = calculator.generate_report()
+        
+        print("\nSLO Report:")
+        print(f"Target Uptime: {config.target_percentage}%")
+        print(f"Current Uptime: {report['current_status']['uptime_percentage']:.3f}%")
+        print(f"Error Budget Remaining: {report['current_status']['budget_percentage']:.1f}%")
+        print(f"Burn Rate: {report['current_status']['burn_rate']:.2f}")
+        print(f"Trend: {'↑' if report['trend'] >= 0 else '↓'} {abs(report['trend']):.3f}%")
+        
+        if report['recommendations']:
+            print("\nRecommendations:")
+            for rec in report['recommendations']:
+                print(f"- {rec}")
+                
+        return report
+    
+    if __name__ == "__main__":
+        results = run_uptime_calculator_demo()`,
+                        explanation: "This exercise demonstrates SLO calculation and monitoring, including error budget tracking, burn rate calculation, and trend analysis."
+                    }
+                },
+                {
+                    title: "Log Analysis System",
+                    difficulty: "Easy",
+                    description: "Create a log analysis tool to detect patterns and anomalies in service logs.",
+                    hints: [
+                        "Parse different log formats",
+                        "Calculate error rates",
+                        "Detect suspicious patterns",
+                        "Generate summary reports"
+                    ],
+                    solution: {
+                        code: `import re
+    from datetime import datetime
+    from collections import defaultdict
+    import logging
+    from typing import Dict, List, Optional
+    import json
+    from dataclasses import dataclass
+    
+    @dataclass
+    class LogPattern:
+        name: str
+        pattern: str
+        severity: str
+        threshold: int
+    
+    class LogAnalyzer:
+        def __init__(self):
+            self.patterns = []
+            self.log_entries = []
+            self.setup_logging()
+            
+        def setup_logging(self):
+            logging.basicConfig(
+                level=logging.INFO,
+                format='%(asctime)s - %(levelname)s - %(message)s'
+            )
+            
+        def add_pattern(self, pattern: LogPattern):
+            """Add pattern for detection."""
+            try:
+                # Validate regex pattern
+                re.compile(pattern.pattern)
+                self.patterns.append(pattern)
+                
+                logging.info(
+                    f"Added pattern: {pattern.name}"
+                )
+                
+            except Exception as e:
+                logging.error(f"Invalid pattern: {str(e)}")
+                raise
+                
+        def parse_log_file(self, file_path: str):
+            """Parse and analyze log file."""
+            try:
+                with open(file_path, 'r') as f:
+                    for line in f:
+                        self.analyze_line(line.strip())
+                        
+            except Exception as e:
+                logging.error(f"Log parsing failed: {str(e)}")
+                raise
+                
+        def analyze_line(self, line: str):
+            """Analyze single log line."""
+            try:
+                # Extract timestamp and severity
+                timestamp_match = re.search(
+                    r'\[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\]',
+                    line
+                )
+                severity_match = re.search(
+                    r'\[(ERROR|WARN|INFO|DEBUG)\]',
+                    line
+                )
+                
+                if timestamp_match and severity_match:
+                    entry = {
+                        'timestamp': datetime.strptime(
+                            timestamp_match.group(1),
+                            '%Y-%m-%d %H:%M:%S'
+                        ),
+                        'severity': severity_match.group(1),
+                        'content': line,
+                        'matched_patterns': []
+                    }
+                    
+                    # Check for pattern matches
+                    for pattern in self.patterns:
+                        if re.search(pattern.pattern, line):
+                            entry['matched_patterns'].append(
+                                pattern.name
+                            )
+                            
+                    self.log_entries.append(entry)
+                    
+            except Exception as e:
+                logging.error(f"Line analysis failed: {str(e)}")
+                
+        def analyze_patterns(self) -> Dict:
+            """Analyze pattern occurrences."""
+            try:
+                pattern_counts = defaultdict(int)
+                severity_counts = defaultdict(int)
+                alerts = []
+                
+                for entry in self.log_entries:
+                    # Count severities
+                    severity_counts[entry['severity']] += 1
+                    
+                    # Count and check patterns
+                    for pattern_name in entry['matched_patterns']:
+                        pattern_counts[pattern_name] += 1
+                        
+                        # Check thresholds
+                        pattern = next(
+                            p for p in self.patterns
+                            if p.name == pattern_name
+                        )
+                        if pattern_counts[pattern_name] >= pattern.threshold:
+                            alerts.append({
+                                'pattern': pattern_name,
+                                'count': pattern_counts[pattern_name],
+                                'severity': pattern.severity,
+                                'threshold': pattern.threshold
+                            })
+                            
+                return {
+                    'pattern_matches': dict(pattern_counts),
+                    'severity_distribution': dict(severity_counts),
+                    'alerts': alerts
+                }
+                
+            except Exception as e:
+                logging.error(f"Pattern analysis failed: {str(e)}")
+                raise
+                
+        def generate_summary(self) -> Dict:
+            """Generate analysis summary."""
+            try:
+                if not self.log_entries:
+                    return {
+                        'status': 'No logs analyzed'
+                    }
+                    
+                analysis = self.analyze_patterns()
+                
+                # Calculate time range
+                timestamps = [
+                    entry['timestamp'] 
+                    for entry in self.log_entries
+                ]
+                start_time = min(timestamps)
+                end_time = max(timestamps)
+                
+                # Calculate error rate
+                total_logs = len(self.log_entries)
+                error_count = analysis['severity_distribution'].get(
+                    'ERROR',
+                    0
+                )
+                error_rate = (
+                    error_count / total_logs * 100
+                    if total_logs > 0 else 0
+                )
+                
+                summary = {
+                    'time_range': {
+                        'start': start_time,
+                        'end': end_time
+                    },
+                    'total_logs': total_logs,
+                    'error_rate': error_rate,
+                    'pattern_matches': analysis['pattern_matches'],
+                    'severity_distribution': 
+                        analysis['severity_distribution'],
+                    'alerts': analysis['alerts']
+                }
+                
+                return summary
+                
+            except Exception as e:
+                logging.error(f"Summary generation failed: {str(e)}")
+                raise
+    
+    def run_log_analyzer_demo():
+        # Initialize analyzer
+        analyzer = LogAnalyzer()
+        
+        # Add patterns to detect
+        analyzer.add_pattern(LogPattern(
+            name="connection_timeout",
+            pattern=r"Connection timed out",
+            severity="ERROR",
+            threshold=5
+        ))
+        
+        analyzer.add_pattern(LogPattern(
+            name="high_latency",
+            pattern=r"Response time > 1000ms",
+            severity="WARN",
+            threshold=10
+        ))
+        
+        # Create sample log file
+        with open('sample.log', 'w') as f:
+            logs = [
+                "[2024-01-01 10:00:00] [INFO] Server started",
+                "[2024-01-01 10:01:00] [ERROR] Connection timed out",
+                "[2024-01-01 10:02:00] [WARN] Response time > 1000ms",
+                "[2024-01-01 10:03:00] [ERROR] Connection timed out",
+                "[2024-01-01 10:04:00] [INFO] Request processed",
+                "[2024-01-01 10:05:00] [ERROR] Connection timed out",
+                "[2024-01-01 10:06:00] [WARN] Response time > 1000ms",
+            ]
+            f.write('\n'.join(logs))
+        
+        # Analyze logs
+        analyzer.parse_log_file('sample.log')
+        
+        # Generate summary
+        summary = analyzer.generate_summary()
+        
+        print("\nLog Analysis Summary:")
+        print(f"Total Logs: {summary['total_logs']}")
+        print(f"Error Rate: {summary['error_rate']:.1f}%")
+        
+        print("\nSeverity Distribution:")
+        for severity, count in summary['severity_distribution'].items():
+            print(f"  {severity}: {count}")
+            
+        print("\nPattern Matches:")
+        for pattern, count in summary['pattern_matches'].items():
+            print(f"  {pattern}: {count}")
+            
+        if summary['alerts']:
+            print("\nAlerts:")
+            for alert in summary['alerts']:
+                print(f"- {alert['pattern']}: {alert['count']} occurrences "
+                      f"(threshold: {alert['threshold']})")
+        
+        return summary
+    
+    if __name__ == "__main__":
+        results = run_log_analyzer_demo()`,
+        explanation: "This exercise demonstrates log analysis capabilities including pattern matching, error rate calculation, and anomaly detection. Key features include error detection, severity distribution, and alert generation."
+    }
+        }
+            ],
+    intermediateExercises: [
+        {
+            title: "Capacity Planning Tool",
+            difficulty: "Medium",
+            description: "Create a system for predicting resource needs based on historical usage and growth patterns.",
+            hints: [
+                "Analyze historical metrics",
+                "Use trend analysis",
+                "Implement forecasting models",
+                "Include seasonality detection"
+            ],
+            solution: {
+                code: `import pandas as pd
+import numpy as np
+from datetime import datetime, timedelta
+import logging
+from typing import Dict, List, Optional
+from dataclasses import dataclass
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import StandardScaler
+
+@dataclass
+class ResourceMetrics:
+    timestamp: datetime
+    cpu_usage: float
+    memory_usage: float
+    disk_usage: float
+    network_throughput: float
+
+class CapacityPlanner:
+    def __init__(self):
+        self.metrics_history = []
+        self.scaler = StandardScaler()
+        self.setup_logging()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def add_metrics(self, metrics: ResourceMetrics):
+        """Add resource usage metrics."""
+        try:
+            self.metrics_history.append(metrics)
+            logging.info(f"Added metrics for {metrics.timestamp}")
+        except Exception as e:
+            logging.error(f"Failed to add metrics: {str(e)}")
+            raise
+            
+    def prepare_data(self) -> pd.DataFrame:
+        """Convert metrics to DataFrame and prepare for analysis."""
+        try:
+            data = pd.DataFrame([
+                {
+                    'timestamp': m.timestamp,
+                    'cpu_usage': m.cpu_usage,
+                    'memory_usage': m.memory_usage,
+                    'disk_usage': m.disk_usage,
+                    'network_throughput': m.network_throughput
+                }
+                for m in self.metrics_history
+            ])
+            
+            data.set_index('timestamp', inplace=True)
+            data.sort_index(inplace=True)
+            
+            return data
+            
+        except Exception as e:
+            logging.error(f"Data preparation failed: {str(e)}")
+            raise
+            
+    def analyze_trends(self, data: pd.DataFrame) -> Dict:
+        """Analyze resource usage trends."""
+        try:
+            trends = {}
+            
+            for column in data.columns:
+                # Calculate basic statistics
+                stats = {
+                    'mean': data[column].mean(),
+                    'std': data[column].std(),
+                    'min': data[column].min(),
+                    'max': data[column].max(),
+                    'growth_rate': self._calculate_growth_rate(data[column])
+                }
+                
+                # Detect seasonality
+                stats['seasonality'] = self._detect_seasonality(data[column])
+                
+                trends[column] = stats
+                
+            return trends
+            
+        except Exception as e:
+            logging.error(f"Trend analysis failed: {str(e)}")
+            raise
+            
+    def _calculate_growth_rate(self, series: pd.Series) -> float:
+        """Calculate growth rate using linear regression."""
+        try:
+            X = np.arange(len(series)).reshape(-1, 1)
+            y = series.values
+            
+            model = LinearRegression()
+            model.fit(X, y)
+            
+            # Convert slope to daily growth rate
+            daily_rate = model.coef_[0]
+            
+            return daily_rate
+            
+        except Exception as e:
+            logging.error(f"Growth rate calculation failed: {str(e)}")
+            raise
+            
+    def _detect_seasonality(self, series: pd.Series) -> Dict:
+        """Detect seasonal patterns in the data."""
+        try:
+            # Resample to hourly data
+            hourly = series.resample('H').mean()
+            
+            # Calculate hourly and daily patterns
+            hourly_pattern = hourly.groupby(hourly.index.hour).mean()
+            daily_pattern = hourly.groupby(hourly.index.dayofweek).mean()
+            
+            # Calculate strength of seasonality
+            hourly_strength = hourly_pattern.std() / series.std()
+            daily_strength = daily_pattern.std() / series.std()
+            
+            return {
+                'hourly_strength': hourly_strength,
+                'daily_strength': daily_strength,
+                'peak_hour': hourly_pattern.idxmax(),
+                'peak_day': daily_pattern.idxmax()
+            }
+            
+        except Exception as e:
+            logging.error(f"Seasonality detection failed: {str(e)}")
+            raise
+            
+    def forecast_resources(self, horizon_days: int) -> Dict:
+        """Forecast resource needs for specified horizon."""
+        try:
+            data = self.prepare_data()
+            trends = self.analyze_trends(data)
+            
+            forecasts = {}
+            for resource in data.columns:
+                # Get current trends
+                current_usage = data[resource].iloc[-1]
+                growth_rate = trends[resource]['growth_rate']
+                seasonality = trends[resource]['seasonality']
+                
+                # Calculate base forecast
+                base_forecast = current_usage + (
+                    growth_rate * np.arange(horizon_days)
+                )
+                
+                # Add seasonality if significant
+                if seasonality['daily_strength'] > 0.1:
+                    # Add daily pattern
+                    daily_pattern = np.tile(
+                        data[resource].groupby(
+                            data.index.dayofweek
+                        ).mean().values,
+                        horizon_days // 7 + 1
+                    )[:horizon_days]
+                    
+                    base_forecast += daily_pattern
+                    
+                forecasts[resource] = {
+                    'values': base_forecast.tolist(),
+                    'peak_estimate': np.max(base_forecast),
+                    'average_estimate': np.mean(base_forecast)
+                }
+                
+            return forecasts
+            
+        except Exception as e:
+            logging.error(f"Forecast generation failed: {str(e)}")
+            raise
+            
+    def generate_recommendations(self, 
+                               forecasts: Dict,
+                               thresholds: Dict) -> List[str]:
+        """Generate capacity planning recommendations."""
+        try:
+            recommendations = []
+            
+            for resource, forecast in forecasts.items():
+                threshold = thresholds.get(resource, 0.8)  # Default 80%
+                
+                # Check if peak usage exceeds threshold
+                if forecast['peak_estimate'] > threshold:
+                    days_to_threshold = next(
+                        (i for i, v in enumerate(forecast['values'])
+                         if v > threshold),
+                        -1
+                    )
+                    
+                    if days_to_threshold != -1:
+                        recommendations.append(
+                            f"{resource}: Upgrade needed in {days_to_threshold} "
+                            f"days (Peak: {forecast['peak_estimate']:.1%})"
+                        )
+                        
+                # Check growth rate
+                if resource in forecast['values']:
+                    growth_rate = (
+                        forecast['values'][-1] / forecast['values'][0] - 1
+                    )
+                    if growth_rate > 0.5:  # 50% growth
+                        recommendations.append(
+                            f"{resource}: High growth rate detected "
+                            f"({growth_rate:.1%})"
+                        )
+                        
+            return recommendations
+            
+        except Exception as e:
+            logging.error(f"Recommendation generation failed: {str(e)}")
+            raise
+            
+    def generate_report(self, horizon_days: int) -> Dict:
+        """Generate comprehensive capacity planning report."""
+        try:
+            data = self.prepare_data()
+            trends = self.analyze_trends(data)
+            forecasts = self.forecast_resources(horizon_days)
+            
+            # Define resource thresholds
+            thresholds = {
+                'cpu_usage': 0.8,
+                'memory_usage': 0.8,
+                'disk_usage': 0.85,
+                'network_throughput': 0.75
+            }
+            
+            recommendations = self.generate_recommendations(
+                forecasts,
+                thresholds
+            )
+            
+            report = {
+                'current_usage': {
+                    resource: data[resource].iloc[-1]
+                    for resource in data.columns
+                },
+                'trends': trends,
+                'forecasts': forecasts,
+                'recommendations': recommendations,
+                'analysis_period': {
+                    'start': data.index[0],
+                    'end': data.index[-1]
+                },
+                'forecast_horizon': horizon_days
+            }
+            
+            return report
+            
+        except Exception as e:
+            logging.error(f"Report generation failed: {str(e)}")
+            raise
+
+def run_capacity_planner_demo():
+    # Initialize planner
+    planner = CapacityPlanner()
+    
+    # Generate sample data
+    now = datetime.now()
+    for i in range(30):  # 30 days of history
+        timestamp = now - timedelta(days=30-i)
+        
+        # Generate metrics with trends and patterns
+        base_cpu = 0.5 + i * 0.01  # Upward trend
+        base_memory = 0.6 + i * 0.005  # Slower upward trend
+        base_disk = 0.4 + i * 0.02  # Faster upward trend
+        base_network = 0.3 + np.sin(i * np.pi / 7) * 0.1  # Weekly pattern
+        
+        # Add some random variation
+        metrics = ResourceMetrics(
+            timestamp=timestamp,
+            cpu_usage=min(1.0, base_cpu + np.random.normal(0, 0.05)),
+            memory_usage=min(1.0, base_memory + np.random.normal(0, 0.03)),
+            disk_usage=min(1.0, base_disk + np.random.normal(0, 0.02)),
+            network_throughput=max(0, base_network + np.random.normal(0, 0.04))
+        )
+        
+        planner.add_metrics(metrics)
+    
+    # Generate report
+    report = planner.generate_report(horizon_days=14)
+    
+    print("\nCapacity Planning Report")
+    print("========================")
+    
+    print("\nCurrent Resource Usage:")
+    for resource, usage in report['current_usage'].items():
+        print(f"{resource}: {usage:.1%}")
+        
+    print("\nResource Trends:")
+    for resource, trend in report['trends'].items():
+        print(f"\n{resource}:")
+        print(f"  Growth Rate: {trend['growth_rate']*100:.2f}% per day")
+        print(f"  Peak Usage: {trend['max']:.1%}")
+        if trend['seasonality']['daily_strength'] > 0.1:
+            print(f"  Peak Day: {trend['seasonality']['peak_day']}")
+            
+    print("\nRecommendations:")
+    for rec in report['recommendations']:
+        print(f"- {rec}")
+    
+    return report
+
+if __name__ == "__main__":
+    results = run_capacity_planner_demo()`,
+                explanation: "This exercise demonstrates capacity planning capabilities including trend analysis, seasonality detection, and resource forecasting using statistical methods. It includes comprehensive reporting and actionable recommendations."
+            }
+        },
+        {
+            title: "Service Dependency Mapper",
+            difficulty: "Medium",
+            description: "Build a tool to analyze and visualize service dependencies and potential failure points.",
+            hints: [
+                "Map service relationships",
+                "Calculate dependency chains",
+                "Identify critical paths",
+                "Analyze failure impacts"
+            ],
+            solution: {
+                code: `from typing import Dict, List, Set, Optional
+import networkx as nx
+import matplotlib.pyplot as plt
+import logging
+from dataclasses import dataclass
+import json
+from collections import defaultdict
+
+@dataclass
+class ServiceDependency:
+    source: str
+    target: str
+    dependency_type: str
+    latency_slo: float
+    is_critical: bool
+
+@dataclass
+class Service:
+    name: str
+    tier: str
+    slo: float
+    owner: str
+    criticality: str
+
+class DependencyMapper:
+    def __init__(self):
+        self.services: Dict[str, Service] = {}
+        self.dependencies: List[ServiceDependency] = []
+        self.graph = nx.DiGraph()
+        self.setup_logging()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def add_service(self, service: Service):
+        """Add service to the dependency map."""
+        try:
+            self.services[service.name] = service
+            self.graph.add_node(
+                service.name,
+                tier=service.tier,
+                slo=service.slo,
+                owner=service.owner,
+                criticality=service.criticality
+            )
+            
+            logging.info(f"Added service: {service.name}")
+            
+        except Exception as e:
+            logging.error(f"Failed to add service: {str(e)}")
+            raise
+            
+    def add_dependency(self, dependency: ServiceDependency):
+        """Add dependency between services."""
+        try:
+            if (dependency.source not in self.services or
+                dependency.target not in self.services):
+                raise ValueError("Services must exist before adding dependency")
+                
+            self.dependencies.append(dependency)
+            self.graph.add_edge(
+                dependency.source,
+                dependency.target,
+                type=dependency.dependency_type,
+                latency_slo=dependency.latency_slo,
+                is_critical=dependency.is_critical
+            )
+            
+            logging.info(
+                f"Added dependency: {dependency.source} -> {dependency.target}"
+            )
+            
+        except Exception as e:
+            logging.error(f"Failed to add dependency: {str(e)}")
+            raise
+            
+    def analyze_critical_paths(self) -> Dict:
+        """Analyze critical paths and failure impacts."""
+        try:
+            analysis = {
+                'critical_paths': [],
+                'single_points_of_failure': [],
+                'service_impacts': defaultdict(list)
+            }
+            
+            # Find critical paths
+            for service in self.services:
+                paths = list(nx.all_simple_paths(self.graph, service, 'frontend'))
+                critical_edges = [
+                    (u, v) for u, v, d in self.graph.edges(data=True)
+                    if d['is_critical']
+                ]
+                
+                for path in paths:
+                    path_edges = list(zip(path[:-1], path[1:]))
+                    if any(edge in critical_edges for edge in path_edges):
+                        analysis['critical_paths'].append(path)
+                        
+            # Identify single points of failure
+            for node in self.graph.nodes():
+                temp_graph = self.graph.copy()
+                temp_graph.remove_node(node)
+                
+                # Check if removal disconnects the graph
+                if not nx.is_strongly_connected(temp_graph):
+                    analysis['single_points_of_failure'].append(node)
+                    
+                # Calculate impact
+                unreachable = set()
+                for source, target in nx.edges(self.graph):
+                    if not nx.has_path(temp_graph, source, target):
+                        unreachable.add(target)
+                        
+                if unreachable:
+                    analysis['service_impacts'][node] = list(unreachable)
+                    
+            return analysis
+            
+        except Exception as e:
+            logging.error(f"Critical path analysis failed: {str(e)}")
+            raise
+            
+    def calculate_service_metrics(self) -> Dict:
+        """Calculate service dependency metrics."""
+        try:
+            metrics = {}
+            
+            for service in self.services:
+                # Calculate dependency counts
+                inbound = self.graph.in_degree(service)
+                outbound = self.graph.out_degree(service)
+                
+                # Calculate path lengths
+                paths_to = []
+                paths_from = []
+                for other in self.services:
+                    if other != service:
+                        if nx.has_path(self.graph, service, other):
+                            path = nx.shortest_path(self.graph, service, other)
+                            paths_from.append(len(path) - 1)
+                        if nx.has_path(self.graph, other, service):
+                            path = nx.shortest_path(self.graph, other, service)
+                            paths_to.append(len(path) - 1)
+                            
+                # Calculate criticality score
+                critical_deps = len([
+                    d for d in self.dependencies
+                    if d.target == service and d.is_critical
+                ])
+                
+                metrics[service] = {
+                    'inbound_dependencies': inbound,
+                    'outbound_dependencies': outbound,
+                    'avg_path_length_to': (
+                        sum(paths_to) / len(paths_to) 
+                        if paths_to else 0
+                    ),
+                    'avg_path_length_from': (
+                        sum(paths_from) / len(paths_from) 
+                        if paths_from else 0
+                    ),
+                    'critical_dependencies': critical_deps,
+                    'complexity_score': inbound * outbound,
+                    'tier': self.services[service].tier
+                }
+                
+            return metrics
+            
+        except Exception as e:
+            logging.error(f"Metrics calculation failed: {str(e)}")
+            raise
+            
+    def visualize_dependencies(self, output_file: str = 'dependencies.png'):
+        """Generate dependency graph visualization."""
+        try:
+            plt.figure(figsize=(12, 8))
+            
+            # Create position layout
+            pos = nx.spring_layout(self.graph)
+            
+            # Draw nodes with different colors by tier
+            colors = {
+                'frontend': 'lightblue',
+                'backend': 'lightgreen',
+                'database': 'lightcoral',
+                'cache': 'lightyellow'
+            }
+            
+            for tier in colors:
+                nodes = [
+                    n for n, d in self.graph.nodes(data=True)
+                    if d['tier'] == tier
+                ]
+                nx.draw_networkx_nodes(
+                    self.graph,
+                    pos,
+                    nodelist=nodes,
+                    node_color=colors[tier],
+                    node_size=2000,
+                    alpha=0.8
+                )
+                
+            # Draw edges with different styles
+            critical_edges = [
+                (u, v) for u, v, d in self.graph.edges(data=True)
+                if d['is_critical']
+            ]
+            normal_edges = [
+                (u, v) for u, v, d in self.graph.edges(data=True)
+                if not d['is_critical']
+            ]
+            
+            nx.draw_networkx_edges(
+                self.graph,
+                pos,
+                edgelist=critical_edges,
+                edge_color='red',
+                width=2
+            )
+            nx.draw_networkx_edges(
+                self.graph,
+                pos,
+                edgelist=normal_edges,
+                edge_color='gray',
+                width=1
+            )
+            
+            # Add labels
+            nx.draw_networkx_labels(self.graph, pos)
+            
+            plt.title("Service Dependency Graph")
+            plt.axis('off')
+            plt.savefig(output_file)
+            plt.close()
+            
+            logging.info(f"Dependency graph saved to {output_file}")
+            
+        except Exception as e:
+            logging.error(f"Visualization failed: {str(e)}")
+            raise
+            
+    def generate_report(self) -> Dict:
+        """Generate comprehensive dependency analysis report."""
+        try:
+            critical_paths = self.analyze_critical_paths()
+            metrics = self.calculate_service_metrics()
+            
+            # Generate risk scores
+            risk_scores = {}
+            for service in self.services:
+                service_metrics = metrics[service]
+                
+                # Calculate risk based on various factors
+                risk_score = (
+                    service_metrics['critical_dependencies'] * 3 +
+                    service_metrics['complexity_score'] * 0.5 +
+                    (service in critical_paths['single_points_of_failure']) * 5
+                )
+                
+                risk_scores[service] = risk_score
+                
+            # Generate recommendations
+            recommendations = []
+            for service, score in risk_scores.items():
+                if score > 10:
+                    recommendations.append(
+                        f"High risk service {service}: Consider reducing "
+                        f"dependencies or adding redundancy"
+                    )
+                if service in critical_paths['single_points_of_failure']:
+                    recommendations.append(
+                        f"Single point of failure {service}: Consider "
+                        f"implementing redundancy"
+                    )
+                    
+            report = {
+                'critical_paths': critical_paths,
+                'service_metrics': metrics,
+                'risk_scores': risk_scores,
+                'recommendations': recommendations,
+                'summary': {
+                    'total_services': len(self.services),
+                    'total_dependencies': len(self.dependencies),
+                    'critical_services': len([
+                        s for s in self.services.values()
+                        if s.criticality == 'high'
+                    ]),
+                    'high_risk_services': len([
+                        s for s, score in risk_scores.items()
+                        if score > 10
+                    ])
+                }
+            }
+            
+            return report
+            
+        except Exception as e:
+            logging.error(f"Report generation failed: {str(e)}")
+            raise
+
+def run_dependency_mapper_demo():
+    # Initialize mapper
+    mapper = DependencyMapper()
+    
+    # Add services
+    services = [
+        Service("frontend", "frontend", 99.9, "team-a", "high"),
+        Service("auth", "backend", 99.99, "team-b", "high"),
+        Service("user-service", "backend", 99.9, "team-c", "medium"),
+        Service("payment", "backend", 99.99, "team-d", "high"),
+        Service("user-db", "database", 99.99, "team-c", "high"),
+        Service("cache", "cache", 99.9, "team-e", "medium")
+    ]
+    
+    for service in services:
+        mapper.add_service(service)
+        
+    # Add dependencies
+    dependencies = [
+        ServiceDependency("frontend", "auth", "http", 100, True),
+        ServiceDependency("frontend", "user-service", "http", 200, False),
+        ServiceDependency("user-service", "user-db", "sql", 50, True),
+        ServiceDependency("user-service", "cache", "redis", 10, False),
+        ServiceDependency("auth", "user-db", "sql", 50, True),
+        ServiceDependency("frontend", "payment", "http", 300, True)
+    ]
+    
+    for dependency in dependencies:
+        mapper.add_dependency(dependency)
+        
+    # Generate visualization
+    mapper.visualize_dependencies()
+    
+    # Generate report
+    report = mapper.generate_report()
+    
+    print("\nDependency Analysis Report")
+    print("=========================")
+    
+    print("\nSummary:")
+    for key, value in report['summary'].items():
+        print(f"{key}: {value}")
+        
+    print("\nCritical Paths:")
+    for path in report['critical_paths']['critical_paths']:
+        print(f"- {' -> '.join(path)}")
+        
+    print("\nSingle Points of Failure:")
+    for spof in report['critical_paths']['single_points_of_failure']:
+        print(f"- {spof}")
+        
+    print("\nRecommendations:")
+    for rec in report['recommendations']:
+        print(f"- {rec}")
+    
+    return report
+
+if __name__ == "__main__":
+    results = run_dependency_mapper_demo()`,
+                explanation: "This exercise demonstrates service dependency mapping and analysis, including critical path detection, risk assessment, and visualization. It helps identify potential failure points and provides recommendations for improving system reliability."
+            }
+        }
+    ],
+    
+    advancedExercises: [
+        {
+            title: "Chaos Engineering Framework",
+            difficulty: "Hard",
+            description: "Create a framework for conducting controlled chaos experiments to test system resilience.",
+            hints: [
+                "Implement safe experiment boundaries",
+                "Add rollback mechanisms",
+                "Include monitoring integration",
+                "Provide real-time analysis"
+            ],
+            solution: {
+                code: `from typing import Dict, List, Optional, Callable
+import logging
+import time
+import threading
+import queue
+from dataclasses import dataclass
+from datetime import datetime
+import json
+import requests
+from prometheus_client import Counter, Gauge, start_http_server
+
+@dataclass
+class ExperimentConfig:
+    name: str
+    target_service: str
+    fault_type: str
+    duration: int
+    impact_threshold: float
+    abort_conditions: Dict[str, float]
+    rollback_steps: List[str]
+
+class ChaosExperiment:
+    def __init__(self, config: ExperimentConfig):
+        self.config = config
+        self.is_running = False
+        self.metrics = {}
+        self.abort_triggered = False
+        self.setup_logging()
+        self.setup_metrics()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s',
+            handlers=[
+                logging.FileHandler(f'chaos_{self.config.name}.log'),
+                logging.StreamHandler()
+            ]
+        )
+        
+    def setup_metrics(self):
+        """Initialize Prometheus metrics."""
+        self.experiment_counter = Counter(
+            'chaos_experiments_total',
+            'Total number of chaos experiments',
+            ['experiment', 'result']
+        )
+        
+        self.impact_gauge = Gauge(
+            'chaos_experiment_impact',
+            'Current impact level of chaos experiment',
+            ['experiment', 'metric']
+        )
+        
+        # Start Prometheus metrics server
+        start_http_server(8000)
+        
+    def inject_fault(self):
+        """Inject specific fault based on configuration."""
+        try:
+            if self.config.fault_type == "latency":
+                self._inject_latency()
+            elif self.config.fault_type == "error":
+                self._inject_error()
+            elif self.config.fault_type == "resource":
+                self._inject_resource_pressure()
+            elif self.config.fault_type == "dependency":
+                self._inject_dependency_failure()
+            else:
+                raise ValueError(f"Unknown fault type: {self.config.fault_type}")
+                
+        except Exception as e:
+            logging.error(f"Fault injection failed: {str(e)}")
+            self.abort_experiment()
+            
+    def _inject_latency(self):
+        """Inject latency into service calls."""
+        try:
+            # Implement service proxy for latency injection
+            from kubernetes import client, config
+            
+            config.load_kube_config()
+            api = client.NetworkingV1Api()
+            
+            # Create network policy for latency
+            policy = client.V1NetworkPolicy(
+                metadata=client.V1ObjectMeta(
+                    name=f"chaos-latency-{self.config.target_service}"
+                ),
+                spec=client.V1NetworkPolicySpec(
+                    pod_selector=client.V1LabelSelector(
+                        match_labels={"app": self.config.target_service}
+                    ),
+                    egress=[
+                        client.V1NetworkPolicyEgressRule(
+                            to=[{"podSelector": {}}],
+                            ports=[{"port": 80}]
+                        )
+                    ]
+                )
+            )
+            
+            api.create_namespaced_network_policy(
+                namespace="default",
+                body=policy
+            )
+            
+            logging.info(f"Injected latency into {self.config.target_service}")
+            
+        except Exception as e:
+            logging.error(f"Latency injection failed: {str(e)}")
+            raise
+            
+    def _inject_error(self):
+        """Inject errors into service responses."""
+        try:
+            # Implement error injection through service mesh
+            import requests
+            
+            # Configure service mesh rule
+            mesh_config = {
+                "fault": {
+                    "abort": {
+                        "httpStatus": 500,
+                        "percentage": {
+                            "value": 50
+                        }
+                    }
+                }
+            }
+            
+            # Apply configuration to service mesh
+            response = requests.post(
+                f"http://service-mesh-api/fault/{self.config.target_service}",
+                json=mesh_config
+            )
+            
+            if response.status_code != 200:
+                raise Exception("Failed to configure service mesh")
+                
+            logging.info(f"Injected errors into {self.config.target_service}")
+            
+        except Exception as e:
+            logging.error(f"Error injection failed: {str(e)}")
+            raise
+            
+    def _inject_resource_pressure(self):
+        """Inject CPU/Memory pressure."""
+        try:
+            from kubernetes import client, config
+            
+            config.load_kube_config()
+            api = client.CoreV1Api()
+            
+            # Update resource limits
+            patch = {
+                "spec": {
+                    "template": {
+                        "spec": {
+                            "containers": [{
+                                "name": self.config.target_service,
+                                "resources": {
+                                    "limits": {
+                                        "cpu": "50m",
+                                        "memory": "64Mi"
+                                    }
+                                }
+                            }]
+                        }
+                    }
+                }
+            }
+            
+            api.patch_namespaced_deployment(
+                name=self.config.target_service,
+                namespace="default",
+                body=patch
+            )
+            
+            logging.info(
+                f"Injected resource pressure into {self.config.target_service}"
+            )
+            
+        except Exception as e:
+            logging.error(f"Resource pressure injection failed: {str(e)}")
+            raise
+            
+    def _inject_dependency_failure(self):
+        """Simulate dependency failure."""
+        try:
+            # Block traffic to dependency
+            from kubernetes import client, config
+            
+            config.load_kube_config()
+            api = client.NetworkingV1Api()
+            
+            # Create network policy to block traffic
+            policy = client.V1NetworkPolicy(
+                metadata=client.V1ObjectMeta(
+                    name=f"chaos-block-{self.config.target_service}"
+                ),
+                spec=client.V1NetworkPolicySpec(
+                    pod_selector=client.V1LabelSelector(
+                        match_labels={"app": self.config.target_service}
+                    ),
+                    ingress=[],  # Block all ingress
+                    policy_types=["Ingress"]
+                )
+            )
+            
+            api.create_namespaced_network_policy(
+                namespace="default",
+                body=policy
+            )
+            
+            logging.info(
+                f"Injected dependency failure for {self.config.target_service}"
+            )
+            
+        except Exception as e:
+            logging.error(f"Dependency failure injection failed: {str(e)}")
+            raise
+            
+    def monitor_impact(self) -> Dict:
+        """Monitor experiment impact on system."""
+        try:
+            metrics = {}
+            
+            # Query Prometheus for service metrics
+            prom_url = "http://prometheus:9090/api/v1/query"
+            
+            # Error rate
+            response = requests.get(prom_url, params={
+                'query': f'rate(http_requests_total{{{self.config.target_service}}}[5m])'
+            })
+            metrics['error_rate'] = response.json()['data']['result'][0]['value'][1]
+            
+            # Latency
+            response = requests.get(prom_url, params={
+                'query': f'histogram_quantile(0.95, rate(http_request_duration_seconds_bucket{{{self.config.target_service}}}[5m]))'
+            })
+            metrics['p95_latency'] = response.json()['data']['result'][0]['value'][1]
+            
+            # Update Prometheus metrics
+            for metric, value in metrics.items():
+                self.impact_gauge.labels(
+                    experiment=self.config.name,
+                    metric=metric
+                ).set(value)
+            
+            return metrics
+            
+        except Exception as e:
+            logging.error(f"Impact monitoring failed: {str(e)}")
+            self.abort_experiment()
+            return {}
+            
+    def check_abort_conditions(self, metrics: Dict) -> bool:
+        """Check if abort conditions are met."""
+        try:
+            for metric, threshold in self.config.abort_conditions.items():
+                if metrics.get(metric, 0) > threshold:
+                    logging.warning(
+                        f"Abort condition met: {metric} = "
+                        f"{metrics[metric]} > {threshold}"
+                    )
+                    return True
+            return False
+            
+        except Exception as e:
+            logging.error(f"Abort condition check failed: {str(e)}")
+            return True
+            
+    def rollback(self):
+        """Rollback changes made during experiment."""
+        try:
+            logging.info("Starting rollback procedure")
+            
+            for step in self.config.rollback_steps:
+                try:
+                    if step == "remove_network_policy":
+                        self._rollback_network_policy()
+                    elif step == "restore_resources":
+                        self._rollback_resources()
+                    elif step == "restore_service_mesh":
+                        self._rollback_service_mesh()
+                        
+                except Exception as e:
+                    logging.error(f"Rollback step {step} failed: {str(e)}")
+                    continue
+                    
+            logging.info("Rollback completed")
+            
+        except Exception as e:
+            logging.error(f"Rollback failed: {str(e)}")
+            raise
+            
+    def _rollback_network_policy(self):
+        """Remove network policies."""
+        from kubernetes import client, config
+        
+        config.load_kube_config()
+        api = client.NetworkingV1Api()
+        
+        api.delete_namespaced_network_policy(
+            name=f"chaos-latency-{self.config.target_service}",
+            namespace="default"
+        )
+        
+    def _rollback_resources(self):
+        """Restore original resource limits."""
+        from kubernetes import client, config
+        
+        config.load_kube_config()
+        api = client.CoreV1Api()
+        
+        # Reset to original resource limits
+        patch = {
+            "spec": {
+                "template": {
+                    "spec": {
+                        "containers": [{
+                            "name": self.config.target_service,
+                            "resources": {
+                                "limits": {
+                                    "cpu": "200m",
+                                    "memory": "256Mi"
+                                }
+                            }
+                        }]
+                    }
+                }
+            }
+        }
+        
+        api.patch_namespaced_deployment(
+            name=self.config.target_service,
+            namespace="default",
+            body=patch
+        )
+        
+    def _rollback_service_mesh(self):
+        """Remove service mesh fault injection rules."""
+        response = requests.delete(
+            f"http://service-mesh-api/fault/{self.config.target_service}"
+        )
+        
+        if response.status_code != 200:
+            raise Exception("Failed to remove service mesh configuration")
+            
+    def abort_experiment(self):
+        """Abort experiment and rollback changes."""
+        logging.warning("Aborting experiment")
+        self.abort_triggered = True
+        self.rollback()
+        self.is_running = False
+        
+        self.experiment_counter.labels(
+            experiment=self.config.name,
+            result='aborted'
+        ).inc()
+        
+    def run(self) -> Dict:
+        """Run chaos experiment."""
+        try:
+            logging.info(f"Starting experiment: {self.config.name}")
+            self.is_running = True
+            start_time = time.time()
+            
+            # Start impact monitoring
+            monitor_thread = threading.Thread(
+                target=self._monitor_loop
+            )
+            monitor_thread.start()
+            
+            # Inject fault
+            self.inject_fault()
+            
+            # Wait for duration or abort
+            while (time.time() - start_time < self.config.duration and
+                   not self.abort_triggered):
+                time.sleep(1)
+                
+            # Clean up
+            self.is_running = False
+            monitor_thread.join()
+            self.rollback()
+            
+            # Record completion
+            self.experiment_counter.labels(
+                experiment=self.config.name,
+                result='completed' if not self.abort_triggered else 'aborted'
+            ).inc()
+            
+            return self.generate_report(start_time)
+            
+        except Exception as e:
+            logging.error(f"Experiment failed: {str(e)}")
+            self.abort_experiment()
+            raise
+            
+    def _monitor_loop(self):
+        """Continuous monitoring loop."""
+        while self.is_running:
+            metrics = self.monitor_impact()
+            self.metrics[time.time()] = metrics
+            
+            if self.check_abort_conditions(metrics):
+                self.abort_experiment()
+                break
+                
+            time.sleep(5)
+            
+    def generate_report(self, start_time: float) -> Dict:
+        """Generate experiment report."""
+        try:
+            end_time = time.time()
+            duration = end_time - start_time
+            
+            # Calculate impact metrics
+            impact_metrics = {
+                metric: {
+                    'max': max(t[metric] for t in self.metrics.values()),
+                    'min': min(t[metric] for t in self.metrics.values()),
+                    'avg': sum(t[metric] for t in self.metrics.values()) / 
+                          len(self.metrics)
+                }
+                for metric in next(iter(self.metrics.values()))
+            }
+            
+            report = {
+                'experiment_name': self.config.name,
+                'target_service': self.config.target_service,
+                'fault_type': self.config.fault_type,
+                'duration': duration,
+                'status': 'aborted' if self.abort_triggered else 'completed',
+                'impact_metrics': impact_metrics,
+                'thresholds_breached': any(
+                    self.check_abort_conditions(metrics)
+                    for metrics in self.metrics.values()
+                ),
+                'metrics_timeline': {
+                    str(datetime.fromtimestamp(ts)): metrics
+                    for ts, metrics in self.metrics.items()
+                }
+            }
+            
+            # Save report to file
+            with open(f"chaos_report_{self.config.name}.json", 'w') as f:
+                json.dump(report, f, indent=2, default=str)
+                
+            return report
+            
+        except Exception as e:
+            logging.error(f"Report generation failed: {str(e)}")
+            raise
+
+def run_chaos_experiment_demo():
+    # Configure experiment
+    config = ExperimentConfig(
+        name="latency-test-001",
+        target_service="payment-service",
+        fault_type="latency",
+        duration=300,  # 5 minutes
+        impact_threshold=0.1,
+        abort_conditions={
+            'error_rate': 0.05,  # 5% error rate
+            'p95_latency': 2.0   # 2 seconds
+        },
+        rollback_steps=[
+            "remove_network_policy",
+            "restore_resources",
+            "restore_service_mesh"
+        ]
+    )
+    
+    # Create and run experiment
+    experiment = ChaosExperiment(config)
+    
+    try:
+        report = experiment.run()
+        
+        print("\nChaos Experiment Report")
+        print("======================")
+        print(f"Experiment: {report['experiment_name']}")
+        print(f"Target Service: {report['target_service']}")
+        print(f"Fault Type: {report['fault_type']}")
+        print(f"Duration: {report['duration']:.2f} seconds")
+        print(f"Status: {report['status']}")
+        
+        print("\nImpact Metrics:")
+        for metric, values in report['impact_metrics'].items():
+            print(f"\n{metric}:")
+            print(f"  Maximum: {values['max']:.3f}")
+            print(f"  Minimum: {values['min']:.3f}")
+            print(f"  Average: {values['avg']:.3f}")
+            
+        print("\nThresholds Breached:", 
+              "Yes" if report['thresholds_breached'] else "No")
+        
+        print("\nDetailed Timeline:")
+        for timestamp, metrics in list(report['metrics_timeline'].items())[-5:]:
+            print(f"\n{timestamp}:")
+            for metric, value in metrics.items():
+                print(f"  {metric}: {value:.3f}")
+        
+        return report
+        
+    except Exception as e:
+        logging.error(f"Experiment failed: {str(e)}")
+        return None
+
+if __name__ == "__main__":
+    results = run_chaos_experiment_demo()`,
+    explanation: "This advanced exercise implements a comprehensive chaos engineering framework that includes:\n\n" +
+                "1. Controlled fault injection mechanisms for:\n" +
+                "   - Network latency\n" +
+                "   - Error injection\n" +
+                "   - Resource pressure\n" +
+                "   - Dependency failures\n\n" +
+                "2. Real-time monitoring and impact analysis\n" +
+                "3. Automatic experiment abortion based on safety thresholds\n" +
+                "4. Rollback mechanisms for different types of faults\n" +
+                "5. Detailed metric collection and reporting\n" +
+                "6. Integration with Kubernetes and service mesh\n" +
+                "7. Prometheus metrics for experiment tracking\n\n" +
+                "The framework ensures safe execution of chaos experiments while providing detailed insights into system behavior under different failure conditions."
+                }
+            }
+        ]
+    }
+}
 }
 
 
