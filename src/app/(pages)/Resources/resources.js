@@ -20135,7 +20135,7 @@ if __name__ == "__main__":
                     ]
                 }
             }
-        }
+        },
 
 {
     id: 19,
@@ -21183,6 +21183,2020 @@ roadmap: [
     
 }
 },
+{
+    id: 20,
+    title: "Quantum Computing",
+    description: "To learn quantum computing, follow this roadmap",
+    extendedContent: `
+        Master quantum computing fundamentals and quantum programming. Start with essential 
+        mathematics, quantum mechanics principles, and quantum information theory. Progress through 
+        quantum circuits, algorithms, and quantum programming frameworks. Learn about quantum gates, 
+        entanglement, and superposition. Explore quantum error correction, quantum machine learning, 
+        and quantum cryptography. Advanced topics include quantum optimization, quantum simulation, 
+        and quantum software development. Practice with quantum simulators and real quantum computers.
+    `,
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        prerequisites: [
+            "Strong foundation in linear algebra",
+            "Understanding of complex numbers and matrices",
+            "Basic quantum mechanics concepts",
+            "Programming experience (Python preferred)",
+            "Probability theory fundamentals",
+            "Basic understanding of algorithms",
+            "Mathematical maturity"
+        ],
+        outcomes: [
+            "Develop quantum algorithms and circuits",
+            "Program quantum computers using frameworks",
+            "Implement quantum error correction",
+            "Design quantum machine learning models",
+            "Create quantum cryptographic protocols",
+            "Optimize quantum circuits",
+            "Understand quantum hardware limitations",
+            "Apply quantum algorithms to real problems",
+            "Develop quantum software applications",
+            "Analyze quantum system performance"
+        ],
+        sections: [
+            {
+                title: "Quantum Mathematics",
+                content: "Master essential mathematical concepts including linear algebra, complex vector spaces, and tensor products. Learn about Hilbert spaces, unitary transformations, and quantum operators. Understand quantum measurement theory and quantum probability."
+            },
+            {
+                title: "Quantum Mechanics Principles",
+                content: "Study fundamental quantum mechanics including superposition, entanglement, and measurement. Learn about quantum states, wavefunctions, and quantum evolution. Understand quantum decoherence and the quantum measurement problem."
+            },
+            {
+                title: "Quantum Computing Basics",
+                content: "Learn about qubits, quantum gates, and quantum circuits. Master quantum circuit design, state preparation, and measurement. Understand quantum algorithms basics and quantum computational complexity."
+            },
+            {
+                title: "Quantum Algorithms",
+                content: "Study key quantum algorithms including Grover's, Shor's, and quantum phase estimation. Learn about quantum Fourier transform, quantum walks, and amplitude amplification. Master quantum algorithm design principles."
+            },
+            {
+                title: "Quantum Programming",
+                content: "Learn quantum programming frameworks like Qiskit, Cirq, and Q#. Practice quantum circuit implementation and quantum algorithm coding. Understand quantum software development principles and best practices."
+            },
+            {
+                title: "Quantum Error Correction",
+                content: "Study quantum error correction codes, fault-tolerant quantum computing, and error mitigation techniques. Learn about stabilizer codes, surface codes, and quantum error detection. Understand quantum noise models and decoherence."
+            },
+            {
+                title: "Quantum Applications",
+                content: "Explore quantum applications in cryptography, optimization, and machine learning. Learn about quantum key distribution, quantum neural networks, and quantum chemistry simulation. Study quantum finance and quantum sensing applications."
+            },
+            {
+                title: "Quantum Hardware",
+                content: "Understand quantum computing hardware architectures, physical implementations, and constraints. Learn about superconducting qubits, ion traps, and photonic quantum computers. Study quantum control systems and quantum device characterization."
+            }
+        ]
+    },
+    content: {
+        examples: [
+            {
+                title: "Quantum Teleportation Implementation",
+                code: `from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
+from qiskit import Aer, execute
+import numpy as np
+
+class QuantumTeleportation:
+    def __init__(self):
+        # Create quantum registers
+        self.qr = QuantumRegister(3, 'q')
+        self.cr = ClassicalRegister(3, 'c')
+        self.circuit = QuantumCircuit(self.qr, self.cr)
+        
+    def prepare_state(self, theta: float, phi: float):
+        """Prepare the state to be teleported."""
+        # Create arbitrary single-qubit state
+        self.circuit.r3(theta, phi, 0.0, self.qr[0])
+        
+    def create_bell_pair(self):
+        """Create a Bell pair for teleportation."""
+        # Apply Hadamard to second qubit
+        self.circuit.h(self.qr[1])
+        # Apply CNOT to entangle second and third qubits
+        self.circuit.cx(self.qr[1], self.qr[2])
+        
+    def teleport(self):
+        """Implement teleportation protocol."""
+        # Bell measurement on sender's qubits
+        self.circuit.cx(self.qr[0], self.qr[1])
+        self.circuit.h(self.qr[0])
+        
+        # Measure sender's qubits
+        self.circuit.measure(self.qr[0], self.cr[0])
+        self.circuit.measure(self.qr[1], self.cr[1])
+        
+        # Apply corrections on receiver's qubit based on measurements
+        self.circuit.x(self.qr[2]).c_if(self.cr[1], 1)
+        self.circuit.z(self.qr[2]).c_if(self.cr[0], 1)
+        
+        # Measure final state (optional)
+        self.circuit.measure(self.qr[2], self.cr[2])
+        
+    def run_simulation(self, shots: int = 1000):
+        """Execute the quantum circuit on simulator."""
+        # Use Aer's qasm simulator
+        backend = Aer.get_backend('qasm_simulator')
+        
+        # Execute circuit with multiple shots
+        job = execute(self.circuit, backend, shots=shots)
+        result = job.result()
+        
+        # Get measurement counts
+        counts = result.get_counts(self.circuit)
+        return counts
+    
+    def analyze_results(self, counts: dict):
+        """Analyze teleportation results."""
+        total_shots = sum(counts.values())
+        success_rate = sum(
+            count for key, count in counts.items() 
+            if key[-1] == '1'
+        ) / total_shots
+        
+        return {
+            'counts': counts,
+            'success_rate': success_rate,
+            'total_shots': total_shots
+        }
+        
+def run_teleportation_experiment():
+    # Initialize teleportation
+    teleport = QuantumTeleportation()
+    
+    # Prepare state to teleport (|1⟩ state)
+    teleport.prepare_state(np.pi, 0)
+    
+    # Create Bell pair
+    teleport.create_bell_pair()
+    
+    # Perform teleportation
+    teleport.teleport()
+    
+    # Run simulation
+    counts = teleport.run_simulation(shots=1000)
+    
+    # Analyze results
+    results = teleport.analyze_results(counts)
+    
+    print("Quantum Teleportation Results:")
+    print(f"Success Rate: {results['success_rate']*100:.2f}%")
+    print("Measurement Counts:", results['counts'])
+    
+    # Draw circuit
+    print("\nQuantum Circuit:")
+    print(teleport.circuit)
+    
+    return results`,
+                explanation: "This example demonstrates quantum teleportation protocol implementation using Qiskit, including state preparation, Bell pair creation, and measurement-based corrections."
+            },
+            {
+                title: "Quantum Machine Learning - QSVM",
+                code: `from qiskit import Aer
+from qiskit.circuit.library import ZZFeatureMap
+from qiskit.algorithms.optimizers import SPSA
+from qiskit_machine_learning.algorithms import QSVM
+from qiskit_machine_learning.kernels import QuantumKernel
+import numpy as np
+from typing import Tuple, List
+from sklearn.preprocessing import StandardScaler
+import logging
+
+class QuantumSVMClassifier:
+    def __init__(self, feature_dimension: int, feature_reps: int = 2):
+        self.feature_dimension = feature_dimension
+        self.feature_reps = feature_reps
+        self.backend = Aer.get_backend('statevector_simulator')
+        self.setup_logging()
+        self.initialize_quantum_kernel()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def initialize_quantum_kernel(self):
+        """Initialize quantum feature map and kernel."""
+        try:
+            # Create feature map circuit
+            self.feature_map = ZZFeatureMap(
+                feature_dimension=self.feature_dimension,
+                reps=self.feature_reps
+            )
+            
+            # Create quantum kernel
+            self.quantum_kernel = QuantumKernel(
+                feature_map=self.feature_map,
+                quantum_instance=self.backend
+            )
+            
+            logging.info("Quantum kernel initialized successfully")
+            
+        except Exception as e:
+            logging.error(f"Kernel initialization failed: {str(e)}")
+            raise
+            
+    def preprocess_data(self, X: np.ndarray) -> np.ndarray:
+        """Preprocess input data."""
+        try:
+            # Scale features
+            scaler = StandardScaler()
+            X_scaled = scaler.fit_transform(X)
+            
+            # Clip values to prevent overflow
+            X_scaled = np.clip(X_scaled, -4, 4)
+            
+            return X_scaled
+            
+        except Exception as e:
+            logging.error(f"Data preprocessing failed: {str(e)}")
+            raise
+            
+    def train(self, X: np.ndarray, y: np.ndarray):
+        """Train quantum SVM model."""
+        try:
+            logging.info("Starting QSVM training")
+            
+            # Preprocess data
+            X_processed = self.preprocess_data(X)
+            
+            # Initialize QSVM
+            self.qsvm = QSVM(
+                quantum_kernel=self.quantum_kernel,
+                training_dataset=(X_processed, y)
+            )
+            
+            # Train model
+            self.qsvm.fit(X_processed, y)
+            
+            logging.info("QSVM training completed")
+            
+        except Exception as e:
+            logging.error(f"Training failed: {str(e)}")
+            raise
+            
+    def predict(self, X: np.ndarray) -> np.ndarray:
+        """Make predictions using trained model."""
+        try:
+            # Preprocess input
+            X_processed = self.preprocess_data(X)
+            
+            # Make predictions
+            predictions = self.qsvm.predict(X_processed)
+            return predictions
+            
+        except Exception as e:
+            logging.error(f"Prediction failed: {str(e)}")
+            raise
+            
+    def evaluate(self, X: np.ndarray, y: np.ndarray) -> dict:
+        """Evaluate model performance."""
+        try:
+            # Make predictions
+            predictions = self.predict(X)
+            
+            # Calculate metrics
+            accuracy = np.mean(predictions == y)
+            
+            # Calculate confusion matrix
+            true_pos = np.sum((predictions == 1) & (y == 1))
+            true_neg = np.sum((predictions == 0) & (y == 0))
+            false_pos = np.sum((predictions == 1) & (y == 0))
+            false_neg = np.sum((predictions == 0) & (y == 1))
+            
+            metrics = {
+                'accuracy': accuracy,
+                'precision': true_pos / (true_pos + false_pos),
+                'recall': true_pos / (true_pos + false_neg),
+                'confusion_matrix': {
+                    'true_positive': int(true_pos),
+                    'true_negative': int(true_neg),
+                    'false_positive': int(false_pos),
+                    'false_negative': int(false_neg)
+                }
+            }
+            
+            return metrics
+            
+        except Exception as e:
+            logging.error(f"Evaluation failed: {str(e)}")
+            raise
+            
+def run_qsvm_experiment():
+    # Generate sample data
+    np.random.seed(42)
+    n_samples = 100
+    
+    # Create simple binary classification dataset
+    X = np.random.randn(n_samples, 2)
+    y = np.array([1 if x[0] + x[1] > 0 else 0 for x in X])
+    
+    # Split data
+    train_size = int(0.8 * n_samples)
+    X_train = X[:train_size]
+    y_train = y[:train_size]
+    X_test = X[train_size:]
+    y_test = y[train_size:]
+    
+    # Initialize and train QSVM
+    qsvm = QuantumSVMClassifier(feature_dimension=2)
+    qsvm.train(X_train, y_train)
+    
+    # Evaluate model
+    metrics = qsvm.evaluate(X_test, y_test)
+    
+    print("\nQSVM Classification Results:")
+    print(f"Accuracy: {metrics['accuracy']:.4f}")
+    print(f"Precision: {metrics['precision']:.4f}")
+    print(f"Recall: {metrics['recall']:.4f}")
+    print("\nConfusion Matrix:")
+    print(f"True Positives: {metrics['confusion_matrix']['true_positive']}")
+    print(f"True Negatives: {metrics['confusion_matrix']['true_negative']}")
+    print(f"False Positives: {metrics['confusion_matrix']['false_positive']}")
+    print(f"False Negatives: {metrics['confusion_matrix']['false_negative']}")
+    
+    return metrics`,
+                explanation: "This example implements a Quantum Support Vector Machine using Qiskit's machine learning module, demonstrating quantum feature maps, kernel methods, and model evaluation."
+            },
+            {
+                title: "Quantum Chemistry Simulation",
+                code: `from qiskit_nature.problems.second_quantization.electronic import ElectronicStructureProblem
+from qiskit_nature.transformers import FreezeCoreTransformer
+from qiskit_nature.drivers import UnitsType, Molecule
+from qiskit_nature.drivers.second_quantization import PySCFDriver
+from qiskit_nature.algorithms import GroundStateEigensolver
+from qiskit_nature.algorithms.ground_state_solvers import NumPyMinimumEigensolverFactory
+import numpy as np
+import logging
+from typing import Dict, List, Optional
+
+class QuantumChemistrySimulator:
+    def __init__(self):
+        self.setup_logging()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def create_molecule(self, 
+                       geometry: List[str],
+                       charge: int = 0,
+                       multiplicity: int = 1) -> PySCFDriver:
+        """Create molecular driver for simulation."""
+        try:
+            molecule = Molecule(
+                geometry=geometry,
+                charge=charge,
+                multiplicity=multiplicity
+            )
+            
+            driver = PySCFDriver.from_molecule(
+                molecule,
+                basis='sto3g',
+                method='rhf'
+            )
+            
+            logging.info(f"Created driver for molecule")
+            return driver
+            
+        except Exception as e:
+            logging.error(f"Driver creation failed: {str(e)}")
+            raise
+            
+    def prepare_problem(self, 
+                       driver: PySCFDriver,
+                       freeze_core: bool = True) -> ElectronicStructureProblem:
+        """Prepare quantum chemistry problem."""
+        try:
+            # Generate problem from driver
+            problem = driver.run()
+            
+            if freeze_core:
+                # Transform problem to freeze core orbitals
+                transformer = FreezeCoreTransformer()
+                problem = transformer.transform(problem)
+                
+            logging.info("Problem preparation completed")
+            return problem
+            
+        except Exception as e:
+            logging.error(f"Problem preparation failed: {str(e)}")
+            raise
+            
+    def solve_ground_state(self, 
+                          problem: ElectronicStructureProblem) -> Dict:
+        """Solve for ground state energy."""
+        try:
+            # Create solver
+            solver = GroundStateEigensolver(
+                NumPyMinimumEigensolverFactory()
+            )
+            
+            # Solve problem
+            result = solver.solve(problem)
+            
+            # Extract results
+            energy = float(result.total_energies[0].real)
+            dipole = result.dipole_moment
+            
+            results = {
+                'energy': energy,
+                'dipole_moment': {
+                    'x': float(dipole[0].real),
+                    'y': float(dipole[1].real),
+                    'z': float(dipole[2].real),
+                    'total': float(np.linalg.norm(dipole).real)
+                },
+                'num_particles': result.num_particles,
+                'spin': result.spin
+            }
+            
+            logging.info(f"Ground state solved: E = {energy:.6f} Hartree")
+            return results
+            
+        except Exception as e:
+            logging.error(f"Ground state solving failed: {str(e)}")
+            raise
+            
+    def analyze_results(self, results: Dict) -> Dict:
+        """Analyze simulation results."""
+        try:
+            # Convert energy to other units
+            energy_hartree = results['energy']
+            
+            analysis = {
+                'energy': {
+                    'hartree': energy_hartree,
+                    'ev': energy_hartree * 27.211386,
+                    'kcal_mol': energy_hartree * 627.509
+                },
+                'dipole_moment': results['dipole_moment'],
+                'electronic_properties': {
+                    'num_electrons': results['num_particles'],
+                    'spin': results['spin']
+                }
+            }
+            
+            return analysis
+            
+        except Exception as e:
+            logging.error(f"Results analysis failed: {str(e)}")
+            raise
+            
+def run_chemistry_simulation():
+    # Initialize simulator
+    simulator = QuantumChemistrySimulator()
+    
+    # Define water molecule geometry
+    geometry = [
+        'H 0.0 0.0 0.0',
+        'O 0.0 0.0 0.9584',
+        'H 0.0 0.9584 0.0'
+    ]
+    
+    # Create molecule driver
+    driver = simulator.create_molecule(geometry)
+    
+    # Prepare problem
+    problem = simulator.prepare_problem(driver)
+    
+    # Solve ground state
+    results = simulator.solve_ground_state(problem)
+    
+    # Analyze results
+    analysis = simulator.analyze_results(results)
+    
+    print("\nQuantum Chemistry Simulation Results:")
+    print("Energy:")
+    print(f"  Hartree: {analysis['energy']['hartree']:.6f}")
+    print(f"  eV: {analysis['energy']['ev']:.6f}")
+    print(f"  kcal/mol: {analysis['energy']['kcal_mol']:.6f}")
+    print("\nDipole Moment (Debye):")
+    print(f"  Total: {analysis['dipole_moment']['total']:.4f}")
+    print(f"  x: {analysis['dipole_moment']['x']:.4f}")
+    print(f"  y: {analysis['dipole_moment']['y']:.4f}")
+    print(f"  z: {analysis['dipole_moment']['z']:.4f}")
+    print("\nElectronic Properties:")
+    print(f"  Number of Electrons: {analysis['electronic_properties']['num_electrons']}")
+    print(f"  Spin: {analysis['electronic_properties']['spin']}")
+    
+    return analysis
+
+if __name__ == "__main__":
+    analysis = run_chemistry_simulation()`,
+                explanation: "This example implements quantum chemistry simulation using Qiskit Nature, demonstrating molecular electronic structure calculations, ground state solving, and property analysis."
+            }
+        ],
+        roadmap: [
+            {
+                title: "1. Quantum Mathematics",
+                description: "Master mathematical foundations of quantum computing",
+                topics: [
+                    "Linear Algebra and Matrix Operations",
+                    "Complex Vector Spaces",
+                    "Tensor Products and Hilbert Spaces",
+                    "Quantum Operators and Measurements",
+                    "Probability Theory in Quantum Mechanics",
+                    "Unitary Transformations",
+                    "Quantum Information Theory"
+                ]
+            },
+            {
+                title: "2. Quantum Mechanics",
+                description: "Learn fundamental quantum mechanics concepts",
+                topics: [
+                    "Quantum States and Wavefunctions",
+                    "Superposition Principle",
+                    "Quantum Entanglement",
+                    "Quantum Measurement Theory",
+                    "Quantum Evolution and Dynamics",
+                    "Density Matrices",
+                    "Quantum Decoherence"
+                ]
+            },
+            {
+                title: "3. Quantum Circuits",
+                description: "Study quantum circuit design and implementation",
+                topics: [
+                    "Qubits and Quantum Gates",
+                    "Universal Gate Sets",
+                    "Circuit Construction Principles",
+                    "Quantum State Preparation",
+                    "Measurement Techniques",
+                    "Circuit Optimization",
+                    "Quantum Circuit Simulation"
+                ]
+            },
+            {
+                title: "4. Quantum Algorithms",
+                description: "Master key quantum algorithms and their applications",
+                topics: [
+                    "Quantum Fourier Transform",
+                    "Grover's Algorithm",
+                    "Shor's Algorithm",
+                    "Quantum Phase Estimation",
+                    "Amplitude Amplification",
+                    "Quantum Walks",
+                    "Variational Quantum Algorithms"
+                ]
+            },
+            {
+                title: "5. Quantum Programming",
+                description: "Learn quantum software development",
+                topics: [
+                    "Qiskit Framework",
+                    "Q# and Other Languages",
+                    "Quantum Circuit Libraries",
+                    "Error Mitigation Techniques",
+                    "Quantum Debug and Testing",
+                    "Performance Optimization",
+                    "Cloud Quantum Computing"
+                ]
+            },
+            {
+                title: "6. Quantum Applications",
+                description: "Explore practical quantum computing applications",
+                topics: [
+                    "Quantum Machine Learning",
+                    "Quantum Chemistry Simulation",
+                    "Quantum Optimization",
+                    "Quantum Cryptography",
+                    "Quantum Finance",
+                    "Quantum Error Correction",
+                    "Quantum Communication"
+                ]
+            },
+            {
+                title: "7. Advanced Topics",
+                description: "Study advanced quantum computing concepts",
+                topics: [
+                    "Quantum Complexity Theory",
+                    "Topological Quantum Computing",
+                    "Adiabatic Quantum Computing",
+                    "Quantum Annealing",
+                    "Quantum Control Theory",
+                    "Quantum Hardware Architectures",
+                    "Quantum Fault Tolerance"
+                ]
+            }
+        ],
+        resources: {
+            documentation: [
+                {
+                    title: "Qiskit Documentation",
+                    url: "https://qiskit.org/documentation/",
+                    description: "Comprehensive guide to Qiskit framework",
+                    type: "Framework Documentation"
+                },
+                {
+                    title: "Microsoft Q# Documentation",
+                    url: "https://docs.microsoft.com/quantum/",
+                    description: "Q# quantum programming language guide",
+                    type: "Language Documentation"
+                },
+                {
+                    title: "Cirq Documentation",
+                    url: "https://quantumai.google/cirq",
+                    description: "Google's Cirq framework documentation",
+                    type: "Framework Documentation"
+                },
+                {
+                    title: "IBM Quantum Learning",
+                    url: "https://quantum-computing.ibm.com/learn",
+                    description: "IBM's quantum computing resources",
+                    type: "Educational Platform"
+                },
+                {
+                    title: "Amazon Braket Documentation",
+                    url: "https://docs.aws.amazon.com/braket/",
+                    description: "AWS quantum computing service docs",
+                    type: "Platform Documentation"
+                }
+            ],
+            tutorials: [
+                {
+                    title: "Qiskit Textbook",
+                    url: "https://qiskit.org/textbook/",
+                    description: "Interactive quantum computing textbook",
+                    type: "Online Course"
+                },
+                {
+                    title: "Microsoft Quantum Katas",
+                    url: "https://github.com/microsoft/QuantumKatas",
+                    description: "Self-paced quantum programming tutorials",
+                    type: "Interactive Tutorials"
+                },
+                {
+                    title: "Quantum Machine Learning Course",
+                    url: "https://www.edx.org/course/quantum-machine-learning",
+                    description: "edX course on quantum ML",
+                    type: "Online Course"
+                },
+                {
+                    title: "Google Quantum Computing Playground",
+                    url: "https://quantumplayground.net/",
+                    description: "Interactive quantum simulator",
+                    type: "Learning Platform"
+                },
+                {
+                    title: "IBM Quantum Challenge",
+                    url: "https://quantum-computing.ibm.com/challenges",
+                    description: "Hands-on quantum programming challenges",
+                    type: "Practice Platform"
+                }
+            ],
+            videos: [
+                {
+                    title: "MIT Quantum Computing Course",
+                    url: "https://ocw.mit.edu/courses/physics/8-371x-quantum-information-science-i/",
+                    description: "MIT's quantum information science lectures",
+                    platform: "OCW"
+                },
+                {
+                    title: "Quantum Computing for Computer Scientists",
+                    url: "https://www.youtube.com/watch?v=F_Riqjdh2oM",
+                    description: "Microsoft Research quantum lectures",
+                    platform: "YouTube"
+                },
+                {
+                    title: "Qiskit Seminar Series",
+                    url: "https://www.youtube.com/c/qiskit",
+                    description: "Technical talks on quantum computing",
+                    platform: "YouTube"
+                },
+                {
+                    title: "QuTech Academy",
+                    url: "https://www.youtube.com/c/QuTechAcademy",
+                    description: "Quantum technology educational videos",
+                    platform: "YouTube"
+                },
+                {
+                    title: "Quantum Computing Explained",
+                    url: "https://www.youtube.com/c/AndrewDotnielsen",
+                    description: "Accessible quantum computing concepts",
+                    platform: "YouTube"
+                }
+            ],
+            books: [
+                {
+                    title: "Quantum Computation and Quantum Information",
+                    author: "Michael A. Nielsen, Isaac L. Chuang",
+                    description: "Comprehensive quantum computing textbook",
+                    level: "Advanced"
+                },
+                {
+                    title: "Programming Quantum Computers",
+                    author: "Eric R. Johnston, Nic Harrigan, Mercedes Gimeno-Segovia",
+                    description: "Practical quantum programming guide",
+                    level: "Intermediate"
+                },
+                {
+                    title: "Quantum Computing: An Applied Approach",
+                    author: "Jack D. Hidary",
+                    description: "Practical quantum computing applications",
+                    level: "Intermediate"
+                },
+                {
+                    title: "Learn Quantum Computing with Python and Q#",
+                    author: "Sarah Kaiser, Christopher Granade",
+                    description: "Hands-on quantum programming",
+                    level: "Beginner"
+                },
+                {
+                    title: "Quantum Computing for Everyone",
+                    author: "Chris Bernhardt",
+                    description: "Accessible introduction to quantum computing",
+                    level: "Beginner"
+                }
+            ],
+            tools: [
+                {
+                    title: "Qiskit",
+                    url: "https://qiskit.org/",
+                    description: "IBM's quantum computing framework",
+                    type: "Framework",
+                    category: "Essential"
+                },
+                {
+                    title: "Q#",
+                    url: "https://azure.microsoft.com/quantum",
+                    description: "Microsoft's quantum language",
+                    type: "Programming Language",
+                    category: "Essential"
+                },
+                {
+                    title: "Cirq",
+                    url: "https://quantumai.google/cirq",
+                    description: "Google's quantum framework",
+                    type: "Framework",
+                    category: "Essential"
+                },
+                {
+                    title: "PennyLane",
+                    url: "https://pennylane.ai/",
+                    description: "Quantum machine learning framework",
+                    type: "Framework",
+                    category: "Essential"
+                },
+                {
+                    title: "ProjectQ",
+                    url: "https://projectq.ch/",
+                    description: "ETH Zurich's quantum framework",
+                    type: "Framework",
+                    category: "Essential"
+                }
+            ],
+            communities: [
+                {
+                    title: "Quantum Computing Stack Exchange",
+                    url: "https://quantumcomputing.stackexchange.com/",
+                    description: "Q&A platform for quantum computing",
+                    type: "Q&A Forum"
+                },
+                {
+                    title: "Qiskit Slack",
+                    url: "https://qiskit.org/slack",
+                    description: "Qiskit community discussions",
+                    type: "Chat Platform"
+                },
+                {
+                    title: "r/QuantumComputing",
+                    url: "https://www.reddit.com/r/QuantumComputing/",
+                    description: "Reddit quantum computing community",
+                    type: "Forum"
+                },
+                {
+                    title: "Quantum Open Source Foundation",
+                    url: "https://qosf.org/",
+                    description: "Open source quantum projects",
+                    type: "Organization"
+                },
+                {
+                    title: "Quantum Computing Report",
+                    url: "https://quantumcomputingreport.com/",
+                    description: "News and analysis in quantum computing",
+                    type: "News Platform"
+                }
+            ],
+            podcasts: [
+                {
+                    title: "Quantum Computing Now",
+                    url: "https://quantumcomputingnow.com/",
+                    description: "Weekly quantum computing updates",
+                    platform: "Podcast"
+                },
+                {
+                    title: "The Quantum Daily Podcast",
+                    url: "https://thequantumdaily.com/podcast/",
+                    description: "Quantum technology news and interviews",
+                    platform: "Podcast"
+                },
+                {
+                    title: "Quantum Computing Inc Podcast",
+                    url: "https://www.quantumcomputinginc.com/podcast/",
+                    description: "Industry perspectives on quantum computing",
+                    platform: "Podcast"
+                },
+                {
+                    title: "Q-Hub Podcast",
+                    url: "https://www.q-hub.co.uk/podcast",
+                    description: "Academic quantum computing discussions",
+                    platform: "Podcast"
+                }
+            ],
+            blogs: [
+                {
+                    title: "Quantum Frontiers",
+                    url: "https://quantumfrontiers.com/",
+                    description: "Research insights in quantum computing",
+                    type: "Research Blog"
+                },
+                {
+                    title: "Microsoft Quantum Blog",
+                    url: "https://cloudblogs.microsoft.com/quantum/",
+                    description: "Microsoft's quantum computing updates",
+                    type: "Company Blog"
+                },
+                {
+                    title: "IBM Quantum Blog",
+                    url: "https://research.ibm.com/blog/quantum",
+                    description: "IBM Research quantum developments",
+                    type: "Research Blog"
+                },
+                {
+                    title: "Quantum Computing Report",
+                    url: "https://quantumcomputingreport.com/blog/",
+                    description: "Industry analysis and news",
+                    type: "News Blog"
+                }
+            ]
+        },
+        practice: {
+            beginnerExercises: [
+                {
+                    title: "Basic Quantum State Manipulation",
+                    difficulty: "Easy",
+                    description: "Create a program to demonstrate basic quantum state preparation and measurement.",
+                    hints: [
+                        "Use Qiskit's QuantumCircuit",
+                        "Implement Hadamard gates",
+                        "Add measurement operations",
+                        "Visualize results with histograms"
+                    ],
+                    solution: {
+                        code: `from qiskit import QuantumCircuit, Aer, execute
+    from qiskit.visualization import plot_histogram
+    import numpy as np
+    import logging
+    from typing import Dict, Optional
+    
+    class QuantumStateDemo:
+        def __init__(self):
+            self.simulator = Aer.get_backend('qasm_simulator')
+            self.setup_logging()
+            
+        def setup_logging(self):
+            logging.basicConfig(
+                level=logging.INFO,
+                format='%(asctime)s - %(levelname)s - %(message)s'
+            )
+            
+        def create_superposition(self, num_qubits: int = 2) -> QuantumCircuit:
+            """Create quantum circuit with superposition states."""
+            try:
+                # Create circuit
+                circuit = QuantumCircuit(num_qubits, num_qubits)
+                
+                # Apply Hadamard gates to create superposition
+                for qubit in range(num_qubits):
+                    circuit.h(qubit)
+                    
+                # Add measurements
+                circuit.measure_all()
+                
+                logging.info(f"Created {num_qubits}-qubit superposition circuit")
+                return circuit
+                
+            except Exception as e:
+                logging.error(f"Circuit creation failed: {str(e)}")
+                raise
+                
+        def run_circuit(self, circuit: QuantumCircuit, 
+                       shots: int = 1000) -> Dict:
+            """Execute quantum circuit and return results."""
+            try:
+                # Execute circuit
+                job = execute(circuit, self.simulator, shots=shots)
+                result = job.result()
+                
+                # Get counts
+                counts = result.get_counts(circuit)
+                
+                logging.info(f"Circuit executed with {shots} shots")
+                return counts
+                
+            except Exception as e:
+                logging.error(f"Circuit execution failed: {str(e)}")
+                raise
+                
+        def analyze_results(self, counts: Dict) -> Dict:
+            """Analyze measurement results."""
+            try:
+                total_shots = sum(counts.values())
+                probabilities = {
+                    state: count/total_shots 
+                    for state, count in counts.items()
+                }
+                
+                # Calculate expected vs actual probabilities
+                num_qubits = len(list(counts.keys())[0])
+                expected_prob = 1 / (2 ** num_qubits)
+                
+                analysis = {
+                    'total_measurements': total_shots,
+                    'state_probabilities': probabilities,
+                    'expected_probability': expected_prob,
+                    'max_deviation': max([
+                        abs(p - expected_prob) 
+                        for p in probabilities.values()
+                    ])
+                }
+                
+                return analysis
+                
+            except Exception as e:
+                logging.error(f"Analysis failed: {str(e)}")
+                raise
+                
+        def create_bell_state(self) -> QuantumCircuit:
+            """Create Bell state (maximally entangled state)."""
+            try:
+                # Create circuit
+                circuit = QuantumCircuit(2, 2)
+                
+                # Create Bell state
+                circuit.h(0)  # Hadamard on first qubit
+                circuit.cx(0, 1)  # CNOT with first qubit as control
+                
+                # Add measurements
+                circuit.measure_all()
+                
+                logging.info("Created Bell state circuit")
+                return circuit
+                
+            except Exception as e:
+                logging.error(f"Bell state creation failed: {str(e)}")
+                raise
+    
+    def run_quantum_demo():
+        # Initialize demo
+        demo = QuantumStateDemo()
+        
+        print("1. Superposition State Demo:")
+        # Create and run superposition circuit
+        circuit = demo.create_superposition(2)
+        print("\nCircuit:")
+        print(circuit)
+        
+        counts = demo.run_circuit(circuit)
+        analysis = demo.analyze_results(counts)
+        
+        print("\nMeasurement Results:")
+        print(f"Total measurements: {analysis['total_measurements']}")
+        print("\nState probabilities:")
+        for state, prob in analysis['state_probabilities'].items():
+            print(f"  |{state}⟩: {prob:.4f}")
+        print(f"\nExpected probability: {analysis['expected_probability']:.4f}")
+        print(f"Maximum deviation: {analysis['max_deviation']:.4f}")
+        
+        print("\n2. Bell State Demo:")
+        # Create and run Bell state circuit
+        bell_circuit = demo.create_bell_state()
+        print("\nCircuit:")
+        print(bell_circuit)
+        
+        bell_counts = demo.run_circuit(bell_circuit)
+        bell_analysis = demo.analyze_results(bell_counts)
+        
+        print("\nBell State Measurements:")
+        print("\nState probabilities:")
+        for state, prob in bell_analysis['state_probabilities'].items():
+            print(f"  |{state}⟩: {prob:.4f}")
+        
+        return {
+            'superposition': analysis,
+            'bell_state': bell_analysis
+        }
+    
+    if __name__ == "__main__":
+        results = run_quantum_demo()`,
+                        explanation: "This exercise demonstrates fundamental quantum computing concepts including superposition and entanglement, with comprehensive result analysis and visualization."
+                    }
+                },
+                {
+                    title: "Quantum Random Number Generator",
+                    difficulty: "Easy",
+                    description: "Implement a quantum random number generator using quantum superposition.",
+                    hints: [
+                        "Use Hadamard gates for randomness",
+                        "Implement multiple qubits for range",
+                        "Add result validation",
+                        "Include statistical analysis"
+                    ],
+                    solution: {
+                        code: `from qiskit import QuantumCircuit, Aer, execute
+    import numpy as np
+    from typing import List, Dict, Optional
+    import logging
+    from collections import Counter
+    
+    class QuantumRandomGenerator:
+        def __init__(self):
+            self.simulator = Aer.get_backend('qasm_simulator')
+            self.setup_logging()
+            
+        def setup_logging(self):
+            logging.basicConfig(
+                level=logging.INFO,
+                format='%(asctime)s - %(levelname)s - %(message)s'
+            )
+            
+        def create_random_circuit(self, num_qubits: int) -> QuantumCircuit:
+            """Create quantum circuit for random number generation."""
+            try:
+                # Create circuit
+                circuit = QuantumCircuit(num_qubits, num_qubits)
+                
+                # Apply Hadamard gates to all qubits
+                circuit.h(range(num_qubits))
+                
+                # Measure all qubits
+                circuit.measure_all()
+                
+                logging.info(f"Created {num_qubits}-qubit random circuit")
+                return circuit
+                
+            except Exception as e:
+                logging.error(f"Circuit creation failed: {str(e)}")
+                raise
+                
+        def binary_to_decimal(self, binary_str: str) -> int:
+            """Convert binary string to decimal number."""
+            return int(binary_str, 2)
+            
+        def generate_random_numbers(self, num_bits: int, 
+                                  num_samples: int) -> List[int]:
+            """Generate list of random numbers."""
+            try:
+                circuit = self.create_random_circuit(num_bits)
+                
+                # Execute circuit multiple times
+                job = execute(
+                    circuit,
+                    self.simulator,
+                    shots=num_samples
+                )
+                result = job.result()
+                counts = result.get_counts(circuit)
+                
+                # Convert measurements to numbers
+                numbers = []
+                for bitstring, count in counts.items():
+                    number = self.binary_to_decimal(bitstring)
+                    numbers.extend([number] * count)
+                    
+                logging.info(
+                    f"Generated {num_samples} random numbers "
+                    f"in range [0, {2**num_bits - 1}]"
+                )
+                return numbers
+                
+            except Exception as e:
+                logging.error(f"Random number generation failed: {str(e)}")
+                raise
+                
+        def analyze_distribution(self, numbers: List[int], 
+                               num_bits: int) -> Dict:
+            """Analyze the distribution of generated numbers."""
+            try:
+                # Calculate statistics
+                numbers_array = np.array(numbers)
+                
+                analysis = {
+                    'mean': np.mean(numbers_array),
+                    'std': np.std(numbers_array),
+                    'min': np.min(numbers_array),
+                    'max': np.max(numbers_array),
+                    'histogram': Counter(numbers_array),
+                    'theoretical_mean': (2**num_bits - 1) / 2,
+                    'theoretical_std': np.sqrt(
+                        ((2**num_bits)**2 - 1) / 12
+                    )
+                }
+                
+                # Chi-square test for uniformity
+                observed = np.zeros(2**num_bits)
+                for num, count in analysis['histogram'].items():
+                    observed[num] = count
+                    
+                expected = len(numbers) / (2**num_bits)
+                chi_square = np.sum(
+                    (observed - expected)**2 / expected
+                )
+                
+                analysis['chi_square_statistic'] = chi_square
+                
+                return analysis
+                
+            except Exception as e:
+                logging.error(f"Distribution analysis failed: {str(e)}")
+                raise
+                
+        def validate_randomness(self, numbers: List[int], 
+                              analysis: Dict) -> Dict:
+            """Perform basic randomness validation tests."""
+            try:
+                # Calculate metrics
+                numbers_array = np.array(numbers)
+                theoretical_mean = analysis['theoretical_mean']
+                theoretical_std = analysis['theoretical_std']
+                
+                validation = {
+                    'mean_within_bounds': abs(
+                        np.mean(numbers_array) - theoretical_mean
+                    ) < theoretical_std,
+                    'distribution_uniform': analysis['chi_square_statistic'] < 
+                                        len(set(numbers)) * 0.05,
+                    'no_obvious_patterns': self._check_patterns(numbers)
+                }
+                
+                validation['overall_quality'] = all(validation.values())
+                
+                return validation
+                
+            except Exception as e:
+                logging.error(f"Randomness validation failed: {str(e)}")
+                raise
+                
+        def _check_patterns(self, numbers: List[int]) -> bool:
+            """Check for obvious patterns in the sequence."""
+            # Check for repeating subsequences
+            seq_str = ''.join(map(str, numbers))
+            for length in range(2, len(seq_str)//2):
+                for i in range(len(seq_str) - 2*length):
+                    if seq_str[i:i+length] == seq_str[i+length:i+2*length]:
+                        return False
+            return True
+    
+    def run_qrng_demo():
+        # Initialize generator
+        qrng = QuantumRandomGenerator()
+        
+        # Generate random numbers
+        num_bits = 4  # Generate numbers from 0 to 15
+        num_samples = 1000
+        
+        print(f"Generating {num_samples} random numbers "
+              f"using {num_bits} qubits...")
+        
+        numbers = qrng.generate_random_numbers(num_bits, num_samples)
+        
+        # Analyze results
+        analysis = qrng.analyze_distribution(numbers, num_bits)
+        validation = qrng.validate_randomness(numbers, analysis)
+        
+        print("\nResults Analysis:")
+        print(f"Mean: {analysis['mean']:.2f} "
+              f"(Expected: {analysis['theoretical_mean']:.2f})")
+        print(f"Standard Deviation: {analysis['std']:.2f} "
+              f"(Expected: {analysis['theoretical_std']:.2f})")
+        print(f"Range: [{analysis['min']}, {analysis['max']}]")
+        
+        print("\nDistribution Test:")
+        print(f"Chi-square statistic: {analysis['chi_square_statistic']:.2f}")
+        
+        print("\nRandomness Validation:")
+        for test, result in validation.items():
+            print(f"{test}: {'Pass' if result else 'Fail'}")
+        
+        return {
+            'numbers': numbers,
+            'analysis': analysis,
+            'validation': validation
+        }
+    
+    if __name__ == "__main__":
+        results = run_qrng_demo()`,
+                        explanation: "This exercise implements a quantum random number generator using superposition states, including comprehensive statistical analysis and randomness validation."
+                    }
+                }
+            ],
+            intermediateExercises: [
+                {
+                    title: "Quantum Phase Estimation",
+                    difficulty: "Medium",
+                    description: "Implement quantum phase estimation algorithm to find eigenvalues of unitary operators.",
+                    hints: [
+                        "Use quantum Fourier transform",
+                        "Implement controlled unitary operations",
+                        "Add phase kickback",
+                        "Include error analysis"
+                    ],
+                    solution: {
+                        code: `from qiskit import QuantumCircuit, QuantumRegister
+    from qiskit import ClassicalRegister, Aer, execute
+    import numpy as np
+    from typing import Tuple, Dict, Optional
+    import logging
+    
+    class QuantumPhaseEstimation:
+        def __init__(self):
+            self.simulator = Aer.get_backend('qasm_simulator')
+            self.setup_logging()
+            
+        def setup_logging(self):
+            logging.basicConfig(
+                level=logging.INFO,
+                format='%(asctime)s - %(levelname)s - %(message)s'
+            )
+            
+        def create_qpe_circuit(self, precision_qubits: int, 
+                              unitary_circuit: QuantumCircuit) -> QuantumCircuit:
+            """Create quantum phase estimation circuit."""
+            try:
+                # Create registers
+                counting_register = QuantumRegister(precision_qubits, 'count')
+                eigenstate_register = QuantumRegister(
+                    unitary_circuit.num_qubits, 
+                    'state'
+                )
+                classical_register = ClassicalRegister(precision_qubits, 'c')
+                
+                # Create circuit
+                circuit = QuantumCircuit(
+                    counting_register, 
+                    eigenstate_register, 
+                    classical_register
+                )
+                
+                # Initialize counting qubits in superposition
+                for qubit in range(precision_qubits):
+                    circuit.h(counting_register[qubit])
+                
+                # Apply controlled unitary operations
+                for i in range(precision_qubits):
+                    for _ in range(2**i):
+                        circuit.append(
+                            unitary_circuit.control(),
+                            [counting_register[i]] + 
+                            list(range(
+                                precision_qubits,
+                                precision_qubits + unitary_circuit.num_qubits
+                            ))
+                        )
+                
+                # Apply inverse QFT
+                circuit.append(
+                    self._create_inverse_qft(precision_qubits),
+                    range(precision_qubits)
+                )
+                
+                # Measure counting qubits
+                circuit.measure(
+                    counting_register,
+                    classical_register
+                )
+                
+                logging.info(
+                    f"Created QPE circuit with {precision_qubits} "
+                    "precision qubits"
+                )
+                return circuit
+                
+            except Exception as e:
+                logging.error(f"Circuit creation failed: {str(e)}")
+                raise
+                
+        def _create_inverse_qft(self, num_qubits: int) -> QuantumCircuit:
+            """Create inverse quantum Fourier transform circuit."""
+            def _create_inverse_qft(self, num_qubits: int) -> QuantumCircuit:
+        """Create inverse quantum Fourier transform circuit."""
+        try:
+            circuit = QuantumCircuit(num_qubits)
+            
+            for qubit in range(num_qubits//2):
+                circuit.swap(qubit, num_qubits-qubit-1)
+                
+            for j in range(num_qubits):
+                for m in range(j):
+                    circuit.cp(
+                        -2*np.pi/float(2**(j-m+1)),
+                        m, j
+                    )
+                circuit.h(j)
+                
+            return circuit
+            
+        except Exception as e:
+            logging.error(f"Inverse QFT creation failed: {str(e)}")
+            raise
+            
+    def estimate_phase(self, unitary_circuit: QuantumCircuit,
+                      precision_qubits: int,
+                      shots: int = 1000) -> Dict:
+        """Perform quantum phase estimation."""
+        try:
+            # Create and execute circuit
+            qpe_circuit = self.create_qpe_circuit(
+                precision_qubits,
+                unitary_circuit
+            )
+            
+            job = execute(qpe_circuit, self.simulator, shots=shots)
+            result = job.result()
+            counts = result.get_counts(qpe_circuit)
+            
+            # Process results
+            phases = {}
+            total_shots = sum(counts.values())
+            
+            for bitstring, count in counts.items():
+                # Convert measurement to phase
+                measured_value = int(bitstring, 2)
+                phase = measured_value / (2**precision_qubits)
+                phase_str = f"{phase:.{precision_qubits}f}"
+                
+                if phase_str in phases:
+                    phases[phase_str] += count
+                else:
+                    phases[phase_str] = count
+                    
+            # Calculate estimated phase and confidence
+            max_count_phase = max(phases.items(), key=lambda x: x[1])
+            estimated_phase = float(max_count_phase[0])
+            confidence = max_count_phase[1] / total_shots
+            
+            results = {
+                'estimated_phase': estimated_phase,
+                'confidence': confidence,
+                'phase_distribution': {
+                    phase: count/total_shots 
+                    for phase, count in phases.items()
+                },
+                'precision_qubits': precision_qubits,
+                'total_measurements': total_shots
+            }
+            
+            logging.info(
+                f"Estimated phase: {estimated_phase:.6f} "
+                f"with {confidence*100:.2f}% confidence"
+            )
+            return results
+            
+        except Exception as e:
+            logging.error(f"Phase estimation failed: {str(e)}")
+            raise
+            
+    def analyze_accuracy(self, results: Dict, 
+                        true_phase: float) -> Dict:
+        """Analyze accuracy of phase estimation."""
+        try:
+            estimated_phase = results['estimated_phase']
+            
+            analysis = {
+                'absolute_error': abs(true_phase - estimated_phase),
+                'relative_error': abs(
+                    (true_phase - estimated_phase) / true_phase
+                ) if true_phase != 0 else float('inf'),
+                'theoretical_precision': 1 / (2**results['precision_qubits']),
+                'confidence': results['confidence']
+            }
+            
+            # Check if error is within theoretical bounds
+            analysis['within_theoretical_bounds'] = (
+                analysis['absolute_error'] <= 
+                analysis['theoretical_precision']
+            )
+            
+            return analysis
+            
+        except Exception as e:
+            logging.error(f"Accuracy analysis failed: {str(e)}")
+            raise
+
+def create_test_unitary(phase: float) -> QuantumCircuit:
+    """Create a test unitary operator with known phase."""
+    circuit = QuantumCircuit(1)
+    circuit.p(2 * np.pi * phase, 0)
+    return circuit
+
+def run_qpe_demo():
+    # Initialize QPE
+    qpe = QuantumPhaseEstimation()
+    
+    # Test parameters
+    true_phase = 0.25  # π/2 phase
+    precision_qubits = 6
+    
+    print(f"Running QPE for phase {true_phase} "
+          f"with {precision_qubits} precision qubits...")
+    
+    # Create test unitary
+    unitary = create_test_unitary(true_phase)
+    
+    # Perform phase estimation
+    results = qpe.estimate_phase(
+        unitary,
+        precision_qubits,
+        shots=1000
+    )
+    
+    # Analyze results
+    analysis = qpe.analyze_accuracy(results, true_phase)
+    
+    print("\nResults:")
+    print(f"Estimated Phase: {results['estimated_phase']:.6f}")
+    print(f"True Phase: {true_phase}")
+    print(f"Confidence: {results['confidence']*100:.2f}%")
+    
+    print("\nAccuracy Analysis:")
+    print(f"Absolute Error: {analysis['absolute_error']:.6f}")
+    print(f"Relative Error: {analysis['relative_error']*100:.2f}%")
+    print(f"Theoretical Precision: {analysis['theoretical_precision']:.6f}")
+    print(f"Within Theoretical Bounds: "
+          f"{'Yes' if analysis['within_theoretical_bounds'] else 'No'}")
+    
+    return {
+        'estimation': results,
+        'analysis': analysis
+    }
+
+if __name__ == "__main__":
+    results = run_qpe_demo()`,
+                    explanation: "This intermediate exercise implements the quantum phase estimation algorithm, including inverse quantum Fourier transform, controlled operations, and comprehensive error analysis."
+                }
+            },
+            {
+                title: "Variational Quantum Eigensolver",
+                difficulty: "Medium",
+                description: "Implement a simple VQE algorithm for finding ground state energies.",
+                hints: [
+                    "Create parameterized quantum circuits",
+                    "Implement cost function",
+                    "Use classical optimizer",
+                    "Add convergence analysis"
+                ],
+                solution: {
+                    code: `from qiskit import QuantumCircuit, Aer, execute
+from qiskit.opflow import PauliOp, PauliSumOp
+from scipy.optimize import minimize
+import numpy as np
+from typing import List, Dict, Callable, Optional
+import logging
+
+class VariationalQuantumEigensolver:
+    def __init__(self):
+        self.simulator = Aer.get_backend('statevector_simulator')
+        self.setup_logging()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def create_ansatz(self, num_qubits: int, 
+                     depth: int) -> Callable:
+        """Create parameterized quantum circuit ansatz."""
+        def circuit_builder(parameters: np.ndarray) -> QuantumCircuit:
+            circuit = QuantumCircuit(num_qubits)
+            
+            param_idx = 0
+            for d in range(depth):
+                # Single qubit rotations
+                for q in range(num_qubits):
+                    circuit.rx(parameters[param_idx], q)
+                    param_idx += 1
+                    circuit.rz(parameters[param_idx], q)
+                    param_idx += 1
+                    
+                # Entangling layers
+                for q in range(num_qubits-1):
+                    circuit.cnot(q, q+1)
+                    
+            return circuit
+            
+        return circuit_builder
+        
+    def create_hamiltonian(self, 
+                          pauli_strings: List[str],
+                          coefficients: List[float]) -> PauliSumOp:
+        """Create Hamiltonian operator from Pauli strings."""
+        try:
+            hamiltonian = sum(
+                coeff * PauliOp.from_list([(pauli, 1.0)])
+                for pauli, coeff in zip(pauli_strings, coefficients)
+            )
+            return hamiltonian
+            
+        except Exception as e:
+            logging.error(f"Hamiltonian creation failed: {str(e)}")
+            raise
+            
+    def compute_expectation(self, circuit: QuantumCircuit,
+                          hamiltonian: PauliSumOp) -> float:
+        """Compute expectation value of Hamiltonian."""
+        try:
+            # Execute circuit
+            job = execute(circuit, self.simulator)
+            statevector = job.result().get_statevector()
+            
+            # Compute expectation value
+            expectation = 0.0
+            for pauli, coeff in hamiltonian.to_list():
+                pauli_mat = PauliOp.from_list([(pauli, 1.0)])
+                expectation += coeff * np.real(
+                    np.vdot(statevector, 
+                           pauli_mat.eval(statevector))
+                )
+                
+            return expectation
+            
+        except Exception as e:
+            logging.error(f"Expectation computation failed: {str(e)}")
+            raise
+            
+    def optimize(self, ansatz: Callable,
+                hamiltonian: PauliSumOp,
+                initial_params: np.ndarray,
+                max_iter: int = 100) -> Dict:
+        """Perform VQE optimization."""
+        try:
+            # Define objective function
+            def objective(parameters: np.ndarray) -> float:
+                circuit = ansatz(parameters)
+                return self.compute_expectation(circuit, hamiltonian)
+                
+            # Optimization history
+            history = {
+                'energies': [],
+                'parameters': []
+            }
+            
+            # Callback to store optimization history
+            def callback(xk):
+                energy = objective(xk)
+                history['energies'].append(energy)
+                history['parameters'].append(xk.copy())
+                logging.info(f"Energy at iteration {len(history['energies'])}: "
+                           f"{energy:.6f}")
+                
+            # Perform optimization
+            result = minimize(
+                objective,
+                initial_params,
+                method='COBYLA',
+                options={'maxiter': max_iter},
+                callback=callback
+            )
+            
+            # Compute final results
+            final_energy = objective(result.x)
+            results = {
+                'optimal_energy': final_energy,
+                'optimal_parameters': result.x,
+                'convergence': result.success,
+                'num_iterations': result.nfev,
+                'history': history
+            }
+            
+            logging.info(f"VQE optimization completed: "
+                        f"E = {final_energy:.6f}")
+            return results
+            
+        except Exception as e:
+            logging.error(f"VQE optimization failed: {str(e)}")
+            raise
+            
+    def analyze_convergence(self, history: Dict) -> Dict:
+        """Analyze optimization convergence."""
+        try:
+            energies = np.array(history['energies'])
+            
+            analysis = {
+                'initial_energy': energies[0],
+                'final_energy': energies[-1],
+                'energy_change': abs(energies[-1] - energies[0]),
+                'energy_variance': np.var(energies[-10:])
+                    if len(energies) >= 10 else None,
+                'converged': len(energies) >= 2 and
+                            abs(energies[-1] - energies[-2]) < 1e-6
+            }
+            
+            return analysis
+            
+        except Exception as e:
+            logging.error(f"Convergence analysis failed: {str(e)}")
+            raise
+
+def run_vqe_demo():
+    # Initialize VQE
+    vqe = VariationalQuantumEigensolver()
+    
+    # Define simple Hamiltonian (XX + ZZ)
+    pauli_strings = ['XX', 'ZZ']
+    coefficients = [1.0, 1.0]
+    
+    print("Creating Hamiltonian and ansatz circuit...")
+    
+    # Create Hamiltonian
+    hamiltonian = vqe.create_hamiltonian(
+        pauli_strings,
+        coefficients
+    )
+    
+    # Create ansatz
+    num_qubits = 2
+    depth = 2
+    num_parameters = num_qubits * 2 * depth
+    ansatz = vqe.create_ansatz(num_qubits, depth)
+    
+    # Initial parameters
+    initial_params = np.random.random(num_parameters)
+    
+    print("\nRunning VQE optimization...")
+    
+    # Run VQE
+    results = vqe.optimize(
+        ansatz,
+        hamiltonian,
+        initial_params
+    )
+    
+    # Analyze convergence
+    analysis = vqe.analyze_convergence(results['history'])
+    
+    print("\nResults:")
+    print(f"Optimal Energy: {results['optimal_energy']:.6f}")
+    print(f"Number of Iterations: {results['num_iterations']}")
+    print(f"Convergence: {'Yes' if results['convergence'] else 'No'}")
+    
+    print("\nConvergence Analysis:")
+    print(f"Initial Energy: {analysis['initial_energy']:.6f}")
+    print(f"Final Energy: {analysis['final_energy']:.6f}")
+    print(f"Energy Change: {analysis['energy_change']:.6f}")
+    if analysis['energy_variance'] is not None:
+        print(f"Final Energy Variance: {analysis['energy_variance']:.6f}")
+    print(f"Converged: {'Yes' if analysis['converged'] else 'No'}")
+    
+    return {
+        'optimization': results,
+        'convergence': analysis
+    }
+
+if __name__ == "__main__":
+    results = run_vqe_demo()`,
+                    explanation: "This intermediate exercise implements the Variational Quantum Eigensolver algorithm, including parameterized quantum circuits, Hamiltonian expectation value computation, and classical optimization."
+                }
+            }
+        ],
+        advancedExercises: [
+            {
+                title: "Quantum Error Correction",
+                difficulty: "Hard",
+                description: "Implement a quantum error correction code with syndrome measurement and error recovery.",
+                hints: [
+                    "Implement encoding circuit",
+                    "Add syndrome measurements",
+                    "Include error recovery operations",
+                    "Analyze error rates"
+                ],
+                solution: {
+                    code: `from qiskit import QuantumCircuit, QuantumRegister
+from qiskit import ClassicalRegister, Aer, execute
+import numpy as np
+from typing import Dict, List, Tuple, Optional
+import logging
+from dataclasses import dataclass
+
+@dataclass
+class ErrorConfig:
+    bit_flip_prob: float
+    phase_flip_prob: float
+    measurement_error_prob: float
+
+class QuantumErrorCorrection:
+    def __init__(self):
+        self.simulator = Aer.get_backend('qasm_simulator')
+        self.setup_logging()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def create_encoding_circuit(self) -> QuantumCircuit:
+        """Create encoding circuit for 5-qubit code."""
+        try:
+            # Create registers
+            data = QuantumRegister(1, 'data')
+            ancilla = QuantumRegister(4, 'ancilla')
+            syndrome = ClassicalRegister(4, 'syndrome')
+            output = ClassicalRegister(1, 'output')
+            
+            circuit = QuantumCircuit(data, ancilla, syndrome, output)
+            
+            # Encode logical state
+            circuit.h(data[0])
+            
+            # Create entangled state for 5-qubit code
+            circuit.h(ancilla[0])
+            circuit.cx(ancilla[0], ancilla[1])
+            circuit.cx(ancilla[1], ancilla[2])
+            circuit.cx(ancilla[2], ancilla[3])
+            
+            # Encode data qubit
+            circuit.cx(data[0], ancilla[0])
+            circuit.cx(data[0], ancilla[2])
+            circuit.cx(data[0], ancilla[3])
+            circuit.h(data[0])
+            
+            return circuit
+            
+        except Exception as e:
+            logging.error(f"Encoding circuit creation failed: {str(e)}")
+            raise
+            
+    def add_error_detection(self, circuit: QuantumCircuit) -> QuantumCircuit:
+        """Add syndrome measurement circuit."""
+        try:
+            # Add stabilizer measurements
+            # X-type stabilizers
+            circuit.h([0, 1, 2, 3])
+            circuit.barrier()
+            
+            # First stabilizer
+            circuit.cx(0, 1)
+            circuit.cx(1, 2)
+            
+            # Second stabilizer
+            circuit.cx(1, 2)
+            circuit.cx(2, 3)
+            
+            # Third stabilizer
+            circuit.cx(2, 3)
+            circuit.cx(3, 4)
+            
+            # Fourth stabilizer
+            circuit.cx(3, 4)
+            circuit.cx(4, 0)
+            
+            circuit.barrier()
+            circuit.h([0, 1, 2, 3])
+            
+            # Measure syndromes
+            circuit.measure(range(4), range(4))
+            
+            return circuit
+            
+        except Exception as e:
+            logging.error(f"Error detection circuit failed: {str(e)}")
+            raise
+            
+    def add_error_correction(self, circuit: QuantumCircuit, 
+                           syndrome: str) -> QuantumCircuit:
+        """Add error correction based on syndrome measurement."""
+        try:
+            # Correction lookup table
+            corrections = {
+                '0000': [],  # No error
+                '0001': [4],  # Single qubit error on 4
+                '0010': [3],  # Single qubit error on 3
+                '0011': [3, 4],  # Two qubit error
+                '0100': [2],  # Single qubit error on 2
+                '0101': [2, 4],
+                '0110': [2, 3],
+                '0111': [2, 3, 4],
+                '1000': [1],  # Single qubit error on 1
+                '1001': [1, 4],
+                '1010': [1, 3],
+                '1011': [1, 3, 4],
+                '1100': [1, 2],
+                '1101': [1, 2, 4],
+                '1110': [1, 2, 3],
+                '1111': [1, 2, 3, 4]
+            }
+            
+            # Apply corrections
+            for qubit in corrections.get(syndrome, []):
+                circuit.x(qubit)
+                
+            return circuit
+            
+        except Exception as e:
+            logging.error(f"Error correction failed: {str(e)}")
+            raise
+            
+    def simulate_errors(self, circuit: QuantumCircuit, 
+                       config: ErrorConfig) -> QuantumCircuit:
+        """Add noise to the circuit based on error configuration."""
+        try:
+            num_qubits = sum(qr.size for qr in circuit.qregs)
+            
+            # Add bit flip errors
+            for qubit in range(num_qubits):
+                if np.random.random() < config.bit_flip_prob:
+                    circuit.x(qubit)
+                    
+            # Add phase flip errors
+            for qubit in range(num_qubits):
+                if np.random.random() < config.phase_flip_prob:
+                    circuit.z(qubit)
+                    
+            return circuit
+            
+        except Exception as e:
+            logging.error(f"Error simulation failed: {str(e)}")
+            raise
+            
+    def run_error_correction(self, initial_state: complex,
+                           config: ErrorConfig,
+                           shots: int = 1000) -> Dict:
+        """Run complete error correction protocol."""
+        try:
+            results = {
+                'success_rate': 0.0,
+                'error_distribution': {},
+                'syndrome_statistics': {},
+                'fidelity': 0.0
+            }
+            
+            successful_shots = 0
+            syndrome_counts = {}
+            final_states = []
+            
+            for _ in range(shots):
+                # Create and encode circuit
+                circuit = self.create_encoding_circuit()
+                
+                # Initialize with given state
+                circuit.initialize([1-initial_state, initial_state], 0)
+                
+                # Add simulated errors
+                circuit = self.simulate_errors(circuit, config)
+                
+                # Add error detection
+                circuit = self.add_error_detection(circuit)
+                
+                # Execute circuit
+                job = execute(circuit, self.simulator, shots=1)
+                counts = job.result().get_counts()
+                
+                # Process results
+                for measurement, count in counts.items():
+                    syndrome = measurement[:-1]  # Remove output bit
+                    output = measurement[-1]
+                    
+                    # Update syndrome statistics
+                    syndrome_counts[syndrome] = \
+                        syndrome_counts.get(syndrome, 0) + count
+                    
+                    # Apply error correction
+                    corrected_circuit = self.add_error_correction(
+                        circuit.copy(),
+                        syndrome
+                    )
+                    
+                    # Measure corrected state
+                    corrected_job = execute(
+                        corrected_circuit,
+                        self.simulator,
+                        shots=1
+                    )
+                    corrected_state = corrected_job.result().get_statevector()
+                    final_states.append(corrected_state)
+                    
+                    # Check if correction was successful
+                    if abs(corrected_state[1] - initial_state) < 1e-3:
+                        successful_shots += count
+                        
+            # Calculate results
+            results['success_rate'] = successful_shots / shots
+            results['syndrome_statistics'] = {
+                syndrome: count/shots 
+                for syndrome, count in syndrome_counts.items()
+            }
+            
+            # Calculate average fidelity
+            fidelities = [
+                abs(np.vdot([1-initial_state, initial_state], state))**2
+                for state in final_states
+            ]
+            results['fidelity'] = np.mean(fidelities)
+            
+            logging.info(f"Error correction completed with "
+                        f"{results['success_rate']*100:.2f}% success rate")
+            return results
+            
+        except Exception as e:
+            logging.error(f"Error correction protocol failed: {str(e)}")
+            raise
+            
+    def analyze_performance(self, results: Dict) -> Dict:
+        """Analyze error correction performance."""
+        try:
+            analysis = {
+                'success_rate': results['success_rate'],
+                'average_fidelity': results['fidelity'],
+                'syndrome_entropy': self._calculate_entropy(
+                    results['syndrome_statistics']
+                ),
+                'error_detection_rate': sum(
+                    count for syndrome, count 
+                    in results['syndrome_statistics'].items()
+                    if syndrome != '0000'
+                )
+            }
+            
+            # Calculate error correction effectiveness
+            analysis['correction_effectiveness'] = \
+                analysis['success_rate'] / \
+                (analysis['error_detection_rate'] + 1e-10)
+                
+            return analysis
+            
+        except Exception as e:
+            logging.error(f"Performance analysis failed: {str(e)}")
+            raise
+            
+    def _calculate_entropy(self, probabilities: Dict) -> float:
+        """Calculate Shannon entropy of syndrome distribution."""
+        return -sum(
+            p * np.log2(p)
+            for p in probabilities.values()
+            if p > 0
+        )
+
+def run_qec_demo():
+    # Initialize QEC
+    qec = QuantumErrorCorrection()
+    
+    # Error configuration
+    config = ErrorConfig(
+        bit_flip_prob=0.1,
+        phase_flip_prob=0.1,
+        measurement_error_prob=0.05
+    )
+    
+    print("Running quantum error correction simulation...")
+    
+    # Run error correction protocol
+    initial_state = 0.7 + 0.3j  # Test state
+    results = qec.run_error_correction(
+        initial_state,
+        config,
+        shots=1000
+    )
+    
+    # Analyze performance
+    analysis = qec.analyze_performance(results)
+    
+    print("\nResults:")
+    print(f"Success Rate: {analysis['success_rate']*100:.2f}%")
+    print(f"Average Fidelity: {analysis['average_fidelity']:.4f}")
+    print(f"Error Detection Rate: "
+          f"{analysis['error_detection_rate']*100:.2f}%")
+    print(f"Correction Effectiveness: "
+          f"{analysis['correction_effectiveness']:.4f}")
+    print(f"Syndrome Entropy: {analysis['syndrome_entropy']:.4f}")
+    
+    print("\nSyndrome Statistics:")
+    for syndrome, prob in results['syndrome_statistics'].items():
+        print(f"  {syndrome}: {prob*100:.2f}%")
+    
+    return {
+        'results': results,
+        'analysis': analysis
+    }
+
+if __name__ == "__main__":
+    results = run_qec_demo()`,
+                    explanation: "This advanced exercise implements a 5-qubit quantum error correction code with syndrome measurement, error recovery, and performance analysis. It includes realistic error simulation and comprehensive analysis of the error correction effectiveness."
+                }
+            }
+        ]
+    }
+}
+}
+
 
 ];
 
