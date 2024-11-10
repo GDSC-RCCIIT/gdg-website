@@ -48365,5 +48365,43 @@
     { "title": "Google Cloud NGFW Enterprise CyberRisk Validation Report", "description": "Read SecureIQlab's test results on Google Cloud Next Generation Firewall Enterprise." },
     { "title": "Google is a Leader in The Forrester Wave™: AI Foundation Models for Language, Q2 2024", "description": "Access your complimentary copy of the report to learn why Google was named a Leader." },
     { "title": "Google is a Leader in the 2024 Gartner® Magic Quadrant™ for Cloud AI Developer Services (CAIDS)", "description": "Access your complimentary copy of the report to learn why Google was named a Leader." }
-  ]
+  ],
+  "devproducts":[
+  {
+    "title": "Android",
+    "description": "Modern tools to help you build experiences that people love across every Android device.",
+    "image": "/devprod1.jpeg",
+    "link": "#"
+  },
+  {
+    "title": "Google Cloud",
+    "description": "New customers get $300 in free credits to deploy dynamic websites and launch VMs.",
+    "image": "/devprod2.png",
+    "link": "#"
+  },
+  {
+    "title": "Google AI Studio",
+    "description": "Build generative AI applications quickly with Gemini in Google AI Studio.",
+    "image": "/devprod3.jpeg",
+    "link": "#"
+  },
+  {
+    "title": "ChromeOS",
+    "description": "Modern tools and features to help you build high-quality web experiences.",
+    "image": "/devprod4.png",
+    "link": "#"
+  },
+  {
+    "title": "Android Studio",
+    "description": "An integrated development environment (IDE) optimized for Android apps.",
+    "image": "/devprod5.jpeg",
+    "link": "#"
+  },
+  {
+    "title": "Firebase Cloud Messaging",
+    "description": "A cross-platform messaging solution to reliably send messages at no cost.",
+    "image": "/devprod6.jpeg",
+    "link": "#"
+  }
+]
 }

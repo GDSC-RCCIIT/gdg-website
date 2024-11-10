@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search } from 'lucide-react';
 import ProductNavbar from '../../../components/Global/ProductsNavbar';
 
@@ -112,44 +112,26 @@ const DeveloperProductsPage = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedFocus, setSelectedFocus] = useState(null);
     const [selectedTab, setSelectedTab] = useState("All Products");
-    const products = [
-        {
-            title: "Android",
-            description: "Modern tools to help you build experiences that people love across every Android device.",
-            image: "/devprod1.jpeg",
-            link: "#",
-        },
-        {
-            title: "Google Cloud",
-            description: "New customers get $300 in free credits to deploy dynamic websites and launch VMs.",
-            image: "/devprod2.png",
-            link: "#",
-        },
-        {
-            title: "Google AI Studio",
-            description: "Build generative AI applications quickly with Gemini in Google AI Studio.",
-            image: "/devprod3.jpeg",
-            link: "#",
-        },
-        {
-            title: "ChromeOS",
-            description: "Modern tools and features to help you build high-quality web experiences.",
-            image: "/devprod4.png",
-            link: "#",
-        },
-        {
-            title: "Android Studio",
-            description: "An integrated development environment (IDE) optimized for Android apps.",
-            image: "/devprod5.jpeg",
-            link: "#",
-        },
-        {
-            title: "Firebase Cloud Messaging",
-            description: "A cross-platform messaging solution to reliably send messages at no cost.",
-            image: "/devprod6.jpeg",
-            link: "#",
-        },
-    ];
+    const [products, setProducts] = useState([]);
+
+    // Fetch products data from JSON server
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const response = await fetch('http://localhost:5000/devproducts');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                setProducts(data || []);
+            } catch (error) {
+                console.error('Error fetching products:', error);
+                setProducts([]);  // Optional: Set an empty array if fetching fails
+            }
+        };
+
+        fetchProducts();
+    }, []);
 
     return (
         <div>
