@@ -188,7 +188,7 @@ const GDSCLanding = () => {
               >
                 <div className="mb-4 text-blue-500">{item.icon}</div>
                 <p className="font-semibold text-gray-700">{item.text}</p>
-              </motion.div>
+              </motion.di>
               </a>
             ))}
           </div>
