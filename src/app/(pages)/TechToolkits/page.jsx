@@ -27,10 +27,10 @@ const TechToolkitHub = () => {
       icon: <Globe className="w-6 h-6" />,
       color: '#00796B',
       tools: [
-        { name: 'MongoDB', level: 'Database', color: '#47A248' },
-        { name: 'Express.js', level: 'Backend', color: '#000000' },
-        { name: 'React', level: 'Frontend', color: '#61DAFB' },
-        { name: 'Node.js', level: 'Runtime', color: '#339933' }
+        { name: 'MongoDB', level: 'Database', color: '#47A248', link: 'https://www.mongodb.com/docs/' },
+        { name: 'Express.js', level: 'Backend', color: '#000000', link: 'https://expressjs.com/' },
+        { name: 'React', level: 'Frontend', color: '#61DAFB', link: 'https://reactjs.org/docs/' },
+        { name: 'Node.js', level: 'Runtime', color: '#339933', link: 'https://nodejs.org/en/docs/' }
       ]
     },
     {
@@ -39,10 +39,10 @@ const TechToolkitHub = () => {
       icon: <Globe className="w-6 h-6" />,
       color: '#1976D2',
       tools: [
-        { name: 'MongoDB', level: 'Database', color: '#47A248' },
-        { name: 'Express.js', level: 'Backend', color: '#000000' },
-        { name: 'Angular', level: 'Frontend', color: '#DD0031' },
-        { name: 'Node.js', level: 'Runtime', color: '#339933' }
+        { name: 'MongoDB', level: 'Database', color: '#47A248', link: 'https://www.mongodb.com/docs/' },
+        { name: 'Express.js', level: 'Backend', color: '#000000', link: 'https://expressjs.com/' },
+        { name: 'Angular', level: 'Frontend', color: '#DD0031', link: 'https://angular.io/docs' },
+        { name: 'Node.js', level: 'Runtime', color: '#339933', link: 'https://nodejs.org/en/docs/' }
       ]
     },
     {
@@ -51,10 +51,10 @@ const TechToolkitHub = () => {
       icon: <Server className="w-6 h-6" />,
       color: '#E65100',
       tools: [
-        { name: 'Linux', level: 'OS', color: '#FCC624' },
-        { name: 'Apache', level: 'Server', color: '#D22128' },
-        { name: 'MySQL', level: 'Database', color: '#4479A1' },
-        { name: 'PHP', level: 'Backend', color: '#777BB4' }
+        { name: 'Linux', level: 'OS', color: '#FCC624', link: 'https://www.kernel.org/doc/' },
+        { name: 'Apache', level: 'Server', color: '#D22128', link: 'https://httpd.apache.org/docs/' },
+        { name: 'MySQL', level: 'Database', color: '#4479A1', link: 'https://dev.mysql.com/doc/' },
+        { name: 'PHP', level: 'Backend', color: '#777BB4', link: 'https://www.php.net/docs.php' }
       ]
     },
     {
@@ -63,11 +63,11 @@ const TechToolkitHub = () => {
       icon: <Settings className="w-6 h-6" />,
       color: '#0277BD',
       tools: [
-        { name: 'Docker', level: 'Containerization', color: '#2496ED' },
-        { name: 'Kubernetes', level: 'Orchestration', color: '#326CE5' },
-        { name: 'Jenkins', level: 'CI/CD', color: '#D24939' },
-        { name: 'Terraform', level: 'IaC', color: '#7B42BC' },
-        { name: 'Ansible', level: 'Configuration', color: '#EE0000' }
+        { name: 'Docker', level: 'Containerization', color: '#2496ED', link: 'https://docs.docker.com/' },
+        { name: 'Kubernetes', level: 'Orchestration', color: '#326CE5', link: 'https://kubernetes.io/docs/' },
+        { name: 'Jenkins', level: 'CI/CD', color: '#D24939', link: 'https://www.jenkins.io/doc/' },
+        { name: 'Terraform', level: 'IaC', color: '#7B42BC', link: 'https://developer.hashicorp.com/terraform/docs' },
+        { name: 'Ansible', level: 'Configuration', color: '#EE0000', link: 'https://docs.ansible.com/' }
       ]
     },
     {
@@ -76,10 +76,10 @@ const TechToolkitHub = () => {
       icon: <Cloud className="w-6 h-6" />,
       color: '#1565C0',
       tools: [
-        { name: 'Google Cloud', level: 'Cloud', color: '#4285F4' },
-        { name: 'AWS', level: 'Cloud', color: '#FF9900' },
-        { name: 'Azure', level: 'Cloud', color: '#0078D4' },
-        { name: 'Heroku', level: 'PaaS', color: '#430098' }
+        { name: 'Google Cloud', level: 'Cloud', color: '#4285F4', link: 'https://cloud.google.com/docs' },
+        { name: 'AWS', level: 'Cloud', color: '#FF9900', link: 'https://aws.amazon.com/documentation/' },
+        { name: 'Azure', level: 'Cloud', color: '#0078D4', link: 'https://learn.microsoft.com/en-us/azure/' },
+        { name: 'Heroku', level: 'PaaS', color: '#430098', link: 'https://devcenter.heroku.com/' }
       ]
     },
     {
@@ -88,10 +88,10 @@ const TechToolkitHub = () => {
       icon: <Terminal className="w-6 h-6" />,
       color: '#424242',
       tools: [
-        { name: 'VS Code', level: 'Editor', color: '#007ACC' },
-        { name: 'IntelliJ IDEA', level: 'IDE', color: '#000000' },
-        { name: 'Sublime Text', level: 'Editor', color: '#FF9800' },
-        { name: 'PyCharm', level: 'IDE', color: '#21D789' }
+        { name: 'VS Code', level: 'Editor', color: '#007ACC', link: 'https://code.visualstudio.com/docs' },
+        { name: 'IntelliJ IDEA', level: 'IDE', color: '#000000', link: 'https://www.jetbrains.com/idea/documentation/' },
+        { name: 'Sublime Text', level: 'Editor', color: '#FF9800', link: 'https://www.sublimetext.com/docs/' },
+        { name: 'PyCharm', level: 'IDE', color: '#21D789', link: 'https://www.jetbrains.com/pycharm/documentation/' }
       ]
     },
     {
@@ -100,10 +100,10 @@ const TechToolkitHub = () => {
       icon: <Code className="w-6 h-6" />,
       color: '#673AB7',
       tools: [
-        { name: 'Python', level: 'Backend', color: '#3776AB' },
-        { name: 'JavaScript', level: 'Full-Stack', color: '#F7DF1E' },
-        { name: 'Java', level: 'Backend', color: '#007396' },
-        { name: 'Go', level: 'Backend', color: '#00ADD8' }
+        { name: 'Python', level: 'Backend', color: '#3776AB', link: 'https://docs.python.org/3/' },
+        { name: 'JavaScript', level: 'Full-Stack', color: '#F7DF1E', link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+        { name: 'Java', level: 'Backend', color: '#007396', link: 'https://docs.oracle.com/en/java/' },
+        { name: 'Go', level: 'Backend', color: '#00ADD8', link: 'https://golang.org/doc/' }
       ]
     },
     {
@@ -112,13 +112,14 @@ const TechToolkitHub = () => {
       icon: <Monitor className="w-6 h-6" />,
       color: '#C2185B',
       tools: [
-        { name: 'Webpack', level: 'Bundler', color: '#8DD6F9' },
-        { name: 'Sass', level: 'CSS', color: '#CC6699' },
-        { name: 'TypeScript', level: 'Language', color: '#3178C6' },
-        { name: 'Tailwind', level: 'CSS', color: '#06B6D4' }
+        { name: 'Webpack', level: 'Bundler', color: '#8DD6F9', link: 'https://webpack.js.org/concepts/' },
+        { name: 'Sass', level: 'CSS', color: '#CC6699', link: 'https://sass-lang.com/documentation/' },
+        { name: 'TypeScript', level: 'Language', color: '#3178C6', link: 'https://www.typescriptlang.org/docs/' },
+        { name: 'Tailwind', level: 'CSS', color: '#06B6D4', link: 'https://tailwindcss.com/docs' }
       ]
     }
   ];
+
 
   const stackVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -181,7 +182,7 @@ const TechToolkitHub = () => {
               style={{
                 backgroundImage: `linear-gradient(135deg, ${stack.color}10, white)`,
               }}
-            >
+            >    
               <div className="flex items-center space-x-4">
                 <div className="flex-shrink-0">
                   <div 
@@ -208,6 +209,7 @@ const TechToolkitHub = () => {
                   >
                     <div className="mt-6 space-y-4">
                       {stack.tools.map((tool) => (
+                        <Link href={tool.link} key={tool.name} target="_blank">
                         <motion.div
                           key={tool.name}
                           className="flex items-center justify-between p-3 rounded-lg"
@@ -224,6 +226,7 @@ const TechToolkitHub = () => {
                             {tool.level}
                           </span>
                         </motion.div>
+                        </Link>
                       ))}
                     </div>
                   </motion.div>

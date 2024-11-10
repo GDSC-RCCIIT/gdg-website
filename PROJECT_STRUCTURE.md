@@ -173,6 +173,8 @@
 │   │   │   │   ├── [id]/
 │   │   │   │   │   └── page.jsx
 │   │   │   │   └── page.jsx
+│   │   │   ├── ResetPassword/
+│   │   │   │   └── page.jsx
 │   │   │   ├── Resources/
 │   │   │   │   ├── [id]/
 │   │   │   │   │   └── page.jsx
@@ -344,6 +346,9 @@
 │   │   ├── api/
 │   │   │   ├── Certifications/
 │   │   │   │   ├── data.js
+│   │   │   │   └── route.js
+│   │   │   ├── SendResetPassword/
+│   │   │   │   ├── image.png
 │   │   │   │   └── route.js
 │   │   │   ├── addhackathon/
 │   │   │   │   └── route.js
