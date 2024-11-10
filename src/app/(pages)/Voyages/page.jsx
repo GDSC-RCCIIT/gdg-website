@@ -14,14 +14,14 @@ const datasets = [
         id: 2,
         title: "Global Internet Usage",
         description: "Discover the journey of internet adoption across different continents. This animated visualization highlights internet penetration rates by year.",
-        mediaUrl: "/voy2.png",
+        mediaUrl: "/voy2.jpeg",
         type: "Infographic",
     },
     {
         id: 3,
         title: "Community Engagement Stats",
         description: "This infographic shows how community engagement activities, including workshops and hackathons, have increased over time in GDG chapters globally.",
-        mediaUrl: "/images/community_engagement.gif",
+        mediaUrl: "/voy3.png",
         type: "Infographic",
     }
 ];
