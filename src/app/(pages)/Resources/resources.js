@@ -23195,10 +23195,8 @@ if __name__ == "__main__":
         ]
     }
 },
-
-    const pythonResources = [
-    {
-        id: 2,
+{
+        id: 21,
         title: "Python Development",
         description: "To learn Python, follow this roadmap",
         extendedContent: `
@@ -23494,7 +23492,6 @@ if __name__ == '__main__':
             }
         }
     }
-];
 }
 
 
