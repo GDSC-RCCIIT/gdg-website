@@ -120,6 +120,9 @@
 │   ├── techeq2.webp
 │   ├── truth1.png
 │   ├── vision.webp
+│   ├── voy1.png
+│   ├── voy2.jpeg
+│   ├── voy3.png
 │   └── week1.png
 ├── repo_structure.txt
 ├── security.md
@@ -188,6 +191,8 @@
 │   │   │   │   │   └── page.jsx
 │   │   │   │   ├── page.jsx
 │   │   │   │   └── resources.js
+│   │   │   ├── ReverseEngineeringLab/
+│   │   │   │   └── page.jsx
 │   │   │   ├── RulesAndRegulations/
 │   │   │   │   └── page.jsx
 │   │   │   ├── SignIn/
@@ -211,6 +216,8 @@
 │   │   │   │   ├── page.jsx
 │   │   │   │   └── techStacks.js
 │   │   │   ├── TermsAndConditions/
+│   │   │   │   └── page.jsx
+│   │   │   ├── Voyages/
 │   │   │   │   └── page.jsx
 │   │   │   ├── ai-art-gallery/
 │   │   │   │   └── page.jsx
