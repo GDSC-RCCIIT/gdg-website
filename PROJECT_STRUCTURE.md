@@ -22,6 +22,11 @@
 │   ├── Newsletter.png
 │   ├── arcade1.png
 │   ├── arcade2.png
+│   ├── art1.jpeg
+│   ├── art2.jpeg
+│   ├── art3.jpeg
+│   ├── art4.jpeg
+│   ├── art5.jpeg
 │   ├── avatar.png
 │   ├── avatar1.png
 │   ├── certi 1.svg
@@ -207,6 +212,8 @@
 │   │   │   │   └── techStacks.js
 │   │   │   ├── TermsAndConditions/
 │   │   │   │   └── page.jsx
+│   │   │   ├── ai-art-gallery/
+│   │   │   │   └── page.jsx
 │   │   │   ├── ai-ml/
 │   │   │   │   └── page.jsx
 │   │   │   ├── alumini/
@@ -233,6 +240,10 @@
 │   │   │   ├── confession/
 │   │   │   │   └── page.jsx
 │   │   │   ├── db-overview/
+│   │   │   │   └── page.jsx
+│   │   │   ├── detox-zone/
+│   │   │   │   └── page.jsx
+│   │   │   ├── dev-nightmare/
 │   │   │   │   └── page.jsx
 │   │   │   ├── devStudent/
 │   │   │   │   └── page.jsx
