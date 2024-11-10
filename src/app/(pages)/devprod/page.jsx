@@ -4,7 +4,7 @@ import { Search } from 'lucide-react';
 import ProductNavbar from '../../../components/Global/ProductsNavbar';
 
 // Header Section with Search Bar
-const Header = () => {
+const Header = ({ searchQuery, setSearchQuery }) => {
     return (
         <div className="relative bg-gradient-to-r from-[#4285F4] via-[#34A853] to-[#EA4335] text-white py-20 px-6 text-center">
             <h1 className="text-5xl font-bold mb-4">Developer Products</h1>
@@ -15,6 +15,8 @@ const Header = () => {
                 <input
                     type="text"
                     placeholder="Search for a product..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
                     className="flex-grow py-3 px-4 text-gray-800 focus:outline-none"
                 />
                 <button className="bg-[#4285F4] text-white px-6 py-3 hover:bg-[#357ae8] transition">
@@ -111,7 +113,7 @@ const ProductGrid = ({ products }) => {
 const DeveloperProductsPage = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedFocus, setSelectedFocus] = useState(null);
-    const [selectedTab, setSelectedTab] = useState("All Products");
+    const [searchQuery, setSearchQuery] = useState('');
     const [products, setProducts] = useState([]);
 
     // Fetch products data from JSON server
@@ -133,20 +135,28 @@ const DeveloperProductsPage = () => {
         fetchProducts();
     }, []);
 
+    // Filter and search products
+    const filteredProducts = products.filter((product) => {
+        const matchesCategory = !selectedCategory || product.category === selectedCategory;
+        const matchesFocus = !selectedFocus || product.focus === selectedFocus;
+        const matchesSearch =
+            !searchQuery ||
+            product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            product.description.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesFocus && matchesSearch;
+    });
+
     return (
         <div>
-             <ProductNavbar
-                selectedTab={selectedTab} 
-                setSelectedTab={setSelectedTab} 
-            />
-            <Header />
+            <ProductNavbar selectedTab={"All Products"} setSelectedTab={() => { }} />
+            <Header searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
             <Filters
                 selectedCategory={selectedCategory}
                 setSelectedCategory={setSelectedCategory}
                 selectedFocus={selectedFocus}
                 setSelectedFocus={setSelectedFocus}
             />
-            <ProductGrid products={products} />
+            <ProductGrid products={filteredProducts} />
         </div>
     );
 };
