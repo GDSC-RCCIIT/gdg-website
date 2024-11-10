@@ -4,6 +4,9 @@ import React, { useState, useEffect } from 'react';
 const AnalystReportsPage = () => {
   const [reports, setReports] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [momentumFilter, setMomentumFilter] = useState(false);
+
   useEffect(() => {
     const fetchReports = async () => {
       try {
@@ -19,6 +22,24 @@ const AnalystReportsPage = () => {
 
     fetchReports();
   }, []);
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleFilterChange = () => {
+    setMomentumFilter(!momentumFilter);
+  };
+
+  const filteredReports = reports.filter((report) => {
+    const matchesSearch = report.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      report.description.toLowerCase().includes(searchQuery.toLowerCase());
+
+    const matchesFilter = momentumFilter ? report.description.toLowerCase().includes('momentum') : true;
+
+    return matchesSearch && matchesFilter;
+  });
+
   return (
     <div className="bg-gray-50 min-h-screen p-6">
       {/* Header Section */}
@@ -42,7 +63,13 @@ const AnalystReportsPage = () => {
           </ul>
           <h2 className="text-lg font-semibold mt-6 mb-4">Filter by</h2>
           <div className="flex items-center space-x-2">
-            <input type="checkbox" id="momentum" className="w-4 h-4" />
+            <input
+              type="checkbox"
+              id="momentum"
+              className="w-4 h-4"
+              checked={momentumFilter}
+              onChange={handleFilterChange}
+            />
             <label htmlFor="momentum" className="text-gray-700">Learn more about Google Cloud’s momentum</label>
           </div>
         </aside>
@@ -50,7 +77,13 @@ const AnalystReportsPage = () => {
         {/* Main Content */}
         <section className="w-full lg:w-3/4">
           <div className="flex items-center space-x-4 mb-6">
-            <input type="text" placeholder="Search" className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none" />
+            <input
+              type="text"
+              placeholder="Search"
+              value={searchQuery}
+              onChange={handleSearchChange}
+              className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none"
+            />
             <button className="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold">Search</button>
           </div>
 
@@ -58,18 +91,19 @@ const AnalystReportsPage = () => {
           <p className="text-gray-700 mb-6">
             Read what industry analysts are saying about Google Cloud. The reports listed here are written by third-party industry analysts that cover Google Cloud’s strategy, product portfolio, and differentiation. You can also learn more by reading whitepapers written by Google and the Google community.
           </p>
+
           {loading ? (
             <div className="text-center">Loading reports...</div>
           ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {reports.map((report, index) => (
-              <div key={index} className="bg-white p-4 shadow-md rounded-lg hover:shadow-lg transition-shadow duration-200">
-                <h3 className="font-semibold text-lg mb-2">{report.title}</h3>
-                <p className="text-gray-700 mb-4">{report.description}</p>
-                <button className="text-blue-600 underline font-semibold">Read more</button>
-              </div>
-            ))}
-          </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredReports.map((report, index) => (
+                <div key={index} className="bg-white p-4 shadow-md rounded-lg hover:shadow-lg transition-shadow duration-200">
+                  <h3 className="font-semibold text-lg mb-2">{report.title}</h3>
+                  <p className="text-gray-700 mb-4">{report.description}</p>
+                  <button className="text-blue-600 underline font-semibold">Read more</button>
+                </div>
+              ))}
+            </div>
           )}
         </section>
       </div>
