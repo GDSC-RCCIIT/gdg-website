@@ -23196,7 +23196,853 @@ if __name__ == "__main__":
     }
 }
 }
+    const resources = [
+  {
+    title: "DevOps Development",
+    description: "Complete DevOps engineering roadmap with practical examples",
+    extendedContent: `
+      This comprehensive roadmap covers everything needed to become a proficient DevOps engineer,
+      from foundational concepts to advanced practices. The learning path is structured to build
+      your skills progressively while gaining hands-on experience with industry-standard tools.
 
+      You'll begin with core concepts and gradually move to complex orchestration and automation.
+      Each section includes practical exercises and real-world scenarios to reinforce your learning.
+
+      The roadmap emphasizes both breadth and depth of DevOps practices, ensuring you understand
+      not just the tools, but the underlying principles and methodologies that drive modern
+      software delivery.
+    `,
+    icon: "M12 1419-5-9-5-9 5 9z M12 1416.16-3.422a12.083...",
+    trackInfo: {
+      prerequisites: [
+        "Basic understanding of operating systems (Linux/Unix preferred)",
+        "Fundamental networking concepts (TCP/IP, DNS, HTTP/HTTPS)",
+        "Basic programming/scripting knowledge (Python/Shell)",
+        "Understanding of software development lifecycle",
+        "Problem-solving aptitude",
+        "Command line familiarity",
+        "Basic understanding of databases",
+        "Familiarity with YAML and JSON formats"
+      ],
+      skills: [
+        "Version Control Systems",
+        "Continuous Integration/Deployment",
+        "Container Technologies",
+        "Cloud Platforms",
+        "Infrastructure as Code",
+        "Monitoring and Logging",
+        "Security Practices",
+        "Configuration Management",
+        "Service Mesh",
+        "Cloud Native Architecture"
+      ],
+      projects: [
+        {
+          title: "Basic CI/CD Pipeline",
+          content: "Set up a complete CI/CD pipeline using GitHub Actions or Jenkins",
+          steps: [
+            "Repository setup with branch protection",
+            "Automated testing implementation",
+            "Build artifact creation",
+            "Automated deployment stages",
+            "Notification system integration"
+          ]
+        },
+        {
+          title: "Container Orchestration",
+          content: "Deploy a microservices application using Kubernetes",
+          steps: [
+            "Container image optimization",
+            "Multi-stage builds",
+            "Kubernetes manifest creation",
+            "Service mesh implementation",
+            "Monitoring setup"
+          ]
+        },
+        {
+          title: "Infrastructure as Code",
+          content: "Create cloud infrastructure using Terraform",
+          steps: [
+            "State management setup",
+            "Module development",
+            "Multi-environment configuration",
+            "Secret management",
+            "Compliance as code"
+          ]
+        }
+      ]
+    },
+    content: {
+      examples: [
+        {
+          title: "Complete CI/CD Pipeline with GitHub Actions",
+          code: `
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run tests
+        run: |
+          pytest tests/ --cov=src
+      - name: Upload coverage reports
+        uses: codecov/codecov-action@v3
+
+  security-scan:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run SAST scan
+        uses: github/codeql-action/analyze@v2
+      - name: Run container scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'my-app:${{ github.sha }}'
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          severity: 'CRITICAL,HIGH'
+
+  deploy:
+    needs: security-scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+      
+      - name: Deploy to EKS
+        run: |
+          aws eks update-kubeconfig --name my-cluster
+          kubectl apply -f k8s/
+`,
+        },
+        {
+          title: "Advanced Kubernetes Configuration",
+          code: `
+# Production-grade application deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-application
+  namespace: production
+  labels:
+    app: web
+    environment: production
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9113"
+    spec:
+      containers:
+      - name: webapp
+        image: nginx:1.21-alpine
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/nginx/conf.d
+        securityContext:
+          runAsNonRoot: true
+          runAsUser: 1000
+      volumes:
+      - name: config-volume
+        configMap:
+          name: nginx-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+  namespace: production
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: web
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  rules:
+  - host: app.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: web-service
+            port:
+              number: 80
+`,
+        },
+        {
+          title: "Terraform AWS Infrastructure with Modules",
+          code: `
+# main.tf
+module "vpc" {
+  source = "./modules/vpc"
+  
+  environment = var.environment
+  vpc_cidr    = var.vpc_cidr
+  
+  public_subnets  = var.public_subnets
+  private_subnets = var.private_subnets
+  
+  tags = local.common_tags
+}
+
+module "eks" {
+  source = "./modules/eks"
+  
+  cluster_name    = local.cluster_name
+  cluster_version = "1.24"
+  
+  vpc_id          = module.vpc.vpc_id
+  subnet_ids      = module.vpc.private_subnet_ids
+  
+  node_groups = {
+    general = {
+      desired_size = 2
+      min_size     = 1
+      max_size     = 3
+      
+      instance_types = ["t3.medium"]
+      capacity_type  = "SPOT"
+    }
+  }
+  
+  tags = local.common_tags
+}
+
+module "rds" {
+  source = "./modules/rds"
+  
+  identifier = "${local.project}-${var.environment}"
+  
+  engine         = "postgres"
+  engine_version = "13.7"
+  instance_class = "db.t3.medium"
+  
+  allocated_storage     = 20
+  max_allocated_storage = 100
+  
+  subnet_ids         = module.vpc.database_subnet_ids
+  vpc_security_group_ids = [module.security_groups.database_sg_id]
+  
+  backup_retention_period = 7
+  backup_window          = "03:00-04:00"
+  
+  tags = local.common_tags
+}
+
+# Variables
+locals {
+  project = "myapp"
+  cluster_name = "${local.project}-${var.environment}-eks"
+  common_tags = {
+    Project     = local.project
+    Environment = var.environment
+    Terraform   = "true"
+  }
+}
+
+variable "environment" {
+  type    = string
+  default = "production"
+}
+
+variable "vpc_cidr" {
+  type    = string
+  default = "10.0.0.0/16"
+}
+
+variable "public_subnets" {
+  type    = list(string)
+  default = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+}
+
+variable "private_subnets" {
+  type    = list(string)
+  default = ["10.0.11.0/24", "10.0.12.0/24", "10.0.13.0/24"]
+}
+`,
+        },
+        {
+          title: "Ansible Configuration Management",
+          code: `
+# site.yml
+---
+- name: Configure web servers
+  hosts: webservers
+  become: yes
+  vars_files:
+    - vars/main.yml
+  
+  pre_tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+      when: ansible_os_family == "Debian"
+  
+  roles:
+    - common
+    - nginx
+    - php-fpm
+    - node-exporter
+
+- name: Configure database servers
+  hosts: dbservers
+  become: yes
+  
+  roles:
+    - common
+    - postgresql
+    - backup
+
+# roles/nginx/tasks/main.yml
+---
+- name: Install nginx
+  apt:
+    name: nginx
+    state: present
+
+- name: Copy nginx configuration
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/nginx.conf
+  notify: restart nginx
+
+- name: Copy SSL certificates
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: '0600'
+  with_items:
+    - { src: 'files/ssl/cert.pem', dest: '/etc/nginx/ssl/cert.pem' }
+    - { src: 'files/ssl/key.pem', dest: '/etc/nginx/ssl/key.pem' }
+  notify: restart nginx
+
+- name: Start nginx service
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+
+# roles/nginx/templates/nginx.conf.j2
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+
+events {
+    worker_connections {{ nginx_worker_connections }};
+    multi_accept on;
+}
+
+http {
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+
+    access_log /var/log/nginx/access.log combined buffer=16k;
+    error_log /var/log/nginx/error.log warn;
+
+    include /etc/nginx/conf.d/*.conf;
+    include /etc/nginx/sites-enabled/*;
+}
+`,
+        },
+        {
+          title: "Prometheus Monitoring Configuration",
+          code: `
+# prometheus.yml
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - alertmanager:9093
+
+rule_files:
+  - "alerts/*.yml"
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'node_exporter'
+    kubernetes_sd_configs:
+      - role: node
+    relabel_configs:
+      - source_labels: [__meta_kubernetes_node_name]
+        regex: (.+)
+        target_label: node
+        replacement: $1
+
+  - job_name: 'kubernetes-apiservers'
+    kubernetes_sd_configs:
+      - role: endpoints
+    scheme: https
+    tls_config:
+      ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+    bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+    relabel_configs:
+      - source_labels: [__meta_kubernetes_namespace, __meta_kubernetes_service_name]
+        action: keep
+        regex: default;kubernetes
+
+# alerts/node.yml
+groups:
+- name: node
+  rules:
+  - alert: HighCPUUsage
+    expr: 100 - (avg by(instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: High CPU usage on {{ $labels.instance }}
+      description: CPU usage is above 80% for 5 minutes
+
+  - alert: HighMemoryUsage
+    expr: (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100 > 85
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: High memory usage on {{ $labels.instance }}
+      description: Memory usage is above 85%
+`,
+        }
+      ],
+      stages: [
+        {
+          level: "Beginner",
+          topics: [
+            {
+              name: "Linux System Administration",
+              skills: [
+                "Basic command line operations",
+                "File system management",
+                "Process management",
+                "User administration",
+                "Package management"
+              ]
+            },
+            {
+              name: "Version Control with Git",
+              skills: [
+                "Repository management",
+                "Branching strategies",
+                "Merge conflict resolution",
+                "Git workflows",
+                "Code review practices"
+              ]
+            },
+            {
+              name: "Basic Scripting",
+              skills: [
+                "Shell scripting fundamentals",
+                "Python automation scripts",
+                "Error handling",
+                "Script debugging",
+                "Regular expressions"
+              ]
+            }
+          ]
+        },
+        {
+          level: "Intermediate",
+          topics: [
+            {
+              name: "Container Orchestration",
+              skills: [
+                "Kubernetes architecture",
+                "Pod lifecycle",
+                "Service types",
+                "Volume management",
+                "Config and secret management"
+              ]
+            },
+            {
+              name: "Infrastructure as Code",
+              skills: [
+                "Terraform state management",
+                "Module development",
+                "Resource dependencies",
+                "Provider configuration",
+                "Remote backends"
+              ]
+            },
+            {
+              name: "Monitoring and Observability",
+              skills: [
+                "Metrics collection",
+                "Log aggregation",
+                "Alerting rules",
+                "Dashboard creation",
+                "Performance optimization"
+              ]
+            }
+          ]
+        },
+        {
+          level: "Advanced",
+          topics:[
+        {
+           name: "Service Mesh Architecture",
+          skills: [
+            "Istio implementation",
+            "Traffic management",
+            "Security policies",
+            "Observability patterns",
+            "Multi-cluster deployment"
+          ],
+          examples: {
+            title: "Istio Configuration",
+            code: `
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: my-service-rules
+spec:
+  hosts:
+  - my-service
+  http:
+  - match:
+    - headers:
+        end-user:
+          exact: jason
+    route:
+    - destination:
+        host: my-service
+        subset: v2
+  - route:
+    - destination:
+        host: my-service
+        subset: v1
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: my-service
+spec:
+  host: my-service
+  trafficPolicy:
+    loadBalancer:
+      simple: RANDOM
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+  - name: v2
+    labels:
+      version: v2
+    trafficPolicy:
+      loadBalancer:
+        simple: ROUND_ROBIN`
+          }
+        },
+        {
+          name: "Cloud Native Security",
+          skills: [
+            "Container security scanning",
+            "Runtime security",
+            "Network policies",
+            "Secret management",
+            "Compliance automation"
+          ],
+          examples: {
+            title: "Network Policy Configuration",
+            code: `
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: secure-policy
+  namespace: production
+spec:
+  podSelector:
+    matchLabels:
+      app: secure-app
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          environment: production
+    ports:
+    - protocol: TCP
+      port: 8080
+  egress:
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          purpose: monitoring
+    ports:
+    - protocol: TCP
+      port: 9090`
+          }
+        },
+        {
+          name: "Site Reliability Engineering",
+          skills: [
+            "SLO/SLI definition",
+            "Error budgets",
+            "Capacity planning",
+            "Incident management",
+            "Postmortem culture"
+          ],
+          examples: {
+            title: "SLO Configuration",
+            code: `
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: slo-rules
+  namespace: monitoring
+spec:
+  groups:
+  - name: slo-rules
+    rules:
+    - record: service:availability:ratio
+      expr: |
+        sum(rate(http_requests_total{status!~"5.."}[30d]))
+        /
+        sum(rate(http_requests_total[30d]))
+    - alert: SLOErrorBudgetBurn
+      expr: |
+        (
+          service:availability:ratio < 0.995
+          and
+          predict_linear(service:availability:ratio[6h], 3600 * 24) < 0.995
+        )
+      for: 1h
+      labels:
+        severity: warning
+      annotations:
+        summary: Error budget burn rate too high`
+          }
+        }
+      ]
+    }
+  ],
+  practical_examples: [
+    {
+      title: "Complete Production Setup",
+      description: "End-to-end production environment setup with GitOps",
+      components: [
+        {
+          name: "ArgoCD Configuration",
+          code: `
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: production-apps
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/org/apps.git
+    targetRevision: HEAD
+    path: kustomize/overlays/production
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: production
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true`
+        },
+        {
+          name: "Vault Secret Management",
+          code: `
+# Vault Policy
+path "secret/data/production/*" {
+  capabilities = ["read", "list"]
+}
+
+path "auth/kubernetes/login" {
+  capabilities = ["create", "read"]
+}
+
+# Kubernetes Integration
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: vault-auth
+  namespace: production
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: vault-auth-delegator
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:auth-delegator
+subjects:
+- kind: ServiceAccount
+  name: vault-auth
+  namespace: production`
+        }
+      ]
+    }
+  ],
+  certifications_path: {
+    cloud_platforms: [
+      {
+        platform: "AWS",
+        certificates: [
+          {
+            name: "AWS Certified DevOps Engineer - Professional",
+            topics: [
+              "SDLC Automation",
+              "Configuration Management",
+              "Monitoring and Logging",
+              "Policies and Standards Automation",
+              "Incident and Event Response",
+              "High Availability"
+            ]
+          }
+        ]
+      },
+      {
+        platform: "Azure",
+        certificates: [
+          {
+            name: "Microsoft Certified: DevOps Engineer Expert",
+            topics: [
+              "Continuous Integration",
+              "Continuous Delivery",
+              "Dependency Management",
+              "Application Infrastructure",
+              "Security and Compliance"
+            ]
+          }
+        ]
+      }
+    ],
+    kubernetes: [
+      {
+        name: "Certified Kubernetes Administrator (CKA)",
+        topics: [
+          "Cluster Architecture",
+          "Workloads & Scheduling",
+          "Services & Networking",
+          "Storage",
+          "Troubleshooting"
+        ]
+      },
+      {
+        name: "Certified Kubernetes Security Specialist (CKS)",
+        topics: [
+          "Cluster Setup",
+          "Cluster Hardening",
+          "System Hardening",
+          "Minimize Microservice Vulnerabilities",
+          "Supply Chain Security"
+        ]
+      }
+    ]
+  },
+  best_practices: {
+    security: [
+      "Implement least privilege access",
+      "Use image scanning in CI/CD pipelines",
+      "Enable audit logging",
+      "Implement network segmentation",
+      "Regular security updates",
+      "Secret rotation",
+      "Compliance as code"
+    ],
+    scalability: [
+      "Design for horizontal scaling",
+      "Implement auto-scaling",
+      "Use caching strategies",
+      "Optimize resource usage",
+      "Design for failure",
+      "Monitor scaling metrics"
+    ],
+    reliability: [
+      "Implement circuit breakers",
+      "Use health checks",
+      "Implement retry logic",
+      "Regular backup testing",
+      "Disaster recovery planning",
+      "Chaos engineering practices"
+    ]
+  }
+};
 
 ];
 
