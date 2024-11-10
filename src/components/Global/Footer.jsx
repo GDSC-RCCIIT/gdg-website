@@ -15,11 +15,11 @@ const resources = [
 ];
 
 const followUs = [
-  { text: "Github", href: "https://github.com/GDSC-RCCIIT/gdg-website" },
-  { text: "Instagram", href: "https://instagram.com/" },
-  { text: "Twitter", href: "https://x.com/gdsc_rcciit" },
-  { text: "Whatsapp", href: "https://web.whatsapp.com/" },
-  { text: "LinkedIn", href: "https://www.linkedin.com/company/gdgc-rcciit/" },
+  { text: "Events", href: "/Events" },
+  { text: "Resources", href: "/Resources" },
+  { text: "Gemini AI", href: "/GeminiAI" },
+  { text: "Careers", href: "/careers" },
+  { text: "Projects", href: "/Projects" },
 ];
 
 const legal = [
@@ -74,7 +74,7 @@ const Footer = () => {
       {/* Links Sections with enhanced styling */}
       <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left">
         <FooterSection title="Resources" links={resources} />
-        <FooterSection title="Follow Us" links={followUs} />
+        <FooterSection title="Explore more" links={followUs} />
         <FooterSection title="Legal" links={legal} />
       </div>
 

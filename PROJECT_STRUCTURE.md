@@ -47,6 +47,9 @@
 │   ├── devprod4.png
 │   ├── devprod5.jpeg
 │   ├── devprod6.jpeg
+│   ├── doodl3.png
+│   ├── doodle1.png
+│   ├── doodle2.jpeg
 │   ├── exp1.png
 │   ├── exp2.jpeg
 │   ├── exp3.jpeg
@@ -54,6 +57,8 @@
 │   ├── exp5.jpeg
 │   ├── exp6.jpeg
 │   ├── exp7.jpeg
+│   ├── gen-studio.png
+│   ├── gen-studio2.svg
 │   ├── genai1.jpg
 │   ├── genai2.webp
 │   ├── goal.webp
@@ -71,6 +76,7 @@
 │   ├── os2.ico
 │   ├── os3.svg
 │   ├── os4.png
+│   ├── press1.jpg
 │   ├── sdk1.png
 │   ├── sdk2.png
 │   ├── sdk3.png
@@ -80,6 +86,8 @@
 │   ├── ser3.svg
 │   ├── ser4.svg
 │   ├── sopt4.jpg
+│   ├── sponser2.jpeg
+│   ├── sponsership1.jpeg
 │   ├── spot1.jpg
 │   ├── spot2.jpg
 │   ├── spot3.jpg
@@ -91,6 +99,15 @@
 │   ├── story6.png
 │   ├── story7.png
 │   ├── summer_learning_hero.png
+│   ├── t-shirt1.jpeg
+│   ├── t-shirt2.jpeg
+│   ├── t-shirt3.jpeg
+│   ├── t-shirt4.jpeg
+│   ├── t-shirt5.jpeg
+│   ├── t-shirt6.jpeg
+│   ├── t-shirt7.jpeg
+│   ├── t-shirt8.jpeg
+│   ├── t-shirt9.jpeg
 │   ├── techeq1.webp
 │   ├── techeq2.webp
 │   ├── truth1.png
@@ -115,6 +132,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── Blogs/
 │   │   │   │   ├── Blogs.js
+│   │   │   │   ├── [id]/
+│   │   │   │   │   └── page.jsx
 │   │   │   │   └── page.jsx
 │   │   │   ├── Certifications/
 │   │   │   │   └── page.jsx
@@ -122,6 +141,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── Contact/
 │   │   │   │   ├── Contactus.svg
+│   │   │   │   ├── conatct.json
+│   │   │   │   ├── contact.css
 │   │   │   │   └── page.jsx
 │   │   │   ├── Events/
 │   │   │   │   ├── EventItem.js
@@ -138,6 +159,8 @@
 │   │   │   │   ├── Card.jsx
 │   │   │   │   ├── [id]/
 │   │   │   │   │   └── page.jsx
+│   │   │   │   └── page.jsx
+│   │   │   ├── HelpDesk/
 │   │   │   │   └── page.jsx
 │   │   │   ├── HelpWithFuture/
 │   │   │   │   └── page.jsx
@@ -181,6 +204,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── ai-ml/
 │   │   │   │   └── page.jsx
+│   │   │   ├── alumini/
+│   │   │   │   └── page.jsx
 │   │   │   ├── analyst-reports/
 │   │   │   │   └── page.jsx
 │   │   │   ├── analytics-pipelines/
@@ -196,6 +221,8 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── cicd/
 │   │   │   │   └── page.jsx
+│   │   │   ├── code-exchange/
+│   │   │   │   └── page.jsx
 │   │   │   ├── compute-tech/
 │   │   │   │   └── page.jsx
 │   │   │   ├── db-overview/
@@ -208,9 +235,17 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── distributed-hybrid/
 │   │   │   │   └── page.jsx
+│   │   │   ├── doodle/
+│   │   │   │   └── page.jsx
+│   │   │   ├── easter-egg/
+│   │   │   │   └── page.jsx
 │   │   │   ├── expertdev/
 │   │   │   │   └── page.jsx
 │   │   │   ├── explore/
+│   │   │   │   └── page.jsx
+│   │   │   ├── garage/
+│   │   │   │   └── page.jsx
+│   │   │   ├── gen-studio/
 │   │   │   │   └── page.jsx
 │   │   │   ├── genai/
 │   │   │   │   └── page.jsx
@@ -234,11 +269,21 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── inovate/
 │   │   │   │   └── page.jsx
+│   │   │   ├── inovation-hub/
+│   │   │   │   └── page.jsx
 │   │   │   ├── ioext/
 │   │   │   │   └── page.jsx
 │   │   │   ├── join-partner/
 │   │   │   │   └── page.jsx
+│   │   │   ├── lens-page/
+│   │   │   │   └── page.jsx
 │   │   │   ├── localdev/
+│   │   │   │   └── page.jsx
+│   │   │   ├── louge/
+│   │   │   │   └── page.jsx
+│   │   │   ├── merchendise/
+│   │   │   │   └── page.jsx
+│   │   │   ├── moonshots/
 │   │   │   │   └── page.jsx
 │   │   │   ├── networking-overview/
 │   │   │   │   └── page.jsx
@@ -252,19 +297,33 @@
 │   │   │   │   └── page.jsx
 │   │   │   ├── partners/
 │   │   │   │   └── page.jsx
+│   │   │   ├── polls/
+│   │   │   │   └── page.jsx
+│   │   │   ├── press-corner/
+│   │   │   │   └── page.jsx
+│   │   │   ├── sandbox/
+│   │   │   │   └── page.jsx
 │   │   │   ├── sdk/
 │   │   │   │   └── page.jsx
 │   │   │   ├── security-overview/
 │   │   │   │   └── page.jsx
+│   │   │   ├── service-health/
+│   │   │   │   └── page.jsx
 │   │   │   ├── services/
+│   │   │   │   └── page.jsx
+│   │   │   ├── sponsership/
 │   │   │   │   └── page.jsx
 │   │   │   ├── storage-overview/
 │   │   │   │   └── page.jsx
 │   │   │   ├── stories/
 │   │   │   │   └── page.jsx
+│   │   │   ├── storytime/
+│   │   │   │   └── page.jsx
 │   │   │   ├── student-challenge/
 │   │   │   │   └── page.jsx
 │   │   │   ├── sustainable/
+│   │   │   │   └── page.jsx
+│   │   │   ├── tech-stack-explorer/
 │   │   │   │   └── page.jsx
 │   │   │   ├── techequity/
 │   │   │   │   └── page.jsx
@@ -275,6 +334,8 @@
 │   │   │   ├── truth/
 │   │   │   │   └── page.jsx
 │   │   │   ├── weekly/
+│   │   │   │   └── page.jsx
+│   │   │   ├── whitepapers/
 │   │   │   │   └── page.jsx
 │   │   │   ├── who-apply/
 │   │   │   │   └── page.jsx
@@ -322,8 +383,10 @@
 │   │   │   ├── Hero.jsx
 │   │   │   ├── Navbar.jsx
 │   │   │   ├── ProductsNavbar.jsx
+│   │   │   ├── Sidebar.jsx
 │   │   │   └── SuspenseLoader.jsx
 │   │   └── ui/
+│   │       ├── achievements.jsx
 │   │       ├── aspect-ratio.jsx
 │   │       ├── back2top.jsx
 │   │       ├── badge.jsx
@@ -352,6 +415,7 @@
 │   │       ├── sheet.jsx
 │   │       ├── skeleton.jsx
 │   │       ├── sonner.jsx
+│   │       ├── stories.jsx
 │   │       ├── switch.jsx
 │   │       ├── tabs.jsx
 │   │       ├── textarea.jsx

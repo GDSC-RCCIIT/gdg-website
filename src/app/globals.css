@@ -80,3 +80,33 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
+/* globals.css or a relevant CSS file */
+.layout-container {
+  display: flex;
+  height: 100vh; /* Full height */
+}
+
+.content-area {
+  flex: 1; /* Takes remaining space */
+  padding-top: 4rem; /* Adjust to account for the navbar */
+  padding-left: 1rem;
+  overflow-y: auto;
+}
+
+.gtranslate_wrapper {
+  padding: 2rem;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 240px; /* Adjust width as needed */
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #1a1a1a;
+  color: white;
+  padding-top: 4rem; /* Adjust for navbar height */
+  z-index: 100;
+  overflow-y: auto;
+}

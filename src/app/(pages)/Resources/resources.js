@@ -200,7 +200,7 @@ const resources = [
             }, [todos]);
         
             const addTodo = (e) => {
-                e.preventDefault();
+                e.preventdefault();
                 if (!inputValue.trim()) return;
                 
                 setTodos([
@@ -1019,7 +1019,7 @@ passwordInput.addEventListener('input', validateForm);
 confirmPasswordInput.addEventListener('input', validateForm);
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    e.preventdefault();
     if (!submitButton.disabled) {
         // Handle form submission
         console.log('Form submitted successfully');
@@ -2947,7 +2947,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     explanation: "A basic wireframe component library showcasing common UI elements in their simplest form. This helps in rapid prototyping and maintaining consistency across designs."
                 },
                 {
-                    title: "Color System Definition",
+                    title: "Color System definition",
                     code: `// Design System - Color Tokens
         const colorSystem = {
             // Primary Brand Colors
@@ -3571,7 +3571,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         hints: [
                             "Consider accessibility and contrast ratios",
                             "Include different shades for each primary color",
-                            "Define semantic colors for success/error states",
+                            "define semantic colors for success/error states",
                             "Create dark mode variations"
                         ],
                         solution: {
@@ -4171,14 +4171,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         difficulty: "Hard",
                         description: "Create a comprehensive design system including components, tokens, documentation, and usage guidelines.",
                         hints: [
-                            "Define clear design principles",
+                            "define clear design principles",
                             "Create reusable components",
                             "Document accessibility guidelines",
                             "Include interactive examples",
                             "Create implementation guides"
                         ],
                         solution: {
-                            code: `// Design System Definition
+                            code: `// Design System definition
 const designSystem = {
    // Design Tokens
    tokens: {
@@ -4291,7 +4291,7 @@ const designSystem = {
        }
    },
    
-   // Component Definitions
+   // Component definitions
    components: {
        Button: {
            variants: {
@@ -5766,7 +5766,7 @@ const designSystem = {
                         difficulty: "Medium",
                         description: "Implement a binary search tree with insert and search operations.",
                         hints: [
-                            "Define a Node structure first",
+                            "define a Node structure first",
                             "Handle the empty tree case",
                             "Remember BST properties",
                             "Use recursion for insertion"
@@ -9529,7 +9529,7 @@ class FCMService : FirebaseMessagingService() {
     android:layout_height="match_parent"
     app:layoutDescription="@xml/scene"
     >
-    <!-- Define cart and checkout transitions here -->
+    <!-- define cart and checkout transitions here -->
 </MotionLayout>
 */
 
@@ -9656,7 +9656,7 @@ abstract class AppDatabase : RoomDatabase() {
             },
             {
                 title: "Maintaining an Open Source Project",
-                code: "// Step 1: Monitor issues reported by users on GitHub\n// Step 2: Prioritize issues based on severity and community impact\n// Step 3: Assign issues to contributors or work on them yourself\n// Step 4: Merge pull requests after thorough review\n// Step 5: Regularly update documentation and project dependencies\n// Step 6: Communicate with the community through discussions or updates",
+                code: "// Step 1: Monitor issues reported by users on GitHub\n// Step 2: Prioritize issues based on severity and community impact\n// Step 3: Assign issues to contributors or work on them yourSelf\n// Step 4: Merge pull requests after thorough review\n// Step 5: Regularly update documentation and project dependencies\n// Step 6: Communicate with the community through discussions or updates",
                 explanation: "This example explains how to maintain an open source project, including monitoring issues, merging contributions, and keeping documentation up to date."
             },
             {
@@ -9916,7 +9916,7 @@ abstract class AppDatabase : RoomDatabase() {
                     description: "Take over maintenance of an open-source project. This involves managing issues, reviewing pull requests, and coordinating with contributors.",
                     hints: [
                         "Start by reaching out to the current maintainers to express your interest",
-                        "Familiarize yourself with the project's contribution guidelines and codebase",
+                        "Familiarize yourSelf with the project's contribution guidelines and codebase",
                         "Communicate clearly and constructively with contributors to encourage engagement"
                     ],
                     solution: {
@@ -10400,7 +10400,7 @@ abstract class AppDatabase : RoomDatabase() {
                     "VPN Implementation",
                     "Network Monitoring Tools",
                     "Wireless Network Security",
-                    "Network Attacks and Defenses"
+                    "Network Attacks and defenses"
                 ]
             },
             {
@@ -10681,7 +10681,7 @@ abstract class AppDatabase : RoomDatabase() {
             platform: "Podcast"
             },
             {
-            title: "Defensive Security Podcast",
+            title: "defensive Security Podcast",
             url: "https://defensivesecurity.org/",
             description: "Podcast covering breaches, strategies, tools, and techniques",
             platform: "Podcast"
@@ -10744,13 +10744,13 @@ abstract class AppDatabase : RoomDatabase() {
         difficulty: "Easy",
         description: "Create a Python script to check the strength of a given password.",
         hints: [
-        "Define criteria for password strength (e.g., length, complexity)",
+        "define criteria for password strength (e.g., length, complexity)",
         "Use conditional statements to evaluate the password",
         "Provide feedback to the user on password strength"
         ],
         solution: {
         code: `def check_password_strength(password):
-        # Define criteria for password strength
+        # define criteria for password strength
         min_length = 8
         has_uppercase = any(char.isupper() for char in password)
         has_lowercase = any(char.islower() for char in password)
@@ -12795,7 +12795,10408 @@ public class DatabaseManager {
             ]
         }
     }
+},
+{
+    id: 12,
+    title: "Machine Learning & AI",
+    description: "To learn ML and AI, follow this roadmap",
+    extendedContent: `
+        Dive into the world of Machine Learning and Artificial Intelligence. Start with fundamental 
+        mathematics, statistics, and Python programming. Progress through classical ML algorithms, 
+        deep learning, and neural networks. Learn popular frameworks like TensorFlow and PyTorch, 
+        and explore computer vision, natural language processing, and reinforcement learning. 
+        Understand data preprocessing, model training, and evaluation techniques. Advanced topics 
+        include GANs, transformers, ML ops, and ethical AI development. Practice with real-world 
+        projects and datasets.
+    `,
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        prerequisites: [
+            "Strong foundation in mathematics (calculus, linear algebra)",
+            "Understanding of probability and statistics",
+            "Python programming proficiency",
+            "Basic data structures and algorithms",
+            "Familiarity with data analysis concepts",
+            "Command line and Git basics",
+            "Basic understanding of computational thinking"
+        ],
+        outcomes: [
+            "Implement and train machine learning models",
+            "Develop deep learning solutions",
+            "Process and prepare data for ML models",
+            "Evaluate and optimize model performance",
+            "Build neural networks using modern frameworks",
+            "Apply ML to computer vision and NLP tasks",
+            "Deploy ML models to production",
+            "Understand and implement AI ethics",
+            "Create end-to-end ML pipelines",
+            "Develop reinforcement learning solutions"
+        ],
+        sections: [
+            {
+                title: "Mathematical Foundations",
+                content: "Master essential mathematics including linear algebra, calculus, probability theory, and statistical concepts. Learn optimization techniques, matrix operations, derivatives, probability distributions, and statistical inference. Understand information theory and numerical computation basics."
+            },
+            {
+                title: "Machine Learning Fundamentals",
+                content: "Study core ML concepts including supervised and unsupervised learning, model evaluation, cross-validation, and regularization. Learn about feature engineering, dimensionality reduction, and common algorithms like regression, decision trees, and clustering."
+            },
+            {
+                title: "Deep Learning",
+                content: "Master neural networks architecture, backpropagation, activation functions, and optimization algorithms. Learn convolutional neural networks (CNNs), recurrent neural networks (RNNs), and modern architectures like transformers. Understand training techniques, batch normalization, and dropout."
+            },
+            {
+                title: "Computer Vision",
+                content: "Learn image processing, feature detection, and object recognition techniques. Master CNN architectures for vision tasks, transfer learning, and image segmentation. Study object detection frameworks, facial recognition, and video analysis."
+            },
+            {
+                title: "Natural Language Processing",
+                content: "Understand text processing, tokenization, and word embeddings. Learn sequence models, attention mechanisms, and transformer architectures. Study language modeling, machine translation, sentiment analysis, and question answering systems."
+            },
+            {
+                title: "Reinforcement Learning",
+                content: "Master RL fundamentals including Markov Decision Processes, Q-learning, and policy gradients. Study deep reinforcement learning, multi-agent systems, and practical applications. Learn about exploration vs exploitation and reward engineering."
+            },
+            {
+                title: "ML Engineering & Operations",
+                content: "Learn model deployment, scaling, and monitoring in production. Understand ML pipelines, version control for ML, and model serving. Study distributed training, model optimization, and MLOps best practices."
+            },
+            {
+                title: "AI Ethics & Responsible AI",
+                content: "Understand bias in AI, fairness metrics, and model interpretability. Learn about privacy-preserving ML, ethical guidelines, and responsible AI development. Study the societal impact of AI and regulatory compliance."
+            }
+        ]
+    },
+    content: {
+        examples: [
+            {
+                title: "Image Classification with CNN",
+                code: `import tensorflow as tf
+from tensorflow.keras import layers, models
+import numpy as np
+
+def build_cnn_classifier():
+    # Create a CNN model for image classification
+    model = models.Sequential([
+        # Convolutional layers
+        layers.Conv2D(32, (3, 3), activation='relu', input_shape=(64, 64, 3)),
+        layers.MaxPooling2D((2, 2)),
+        layers.Conv2D(64, (3, 3), activation='relu'),
+        layers.MaxPooling2D((2, 2)),
+        layers.Conv2D(64, (3, 3), activation='relu'),
+        
+        # Flatten and dense layers
+        layers.Flatten(),
+        layers.Dense(64, activation='relu'),
+        layers.Dropout(0.5),
+        layers.Dense(10, activation='softmax')
+    ])
+
+    # Compile the model
+    model.compile(optimizer='adam',
+                 loss='sparse_categorical_crossentropy',
+                 metrics=['accuracy'])
+    
+    return model
+
+def preprocess_data(images, labels):
+    # Normalize pixel values
+    images = images.astype('float32') / 255.0
+    
+    # Reshape if needed
+    if len(images.shape) == 3:
+        images = np.expand_dims(images, axis=-1)
+    
+    return images, labels
+
+def train_model(model, train_images, train_labels, validation_data=None):
+    # Train the model
+    history = model.fit(
+        train_images, train_labels,
+        epochs=10,
+        batch_size=32,
+        validation_data=validation_data,
+        callbacks=[
+            tf.keras.callbacks.EarlyStopping(
+                monitor='val_loss',
+                patience=3,
+                restore_best_weights=True
+            )
+        ]
+    )
+    return history
+
+def evaluate_model(model, test_images, test_labels):
+    # Evaluate the model
+    test_loss, test_accuracy = model.evaluate(test_images, test_labels)
+    print(f"Test accuracy: {test_accuracy:.4f}")
+    print(f"Test loss: {test_loss:.4f}")
+    return test_loss, test_accuracy
+
+# Example usage
+if __name__ == "__main__":
+    # Load and preprocess data (example with random data)
+    train_images = np.random.rand(1000, 64, 64, 3)
+    train_labels = np.random.randint(0, 10, 1000)
+    test_images = np.random.rand(200, 64, 64, 3)
+    test_labels = np.random.randint(0, 10, 200)
+    
+    # Preprocess data
+    train_images, train_labels = preprocess_data(train_images, train_labels)
+    test_images, test_labels = preprocess_data(test_images, test_labels)
+    
+    # Build and train model
+    model = build_cnn_classifier()
+    history = train_model(model, train_images, train_labels,
+                         validation_data=(test_images, test_labels))
+    
+    # Evaluate model
+    evaluate_model(model, test_images, test_labels)`,
+                explanation: "This example demonstrates building a convolutional neural network for image classification using TensorFlow. It includes model architecture, data preprocessing, training with early stopping, and evaluation."
+            },
+            {
+                title: "Natural Language Processing with Transformers",
+                code: `import torch
+from torch import nn
+from transformers import BertTokenizer, BertModel
+import numpy as np
+
+class TextClassifier(nn.Module):
+    def __init__(Self, num_classes, dropout=0.1):
+        super(TextClassifier, Self).__init__()
+        Self.bert = BertModel.from_pretrained('bert-base-uncased')
+        Self.dropout = nn.Dropout(dropout)
+        Self.classifier = nn.Linear(768, num_classes)
+        
+    def forward(Self, input_ids, attention_mask):
+        # Get BERT outputs
+        outputs = Self.bert(
+            input_ids=input_ids,
+            attention_mask=attention_mask
+        )
+        
+        # Use the [CLS] token representation
+        pooled_output = outputs.pooler_output
+        
+        # Apply dropout and classification layer
+        x = Self.dropout(pooled_output)
+        logits = Self.classifier(x)
+        return logits
+
+class TextClassificationPipeline:
+    def __init__(Self, num_classes, max_length=128):
+        Self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        Self.tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+        Self.model = TextClassifier(num_classes).to(Self.device)
+        Self.max_length = max_length
+        
+    def preprocess(Self, texts):
+        # Tokenize texts
+        encoded = Self.tokenizer.batch_encode_plus(
+            texts,
+            padding=True,
+            truncation=True,
+            max_length=Self.max_length,
+            return_attention_mask=True,
+            return_tensors='pt'
+        )
+        return {
+            'input_ids': encoded['input_ids'].to(Self.device),
+            'attention_mask': encoded['attention_mask'].to(Self.device)
+        }
+    
+    def train(Self, train_texts, train_labels, epochs=3):
+        # Set model to training mode
+        Self.model.train()
+        optimizer = torch.optim.AdamW(Self.model.parameters(), lr=2e-5)
+        criterion = nn.CrossEntropyLoss()
+        
+        for epoch in range(epochs):
+            # Process data in batches
+            batch_size = 16
+            for i in range(0, len(train_texts), batch_size):
+                batch_texts = train_texts[i:i+batch_size]
+                batch_labels = torch.tensor(
+                    train_labels[i:i+batch_size]).to(Self.device)
+                
+                # Preprocess batch
+                inputs = Self.preprocess(batch_texts)
+                
+                # Forward pass
+                outputs = Self.model(**inputs)
+                loss = criterion(outputs, batch_labels)
+                
+                # Backward pass
+                optimizer.zero_grad()
+                loss.backward()
+                optimizer.step()
+                
+                if i % 100 == 0:
+                    print(f'Epoch {epoch+1}, Batch {i}, Loss: {loss.item():.4f}')
+    
+    def predict(Self, texts):
+        # Set model to evaluation mode
+        Self.model.eval()
+        
+        with torch.no_grad():
+            # Preprocess texts
+            inputs = Self.preprocess(texts)
+            
+            # Get predictions
+            outputs = Self.model(**inputs)
+            predictions = torch.argmax(outputs, dim=1)
+            
+        return predictions.cpu().numpy()
+
+# Example usage
+def main():
+    # Example data
+    texts = [
+        "This movie was fantastic!",
+        "Terrible waste of time.",
+        "Great performance by the actors.",
+        "I fell asleep during the show."
+    ]
+    labels = [1, 0, 1, 0]  # 1: positive, 0: negative
+    
+    # Initialize pipeline
+    pipeline = TextClassificationPipeline(num_classes=2)
+    
+    # Train model
+    pipeline.train(texts, labels)
+    
+    # Make predictions
+    test_texts = [
+        "Amazing experience!",
+        "Would not recommend."
+    ]
+    predictions = pipeline.predict(test_texts)
+    
+    # Print results
+    for text, pred in zip(test_texts, predictions):
+        sentiment = "positive" if pred == 1 else "negative"
+        print(f"Text: {text}")
+        print(f"Prediction: {sentiment}\n")
+
+if __name__ == "__main__":
+    main()`,
+                explanation: "This example shows text classification using BERT transformer model. It includes implementing a custom PyTorch model, preprocessing text data, training the model, and making predictions."
+            },
+            {
+                title: "Reinforcement Learning Agent",
+                code: `import numpy as np
+import gym
+from collections import deque
+import random
+
+class DQNAgent:
+    def __init__(Self, state_size, action_size):
+        Self.state_size = state_size
+        Self.action_size = action_size
+        Self.memory = deque(maxlen=2000)
+        Self.gamma = 0.95    # discount rate
+        Self.epsilon = 1.0   # exploration rate
+        Self.epsilon_min = 0.01
+        Self.epsilon_decay = 0.995
+        Self.learning_rate = 0.001
+        Self.model = Self._build_model()
+    
+    def _build_model(Self):
+        from tensorflow.keras.models import Sequential
+        from tensorflow.keras.layers import Dense
+        
+        model = Sequential()
+        model.add(Dense(24, input_dim=Self.state_size, activation='relu'))
+        model.add(Dense(24, activation='relu'))
+        model.add(Dense(Self.action_size, activation='linear'))
+        model.compile(loss='mse', optimizer='adam')
+        return model
+    
+    def remember(Self, state, action, reward, next_state, done):
+        Self.memory.append((state, action, reward, next_state, done))
+    
+    def act(Self, state):
+        if np.random.rand() <= Self.epsilon:
+            return random.randrange(Self.action_size)
+        act_values = Self.model.predict(state)
+        return np.argmax(act_values[0])
+    
+    def replay(Self, batch_size):
+        minibatch = random.sample(Self.memory, batch_size)
+        for state, action, reward, next_state, done in minibatch:
+            target = reward
+            if not done:
+                target = (reward + Self.gamma * 
+                         np.amax(Self.model.predict(next_state)[0]))
+            target_f = Self.model.predict(state)
+            target_f[0][action] = target
+            Self.model.fit(state, target_f, epochs=1, verbose=0)
+        if Self.epsilon > Self.epsilon_min:
+            Self.epsilon *= Self.epsilon_decay
+
+def train_agent():
+    # Initialize environment and agent
+    env = gym.make('CartPole-v1')
+    state_size = env.observation_space.shape[0]
+    action_size = env.action_space.n
+    agent = DQNAgent(state_size, action_size)
+    batch_size = 32
+    
+    # Training loop
+    for episode in range(500):
+        state = env.reset()
+        state = np.reshape(state, [1, state_size])
+        
+        for time in range(500):
+            # Render environment (optional)
+            # env.render()
+            
+            # Agent selects action
+            action = agent.act(state)
+            
+            # Environment step
+            next_state, reward, done, _ = env.step(action)
+            reward = reward if not done else -10
+            next_state = np.reshape(next_state, [1, state_size])
+            
+            # Remember the experience
+            agent.remember(state, action, reward, next_state, done)
+            
+            state = next_state
+            
+            if done:
+                print(f"Episode: {episode+1}/{500}, Score: {time+1}")
+                break
+            
+            # Training
+            if len(agent.memory) > batch_size:
+                agent.replay(batch_size)
+    
+    return agent
+
+def test_agent(agent, episodes=10):
+    env = gym.make('CartPole-v1')
+    state_size = env.observation_space.shape[0]
+    
+    for episode in range(episodes):
+        state = env.reset()
+        state = np.reshape(state, [1, state_size])
+        
+        for time in range(500):
+            env.render()
+            action = agent.act(state)
+            next_state, reward, done, _ = env.step(action)
+            next_state = np.reshape(next_state, [1, state_size])
+            state = next_state
+            
+            if done:
+                print(f"Test Episode: {episode+1}/{episodes}, Score: {time+1}")
+                break
+    
+    env.close()
+
+if __name__ == "__main__":
+    # Train the agent
+    trained_agent = train_agent()
+    
+    # Test the trained agent
+    test_agent(trained_agent)`,
+                explanation: "This example implements a Deep Q-Learning agent for reinforcement learning using the OpenAI Gym environment. It includes the DQN algorithm implementation, experience replay, and epsilon-greedy exploration."
+            }
+        ],
+        roadmap: [
+            {
+                title: "1. Prerequisites & Math Foundations",
+                description: "Master the mathematical foundations required for ML/AI",
+                topics: [
+                    "Linear Algebra (vectors, matrices, eigenvalues)",
+                    "Calculus (derivatives, gradients, optimization)",
+                    "Probability Theory and Statistics",
+                    "Python Programming and NumPy",
+                    "Data Structures and Algorithms",
+                    "Data Analysis with Pandas",
+                    "Data Visualization (Matplotlib, Seaborn)"
+                ]
+            },
+            {
+                title: "2. Machine Learning Basics",
+                description: "Learn fundamental ML concepts and algorithms",
+                topics: [
+                    "Supervised vs Unsupervised Learning",
+                    "Linear Regression and Logistic Regression",
+                    "Decision Trees and Random Forests",
+                    "Support Vector Machines",
+                    "K-Means and Hierarchical Clustering",
+                    "Dimensionality Reduction (PCA, t-SNE)",
+                    "Model Evaluation and Validation"
+                ]
+            },
+            {
+                title: "3. Deep Learning Fundamentals",
+                description: "Master neural networks and deep learning concepts",
+                topics: [
+                    "Neural Network Architecture",
+                    "Backpropagation and Gradient Descent",
+                    "Activation Functions",
+                    "Loss Functions and Optimizers",
+                    "Regularization Techniques",
+                    "TensorFlow and PyTorch Basics",
+                    "GPU Acceleration"
+                ]
+            },
+            {
+                title: "4. Computer Vision",
+                description: "Learn image processing and vision tasks",
+                topics: [
+                    "Convolutional Neural Networks",
+                    "Image Classification and Detection",
+                    "Semantic Segmentation",
+                    "Transfer Learning",
+                    "Object Detection Frameworks",
+                    "Face Recognition",
+                    "Image Generation (GANs)"
+                ]
+            },
+            {
+                title: "5. Natural Language Processing",
+                description: "Master text processing and language understanding",
+                topics: [
+                    "Text Preprocessing and Embeddings",
+                    "RNNs and LSTMs",
+                    "Attention Mechanisms",
+                    "Transformer Architecture",
+                    "BERT and GPT Models",
+                    "Named Entity Recognition",
+                    "Machine Translation"
+                ]
+            },
+            {
+                title: "6. Reinforcement Learning",
+                description: "Learn decision-making and control",
+                topics: [
+                    "Markov Decision Processes",
+                    "Q-Learning and SARSA",
+                    "Policy Gradients",
+                    "Deep Q-Networks (DQN)",
+                    "Actor-Critic Methods",
+                    "Multi-Agent Systems",
+                    "RL in Real-world Applications"
+                ]
+            },
+            {
+                title: "7. ML Engineering",
+                description: "Master deployment and production aspects",
+                topics: [
+                    "Model Deployment Strategies",
+                    "MLOps and CI/CD",
+                    "Model Monitoring and Maintenance",
+                    "Scalable ML Systems",
+                    "Model Optimization",
+                    "API Development",
+                    "Cloud ML Services"
+                ]
+            }
+        ],
+        resources: {
+        documentation: [
+            {
+                title: "TensorFlow Documentation",
+                url: "https://www.tensorflow.org/docs",
+                description: "Official documentation for TensorFlow framework",
+                type: "Framework Documentation"
+            },
+            {
+                title: "PyTorch Documentation",
+                url: "https://pytorch.org/docs",
+                description: "Comprehensive guide for PyTorch development",
+                type: "Framework Documentation"
+            },
+            {
+                title: "Scikit-learn Documentation",
+                url: "https://scikit-learn.org/stable/documentation.html",
+                description: "Documentation for classical ML algorithms",
+                type: "ML Library Documentation"
+            },
+            {
+                title: "Hugging Face Documentation",
+                url: "https://huggingface.co/docs",
+                description: "Transformers library and models documentation",
+                type: "NLP Documentation"
+            },
+            {
+                title: "OpenAI Gym Documentation",
+                url: "https://gym.openai.com/docs/",
+                description: "Documentation for reinforcement learning environments",
+                type: "RL Documentation"
+            }
+        ],
+        tutorials: [
+            {
+                title: "Fast.ai Courses",
+                url: "https://www.fast.ai/",
+                description: "Practical deep learning for coders",
+                type: "Online Course"
+            },
+            {
+                title: "Google Machine Learning Crash Course",
+                url: "https://developers.google.com/machine-learning/crash-course",
+                description: "Google's ML course with TensorFlow",
+                type: "Online Course"
+            },
+            {
+                title: "Kaggle Learn",
+                url: "https://www.kaggle.com/learn",
+                description: "Interactive ML tutorials and competitions",
+                type: "Learning Platform"
+            },
+            {
+                title: "DeepLearning.AI Specializations",
+                url: "https://www.deeplearning.ai/",
+                description: "Deep learning specialization courses",
+                type: "Course Series"
+            },
+            {
+                title: "Stanford CS231n",
+                url: "http://cs231n.stanford.edu/",
+                description: "Convolutional Neural Networks for Visual Recognition",
+                type: "University Course"
+            }
+        ],
+        videos: [
+            {
+                title: "3Blue1Brown Neural Networks",
+                url: "https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi",
+                description: "Visual explanation of neural networks",
+                platform: "YouTube"
+            },
+            {
+                title: "Stanford CS224N NLP Course",
+                url: "https://www.youtube.com/playlist?list=PLoROMvodv4rOhcuXMZkNm7j3fVwBBY42z",
+                description: "Natural Language Processing with Deep Learning",
+                platform: "YouTube"
+            },
+            {
+                title: "MIT Introduction to Deep Learning",
+                url: "http://introtodeeplearning.com/",
+                description: "MIT's deep learning lecture series",
+                platform: "University Course"
+            },
+            {
+                title: "Yannic Kilcher",
+                url: "https://www.youtube.com/c/YannicKilcher",
+                description: "ML paper explanations and discussions",
+                platform: "YouTube"
+            },
+            {
+                title: "Two Minute Papers",
+                url: "https://www.youtube.com/user/keeroyz",
+                description: "AI research paper summaries",
+                platform: "YouTube"
+            }
+        ],
+        books: [
+            {
+                title: "Deep Learning",
+                author: "Ian Goodfellow, Yoshua Bengio, Aaron Courville",
+                description: "Comprehensive textbook on deep learning",
+                level: "Advanced"
+            },
+            {
+                title: "Hands-On Machine Learning with Scikit-Learn and TensorFlow",
+                author: "Aurélien Géron",
+                description: "Practical guide to ML implementation",
+                level: "Intermediate"
+            },
+            {
+                title: "Pattern Recognition and Machine Learning",
+                author: "Christopher Bishop",
+                description: "Classical ML concepts and mathematics",
+                level: "Advanced"
+            },
+            {
+                title: "Natural Language Processing with Transformers",
+                author: "Lewis Tunstall, Leandro von Werra, Thomas Wolf",
+                description: "Guide to using transformers for NLP",
+                level: "Intermediate"
+            },
+            {
+                title: "Reinforcement Learning: An Introduction",
+                author: "Richard S. Sutton, Andrew G. Barto",
+                description: "Foundational text on reinforcement learning",
+                level: "Advanced"
+            }
+        ],
+        tools: [
+            {
+                title: "Jupyter Notebooks",
+                url: "https://jupyter.org/",
+                description: "Interactive development environment for ML",
+                type: "Development Tool",
+                category: "Essential"
+            },
+            {
+                title: "Google Colab",
+                url: "https://colab.research.google.com/",
+                description: "Free cloud-based Jupyter environment with GPU",
+                type: "Cloud Platform",
+                category: "Essential"
+            },
+            {
+                title: "Weights & Biases",
+                url: "https://wandb.ai/",
+                description: "ML experiment tracking and visualization",
+                type: "MLOps Tool",
+                category: "Essential"
+            },
+            {
+                title: "DVC (Data Version Control)",
+                url: "https://dvc.org/",
+                description: "Version control for ML projects",
+                type: "MLOps Tool",
+                category: "Essential"
+            },
+            {
+                title: "MLflow",
+                url: "https://mlflow.org/",
+                description: "Platform for ML lifecycle management",
+                type: "MLOps Tool",
+                category: "Essential"
+            }
+        ],
+        communities: [
+            {
+                title: "Reddit r/MachineLearning",
+                url: "https://www.reddit.com/r/MachineLearning/",
+                description: "Discussion forum for ML topics",
+                type: "Forum"
+            },
+            {
+                title: "Papers with Code",
+                url: "https://paperswithcode.com/",
+                description: "ML papers with implementation code",
+                type: "Research Community"
+            },
+            {
+                title: "AI Stack Exchange",
+                url: "https://ai.stackexchange.com/",
+                description: "Q&A platform for AI and ML",
+                type: "Q&A Forum"
+            },
+            {
+                title: "Hugging Face Community",
+                url: "https://discuss.huggingface.co/",
+                description: "NLP and ML model community",
+                type: "Forum"
+            },
+            {
+                title: "PyTorch Discussion Forums",
+                url: "https://discuss.pytorch.org/",
+                description: "Official PyTorch community forum",
+                type: "Forum"
+            }
+        ],
+        podcasts: [
+            {
+                title: "Machine Learning Guide",
+                url: "http://ocdevel.com/mlg",
+                description: "Beginner-friendly ML concepts",
+                platform: "Podcast"
+            },
+            {
+                title: "Lex Fridman Podcast",
+                url: "https://lexfridman.com/podcast/",
+                description: "In-depth discussions with AI researchers",
+                platform: "Podcast"
+            },
+            {
+                title: "TWIML AI Podcast",
+                url: "https://twimlai.com/podcast/",
+                description: "This Week in Machine Learning & AI",
+                platform: "Podcast"
+            },
+            {
+                title: "Practical AI",
+                url: "https://changelog.com/practicalai",
+                description: "Making artificial intelligence practical",
+                platform: "Podcast"
+            }
+        ],
+        blogs: [
+            {
+                title: "OpenAI Blog",
+                url: "https://openai.com/blog/",
+                description: "Research updates from OpenAI",
+                type: "Research Blog"
+            },
+            {
+                title: "Google AI Blog",
+                url: "https://ai.googleblog.com/",
+                description: "Latest AI research from Google",
+                type: "Research Blog"
+            },
+            {
+                title: "Distill.pub",
+                url: "https://distill.pub/",
+                description: "Clear explanations of ML concepts",
+                type: "Educational Blog"
+            },
+            {
+                title: "Sebastian Ruder's Blog",
+                url: "https://ruder.io/",
+                description: "NLP and deep learning insights",
+                type: "Personal Blog"
+            }
+        ]
+    },
+    practice: {
+        beginnerExercises: [
+            {
+                title: "House Price Prediction",
+                difficulty: "Easy",
+                description: "Create a linear regression model to predict house prices based on features like size, bedrooms, and location.",
+                hints: [
+                    "Use pandas for data preprocessing",
+                    "Handle categorical variables properly",
+                    "Split data into training and testing sets",
+                    "Evaluate model using RMSE and R-squared"
+                ],
+                solution: {
+                    code: `import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+
+def prepare_housing_data():
+    # Create sample data
+    data = {
+        'size': np.random.uniform(1000, 5000, 1000),
+        'bedrooms': np.random.randint(1, 6, 1000),
+        'location': np.random.choice(['urban', 'suburban', 'rural'], 1000),
+        'age': np.random.uniform(0, 50, 1000),
+        'price': np.zeros(1000)
+    }
+    
+    # Generate target variable with some noise
+    data['price'] = (
+        200 * data['size'] +
+        50000 * data['bedrooms'] +
+        np.random.normal(0, 10000, 1000)
+    )
+    
+    # Convert to DataFrame
+    return pd.DataFrame(data)
+
+def create_model_pipeline():
+    # define numeric and categorical features
+    numeric_features = ['size', 'bedrooms', 'age']
+    categorical_features = ['location']
+    
+    # Create preprocessing steps
+    numeric_transformer = Pipeline(steps=[
+        ('scaler', StandardScaler())
+    ])
+    
+    categorical_transformer = Pipeline(steps=[
+        ('onehot', OneHotEncoder(drop='first', sparse=False))
+    ])
+    
+    # Combine preprocessing steps
+    preprocessor = ColumnTransformer(
+        transformers=[
+            ('num', numeric_transformer, numeric_features),
+            ('cat', categorical_transformer, categorical_features)
+        ])
+    
+    # Create pipeline
+    model = Pipeline(steps=[
+        ('preprocessor', preprocessor),
+        ('regressor', LinearRegression())
+    ])
+    
+    return model
+
+def train_and_evaluate():
+    # Prepare data
+    df = prepare_housing_data()
+    X = df.drop('price', axis=1)
+    y = df['price']
+    
+    # Split data
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42
+    )
+    
+    # Create and train model
+    model = create_model_pipeline()
+    model.fit(X_train, y_train)
+    
+    # Make predictions
+    y_pred = model.predict(X_test)
+    
+    # Evaluate model
+    rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+    r2 = r2_score(y_test, y_pred)
+    
+    print(f"Model Performance:")
+    print(f"RMSE: rmse:.2f"
+    print(f"R² Score: {r2:.3f}")
+    
+    return model
+
+if __name__ == "__main__":
+    model = train_and_evaluate()`,
+                    explanation: "This exercise demonstrates basic regression modeling using scikit-learn. It includes data preprocessing, feature engineering, model pipeline creation, and evaluation metrics."
+                }
+            },
+            {
+                title: "Spam Detection",
+                difficulty: "Easy",
+                description: "Build a text classification model to identify spam messages using basic NLP techniques.",
+                hints: [
+                    "Use TF-IDF for text vectorization",
+                    "Implement basic text preprocessing",
+                    "Apply Naive Bayes classifier",
+                    "Evaluate using classification metrics"
+                ],
+                solution: {
+                    code: `import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.pipeline import Pipeline
+from sklearn.metrics import classification_report
+import re
+
+def prepare_text_data():
+    # Create sample data
+    messages = [
+        "WINNER! You have won $1000 prize",
+        "Meeting at 3pm tomorrow",
+        "Claim your free gift now!",
+        "Project deadline reminder",
+        "Get rich quick opportunity!!!",
+        "Dinner at home tonight"
+    ]
+    labels = [1, 0, 1, 0, 1, 0]  # 1: spam, 0: not spam
+    
+    return messages, labels
+
+def preprocess_text(text):
+    # Convert to lowercase
+    text = text.lower()
+    
+    # Remove special characters and extra whitespace
+    text = re.sub(r'[^a-zA-Z\s]', '', text)
+    text = re.sub(r'\s+', ' ', text).strip()
+    
+    return text
+
+def create_spam_detector():
+    # Create pipeline
+    model = Pipeline([
+        ('vectorizer', TfidfVectorizer(
+            preprocessor=preprocess_text,
+            stop_words='english',
+            max_features=5000
+        )),
+        ('classifier', MultinomialNB())
+    ])
+    
+    return model
+
+def train_and_evaluate_spam_detector():
+    # Prepare data
+    messages, labels = prepare_text_data()
+    
+    # Split data
+    X_train, X_test, y_train, y_test = train_test_split(
+        messages, labels, test_size=0.2, random_state=42
+    )
+    
+    # Create and train model
+    model = create_spam_detector()
+    model.fit(X_train, y_train)
+    
+    # Make predictions
+    y_pred = model.predict(X_test)
+    
+    # Print classification report
+    print("Classification Report:")
+    print(classification_report(y_test, y_pred, 
+          target_names=['Not Spam', 'Spam']))
+    
+    return model
+
+def test_spam_detector(model, new_messages):
+    predictions = model.predict(new_messages)
+    for message, prediction in zip(new_messages, predictions):
+        status = "SPAM" if prediction == 1 else "NOT SPAM"
+        print(f"Message: {message}")
+        print(f"Prediction: {status}\n")
+
+if __name__ == "__main__":
+    # Train model
+    model = train_and_evaluate_spam_detector()
+    
+    # Test with new messages
+    test_messages = [
+        "Congratulations! You've won a new iPhone!",
+        "Can you pick up milk on your way home?",
+        "URGENT: Your account needs verification",
+        "Here's the report you requested yesterday"
+    ]
+    
+    test_spam_detector(model, test_messages)`,
+                    explanation: "This exercise shows basic text classification using TF-IDF and Naive Bayes. It includes text preprocessing, model pipeline creation, and evaluation using classification metrics."
+                }
+            }
+        ],
+        intermediateExercises: [
+            {
+                title: "Customer Churn Prediction",
+                difficulty: "Medium",
+                description: "Build a model to predict customer churn using historical customer data with feature engineering and model optimization.",
+                hints: [
+                    "Handle class imbalance",
+                    "Create custom features",
+                    "Implement cross-validation",
+                    "Use feature importance analysis"
+                ],
+                solution: {
+                    code: `import pandas as pd
+import numpy as np
+from sklearn.model_selection import cross_val_score
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import roc_auc_score
+from imblearn.over_sampling import SMOTE
+import shap
+
+class ChurnPredictor:
+    def __init__(Self):
+        Self.model = None
+        Self.feature_importance = None
+        
+    def prepare_features(Self, df):
+        # Create features
+        feature_engineering = {
+            'tenure_months': lambda x: x['tenure'],
+            'total_charges': lambda x: x['monthly_charges'] * x['tenure'],
+            'contract_score': lambda x: x['contract'].map({
+                'Month-to-month': 0, 
+                'One year': 1, 
+                'Two year': 2
+            }),
+            'services_count': lambda x: x[[
+                'internet_service', 'phone_service', 
+                'online_security', 'online_backup'
+            ]].notna().sum(axis=1),
+            'payment_rating': lambda x: x['payment_method'].map({
+                'Electronic check': 0,
+                'Mailed check': 1,
+                'Bank transfer': 2,
+                'Credit card': 2
+            })
+        }
+        
+        # Apply feature engineering
+        features = pd.DataFrame()
+        for name, function in feature_engineering.items():
+            features[name] = function(df)
+            
+        return features
+        
+    def create_pipeline(Self):
+        return Pipeline([
+            ('scaler', StandardScaler()),
+            ('classifier', RandomForestClassifier(
+                n_estimators=100,
+                random_state=42
+            ))
+        ])
+        
+    def handle_imbalance(Self, X, y):
+        smote = SMOTE(random_state=42)
+        X_balanced, y_balanced = smote.fit_resample(X, y)
+        return X_balanced, y_balanced
+        
+    def train(Self, X, y):
+        # Handle class imbalance
+        X_balanced, y_balanced = Self.handle_imbalance(X, y)
+        
+        # Create and optimize model
+        Self.model = Self.create_pipeline()
+        param_grid = {
+            'classifier__n_estimators': [100, 200],
+            'classifier__max_depth': [10, 20, None],
+            'classifier__min_samples_split': [2, 5],
+            'classifier__min_samples_leaf': [1, 2]
+        }
+        
+        grid_search = GridSearchCV(
+            Self.model, param_grid, cv=5, 
+            scoring='roc_auc', n_jobs=-1
+        )
+        grid_search.fit(X_balanced, y_balanced)
+        
+        Self.model = grid_search.best_estimator_
+        print(f"Best parameters: {grid_search.best_params_}")
+        
+        # Calculate feature importance
+        Self.analyze_feature_importance(X_balanced)
+        
+    def analyze_feature_importance(Self, X):
+        # SHAP values for feature importance
+        explainer = shap.TreeExplainer(
+            Self.model.named_steps['classifier']
+        )
+        shap_values = explainer.shap_values(
+            Self.model.named_steps['scaler'].transform(X)
+        )
+        
+        # Store feature importance
+        Self.feature_importance = pd.DataFrame(
+            np.abs(shap_values).mean(axis=0),
+            index=X.columns,
+            columns=['importance']
+        ).sort_values('importance', ascending=False)
+        
+    def predict(Self, X):
+        return Self.model.predict_proba(X)[:, 1]
+        
+    def evaluate(Self, X, y):
+        # Cross-validation
+        cv_scores = cross_val_score(
+            Self.model, X, y, cv=5, 
+            scoring='roc_auc'
+        )
+        
+        print("\nCross-validation ROC-AUC scores:")
+        print(f"Mean: {cv_scores.mean():.3f} "
+              f"(+/- {cv_scores.std() * 2:.3f})")
+        
+        # Feature importance
+        print("\nTop 5 important features:")
+        print(Self.feature_importance.head())
+
+# Example usage
+def main():
+    # Generate sample data
+    np.random.seed(42)
+    n_samples = 1000
+    
+    data = {
+        'tenure': np.random.randint(1, 72, n_samples),
+        'monthly_charges': np.random.uniform(20, 200, n_samples),
+        'contract': np.random.choice(
+            ['Month-to-month', 'One year', 'Two year'], 
+            n_samples
+        ),
+        'internet_service': np.random.choice(
+            ['DSL', 'Fiber optic', None], 
+            n_samples
+        ),
+        'phone_service': np.random.choice(
+            ['Yes', 'No'], 
+            n_samples
+        ),
+        'online_security': np.random.choice(
+            ['Yes', 'No', None], 
+            n_samples
+        ),
+        'online_backup': np.random.choice(
+            ['Yes', 'No', None], 
+            n_samples
+        ),
+        'payment_method': np.random.choice(
+            ['Electronic check', 'Mailed check', 
+             'Bank transfer', 'Credit card'], 
+            n_samples
+        )
+    }
+    
+    # Create churn labels (imbalanced)
+    churn_prob = 0.2 * (72 - data['tenure'])/72
+    0.3 * (data['monthly_charges'] > 100)
+    data['churn'] = np.random.binomial(1, churn_prob)
+    
+    # Create predictor
+    predictor = ChurnPredictor()
+    
+    # Prepare features
+    df = pd.DataFrame(data)
+    X = predictor.prepare_features(df)
+    y = df['churn']
+    
+    # Train and evaluate
+    predictor.train(X, y)
+    predictor.evaluate(X, y)
+
+if __name__ == "__main__":
+    main()`,
+                    explanation: "This intermediate exercise demonstrates advanced classification techniques including feature engineering, handling class imbalance, hyperparameter optimization, and model interpretation using SHAP values."
+                }
+            },
+            {
+                title: "Time Series Forecasting",
+                difficulty: "Medium",
+                description: "Implement a time series forecasting model for sales prediction using both statistical and deep learning approaches.",
+                hints: [
+                    "Handle seasonal patterns",
+                    "Create time-based features",
+                    "Implement both SARIMA and LSTM models",
+                    "Compare different forecasting approaches"
+                ],
+                solution: {
+                    code: `import pandas as pd
+import numpy as np
+from statsmodels.tsa.statespace.sarimax import SARIMAX
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dense
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+import matplotlib.pyplot as plt
+
+class TimeSeriesForecaster:
+    def __init__(Self):
+        Self.sarima_model = None
+        Self.lstm_model = None
+        Self.scaler = MinMaxScaler()
+        
+    def prepare_data(Self, data, seq_length=12):
+        # Scale data
+        scaled_data = Self.scaler.fit_transform(
+            data.reshape(-1, 1)
+        )
+        
+        # Create sequences for LSTM
+        X, y = [], []
+        for i in range(len(scaled_data) - seq_length):
+            X.append(scaled_data[i:(i + seq_length), 0])
+            y.append(scaled_data[i + seq_length, 0])
+            
+        return np.array(X), np.array(y)
+        
+    def create_lstm_model(Self, seq_length):
+        model = Sequential([
+            LSTM(50, activation='relu', 
+                 input_shape=(seq_length, 1)),
+                 Dense(25, activation='relu'),
+            Dense(1)
+        ])
+        
+        model.compile(optimizer='adam', loss='mse')
+        return model
+        
+    def train_sarima(Self, data, order=(1,1,1), 
+                     seasonal_order=(1,1,1,12)):
+        # Fit SARIMA model
+        Self.sarima_model = SARIMAX(
+            data, 
+            order=order,
+            seasonal_order=seasonal_order
+        ).fit(disp=False)
+        
+    def train_lstm(Self, data, seq_length=12, epochs=100):
+        # Prepare sequences
+        X, y = Self.prepare_data(data, seq_length)
+        X = X.reshape((X.shape[0], X.shape[1], 1))
+        
+        # Create and train model
+        Self.lstm_model = Self.create_lstm_model(seq_length)
+        Self.lstm_model.fit(
+            X, y,
+            epochs=epochs,
+            batch_size=32,
+            verbose=0
+        )
+        
+    def forecast_sarima(Self, steps):
+        # Generate SARIMA forecast
+        forecast = Self.sarima_model.forecast(steps)
+        return forecast
+        
+    def forecast_lstm(Self, data, steps):
+        # Prepare input sequence
+        sequence = Self.scaler.transform(
+            data[-12:].reshape(-1, 1)
+        )
+        
+        # Generate predictions
+        predictions = []
+        current_sequence = sequence.flatten()
+        
+        for _ in range(steps):
+            # Reshape sequence
+            X = current_sequence[-12:].reshape(1, 12, 1)
+            
+            # Predict next value
+            next_pred = Self.lstm_model.predict(X, verbose=0)
+            predictions.append(next_pred[0, 0])
+            
+            # Update sequence
+            current_sequence = np.append(
+                current_sequence, 
+                next_pred
+            )
+            
+        # Inverse transform predictions
+        predictions = np.array(predictions).reshape(-1, 1)
+        predictions = Self.scaler.inverse_transform(predictions)
+        
+        return predictions.flatten()
+        
+    def evaluate_models(Self, test_data, predictions_sarima, 
+                       predictions_lstm):
+        # Calculate metrics
+        mae_sarima = mean_absolute_error(
+            test_data, 
+            predictions_sarima
+        )
+        rmse_sarima = np.sqrt(mean_squared_error(
+            test_data, 
+            predictions_sarima
+        ))
+        
+        mae_lstm = mean_absolute_error(
+            test_data, 
+            predictions_lstm
+        )
+        rmse_lstm = np.sqrt(mean_squared_error(
+            test_data, 
+            predictions_lstm
+        ))
+        
+        print("\nModel Evaluation:")
+        print("SARIMA:")
+        print(f"MAE: {mae_sarima:.2f}")
+        print(f"RMSE: {rmse_sarima:.2f}")
+        print("\nLSTM:")
+        print(f"MAE: {mae_lstm:.2f}")
+        print(f"RMSE: {rmse_lstm:.2f}")
+        
+    def plot_forecasts(Self, actual, predictions_sarima, 
+                      predictions_lstm):
+        plt.figure(figsize=(12, 6))
+        plt.plot(actual, label='Actual', color='black')
+        plt.plot(predictions_sarima, label='SARIMA', 
+                color='blue', linestyle='--')
+        plt.plot(predictions_lstm, label='LSTM', 
+                color='red', linestyle='--')
+        plt.legend()
+        plt.title('Time Series Forecasting Comparison')
+        plt.show()
+
+def generate_sample_data(n_points=500):
+    # Generate time series with trend and seasonality
+    time = np.arange(n_points)
+    trend = 0.1 * time
+    seasonality = 10 * np.sin(2 * np.pi * time / 12)
+    noise = np.random.normal(0, 1, n_points)
+    
+    data = trend + seasonality + noise
+    return data
+
+def main():
+    # Generate sample data
+    data = generate_sample_data()
+    train_size = int(len(data) * 0.8)
+    train_data = data[:train_size]
+    test_data = data[train_size:]
+    
+    # Create and train forecaster
+    forecaster = TimeSeriesForecaster()
+    
+    # Train models
+    forecaster.train_sarima(train_data)
+    forecaster.train_lstm(train_data)
+    
+    # Generate forecasts
+    forecast_steps = len(test_data)
+    predictions_sarima = forecaster.forecast_sarima(
+        forecast_steps
+    )
+    predictions_lstm = forecaster.forecast_lstm(
+        train_data, 
+        forecast_steps
+    )
+    
+    # Evaluate and visualize
+    forecaster.evaluate_models(
+        test_data, 
+        predictions_sarima, 
+        predictions_lstm
+    )
+    forecaster.plot_forecasts(
+        test_data, 
+        predictions_sarima, 
+        predictions_lstm
+    )
+
+if __name__ == "__main__":
+    main()`,
+    explanation: "This intermediate exercise demonstrates time series forecasting using both statistical (SARIMA) and deep learning (LSTM) approaches. It includes data preparation, model training, forecasting, and comparison of different methods. The implementation handles seasonal patterns and provides visualization of results."
+                }
+            }
+        ],
+        advancedExercises: [
+            {
+                title: "Generative Adversarial Network (GAN)",
+                difficulty: "Hard",
+                description: "Implement a GAN to generate synthetic images using deep convolutional networks.",
+                hints: [
+                    "Use convolutional layers for generator and discriminator",
+                    "Implement proper loss functions",
+                    "Add batch normalization and dropout",
+                    "Monitor training stability"
+                ],
+                solution: {
+                    code: `import tensorflow as tf
+from tensorflow.keras import layers, models
+import numpy as np
+import matplotlib.pyplot as plt
+
+class DCGAN:
+    def __init__(Self, image_shape, latent_dim=100):
+        Self.image_shape = image_shape
+        Self.latent_dim = latent_dim
+        
+        Self.generator = Self._build_generator()
+        Self.discriminator = Self._build_discriminator()
+        Self.gan = Self._build_gan()
+        
+    def _build_generator(Self):
+        model = models.Sequential([
+            # Foundation for 7x7 image
+            layers.Dense(7*7*256, input_dim=Self.latent_dim),
+            layers.Reshape((7, 7, 256)),
+            
+            # Upsampling
+            layers.Conv2DTranspose(128, 3, strides=2, padding='same'),
+            layers.BatchNormalization(),
+            layers.LeakyReLU(alpha=0.2),
+            
+            layers.Conv2DTranspose(64, 3, strides=2, padding='same'),
+            layers.BatchNormalization(),
+            layers.LeakyReLU(alpha=0.2),
+            
+            layers.Conv2D(Self.image_shape[-1], 3, 
+                         padding='same', activation='tanh')
+        ])
+        
+        return model
+        
+    def _build_discriminator(Self):
+        model = models.Sequential([
+            layers.Conv2D(64, 3, strides=2, padding='same',
+                         input_shape=Self.image_shape),
+            layers.LeakyReLU(alpha=0.2),
+            layers.Dropout(0.3),
+            
+            layers.Conv2D(128, 3, strides=2, padding='same'),
+            layers.LeakyReLU(alpha=0.2),
+            layers.Dropout(0.3),
+            
+            layers.Flatten(),
+            layers.Dense(1, activation='sigmoid')
+        ])
+        
+        return model
+        
+    def _build_gan(Self):
+        # Freeze discriminator
+        Self.discriminator.trainable = False
+        
+        # GAN input (noise) will generate images
+        gan_input = layers.Input(shape=(Self.latent_dim,))
+        
+        # Generator creates images
+        x = Self.generator(gan_input)
+        
+        # Discriminator judges images
+        gan_output = Self.discriminator(x)
+        
+        # Combine them
+        model = models.Model(gan_input, gan_output)
+        return model
+        
+    def compile_models(Self):
+        # Compile discriminator
+        Self.discriminator.compile(
+            optimizer=tf.keras.optimizers.Adam(
+                learning_rate=0.0002,
+                beta_1=0.5
+            ),
+            loss='binary_crossentropy',
+            metrics=['accuracy']
+        )
+        
+        # Compile GAN
+        Self.gan.compile(
+            optimizer=tf.keras.optimizers.Adam(
+                learning_rate=0.0002,
+                beta_1=0.5
+            ),
+            loss='binary_crossentropy'
+        )
+        
+    def train(Self, x_train, epochs=10000, batch_size=128, 
+              save_interval=1000):
+        # Rescale images to [-1, 1]
+        x_train = (x_train.astype('float32') - 127.5) / 127.5
+        
+        # Labels for real and fake images
+        real = np.ones((batch_size, 1))
+        fake = np.zeros((batch_size, 1))
+        
+        for epoch in range(epochs):
+            # Train discriminator
+            # Select random real images
+            idx = np.random.randint(0, x_train.shape[0], batch_size)
+            real_imgs = x_train[idx]
+            
+            # Generate fake images
+            noise = np.random.normal(0, 1, 
+                                   (batch_size, Self.latent_dim))
+            fake_imgs = Self.generator.predict(noise)
+            
+            # Train discriminator
+            d_loss_real = Self.discriminator.train_on_batch(
+                real_imgs, 
+                real
+            )
+            d_loss_fake = Self.discriminator.train_on_batch(
+                fake_imgs, 
+                fake
+            )
+            d_loss = 0.5 * np.add(d_loss_real, d_loss_fake)
+            
+            # Train generator
+            noise = np.random.normal(0, 1, 
+                                   (batch_size, Self.latent_dim))
+            g_loss = Self.gan.train_on_batch(noise, real)
+            
+            # Print progress
+            if epoch % 100 == 0:
+                print(f"Epoch {epoch}, "
+                      f"D Loss: {d_loss[0]:.4f}, "
+                      f"D Acc: {100*d_loss[1]:.1f}%, "
+                      f"G Loss: {g_loss:.4f}")
+            
+            # Save images
+            if epoch % save_interval == 0:
+                Self.save_imgs(epoch)
+                
+    def save_imgs(Self, epoch):
+        r, c = 5, 5
+        noise = np.random.normal(0, 1, 
+                               (r * c, Self.latent_dim))
+        gen_imgs = Self.generator.predict(noise)
+        
+        # Rescale images 0 - 1
+        gen_imgs = 0.5 * gen_imgs + 0.5
+        
+        fig, axs = plt.subplots(r, c)
+        cnt = 0
+        for i in range(r):
+            for j in range(c):
+                axs[i,j].imshow(gen_imgs[cnt, :,:,0], cmap='gray')
+                axs[i,j].axis('off')
+                cnt += 1
+        fig.savefig(f"gan_images/epoch_{epoch}.png")
+        plt.close()
+
+def prepare_mnist_data():
+    # Load MNIST dataset
+    (x_train, _), (_, _) = tf.keras.datasets.mnist.load_data()
+    
+    # Expand dimensions and normalize
+    x_train = np.expand_dims(x_train, axis=-1)
+    
+    return x_train
+
+def main():
+    # Prepare data
+    x_train = prepare_mnist_data()
+    
+    # Create and train GAN
+    gan = DCGAN(image_shape=(28, 28, 1))
+    gan.compile_models()
+    gan.train(x_train, epochs=30000, batch_size=32, 
+              save_interval=1000)
+
+if __name__ == "__main__":
+    main()`,
+                    explanation: "This advanced exercise implements a Deep Convolutional GAN (DCGAN) for generating synthetic images. It includes proper architecture design, loss functions, training loop implementation, and visualization of generated images throughout training."
+                }
+            },
+            {
+                title: "Transformer for Machine Translation",
+                difficulty: "Hard",
+                description: "Implement a transformer model for language translation with attention mechanisms.",
+                hints: [
+                    "Implement multi-head attention",
+                    "Create positional encoding",
+                    "Handle tokenization and padding",
+                    "Implement beam search decoding"
+                ],
+                solution: {
+                    code: `import tensorflow as tf
+import numpy as np
+
+class TransformerEncoderLayer(tf.keras.layers.Layer):
+    def __init__(Self, d_model, num_heads, dff, rate=0.1):
+        super().__init__()
+        
+        Self.mha = tf.keras.layers.MultiHeadAttention(
+            num_heads=num_heads, 
+            key_dim=d_model
+        )
+        Self.ffn = tf.keras.Sequential([
+            tf.keras.layers.Dense(dff, activation='relu'),
+            tf.keras.layers.Dense(d_model)
+        ])
+        
+        Self.layernorm1 = tf.keras.layers.LayerNormalization(
+            epsilon=1e-6
+        )
+        Self.layernorm2 = tf.keras.layers.LayerNormalization(
+            epsilon=1e-6
+        )
+        
+        Self.dropout1 = tf.keras.layers.Dropout(rate)
+        Self.dropout2 = tf.keras.layers.Dropout(rate)
+        
+    def call(Self, x, training, mask):
+        attn_output = Self.mha(x, x, x, mask)
+        attn_output = Self.dropout1(attn_output, training=training)
+        out1 = Self.layernorm1(x + attn_output)
+        
+        ffn_output = Self.ffn(out1)
+        ffn_output = Self.dropout2(ffn_output, training=training)
+        return Self.layernorm2(out1 + ffn_output)
+
+class TransformerDecoderLayer(tf.keras.layers.Layer):
+    def __init__(Self, d_model, num_heads, dff, rate=0.1):
+        super().__init__()
+        
+        Self.mha1 = tf.keras.layers.MultiHeadAttention(
+            num_heads=num_heads, 
+            key_dim=d_model
+        )
+        Self.mha2 = tf.keras.layers.MultiHeadAttention(
+            num_heads=num_heads, 
+            key_dim=d_model
+        )
+        
+        Self.ffn = tf.keras.Sequential([
+            tf.keras.layers.Dense(dff, activation='relu'),
+            tf.keras.layers.Dense(d_model)
+        ])
+        
+        Self.layernorm1 = tf.keras.layers.LayerNormalization(
+            epsilon=1e-6
+        )
+        Self.layernorm2 = tf.keras.layers.LayerNormalization(
+            epsilon=1e-6
+        )
+         Self.layernorm3 = tf.keras.layers.LayerNormalization(
+            epsilon=1e-6
+        )
+        
+        Self.dropout1 = tf.keras.layers.Dropout(rate)
+        Self.dropout2 = tf.keras.layers.Dropout(rate)
+        Self.dropout3 = tf.keras.layers.Dropout(rate)
+    
+    def call(Self, x, enc_output, training, 
+             look_ahead_mask, padding_mask):
+        # Self attention
+        attn1 = Self.mha1(x, x, x, look_ahead_mask)
+        attn1 = Self.dropout1(attn1, training=training)
+        out1 = Self.layernorm1(attn1 + x)
+        
+        # Encoder-decoder attention
+        attn2 = Self.mha2(
+            out1, enc_output, enc_output, padding_mask)
+        attn2 = Self.dropout2(attn2, training=training)
+        out2 = Self.layernorm2(attn2 + out1)
+        
+        # Feed forward
+        ffn_output = Self.ffn(out2)
+        ffn_output = Self.dropout3(ffn_output, training=training)
+        return Self.layernorm3(ffn_output + out2)
+
+class Transformer(tf.keras.Model):
+    def __init__(Self, num_layers, d_model, num_heads, dff,
+                 input_vocab_size, target_vocab_size,
+                 max_position_encoding, rate=0.1):
+        super().__init__()
+        
+        Self.d_model = d_model
+        Self.num_layers = num_layers
+        
+        Self.embedding = tf.keras.layers.Embedding(
+            input_vocab_size, 
+            d_model
+        )
+        Self.pos_encoding = Self.positional_encoding(
+            max_position_encoding, 
+            d_model
+        )
+        
+        Self.enc_layers = [
+            TransformerEncoderLayer(d_model, num_heads, dff, rate)
+            for in range(num_layers)
+        ]
+        
+        Self.dec_layers = [
+            TransformerDecoderLayer(d_model, num_heads, dff, rate)
+            for in range(num_layers)
+        ]
+        
+        Self.final_layer = tf.keras.layers.Dense(
+            target_vocab_size
+        )
+        
+        Self.dropout = tf.keras.layers.Dropout(rate)
+    
+    def positional_encoding(Self, position, d_model):
+        # Create positional encoding matrix
+        angle_rads = Self.get_angles(
+            np.arange(position)[:, np.newaxis],
+            np.arange(d_model)[np.newaxis, :],
+            d_model
+        )
+        
+        # Apply sin to even indices
+        angle_rads[:, 0::2] = np.sin(angle_rads[:, 0::2])
+        
+        # Apply cos to odd indices
+        angle_rads[:, 1::2] = np.cos(angle_rads[:, 1::2])
+        
+        pos_encoding = angle_rads[np.newaxis, ...]
+        return tf.cast(pos_encoding, dtype=tf.float32)
+    
+    def get_angles(Self, pos, i, d_model):
+        angle_rates = 1 / np.power(
+            10000, 
+            (2 * (i//2)) / np.float32(d_model)
+        )
+        return pos * angle_rates
+    
+    def create_padding_mask(Self, seq):
+        seq = tf.cast(tf.math.equal(seq, 0), tf.float32)
+        return seq[:, tf.newaxis, tf.newaxis, :]
+    
+    def create_look_ahead_mask(Self, size):
+        mask = 1 - tf.linalg.band_part(tf.ones((size, size)), -1, 0)
+        return mask
+    
+    def call(Self, inputs, training):
+        # Unpack inputs
+        inp, tar = inputs
+        
+        # Create masks
+        enc_padding_mask = Self.create_padding_mask(inp)
+        dec_padding_mask = Self.create_padding_mask(inp)
+        look_ahead_mask = Self.create_look_ahead_mask(
+            tf.shape(tar)[1]
+        )
+        dec_target_padding_mask = Self.create_padding_mask(tar)
+        combined_mask = tf.maximum(
+            dec_target_padding_mask, 
+            look_ahead_mask
+        )
+        
+        # Encoder
+        enc_output = Self.encode(inp, training, enc_padding_mask)
+        
+        # Decoder
+        dec_output = Self.decode(
+            tar, enc_output, training, 
+            combined_mask, dec_padding_mask
+        )
+        
+        # Final linear layer
+        final_output = Self.final_layer(dec_output)
+        return final_output
+    
+    def encode(Self, x, training, mask):
+        seq_len = tf.shape(x)[1]
+        
+        # Embedding and positional encoding
+        x = Self.embedding(x)
+        x *= tf.math.sqrt(tf.cast(Self.d_model, tf.float32))
+        x += Self.pos_encoding[:, :seq_len, :]
+        x = Self.dropout(x, training=training)
+        
+        # Encoder layers
+        for i in range(Self.num_layers):
+            x = Self.enc_layers[i](x, training, mask)
+            
+        return x
+    
+    def decode(Self, x, enc_output, training, 
+              look_ahead_mask, padding_mask):
+        seq_len = tf.shape(x)[1]
+        
+        # Embedding and positional encoding
+        x = Self.embedding(x)
+        x *= tf.math.sqrt(tf.cast(Self.d_model, tf.float32))
+        x += Self.pos_encoding[:, :seq_len, :]
+        x = Self.dropout(x, training=training)
+        
+        # Decoder layers
+        for i in range(Self.num_layers):
+            x = Self.dec_layers[i](
+                x, enc_output, training, 
+                look_ahead_mask, padding_mask
+            )
+            
+        return x
+
+    def __init__(Self, transformer, tokenizer_src, tokenizer_tgt,
+                 max_length=128):
+        Self.transformer = transformer
+        Self.tokenizer_src = tokenizer_src
+        Self.tokenizer_tgt = tokenizer_tgt
+        Self.max_length = max_length
+    
+    def translate(Self, text, beam_size=4):
+        # Tokenize input
+        encoder_input = Self.tokenizer_src.encode(text)
+        encoder_input = tf.expand_dims(encoder_input, 0)
+        
+        # Initialize decoder input
+        decoder_input = [Self.tokenizer_tgt.vocab_size]
+        output = tf.expand_dims(decoder_input, 0)
+        
+        for i in range(Self.max_length):
+            predictions = Self.transformer(
+                [encoder_input, output],
+                training=False
+            )
+            
+            # Get the last token predictions
+            predictions = predictions[:, -1:, :]
+            predicted_id = tf.cast(
+                tf.argmax(predictions, axis=-1),
+                tf.int32
+            )
+            
+            # Break if end token is predicted
+            if predicted_id == Self.tokenizer_tgt.vocab_size + 1:
+                break
+                
+            # Concatenate predicted token
+            output = tf.concat([output, predicted_id], axis=-1)
+        
+        # Convert to text
+        text = Self.tokenizer_tgt.decode(
+            [i for i in output[0] if i < Self.tokenizer_tgt.vocab_size]
+        )
+        
+        return text
+
+def main():
+    # Example parameters
+    num_layers = 4
+    d_model = 128
+    dff = 512
+    num_heads = 8
+    dropout_rate = 0.1
+    
+    # Example vocab sizes
+    input_vocab_size = 8500
+    target_vocab_size = 8000
+    max_position_encoding = 10000
+    
+    # Create transformer model
+    transformer = transformer(
+        num_layers=num_layers,
+        d_model=d_model,
+        num_heads=num_heads,
+        dff=dff,
+        input_vocab_size=input_vocab_size,
+        target_vocab_size=target_vocab_size,
+        max_position_encoding=max_position_encoding,
+        rate=dropout_rate
+    )
+    
+    # Example training (simplified)
+    learning_rate = CustomSchedule(d_model)
+    optimizer = tf.keras.optimizers.Adam(
+        learning_rate,
+        beta_1=0.9,
+        beta_2=0.98,
+        epsilon=1e-9
+    )
+    
+    loss_object = tf.keras.losses.SparseCategoricalCrossentropy(
+        from_logits=True,
+        reduction='none'
+    )
+    
+    train_loss = tf.keras.metrics.Mean(fname='train_loss')
+    train_accuracy = tf.keras.metrics.SparseCategoricalAccuracy(
+        fname='train_accuracy'
+    )
+
+if __name__ == "__main__":
+    main()`,
+    explanation: "This advanced exercise implements a Transformer model for machine translation. It includes:\n" +
+                "1. Encoder and decoder layers with multi-head attention\n" +
+                "2. Positional encoding for sequence order\n" +
+                "3. Mask creation for padding and future tokens\n" +
+                "4. Translation class with basic beam search\n" +
+                "The implementation follows the architecture from 'Attention Is All You Need' paper and includes proper attention mechanisms, layer normalization, and residual connections."
 }
+            }
+        ]
+    }
+}
+},
+{
+    id: 13,
+    title: "Blockchain Development",
+    description: "To learn blockchain development, follow this roadmap",
+    extendedContent: `
+        Master blockchain technology and decentralized application development. Start with blockchain 
+        fundamentals, cryptography, and distributed systems. Learn Solidity programming and smart 
+        contract development. Explore popular blockchain platforms like Ethereum, build DApps, and 
+        understand Web3 development. Learn about consensus mechanisms, tokenomics, and blockchain 
+        architecture. Advanced topics include DeFi protocols, NFTs, cross-chain development, and 
+        blockchain security best practices.
+    `,
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        prerequisites: [
+            "Strong programming fundamentals",
+            "Understanding of data structures and algorithms",
+            "Basic knowledge of cryptography",
+            "JavaScript/TypeScript proficiency",
+            "Understanding of web development",
+            "Basic networking concepts",
+            "Command line proficiency"
+        ],
+        outcomes: [
+            "Develop smart contracts using Solidity",
+            "Build decentralized applications (DApps)",
+            "Implement blockchain security measures",
+            "Create and deploy tokens and NFTs",
+            "Integrate Web3 functionality",
+            "Design DeFi protocols and applications",
+            "Implement cross-chain solutions",
+            "Deploy and manage blockchain networks",
+            "Conduct smart contract testing and auditing",
+            "Build secure and scalable blockchain systems"
+        ],
+        sections: [
+            {
+                title: "Blockchain Fundamentals",
+                content: "Master core blockchain concepts including distributed ledger technology, consensus mechanisms, and cryptographic primitives. Understand blockchain architecture, network types, and transaction processing. Learn about mining, nodes, and blockchain scalability solutions."
+            },
+            {
+                title: "Smart Contract Development",
+                content: "Learn Solidity programming language, smart contract development, and deployment processes. Understand contract security, gas optimization, and best practices. Master testing frameworks, debugging tools, and contract upgradeability patterns."
+            },
+            {
+                title: "Web3 Development",
+                content: "Study Web3.js and Ethers.js libraries for blockchain interaction. Learn about wallet integration, transaction management, and event handling. Understand decentralized storage solutions and oracle implementations."
+            },
+            {
+                title: "DApp Development",
+                content: "Build full-stack decentralized applications using modern frameworks. Learn about frontend integration, state management, and user interface design for blockchain applications. Master IPFS integration and decentralized identity solutions."
+            },
+            {
+                title: "DeFi Development",
+                content: "Understand decentralized finance protocols, token standards, and automated market makers. Learn about lending protocols, yield farming, and liquidity pools. Master flash loans, protocol integration, and DeFi security."
+            },
+            {
+                title: "NFT Development",
+                content: "Learn NFT token standards, metadata management, and marketplace development. Understand NFT minting, trading mechanics, and royalty implementations. Study NFT gaming, generative art, and cross-platform compatibility."
+            },
+            {
+                title: "Blockchain Security",
+                content: "Master smart contract security patterns, common vulnerabilities, and audit processes. Learn about secure development practices, testing methodologies, and security tools. Understand attack vectors and prevention strategies."
+            },
+            {
+                title: "Blockchain Architecture",
+                content: "Study advanced blockchain architectures, scalability solutions, and cross-chain protocols. Learn about sharding, sidechains, and layer 2 solutions. Understand consensus mechanisms and network governance."
+            }
+        ]
+    },
+    content: {
+        examples: [
+            {
+                title: "ERC20 Token Implementation",
+                code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract CustomToken is ERC20, Ownable {
+    uint256 private constant INITIAL_SUPPLY = 1000000 * 10**18; // 1 million tokens
+    uint256 public maxSupply;
+    mapping(address => bool) public blacklisted;
+    
+    event AddressBlacklisted(address indexed account);
+    event AddressUnblacklisted(address indexed account);
+    
+    constructor(string memory name, string memory symbol) 
+        ERC20(name, symbol) {
+        maxSupply = INITIAL_SUPPLY * 2; // Max supply is double initial supply
+        _mint(msg.sender, INITIAL_SUPPLY);
+    }
+    
+    function mint(address to, uint256 amount) public onlyOwner {
+        require(totalSupply() + amount <= maxSupply, 
+                "Would exceed max supply");
+        _mint(to, amount);
+    }
+    
+    function burn(uint256 amount) public {
+        _burn(msg.sender, amount);
+    }
+    
+    function blacklistAddress(address account) public onlyOwner {
+        blacklisted[account] = true;
+        emit AddressBlacklisted(account);
+    }
+    
+    function unblacklistAddress(address account) public onlyOwner {
+        blacklisted[account] = false;
+        emit AddressUnblacklisted(account);
+    }
+    
+    function _beforeTokenTransfer(
+        address from,
+        address to,
+        uint256 amount
+    ) internal virtual override {
+        super._beforeTokenTransfer(from, to, amount);
+        
+        require(!blacklisted[from] && !blacklisted[to], 
+                "Address is blacklisted");
+    }
+    
+    // Additional security features
+    function recoverERC20(address tokenAddress, uint256 amount) 
+        public onlyOwner {
+        IERC20(tokenAddress).transfer(owner(), amount);
+    }
+    
+    // Snapshot and governance features could be added here
+}`,
+                explanation: "This example demonstrates the implementation of an ERC20 token with additional features including maxSupply, blacklisting, and token recovery. It uses OpenZeppelin contracts for security and standard compliance."
+            },
+            {
+                title: "NFT Collection with Whitelist",
+                code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
+
+contract NFTCollection is ERC721, ReentrancyGuard, Ownable {
+    using Counters for Counters.Counter;
+    using Strings for uint256;
+    
+    Counters.Counter private _tokenIds;
+    
+    uint256 public constant PRICE = 0.08 ether;
+    uint256 public constant MAX_SUPPLY = 10000;
+    uint256 public constant MAX_PER_MINT = 5;
+    uint256 public constant MAX_PER_WALLET = 10;
+    
+    bool public saleIsActive = false;
+    bool public whitelistOnly = true;
+    
+    bytes32 public merkleRoot;
+    string private _baseTokenURI;
+    
+    mapping(address => uint256) public walletMints;
+    
+    event Minted(address indexed to, uint256 indexed tokenId);
+    
+    constructor(
+        string memory name,
+        string memory symbol,
+        string memory baseTokenURI,
+        bytes32 _merkleRoot
+    ) ERC721(name, symbol) {
+        _baseTokenURI = baseTokenURI;
+        merkleRoot = _merkleRoot;
+    }
+    
+    modifier callerIsUser() {
+        require(tx.origin == msg.sender, "Caller is a contract");
+        _;
+    }
+    
+    function mint(uint256 numberOfTokens, bytes32[] calldata proof) 
+        public payable callerIsUser nonReentrant {
+        require(saleIsActive, "Sale must be active");
+        require(numberOfTokens <= MAX_PER_MINT, "Too many requested");
+        require(totalSupply() + numberOfTokens <= MAX_SUPPLY, 
+                "Would exceed max supply");
+        require(PRICE * numberOfTokens <= msg.value, 
+                "Insufficient payment");
+        require(walletMints[msg.sender] + numberOfTokens <= MAX_PER_WALLET,
+                "Would exceed max per wallet");
+        
+        if (whitelistOnly) {
+            require(isWhitelisted(msg.sender, proof), 
+                    "Not whitelisted");
+        }
+        
+        for (uint256 i = 0; i < numberOfTokens; i++) {
+            _tokenIds.increment();
+            uint256 newTokenId = _tokenIds.current();
+            _safeMint(msg.sender, newTokenId);
+            emit Minted(msg.sender, newTokenId);
+        }
+        
+        walletMints[msg.sender] += numberOfTokens;
+    }
+    
+    function isWhitelisted(address account, bytes32[] calldata proof) 
+        public view returns (bool) {
+        bytes32 leaf = keccak256(abi.encodePacked(account));
+        return MerkleProof.verify(proof, merkleRoot, leaf);
+    }
+    
+    function totalSupply() public view returns (uint256) {
+        return _tokenIds.current();
+    }
+    
+    function setBaseURI(string memory baseURI) public onlyOwner {
+        _baseTokenURI = baseURI;
+    }
+    
+    function _baseURI() internal view override returns (string memory) {
+        return _baseTokenURI;
+    }
+    
+    function toggleSale() public onlyOwner {
+        saleIsActive = !saleIsActive;
+    }
+    
+    function toggleWhitelistOnly() public onlyOwner {
+        whitelistOnly = !whitelistOnly;
+    }
+    
+    function setMerkleRoot(bytes32 _merkleRoot) public onlyOwner {
+        merkleRoot = _merkleRoot;
+    }
+    
+    function withdraw() public onlyOwner {
+        uint256 balance = address(this).balance;
+        payable(msg.sender).transfer(balance);
+    }
+    
+    // Royalties implementation
+    function supportsInterface(bytes4 interfaceId)
+        public view virtual override returns (bool) {
+        return interfaceId == 0x2a55205a || // ERC2981
+               super.supportsInterface(interfaceId);
+    }
+}`,
+                explanation: "This example shows an NFT collection implementation with whitelist functionality using Merkle trees, minting limits, and security features. It includes proper access control, reentrancy protection, and support for metadata and royalties."
+            },
+            {
+                title: "DeFi Lending Protocol",
+                code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/security/Pausable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract LendingPool is ReentrancyGuard, Pausable, Ownable {
+    struct UserAccount {
+        uint256 deposited;
+        uint256 borrowed;
+        uint256 lastInterestBlock;
+        uint256 interestRate;
+    }
+    
+    struct Asset {
+        address tokenAddress;
+        uint256 totalDeposited;
+        uint256 totalBorrowed;
+        uint256 utilizationRate;
+        uint256 baseInterestRate;
+        uint256 maxLTV; // Loan to Value ratio
+    }
+    
+    mapping(address => mapping(address => UserAccount)) 
+        public userAccounts; // user => token => account
+    mapping(address => Asset) public supportedAssets;
+    address[] public assetList;
+    
+    uint256 public constant UTILIZATION_PRECISION = 1e6;
+    uint256 public constant INTEREST_PRECISION = 1e6;
+    
+    event Deposited(
+        address indexed user,
+        address indexed token,
+        uint256 amount
+    );
+    event Borrowed(
+        address indexed user,
+        address indexed token,
+        uint256 amount
+    );
+    event Repaid(
+        address indexed user,
+        address indexed token,
+        uint256 amount
+    );
+    event Withdrawn(
+        address indexed user,
+        address indexed token,
+        uint256 amount
+    );
+    
+    constructor() {
+        // Initialize with supported assets if needed
+    }
+    
+    function addSupportedAsset(
+        address tokenAddress,
+        uint256 baseInterestRate,
+        uint256 maxLTV
+    ) external onlyOwner {
+        require(supportedAssets[tokenAddress].tokenAddress == address(0),
+                "Asset already supported");
+                
+        Asset storage newAsset = supportedAssets[tokenAddress];
+        newAsset.tokenAddress = tokenAddress;
+        newAsset.baseInterestRate = baseInterestRate;
+        newAsset.maxLTV = maxLTV;
+        
+        assetList.push(tokenAddress);
+    }
+    
+    function deposit(address token, uint256 amount) 
+        external nonReentrant whenNotPaused {
+        require(amount > 0, "Amount must be greater than 0");
+        require(supportedAssets[token].tokenAddress != address(0),
+                "Asset not supported");
+                
+        UserAccount storage account = userAccounts[msg.sender][token];
+        Asset storage asset = supportedAssets[token];
+        
+        // Update interest before deposit
+        _updateInterest(msg.sender, token);
+        
+        // Transfer tokens to contract
+        IERC20(token).transferFrom(msg.sender, address(this), amount);
+        
+        // Update user account and asset state
+        account.deposited += amount;
+        asset.totalDeposited += amount;
+        
+        // Update utilization rate
+        _updateUtilizationRate(token);
+        
+        emit Deposited(msg.sender, token, amount);
+    }
+    
+    function borrow(address token, uint256 amount)
+        external nonReentrant whenNotPaused {
+        require(amount > 0, "Amount must be greater than 0");
+        require(supportedAssets[token].tokenAddress != address(0),
+                "Asset not supported");
+                
+        UserAccount storage account = userAccounts[msg.sender][token];
+        Asset storage asset = supportedAssets[token];
+        
+        // Update interest before borrow
+        _updateInterest(msg.sender, token);
+        
+        // Check borrowing capacity
+        require(_canBorrow(msg.sender, token, amount),
+                "Insufficient collateral");
+                
+        // Update user account and asset state
+        account.borrowed += amount;
+        asset.totalBorrowed += amount;
+        
+        // Update utilization and interest rates
+        _updateUtilizationRate(token);
+        account.interestRate = _calculateInterestRate(token);
+        account.lastInterestBlock = block.number;
+        
+        // Transfer tokens to borrower
+        IERC20(token).transfer(msg.sender, amount);
+        
+        emit Borrowed(msg.sender, token, amount);
+    }
+    
+    function repay(address token, uint256 amount)
+        external nonReentrant whenNotPaused {
+        require(amount > 0, "Amount must be greater than 0");
+        
+        UserAccount storage account = userAccounts[msg.sender][token];
+        Asset storage asset = supportedAssets[token];
+        
+        // Update interest before repayment
+        _updateInterest(msg.sender, token);
+        
+        uint256 totalOwed = account.borrowed;
+        require(totalOwed > 0, "No outstanding loan");
+        
+        uint256 repayAmount = amount > totalOwed ? totalOwed : amount;
+        
+        // Transfer tokens from user
+        IERC20(token).transferFrom(
+            msg.sender,
+            address(this),
+            repayAmount
+        );
+        
+        // Update user account and asset state
+        account.borrowed -= repayAmount;
+        asset.totalBorrowed -= repayAmount;
+        
+        // Update utilization rate
+        _updateUtilizationRate(token);
+        
+        emit Repaid(msg.sender, token, repayAmount);
+    }
+    
+    function withdraw(address token, uint256 amount)
+        external nonReentrant whenNotPaused {
+        UserAccount storage account = userAccounts[msg.sender][token];
+        Asset storage asset = supportedAssets[token];
+        
+        // Update interest before withdrawal
+        _updateInterest(msg.sender, token);
+        
+        require(account.deposited >= amount,
+                "Insufficient balance");
+                
+        // Check if withdrawal would affect collateral requirements
+        require(_canWithdraw(msg.sender, token, amount),
+                "Withdrawal would exceed collateral requirements");
+                
+        // Update user account and asset state
+        account.deposited -= amount;
+        asset.totalDeposited -= amount;
+        
+        // Update utilization rate
+        _updateUtilizationRate(token);
+        
+        // Transfer tokens to user
+        IERC20(token).transfer(msg.sender, amount);
+        
+        emit Withdrawn(msg.sender, token, amount);
+    }
+    
+    function _updateInterest(address user, address token) internal {
+        UserAccount storage account = userAccounts[user][token];
+        if (account.borrowed == 0) return;
+        
+        uint256 blocksPassed = block.number - account.lastInterestBlock;
+        if (blocksPassed == 0) return;
+        
+        uint256 interest = account.borrowed * 
+                          account.interestRate *
+                          blocksPassed /
+                          INTEREST_PRECISION;
+                          
+        account.borrowed += interest;
+        account.lastInterestBlock = block.number;
+    }
+    
+    function _updateUtilizationRate(address token) internal {
+        Asset storage asset = supportedAssets[token];
+        
+        if (asset.totalDeposited == 0) {
+            asset.utilizationRate = 0;
+            return;
+        }
+        
+        asset.utilizationRate = asset.totalBorrowed *
+                              UTILIZATION_PRECISION /
+                              asset.totalDeposited;
+    }
+    
+    function _calculateInterestRate(address token)
+        internal view returns (uint256) {
+        Asset storage asset = supportedAssets[token];
+        
+        return asset.baseInterestRate +
+               (asset.utilizationRate * asset.baseInterestRate /
+                UTILIZATION_PRECISION);
+    }
+    
+    function _canBorrow(address user, address token, uint256 amount)
+        internal view returns (bool) {
+        UserAccount storage account = userAccounts[user][token];
+        Asset storage asset = supportedAssets[token];
+        
+        uint256 totalValue = account.deposited;
+        uint256 totalBorrowed = account.borrowed + amount;
+        
+        return totalBorrowed <= 
+               (totalValue * asset.maxLTV / UTILIZATION_PRECISION);
+    }
+    
+    function _canWithdraw(address user, address token, uint256 amount)
+        internal view returns (bool) {
+        UserAccount storage account = userAccounts[user][token];
+        Asset storage asset = supportedAssets[token];
+        
+        uint256 remainingDeposit = account.deposited - amount;
+        uint256 totalBorrowed = account.borrowed;
+        
+        return totalBorrowed <= 
+               (remainingDeposit * asset.maxLTV / UTILIZATION_PRECISION);
+    }
+    
+    // View functions
+    function getAccountInfo(address user, address token)
+        external view returns (
+            uint256 deposited,
+            uint256 borrowed,
+            uint256 interestRate
+        )
+    {
+        UserAccount storage account = userAccounts[user][token];
+        return (
+            account.deposited,
+            account.borrowed,
+            account.interestRate
+        );
+    }
+    
+    function getAssetInfo(address token)
+        external view returns (
+            uint256 totalDeposited,
+            uint256 totalBorrowed,
+            uint256 utilizationRate,
+            uint256 currentInterestRate
+        )
+    {
+        Asset storage asset = supportedAssets[token];
+        return (
+            asset.totalDeposited,
+            asset.totalBorrowed,
+            asset.utilizationRate,
+            _calculateInterestRate(token)
+        );
+    }
+    
+    // Emergency functions
+    function pause() external onlyOwner {
+        _pause();
+    }
+    
+    function unpause() external onlyOwner {
+        _unpause();
+    }
+    
+    function updateMaxLTV(address token, uint256 newMaxLTV) 
+        external onlyOwner {
+        require(supportedAssets[token].tokenAddress != address(0),
+                "Asset not supported");
+        supportedAssets[token].maxLTV = newMaxLTV;
+    }
+    
+    // Recovery function for stuck tokens
+    function rescueToken(address token, uint256 amount) 
+        external onlyOwner {
+        IERC20(token).transfer(owner(), amount);
+    }
+}`,
+    explanation: "This example demonstrates a basic DeFi lending protocol implementation with features including:\n" +
+                "1. Multiple asset support\n" +
+                "2. Interest rate calculation based on utilization\n" +
+                "3. Collateral management\n" +
+                "4. Security features including reentrancy protection\n" +
+                "5. Emergency controls and token recovery\n" +
+                "The protocol allows users to deposit assets, borrow against their collateral, and manages interest rates dynamically."
+            }
+        ],
+        roadmap: [
+        {
+            title: "1. Blockchain Fundamentals",
+            description: "Learn core blockchain concepts and architecture",
+            topics: [
+                "Distributed Ledger Technology",
+                "Cryptographic Primitives",
+                "Consensus Mechanisms",
+                "Block Structure and Validation",
+                "Network Types and Protocols",
+                "Public vs Private Blockchains",
+                "Blockchain Scalability Solutions"
+            ]
+        },
+        {
+            title: "2. Smart Contract Development",
+            description: "Master smart contract programming and best practices",
+            topics: [
+                "Solidity Programming Language",
+                "Smart Contract Security",
+                "Testing and Debugging",
+                "Gas Optimization",
+                "Contract Design Patterns",
+                "Contract Upgradability",
+                "Development Frameworks (Hardhat/Truffle)"
+            ]
+        },
+        {
+            title: "3. Web3 Development",
+            description: "Learn Web3 integration and development",
+            topics: [
+                "Web3.js and Ethers.js",
+                "Wallet Integration",
+                "Transaction Management",
+                "Event Handling",
+                "IPFS Integration",
+                "Oracles and Data Feeds",
+                "Provider Management"
+            ]
+        },
+        {
+            title: "4. DApp Architecture",
+            description: "Build full-stack decentralized applications",
+            topics: [
+                "Frontend Frameworks (React/Vue)",
+                "State Management",
+                "MetaMask Integration",
+                "Backend Services",
+                "Decentralized Storage",
+                "Testing and Deployment",
+                "User Experience Design"
+            ]
+        },
+        {
+            title: "5. DeFi Development",
+            description: "Master decentralized finance protocols",
+            topics: [
+                "Token Standards (ERC20/ERC721)",
+                "Automated Market Makers",
+                "Lending Protocols",
+                "Yield Farming",
+                "Flash Loans",
+                "Price Oracles",
+                "Protocol Integration"
+            ]
+        },
+        {
+            title: "6. Cross-Chain Development",
+            description: "Learn cross-chain protocols and bridges",
+            topics: [
+                "Cross-Chain Bridges",
+                "Layer 2 Solutions",
+                "State Channels",
+                "Sidechains",
+                "Cross-Chain Messaging",
+                "Chain Interoperability",
+                "Multi-Chain Applications"
+            ]
+        },
+        {
+            title: "7. Security & Auditing",
+            description: "Master blockchain security and auditing",
+            topics: [
+                "Smart Contract Auditing",
+                "Common Vulnerabilities",
+                "Security Tools",
+                "Testing Methodologies",
+                "Code Review Practices",
+                "Security Patterns",
+                "Incident Response"
+            ]
+        }
+    ],
+    resources: {
+        documentation: [
+            {
+                title: "Ethereum Documentation",
+                url: "https://ethereum.org/developers",
+                description: "Official Ethereum documentation for developers",
+                type: "Platform Documentation"
+            },
+            {
+                title: "Solidity Documentation",
+                url: "https://docs.soliditylang.org/",
+                description: "Official Solidity programming language documentation",
+                type: "Language Documentation"
+            },
+            {
+                title: "OpenZeppelin Docs",
+                url: "https://docs.openzeppelin.com/",
+                description: "Smart contract security standards and libraries",
+                type: "Framework Documentation"
+            },
+            {
+                title: "Hardhat Documentation",
+                url: "https://hardhat.org/getting-started/",
+                description: "Development environment documentation",
+                type: "Tool Documentation"
+            },
+            {
+                title: "Web3.js Documentation",
+                url: "https://web3js.readthedocs.io/",
+                description: "Ethereum JavaScript API documentation",
+                type: "Library Documentation"
+            }
+        ],
+        tutorials: [
+            {
+                title: "CryptoZombies",
+                url: "https://cryptozombies.io/",
+                description: "Interactive Solidity tutorial through game development",
+                type: "Interactive Course"
+            },
+            {
+                title: "Ethereum Developer Program",
+                url: "https://consensys.net/academy/",
+                description: "ConsenSys Academy's developer program",
+                type: "Online Course"
+            },
+            {
+                title: "Buildspace",
+                url: "https://buildspace.so/",
+                description: "Project-based Web3 development tutorials",
+                type: "Project Tutorials"
+            },
+            {
+                title: "Chainshot",
+                url: "https://www.chainshot.com/",
+                description: "Guided blockchain development learning",
+                type: "Interactive Platform"
+            },
+            {
+                title: "DappUniversity",
+                url: "https://www.dappuniversity.com/",
+                description: "Blockchain development video tutorials",
+                type: "Video Tutorials"
+            }
+        ],
+        videos: [
+            {
+                title: "Smart Contract Programmer",
+                url: "https://www.youtube.com/channel/UCJWh7F3AFyQ_x01VKzr9eyA",
+                description: "Smart contract development tutorials",
+                platform: "YouTube"
+            },
+            {
+                title: "Eat the Blocks",
+                url: "https://www.youtube.com/c/EatTheBlocks",
+                description: "DApp development and blockchain tutorials",
+                platform: "YouTube"
+            },
+            {
+                title: "Finematics",
+                url: "https://www.youtube.com/c/Finematics",
+                description: "DeFi concepts and implementations",
+                platform: "YouTube"
+            },
+            {
+                title: "Nader Dabit",
+                url: "https://www.youtube.com/c/naderdabit",
+                description: "Web3 development tutorials",
+                platform: "YouTube"
+            },
+            {
+                title: "Patrick Collins",
+                url: "https://www.youtube.com/c/PatrickCollins",
+                description: "Smart contract development courses",
+                platform: "YouTube"
+            }
+        ],
+        books: [
+            {
+                title: "Mastering Ethereum",
+                author: "Andreas M. Antonopoulos, Gavin Wood",
+                description: "Comprehensive guide to Ethereum development",
+                level: "Intermediate to Advanced"
+            },
+            {
+                title: "Token Economy",
+                author: "Shermin Voshmgir",
+                description: "Web3 and tokenomics principles",
+                level: "Intermediate"
+            },
+            {
+                title: "Building Games with Ethereum Smart Contracts",
+                author: "Kedar Iyer, Chris Dannen",
+                description: "Smart contract game development",
+                level: "Intermediate"
+            },
+            {
+                title: "How to DeFi",
+                author: "CoinGecko",
+                description: "Comprehensive guide to DeFi protocols",
+                level: "Beginner to Intermediate"
+            },
+            {
+                title: "Smart Contract Patterns",
+                author: "Kévin Vogel",
+                description: "Design patterns for smart contracts",
+                level: "Advanced"
+            }
+        ],
+        tools: [
+            {
+                title: "Hardhat",
+                url: "https://hardhat.org/",
+                description: "Ethereum development environment",
+                type: "Development Tool",
+                category: "Essential"
+            },
+            {
+                title: "Remix IDE",
+                url: "https://remix.ethereum.org/",
+                description: "Browser-based Solidity IDE",
+                type: "Development Tool",
+                category: "Essential"
+            },
+            {
+                title: "Truffle Suite",
+                url: "https://trufflesuite.com/",
+                description: "Development framework for Ethereum",
+                type: "Framework",
+                category: "Essential"
+            },
+            {
+                title: "Metamask",
+                url: "https://metamask.io/",
+                description: "Ethereum wallet and gateway",
+                type: "Wallet",
+                category: "Essential"
+            },
+            {
+                title: "OpenZeppelin",
+                url: "https://openzeppelin.com/",
+                description: "Smart contract security library",
+                type: "Library",
+                category: "Essential"
+            }
+        ],
+        communities: [
+            {
+                title: "Ethereum StackExchange",
+                url: "https://ethereum.stackexchange.com/",
+                description: "Q&A for Ethereum developers",
+                type: "Q&A Forum"
+            },
+            {
+                title: "r/ethdev",
+                url: "https://www.reddit.com/r/ethdev/",
+                description: "Ethereum development subreddit",
+                type: "Forum"
+            },
+            {
+                title: "ETHGlobal",
+                url: "https://ethglobal.co/",
+                description: "Ethereum hackathons and events",
+                type: "Events Platform"
+            },
+            {
+                title: "DeFi Pulse",
+                url: "https://defipulse.com/",
+                description: "DeFi analytics and community",
+                type: "Analytics Platform"
+            },
+            {
+                title: "Ethereum Research",
+                url: "https://ethresear.ch/",
+                description: "Ethereum research discussions",
+                type: "Research Forum"
+            }
+        ],
+        podcasts: [
+            {
+                title: "Epicenter",
+                url: "https://epicenter.tv/",
+                description: "Blockchain technology discussions",
+                platform: "Podcast"
+            },
+            {
+                title: "Unchained",
+                url: "https://unchainedpodcast.com/",
+                description: "Interviews with blockchain leaders",
+                platform: "Podcast"
+            },
+            {
+                title: "Zero Knowledge",
+                url: "https://zeroknowledge.fm/",
+                description: "Technical blockchain discussions",
+                platform: "Podcast"
+            },
+            {
+                title: "The Defiant",
+                url: "https://thedefiant.io/podcast",
+                description: "DeFi news and analysis",
+                platform: "Podcast"
+            }
+        ],
+        blogs: [
+            {
+                title: "Ethereum Blog",
+                url: "https://blog.ethereum.org/",
+                description: "Official Ethereum Foundation blog",
+                type: "Official Blog"
+            },
+            {
+                title: "Vitalik Buterin's Blog",
+                url: "https://vitalik.ca/",
+                description: "Ethereum co-founder's personal blog",
+                type: "Personal Blog"
+            },
+            {
+                title: "Week in Ethereum",
+                url: "https://weekinethereumnews.com/",
+                description: "Weekly Ethereum ecosystem updates",
+                type: "Newsletter"
+            },
+            {
+                title: "SmartContractResearch",
+                url: "https://github.com/ethereum/wiki/wiki/Smart-Contract-Research",
+                description: "Smart contract research papers and articles",
+                type: "Research Blog"
+            }
+        ]
+    },
+    practice: {
+        beginnerExercises: [
+            {
+                title: "Basic Token Voting System",
+                difficulty: "Easy",
+                description: "Create a simple voting system where users can create proposals and vote using tokens.",
+                hints: [
+                    "Use a mapping for vote tracking",
+                    "Implement basic access control",
+                    "Add proposal creation and voting functions",
+                    "Track voting periods"
+                ],
+                solution: {
+                    code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract TokenVoting {
+    struct Proposal {
+        string description;
+        uint256 voteCount;
+        bool isActive;
+        uint256 endTime;
+    }
+    
+    mapping(uint256 => Proposal) public proposals;
+    mapping(address => mapping(uint256 => bool)) public hasVoted;
+    mapping(address => uint256) public tokenBalance;
+    
+    uint256 public proposalCount;
+    uint256 public constant VOTING_PERIOD = 3 days;
+    
+    event ProposalCreated(uint256 indexed proposalId, string description);
+    event Voted(address indexed voter, uint256 indexed proposalId);
+    event TokensIssued(address indexed to, uint256 amount);
+    
+    constructor() {
+        // Issue initial tokens to contract deployer
+        tokenBalance[msg.sender] = 100;
+        emit TokensIssued(msg.sender, 100);
+    }
+    
+    function createProposal(string memory _description) public {
+        require(tokenBalance[msg.sender] >= 10, "Need at least 10 tokens to create proposal");
+        
+        proposalCount++;
+        proposals[proposalCount] = Proposal({
+            description: _description,
+            voteCount: 0,
+            isActive: true,
+            endTime: block.timestamp + VOTING_PERIOD
+        });
+        
+        emit ProposalCreated(proposalCount, _description);
+    }
+    
+    function vote(uint256 _proposalId) public {
+        require(_proposalId <= proposalCount, "Proposal does not exist");
+        require(!hasVoted[msg.sender][_proposalId], "Already voted");
+        require(proposals[_proposalId].isActive, "Proposal is not active");
+        require(block.timestamp < proposals[_proposalId].endTime, "Voting period ended");
+        require(tokenBalance[msg.sender] > 0, "No tokens to vote");
+        
+        proposals[_proposalId].voteCount += tokenBalance[msg.sender];
+        hasVoted[msg.sender][_proposalId] = true;
+        
+        emit Voted(msg.sender, _proposalId);
+    }
+    
+    function endProposal(uint256 _proposalId) public {
+        require(_proposalId <= proposalCount, "Proposal does not exist");
+        require(block.timestamp >= proposals[_proposalId].endTime, "Voting period not ended");
+        require(proposals[_proposalId].isActive, "Proposal already ended");
+        
+        proposals[_proposalId].isActive = false;
+    }
+    
+    function getProposal(uint256 _proposalId) public view returns (
+        string memory description,
+        uint256 voteCount,
+        bool isActive,
+        uint256 endTime
+    ) {
+        Proposal storage proposal = proposals[_proposalId];
+        return (
+            proposal.description,
+            proposal.voteCount,
+            proposal.isActive,
+            proposal.endTime
+        );
+    }
+}`,
+                    explanation: "This beginner exercise demonstrates basic contract structure, state variables, mappings, structs, events, and time-based functionality in Solidity."
+                }
+            },
+            {
+                title: "Simple Asset Registry",
+                difficulty: "Easy",
+                description: "Create a registry for tracking ownership of digital assets with basic transfer functionality.",
+                hints: [
+                    "Use structs for asset data",
+                    "Implement ownership tracking",
+                    "Add transfer functionality",
+                    "Include basic validation"
+                ],
+                solution: {
+                    code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract AssetRegistry {
+    struct Asset {
+        string name;
+        string description;
+        address owner;
+        bool isActive;
+        uint256 registrationDate;
+    }
+    
+    mapping(uint256 => Asset) public assets;
+    mapping(address => uint256[]) public ownerAssets;
+    
+    uint256 public assetCount;
+    
+    event AssetRegistered(uint256 indexed assetId, address indexed owner);
+    event AssetTransferred(uint256 indexed assetId, address indexed from, address indexed to);
+    event AssetDeactivated(uint256 indexed assetId);
+    
+    modifier onlyAssetOwner(uint256 _assetId) {
+        require(assets[_assetId].owner == msg.sender, "Not the asset owner");
+        _;
+    }
+    
+    function registerAsset(string memory _name, string memory _description) 
+    public returns (uint256) {
+        assetCount++;
+        
+        assets[assetCount] = Asset({
+            name: _name,
+            description: _description,
+            owner: msg.sender,
+            isActive: true,
+            registrationDate: block.timestamp
+        });
+        
+        ownerAssets[msg.sender].push(assetCount);
+        
+        emit AssetRegistered(assetCount, msg.sender);
+        return assetCount;
+    }
+    
+    function transferAsset(uint256 _assetId, address _to) 
+    public onlyAssetOwner(_assetId) {
+        require(_to != address(0), "Invalid recipient address");
+        require(assets[_assetId].isActive, "Asset is not active");
+        
+        address previousOwner = assets[_assetId].owner;
+        assets[_assetId].owner = _to;
+        
+        // Update owner asset lists
+        _removeFromOwnerAssets(previousOwner, _assetId);
+        ownerAssets[_to].push(_assetId);
+        
+        emit AssetTransferred(_assetId, previousOwner, _to);
+    }
+    
+    function deactivateAsset(uint256 _assetId) public onlyAssetOwner(_assetId) {
+        require(assets[_assetId].isActive, "Asset already deactivated");
+        
+        assets[_assetId].isActive = false;
+        emit AssetDeactivated(_assetId);
+    }
+    
+    function getAssetsByOwner(address _owner) public view 
+    returns (uint256[] memory) {
+        return ownerAssets[_owner];
+    }
+    
+    function getAsset(uint256 _assetId) public view returns (
+        string memory name,
+        string memory description,
+        address owner,
+        bool isActive,
+        uint256 registrationDate
+    ) {
+        Asset storage asset = assets[_assetId];
+        return (
+            asset.name,
+            asset.description,
+            asset.owner,
+            asset.isActive,
+            asset.registrationDate
+        );
+    }
+    
+    function _removeFromOwnerAssets(address _owner, uint256 _assetId) private {
+        uint256[] storage ownerAssetList = ownerAssets[_owner];
+        for (uint256 i = 0; i < ownerAssetList.length; i++) {
+            if (ownerAssetList[i] == _assetId) {
+                ownerAssetList[i] = ownerAssetList[ownerAssetList.length - 1];
+                ownerAssetList.pop();
+                break;
+            }
+        }
+    }
+}`,
+                    explanation: "This exercise shows basic array manipulation, struct usage, event emission, and ownership management in Solidity. It includes modifiers for access control and helper functions for array management."
+                }
+            }
+        ],
+        intermediateExercises: [
+            {
+                title: "Staking Rewards Contract",
+                difficulty: "Medium",
+                description: "Create a staking contract where users can stake tokens and earn rewards based on time and amount staked.",
+                hints: [
+                    "Implement reward calculation based on time",
+                    "Handle multiple staking positions",
+                    "Include compound interest",
+                    "Add emergency withdrawal"
+                ],
+                solution: {
+                    code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/security/Pausable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract StakingRewards is ReentrancyGuard, Pausable, Ownable {
+    struct StakePosition {
+        uint256 amount;
+        uint256 startTime;
+        uint256 lastUpdateTime;
+        uint256 accumulatedRewards;
+    }
+    
+    IERC20 public immutable stakingToken;
+    IERC20 public immutable rewardsToken;
+    
+    uint256 public constant REWARD_RATE = 10; // 10% APR
+    uint256 public constant MINIMUM_STAKE = 100e18; // 100 tokens
+    uint256 public constant REWARD_PRECISION = 1e18;
+    
+    mapping(address => StakePosition) public stakes;
+    uint256 public totalStaked;
+    
+    event Staked(address indexed user, uint256 amount);
+    event Withdrawn(address indexed user, uint256 amount);
+    event RewardsClaimed(address indexed user, uint256 amount);
+    
+    constructor(address _stakingToken, address _rewardsToken) {
+        stakingToken = IERC20(_stakingToken);
+        rewardsToken = IERC20(_rewardsToken);
+    }
+    
+    function stake(uint256 _amount) public nonReentrant whenNotPaused {
+        require(_amount >= MINIMUM_STAKE, "Amount below minimum stake");
+        
+        // Update rewards before modifying stake
+        _updateRewards(msg.sender);
+        
+        // Transfer tokens
+        stakingToken.transferFrom(msg.sender, address(this), _amount);
+        
+        // Update stake
+        stakes[msg.sender].amount += _amount;
+        if (stakes[msg.sender].startTime == 0) {
+            stakes[msg.sender].startTime = block.timestamp;
+        }
+        totalStaked += _amount;
+        
+        emit Staked(msg.sender, _amount);
+    }
+    
+    function withdraw(uint256 _amount) public nonReentrant {
+        require(stakes[msg.sender].amount >= _amount, "Insufficient stake");
+        
+        // Update rewards before modifying stake
+        _updateRewards(msg.sender);
+        
+        // Update stake
+        stakes[msg.sender].amount -= _amount;
+        totalStaked -= _amount;
+        
+        // Transfer tokens
+        stakingToken.transfer(msg.sender, _amount);
+        
+        emit Withdrawn(msg.sender, _amount);
+    }
+    
+    function claimRewards() public nonReentrant {
+        _updateRewards(msg.sender);
+        
+        uint256 rewards = stakes[msg.sender].accumulatedRewards;
+        require(rewards > 0, "No rewards to claim");
+        
+        stakes[msg.sender].accumulatedRewards = 0;
+        rewardsToken.transfer(msg.sender, rewards);
+        
+        emit RewardsClaimed(msg.sender, rewards);
+    }
+    
+    function calculateRewards(address _staker) public view returns (uint256) {
+        StakePosition storage stake = stakes[_staker];
+        if (stake.amount == 0) return 0;
+        
+        uint256 timeElapsed = block.timestamp - stake.lastUpdateTime;
+        return (stake.amount * REWARD_RATE * timeElapsed) / 
+               (365 days * REWARD_PRECISION);
+    }
+    
+    function _updateRewards(address _staker) private {
+        uint256 rewards = calculateRewards(_staker);
+        if (rewards > 0) {
+            stakes[_staker].accumulatedRewards += rewards;
+        }
+        stakes[_staker].lastUpdateTime = block.timestamp;
+    }
+    
+    // Emergency functions
+    function pause() external onlyOwner {
+        _pause();
+    }
+    
+    function unpause() external onlyOwner {
+        _unpause();
+    }
+    
+    function emergencyWithdraw() external nonReentrant {
+        uint256 amount = stakes[msg.sender].amount;
+        require(amount > 0, "No stake to withdraw");
+        
+        // Reset stake
+        stakes[msg.sender].amount = 0;
+        totalStaked -= amount;
+        
+        // Transfer tokens
+        stakingToken.transfer(msg.sender, amount);
+        
+        emit Withdrawn(msg.sender, amount);
+    }
+    
+    // View functions
+    function getStakeInfo(address _staker) public view returns (
+        uint256 amount,
+        uint256 startTime,
+        uint256 accumulatedRewards,
+        uint256 pendingRewards
+    ) {
+        StakePosition storage stake = stakes[_staker];
+        return (
+            stake.amount,
+            stake.startTime,
+            stake.accumulatedRewards,
+            calculateRewards(_staker)
+        );
+    }
+}`,
+                    explanation: "This intermediate exercise demonstrates implementation of a staking system with reward calculations, security features, and emergency functions. It includes proper handling of decimals, time-based calculations, and state management."
+                }
+            },
+            {
+                title: "Multi-Signature Wallet",
+                difficulty: "Medium",
+                description: "Create a multi-signature wallet contract that requires multiple approvals for transactions.",
+                hints: [
+                    "Implement owner management",
+                    "Add transaction proposal system",
+                    "Include approval tracking",
+                    "Handle transaction execution"
+                ],
+                solution: {
+                    code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract MultiSigWallet {
+    struct Transaction {
+        address to;
+        uint256 value;
+        bytes data;
+        bool executed;
+        uint256 numConfirmations;
+    }
+    
+    event Deposit(address indexed sender, uint256 amount);
+    event SubmitTransaction(
+        address indexed owner,
+        uint256 indexed txIndex,
+        address indexed to,
+        uint256 value,
+        bytes data
+    );
+    event ConfirmTransaction(address indexed owner, uint256 indexed txIndex);
+    event RevokeConfirmation(address indexed owner, uint256 indexed txIndex);
+    event ExecuteTransaction(address indexed owner, uint256 indexed txIndex);
+    
+    address[] public owners;
+    mapping(address => bool) public isOwner;
+    uint256 public numConfirmationsRequired;
+    
+    Transaction[] public transactions;
+    mapping(uint256 => mapping(address => bool)) public isConfirmed;
+    
+    modifier onlyOwner() {
+        require(isOwner[msg.sender], "Not owner");
+        _;
+    }
+    
+    modifier txExists(uint256 _txIndex) {
+        require(_txIndex < transactions.length, "Transaction does not exist");
+        _;
+    }
+    
+    modifier notExecuted(uint256 _txIndex) {
+        require(!transactions[_txIndex].executed, "Transaction already executed");
+        _;
+    }
+    
+    modifier notConfirmed(uint256 _txIndex) {
+        require(!isConfirmed[_txIndex][msg.sender], "Transaction already confirmed");
+        _;
+    }
+    
+    constructor(address[] memory _owners, uint256 _numConfirmationsRequired) {
+        require(_owners.length > 0, "Owners required");
+        require(
+            _numConfirmationsRequired > 0 &&
+            _numConfirmationsRequired <= _owners.length,
+            "Invalid number of required confirmations"
+        );
+         for (uint256 i = 0; i < _owners.length; i++) {
+            address owner = _owners[i];
+            
+            require(owner != address(0), "Invalid owner");
+            require(!isOwner[owner], "Owner not unique");
+            
+            isOwner[owner] = true;
+            owners.push(owner);
+        }
+        
+        numConfirmationsRequired = _numConfirmationsRequired;
+    }
+    
+    receive() external payable {
+        emit Deposit(msg.sender, msg.value);
+    }
+    
+    function submitTransaction(
+        address _to,
+        uint256 _value,
+        bytes memory _data
+    ) public onlyOwner {
+        uint256 txIndex = transactions.length;
+        
+        transactions.push(Transaction({
+            to: _to,
+            value: _value,
+            data: _data,
+            executed: false,
+            numConfirmations: 0
+        }));
+        
+        emit SubmitTransaction(msg.sender, txIndex, _to, _value, _data);
+    }
+    
+    function confirmTransaction(uint256 _txIndex)
+        public
+        onlyOwner
+        txExists(_txIndex)
+        notExecuted(_txIndex)
+        notConfirmed(_txIndex)
+    {
+        Transaction storage transaction = transactions[_txIndex];
+        transaction.numConfirmations += 1;
+        isConfirmed[_txIndex][msg.sender] = true;
+        
+        emit ConfirmTransaction(msg.sender, _txIndex);
+    }
+    
+    function executeTransaction(uint256 _txIndex)
+        public
+        onlyOwner
+        txExists(_txIndex)
+        notExecuted(_txIndex)
+    {
+        Transaction storage transaction = transactions[_txIndex];
+        
+        require(
+            transaction.numConfirmations >= numConfirmationsRequired,
+            "Cannot execute tx"
+        );
+        
+        transaction.executed = true;
+        
+        (bool success, ) = transaction.to.call{value: transaction.value}(
+            transaction.data
+        );
+        require(success, "Transaction failed");
+        
+        emit ExecuteTransaction(msg.sender, _txIndex);
+    }
+    
+    function revokeConfirmation(uint256 _txIndex)
+        public
+        onlyOwner
+        txExists(_txIndex)
+        notExecuted(_txIndex)
+    {
+        Transaction storage transaction = transactions[_txIndex];
+        
+        require(isConfirmed[_txIndex][msg.sender], "Tx not confirmed");
+        
+        transaction.numConfirmations -= 1;
+        isConfirmed[_txIndex][msg.sender] = false;
+        
+        emit RevokeConfirmation(msg.sender, _txIndex);
+    }
+    
+    function getOwners() public view returns (address[] memory) {
+        return owners;
+    }
+    
+    function getTransactionCount() public view returns (uint256) {
+        return transactions.length;
+    }
+    
+    function getTransaction(uint256 _txIndex)
+        public
+        view
+        returns (
+            address to,
+            uint256 value,
+            bytes memory data,
+            bool executed,
+            uint256 numConfirmations
+        )
+    {
+        Transaction storage transaction = transactions[_txIndex];
+        
+        return (
+            transaction.to,
+            transaction.value,
+            transaction.data,
+            transaction.executed,
+            transaction.numConfirmations
+        );
+    }
+    
+    function isTransactionConfirmed(
+        uint256 _txIndex,
+        address _owner
+    ) public view returns (bool) {
+        return isConfirmed[_txIndex][_owner];
+    }
+}`,
+    explanation: "This intermediate exercise implements a multi-signature wallet with features including:\n" +
+                "1. Multiple owner management\n" +
+                "2. Transaction proposal and confirmation system\n" +
+                "3. Secure execution of approved transactions\n" +
+                "4. Confirmation tracking and revocation\n" +
+                "5. Various view functions for wallet state inspection"
+}
+            }
+        ],
+        advancedExercises: [
+        {
+            title: "Automated Market Maker (AMM)",
+            difficulty: "Hard",
+            description: "Create a basic AMM protocol with liquidity provision and trading functionality.",
+            hints: [
+                "Implement constant product formula",
+                "Handle liquidity provider tokens",
+                "Include slippage protection",
+                "Add price oracle functionality"
+            ],
+            solution: {
+                code: `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract LiquidityPool is ERC20, ReentrancyGuard {
+    IERC20 public immutable token0;
+    IERC20 public immutable token1;
+    
+    uint256 private reserve0;
+    uint256 private reserve1;
+    
+    uint256 private constant MINIMUM_LIQUIDITY = 1000;
+    uint256 public constant FEE_DENOMINATOR = 1000;
+    uint256 public fee = 3; // 0.3%
+    
+    constructor(
+        address _token0,
+        address _token1
+    ) ERC20("LP Token", "LP") {
+        token0 = IERC20(_token0);
+        token1 = IERC20(_token1);
+    }
+    
+    function addLiquidity(
+        uint256 amount0Desired,
+        uint256 amount1Desired,
+        uint256 amount0Min,
+        uint256 amount1Min
+    ) external nonReentrant returns (uint256 liquidity) {
+        require(amount0Desired > 0 && amount1Desired > 0, 
+               "Insufficient input amounts");
+               
+        uint256 _totalSupply = totalSupply();
+        if (_totalSupply == 0) {
+            liquidity = sqrt(amount0Desired * amount1Desired) - MINIMUM_LIQUIDITY;
+            _mint(address(0), MINIMUM_LIQUIDITY);
+        } else {
+            liquidity = min(
+                (amount0Desired * _totalSupply) / reserve0,
+                (amount1Desired * _totalSupply) / reserve1
+            );
+        }
+        require(liquidity > 0, "Insufficient liquidity minted");
+        
+        uint256 amount0 = (liquidity * reserve0) / _totalSupply;
+        uint256 amount1 = (liquidity * reserve1) / _totalSupply;
+        
+        require(amount0 >= amount0Min, "Amount0 below minimum");
+        require(amount1 >= amount1Min, "Amount1 below minimum");
+        
+        token0.transferFrom(msg.sender, address(this), amount0);
+        token1.transferFrom(msg.sender, address(this), amount1);
+        
+        _update(reserve0 + amount0, reserve1 + amount1);
+        _mint(msg.sender, liquidity);
+    }
+    
+    function removeLiquidity(
+        uint256 liquidity,
+        uint256 amount0Min,
+        uint256 amount1Min
+    ) external nonReentrant returns (uint256 amount0, uint256 amount1) {
+        require(liquidity > 0, "Insufficient liquidity burned");
+        
+        amount0 = (liquidity * reserve0) / totalSupply();
+        amount1 = (liquidity * reserve1) / totalSupply();
+        require(amount0 >= amount0Min, "Amount0 below minimum");
+        require(amount1 >= amount1Min, "Amount1 below minimum");
+        
+        _burn(msg.sender, liquidity);
+        _update(reserve0 - amount0, reserve1 - amount1);
+        
+        token0.transfer(msg.sender, amount0);
+        token1.transfer(msg.sender, amount1);
+    }
+    
+    function swap(
+        uint256 amount0In,
+        uint256 amount1In,
+        uint256 amount0Out,
+        uint256 amount1Out,
+        address to
+    ) external nonReentrant {
+        require(amount0In > 0 || amount1In > 0, "Insufficient input amount");
+        require(amount0Out > 0 || amount1Out > 0, "Insufficient output amount");
+        
+        uint256 balance0 = token0.balanceOf(address(this));
+        uint256 balance1 = token1.balanceOf(address(this));
+        
+        if (amount0In > 0) 
+            token0.transferFrom(msg.sender, address(this), amount0In);
+        if (amount1In > 0)
+            token1.transferFrom(msg.sender, address(this), amount1In);
+            
+        balance0 = token0.balanceOf(address(this)) - balance0;
+        balance1 = token1.balanceOf(address(this)) - balance1;
+        
+        uint256 amount0InWithFee = (balance0 * (FEE_DENOMINATOR - fee)) / 
+                                  FEE_DENOMINATOR;
+        uint256 amount1InWithFee = (balance1 * (FEE_DENOMINATOR - fee)) / 
+                                  FEE_DENOMINATOR;
+        
+        require((reserve0 + amount0InWithFee) * 
+                (reserve1 + amount1InWithFee) >= 
+                reserve0 * reserve1, "K");
+                
+        _update(reserve0 + amount0InWithFee, 
+               reserve1 + amount1InWithFee);
+               
+        if (amount0Out > 0) token0.transfer(to, amount0Out);
+        if (amount1Out > 0) token1.transfer(to, amount1Out);
+    }
+    
+    function _update(uint256 _reserve0, uint256 _reserve1) private {
+        reserve0 = _reserve0;
+        reserve1 = _reserve1;
+    }
+    
+    function sqrt(uint256 y) internal pure returns (uint256 z) {
+        if (y > 3) {
+            z = y;
+            uint256 x = y / 2 + 1;
+            while (x < z) {
+                z = x;
+                x = (y / x + x) / 2;
+            }
+        } else if (y != 0) {
+            z = 1;
+        }
+    }
+    
+    function min(uint256 x, uint256 y) internal pure returns (uint256) {
+        return x < y ? x : y;
+    }
+    
+    // View functions
+    function getReserves() public view returns (
+        uint256 _reserve0, 
+        uint256 _reserve1
+    ) {
+        return (reserve0, reserve1);
+    }
+    
+    function getAmountOut(
+        uint256 amountIn,
+        uint256 reserveIn,
+        uint256 reserveOut
+    ) public view returns (uint256 amountOut) {
+        require(amountIn > 0, "Insufficient input amount");
+        require(reserveIn > 0 && reserveOut > 0, "Insufficient liquidity");
+        
+        uint256 amountInWithFee = amountIn * (FEE_DENOMINATOR - fee);
+        uint256 numerator = amountInWithFee * reserveOut;
+        uint256 denominator = reserveIn * FEE_DENOMINATOR + amountInWithFee;
+        amountOut = numerator / denominator;
+    }
+}`,
+                explanation: "This advanced exercise implements a basic AMM with constant product formula, liquidity provision, and swap functionality. It includes slippage protection, fees, and proper handling of liquidity provider tokens."
+            }
+        }     
+        ]
+    }
+}
+},
+{
+    id: 14,
+    title: "Data Engineering",
+    description: "To learn data engineering, follow this roadmap",
+    extendedContent: `
+        Master the fundamentals of data engineering and build robust data pipelines. Start with 
+        programming fundamentals, SQL, and database systems. Learn about data warehousing, ETL 
+        processes, and big data technologies. Progress through distributed systems, cloud platforms, 
+        and modern data stack. Understand data modeling, pipeline orchestration, and streaming 
+        systems. Advanced topics include data governance, security, optimization techniques, and 
+        MLOps integration. Practice with real-world scenarios and industry-standard tools.
+    `,
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        prerequisites: [
+            "Basic programming knowledge (Python preferred)",
+            "Understanding of databases and SQL",
+            "Familiarity with command line operations",
+            "Basic understanding of algorithms and data structures",
+            "Knowledge of version control systems",
+            "Basic mathematics and statistics",
+            "Problem-solving aptitude"
+        ],
+        outcomes: [
+            "Design and implement efficient data pipelines",
+            "Build scalable data warehousing solutions",
+            "Develop ETL/ELT processes",
+            "Implement data quality and testing frameworks",
+            "Deploy cloud-based data solutions",
+            "Manage big data processing systems",
+            "Create data governance frameworks",
+            "Optimize data infrastructure performance",
+            "Handle real-time data streaming",
+            "Build data lakes and lakehouses"
+        ],
+        sections: [
+            {
+                title: "Data Processing Fundamentals",
+                content: "Master core data processing concepts including ETL/ELT, data cleaning, and transformation. Learn about data quality, validation techniques, and best practices. Understand different file formats, compression methods, and data serialization."
+            },
+            {
+                title: "Database Systems",
+                content: "Study relational and NoSQL databases, data modeling techniques, and query optimization. Learn about database administration, indexing strategies, and transaction management. Master data warehouse design principles and columnar storage systems."
+            },
+            {
+                title: "Big Data Technologies",
+                content: "Learn distributed computing frameworks, batch processing systems, and big data storage solutions. Understand Hadoop ecosystem, Spark architecture, and distributed file systems. Study data partitioning, parallel processing, and resource management."
+            },
+            {
+                title: "Data Pipeline Development",
+                content: "Master pipeline orchestration tools, workflow management, and scheduling systems. Learn about data pipeline patterns, error handling, and monitoring strategies. Understand CI/CD for data pipelines and infrastructure as code."
+            },
+            {
+                title: "Cloud Data Platforms",
+                content: "Study cloud services for data engineering, serverless architectures, and cloud-native solutions. Learn about cloud storage options, compute services, and managed data services. Master multi-cloud strategies and cloud cost optimization."
+            },
+            {
+                title: "Stream Processing",
+                content: "Understand real-time data processing, streaming architectures, and event-driven systems. Learn about stream processing frameworks, message queues, and pub/sub systems. Study exactly-once processing and state management."
+            },
+            {
+                title: "Data Governance & Security",
+                content: "Learn data governance frameworks, compliance requirements, and security best practices. Understand data privacy regulations, access control, and encryption methods. Study data lineage, metadata management, and data catalogs."
+            },
+            {
+                title: "Performance Optimization",
+                content: "Master query optimization, performance tuning, and resource management. Learn about caching strategies, data partitioning, and distributed system optimization. Study monitoring tools, profiling techniques, and bottleneck identification."
+            }
+        ]
+    },
+    content: {
+        examples: [
+            {
+                title: "ETL Pipeline with Error Handling",
+                code: `import pandas as pd
+import sqlite3
+from datetime import datetime
+import logging
+import json
+from typing import Dict, List, Optional
+import requests
+from concurrent.futures import ThreadPoolExecutor
+
+class DataPipeline:
+    def __init__(self, config_path: str):
+        self.load_config(config_path)
+        self.setup_logging()
+        
+    def load_config(self, config_path: str) -> None:
+        """Load pipeline configuration from JSON file."""
+        try:
+            with open(config_path, 'r') as f:
+                self.config = json.load(f)
+        except Exception as e:
+            raise RuntimeError(f"Failed to load config: {str(e)}")
+            
+    def setup_logging(self) -> None:
+        """Configure logging with timestamp and level."""
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s',
+            handlers=[
+                logging.FileHandler('pipeline.log'),
+                logging.StreamHandler()
+            ]
+        )
+        
+    def extract_data(self, source_type: str, source_path: str) -> pd.DataFrame:
+        """Extract data from various sources with error handling."""
+        try:
+            if source_type == 'csv':
+                df = pd.read_csv(source_path)
+            elif source_type == 'api':
+                response = requests.get(source_path)
+                response.raise_for_status()
+                df = pd.DataFrame(response.json())
+            elif source_type == 'database':
+                conn = sqlite3.connect(source_path)
+                df = pd.read_sql(self.config['extraction_query'], conn)
+                conn.close()
+            else:
+                raise ValueError(f"Unsupported source type: {source_type}")
+                
+            logging.info(f"Successfully extracted {len(df)} records")
+            return df
+            
+        except Exception as e:
+            logging.error(f"Data extraction failed: {str(e)}")
+            raise
+            
+    def transform_data(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Apply transformations with validation and error handling."""
+        try:
+            # Data validation
+            self._validate_data(df)
+            
+            # Apply transformations
+            df = self._clean_data(df)
+            df = self._enrich_data(df)
+            df = self._aggregate_data(df)
+            
+            logging.info("Data transformation completed successfully")
+            return df
+            
+        except Exception as e:
+            logging.error(f"Data transformation failed: {str(e)}")
+            raise
+            
+    def _validate_data(self, df: pd.DataFrame) -> None:
+        """Validate data quality and completeness."""
+        # Check for required columns
+        missing_cols = set(self.config['required_columns']) - set(df.columns)
+        if missing_cols:
+            raise ValueError(f"Missing required columns: {missing_cols}")
+            
+        # Check for null values in critical columns
+        null_counts = df[self.config['required_columns']].isnull().sum()
+        if null_counts.any():
+            logging.warning(f"Null values found: {null_counts[null_counts > 0]}")
+            
+        # Check data types
+        for col, dtype in self.config['column_types'].items():
+            if df[col].dtype != dtype:
+                logging.warning(f"Column {col} has incorrect type: {df[col].dtype}")
+                
+    def _clean_data(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Clean and standardize data."""
+        # Handle missing values
+        for col, strategy in self.config['missing_value_strategy'].items():
+            if strategy == 'drop':
+                df = df.dropna(subset=[col])
+            elif strategy == 'mean':
+                df[col] = df[col].fillna(df[col].mean())
+            elif strategy == 'mode':
+                df[col] = df[col].fillna(df[col].mode()[0])
+                
+        # Remove duplicates
+        df = df.drop_duplicates(subset=self.config['unique_columns'])
+        
+        # Standardize text columns
+        for col in self.config['text_columns']:
+            df[col] = df[col].str.strip().str.lower()
+            
+        return df
+        
+    def _enrich_data(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Add derived columns and external data."""
+        # Add timestamp columns
+        df['processed_at'] = datetime.now()
+        
+        # Calculate derived metrics
+        for metric in self.config['derived_metrics']:
+            df[metric['name']] = eval(metric['formula'])
+            
+        # Add external data if configured
+        if 'external_data' in self.config:
+            df = self._add_external_data(df)
+            
+        return df
+        
+    def _aggregate_data(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Perform aggregations based on configuration."""
+        if 'aggregations' in self.config:
+            agg_dfs = []
+            for agg in self.config['aggregations']:
+                agg_df = df.groupby(agg['group_by']).agg(agg['metrics'])
+                agg_dfs.append(agg_df)
+            df = pd.concat([df] + agg_dfs, axis=1)
+        return df
+        
+    def load_data(self, df: pd.DataFrame, target_type: str, 
+                  target_path: str) -> None:
+        """Load transformed data to target destination."""
+        try:
+            if target_type == 'csv':
+                df.to_csv(target_path, index=False)
+            elif target_type == 'database':
+                conn = sqlite3.connect(target_path)
+                df.to_sql(self.config['target_table'], conn, 
+                         if_exists='replace', index=False)
+                conn.close()
+            elif target_type == 'parquet':
+                df.to_parquet(target_path, index=False)
+            else:
+                raise ValueError(f"Unsupported target type: {target_type}")
+                
+            logging.info(f"Successfully loaded {len(df)} records")
+            
+        except Exception as e:
+            logging.error(f"Data loading failed: {str(e)}")
+            raise
+            
+    def run_pipeline(self) -> None:
+        """Execute the complete ETL pipeline."""
+        try:
+            # Extract
+            df = self.extract_data(
+                self.config['source_type'],
+                self.config['source_path']
+            )
+            
+            # Transform
+            df = self.transform_data(df)
+            
+            # Load
+            self.load_data(
+                df,
+                self.config['target_type'],
+                self.config['target_path']
+            )
+            
+            logging.info("Pipeline completed successfully")
+            
+        except Exception as e:
+            logging.error(f"Pipeline failed: {str(e)}")
+            raise
+            
+if __name__ == "__main__":
+    # Example usage
+    config_path = "pipeline_config.json"
+    pipeline = DataPipeline(config_path)
+    pipeline.run_pipeline()`,
+                explanation: "This example demonstrates a configurable ETL pipeline with robust error handling, logging, data validation, and support for multiple data sources and targets."
+            },
+            {
+                title: "Real-Time Data Streaming Pipeline",
+                code: `from kafka import KafkaConsumer, KafkaProducer
+import json
+from datetime import datetime
+import logging
+from typing import Dict, List, Optional
+import threading
+from collections import defaultdict
+import redis
+import psycopg2
+from psycopg2.extras import execute_batch
+
+class StreamProcessor:
+    def __init__(self, config: Dict):
+        self.config = config
+        self.setup_logging()
+        self.setup_connections()
+        self.buffer = defaultdict(list)
+        self.buffer_lock = threading.Lock()
+        
+    def setup_logging(self) -> None:
+        """Configure logging system."""
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def setup_connections(self) -> None:
+        """Initialize connections to external systems."""
+        try:
+            # Kafka consumer
+            self.consumer = KafkaConsumer(
+                self.config['kafka_topic'],
+                bootstrap_servers=self.config['kafka_servers'],
+                auto_offset_reset='latest',
+                enable_auto_commit=False,
+                group_id=self.config['consumer_group'],
+                value_deserializer=lambda x: json.loads(x.decode('utf-8'))
+            )
+            
+            # Redis connection for caching
+            self.redis_client = redis.Redis(
+                host=self.config['redis_host'],
+                port=self.config['redis_port'],
+                db=0
+            )
+            
+            # Postgres connection for persistence
+            self.pg_conn = psycopg2.connect(
+                self.config['postgres_uri']
+            )
+            
+            logging.info("All connections established successfully")
+            
+        except Exception as e:
+            logging.error(f"Connection setup failed: {str(e)}")
+            raise
+            
+    def process_message(self, message: Dict) -> Dict:
+        """Process individual messages with business logic."""
+        try:
+            # Add processing timestamp
+            message['processed_at'] = datetime.now().isoformat()
+            
+            # Enrich with cached data
+            cached_data = self.redis_client.get(
+                f"user:{message['user_id']}"
+            )
+            if cached_data:
+                user_data = json.loads(cached_data)
+                message.update(user_data)
+            
+            # Apply transformations
+            if 'amount' in message:
+                message['amount_usd'] = self.convert_currency(
+                    message['amount'],
+                    message['currency']
+                )
+                
+            return message
+            
+        except Exception as e:
+            logging.error(f"Message processing failed: {str(e)}")
+            raise
+            
+    def convert_currency(self, amount: float, currency: str) -> float:
+        """Convert amount to USD using cached rates."""
+        if currency == 'USD':
+            return amount
+            
+        rate = self.redis_client.get(f"rate:{currency}")
+        if not rate:
+            logging.warning(f"Missing rate for {currency}")
+            return amount
+            
+        return amount * float(rate)
+        
+    def buffer_message(self, message: Dict) -> None:
+        """Add message to buffer for batch processing."""
+        with self.buffer_lock:
+            self.buffer[message['type']].append(message)
+            
+        # Check if buffer threshold is reached
+        if len(self.buffer[message['type']]) >= \
+           self.config['batch_size']:
+            self.flush_buffer(message['type'])
+            
+    def flush_buffer(self, message_type: str) -> None:
+        """Flush buffered messages to database."""
+        with self.buffer_lock:
+            messages = self.buffer[message_type]
+            if not messages:
+                return
+                
+            try:
+                # Prepare batch insert
+                table_name = f"events_{message_type}"
+                columns = messages[0].keys()
+                values = [
+                    [str(msg[col]) for col in columns]
+                    for msg in messages
+                ]
+                
+                query = f"""
+                    INSERT INTO {table_name}
+                    ({', '.join(columns)})
+                    VALUES %s
+                """
+                
+                with self.pg_conn.cursor() as cur:
+                    execute_batch(cur, query, values)
+                self.pg_conn.commit()
+                
+                # Clear buffer
+                self.buffer[message_type] = []
+                logging.info(f"Flushed {len(messages)} messages to {table_name}")
+                
+            except Exception as e:
+                logging.error(f"Buffer flush failed: {str(e)}")
+                self.pg_conn.rollback()
+                raise
+                
+    def start_processing(self) -> None:
+        """Main processing loop."""
+        try:
+            # Start background thread for periodic buffer flushing
+            timer = threading.Timer(
+                self.config['flush_interval'],
+                self.periodic_flush
+            )
+            timer.daemon = True
+            timer.start()
+            
+            # Process messages
+            for message in self.consumer:
+                try:
+                    # Process message
+                    processed_msg = self.process_message(
+                        message.value
+                    )
+                    
+                    # Buffer for batch processing
+                    self.buffer_message(processed_msg)
+                    
+                    # Commit offset
+                    self.consumer.commit()
+                    
+                except Exception as e:
+                    logging.error(f"Message processing failed: {str(e)}")
+                    continue
+                    
+        except KeyboardInterrupt:
+            logging.info("Shutting down stream processor")
+            self.shutdown()
+            
+    def periodic_flush(self) -> None:
+        """Periodically flush buffers regardless of size."""
+        while True:
+            try:
+                for message_type in self.buffer.keys():
+                    self.flush_buffer(message_type)
+                    
+                threading.Event().wait(
+                    self.config['flush_interval']
+                )
+                
+            except Exception as e:
+                logging.error(f"Periodic flush failed: {str(e)}")
+                
+    def shutdown(self) -> None:
+        """Clean shutdown of processor."""
+        try:
+            # Flush remaining messages
+            for message_type in self.buffer.keys():
+                self.flush_buffer(message_type)
+                
+            # Close connections
+            self.consumer.close()
+            self.redis_client.close()
+            self.pg_conn.close()
+            
+            logging.info("Stream processor shut down successfully")
+            
+        except Exception as e:
+            logging.error(f"Shutdown failed: {str(e)}")
+            raise
+            
+if __name__ == "__main__":
+    # Example configuration
+    config = {
+        'kafka_topic': 'events',
+        'kafka_servers': ['localhost:9092'],
+        'consumer_group': 'stream_processor',
+        'redis_host': 'localhost',
+        'redis_port': 6379,
+        'postgres_uri': 'postgresql://user:pass@localhost/db',
+        'batch_size': 1000,
+        'flush_interval': 60  # seconds
+    }
+    
+    # Start processor
+    processor = StreamProcessor(config)
+    processor.start_processing()`,
+                explanation: "This example shows a real-time data streaming pipeline using Kafka, Redis, and PostgreSQL. It includes message processing, buffering for batch operations, and proper error handling."
+            },
+            {
+                title: "Data Lake Management System",
+                code: `import boto3
+import pandas as pd
+from datetime import datetime, timedelta
+import pyarrow as pa
+import pyarrow.parquet as pq
+from typing import Dict, List, Optional
+import logging
+import json
+import hashlib
+from concurrent.futures import ThreadPoolExecutor
+
+class DataLakeManager:
+    def __init__(self, config: Dict):
+        self.config = config
+        self.setup_logging()
+        self.setup_connections()
+        
+    def setup_logging(self) -> None:
+        """Configure logging system."""
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s',
+            handlers=[
+                logging.FileHandler('datalake.log'),
+                logging.StreamHandler()
+            ]
+        )
+        
+    def setup_connections(self) -> None:
+        """Initialize AWS connections."""
+        try:
+            self.s3 = boto3.client(
+                's3',
+                aws_access_key_id=self.config['aws_access_key'],
+                aws_secret_access_key=self.config['aws_secret_key'],
+                region_name=self.config['aws_region']
+            )
+        self.glue = boto3.client(
+                'glue',
+                aws_access_key_id=self.config['aws_access_key'],
+                aws_secret_access_key=self.config['aws_secret_key'],
+                region_name=self.config['aws_region']
+            )
+            
+            self.athena = boto3.client(
+                'athena',
+                aws_access_key_id=self.config['aws_access_key'],
+                aws_secret_access_key=self.config['aws_secret_key'],
+                region_name=self.config['aws_region']
+            )
+            
+            logging.info("AWS connections established successfully")
+            
+        except Exception as e:
+            logging.error(f"AWS connection setup failed: {str(e)}")
+            raise
+            
+    def generate_partition_path(self, dataset: str, date: datetime) -> str:
+        """Generate S3 partition path based on date."""
+        return f"{dataset}/year={date.year}/month={date.month:02d}/day={date.day:02d}"
+        
+    def upload_to_data_lake(self, df: pd.DataFrame, dataset: str,
+                           partition_date: datetime) -> None:
+        """Upload dataframe to S3 in Parquet format with partitioning."""
+        try:
+            # Convert to PyArrow Table
+            table = pa.Table.from_pandas(df)
+            
+            # Generate partition path
+            partition_path = self.generate_partition_path(dataset, partition_date)
+            file_path = f"{partition_path}/{dataset}_{partition_date.strftime('%Y%m%d_%H%M%S')}.parquet"
+            
+            # Write to buffer
+            buffer = pa.BufferOutputStream()
+            pq.write_table(table, buffer)
+            
+            # Upload to S3
+            self.s3.put_object(
+                Bucket=self.config['data_lake_bucket'],
+                Key=file_path,
+                Body=buffer.getvalue().to_pybytes()
+            )
+            
+            # Update metadata
+            self._update_metadata(dataset, partition_path, df.shape[0])
+            
+            logging.info(f"Successfully uploaded {df.shape[0]} records to {file_path}")
+            
+        except Exception as e:
+            logging.error(f"Upload failed: {str(e)}")
+            raise
+            
+    def _update_metadata(self, dataset: str, partition_path: str,
+                        record_count: int) -> None:
+        """Update metadata catalog with partition information."""
+        try:
+            self.glue.update_partition(
+                DatabaseName=self.config['glue_database'],
+                TableName=dataset,
+                PartitionValueList=partition_path.split('/')[1:],
+                PartitionInput={
+                    'Parameters': {
+                        'record_count': str(record_count),
+                        'last_updated': datetime.now().isoformat()
+                    }
+                }
+            )
+        except Exception as e:
+            logging.warning(f"Metadata update failed: {str(e)}")
+            
+    def optimize_partitions(self, dataset: str, date_range: tuple) -> None:
+        """Optimize partitions by combining small files."""
+        try:
+            start_date, end_date = date_range
+            current_date = start_date
+            
+            while current_date <= end_date:
+                partition_path = self.generate_partition_path(dataset, current_date)
+                self._combine_small_files(dataset, partition_path)
+                current_date += timedelta(days=1)
+                
+        except Exception as e:
+            logging.error(f"Partition optimization failed: {str(e)}")
+            raise
+            
+    def _combine_small_files(self, dataset: str, partition_path: str,
+                           min_file_size_mb: int = 100) -> None:
+        """Combine small files in a partition."""
+        try:
+            # List all files in partition
+            response = self.s3.list_objects_v2(
+                Bucket=self.config['data_lake_bucket'],
+                Prefix=partition_path
+            )
+            
+            small_files = []
+            for obj in response.get('Contents', []):
+                if obj['Size'] < min_file_size_mb * 1024 * 1024:
+                    small_files.append(obj['Key'])
+                    
+            if not small_files:
+                return
+                
+            # Read and combine small files
+            dfs = []
+            for file in small_files:
+                response = self.s3.get_object(
+                    Bucket=self.config['data_lake_bucket'],
+                    Key=file
+                )
+                df = pd.read_parquet(response['Body'])
+                dfs.append(df)
+                
+            combined_df = pd.concat(dfs, ignore_index=True)
+            
+            # Upload combined file
+            new_file = f"{partition_path}/combined_{datetime.now().strftime('%Y%m%d_%H%M%S')}.parquet"
+            self.upload_to_data_lake(combined_df, dataset, datetime.now())
+            
+            # Delete old files
+            for file in small_files:
+                self.s3.delete_object(
+                    Bucket=self.config['data_lake_bucket'],
+                    Key=file
+                )
+                
+            logging.info(f"Combined {len(small_files)} small files in {partition_path}")
+            
+        except Exception as e:
+            logging.error(f"File combination failed: {str(e)}")
+            raise
+            
+    def query_data_lake(self, query: str) -> pd.DataFrame:
+        """Query data lake using Athena."""
+        try:
+            # Start query execution
+            response = self.athena.start_query_execution(
+                QueryString=query,
+                QueryExecutionContext={
+                    'Database': self.config['glue_database']
+                },
+                ResultConfiguration={
+                    'OutputLocation': f"s3://{self.config['athena_output_bucket']}/query_results/"
+                }
+            )
+            
+            query_execution_id = response['QueryExecutionId']
+            
+            # Wait for query completion
+            while True:
+                response = self.athena.get_query_execution(
+                    QueryExecutionId=query_execution_id
+                )
+                state = response['QueryExecution']['Status']['State']
+                
+                if state in ['SUCCEEDED', 'FAILED', 'CANCELLED']:
+                    break
+                    
+                time.sleep(1)
+                
+            if state == 'SUCCEEDED':
+                # Get results
+                response = self.athena.get_query_results(
+                    QueryExecutionId=query_execution_id
+                )
+                
+                # Convert to DataFrame
+                columns = [col['Label'] for col in response['ResultSet']['ResultSetMetadata']['ColumnInfo']]
+                data = []
+                for row in response['ResultSet']['Rows'][1:]:  # Skip header
+                    data.append([field.get('VarCharValue', '') for field in row['Data']])
+                    
+                return pd.DataFrame(data, columns=columns)
+            else:
+                raise Exception(f"Query failed with state: {state}")
+                
+        except Exception as e:
+            logging.error(f"Query execution failed: {str(e)}")
+            raise
+            
+if __name__ == "__main__":
+    # Example configuration
+    config = {
+        'aws_access_key': 'your_access_key',
+        'aws_secret_key': 'your_secret_key',
+        'aws_region': 'us-west-2',
+        'data_lake_bucket': 'your-data-lake-bucket',
+        'glue_database': 'your_database',
+        'athena_output_bucket': 'your-athena-output-bucket'
+    }
+    
+    # Initialize manager
+    lake_manager = DataLakeManager(config)
+    
+    # Example usage
+    df = pd.DataFrame({'col1': range(10), 'col2': range(10)})
+    lake_manager.upload_to_data_lake(df, 'example_dataset', datetime.now())
+    
+    # Query data
+    result_df = lake_manager.query_data_lake('SELECT * FROM example_dataset LIMIT 10')
+`,
+    explanation: "This example demonstrates a Data Lake management system using AWS services (S3, Glue, and Athena). It includes features for data upload, partitioning, small file optimization, and querying."
+        }
+    ],
+    roadmap: [
+        {
+            title: "1. Programming and SQL",
+            description: "Master core programming and database skills",
+            topics: [
+                "Python Programming",
+                "SQL Fundamentals and Advanced Queries",
+                "Data Structures and Algorithms",
+                "Version Control (Git)",
+                "Shell Scripting",
+                "Basic Linux Administration",
+                "Testing and Documentation"
+            ]
+        },
+        {
+            title: "2. Data Storage Systems",
+            description: "Learn various data storage solutions",
+            topics: [
+                "Relational Databases",
+                "NoSQL Databases",
+                "Data Warehouses",
+                "Data Lakes",
+                "OLTP vs OLAP Systems",
+                "Storage Formats (Parquet, ORC)",
+                "Indexing and Partitioning"
+            ]
+        },
+        {
+            title: "3. Data Processing",
+            description: "Master data processing frameworks",
+            topics: [
+                "Batch Processing Systems",
+                "Stream Processing",
+                "ETL/ELT Tools",
+                "Apache Spark",
+                "Data Quality and Validation",
+                "Error Handling",
+                "Performance Optimization"
+            ]
+        },
+        {
+            title: "4. Data Pipeline Orchestration",
+            description: "Learn workflow management and scheduling",
+            topics: [
+                "Apache Airflow",
+                "Workflow Design Patterns",
+                "Dependency Management",
+                "Pipeline Monitoring",
+                "Error Recovery",
+                "Resource Management",
+                "CI/CD for Pipelines"
+            ]
+        },
+        {
+            title: "5. Cloud Platforms",
+            description: "Master cloud data services",
+            topics: [
+                "AWS Data Services",
+                "GCP Data Services",
+                "Azure Data Services",
+                "Cloud Storage Solutions",
+                "Serverless Computing",
+                "Cloud Security",
+                "Cost Optimization"
+            ]
+        },
+        {
+            title: "6. Data Governance",
+            description: "Learn data management and compliance",
+            topics: [
+                "Data Quality Framework",
+                "Metadata Management",
+                "Data Catalogs",
+                "Security and Privacy",
+                "Compliance (GDPR, CCPA)",
+                "Data Lineage",
+                "Access Control"
+            ]
+        },
+        {
+            title: "7. Advanced Topics",
+            description: "Master advanced data engineering concepts",
+            topics: [
+                "Real-time Analytics",
+                "Machine Learning Pipelines",
+                "Data Mesh Architecture",
+                "DataOps Practices",
+                "Distributed Systems",
+                "Performance Tuning",
+                "System Design"
+            ]
+        }
+    ],
+    resources: {
+        documentation: [
+            {
+                title: "Apache Spark Documentation",
+                url: "https://spark.apache.org/docs/latest/",
+                description: "Official documentation for Apache Spark",
+                type: "Framework Documentation"
+            },
+            {
+                title: "Apache Airflow Documentation",
+                url: "https://airflow.apache.org/docs/",
+                description: "Comprehensive guide for Airflow",
+                type: "Tool Documentation"
+            },
+            {
+                title: "AWS Data Analytics",
+                url: "https://docs.aws.amazon.com/analytics/",
+                description: "AWS data services documentation",
+                type: "Cloud Documentation"
+            },
+            {
+                title: "Snowflake Documentation",
+                url: "https://docs.snowflake.com/",
+                description: "Data warehouse platform documentation",
+                type: "Platform Documentation"
+            },
+            {
+                title: "dbt Documentation",
+                url: "https://docs.getdbt.com/",
+                description: "Data transformation tool documentation",
+                type: "Tool Documentation"
+            }
+        ],
+        tutorials: [
+            {
+                title: "DataCamp Data Engineering Track",
+                url: "https://www.datacamp.com/tracks/data-engineer",
+                description: "Interactive data engineering courses",
+                type: "Online Course"
+            },
+            {
+                title: "Coursera Data Engineering Specialization",
+                url: "https://www.coursera.org/specializations/gcp-data-engineering",
+                description: "Google Cloud data engineering courses",
+                type: "Course Series"
+            },
+            {
+                title: "Mode SQL Tutorial",
+                url: "https://mode.com/sql-tutorial/",
+                description: "Interactive SQL learning platform",
+                type: "Tutorial"
+            },
+            {
+                title: "Databricks Academy",
+                url: "https://academy.databricks.com/",
+                description: "Spark and data engineering tutorials",
+                type: "Learning Platform"
+            },
+            {
+                title: "AWS Data Analytics Learning Plan",
+                url: "https://aws.amazon.com/training/learn-about/data-analytics/",
+                description: "AWS data analytics training",
+                type: "Training Program"
+            }
+        ],
+        videos: [
+            {
+                title: "Data Engineering Full Course",
+                url: "https://www.youtube.com/c/SeattleDataGuy",
+                description: "Comprehensive data engineering tutorials",
+                platform: "YouTube"
+            },
+            {
+                title: "Apache Spark Tutorial",
+                url: "https://www.youtube.com/c/SparkByExamples",
+                description: "Spark programming tutorials",
+                platform: "YouTube"
+            },
+            {
+                title: "DataTalks.Club",
+                url: "https://www.youtube.com/c/DataTalksClub",
+                description: "Data engineering talks and interviews",
+                platform: "YouTube"
+            },
+            {
+                title: "Snowflake Training",
+                url: "https://www.youtube.com/c/SnowflakeInc",
+                description: "Official Snowflake tutorials",
+                platform: "YouTube"
+            },
+            {
+                title: "Airflow Summit",
+                url: "https://www.youtube.com/c/AirflowSummit",
+                description: "Airflow conference talks",
+                platform: "YouTube"
+            }
+        ],
+        books: [
+            {
+                title: "Fundamentals of Data Engineering",
+                author: "Joe Reis, Matt Housley",
+                description: "Comprehensive guide to data engineering",
+                level: "Intermediate"
+            },
+            {
+                title: "Designing Data-Intensive Applications",
+                author: "Martin Kleppmann",
+                description: "Deep dive into data systems",
+                level: "Advanced"
+            },
+            {
+                title: "Data Pipelines Pocket Reference",
+                author: "James Densmore",
+                description: "Practical guide to building data pipelines",
+                level: "Intermediate"
+            },
+            {
+                title: "Learning Spark",
+                author: "Jules Damji, Brooke Wenig, Tathagata Das",
+                description: "Guide to Apache Spark",
+                level: "Intermediate"
+            },
+            {
+                title: "The Data Warehouse Toolkit",
+                author: "Ralph Kimball, Margy Ross",
+                description: "Data warehouse design principles",
+                level: "Advanced"
+            }
+        ],
+        tools: [
+            {
+                title: "Apache Spark",
+                url: "https://spark.apache.org/",
+                description: "Unified analytics engine",
+                type: "Processing Engine",
+                category: "Essential"
+            },
+            {
+                title: "Apache Airflow",
+                url: "https://airflow.apache.org/",
+                description: "Workflow orchestration platform",
+                type: "Orchestration Tool",
+                category: "Essential"
+            },
+            {
+                title: "dbt",
+                url: "https://www.getdbt.com/",
+                description: "Data transformation tool",
+                type: "Transformation Tool",
+                category: "Essential"
+            },
+            {
+                title: "Snowflake",
+                url: "https://www.snowflake.com/",
+                description: "Cloud data warehouse",
+                type: "Data Warehouse",
+                category: "Essential"
+            },
+            {
+                title: "Great Expectations",
+                url: "https://greatexpectations.io/",
+                description: "Data validation framework",
+                type: "Testing Tool",
+                category: "Essential"
+            }
+        ],
+        communities: [
+            {
+                title: "DataTalks.Club",
+                url: "https://datatalks.club/",
+                description: "Data engineering community",
+                type: "Community Platform"
+            },
+            {
+                title: "Reddit r/dataengineering",
+                url: "https://www.reddit.com/r/dataengineering/",
+                description: "Data engineering subreddit",
+                type: "Forum"
+            },
+            {
+                title: "Apache Spark User List",
+                url: "https://spark.apache.org/community.html",
+                description: "Spark community discussions",
+                type: "Mailing List"
+            },
+            {
+                title: "dbt Community",
+                url: "https://community.getdbt.com/",
+                description: "dbt user community",
+                type: "Forum"
+            },
+            {
+                title: "Data Engineering Weekly",
+                url: "https://dataengineeringweekly.com/",
+                description: "Weekly newsletter for data engineers",
+                type: "Newsletter"
+            }
+        ],
+        podcasts: [
+            {
+                title: "Data Engineering Podcast",
+                url: "https://www.dataengineeringpodcast.com/",
+                description: "Weekly data engineering discussions",
+                platform: "Podcast"
+            },
+            {
+                title: "Drill to Detail",
+                url: "https://www.drilltodetail.com/",
+                description: "Data analytics and engineering podcast",
+                platform: "Podcast"
+            },
+            {
+                title: "The Data Stack Show",
+                url: "https://datastackshow.com/",
+                description: "Modern data stack discussions",
+                platform: "Podcast"
+            },
+            {
+                title: "Data Management Monthly",
+                url: "https://www.datamanagementmonthly.com/",
+                description: "Data management and engineering topics",
+                platform: "Podcast"
+            }
+        ],
+        blogs: [
+            {
+                title: "Towards Data Science",
+                url: "https://towardsdatascience.com/data-engineering/home",
+                description: "Data engineering articles and tutorials",
+                type: "Publication"
+            },
+            {
+                title: "Seattle Data Guy",
+                url: "https://seattledataguy.com/",
+                description: "Data engineering best practices",
+                type: "Personal Blog"
+            },
+            {
+                title: "Databricks Blog",
+                url: "https://databricks.com/blog",
+                description: "Technical articles on Spark and data",
+                type: "Company Blog"
+            },
+            {
+                title: "AWS Big Data Blog",
+                url: "https://aws.amazon.com/blogs/big-data/",
+                description: "AWS data engineering solutions",
+                type: "Technical Blog"
+            }
+        ]
+    },
+    practice: {
+        beginnerExercises: [
+            {
+                title: "Log File Parser",
+                difficulty: "Easy",
+                description: "Create a log file parser that processes web server logs and generates summary statistics.",
+                hints: [
+                    "Use regular expressions for parsing",
+                    "Handle different log formats",
+                    "Implement basic error handling",
+                    "Generate summary statistics"
+                ],
+                solution: {
+                    code: `import pandas as pd
+import re
+from datetime import datetime
+from typing import Dict, List
+import logging
+
+class LogParser:
+    def __init__(self, log_format: str):
+        self.log_format = log_format
+        self.setup_logging()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def parse_line(self, line: str) -> Dict:
+        """Parse a single log line based on format."""
+        try:
+            # Common Apache log format pattern
+            pattern = r'(\d+\.\d+\.\d+\.\d+) - - \[(.*?)\] "(.*?)" (\d+) (\d+)'
+            match = re.match(pattern, line)
+            
+            if match:
+                ip, timestamp, request, status, bytes_sent = match.groups()
+                method, path, protocol = request.split()
+                
+                return {
+                    'ip_address': ip,
+                    'timestamp': datetime.strptime(timestamp, '%d/%b/%Y:%H:%M:%S %z'),
+                    'method': method,
+                    'path': path,
+                    'protocol': protocol,
+                    'status_code': int(status),
+                    'bytes_sent': int(bytes_sent)
+                }
+            return None
+            
+        except Exception as e:
+            logging.error(f"Error parsing line: {line}, Error: {str(e)}")
+            return None
+            
+    def process_file(self, file_path: str) -> pd.DataFrame:
+        """Process entire log file and return DataFrame."""
+        records = []
+        
+        try:
+            with open(file_path, 'r') as f:
+                for line in f:
+                    parsed = self.parse_line(line.strip())
+                    if parsed:
+                        records.append(parsed)
+                        
+            df = pd.DataFrame(records)
+            return df
+            
+        except Exception as e:
+            logging.error(f"Error processing file: {str(e)}")
+            raise
+            
+    def generate_summary(self, df: pd.DataFrame) -> Dict:
+        """Generate summary statistics from parsed logs."""
+        summary = {
+            'total_requests': len(df),
+            'unique_ips': df['ip_address'].nunique(),
+            'status_codes': df['status_code'].value_counts().to_dict(),
+            'top_paths': df['path'].value_counts().head(5).to_dict(),
+            'avg_bytes_sent': df['bytes_sent'].mean(),
+            'requests_per_hour': df.groupby(df['timestamp'].dt.hour)['method']
+            .count().to_dict()
+        }
+        return summary
+        
+    def export_summary(self, summary: Dict, output_path: str):
+        """Export summary to JSON file."""
+        try:
+            with open(output_path, 'w') as f:
+                json.dump(summary, f, indent=4, default=str)
+            logging.info(f"Summary exported to {output_path}")
+        except Exception as e:
+            logging.error(f"Error exporting summary: {str(e)}")
+            raise
+
+if __name__ == "__main__":
+    # Example usage
+    parser = LogParser("common")
+    df = parser.process_file("access.log")
+    summary = parser.generate_summary(df)
+    parser.export_summary(summary, "log_summary.json")
+    
+    # Print some insights
+    print(f"Total Requests: {summary['total_requests']}")
+    print(f"Unique IPs: {summary['unique_ips']}")
+    print("Top 5 Paths:")
+    for path, count in summary['top_paths'].items():
+        print(f"  {path}: {count} requests")`,
+                    explanation: "This exercise demonstrates log file processing, data parsing with regex, error handling, and basic data analysis using pandas."
+                }
+            },
+            {
+                title: "CSV Data Cleaner",
+                difficulty: "Easy",
+                description: "Create a data cleaning tool for CSV files with validation and transformation capabilities.",
+                hints: [
+                    "Implement data type validation",
+                    "Handle missing values",
+                    "Add data transformation functions",
+                    "Include data quality checks"
+                ],
+                solution: {
+                    code: `import pandas as pd
+import numpy as np
+from typing import Dict, List, Callable
+import logging
+from datetime import datetime
+
+class DataCleaner:
+    def __init__(self):
+        self.setup_logging()
+        self.transformations = {}
+        self.validations = {}
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def add_transformation(self, column: str, func: Callable):
+        """Add transformation function for a column."""
+        self.transformations[column] = func
+        
+    def add_validation(self, column: str, func: Callable):
+        """Add validation function for a column."""
+        self.validations[column] = func
+        
+    def clean_data(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Apply cleaning operations to DataFrame."""
+        df_clean = df.copy()
+        
+        # Apply transformations
+        for column, transform in self.transformations.items():
+            if column in df_clean.columns:
+                try:
+                    df_clean[column] = df_clean[column].apply(transform)
+                    logging.info(f"Transformed column: {column}")
+                except Exception as e:
+                    logging.error(f"Error transforming {column}: {str(e)}")
+                    
+        # Handle missing values
+        self._handle_missing_values(df_clean)
+        
+        # Remove duplicates
+        df_clean = df_clean.drop_duplicates()
+        
+        # Validate data
+        self._validate_data(df_clean)
+        
+        return df_clean
+        
+    def _handle_missing_values(self, df: pd.DataFrame):
+        """Handle missing values based on data types."""
+        for column in df.columns:
+            missing_count = df[column].isna().sum()
+            if missing_count > 0:
+                dtype = df[column].dtype
+                
+                if pd.api.types.is_numeric_dtype(dtype):
+                    df[column].fillna(df[column].mean(), inplace=True)
+                elif pd.api.types.is_datetime64_dtype(dtype):
+                    df[column].fillna(df[column].mode()[0], inplace=True)
+                else:
+                    df[column].fillna('UNKNOWN', inplace=True)
+                    
+                logging.info(f"Filled {missing_count} missing values in {column}")
+                
+    def _validate_data(self, df: pd.DataFrame):
+        """Run validations on cleaned data."""
+        validation_results = []
+        
+        for column, validate in self.validations.items():
+            if column in df.columns:
+                try:
+                    invalid_mask = ~df[column].apply(validate)
+                    invalid_count = invalid_mask.sum()
+                    
+                    if invalid_count > 0:
+                        validation_results.append({
+                            'column': column,
+                            'invalid_count': invalid_count,
+                            'example_values': df[column][invalid_mask].head().tolist()
+                        })
+                except Exception as e:
+                    logging.error(f"Error validating {column}: {str(e)}")
+                    
+        if validation_results:
+            logging.warning("Validation issues found:")
+            for result in validation_results:
+                logging.warning(f"Column {result['column']}: "
+                              f"{result['invalid_count']} invalid values")
+                
+    def generate_report(self, df_original: pd.DataFrame, 
+                       df_cleaned: pd.DataFrame) -> Dict:
+        """Generate cleaning report with statistics."""
+        report = {
+            'original_rows': len(df_original),
+            'cleaned_rows': len(df_cleaned),
+            'dropped_rows': len(df_original) - len(df_cleaned),
+            'missing_values': {
+                col: df_original[col].isna().sum()
+                for col in df_original.columns
+            },
+            'unique_values': {
+                col: df_cleaned[col].nunique()
+                for col in df_cleaned.columns
+            },
+            'data_types': df_cleaned.dtypes.astype(str).to_dict()
+        }
+        return report
+
+if __name__ == "__main__":
+    # Example usage
+    cleaner = DataCleaner()
+    
+    # Add transformations
+    cleaner.add_transformation('name', str.strip)
+    cleaner.add_transformation('age', 
+        lambda x: int(x) if pd.notnull(x) else x)
+    cleaner.add_transformation('email',
+        lambda x: x.lower() if pd.notnull(x) else x)
+        
+    # Add validations
+    cleaner.add_validation('age', 
+        lambda x: pd.isnull(x) or (x >= 0 and x <= 120))
+    cleaner.add_validation('email',
+        lambda x: pd.isnull(x) or '@' in str(x))
+        
+    # Read and clean data
+    df = pd.read_csv('input.csv')
+    df_cleaned = cleaner.clean_data(df)
+    
+    # Generate and print report
+    report = cleaner.generate_report(df, df_cleaned)
+    print("Cleaning Report:")
+    print(json.dumps(report, indent=2, default=str))
+    
+    # Save cleaned data
+    df_cleaned.to_csv('cleaned_output.csv', index=False)`,
+                    explanation: "This exercise shows data cleaning operations, including handling missing values, data validation, and transformation. It includes reporting functionality to track cleaning operations."
+                }
+            }
+        ],
+        intermediateExercises: [
+            {
+                title: "Data Pipeline with Change Data Capture",
+                difficulty: "Medium",
+                description: "Create a CDC pipeline that tracks and processes database changes incrementally.",
+                hints: [
+                    "Implement change tracking mechanism",
+                    "Handle different change types (insert/update/delete)",
+                    "Include error recovery",
+                    "Add audit logging"
+                ],
+                solution: {
+                    code: `import pandas as pd
+import sqlalchemy as sa
+from datetime import datetime, timedelta
+import logging
+from typing import Dict, List, Optional
+import hashlib
+import json
+
+class CDCPipeline:
+    def __init__(self, source_conn: str, target_conn: str, 
+                 schema: str, tables: List[str]):
+        self.source_engine = sa.create_engine(source_conn)
+        self.target_engine = sa.create_engine(target_conn)
+        self.schema = schema
+        self.tables = tables
+        self.setup_logging()
+        self.setup_tracking_table()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def setup_tracking_table(self):
+        """Create CDC tracking table if not exists."""
+        tracking_table = sa.Table(
+            'cdc_tracking',
+            sa.MetaData(),
+            sa.Column('table_name', sa.String(100)),
+            sa.Column('last_sync', sa.DateTime),
+            sa.Column('last_key', sa.String(100)),
+            sa.Column('checksum', sa.String(64))
+        )
+        
+        tracking_table.create(self.target_engine, checkfirst=True)
+        
+    def get_table_checksum(self, table: str) -> str:
+        """Calculate table checksum."""
+        query = f"""
+            SELECT COUNT(*) as row_count,
+                   COALESCE(MAX(updated_at), '1900-01-01') as max_update
+            FROM {self.schema}.{table}
+        """
+        result = pd.read_sql(query, self.source_engine)
+        checksum_str = f"{result['row_count'].iloc[0]}:{result['max_update'].iloc[0]}"
+        return hashlib.sha256(checksum_str.encode()).hexdigest()
+        
+    def get_changes(self, table: str, last_sync: datetime) -> pd.DataFrame:
+        """Get changed records since last sync."""
+        query = f"""
+            SELECT *
+            FROM {self.schema}.{table}
+            WHERE updated_at > %s
+            ORDER BY updated_at, id
+        """
+        return pd.read_sql(query, self.source_engine, params=[last_sync])
+        
+    def apply_changes(self, table: str, changes: pd.DataFrame):
+        """Apply changes to target table."""
+        if len(changes) == 0:
+            return
+            
+        # Create table if not exists
+        changes.head(0).to_sql(
+            table,
+            self.target_engine,
+            if_exists='append',
+            index=False
+        )
+        
+        # Apply changes in batches
+        batch_size = 1000
+        for i in range(0, len(changes), batch_size):
+            batch = changes.iloc[i:i+batch_size]
+            
+            # Upsert changes
+            self.upsert_batch(table, batch)
+            logging.info(f"Processed {i + len(batch)}/{len(changes)} records")
+            
+    def upsert_batch(self, table: str, batch: pd.DataFrame):
+        """Upsert batch of records."""
+        temp_table = f"temp_{table}"
+        
+        # Load to temp table
+        batch.to_sql(
+            temp_table,
+            self.target_engine,
+            if_exists='replace',
+            index=False
+        )
+        
+        # Perform upsert
+        query = f"""
+            MERGE INTO {table} t
+            USING {temp_table} s
+            ON t.id = s.id
+            WHEN MATCHED THEN
+                UPDATE SET {
+                    ', '.join(f"t.{col} = s.{col}"
+                             for col in batch.columns
+                             if col != 'id')
+                }
+            WHEN NOT MATCHED THEN
+                INSERT ({', '.join(batch.columns)})
+                VALUES ({', '.join(f's.{col}' for col in batch.columns)})
+        """
+        
+        with self.target_engine.begin() as conn:
+            conn.execute(query)
+            conn.execute(f"DROP TABLE {temp_table}")
+            
+    def update_tracking(self, table: str, sync_time: datetime, 
+                       last_key: str, checksum: str):
+        """Update CDC tracking information."""
+        query = """
+            INSERT INTO cdc_tracking 
+                (table_name, last_sync, last_key, checksum)
+            VALUES (%s, %s, %s, %s)
+            ON CONFLICT (table_name) DO UPDATE
+            SET last_sync = EXCLUDED.last_sync,
+                last_key = EXCLUDED.last_key,
+                checksum = EXCLUDED.checksum
+        """
+        
+        with self.target_engine.begin() as conn:
+            conn.execute(query, [table, sync_time, last_key, checksum])
+            
+    def process_table(self, table: str):
+        """Process changes for a single table."""
+        try:
+            # Get current table state
+            current_checksum = self.get_table_checksum(table)
+            
+            # Get last sync info
+            query = "SELECT * FROM cdc_tracking WHERE table_name = %s
+            tracking_info = pd.read_sql(query, self.target_engine, params=[table])
+            
+            last_sync = (tracking_info['last_sync'].iloc[0] 
+                        if not tracking_info.empty 
+                        else datetime(1900, 1, 1))
+            last_checksum = (tracking_info['checksum'].iloc[0] 
+                           if not tracking_info.empty 
+                           else None)
+            
+            # Check if changes exist
+            if current_checksum == last_checksum:
+                logging.info(f"No changes detected for {table}")
+                return
+                
+            # Get and apply changes
+            changes = self.get_changes(table, last_sync)
+            self.apply_changes(table, changes)
+            
+            # Update tracking
+            last_key = str(changes['id'].max()) if len(changes) > 0 else ''
+            self.update_tracking(
+                table,
+                datetime.now(),
+                last_key,
+                current_checksum
+            )
+            
+            logging.info(f"Processed {len(changes)} changes for {table}")
+            
+        except Exception as e:
+            logging.error(f"Error processing {table}: {str(e)}")
+            raise
+            
+    def run_pipeline(self):
+        """Run CDC pipeline for all tables."""
+        start_time = datetime.now()
+        errors = []
+        
+        for table in self.tables:
+            try:
+                logging.info(f"Processing table: {table}")
+                self.process_table(table)
+            except Exception as e:
+                errors.append({
+                    'table': table,
+                    'error': str(e)
+                })
+                
+        # Generate run summary
+        summary = {
+            'start_time': start_time,
+            'end_time': datetime.now(),
+            'tables_processed': len(self.tables),
+            'errors': errors
+        }
+        
+        if errors:
+            logging.error(f"Pipeline completed with {len(errors)} errors")
+        else:
+            logging.info("Pipeline completed successfully")
+            
+        return summary
+
+if __name__ == "__main__":
+    # Example configuration
+    config = {
+        'source_conn': 'postgresql://user:pass@localhost:5432/source_db',
+        'target_conn': 'postgresql://user:pass@localhost:5432/target_db',
+        'schema': 'public',
+        'tables': ['customers', 'orders', 'products']
+    }
+    
+    # Initialize and run pipeline
+    pipeline = CDCPipeline(
+        config['source_conn'],
+        config['target_conn'],
+        config['schema'],
+        config['tables']
+    )
+    
+    summary = pipeline.run_pipeline()
+    print(json.dumps(summary, indent=2, default=str))`,
+    explanation: "This intermediate exercise implements a Change Data Capture (CDC) pipeline that efficiently tracks and processes database changes. It includes checksum-based change detection, incremental processing, and error handling."
+                }
+            },
+            {
+                title: "Data Quality Framework",
+                difficulty: "Medium",
+                description: "Create a framework for implementing and monitoring data quality rules.",
+                hints: [
+                    "Implement different types of quality checks",
+                    "Add support for custom rules",
+                    "Include reporting functionality",
+                    "Handle rule dependencies"
+                ],
+                solution: {
+                    code: `import pandas as pd
+import numpy as np
+from typing import Dict, List, Callable, Optional
+from datetime import datetime
+import logging
+import json
+from dataclasses import dataclass
+
+@dataclass
+class QualityRule:
+    name: str
+    description: str
+    rule_type: str
+    check_function: Callable
+    severity: str
+    dependencies: List[str] = None
+    parameters: Dict = None
+
+class DataQualityFramework:
+    def __init__(self):
+        self.rules = {}
+        self.results = {}
+        self.setup_logging()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def add_rule(self, rule: QualityRule):
+        """Add a quality check rule."""
+        self.rules[rule.name] = rule
+        logging.info(f"Added rule: {rule.name}")
+        
+    def check_dependencies(self, rule: QualityRule) -> bool:
+        """Check if rule dependencies are satisfied."""
+        if not rule.dependencies:
+            return True
+            
+        for dep in rule.dependencies:
+            if dep not in self.results:
+                return False
+            if not self.results[dep]['passed']:
+                return False
+                
+        return True
+        
+    def run_checks(self, df: pd.DataFrame) -> Dict:
+        """Run all quality checks on the DataFrame."""
+        start_time = datetime.now()
+        self.results = {}
+        
+        # Sort rules by dependencies
+        sorted_rules = self._sort_rules_by_dependencies()
+        
+        for rule in sorted_rules:
+            if not self.check_dependencies(rule):
+                logging.warning(f"Skipping {rule.name} due to failed dependencies")
+                continue
+                
+            try:
+                result = self._run_single_check(df, rule)
+                self.results[rule.name] = result
+            except Exception as e:
+                logging.error(f"Error running {rule.name}: {str(e)}")
+                self.results[rule.name] = {
+                    'passed': False,
+                    'error': str(e),
+                    'timestamp': datetime.now()
+                }
+                
+        # Generate summary
+        summary = self._generate_summary(start_time)
+        return summary
+        
+    def _sort_rules_by_dependencies(self) -> List[QualityRule]:
+        """Sort rules based on dependencies."""
+        sorted_rules = []
+        processed = set()
+        
+        def process_rule(rule: QualityRule):
+            if rule.name in processed:
+                return
+            if rule.dependencies:
+                for dep in rule.dependencies:
+                    if dep not in processed:
+                        dep_rule = self.rules[dep]
+                        process_rule(dep_rule)
+            sorted_rules.append(rule)
+            processed.add(rule.name)
+            
+        for rule in self.rules.values():
+            process_rule(rule)
+            
+        return sorted_rules
+        
+    def _run_single_check(self, df: pd.DataFrame, 
+                         rule: QualityRule) -> Dict:
+        """Run a single quality check."""
+        logging.info(f"Running check: {rule.name}")
+        
+        try:
+            if rule.parameters:
+                result = rule.check_function(df, **rule.parameters)
+            else:
+                result = rule.check_function(df)
+                
+            if isinstance(result, bool):
+                details = None
+            else:
+                passed, details = result
+                result = passed
+                
+            return {
+                'passed': result,
+                'details': details,
+                'timestamp': datetime.now(),
+                'severity': rule.severity
+            }
+            
+        except Exception as e:
+            raise Exception(f"Check failed: {str(e)}")
+            
+    def _generate_summary(self, start_time: datetime) -> Dict:
+        """Generate quality check summary."""
+        failed_checks = [
+            name for name, result in self.results.items()
+            if not result['passed']
+        ]
+        
+        critical_failures = [
+            name for name, result in self.results.items()
+            if not result['passed'] and 
+               self.rules[name].severity == 'critical'
+        ]
+        
+        return {
+            'start_time': start_time,
+            'end_time': datetime.now(),
+            'total_checks': len(self.rules),
+            'passed_checks': len(self.rules) - len(failed_checks),
+            'failed_checks': failed_checks,
+            'critical_failures': critical_failures,
+            'results': self.results
+        }
+        
+    def generate_report(self, summary: Dict, 
+                       output_path: str) -> None:
+        """Generate detailed quality report."""
+        report = {
+            'summary': {
+                'total_checks': summary['total_checks'],
+                'passed_checks': summary['passed_checks'],
+                'failed_checks': len(summary['failed_checks']),
+                'critical_failures': len(summary['critical_failures']),
+                'run_duration': (summary['end_time'] - 
+                               summary['start_time']).total_seconds()
+            },
+            'failed_checks': [{
+                'name': name,
+                'description': self.rules[name].description,
+                'severity': self.rules[name].severity,
+                'details': summary['results'][name]['details']
+            } for name in summary['failed_checks']],
+            'all_results': [{
+                'name': name,
+                'description': self.rules[name].description,
+                'severity': self.rules[name].severity,
+                'passed': result['passed'],
+                'timestamp': result['timestamp'],
+                'details': result.get('details')
+            } for name, result in summary['results'].items()]
+        }
+        
+        with open(output_path, 'w') as f:
+            json.dump(report, f, indent=2, default=str)
+            
+def example_checks():
+    """Example quality check functions."""
+    
+    def check_nulls(df: pd.DataFrame, threshold: float = 0.1) -> tuple:
+        null_fractions = df.isnull().mean()
+        columns_above_threshold = null_fractions[
+            null_fractions > threshold
+        ].index.tolist()
+        return (len(columns_above_threshold) == 0, {
+            'columns_above_threshold': columns_above_threshold,
+            'null_fractions': null_fractions.to_dict()
+        })
+        
+    def check_uniqueness(df: pd.DataFrame, 
+                        columns: List[str]) -> tuple:
+        duplicate_count = (
+            df[columns].duplicated().sum()
+        )
+        return (duplicate_count == 0, {
+            'duplicate_count': duplicate_count
+        })
+        
+    def check_value_range(df: pd.DataFrame, 
+                         column: str,
+                         min_value: float,
+                         max_value: float) -> tuple:
+        out_of_range = df[
+            (df[column] < min_value) | 
+            (df[column] > max_value)
+        ]
+        return (len(out_of_range) == 0, {
+            'out_of_range_count': len(out_of_range),
+            'min_found': df[column].min(),
+            'max_found': df[column].max()
+        })
+    
+    return [
+        QualityRule(
+            name='null_check',
+            description='Check for null values in columns',
+            rule_type='completeness',
+            check_function=check_nulls,
+            severity='critical',
+            parameters={'threshold': 0.05}
+        ),
+        QualityRule(
+            name='uniqueness_check',
+            description='Check for duplicate records',
+            rule_type='uniqueness',
+            check_function=check_uniqueness,
+            severity='critical',
+            parameters={'columns': ['id']}
+        ),
+        QualityRule(
+            name='age_range_check',
+            description='Check age values are within valid range',
+            rule_type='validity',
+            check_function=check_value_range,
+            severity='warning',
+            parameters={
+                'column': 'age',
+                'min_value': 0,
+                'max_value': 120
+            }
+        )
+    ]
+
+if __name__ == "__main__":
+    # Create framework
+    framework = DataQualityFramework()
+    
+    # Add example rules
+    for rule in example_checks():
+        framework.add_rule(rule)
+    
+    # Example data
+    df = pd.DataFrame({
+        'id': range(100),
+        'name': [f'User {i}' for i in range(100)],
+        'age': np.random.randint(0, 100, 100)
+    })
+    
+    # Run checks
+    summary = framework.run_checks(df)
+    
+    # Generate report
+    framework.generate_report(summary, 'quality_report.json')
+    
+    print("Quality Check Summary:")
+    print(f"Total Checks: {summary['total_checks']}")
+    print(f"Passed Checks: {summary['passed_checks']}")
+    print(f"Failed Checks: {len(summary['failed_checks'])}")
+    if summary['critical_failures']:
+        print("Critical Failures:", summary['critical_failures'])`,
+    explanation: "This intermediate exercise implements a flexible data quality framework with support for custom rules, dependencies, and detailed reporting. It includes example quality checks and a comprehensive reporting system."
+                }
+            }
+        ],
+        advancedExercises: [
+            {
+                title: "Distributed Data Processing Framework",
+                difficulty: "Hard",
+                description: "Create a framework for distributed data processing with support for parallel execution and fault tolerance.",
+                hints: [
+                    "Implement data partitioning",
+                    "Add worker management",
+                    "Include fault tolerance",
+                    "Handle data aggregation"
+                ],
+                solution: {
+                    code: `import multiprocessing as mp
+from typing import Dict, List, Callable, Any
+import pandas as pd
+import numpy as np
+import logging
+import queue
+import time
+from dataclasses import dataclass
+import threading
+import json
+from datetime import datetime
+import hashlib
+
+@dataclass
+class Task:
+    id: str
+    function: Callable
+    data: Any
+    dependencies: List[str] = None
+    retry_count: int = 0
+    max_retries: int = 3
+
+@dataclass
+class TaskResult:
+    task_id: str
+    status: str
+    result: Any = None
+    error: str = None
+    processing_time: float = None
+
+class DistributedProcessor:
+    def __init__(self, num_workers: int = None):
+        self.num_workers = num_workers or mp.cpu_count()
+        self.task_queue = mp.Queue()
+        self.result_queue = mp.Queue()
+        self.workers = []
+        self.tasks = {}
+        self.results = {}
+        self.setup_logging()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(processName)s - %(levelname)s - %(message)s'
+        )
+        
+    def start_workers(self):
+        """Start worker processes."""
+        for i in range(self.num_workers):
+            worker = mp.Process(
+                target=self._worker_process,
+                args=(self.task_queue, self.result_queue),
+                name=f"Worker-{i}"
+            )
+            worker.start()
+            self.workers.append(worker)
+            
+    def stop_workers(self):
+        """Stop all worker processes."""
+        # Send termination signal
+        for _ in self.workers:
+            self.task_queue.put(None)
+            
+        # Wait for workers to finish
+        for worker in self.workers:
+            worker.join()
+            
+        # Clear queues
+        while not self.task_queue.empty():
+            try:
+                self.task_queue.get_nowait()
+            except queue.Empty:
+                break
+                
+        while not self.result_queue.empty():
+            try:
+                self.result_queue.get_nowait()
+            except queue.Empty:
+                break
+                
+    def add_task(self, task: Task):
+        """Add task to processing queue."""
+        self.tasks[task.id] = task
+        if not task.dependencies or all(
+            dep in self.results and 
+            self.results[dep].status == 'completed'
+            for dep in task.dependencies
+        ):
+            self.task_queue.put(task)
+        
+     def process_data(self, data: pd.DataFrame, 
+                    operations: List[Dict]) -> pd.DataFrame:
+        """Process data using distributed operations."""
+        try:
+            start_time = time.time()
+            
+            # Start worker processes
+            self.start_workers()
+            
+            # Initialize result collector thread
+            collector = threading.Thread(
+                target=self._collect_results
+            )
+            collector.start()
+            
+            # Partition data
+            partitions = self._partition_data(data)
+            logging.info(f"Created {len(partitions)} partitions")
+            
+            # Create tasks for each operation and partition
+            for op_idx, operation in enumerate(operations):
+                for part_idx, partition in enumerate(partitions):
+                    task_id = f"task_{op_idx}_{part_idx}"
+                    dependencies = []
+                    
+                    # Add dependencies from previous operation
+                    if op_idx > 0:
+                        dependencies = [
+                            f"task_{op_idx-1}_{part_idx}"
+                        ]
+                    
+                    task = Task(
+                        id=task_id,
+                        function=self._get_operation_function(
+                            operation
+                        ),
+                        data=partition,
+                        dependencies=dependencies
+                    )
+                    self.add_task(task)
+            
+            # Wait for all tasks to complete
+            while len(self.results) < len(self.tasks):
+                time.sleep(0.1)
+                
+            # Stop workers and collector
+            self.stop_workers()
+            collector.join()
+            
+            # Combine results
+            final_result = self._combine_results(
+                operations,
+                len(partitions)
+            )
+            
+            processing_time = time.time() - start_time
+            logging.info(
+                f"Processing completed in {processing_time:.2f} seconds"
+            )
+            
+            return final_result
+            
+        except Exception as e:
+            logging.error(f"Processing failed: {str(e)}")
+            raise
+            
+    def _worker_process(self, task_queue: mp.Queue,
+                       result_queue: mp.Queue):
+        """Worker process function."""
+        while True:
+            try:
+                # Get task from queue
+                task = task_queue.get()
+                if task is None:
+                    break
+                    
+                start_time = time.time()
+                
+                try:
+                    # Execute task function
+                    result = task.function(task.data)
+                    status = 'completed'
+                    error = None
+                except Exception as e:
+                    result = None
+                    error = str(e)
+                    status = 'failed'
+                    
+                    # Retry logic
+                    if task.retry_count < task.max_retries:
+                        task.retry_count += 1
+                        logging.warning(
+                            f"Retrying task {task.id} "
+                            f"(attempt {task.retry_count})"
+                        )
+                        self.task_queue.put(task)
+                        continue
+                
+                processing_time = time.time() - start_time
+                
+                # Send result
+                task_result = TaskResult(
+                    task_id=task.id,
+                    status=status,
+                    result=result,
+                    error=error,
+                    processing_time=processing_time
+                )
+                result_queue.put(task_result)
+                
+            except Exception as e:
+                logging.error(
+                    f"Worker process error: {str(e)}"
+                )
+                
+    def _collect_results(self):
+        """Collect and process task results."""
+        while True:
+            try:
+                # Get result from queue
+                result = self.result_queue.get(timeout=1)
+                self.results[result.task_id] = result
+                
+                # Check for dependent tasks
+                self._process_dependent_tasks(result.task_id)
+                
+            except queue.Empty:
+                # Check if all workers are done
+                if not any(w.is_alive() for w in self.workers):
+                    break
+                    
+    def _process_dependent_tasks(self, completed_task_id: str):
+        """Process tasks that depend on the completed task."""
+        for task_id, task in self.tasks.items():
+            if (task_id not in self.results and
+                task.dependencies and
+                completed_task_id in task.dependencies):
+                
+                # Check if all dependencies are completed
+                if all(
+                    dep in self.results and
+                    self.results[dep].status == 'completed'
+                    for dep in task.dependencies
+                ):
+                    self.task_queue.put(task)
+                    
+    def _partition_data(self, data: pd.DataFrame) -> List[pd.DataFrame]:
+        """Partition data for parallel processing."""
+        partition_size = max(
+            1,
+            len(data) // (self.num_workers * 2)
+        )
+        return [
+            data.iloc[i:i + partition_size]
+            for i in range(0, len(data), partition_size)
+        ]
+        
+    def _get_operation_function(self, operation: Dict) -> Callable:
+        """Create function for the specified operation."""
+        op_type = operation['type']
+        params = operation.get('parameters', {})
+        
+        if op_type == 'transform':
+            return lambda df: df.apply(
+                eval(operation['function']),
+                axis=1 if operation.get('axis') == 1 else 0
+            )
+        elif op_type == 'filter':
+            return lambda df: df[
+                df.eval(operation['condition'])
+            ]
+        elif op_type == 'aggregate':
+            return lambda df: df.groupby(
+                operation['group_by']
+            ).agg(operation['aggregations'])
+        else:
+            raise ValueError(f"Unknown operation type: {op_type}")
+            
+    def _combine_results(self, operations: List[Dict],
+                        num_partitions: int) -> pd.DataFrame:
+        """Combine results from all partitions."""
+        final_results = []
+        
+        # Get results for the last operation
+        last_op_idx = len(operations) - 1
+        for part_idx in range(num_partitions):
+            task_id = f"task_{last_op_idx}_{part_idx}"
+            if (task_id in self.results and 
+                self.results[task_id].status == 'completed'):
+                final_results.append(
+                    self.results[task_id].result
+                )
+        
+        # Combine based on last operation type
+        last_op = operations[-1]
+        if last_op['type'] == 'aggregate':
+            return pd.concat(final_results).groupby(
+                last_op['group_by']
+            ).agg(last_op['aggregations'])
+        else:
+            return pd.concat(final_results, ignore_index=True)
+            
+if __name__ == "__main__":
+    # Example usage
+    
+    # Create sample data
+    data = pd.DataFrame({
+        'id': range(1000000),
+        'value': np.random.randn(1000000),
+        'category': np.random.choice(['A', 'B', 'C'], 1000000)
+    })
+    
+    # Define operations
+    operations = [
+        {
+            'type': 'filter',
+            'condition': 'value > 0'
+        },
+        {
+            'type': 'transform',
+            'function': 'lambda x: x * 2',
+            'column': 'value'
+        },
+        {
+            'type': 'aggregate',
+            'group_by': ['category'],
+            'aggregations': {
+                'value': ['mean', 'std', 'count']
+            }
+        }
+    ]
+    
+    # Initialize and run processor
+    processor = DistributedProcessor()
+    result = processor.process_data(data, operations)
+    
+    print("\nProcessing Results:")
+    print(result)`,
+    explanation: "This advanced exercise implements a distributed data processing framework that handles parallel execution, fault tolerance, and data partitioning. It includes features like task dependencies, retry logic, and result aggregation. The framework supports different types of operations and can efficiently process large datasets using multiple worker processes."
+                }
+            }
+        ]
+    }
+}
+},
+
+{
+    id: 15,
+    title: "Game Development",
+    description: "To learn game dev, follow this roadmap",
+    extendedContent: `
+        Master the fundamentals of game development and design immersive, interactive experiences. Start with programming basics, focusing on languages like C# or C++, and learn game engines like Unity or Unreal. Explore game physics, 2D and 3D graphics, and animation techniques. Progress through game architecture, asset management, and optimization for performance. Understand gameplay mechanics, user interface design, and audio integration. Advanced topics include multiplayer networking, artificial intelligence, shader programming, and VR/AR development. Build hands-on experience through projects, utilizing industry-standard tools and workflows for a complete game development journey.
+    `,
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        prerequisites: [
+            
+
+"Basic programming knowledge (C++ or C# preferred; Python helpful for scripting)",
+ "Understanding of game engines (Unity or Unreal Engine recommended)",
+ "Familiarity with 3D mathematics (vectors, matrices, transformations)",
+ "Basic understanding of algorithms and data structures",
+ "Knowledge of version control systems (e.g., Git)",
+ "Problem-solving aptitude",
+ "Basic knowledge of graphics and rendering",
+ "Understanding of physics principles for gameplay realism",
+ "Basic audio integration knowledge"
+        ],
+        outcomes: [
+ "Ability to design and implement game mechanics and systems",
+ "Proficiency in using game engines like Unity or Unreal Engine",
+ "Strong understanding of 3D mathematics for game development",
+ "Ability to work with version control systems (e.g., Git) for team collaboration",
+ "Capability to optimize game performance and troubleshoot issues",
+ "Understanding of physics and audio integration in games",
+ "Experience with developing and implementing AI behaviors in games",
+ "Ability to create engaging user interfaces and game controls",
+ "Understanding of the entire game development pipeline, from concept to deployment",
+        ],
+        sections: [
+            {
+                title: "Game Design Fundamentals",
+                content: "Master the core principles of game design including gameplay mechanics, level design, and player engagement. Learn about game genres, user experience (UX), and game balancing. Understand the design process from concept to prototype."
+            },
+            {
+                title: "Game Engines",
+                content: "Study popular game engines such as Unity and Unreal Engine. Learn about scene creation, asset management, scripting, and the game loop. Understand the importance of rendering, physics simulation, and game object management."
+            },
+            {
+                title: "3D Graphics & Animation",
+                content: "Learn the fundamentals of 3D modeling, animation, and rendering. Understand the principles of texturing, lighting, and shaders. Study the math behind 3D transformations, projections, and camera systems."
+            },
+            {
+                title: "Artificial Intelligence in Games",
+                content: "Master AI techniques used in games including pathfinding, decision trees, behavior trees, and state machines. Learn how to implement enemy AI, NPC behaviors, and procedural content generation."
+            },
+            {
+                title: "Multiplayer Game Development",
+                content: "Learn the basics of networking, client-server architecture, and real-time communication protocols. Study multiplayer game synchronization, matchmaking, and lag compensation. Understand network security and anti-cheating strategies."
+            },
+            {
+                title: "Audio & Music in Games",
+                content: "Study sound design and audio integration in games. Learn how to implement background music, sound effects, voice acting, and dynamic soundscapes. Understand the role of audio in enhancing gameplay immersion and emotional impact."
+            },
+            {
+                title: "Performance Optimization & Debugging",
+                content: "Master game performance tuning including frame rate optimization, memory management, and GPU/CPU profiling. Learn how to identify and fix common game performance bottlenecks. Study debugging tools and techniques for stable game releases."
+            },
+            {
+                title: "Game Publishing & Distribution",
+                content: "Understand the process of publishing games across multiple platforms, including PC, console, and mobile. Learn about distribution channels, app stores, and marketing strategies. Study the business side of game development including monetization models and player retention strategies."
+            }
+            
+        ]
+    },
+    content: {
+        examples: [
+            {
+                title: "Basic Enemy AI with Pathfinding",
+                code: `using UnityEngine;
+        using System.Collections;
+        
+        public class EnemyAI : MonoBehaviour
+        {
+            public Transform target;
+            public float speed = 2.0f;
+            private Vector3[] path;
+            private int targetIndex;
+        
+            void Start()
+            {
+                // Initialize path and find the path to target
+                targetIndex = 0;
+                FindPathToTarget();
+            }
+        
+            void Update()
+            {
+                // Move the enemy along the path
+                if (path != null && path.Length > 0)
+                {
+                    MoveAlongPath();
+                }
+            }
+        
+            void FindPathToTarget()
+            {
+                // Example of simple pathfinding (this could be replaced with an actual pathfinding algorithm)
+                path = new Vector3[] { transform.position, target.position };
+            }
+        
+            void MoveAlongPath()
+            {
+                if (targetIndex < path.Length)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, path[targetIndex], speed * Time.deltaTime);
+                    if (transform.position == path[targetIndex])
+                    {
+                        targetIndex++;
+                    }
+                }
+            }
+        }`
+                ,
+                explanation: "This code demonstrates a basic enemy AI that uses pathfinding to move toward a target. The pathfinding is simplified to a direct path, but it can be enhanced by integrating advanced algorithms like A* for more complex scenarios."
+            },
+            {
+                title: "Basic Player Movement Script in Unity",
+                code: `using UnityEngine;
+        
+        public class PlayerMovement : MonoBehaviour
+        {
+            public float speed = 5.0f;
+        
+            void Update()
+            {
+                // Get input from the player
+                float horizontal = Input.GetAxis("Horizontal");
+                float vertical = Input.GetAxis("Vertical");
+        
+                // Move the player based on input
+                Vector3 movement = new Vector3(horizontal, 0, vertical) * speed * Time.deltaTime;
+                transform.Translate(movement);
+            }
+        }`
+                ,
+                explanation: "This script controls basic player movement in Unity using input from the keyboard (WASD or arrow keys). The player's movement is translated along the x and z axes, with adjustable speed."
+            },
+            {
+                title: "Basic Enemy Spawning System",
+                code: `using UnityEngine;
+        
+        public class EnemySpawner : MonoBehaviour
+        {
+            public GameObject enemyPrefab;
+            public float spawnInterval = 3.0f;
+            private float nextSpawnTime = 0.0f;
+        
+            void Update()
+            {
+                // Spawn enemy at intervals
+                if (Time.time > nextSpawnTime)
+                {
+                    SpawnEnemy();
+                    nextSpawnTime = Time.time + spawnInterval;
+                }
+            }
+        
+            void SpawnEnemy()
+            {
+                // Instantiate enemy at a random position
+                float randomX = Random.Range(-10f, 10f);
+                float randomZ = Random.Range(-10f, 10f);
+                Instantiate(enemyPrefab, new Vector3(randomX, 0, randomZ), Quaternion.identity);
+            }
+        }`
+                ,
+                explanation: "This code demonstrates an enemy spawning system in Unity. Enemies are spawned at random positions within a defined range at regular intervals. The enemy prefab can be customized with different enemy types."
+            }
+        ],
+        
+    roadmap:[
+        {
+            title: "1. Introduction to Game Development",
+            description: "Learn the fundamentals of game development and game engines.",
+            topics: [
+                "Game Design Basics",
+                "Game Development Process",
+                "Overview of Game Engines (Unity, Unreal Engine)",
+                "Basic Game Programming (C#, C++)",
+                "Game Physics Concepts",
+                "User Interface (UI) Design",
+                "Basic Game Art (2D/3D Assets)"
+            ]
+        },
+        {
+            title: "2. Game Engine Mastery",
+            description: "Deep dive into game engines and their core features.",
+            topics: [
+                "Unity Engine Basics",
+                "Unreal Engine Basics",
+                "Scene Management",
+                "Prefab Systems",
+                "Scripting in Unity (C#)",
+                "Blueprints in Unreal Engine",
+                "Physics and Collision Handling"
+            ]
+        },
+        {
+            title: "3. Game Art and Asset Creation",
+            description: "Learn how to create and integrate game assets.",
+            topics: [
+                "3D Modeling and Animation",
+                "Sprite and Texture Creation",
+                "Rigging and Character Animation",
+                "Importing and Exporting Assets",
+                "Lighting and Shadows in Games",
+                "Sound Design and Music for Games",
+                "Optimizing Game Assets"
+            ]
+        },
+        {
+            title: "4. Game Mechanics and Scripting",
+            description: "Master the coding techniques to implement gameplay features.",
+            topics: [
+                "Player Input and Controls",
+                "AI and NPC Behavior",
+                "Game Physics and Movement",
+                "Combat and Interaction Systems",
+                "Inventory and Item Systems",
+                "Camera Systems",
+                "Event Handling and Game Logic"
+            ]
+        },
+        {
+            title: "5. Multiplayer Game Development",
+            description: "Learn how to create multiplayer experiences.",
+            topics: [
+                "Networking Basics (TCP/IP, UDP)",
+                "Server-Client Architecture",
+                "Multiplayer Game Modes",
+                "Networked Game Objects",
+                "Lag Compensation and Prediction",
+                "Synchronization and Data Serialization",
+                "Hosting and Matchmaking"
+            ]
+        },
+        {
+            title: "6. Game Optimization and Performance",
+            description: "Optimize games for better performance and scalability.",
+            topics: [
+                "Memory Management and Profiling",
+                "Frame Rate Optimization",
+                "Asset Loading Techniques",
+                "Level of Detail (LOD) Systems",
+                "Object Pooling and Resource Management",
+                "Physics and Collision Optimization",
+                "Code and Algorithm Optimization"
+            ]
+        },
+        {
+            title: "7. Game Publishing and Monetization",
+            description: "Understand the business side of game development.",
+            topics: [
+                "Game Distribution Platforms (Steam, Epic Store, Console)",
+                "Monetization Models (In-App Purchases, Ads)",
+                "Quality Assurance and Bug Testing",
+                "Beta Testing and User Feedback",
+                "Marketing and Community Management",
+                "Legal and Licensing for Games",
+                "Game Analytics and Metrics"
+            ]
+        },
+        {
+            title: "8. Advanced Game Development Techniques",
+            description: "Master complex game development topics.",
+            topics: [
+                "Procedural Content Generation",
+                "Advanced AI Techniques (Pathfinding, Decision Trees)",
+                "Virtual Reality (VR) and Augmented Reality (AR) Development",
+                "Game Engines Source Code Customization",
+                "Cross-Platform Development",
+                "Game Server Architecture and Scalability",
+                "Advanced Multiplayer Techniques (Matchmaking, Anti-Cheat)"
+            ]
+        }
+    ],
+            
+    resources: {
+            "documentation": [
+                {
+                    "title": "Unity Documentation",
+                    "url": "https://docs.unity3d.com/Manual/",
+                    "description": "Official documentation for Unity game engine.",
+                    "type": "Game Engine Documentation"
+                },
+                {
+                    "title": "Unreal Engine Documentation",
+                    "url": "https://docs.unrealengine.com/",
+                    "description": "Comprehensive guide for Unreal Engine.",
+                    "type": "Game Engine Documentation"
+                },
+                {
+                    "title": "Godot Documentation",
+                    "url": "https://docs.godotengine.org/",
+                    "description": "Official documentation for Godot Engine.",
+                    "type": "Game Engine Documentation"
+                },
+                {
+                    "title": "C# Game Development",
+                    "url": "https://learn.microsoft.com/en-us/dotnet/csharp/",
+                    "description": "Official C# documentation for game development.",
+                    "type": "Programming Language Documentation"
+                },
+                {
+                    "title": "Game Design Patterns",
+                    "url": "https://gameprogrammingpatterns.com/",
+                    "description": "Game development design patterns and best practices.",
+                    "type": "Design Patterns Documentation"
+                }
+            ],
+            "tutorials": [
+                {
+                    "title": "Unity Learn",
+                    "url": "https://learn.unity.com/",
+                    "description": "Interactive Unity tutorials for game development.",
+                    "type": "Online Course"
+                },
+                {
+                    "title": "Unreal Engine Learning",
+                    "url": "https://www.unrealengine.com/learn",
+                    "description": "Free tutorials and courses for Unreal Engine.",
+                    "type": "Course Series"
+                },
+                {
+                    "title": "Godot Engine Tutorials",
+                    "url": "https://docs.godotengine.org/en/stable/getting_started/step_by_step/",
+                    "description": "Beginner-friendly tutorials for learning Godot.",
+                    "type": "Tutorial"
+                },
+                {
+                    "title": "GameDev.tv",
+                    "url": "https://www.gamedev.tv/",
+                    "description": "Comprehensive game development courses for Unity, Unreal Engine, and more.",
+                    "type": "Learning Platform"
+                },
+                {
+                    "title": "Codecademy Game Development",
+                    "url": "https://www.codecademy.com/learn/paths/game-development",
+                    "description": "Learn the basics of game development with Codecademy.",
+                    "type": "Training Program"
+                }
+            ],
+            "videos": [
+                {
+                    "title": "Brackeys YouTube Channel",
+                    "url": "https://www.youtube.com/c/Brackeys",
+                    "description": "Unity tutorials and game development tips.",
+                    "platform": "YouTube"
+                },
+                {
+                    "title": "Unreal Engine YouTube Channel",
+                    "url": "https://www.youtube.com/c/UnrealEngine",
+                    "description": "Official tutorials from Unreal Engine.",
+                    "platform": "YouTube"
+                },
+                {
+                    "title": "GDQuest YouTube Channel",
+                    "url": "https://www.youtube.com/c/GDQuest",
+                    "description": "Game design and development tutorials with Godot.",
+                    "platform": "YouTube"
+                },
+                {
+                    "title": "Game Maker's Toolkit",
+                    "url": "https://www.youtube.com/c/MarkBrownGMT",
+                    "description": "Game design analysis and insights.",
+                    "platform": "YouTube"
+                },
+                {
+                    "title": "GDC Vault",
+                    "url": "https://www.youtube.com/user/gdconf",
+                    "description": "Conference talks from the Game Developers Conference.",
+                    "platform": "YouTube"
+                }
+            ],
+            "books": [
+                {
+                    "title": "Game Programming Patterns",
+                    "author": "Robert Nystrom",
+                    "description": "A book on game programming design patterns.",
+                    "level": "Intermediate"
+                },
+                {
+                    "title": "The Art of Game Design",
+                    "author": "Jesse Schell",
+                    "description": "A comprehensive book on game design principles.",
+                    "level": "Advanced"
+                },
+                {
+                    "title": "Unity in Action",
+                    "author": "Joseph Hocking",
+                    "description": "A guide to building 2D and 3D games in Unity.",
+                    "level": "Intermediate"
+                },
+                {
+                    "title": "Unreal Engine 4.x Scripting with C++",
+                    "author": "John P. Doran",
+                    "description": "A guide to programming in Unreal Engine using C++.",
+                    "level": "Intermediate"
+                },
+                {
+                    "title": "Game Design Workshop",
+                    "author": "Tracy Fullerton",
+                    "description": "An interactive approach to learning game design.",
+                    "level": "Beginner"
+                }
+            ],
+            "tools": [
+                {
+                    "title": "Unity",
+                    "url": "https://unity.com/",
+                    "description": "A powerful game engine for creating 2D and 3D games.",
+                    "type": "Game Engine",
+                    "category": "Essential"
+                },
+                {
+                    "title": "Unreal Engine",
+                    "url": "https://www.unrealengine.com/",
+                    "description": "A top-tier game engine for creating AAA-quality games.",
+                    "type": "Game Engine",
+                    "category": "Essential"
+                },
+                {
+                    "title": "Godot",
+                    "url": "https://godotengine.org/",
+                    "description": "An open-source game engine with a focus on 2D and 3D games.",
+                    "type": "Game Engine",
+                    "category": "Essential"
+                },
+                {
+                    "title": "Blender",
+                    "url": "https://www.blender.org/",
+                    "description": "Open-source 3D modeling, animation, and rendering tool.",
+                    "type": "3D Modeling Tool",
+                    "category": "Essential"
+                },
+                {
+                    "title": "Tiled",
+                    "url": "https://www.mapeditor.org/",
+                    "description": "A 2D level editor for creating tile-based maps.",
+                    "type": "Level Design Tool",
+                    "category": "Useful"
+                }
+            ],
+            "communities": [
+                {
+                    "title": "Unity Developer Community",
+                    "url": "https://forum.unity.com/",
+                    "description": "Official Unity forums for game developers.",
+                    "type": "Forum"
+                },
+                {
+                    "title": "Unreal Engine Forums",
+                    "url": "https://forums.unrealengine.com/",
+                    "description": "Official forums for Unreal Engine game developers.",
+                    "type": "Forum"
+                },
+                {
+                    "title": "Godot Community",
+                    "url": "https://godotengine.org/community",
+                    "description": "The official community for Godot Engine users.",
+                    "type": "Community Platform"
+                },
+                {
+                    "title": "GameDev.net",
+                    "url": "https://www.gamedev.net/",
+                    "description": "A platform for all types of game developers to learn and collaborate.",
+                    "type": "Community Platform"
+                },
+                {
+                    "title": "Indie Game Developers",
+                    "url": "https://www.reddit.com/r/IndieDev/",
+                    "description": "Subreddit for indie game development discussions.",
+                    "type": "Forum"
+                }
+            ],
+            "podcasts": [
+                {
+                    "title": "Game Maker's Notebook",
+                    "url": "https://www.makinggamespodcast.com/",
+                    "description": "Interviews with industry professionals about game development.",
+                    "platform": "Podcast"
+                },
+                {
+                    "title": "The GameDev Show",
+                    "url": "https://www.gamedevshow.com/",
+                    "description": "Game development discussions and interviews with experts.",
+                    "platform": "Podcast"
+                },
+                {
+                    "title": "The AI Game Developer",
+                    "url": "https://www.theaigame.com/podcast/",
+                    "description": "Podcast focusing on AI in game development.",
+                    "platform": "Podcast"
+                },
+                {
+                    "title": "GameDev Breakdown",
+                    "url": "https://www.gamedevsimple.com/podcast/",
+                    "description": "Game development topics for all levels.",
+                    "platform": "Podcast"
+                }
+            ],
+            "blogs": [
+                {
+                    "title": "Gamasutra",
+                    "url": "https://www.gamasutra.com/",
+                    "description": "Game development articles, tutorials, and job listings.",
+                    "type": "Industry Blog"
+                },
+                {
+                    "title": "Indie Game Developer Network",
+                    "url": "https://www.igdn.org/",
+                    "description": "Blog focused on indie game development.",
+                    "type": "Community Blog"
+                },
+                {
+                    "title": "Game Design Resources",
+                    "url": "https://www.gamedesignresources.com/",
+                    "description": "Articles and tools for game designers and developers.",
+                    "type": "Design Blog"
+                },
+                {
+                    "title": "Unity Blog",
+                    "url": "https://blog.unity.com/",
+                    "description": "News and insights for Unity game developers.",
+                    "type": "Official Blog"
+                }
+            ]
+        },
+        practice: {
+            beginnerExercises: [
+                {
+                    title: "Simple Pong Game",
+                    difficulty: "Easy",
+                    description: "Create a simple Pong game where two players can control paddles on either side of the screen to hit a ball back and forth.",
+                    hints: [
+                        "Use basic collision detection for paddles and ball",
+                        "Implement player-controlled paddles using keyboard inputs",
+                        "Keep track of the score and display it on the screen",
+                        "Use basic physics to make the ball bounce off walls and paddles"
+                    ],
+                    solution: {
+                        code: `
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Set up game objects
+        const paddleWidth = 10, paddleHeight = 100, ballSize = 10;
+        let leftPaddleY = (canvas.height - paddleHeight) / 2, rightPaddleY = (canvas.height - paddleHeight) / 2;
+        let ballX = canvas.width / 2, ballY = canvas.height / 2;
+        let ballSpeedX = 5, ballSpeedY = 5;
+        let leftPaddleSpeed = 0, rightPaddleSpeed = 0;
+        let leftScore = 0, rightScore = 0;
+        
+        // Key event listeners
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowUp') rightPaddleSpeed = -5;
+          if (e.key === 'ArrowDown') rightPaddleSpeed = 5;
+          if (e.key === 'w') leftPaddleSpeed = -5;
+          if (e.key === 's') leftPaddleSpeed = 5;
+        });
+        
+        document.addEventListener('keyup', (e) => {
+          if (e.key === 'ArrowUp' || e.key === 'ArrowDown') rightPaddleSpeed = 0;
+          if (e.key === 'w' || e.key === 's') leftPaddleSpeed = 0;
+        });
+        
+        // Game loop
+        function gameLoop() {
+          updateGame();
+          renderGame();
+          requestAnimationFrame(gameLoop);
+        }
+        
+        // Update game logic
+        function updateGame() {
+          // Move paddles
+          leftPaddleY += leftPaddleSpeed;
+          rightPaddleY += rightPaddleSpeed;
+          
+          // Prevent paddles from going out of bounds
+          leftPaddleY = Math.max(0, Math.min(canvas.height - paddleHeight, leftPaddleY));
+          rightPaddleY = Math.max(0, Math.min(canvas.height - paddleHeight, rightPaddleY));
+          
+          // Move ball
+          ballX += ballSpeedX;
+          ballY += ballSpeedY;
+        
+          // Ball collision with top and bottom walls
+          if (ballY <= 0 || ballY >= canvas.height) ballSpeedY = -ballSpeedY;
+        
+          // Ball collision with paddles
+          if (ballX <= paddleWidth && ballY >= leftPaddleY && ballY <= leftPaddleY + paddleHeight) ballSpeedX = -ballSpeedX;
+          if (ballX >= canvas.width - paddleWidth && ballY >= rightPaddleY && ballY <= rightPaddleY + paddleHeight) ballSpeedX = -ballSpeedX;
+        
+          // Ball out of bounds (score update)
+          if (ballX <= 0) {
+            rightScore++;
+            resetBall();
+          }
+          if (ballX >= canvas.width) {
+            leftScore++;
+            resetBall();
+          }
+        }
+        
+        // Reset ball position after scoring
+        function resetBall() {
+          ballX = canvas.width / 2;
+          ballY = canvas.height / 2;
+          ballSpeedX = -ballSpeedX;
+        }
+        
+        // Render game elements
+        function renderGame() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          
+          // Draw paddles
+          ctx.fillStyle = 'white';
+          ctx.fillRect(0, leftPaddleY, paddleWidth, paddleHeight);
+          ctx.fillRect(canvas.width - paddleWidth, rightPaddleY, paddleWidth, paddleHeight);
+          
+          // Draw ball
+          ctx.beginPath();
+          ctx.arc(ballX, ballY, ballSize, 0, Math.PI * 2);
+          ctx.fill();
+          
+          // Draw scores
+          ctx.font = '30px Arial';
+          ctx.fillText(leftScore, canvas.width / 4, 50);
+          ctx.fillText(rightScore, 3 * canvas.width / 4, 50);
+        }
+        
+        // Start the game loop
+        gameLoop();
+                        `,
+                        explanation: "This beginner-level game implements a simple Pong game where players use the keyboard to control paddles and try to prevent the ball from passing their side. The game involves basic collision detection, user input handling, and game state management like scoring."
+                    }
+                }
+            ],
+            advancedExercises: [
+                {
+                    title: "2D Platformer Game with Physics",
+                    difficulty: "Hard",
+                    description: "Create a 2D platformer game that includes player movement, gravity, jumping, and basic platform collision detection.",
+                    hints: [
+                        "Use basic physics to apply gravity to the player character",
+                        "Implement jumping with velocity and gravity",
+                        "Detect collision between the player and platforms",
+                        "Keep track of the player's position and velocity"
+                    ],
+                    solution: {
+                        code: `
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Game settings
+        const gravity = 0.5;
+        const friction = 0.9;
+        const jumpStrength = -12;
+        const playerWidth = 50, playerHeight = 50;
+        let playerX = 100, playerY = canvas.height - playerHeight;
+        let playerSpeedX = 0, playerSpeedY = 0;
+        let isJumping = false;
+        let platforms = [
+            { x: 0, y: canvas.height - 50, width: canvas.width, height: 50 },
+            { x: 200, y: canvas.height - 150, width: 200, height: 20 },
+            { x: 500, y: canvas.height - 250, width: 200, height: 20 }
+        ];
+        
+        // Key event listeners for player movement
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') playerSpeedX = -5;
+          if (e.key === 'ArrowRight') playerSpeedX = 5;
+          if (e.key === 'Space' && !isJumping) jump();
+        });
+        
+        document.addEventListener('keyup', (e) => {
+          if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') playerSpeedX = 0;
+        });
+        
+        // Jumping logic
+        function jump() {
+          isJumping = true;
+          playerSpeedY = jumpStrength;
+        }
+        
+        // Game loop
+        function gameLoop() {
+          updateGame();
+          renderGame();
+          requestAnimationFrame(gameLoop);
+        }
+        
+        // Update game logic
+        function updateGame() {
+          // Apply gravity
+          playerSpeedY += gravity;
+          playerY += playerSpeedY;
+          playerX += playerSpeedX;
+        
+          // Platform collision detection
+          platforms.forEach(platform => {
+            if (playerY + playerHeight <= platform.y && playerY + playerHeight + playerSpeedY >= platform.y) {
+              if (playerX + playerWidth > platform.x && playerX < platform.x + platform.width) {
+                playerY = platform.y - playerHeight;
+                playerSpeedY = 0;
+                isJumping = false;
+              }
+            }
+          });
+        
+          // Prevent player from going off the screen
+          if (playerX < 0) playerX = 0;
+          if (playerX + playerWidth > canvas.width) playerX = canvas.width - playerWidth;
+          if (playerY + playerHeight > canvas.height) {
+            playerY = canvas.height - playerHeight;
+            playerSpeedY = 0;
+            isJumping = false;
+          }
+        }
+        
+        // Render game elements
+        function renderGame() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+          // Draw player
+          ctx.fillStyle = 'blue';
+          ctx.fillRect(playerX, playerY, playerWidth, playerHeight);
+        
+          // Draw platforms
+          ctx.fillStyle = 'green';
+          platforms.forEach(platform => {
+            ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
+          });
+        }
+        
+        // Start the game loop
+        gameLoop();
+                        `,
+                        explanation: "This advanced exercise introduces a 2D platformer game with player movement, gravity, and collision detection. The game simulates jumping physics and includes multiple platforms the player can land on. This exercise is more complex, requiring an understanding of physics principles like gravity and velocity in a game environment."
+                    }
+                }
+            ]
+        }
+        
+}
+},
+
+{
+
+    id: 17,
+    title: "AR/VR",
+    description: "To learn AR/VR, follow this roadmap",
+    extendedContent: `
+       Master the fundamentals of AR/VR development and design immersive, interactive experiences. Start with programming basics, focusing on languages like C# or C++, and learn AR/VR platforms such as Unity or Unreal Engine. Explore spatial computing, 3D graphics, and interactive design techniques. Progress through understanding sensors, tracking, and user interaction in virtual and augmented environments. Learn about performance optimization for smooth AR/VR experiences, and design intuitive user interfaces for these platforms. Advanced topics include multiplayer AR/VR networking, AI for virtual agents, custom shader programming, and AR/VR hardware integration. Build hands-on experience through projects, utilizing industry-standard tools and workflows to create fully immersive AR/VR experiences.
+
+    `,
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        prerequisites: [
+            "Basic programming knowledge (C# or C++ preferred; Python helpful for scripting)",
+            "Familiarity with AR/VR platforms (Unity or Unreal Engine recommended)",
+            "Understanding of 3D mathematics (vectors, matrices, transformations)",
+            "Basic understanding of algorithms and data structures",
+            "Knowledge of version control systems (e.g., Git)",
+            "Problem-solving aptitude",
+            "Understanding of spatial computing and 3D environments",
+            "Basic knowledge of augmented and virtual reality hardware",
+            "Understanding of basic audio integration for immersive experiences"
+        ],
+        outcomes: [
+            "Ability to design and implement interactive AR/VR experiences",
+            "Proficiency in using AR/VR platforms such as Unity or Unreal Engine",
+            "Strong understanding of 3D mathematics for spatial computing and virtual environments",
+            "Ability to work with version control systems (e.g., Git) for team collaboration",
+            "Capability to optimize AR/VR performance for smooth, responsive experiences",
+            "Understanding of sensors, tracking, and user interaction in AR/VR environments",
+            "Experience with integrating AI for virtual agents in AR/VR",
+            "Ability to create immersive user interfaces and intuitive controls in AR/VR",
+            "Understanding of the full AR/VR development pipeline, from concept to deployment"
+        ],
+        sections: [
+            {
+                title: "AR/VR Design Fundamentals",
+                content: "Master the core principles of AR/VR design, including immersive interaction, spatial awareness, and user engagement. Learn about different AR and VR hardware platforms, user experience (UX) in immersive environments, and balancing interactivity with performance."
+            },
+            {
+                title: "AR/VR Platforms and Engines",
+                content: "Study popular AR/VR platforms and game engines like Unity and Unreal Engine. Learn how to create 3D environments, manage assets, script interactions, and utilize the AR/VR game loop. Understand the importance of rendering, physics simulation, and spatial object management in immersive environments."
+            },
+            {
+                title: "3D Graphics & Animation in AR/VR",
+                content: "Learn the fundamentals of 3D modeling, animation, and rendering specific to AR/VR. Understand principles of texturing, lighting, and shaders for immersive realism. Dive into the mathematics behind 3D transformations, projections, and camera systems in virtual and augmented environments."
+            },
+            {
+                title: "Artificial Intelligence for AR/VR",
+                content: "Master AI techniques used in AR/VR including pathfinding, decision trees, behavior trees, and virtual agent behaviors. Learn how to implement intelligent non-playable characters (NPCs), real-time AI behaviors, and procedural content generation within an immersive environment."
+            },
+            {
+                title: "Multiplayer AR/VR Development",
+                content: "Learn the basics of networking for AR/VR, including client-server architecture and real-time communication protocols for immersive experiences. Study synchronization, matchmaking, and lag compensation in multiplayer AR/VR environments. Understand the challenges of network security and anti-cheating strategies in shared virtual worlds."
+            },
+            {
+                title: "Audio & Sound Design in AR/VR",
+                content: "Study immersive sound design for AR/VR. Learn how to integrate spatial audio, 3D soundscapes, background music, and voice acting to enhance player immersion. Understand the role of dynamic audio in AR/VR experiences and its impact on gameplay engagement."
+            },
+            {
+                title: "Performance Optimization & Debugging in AR/VR",
+                content: "Master performance optimization techniques for AR/VR applications. Focus on frame rate optimization, memory management, and GPU/CPU profiling to ensure smooth and immersive experiences. Learn to identify and resolve common performance bottlenecks, and study debugging tools for stable AR/VR releases."
+            },
+            {
+                title: "AR/VR Publishing & Distribution",
+                content: "Understand the process of publishing AR/VR experiences across multiple platforms, including headsets, mobile devices, and AR glasses. Learn about distribution channels, app stores, and marketing strategies specific to immersive technologies. Study the business aspects of AR/VR development, including monetization models and user engagement strategies for long-term retention."
+            }
+        ]
+    },
+    content: {
+        examples: [
+            {
+                title: "Basic AR Object Placement in Unity",
+                code: `using UnityEngine;
+        using UnityEngine.XR.ARFoundation;
+        using UnityEngine.XR.ARSubsystems;
+        
+        public class ARObjectPlacement : MonoBehaviour
+        {
+            public GameObject objectToPlace;
+            private ARRaycastManager raycastManager;
+            private Camera arCamera;
+        
+            void Start()
+            {
+                raycastManager = FindObjectOfType<ARRaycastManager>();
+                arCamera = Camera.main;
+            }
+        
+            void Update()
+            {
+                if (raycastManager != null && objectToPlace != null)
+                {
+                    Ray ray = arCamera.ScreenPointToRay(Input.GetTouch(0).position);
+                    List<ARRaycastHit> hits = new List<ARRaycastHit>();
+        
+                    if (raycastManager.Raycast(ray, hits, TrackableType.Planes))
+                    {
+                        Pose hitPose = hits[0].pose;
+                        objectToPlace.transform.position = hitPose.position;
+                        objectToPlace.transform.rotation = hitPose.rotation;
+                    }
+                }
+            }
+        }`
+                ,
+                explanation: "This script demonstrates how to place an object in an AR environment using Unity's AR Foundation. The object is placed on detected surfaces based on the user's touch input on the screen, using raycasting to detect surfaces and calculate the object's position and orientation."
+            },
+            {
+                title: "Basic VR Player Movement Script",
+                code: `using UnityEngine;
+        
+        public class VRPlayerMovement : MonoBehaviour
+        {
+            public float speed = 1.5f;
+            public Transform playerCamera;
+        
+            void Update()
+            {
+                // Move player based on controller input
+                float horizontal = Input.GetAxis("Horizontal");
+                float vertical = Input.GetAxis("Vertical");
+        
+                Vector3 direction = (playerCamera.forward * vertical + playerCamera.right * horizontal).normalized;
+                transform.Translate(direction * speed * Time.deltaTime, Space.World);
+            }
+        }`
+                ,
+                explanation: "This script handles basic VR player movement based on controller input (WASD or analog sticks). The movement is relative to the direction the player’s camera is facing, creating a more immersive experience as the player moves within the virtual world."
+            },
+            {
+                title: "Basic Hand Interaction in VR with Unity",
+                code: `using UnityEngine;
+        using UnityEngine.XR.Interaction.Toolkit;
+        
+        public class HandInteraction : MonoBehaviour
+        {
+            public XRGrabInteractable interactableObject;
+        
+            void OnEnable()
+            {
+                interactableObject.onSelectEntered.AddListener(OnGrab);
+                interactableObject.onSelectExited.AddListener(OnRelease);
+            }
+        
+            void OnDisable()
+            {
+                interactableObject.onSelectEntered.RemoveListener(OnGrab);
+                interactableObject.onSelectExited.RemoveListener(OnRelease);
+            }
+        
+            private void OnGrab(XRBaseInteractor interactor)
+            {
+                Debug.Log("Object grabbed");
+            }
+        
+            private void OnRelease(XRBaseInteractor interactor)
+            {
+                Debug.Log("Object released");
+            }
+        }`
+                ,
+                explanation: "This script enables basic hand interaction in VR using Unity’s XR Interaction Toolkit. It handles grabbing and releasing objects, triggering events when the player interacts with objects in the VR environment, offering an immersive way to engage with virtual objects."
+            }
+        ],        
+        
+        roadmap: [
+            {
+                title: "1. Introduction to AR/VR Development",
+                description: "Learn the fundamentals of Augmented Reality (AR) and Virtual Reality (VR) development.",
+                topics: [
+                    "Overview of AR and VR Technologies",
+                    "Difference Between AR and VR",
+                    "Hardware Requirements (Headsets, Cameras, Sensors)",
+                    "Basic Principles of Immersion and Interaction",
+                    "AR/VR Software Development Kits (SDKs)",
+                    "Introduction to ARCore and ARKit",
+                    "Introduction to Unity for AR/VR"
+                ]
+            },
+            {
+                title: "2. AR/VR Development Platforms and Tools",
+                description: "Explore popular platforms and tools used in AR/VR development.",
+                topics: [
+                    "Unity Basics for AR/VR",
+                    "Unreal Engine for AR/VR",
+                    "Understanding XR Interaction Toolkit",
+                    "Building Simple VR Applications",
+                    "Building AR Applications with AR Foundation",
+                    "Creating 3D Models and Environments for AR/VR",
+                    "Using Spatial Mapping and Tracking in AR"
+                ]
+            },
+            {
+                title: "3. AR/VR Interaction Design",
+                description: "Learn how to design immersive and interactive AR/VR experiences.",
+                topics: [
+                    "User Interaction Models (Gaze, Gesture, Controller Input)",
+                    "Teleportation and Locomotion in VR",
+                    "Object Manipulation (Grabbing, Throwing, Scaling)",
+                    "UI/UX Design for AR/VR",
+                    "Gestural Interfaces for AR/VR",
+                    "Haptic Feedback and Sensory Immersion",
+                    "Designing for Comfort in VR (Motion Sickness Prevention)"
+                ]
+            },
+            {
+                title: "4. AR/VR Mechanics and Scripting",
+                description: "Master the coding techniques to implement gameplay features in AR/VR.",
+                topics: [
+                    "Player Movement and Navigation in VR",
+                    "Camera Systems and 6DoF (Degrees of Freedom)",
+                    "Physics and Collision Detection in AR/VR",
+                    "Object Interaction and Manipulation",
+                    "Gestures and Hand Tracking",
+                    "Tracking and Positioning in AR",
+                    "Audio and Visual Feedback in AR/VR"
+                ]
+            },
+            {
+                title: "5. AR/VR Multiplayer and Networking",
+                description: "Learn how to create multiplayer AR/VR experiences.",
+                topics: [
+                    "Networking Basics for AR/VR",
+                    "Multiplayer Interaction Models in VR",
+                    "Synchronizing Multiple AR/VR Devices",
+                    "Data Synchronization and Replication",
+                    "Server-Client Architecture for AR/VR",
+                    "Voice and Audio Communication in Multiplayer VR",
+                    "Latency Compensation and Networking Optimization"
+                ]
+            },
+            {
+                title: "6. AR/VR Optimization and Performance",
+                description: "Optimize AR/VR applications for better performance and user experience.",
+                topics: [
+                    "Optimizing Frame Rates and Latency in VR",
+                    "Memory Management in AR/VR",
+                    "Performance Profiling for AR/VR",
+                    "Reducing Motion Sickness through Optimization",
+                    "Level of Detail (LOD) and Asset Streaming",
+                    "Managing Resources for Mobile AR/VR",
+                    "Graphics Optimization for AR/VR"
+                ]
+            },
+            {
+                title: "7. AR/VR Publishing and Monetization",
+                description: "Understand the business side of AR/VR development.",
+                topics: [
+                    "Publishing AR/VR Apps on Platforms (Oculus Store, App Store, Google Play)",
+                    "Monetization Strategies for AR/VR (In-App Purchases, Ads)",
+                    "Quality Assurance and Testing for AR/VR",
+                    "Beta Testing and User Feedback for AR/VR",
+                    "Marketing AR/VR Experiences",
+                    "Analytics for AR/VR Apps",
+                    "Legal and Licensing for AR/VR Content"
+                ]
+            },
+            {
+                title: "8. Advanced AR/VR Development Techniques",
+                description: "Master advanced AR/VR development topics.",
+                topics: [
+                    "Procedural Content Generation in AR/VR",
+                    "Advanced Interaction Techniques (Eye-Tracking, Full-Body Tracking)",
+                    "Mixed Reality (MR) Development",
+                    "Developing for Haptic Devices and Full-Body Immersion",
+                    "AR/VR for Training and Simulation",
+                    "Cross-Platform AR/VR Development",
+                    "Future Trends in AR/VR (AI, Cloud, 5G)"
+                ]
+            }
+        ] ,       
+            
+    resources: {
+        "documentation": [
+          {
+            "title": "ARCore Documentation",
+            "url": "https://developers.google.com/ar",
+            "description": "Official documentation for ARCore, Google's platform for building augmented reality experiences on Android.",
+            "type": "AR Documentation"
+          },
+          {
+            "title": "ARKit Documentation",
+            "url": "https://developer.apple.com/augmented-reality/",
+            "description": "Official documentation for ARKit, Apple's framework for developing augmented reality applications on iOS.",
+            "type": "AR Documentation"
+          },
+          {
+            "title": "Vuforia Documentation",
+            "url": "https://library.vuforia.com/",
+            "description": "Comprehensive guide for Vuforia, a popular AR development platform.",
+            "type": "AR Documentation"
+          },
+          {
+            "title": "Unity AR/VR Documentation",
+            "url": "https://docs.unity3d.com/Manual/VR.html",
+            "description": "Unity’s AR/VR development documentation for creating immersive virtual and augmented reality experiences.",
+            "type": "Game Engine Documentation"
+          },
+          {
+            "title": "OpenXR Documentation",
+            "url": "https://www.khronos.org/openxr/",
+            "description": "Cross-platform standard for creating VR and AR applications. OpenXR enables compatibility across multiple hardware platforms.",
+            "type": "AR/VR Documentation"
+          }
+        ],
+        "tutorials": [
+          {
+            "title": "Unity Learn AR/VR",
+            "url": "https://learn.unity.com/",
+            "description": "Unity Learn provides interactive tutorials to help you develop AR/VR applications using Unity.",
+            "type": "Online Course"
+          },
+          {
+            "title": "Introduction to AR/VR with Unity",
+            "url": "https://www.udemy.com/course/intro-to-arvr-with-unity/",
+            "description": "A beginner-friendly course on using Unity to build AR/VR applications.",
+            "type": "Course Series"
+          },
+          {
+            "title": "Vuforia Developer Portal",
+            "url": "https://developer.vuforia.com/",
+            "description": "Tutorials and resources for building AR experiences using Vuforia.",
+            "type": "Learning Platform"
+          },
+          {
+            "title": "AR/VR Development with Unreal Engine",
+            "url": "https://www.unrealengine.com/en-US/vr-ar",
+            "description": "Learn how to develop immersive AR and VR experiences with Unreal Engine.",
+            "type": "Course Series"
+          },
+          {
+            "title": "Codecademy AR/VR Development",
+            "url": "https://www.codecademy.com/learn/paths/arvr-development",
+            "description": "Learn the basics of AR/VR development with Codecademy.",
+            "type": "Training Program"
+          }
+        ],
+        "videos": [
+          {
+            "title": "Google ARCore YouTube Channel",
+            "url": "https://www.youtube.com/c/GoogleDevelopers",
+            "description": "Official ARCore channel with tutorials and updates.",
+            "platform": "YouTube"
+          },
+          {
+            "title": "Apple ARKit YouTube Channel",
+            "url": "https://www.youtube.com/c/AppleDeveloper",
+            "description": "Official ARKit tutorials and demos from Apple.",
+            "platform": "YouTube"
+          },
+          {
+            "title": "Unreal Engine AR/VR YouTube Channel",
+            "url": "https://www.youtube.com/c/UnrealEngine",
+            "description": "Learn AR/VR development using Unreal Engine.",
+            "platform": "YouTube"
+          },
+          {
+            "title": "VR Developer YouTube Channel",
+            "url": "https://www.youtube.com/c/VRDeveloper",
+            "description": "Focus on VR game and experience development tutorials.",
+            "platform": "YouTube"
+          },
+          {
+            "title": "The Coding Train VR/AR Tutorials",
+            "url": "https://www.youtube.com/c/TheCodingTrain",
+            "description": "Interactive tutorials on building VR and AR experiences using various frameworks.",
+            "platform": "YouTube"
+          }
+        ],
+        "books": [
+          {
+            "title": "Augmented Reality: Principles and Practice",
+            "author": "Dieter Schmalstieg, Tobias Hollerer",
+            "description": "Comprehensive guide to AR technology, principles, and development.",
+            "level": "Intermediate"
+          },
+          {
+            "title": "Learning Virtual Reality",
+            "author": "Tony Parisi",
+            "description": "A book for developers wanting to create VR applications using Unity.",
+            "level": "Intermediate"
+          },
+          {
+            "title": "Virtual & Augmented Reality for Dummies",
+            "author": "Paul Mealy",
+            "description": "An introduction to both AR and VR technologies and how to create applications.",
+            "level": "Beginner"
+          },
+          {
+            "title": "Mastering Unity AR/VR Development",
+            "author": "Karthik S",
+            "description": "A hands-on guide to building AR/VR applications in Unity.",
+            "level": "Intermediate"
+          },
+          {
+            "title": "Unity 2021 Augmented Reality Projects",
+            "author": "Jonathan Linowes",
+            "description": "A project-based guide to building AR experiences using Unity.",
+            "level": "Intermediate"
+          }
+        ],
+        "tools": [
+          {
+            "title": "Unity",
+            "url": "https://unity.com/",
+            "description": "A powerful game engine for developing AR/VR applications.",
+            "type": "Game Engine",
+            "category": "Essential"
+          },
+          {
+            "title": "Unreal Engine",
+            "url": "https://www.unrealengine.com/",
+            "description": "A top-tier game engine for creating AAA-quality AR/VR experiences.",
+            "type": "Game Engine",
+            "category": "Essential"
+          },
+          {
+            "title": "Vuforia",
+            "url": "https://developer.vuforia.com/",
+            "description": "Platform for creating AR experiences across mobile and wearable devices.",
+            "type": "AR SDK",
+            "category": "Essential"
+          },
+          {
+            "title": "Blender",
+            "url": "https://www.blender.org/",
+            "description": "Open-source 3D modeling and animation software, useful for AR/VR assets.",
+            "type": "3D Modeling Tool",
+            "category": "Useful"
+          },
+          {
+            "title": "SketchUp",
+            "url": "https://www.sketchup.com/",
+            "description": "3D modeling software that integrates with AR/VR development tools.",
+            "type": "3D Modeling Tool",
+            "category": "Useful"
+          }
+        ],
+        "communities": [
+          {
+            "title": "AR/VR Developers",
+            "url": "https://www.reddit.com/r/ARVRDev/",
+            "description": "Subreddit dedicated to the development of AR and VR applications.",
+            "type": "Forum"
+          },
+          {
+            "title": "Unity AR/VR Community",
+            "url": "https://forum.unity.com/forums/augmented-reality-ar-vr.107/",
+            "description": "Unity's AR/VR development community forum.",
+            "type": "Forum"
+          },
+          {
+            "title": "Unreal Engine AR/VR Community",
+            "url": "https://forums.unrealengine.com/development-discussion/augmented-reality-ar-vr",
+            "description": "Unreal Engine’s AR/VR community forum for discussions and troubleshooting.",
+            "type": "Forum"
+          },
+          {
+            "title": "AR/VR Meetup Groups",
+            "url": "https://www.meetup.com/topics/ar-vr/",
+            "description": "Meetup groups around the world focusing on AR/VR development and events.",
+            "type": "Community Platform"
+          },
+          {
+            "title": "Vuforia Forum",
+            "url": "https://developer.vuforia.com/forum",
+            "description": "Community forum for developers using the Vuforia AR SDK.",
+            "type": "Forum"
+          }
+        ],
+        "podcasts": [
+          {
+            "title": "The AR Show",
+            "url": "https://www.thearshow.com/",
+            "description": "Podcast exploring AR technology and its impact on business and society.",
+            "platform": "Podcast"
+          },
+          {
+            "title": "The VR Download",
+            "url": "https://www.vrdownload.com/",
+            "description": "Podcast discussing VR news, trends, and development.",
+            "platform": "Podcast"
+          },
+          {
+            "title": "XR Health",
+            "url": "https://www.xrhealth.com/podcast/",
+            "description": "Podcast focusing on XR (AR/VR) in healthcare and medical fields.",
+            "platform": "Podcast"
+          },
+          {
+            "title": "The Virtual Reality Podcast",
+            "url": "https://www.virtualrealitypodcast.com/",
+            "description": "A podcast exploring virtual reality technology, trends, and development.",
+            "platform": "Podcast"
+          }
+        ],
+        "blogs": [
+          {
+            "title": "Road to VR",
+            "url": "https://www.roadtovr.com/",
+            "description": "Industry blog for VR and AR news, reviews, and trends.",
+            "type": "Industry Blog"
+          },
+          {
+            "title": "UploadVR",
+            "url": "https://uploadvr.com/",
+            "description": "Blog covering the latest in VR news and technology.",
+            "type": "Industry Blog"
+          },
+          {
+            "title": "ARPost",
+            "url": "https://arpost.co/",
+            "description": "News, features, and interviews related to augmented reality.",
+            "type": "Industry Blog"
+          }
+        ]
+      }
+      ,
+        practice    : {
+          beginnerExercises: [
+            {
+              "title": "Basic AR Ball Interaction",
+              "difficulty": "Easy",
+              "description": "Create a simple augmented reality experience where a ball appears on the user's screen, and they can tap or click to make it move.",
+              "hints": [
+                "Use an AR framework like AR.js or Three.js for rendering the ball",
+                "Enable basic touch or mouse interaction to move the ball",
+                "Display the ball on a flat surface detected by the camera"
+              ],
+              "solution": {
+                "code": `
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+      
+      const geometry = new THREE.SphereGeometry(1, 32, 32);
+      const material = new THREE.MeshBasicMaterial({ color: 0x0077ff });
+      const ball = new THREE.Mesh(geometry, material);
+      scene.add(ball);
+      
+      camera.position.z = 5;
+      
+      document.addEventListener('click', () => {
+        ball.position.x = Math.random() * 10 - 5;
+        ball.position.y = Math.random() * 10 - 5;
+      });
+      
+      function animate() {
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera);
+      }
+      
+      animate();
+                `,
+                "explanation": "This simple AR interaction places a ball in the scene that the user can move by clicking. This is a basic introduction to manipulating 3D objects in AR and learning how to handle user input in an AR environment."
+              }
+            }
+          ],
+          "advancedExercises": [
+            {
+              "title": "VR Platformer with Physics",
+              "difficulty": "Hard",
+              "description": "Create a VR platformer game where the player can move in a 3D environment, jump between platforms, and interact with objects in the scene.",
+              "hints": [
+                "Use a VR library like A-Frame or Three.js to render the scene",
+                "Add VR controllers for player movement and interaction",
+                "Implement gravity and collision detection for jumping between platforms",
+                "Use raycasting for interacting with objects in the environment"
+              ],
+              "solution": {
+                "code": `
+      <a-scene>
+        <a-assets>
+          <a-asset-item id="platform" src="platform.obj"></a-asset-item>
+        </a-assets>
+      
+        <a-entity id="player" position="0 2 -5" rotation="0 0 0">
+          <a-camera></a-camera>
+          <a-cursor></a-cursor>
+        </a-entity>
+      
+        <a-entity id="platform1" position="0 0 -10" obj-model="obj: #platform" scale="2 0.5 2"></a-entity>
+        <a-entity id="platform2" position="5 2 -15" obj-model="obj: #platform" scale="2 0.5 2"></a-entity>
+      
+        <a-entity id="jumpTrigger" geometry="primitive: sphere; radius: 1" position="5 2 -15" color="#FF0000"
+          event-set__enter="scale: 1.5 1.5 1.5" event-set__leave="scale: 1 1 1"></a-entity>
+      </a-scene>
+                `,
+                "explanation": "This VR platformer uses A-Frame for rendering the 3D world and player. It includes simple platforming mechanics with jumping and interactive objects using triggers. Raycasting is used to interact with different parts of the environment, providing a more immersive experience in VR."
+              }
+            }
+          ]
+        }
+      },
+},
+     {
+            id: 14,
+            title: "Git & GitHub",
+            description: "Master version control and collaborative workflows with Git and GitHub.",
+            extendedContent: `
+                This roadmap introduces you to version control with Git and collaboration using GitHub. 
+                You'll start with the basics of setting up Git, understanding repositories, 
+                and the fundamental commands for tracking changes.
+    
+                As you progress, you'll learn about branching and merging strategies, resolving conflicts, 
+                and implementing pull requests in collaborative projects. The roadmap will also cover best 
+                practices for writing commit messages, managing repositories, and using GitHub features 
+                like issues, project boards, and actions for continuous integration.
+    
+                By the end of this roadmap, you'll be skilled at managing source code, collaborating 
+                efficiently with others, and understanding the essential tools and workflows that streamline 
+                version control.
+            `,
+            icon: "M12 2v20m10-10H2",
+            trackInfo: {
+                prerequisites: [
+                    "Basic computer skills and familiarity with command line",
+                    "Understanding of how software development works",
+                    "Familiarity with coding concepts (optional but helpful)"
+                ],
+                outcomes: [
+                    "Understand core Git concepts (repository, commit, branch)",
+                    "Collaborate on projects using GitHub",
+                    "Implement branching and merging workflows",
+                    "Manage issues and pull requests effectively",
+                    "Utilize features like GitHub Actions for CI/CD",
+                    "Write clear commit messages and maintain a clean history",
+                    "Contribute to open-source projects"
+                ],
+                sections: [
+                    {
+                        title: "Getting Started with Git",
+                        content: "Learn to set up Git on your system, create repositories, and make your first commits. Understand the basic commands: init, clone, add, commit, and status."
+                    },
+                    {
+                        title: "Branching and Merging",
+                        content: "Explore the power of Git branches to manage parallel development. Learn how to create, delete, and switch branches, handle merges, and resolve conflicts."
+                    },
+                    {
+                        title: "Collaboration with GitHub",
+                        content: "Understand how to work with GitHub for collaboration. Learn about cloning repositories, pushing and pulling changes, and the importance of forked repositories."
+                    },
+                    {
+                        title: "GitHub Features for Project Management",
+                        content: "Discover GitHub's robust features such as issues, project boards, and milestones. Understand how to track bugs and feature requests effectively."
+                    },
+                    {
+                        title: "Advanced Git and GitHub Workflows",
+                        content: "Dive into advanced topics like rebasing, cherry-picking, and using Git hooks. Learn about GitHub Actions to automate your workflow for CI/CD."
+                    }
+                ]
+            },
+            content: {
+                examples: [
+                    {
+                        title: "Basic Git Commands",
+                        code: `# Initialize a new Git repository
+                        git init
+                        
+                        # Add changes to your staging area
+                        git add .
+    
+                        # Commit the staged changes
+                        git commit -m "Initial commit"
+                        
+                        # Create a new branch
+                        git checkout -b feature-branch
+                        
+                        # Merge the feature branch into the main branch
+                        git checkout main
+                        git merge feature-branch`,
+                        explanation: "These commands demonstrate the basic operations of initializing a repository, staging changes, committing, creating branches, and merging."
+                    },
+                    {
+                        title: "Creating a Pull Request on GitHub",
+                        code: `1. Push your feature branch to GitHub:
+                        git push origin feature-branch
+                        
+                        2. Navigate to your repository on GitHub.
+                        
+                        3. Click the "Compare & pull request" button.
+                        
+                        4. Add a title and description for the pull request.
+                        
+                        5. Click "Create pull request."`,
+                        explanation: "These steps show how to push changes to GitHub and create a pull request to merge features into the main branch."
+                    },
+                    {
+                        title: "Resolving Merge Conflicts",
+                        code: `# When a merge conflict occurs, Git will mark the files with conflicts.
+                        # Open the conflicted files and look for lines marked with <<<<<<<, =======, or >>>>>>.
+                        
+                        # Edit the file to resolve the conflicts, then stage the resolved file:
+                        git add resolved-file.txt
+                        
+                        # Complete the merge
+                        git commit -m "Resolved merge conflicts"`,
+                        explanation: "This snippet illustrates how to resolve merge conflicts in Git and finalize the merge."
+                    }
+                ],
+                roadmap: [
+                    {
+                        title: "1. Introduction to Version Control",
+                        description: "Understand the principles of version control and why it's essential for software development.",
+                        topics: [
+                            "What is version control?",
+                            "Benefits of using Git",
+                            "Understanding repositories and version history",
+                            "Setting up Git on your local machine"
+                        ]
+                    },
+                    {
+                        title: "2. Basic Git Commands",
+                        description: "Learn common Git commands for navigating and managing repositories.",
+                        topics: [
+                            "git init, git clone, git add, git commit",
+                            "Viewing the status and logs with git status and git log",
+                            "Understanding the staging area"
+                        ]
+                    },
+                    {
+                        title: "3. Branching and Collaboration",
+                        description: "Master branch and collaboration workflows.",
+                        topics: [
+                            "Creating and deleting branches",
+                            "Switching between branches",
+                            "Merging branches and resolving conflicts",
+                            "Using remote repositories with GitHub"
+                        ]
+                    },
+                    {
+                        title: "4. Working with GitHub",
+                        description: "Utilize GitHub for hosting repositories and collaboration.",
+                        topics: [
+                            "Setting up a GitHub account",
+                            "Cloning repositories from GitHub",
+                            "Understanding pull requests, forks, and issues",
+                            "Collaborating on projects and code reviews"
+                        ]
+                    },
+                    {
+                        title: "5. Advanced Git Features",
+                        description: "Explore advanced features and best practices.",
+                        topics: [
+                            "Rebasing and cherry-picking",
+                            "Interactive rebase and amending commits",
+                            "Using Git hooks for automation",
+                            "Introduction to GitHub Actions for CI/CD"
+                        ]
+                    }
+                ],
+                resources: {
+                    documentation: [
+                        {
+                            title: "Pro Git Book",
+                            url: "https://git-scm.com/book/en/v2",
+                            description: "A comprehensive guide to Git, available for free online.",
+                            type: "Official Documentation"
+                        },
+                        {
+                            title: "GitHub Docs",
+                            url: "https://docs.github.com/",
+                            description: "Official documentation covering all features of GitHub.",
+                            type: "Platform Documentation"
+                        },
+                        {
+                            title: "Atlassian Git Tutorials",
+                            url: "https://www.atlassian.com/git/tutorials",
+                            description: "In-depth tutorials on Git concepts and workflows.",
+                            type: "Resource Collection"
+                        },
+                        {
+                            title: "Git Cheat Sheet",
+                            url: "https://education.github.com/git-cheat-sheet-education.pdf",
+                            description: "A handy cheat sheet for common Git commands.",
+                            type: "Quick Reference"
+                        }
+                    ],
+                    tutorials: [
+                        {
+                            title: "Try Git",
+                            url: "https://try.github.io/",
+                            description: "An interactive tutorial to learn Git basics.",
+                            type: "Interactive Course"
+                        },
+                        {
+                            title: "Git and GitHub for Beginners",
+                            url: "https://www.udemy.com/course/git-and-github-for-beginners/",
+                            description: "A comprehensive course to learn Git and GitHub.",
+                            type: "Video Course"
+                        },
+                        {
+                            title: "Version Control with Git",
+                            url: "https://www.coursera.org/learn/version-control-with-git",
+                            description: "A course offered by Atlassian on Git version control.",
+                            type: "Online Course"
+                        },
+                        {
+                            title: "Learn Git Branching",
+                            url: "https://learngitbranching.js.org/",
+                            description: "An interactive web app to visualize branching and merging in Git.",
+                            type: "Interactive Platform"
+                        }
+                    ],
+                    videos: [
+                        {
+                            title: "Git and GitHub for Beginners - Crash Course",
+                            url: "https://www.youtube.com/watch?v=RGOj5yH7evk",
+                            description: "A beginner-friendly crash course on Git and GitHub.",
+                            platform: "YouTube"
+                        },
+                        {
+                            title: "Git Tutorial for Beginners",
+                            url: "https://www.youtube.com/watch?v=HVsySaX_1b0",
+                            description: "An in-depth tutorial on the fundamentals of Git.",
+                            platform: "YouTube"
+                        },
+                        {
+                            title: "GitHub for Beginners",
+                            url: "https://www.youtube.com/watch?v=0fDer6D7Jpg",
+                            description: "A beginner's guide to using GitHub effectively.",
+                            platform: "YouTube"
+                        }
+                    ],
+                    books: [
+                        {
+                            title: "Pro Git",
+                            author: "Scott Chacon and Ben Straub",
+                            description: "An in-depth guide to Git, covering everything from basic commands to advanced features.",
+                            level: "Intermediate"
+                        },
+                        {
+                            title: "The Git Paradox",
+                            author: "Peter H. M. Jones",
+                            description: "Explores the misconceptions about Git and how to work effectively with it.",
+                            level: "Intermediate"
+                        },
+                        {
+                            title: "Git for Teams",
+                            author: "Ben Straub and Scott Chacon",
+                            description: "Learn how teams can effectively use Git for collaboration.",
+                            level: "Intermediate"
+                        }
+                    ]
+                }
+            }
+        },
+
+{
+    id: 19,
+    title: "Linux",
+    description: "To learn Linux, follow this roadmap",
+    extendedContent: `
+      Master the fundamentals of Linux to design efficient, robust systems across a variety of applications. Start with core skills in Linux command-line usage, file management, and system administration. Dive into key concepts like process management, memory management, and networking, which are essential for understanding how Linux operates. Learn about Linux's role in servers, where it's widely used for hosting websites, cloud services, and databases, providing stability and security. Explore Linux in mobile operating systems, as it powers Android and many embedded systems. Gain knowledge of hardware interfacing, system optimization, and security for reliable performance. Advanced topics include scripting, automation, containerization with Docker, and using Linux for machine learning, robotics, and IoT applications. Build hands-on experience through projects, utilizing industry-standard tools and workflows to navigate a comprehensive Linux learning journey.
+    `,
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        prerequisites: [
+ "Basic programming knowledge (Bash, Python, or C++ preferred; familiarity with scripting languages helpful)",
+ "Understanding of Linux file systems and directory structures",
+ "Familiarity with Linux command-line tools and utilities (e.g., grep, awk, sed, find)",
+ "Basic understanding of system administration (user management, permissions, and processes)",
+ "Knowledge of networking concepts (IP addressing, SSH, firewalls, and network troubleshooting)",
+ "Familiarity with package management systems (e.g., apt, yum, dnf) for software installation and updates",
+ "Understanding of Linux kernel architecture and system boot processes",
+ "Knowledge of version control systems (e.g., Git) for managing code and collaboration",
+ "Problem-solving aptitude for diagnosing and troubleshooting system and application issues",
+ "Basic understanding of Linux security practices (e.g., file permissions, sudo, SELinux, firewall configuration)",
+ "Familiarity with virtualization and containerization technologies (e.g., Docker, KVM, VirtualBox)",
+ "Understanding of process management and resource monitoring (e.g., top, ps, systemd, htop)"
+        ],
+        outcomes: [
+             "Ability to design and manage system configurations for optimal performance",
+             "Proficiency in using Linux command-line tools and utilities for system administration",
+             "Strong understanding of file systems, networking, and process management",
+             "Ability to work with version control systems (e.g., Git) for collaborative software development",
+             "Capability to optimize system performance and troubleshoot hardware/software issues",
+             "Understanding of system security practices and tools for hardening Linux environments",
+             "Experience with automation tools (e.g., Bash scripting, cron jobs) for system management",
+             "Ability to configure and manage networking services (e.g., SSH, DNS, firewalls)",
+             "Understanding of virtualization and containerization technologies (e.g., Docker, KVM, VirtualBox)",
+             "Knowledge of the entire Linux system administration pipeline, from installation to maintenance and scaling"
+        ],
+        sections: 
+        [
+            {
+                "title": "Introduction to Linux",
+                "content": "Understand the fundamentals of Linux, including its history, architecture, and various distributions. Explore the key components of the Linux operating system, such as the kernel, shell, and file system, and get an overview of its applications in various industries."
+            },
+            {
+                "title": "Linux Command Line & System Administration",
+                "content": "Learn how to navigate the Linux command line and perform basic system administration tasks. Study essential commands for file management, process control, and system monitoring, as well as user management and permissions."
+            },
+            {
+                "title": "Networking & Security in Linux",
+                "content": "Master networking concepts and tools used in Linux, such as SSH, IP configuration, firewalls, and troubleshooting. Learn how to secure a Linux system, including configuring firewalls, using SELinux, and managing system permissions."
+            },
+            {
+                "title": "Linux Package Management & Software Installation",
+                "content": "Understand how to install, update, and remove software packages using package managers like apt, yum, and dnf. Explore system dependencies, repositories, and managing software versions."
+            },
+            {
+                "title": "Automation & Scripting in Linux",
+                "content": "Learn how to automate tasks using shell scripting and cron jobs. Study scripting languages such as Bash and Python for creating custom automation solutions that improve efficiency."
+            },
+            {
+                "title": "Linux Process Management & System Monitoring",
+                "content": "Study process management techniques in Linux, including managing running processes, scheduling tasks, and controlling resources. Learn how to monitor system performance using tools like top, ps, and systemd."
+            },
+            {
+                "title": "Linux Virtualization & Containerization",
+                "content": "Explore Linux’s capabilities in virtualization and containerization with tools like Docker, KVM, and VirtualBox. Learn how to create and manage virtual machines and containers for development and testing environments."
+            },
+            {
+                "title": "Linux for Development & DevOps",
+                "content": "Understand how to use Linux in development and DevOps workflows. Study version control with Git, continuous integration, and deployment pipelines, and learn how to configure environments for development, testing, and production."
+            },
+            {
+                "title": "Linux System Security & Hardening",
+                "content": "Examine advanced topics in Linux system security, including hardening practices, managing access control, and securing network services. Understand how to mitigate risks and ensure safe and secure system operations."
+            }
+        ]
+    },
+    content: {
+        examples:[
+            {
+                "title": "Basic File Management with Linux Command Line",
+                "code": `# Create a new directory
+                mkdir ~/my_directory
+                
+                # Change into the new directory
+                cd ~/my_directory
+                
+                # Create a new text file
+                echo "Hello, Linux!" > myfile.txt
+                
+                # Display the contents of the file
+                cat myfile.txt
+                
+                # List files in the directory
+                ls -l
+                
+                # Remove the file
+                rm myfile.txt
+                
+                # Go back to the home directory
+                cd ~`,
+                "explanation": "This script demonstrates basic file management in Linux. It creates a directory, navigates into it, creates and views a text file, lists the contents of the directory, and then deletes the file. It showcases essential commands like `mkdir`, `cd`, `echo`, `cat`, `ls`, and `rm`."
+            },
+            {
+                "title": "Basic Process Management in Linux",
+                "code": `# List all running processes
+                ps aux
+                
+                # Find a process by name
+                pgrep -fl apache2
+                
+                # Kill a process by PID
+                kill -9 1234
+                
+                # View the current system's resource usage
+                top`,
+                "explanation": "This example demonstrates process management in Linux. It lists all running processes, finds a process by name using `pgrep`, terminates a process using `kill`, and shows real-time system resource usage with `top`."
+            },
+            {
+                "title": "Simple Bash Script for Automating Tasks",
+                "code": `#!/bin/bash
+                
+                # Simple bash script to back up a directory
+                
+                SOURCE_DIR="/home/user/documents"
+                BACKUP_DIR="/home/user/backup"
+                
+                # Create the backup directory if it doesn't exist
+                mkdir -p $BACKUP_DIR
+                
+                # Copy files to the backup directory
+                cp -r $SOURCE_DIR/* $BACKUP_DIR
+                
+                # Print a success message
+                echo "Backup completed successfully."`,
+                "explanation": "This is a simple Bash script that automates the task of backing up files from one directory to another. It creates a backup directory if it doesn't exist and copies the files using `cp`. The script then outputs a success message."
+            },
+            {
+                "title": "Networking and SSH in Linux",
+                "code": `# View network configuration
+                ifconfig
+                
+                # Check network connectivity
+                ping -c 4 google.com
+                
+                # SSH into a remote server
+                ssh user@192.168.1.10
+                
+                # Copy a file to a remote server using SCP
+                scp myfile.txt user@192.168.1.10:/home/user/`,
+                "explanation": "This example demonstrates networking commands in Linux. It shows how to view network configuration with `ifconfig`, check connectivity with `ping`, SSH into a remote machine using `ssh`, and copy files to a remote machine using `scp`."
+            }
+        ],    
+
+       roadmap:[
+            {
+                "title": "1. Introduction to Linux",
+                "description": "Learn the basics of Linux, its structure, and key components.",
+                "topics": [
+                    "Linux Overview and History",
+                    "Linux Distributions (Ubuntu, CentOS, Fedora)",
+                    "The Linux Kernel and its Role",
+                    "Linux File System Structure",
+                    "Basic Command Line Interface (CLI) Commands",
+                    "Understanding the Linux Shell (Bash)",
+                    "Linux Permissions and File Ownership"
+                ]
+            },
+            {
+                "title": "2. Linux File Management",
+                "description": "Understand how to manage files and directories efficiently in Linux.",
+                "topics": [
+                    "Navigating the Linux File System",
+                    "Creating, Moving, and Deleting Files",
+                    "Viewing and Editing Files (cat, vim, nano)",
+                    "File Permissions and Ownership",
+                    "Linking Files (Hard and Soft Links)",
+                    "Using Wildcards and Regular Expressions",
+                    "Finding Files and Directories (find, locate)"
+                ]
+            },
+            {
+                "title": "3. Linux User and Group Management",
+                "description": "Learn to manage users and groups in a Linux system.",
+                "topics": [
+                    "Adding, Removing, and Modifying Users",
+                    "Managing User Groups",
+                    "Understanding User Permissions",
+                    "Sudo and Privileges",
+                    "User Authentication and Password Policies",
+                    "Understanding /etc/passwd and /etc/group",
+                    "File Permissions and Access Control Lists (ACLs)"
+                ]
+            },
+            {
+                "title": "4. Linux Process Management",
+                "description": "Learn how to manage processes in a Linux environment.",
+                "topics": [
+                    "Understanding Processes and PID",
+                    "Listing and Killing Processes (ps, top, kill)",
+                    "Background and Foreground Processes",
+                    "Process Scheduling and Priorities",
+                    "Managing System Resources (CPU, Memory)",
+                    "Job Control and Process States",
+                    "System Resource Limits (ulimit)"
+                ]
+            },
+            {
+                "title": "5. Linux Networking and Security",
+                "description": "Dive into networking concepts and security management in Linux.",
+                "topics": [
+                    "Basic Networking Commands (ifconfig, ping, netstat)",
+                    "Configuring Network Interfaces",
+                    "Understanding IP Addresses, Subnets, and Gateways",
+                    "SSH and Secure Remote Access",
+                    "Firewall Configuration (iptables, ufw)",
+                    "User Authentication and Encryption",
+                    "Security Best Practices (Sudoers, SELinux)"
+                ]
+            },
+            {
+                "title": "6. Linux System Administration",
+                "description": "Learn the essentials of Linux system administration for managing servers.",
+                "topics": [
+                    "System Startup and Shutdown",
+                    "Managing Services with systemd",
+                    "Package Management (apt, yum, dnf)",
+                    "Log Files and System Monitoring",
+                    "Disk Partitioning and Mounting (fdisk, mount)",
+                    "System Backups and Recovery",
+                    "Scheduling Tasks with cron"
+                ]
+            },
+            {
+                "title": "7. Linux Shell Scripting and Automation",
+                "description": "Master shell scripting to automate tasks and improve system management.",
+                "topics": [
+                    "Writing Basic Shell Scripts",
+                    "Variables and Input/Output in Scripts",
+                    "Control Structures (if, loops, case)",
+                    "Functions and Script Debugging",
+                    "Automating System Maintenance Tasks",
+                    "Working with Files and Directories in Scripts",
+                    "Advanced Scripting Techniques (sed, awk, grep)"
+                ]
+            },
+            {
+                "title": "8. Advanced Linux Topics",
+                "description": "Explore advanced Linux topics and cutting-edge tools.",
+                "topics": [
+                    "Kernel Configuration and Compilation",
+                    "Advanced Networking Tools (Wireshark, nmap)",
+                    "Containerization with Docker",
+                    "Virtualization with KVM and VirtualBox",
+                    "High-Availability and Clustering",
+                    "Linux Performance Tuning",
+                    "Troubleshooting and Debugging Linux Systems"
+                ]
+            }
+        ],
+            
+    resources: 
+    {
+        "documentation": [
+            {
+                "title": "Linux Documentation",
+                "url": "https://www.kernel.org/doc/html/latest/",
+                "description": "Official documentation for Linux Kernel and related tools.",
+                "type": "Linux Kernel Documentation"
+            },
+            {
+                "title": "GNU Documentation",
+                "url": "https://www.gnu.org/manual/",
+                "description": "Official documentation for the GNU Project, which is crucial for Linux system usage.",
+                "type": "System Tools Documentation"
+            },
+            {
+                "title": "Ubuntu Documentation",
+                "url": "https://help.ubuntu.com/",
+                "description": "Official documentation for Ubuntu Linux, one of the most popular distributions.",
+                "type": "Linux Distribution Documentation"
+            },
+            {
+                "title": "Arch Linux Wiki",
+                "url": "https://wiki.archlinux.org/",
+                "description": "Comprehensive resource for learning Arch Linux and configuring it.",
+                "type": "Linux Distribution Documentation"
+            }
+        ],
+        "tutorials": [
+            {
+                "title": "Linux Command Line Basics",
+                "url": "https://www.codecademy.com/learn/learn-the-command-line",
+                "description": "Interactive course to learn Linux command-line basics.",
+                "type": "Online Course"
+            },
+            {
+                "title": "Linux for Beginners",
+                "url": "https://www.udemy.com/course/linux-for-beginners/",
+                "description": "Beginner-friendly course for learning Linux fundamentals.",
+                "type": "Online Course"
+            },
+            {
+                "title": "Introduction to Linux",
+                "url": "https://www.edx.org/course/introduction-to-linux",
+                "description": "A free course by The Linux Foundation to introduce Linux concepts.",
+                "type": "Online Course"
+            },
+            {
+                "title": "Linux Command Line and Shell Scripting",
+                "url": "https://www.udemy.com/course/linux-command-line-and-shell-scripting/",
+                "description": "Learn shell scripting and using the Linux command line efficiently.",
+                "type": "Online Course"
+            }
+        ],
+        "videos": [
+            {
+                "title": "Linux Foundation YouTube Channel",
+                "url": "https://www.youtube.com/c/TheLinuxFoundation",
+                "description": "Official YouTube channel of The Linux Foundation, offering tutorials and talks.",
+                "platform": "YouTube"
+            },
+            {
+                "title": "Learn Linux",
+                "url": "https://www.youtube.com/c/LinuxTutorials",
+                "description": "YouTube channel dedicated to Linux tutorials and tips.",
+                "platform": "YouTube"
+            },
+            {
+                "title": "The Linux Command Line",
+                "url": "https://www.youtube.com/watch?v=yz7AOEXqX8A",
+                "description": "YouTube video series teaching Linux command-line basics.",
+                "platform": "YouTube"
+            },
+            {
+                "title": "Linux Academy YouTube Channel",
+                "url": "https://www.youtube.com/c/LinuxAcademy",
+                "description": "YouTube channel with a variety of Linux-related tutorials.",
+                "platform": "YouTube"
+            }
+        ],
+        "books": [
+            {
+                "title": "The Linux Command Line",
+                "author": "William Shotts",
+                "description": "A beginner's guide to the Linux command line.",
+                "level": "Beginner"
+            },
+            {
+                "title": "Linux Pocket Guide",
+                "author": "Daniel J. Barrett",
+                "description": "A concise, on-the-go guide to Linux command-line commands.",
+                "level": "Beginner"
+            },
+            {
+                "title": "Linux Bible",
+                "author": "Christopher Negus",
+                "description": "A comprehensive guide to mastering Linux with real-world examples.",
+                "level": "Intermediate"
+            },
+            {
+                "title": "How Linux Works, 2nd Edition",
+                "author": "Brian Ward",
+                "description": "An in-depth look at how Linux systems work under the hood.",
+                "level": "Advanced"
+            }
+        ],
+        "tools": [
+            {
+                "title": "Gnome Terminal",
+                "url": "https://help.gnome.org/users/gnome-terminal/stable/",
+                "description": "A terminal emulator for GNOME desktop environment, essential for using Linux.",
+                "type": "Terminal Emulator",
+                "category": "Essential"
+            },
+            {
+                "title": "Vim",
+                "url": "https://www.vim.org/",
+                "description": "A highly configurable text editor that is ideal for editing system files in Linux.",
+                "type": "Text Editor",
+                "category": "Essential"
+            },
+            {
+                "title": "SSH",
+                "url": "https://www.ssh.com/ssh/",
+                "description": "A protocol for securely accessing remote Linux systems over a network.",
+                "type": "Network Tool",
+                "category": "Essential"
+            },
+            {
+                "title": "Docker",
+                "url": "https://www.docker.com/",
+                "description": "A platform for building and managing Linux containers.",
+                "type": "Containerization Tool",
+                "category": "Useful"
+            }
+        ],
+        "communities": [
+            {
+                "title": "Linux Reddit Community",
+                "url": "https://www.reddit.com/r/linux/",
+                "description": "A community on Reddit for Linux enthusiasts to discuss all things Linux.",
+                "type": "Forum"
+            },
+            {
+                "title": "Arch Linux Forum",
+                "url": "https://bbs.archlinux.org/",
+                "description": "The official Arch Linux forum for support, tips, and discussions.",
+                "type": "Forum"
+            },
+            {
+                "title": "Linux Questions",
+                "url": "https://www.linuxquestions.org/",
+                "description": "An active forum where users can ask and answer Linux-related questions.",
+                "type": "Forum"
+            },
+            {
+                "title": "Ubuntu Forums",
+                "url": "https://ubuntuforums.org/",
+                "description": "The official forum for Ubuntu users to seek help and share knowledge.",
+                "type": "Forum"
+            }
+        ],
+        "podcasts": [
+            {
+                "title": "Linux Unplugged Podcast",
+                "url": "https://www.jupiterbroadcasting.com/show/linux-unplugged/",
+                "description": "A podcast discussing all things Linux and open-source software.",
+                "platform": "Podcast"
+            },
+            {
+                "title": "The Linux Action Show",
+                "url": "https://www.jupiterbroadcasting.com/show/linux-action-show/",
+                "description": "Podcast covering news, reviews, and tutorials on Linux.",
+                "platform": "Podcast"
+            },
+            {
+                "title": "Linux Voice Podcast",
+                "url": "https://www.linuxvoice.com/podcast/",
+                "description": "Podcast dedicated to Linux topics and discussions.",
+                "platform": "Podcast"
+            }
+        ],
+        "blogs": [
+            {
+                "title": "Linux.com Blog",
+                "url": "https://www.linux.com/blog/",
+                "description": "The official Linux.com blog, covering news, tutorials, and tips for Linux users.",
+                "type": "Industry Blog"
+            },
+            {
+                "title": "HowtoForge",
+                "url": "https://www.howtoforge.com/",
+                "description": "A blog with step-by-step guides for various Linux configurations and setups.",
+                "type": "Tutorial Blog"
+            },
+            {
+                "title": "It's FOSS",
+                "url": "https://itsfoss.com/",
+                "description": "A blog covering Linux tips, news, and tutorials for new users.",
+                "type": "Beginner Blog"
+            },
+            {
+                "title": "Linux Journal",
+                "url": "https://www.linuxjournal.com/",
+                "description": "A long-standing publication about the Linux operating system and open-source software.",
+                "type": "Industry Blog"
+            }
+        ]
+    },
+        practice: {
+            beginnerExercises: [
+                {
+                    title: "Navigating the File System",
+                    difficulty: "Easy",
+                    description: "Practice navigating the Linux file system using basic commands.",
+                    hints: [
+                        "Use the `cd` command to change directories",
+                        "Use `ls` to list the contents of a directory",
+                        "Use `pwd` to show your current directory path",
+                        "Start by navigating to `/home` and listing files in that directory"
+                    ],
+                    solution: {
+                        code: `
+                            # To navigate to the home directory
+                            cd /home
+            
+                            # To list the files in the current directory
+                            ls
+            
+                            # To check your current directory
+                            pwd
+                        `,
+                        explanation: "This exercise teaches you the basic commands for navigating the Linux file system (`cd`, `ls`, `pwd`). These commands are essential for exploring directories and managing files on a Linux system."
+                    }
+                }
+            ],
+            advancedExercises: [
+                {
+                    title: "Creating and Managing User Accounts",
+                    difficulty: "Hard",
+                    description: "Create new user accounts and set permissions to control access to files.",
+                    hints: [
+                        "Use `useradd` to create a new user",
+                        "Use `passwd` to set a password for the new user",
+                        "Use `chmod` to set permissions on files",
+                        "Use `chown` to change the owner of a file",
+                        "Ensure proper permissions are set for the new user's home directory"
+                    ],
+                    solution: {
+                        code: `
+                            # To create a new user
+                            sudo useradd newuser
+            
+                            # To set a password for the new user
+                            sudo passwd newuser
+            
+                            # To create a new file and change its ownership
+                            touch /home/newuser/file.txt
+                            sudo chown newuser:newuser /home/newuser/file.txt
+            
+                            # To set read/write permissions for the user
+                            sudo chmod 600 /home/newuser/file.txt
+                        `,
+                        explanation: "This exercise demonstrates how to create a new user, set a password, and manage file permissions. You use `useradd` to create the user, `passwd` to set a password, and `chmod`/`chown` to control access to files, which is essential for managing user access and file security in Linux."
+                    }
+                }
+            ]
+            
+        }
+}
+},
+{
+    id: 18,
+    title: "Nanotech",
+    description: "To learn Nanotech, follow this roadmap",
+    extendedContent: `
+       Master the fundamentals of nanotechnology to design innovative, nanoscale systems. Start with core skills in materials science and molecular chemistry, focusing on the unique properties of matter at the nanoscale. Learn essential topics like nanofabrication techniques, atomic and molecular manipulation, and the use of specialized tools like electron microscopes for precise observation and design. Progress through nano-material architecture, surface modification, and process optimization for stability and safety. Understand key areas like molecular self-assembly, nanosensors, and drug delivery systems. Advanced topics include quantum effects, nanomaterial synthesis, bio-nanotechnology, and nanophotonics. Build hands-on experience through projects, utilizing industry-standard tools and workflows to embark on a comprehensive nanotechnology journey.
+    `,
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        prerequisites: [
+        "Basic understanding of chemistry and molecular physics (focus on nanoscale interactions)",
+        "Knowledge of programming for simulation and data analysis (Python or C++ preferred; MATLAB or R helpful for prototyping)",
+        "Familiarity with nanofabrication techniques (e.g., lithography, self-assembly)",
+        "Understanding of materials science, including crystallography and bonding at the nanoscale",
+        "Basic knowledge of quantum mechanics, especially quantum effects at the nanoscale",
+        "Problem-solving skills for precision control and experimentation",
+        "Experience with analytical tools for nanoscale measurement (e.g., electron microscopy, atomic force microscopy)",
+        "Understanding of surface chemistry and molecular interaction dynamics",
+        "Basic understanding of biomolecular processes for bio-nanotechnology applications",
+        "Knowledge of safety protocols and handling for nanomaterials and laboratory equipment",
+        ],
+        outcomes: [
+             "Ability to design and synthesize nanomaterials with targeted properties and functions",
+             "Proficiency in using nanotechnology tools and software for simulation and analysis",
+             "Strong understanding of nanoscale physics and chemistry for material manipulation",
+             "Skill in applying nanofabrication techniques for creating nanoscale devices",
+             "Capability to optimize nanomaterial performance and troubleshoot fabrication challenges",
+             "Understanding of molecular interactions and self-assembly techniques",
+             "Experience with developing nanoscale systems for biomedical, environmental, or energy applications",
+             "Ability to create user-friendly interfaces for data visualization and nanomaterial control",
+             "Comprehensive knowledge of the nanotechnology development process, from research to application"
+        ],
+        sections: 
+            [
+    {
+        "title": "Introduction to Nanotechnology",
+        "content": "Learn the fundamentals of nanotechnology, including core concepts, history, and its transformative impact on various fields. Explore nanomaterials, nanoscale phenomena, and applications across electronics, medicine, and energy."
+    },
+    {
+        "title": "Nanomaterials & Synthesis",
+        "content": "Understand the properties of nanomaterials and the methods used for their synthesis. Study different classes of nanomaterials, including nanoparticles, nanotubes, and nanocomposites, and learn synthesis techniques like chemical vapor deposition and self-assembly."
+    },
+    {
+        "title": "Nanoscale Characterization & Analysis",
+        "content": "Learn the techniques used to observe and measure nanoscale structures. Cover tools such as scanning electron microscopy (SEM), atomic force microscopy (AFM), and X-ray diffraction (XRD) for characterizing material properties and structures at the nanoscale."
+    },
+    {
+        "title": "Nanofabrication Techniques",
+        "content": "Explore fabrication methods used to create nanoscale devices, including lithography, etching, and molecular self-assembly. Gain insights into cleanroom practices and the principles of top-down and bottom-up nanofabrication."
+    },
+    {
+        "title": "Physics & Chemistry of Nanoscale Systems",
+        "content": "Study the unique physical and chemical behaviors of materials at the nanoscale, including quantum effects and surface phenomena. Understand how these behaviors enable innovations in areas such as catalysis, electronics, and biomaterials."
+    },
+    {
+        "title": "Applications of Nanotechnology",
+        "content": "Discover the diverse applications of nanotechnology in fields such as medicine, energy, and environmental science. Study how nanosystems are used for drug delivery, diagnostics, renewable energy storage, and pollution control."
+    },
+    {
+        "title": "Biomedical Nanotechnology",
+        "content": "Learn about nanotechnology applications in healthcare, including targeted drug delivery, bio-imaging, and tissue engineering. Explore the design of biocompatible nanomaterials and techniques for advancing medical diagnostics and treatments."
+    },
+    {
+        "title": "Environmental and Energy Nanotechnology",
+        "content": "Explore the use of nanotechnology to address environmental and energy challenges. Study topics like water purification, waste treatment, energy harvesting, and nanostructured materials for clean energy solutions."
+    },
+    {
+        "title": "Nanotechnology Project Design & Prototyping",
+        "content": "Gain hands-on experience by designing and prototyping a nanotechnology-based project. Learn about experimental design, system integration, testing, and data analysis as you bring a nanotech concept to reality."
+    },
+    {
+        "title": "Ethics & Safety in Nanotechnology",
+        "content": "Examine ethical and safety considerations in the field of nanotechnology. Understand issues surrounding environmental impact, human health, and the responsible use and regulation of nanotechnology in society."
+    }
+]
+    },
+    content: {
+        examples: [
+    {
+        "title": "Nanoparticle Size Distribution Analysis in Python",
+        "code": `import numpy as np
+import matplotlib.pyplot as plt
+
+# Generate random data for nanoparticle sizes (in nm)
+np.random.seed(0)
+particle_sizes = np.random.normal(50, 10, 100)  # Mean size 50 nm, StdDev 10 nm
+
+# Plot histogram for size distribution
+plt.hist(particle_sizes, bins=10, color='skyblue', edgecolor='black')
+plt.xlabel("Nanoparticle Diameter (nm)")
+plt.ylabel("Frequency")
+plt.title("Nanoparticle Size Distribution")
+plt.show()`,
+        "explanation": "This Python code generates a synthetic dataset for nanoparticle sizes and displays the size distribution using a histogram. This technique helps in visualizing the distribution of nanoparticle diameters, which is essential in applications like drug delivery or material synthesis where particle size impacts effectiveness."
+    },
+    {
+        "title": "Simulating Nanoparticle Diffusion in a Fluid",
+        "code": `import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameters
+D = 0.1  # Diffusion coefficient in micrometers^2/s
+time = np.linspace(0, 10, 100)  # Time in seconds
+initial_position = 0
+positions = initial_position + np.sqrt(2 * D * time) * np.random.randn(100)
+
+# Plotting the diffusion path
+plt.plot(time, positions, label="Nanoparticle Path")
+plt.xlabel("Time (s)")
+plt.ylabel("Position (µm)")
+plt.title("Simulated Nanoparticle Diffusion")
+plt.legend()
+plt.show()`,
+        "explanation": "This code simulates the random walk (diffusion) of a nanoparticle in a fluid. Using a simplified diffusion model, the particle’s position over time is calculated and visualized. This type of simulation is useful for understanding nanoparticle transport behavior in biological environments or targeted drug delivery."
+    },
+    {
+        "title": "Modeling a Nanoparticle's Optical Absorbance Spectrum",
+        "code": `import numpy as np
+import matplotlib.pyplot as plt
+
+# Wavelengths (in nm) and absorbance model for a gold nanoparticle
+wavelengths = np.linspace(400, 700, 300)
+peak_wavelength = 520
+absorbance = np.exp(-((wavelengths - peak_wavelength) ** 2) / (2 * 20 ** 2))
+
+# Plotting the absorbance spectrum
+plt.plot(wavelengths, absorbance, color="gold", label="Gold Nanoparticle Absorbance")
+plt.xlabel("Wavelength (nm)")
+plt.ylabel("Absorbance")
+plt.title("Optical Absorbance Spectrum of a Gold Nanoparticle")
+plt.legend()
+plt.show()`,
+        "explanation": "This Python script models the absorbance spectrum of a gold nanoparticle, which typically peaks around 520 nm. The Gaussian model here represents the optical properties of nanoparticles, used in applications like biosensing and imaging due to their unique light absorption characteristics."
+    }
+]
+,        
+        
+roadmap: [
+    {
+        "title": "1. Introduction to Nanotechnology",
+        "description": "Learn the basics of nanotechnology, including fundamental concepts and applications.",
+        "topics": [
+            "Basics of Nanotechnology and Nanoscience",
+            "History and Development of Nanotechnology",
+            "Types of Nanomaterials (Nanoparticles, Nanowires, Nanotubes)",
+            "Fundamental Properties at the Nanoscale",
+            "Introduction to Quantum Effects",
+            "Applications of Nanotechnology in Medicine, Electronics, and Energy",
+            "Overview of Nanofabrication Techniques"
+        ]
+    },
+    {
+        "title": "2. Nanomaterials and Properties",
+        "description": "Explore different types of nanomaterials and their unique properties.",
+        "topics": [
+            "Classification of Nanomaterials (Organic, Inorganic, Hybrid)",
+            "Mechanical, Electrical, and Optical Properties at the Nanoscale",
+            "Surface Chemistry and Catalytic Properties",
+            "Synthesis of Nanoparticles and Nanostructures",
+            "Characterization Techniques (TEM, SEM, AFM)",
+            "Toxicity and Environmental Impact of Nanomaterials",
+            "Nanocomposites and Functional Nanomaterials"
+        ]
+    },
+    {
+        "title": "3. Nanofabrication Techniques",
+        "description": "Learn the techniques used to create and manipulate nanoscale structures.",
+        "topics": [
+            "Top-Down and Bottom-Up Approaches",
+            "Lithography Techniques (Photolithography, Electron Beam Lithography)",
+            "Self-Assembly and Molecular Assembly",
+            "Chemical Vapor Deposition (CVD) and Physical Vapor Deposition (PVD)",
+            "Electrospinning and Nanopatterning",
+            "3D Nanoprinting and Nanomanufacturing",
+            "Scalability and Challenges in Nanofabrication"
+        ]
+    },
+    {
+        "title": "4. Nanoscale Characterization and Analysis",
+        "description": "Master the tools and methods used to analyze nanostructures and materials.",
+        "topics": [
+            "Electron Microscopy (TEM, SEM) and Atomic Force Microscopy (AFM)",
+            "X-Ray Diffraction (XRD) for Nanostructures",
+            "Spectroscopy Techniques (Raman, UV-Vis, FTIR)",
+            "Thermal Analysis of Nanomaterials (TGA, DSC)",
+            "Nanoparticle Size Distribution Analysis",
+            "Surface Area and Porosity Measurement",
+            "Characterization of Optical and Magnetic Properties"
+        ]
+    },
+    {
+        "title": "5. Nanobiotechnology and Nanomedicine",
+        "description": "Explore the use of nanotechnology in biological and medical applications.",
+        "topics": [
+            "Drug Delivery Systems Using Nanoparticles",
+            "Nanomaterials in Diagnostics and Imaging",
+            "Cancer Treatment and Targeted Therapies",
+            "Nanotechnology in Regenerative Medicine",
+            "Biosensors and Lab-on-a-Chip Devices",
+            "Nanotoxicology and Biocompatibility",
+            "Ethical and Regulatory Issues in Nanomedicine"
+        ]
+    },
+    {
+        "title": "6. Nanoelectronics and Quantum Computing",
+        "description": "Learn about the applications of nanotechnology in electronics and computing.",
+        "topics": [
+            "Nanomaterials for Electronic Devices (Graphene, CNTs, Quantum Dots)",
+            "Transistors and Semiconductors at the Nanoscale",
+            "Quantum Dots and Quantum Wells",
+            "Introduction to Quantum Computing and Quantum Bits",
+            "Molecular Electronics and Single-Electron Transistors",
+            "Flexible and Wearable Nanoelectronics",
+            "Challenges in Scaling and Manufacturing Nanoelectronics"
+        ]
+    },
+    {
+        "title": "7. Nanotechnology in Energy and Environment",
+        "description": "Understand how nanotechnology is transforming energy and environmental solutions.",
+        "topics": [
+            "Nanomaterials for Solar Cells and Energy Harvesting",
+            "Nanotechnology in Batteries and Supercapacitors",
+            "Water Purification Using Nanomaterials",
+            "Catalysis for Clean Energy Production",
+            "Nanotechnology for Carbon Capture and Storage",
+            "Environmental Impact and Sustainability of Nanomaterials",
+            "Nanotechnology in Waste Treatment and Recycling"
+        ]
+    },
+    {
+        "title": "8. Advanced Nanotechnology Applications",
+        "description": "Discover advanced and emerging applications of nanotechnology.",
+        "topics": [
+            "Self-Assembling and Smart Nanomaterials",
+            "Nanorobotics and Nanosensors",
+            "Advanced Nanophotonics and Plasmonics",
+            "Applications of Nanotechnology in Agriculture",
+            "Wearable and Implantable Nanodevices",
+            "Nanotechnology in Aerospace and Defense",
+            "Future Trends and Ethical Considerations in Nanotechnology"
+        ]
+    }
+],
+            
+    resources: 
+    {
+        "documentation": [
+            {
+                "title": "Nanotechnology Research Documentation",
+                "url": "https://www.nano.gov/",
+                "description": "Official documentation for the study and application of nanotechnology.",
+                "type": "Nanotechnology Research Documentation"
+            },
+            {
+                "title": "NanoHUB Documentation",
+                "url": "https://nanohub.org/resources",
+                "description": "A platform providing resources, simulations, and educational material on nanotechnology.",
+                "type": "Nanotechnology Educational Resources"
+            },
+            {
+                "title": "Nanomaterials Database",
+                "url": "https://www.nanowerk.com/",
+                "description": "A comprehensive database for nanomaterials, their properties, and applications.",
+                "type": "Nanomaterials Database"
+            },
+            {
+                "title": "Nanotechnology Knowledge Portal",
+                "url": "https://www.nano.gov/learn-about-nanotechnology",
+                "description": "A portal offering information and resources for learning about nanotechnology.",
+                "type": "Nanotechnology Knowledge Hub"
+            }
+        ],
+        "tutorials": [
+            {
+                "title": "Introduction to Nanotechnology",
+                "url": "https://www.coursera.org/learn/nanotechnology",
+                "description": "An introductory course to nanotechnology, including its principles and applications.",
+                "type": "Online Course"
+            },
+            {
+                "title": "Nanotechnology Tutorials for Beginners",
+                "url": "https://www.nature.com/subjects/nanotechnology",
+                "description": "Step-by-step tutorials covering the fundamentals and techniques in nanotechnology.",
+                "type": "Tutorial"
+            },
+            {
+                "title": "Nanotechnology for Beginners: A Comprehensive Guide",
+                "url": "https://www.udemy.com/course/nanotechnology-for-beginners/",
+                "description": "A beginner's course that explains key concepts and applications of nanotechnology.",
+                "type": "Online Course"
+            },
+            {
+                "title": "Nanotechnology Applications and Research",
+                "url": "https://www.edx.org/course/nanotechnology-applications",
+                "description": "A course on various nanotechnology applications in medicine, electronics, and materials science.",
+                "type": "Online Course"
+            }
+        ],
+        "videos": [
+            {
+                "title": "Nanotechnology YouTube Channel",
+                "url": "https://www.youtube.com/c/NanoTechnology",
+                "description": "A YouTube channel featuring videos on nanotechnology research, applications, and innovations.",
+                "platform": "YouTube"
+            },
+            {
+                "title": "Nanotechnology 101",
+                "url": "https://www.youtube.com/c/Nanotechnology101",
+                "description": "An educational YouTube channel providing tutorials and discussions on nanotechnology.",
+                "platform": "YouTube"
+            },
+            {
+                "title": "Exploring Nanotechnology",
+                "url": "https://www.youtube.com/c/ExploringNanotech",
+                "description": "A YouTube channel exploring the various uses and potential of nanotechnology in different fields.",
+                "platform": "YouTube"
+            },
+            {
+                "title": "The Future of Nanotechnology",
+                "url": "https://www.youtube.com/c/NanoFuture",
+                "description": "A channel dedicated to future innovations and developments in nanotechnology.",
+                "platform": "YouTube"
+            }
+        ],
+        "books": [
+            {
+                "title": "Introduction to Nanotechnology",
+                "author": "Charles P. Poole, Frank J. Owens",
+                "description": "A comprehensive guide to the principles and applications of nanotechnology.",
+                "level": "Beginner"
+            },
+            {
+                "title": "Nanotechnology: Principles and Practices",
+                "author": "Sulabha K. Kulkarni",
+                "description": "A detailed book on the principles and practices of nanotechnology.",
+                "level": "Intermediate"
+            },
+            {
+                "title": "Nanostructures & Nanomaterials: Synthesis, Properties & Applications",
+                "author": "Guozhong Cao",
+                "description": "A book focused on the synthesis, properties, and applications of nanomaterials.",
+                "level": "Advanced"
+            },
+            {
+                "title": "Nanotechnology for Dummies",
+                "author": "Rita J. Neri",
+                "description": "An easy-to-understand introduction to the fascinating world of nanotechnology.",
+                "level": "Beginner"
+            }
+        ],
+        "tools": [
+            {
+                "title": "NanoHUB Tools",
+                "url": "https://nanohub.org/tools",
+                "description": "A variety of simulation and modeling tools for research in nanotechnology.",
+                "type": "Simulation Tools",
+                "category": "Essential"
+            },
+            {
+                "title": "Nanotechnology Software",
+                "url": "https://www.nanoscience.com/software.html",
+                "description": "A selection of software tools designed for nanotechnology research and development.",
+                "type": "Development Tools",
+                "category": "Useful"
+            },
+            {
+                "title": "Atomic Force Microscopy (AFM)",
+                "url": "https://www.afm.com",
+                "description": "A tool used to measure the topography of materials at the nanoscale.",
+                "type": "Characterization Tool",
+                "category": "Essential"
+            },
+            {
+                "title": "Scanning Electron Microscope (SEM)",
+                "url": "https://www.thermofisher.com/order/catalog/product/FEI-SEM",
+                "description": "A tool used for imaging nanostructures and surfaces with high resolution.",
+                "type": "Characterization Tool",
+                "category": "Essential"
+            }
+        ],
+        "communities": [
+            {
+                "title": "NanoHub Community",
+                "url": "https://nanohub.org/",
+                "description": "An online community for nanotechnology professionals and researchers.",
+                "type": "Forum"
+            },
+            {
+                "title": "Nanotechnology Network",
+                "url": "https://www.nano.org/",
+                "description": "A global network for nanotechnology researchers and innovators.",
+                "type": "Community Platform"
+            },
+            {
+                "title": "Nanotechnology LinkedIn Group",
+                "url": "https://www.linkedin.com/groups/12345678/",
+                "description": "A LinkedIn group dedicated to discussions about nanotechnology developments and career opportunities.",
+                "type": "Professional Network"
+            },
+            {
+                "title": "Nanotechnology Research Gate",
+                "url": "https://www.researchgate.net/project/Nanotechnology",
+                "description": "ResearchGate community for researchers sharing nanotechnology-related work and ideas.",
+                "type": "Research Network"
+            }
+        ],
+        "podcasts": [
+            {
+                "title": "The Nanotech Podcast",
+                "url": "https://www.nanotechpodcast.com/",
+                "description": "A podcast discussing the latest in nanotechnology research and applications.",
+                "platform": "Podcast"
+            },
+            {
+                "title": "Nano Matters Podcast",
+                "url": "https://www.nanomatters.com/",
+                "description": "A podcast about the exciting world of nanotechnology and its future.",
+                "platform": "Podcast"
+            },
+            {
+                "title": "Nanotechnology Insights Podcast",
+                "url": "https://www.nanotechinsights.com/",
+                "description": "Podcast featuring interviews and insights from nanotechnology experts and researchers.",
+                "platform": "Podcast"
+            }
+        ],
+        "blogs": [
+            {
+                "title": "NanoTech Blog",
+                "url": "https://www.nanotechweb.org/",
+                "description": "A blog covering the latest news, research, and developments in nanotechnology.",
+                "type": "Industry Blog"
+            },
+            {
+                "title": "Nanotechnology News",
+                "url": "https://www.nanowerk.com/",
+                "description": "A blog offering in-depth articles and insights on nanotechnology research and innovations.",
+                "type": "Research Blog"
+            },
+            {
+                "title": "The NanoBlog",
+                "url": "https://www.thenanoblog.com/",
+                "description": "A blog featuring updates and discussions on the state of nanotechnology.",
+                "type": "Research Blog"
+            },
+            {
+                "title": "NanoMaterials Blog",
+                "url": "https://www.nanomaterials.com/blog",
+                "description": "A blog focusing on nanomaterials and their diverse applications in various industries.",
+                "type": "Industry Blog"
+            }
+        ]
+    },
+    practice: {
+        beginnerExercises: [
+            {
+                title: "Basic Nanoparticle Synthesis Simulation",
+                difficulty: "Easy",
+                description: "Simulate the synthesis of nanoparticles and control their size using basic parameters.",
+                hints: [
+                    "Use a Monte Carlo simulation to model particle growth",
+                    "Adjust the parameters such as temperature and concentration to control the size of nanoparticles",
+                    "Start by defining a basic particle growth model",
+                    "Test with different initial conditions and observe the particle size distribution"
+                ],
+                solution: {
+                    code: `
+    const simulation = new NanoparticleSimulation();
+    simulation.setTemperature(300);
+    simulation.setConcentration(0.1);
+    
+    function runSimulation() {
+        simulation.update();
+        const particleSize = simulation.getAverageParticleSize();
+        console.log("Average Particle Size:", particleSize);
+    }
+    
+    setInterval(runSimulation, 1000);
+                    `,
+                    explanation: "This basic exercise demonstrates how to simulate the synthesis of nanoparticles, adjusting parameters such as temperature and concentration to control their size. The simulation updates over time to track the average particle size."
+                }
+            }
+        ],
+        advancedExercises: [
+            {
+                title: "Nanostructure Assembly with Molecular Simulation",
+                difficulty: "Hard",
+                description: "Design and simulate the self-assembly of a nanostructure using molecular dynamics simulations.",
+                hints: [
+                    "Use molecular dynamics to simulate the interaction between particles",
+                    "Implement forces like Van der Waals or electrostatic interactions",
+                    "Control the temperature and other environmental factors to guide self-assembly",
+                    "Ensure that the simulation accurately models the interactions between molecules"
+                ],
+                solution: {
+                    code: `
+    const molecularSimulation = new MolecularDynamicsSimulation();
+    molecularSimulation.setTemperature(350);
+    molecularSimulation.setInteractionForce("VanDerWaals");
+    
+    function runNanostructureAssembly() {
+        molecularSimulation.update();
+        const structure = molecularSimulation.getAssembledStructure();
+        console.log("Current Nanostructure:", structure);
+    }
+    
+    setInterval(runNanostructureAssembly, 100);
+                    `,
+                    explanation: "This advanced exercise simulates the self-assembly of a nanostructure using molecular dynamics. The particles interact with forces like Van der Waals, and the temperature is controlled to influence the formation of the nanostructure over time."
+                }
+            }
+        ]
+    }
+    
+}
+},
+{
+    id: 20,
+    title: "Quantum Computing",
+    description: "To learn quantum computing, follow this roadmap",
+    extendedContent: `
+        Master quantum computing fundamentals and quantum programming. Start with essential 
+        mathematics, quantum mechanics principles, and quantum information theory. Progress through 
+        quantum circuits, algorithms, and quantum programming frameworks. Learn about quantum gates, 
+        entanglement, and superposition. Explore quantum error correction, quantum machine learning, 
+        and quantum cryptography. Advanced topics include quantum optimization, quantum simulation, 
+        and quantum software development. Practice with quantum simulators and real quantum computers.
+    `,
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+    trackInfo: {
+        prerequisites: [
+            "Strong foundation in linear algebra",
+            "Understanding of complex numbers and matrices",
+            "Basic quantum mechanics concepts",
+            "Programming experience (Python preferred)",
+            "Probability theory fundamentals",
+            "Basic understanding of algorithms",
+            "Mathematical maturity"
+        ],
+        outcomes: [
+            "Develop quantum algorithms and circuits",
+            "Program quantum computers using frameworks",
+            "Implement quantum error correction",
+            "Design quantum machine learning models",
+            "Create quantum cryptographic protocols",
+            "Optimize quantum circuits",
+            "Understand quantum hardware limitations",
+            "Apply quantum algorithms to real problems",
+            "Develop quantum software applications",
+            "Analyze quantum system performance"
+        ],
+        sections: [
+            {
+                title: "Quantum Mathematics",
+                content: "Master essential mathematical concepts including linear algebra, complex vector spaces, and tensor products. Learn about Hilbert spaces, unitary transformations, and quantum operators. Understand quantum measurement theory and quantum probability."
+            },
+            {
+                title: "Quantum Mechanics Principles",
+                content: "Study fundamental quantum mechanics including superposition, entanglement, and measurement. Learn about quantum states, wavefunctions, and quantum evolution. Understand quantum decoherence and the quantum measurement problem."
+            },
+            {
+                title: "Quantum Computing Basics",
+                content: "Learn about qubits, quantum gates, and quantum circuits. Master quantum circuit design, state preparation, and measurement. Understand quantum algorithms basics and quantum computational complexity."
+            },
+            {
+                title: "Quantum Algorithms",
+                content: "Study key quantum algorithms including Grover's, Shor's, and quantum phase estimation. Learn about quantum Fourier transform, quantum walks, and amplitude amplification. Master quantum algorithm design principles."
+            },
+            {
+                title: "Quantum Programming",
+                content: "Learn quantum programming frameworks like Qiskit, Cirq, and Q#. Practice quantum circuit implementation and quantum algorithm coding. Understand quantum software development principles and best practices."
+            },
+            {
+                title: "Quantum Error Correction",
+                content: "Study quantum error correction codes, fault-tolerant quantum computing, and error mitigation techniques. Learn about stabilizer codes, surface codes, and quantum error detection. Understand quantum noise models and decoherence."
+            },
+            {
+                title: "Quantum Applications",
+                content: "Explore quantum applications in cryptography, optimization, and machine learning. Learn about quantum key distribution, quantum neural networks, and quantum chemistry simulation. Study quantum finance and quantum sensing applications."
+            },
+            {
+                title: "Quantum Hardware",
+                content: "Understand quantum computing hardware architectures, physical implementations, and constraints. Learn about superconducting qubits, ion traps, and photonic quantum computers. Study quantum control systems and quantum device characterization."
+            }
+        ]
+    },
+    content: {
+        examples: [
+            {
+                title: "Quantum Teleportation Implementation",
+                code: `from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
+from qiskit import Aer, execute
+import numpy as np
+
+class QuantumTeleportation:
+    def __init__(self):
+        # Create quantum registers
+        self.qr = QuantumRegister(3, 'q')
+        self.cr = ClassicalRegister(3, 'c')
+        self.circuit = QuantumCircuit(self.qr, self.cr)
+        
+    def prepare_state(self, theta: float, phi: float):
+        """Prepare the state to be teleported."""
+        # Create arbitrary single-qubit state
+        self.circuit.r3(theta, phi, 0.0, self.qr[0])
+        
+    def create_bell_pair(self):
+        """Create a Bell pair for teleportation."""
+        # Apply Hadamard to second qubit
+        self.circuit.h(self.qr[1])
+        # Apply CNOT to entangle second and third qubits
+        self.circuit.cx(self.qr[1], self.qr[2])
+        
+    def teleport(self):
+        """Implement teleportation protocol."""
+        # Bell measurement on sender's qubits
+        self.circuit.cx(self.qr[0], self.qr[1])
+        self.circuit.h(self.qr[0])
+        
+        # Measure sender's qubits
+        self.circuit.measure(self.qr[0], self.cr[0])
+        self.circuit.measure(self.qr[1], self.cr[1])
+        
+        # Apply corrections on receiver's qubit based on measurements
+        self.circuit.x(self.qr[2]).c_if(self.cr[1], 1)
+        self.circuit.z(self.qr[2]).c_if(self.cr[0], 1)
+        
+        # Measure final state (optional)
+        self.circuit.measure(self.qr[2], self.cr[2])
+        
+    def run_simulation(self, shots: int = 1000):
+        """Execute the quantum circuit on simulator."""
+        # Use Aer's qasm simulator
+        backend = Aer.get_backend('qasm_simulator')
+        
+        # Execute circuit with multiple shots
+        job = execute(self.circuit, backend, shots=shots)
+        result = job.result()
+        
+        # Get measurement counts
+        counts = result.get_counts(self.circuit)
+        return counts
+    
+    def analyze_results(self, counts: dict):
+        """Analyze teleportation results."""
+        total_shots = sum(counts.values())
+        success_rate = sum(
+            count for key, count in counts.items() 
+            if key[-1] == '1'
+        ) / total_shots
+        
+        return {
+            'counts': counts,
+            'success_rate': success_rate,
+            'total_shots': total_shots
+        }
+        
+def run_teleportation_experiment():
+    # Initialize teleportation
+    teleport = QuantumTeleportation()
+    
+    # Prepare state to teleport (|1⟩ state)
+    teleport.prepare_state(np.pi, 0)
+    
+    # Create Bell pair
+    teleport.create_bell_pair()
+    
+    # Perform teleportation
+    teleport.teleport()
+    
+    # Run simulation
+    counts = teleport.run_simulation(shots=1000)
+    
+    # Analyze results
+    results = teleport.analyze_results(counts)
+    
+    print("Quantum Teleportation Results:")
+    print(f"Success Rate: {results['success_rate']*100:.2f}%")
+    print("Measurement Counts:", results['counts'])
+    
+    # Draw circuit
+    print("\nQuantum Circuit:")
+    print(teleport.circuit)
+    
+    return results`,
+                explanation: "This example demonstrates quantum teleportation protocol implementation using Qiskit, including state preparation, Bell pair creation, and measurement-based corrections."
+            },
+            {
+                title: "Quantum Machine Learning - QSVM",
+                code: `from qiskit import Aer
+from qiskit.circuit.library import ZZFeatureMap
+from qiskit.algorithms.optimizers import SPSA
+from qiskit_machine_learning.algorithms import QSVM
+from qiskit_machine_learning.kernels import QuantumKernel
+import numpy as np
+from typing import Tuple, List
+from sklearn.preprocessing import StandardScaler
+import logging
+
+class QuantumSVMClassifier:
+    def __init__(self, feature_dimension: int, feature_reps: int = 2):
+        self.feature_dimension = feature_dimension
+        self.feature_reps = feature_reps
+        self.backend = Aer.get_backend('statevector_simulator')
+        self.setup_logging()
+        self.initialize_quantum_kernel()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def initialize_quantum_kernel(self):
+        """Initialize quantum feature map and kernel."""
+        try:
+            # Create feature map circuit
+            self.feature_map = ZZFeatureMap(
+                feature_dimension=self.feature_dimension,
+                reps=self.feature_reps
+            )
+            
+            # Create quantum kernel
+            self.quantum_kernel = QuantumKernel(
+                feature_map=self.feature_map,
+                quantum_instance=self.backend
+            )
+            
+            logging.info("Quantum kernel initialized successfully")
+            
+        except Exception as e:
+            logging.error(f"Kernel initialization failed: {str(e)}")
+            raise
+            
+    def preprocess_data(self, X: np.ndarray) -> np.ndarray:
+        """Preprocess input data."""
+        try:
+            # Scale features
+            scaler = StandardScaler()
+            X_scaled = scaler.fit_transform(X)
+            
+            # Clip values to prevent overflow
+            X_scaled = np.clip(X_scaled, -4, 4)
+            
+            return X_scaled
+            
+        except Exception as e:
+            logging.error(f"Data preprocessing failed: {str(e)}")
+            raise
+            
+    def train(self, X: np.ndarray, y: np.ndarray):
+        """Train quantum SVM model."""
+        try:
+            logging.info("Starting QSVM training")
+            
+            # Preprocess data
+            X_processed = self.preprocess_data(X)
+            
+            # Initialize QSVM
+            self.qsvm = QSVM(
+                quantum_kernel=self.quantum_kernel,
+                training_dataset=(X_processed, y)
+            )
+            
+            # Train model
+            self.qsvm.fit(X_processed, y)
+            
+            logging.info("QSVM training completed")
+            
+        except Exception as e:
+            logging.error(f"Training failed: {str(e)}")
+            raise
+            
+    def predict(self, X: np.ndarray) -> np.ndarray:
+        """Make predictions using trained model."""
+        try:
+            # Preprocess input
+            X_processed = self.preprocess_data(X)
+            
+            # Make predictions
+            predictions = self.qsvm.predict(X_processed)
+            return predictions
+            
+        except Exception as e:
+            logging.error(f"Prediction failed: {str(e)}")
+            raise
+            
+    def evaluate(self, X: np.ndarray, y: np.ndarray) -> dict:
+        """Evaluate model performance."""
+        try:
+            # Make predictions
+            predictions = self.predict(X)
+            
+            # Calculate metrics
+            accuracy = np.mean(predictions == y)
+            
+            # Calculate confusion matrix
+            true_pos = np.sum((predictions == 1) & (y == 1))
+            true_neg = np.sum((predictions == 0) & (y == 0))
+            false_pos = np.sum((predictions == 1) & (y == 0))
+            false_neg = np.sum((predictions == 0) & (y == 1))
+            
+            metrics = {
+                'accuracy': accuracy,
+                'precision': true_pos / (true_pos + false_pos),
+                'recall': true_pos / (true_pos + false_neg),
+                'confusion_matrix': {
+                    'true_positive': int(true_pos),
+                    'true_negative': int(true_neg),
+                    'false_positive': int(false_pos),
+                    'false_negative': int(false_neg)
+                }
+            }
+            
+            return metrics
+            
+        except Exception as e:
+            logging.error(f"Evaluation failed: {str(e)}")
+            raise
+            
+def run_qsvm_experiment():
+    # Generate sample data
+    np.random.seed(42)
+    n_samples = 100
+    
+    # Create simple binary classification dataset
+    X = np.random.randn(n_samples, 2)
+    y = np.array([1 if x[0] + x[1] > 0 else 0 for x in X])
+    
+    # Split data
+    train_size = int(0.8 * n_samples)
+    X_train = X[:train_size]
+    y_train = y[:train_size]
+    X_test = X[train_size:]
+    y_test = y[train_size:]
+    
+    # Initialize and train QSVM
+    qsvm = QuantumSVMClassifier(feature_dimension=2)
+    qsvm.train(X_train, y_train)
+    
+    # Evaluate model
+    metrics = qsvm.evaluate(X_test, y_test)
+    
+    print("\nQSVM Classification Results:")
+    print(f"Accuracy: {metrics['accuracy']:.4f}")
+    print(f"Precision: {metrics['precision']:.4f}")
+    print(f"Recall: {metrics['recall']:.4f}")
+    print("\nConfusion Matrix:")
+    print(f"True Positives: {metrics['confusion_matrix']['true_positive']}")
+    print(f"True Negatives: {metrics['confusion_matrix']['true_negative']}")
+    print(f"False Positives: {metrics['confusion_matrix']['false_positive']}")
+    print(f"False Negatives: {metrics['confusion_matrix']['false_negative']}")
+    
+    return metrics`,
+                explanation: "This example implements a Quantum Support Vector Machine using Qiskit's machine learning module, demonstrating quantum feature maps, kernel methods, and model evaluation."
+            },
+            {
+                title: "Quantum Chemistry Simulation",
+                code: `from qiskit_nature.problems.second_quantization.electronic import ElectronicStructureProblem
+from qiskit_nature.transformers import FreezeCoreTransformer
+from qiskit_nature.drivers import UnitsType, Molecule
+from qiskit_nature.drivers.second_quantization import PySCFDriver
+from qiskit_nature.algorithms import GroundStateEigensolver
+from qiskit_nature.algorithms.ground_state_solvers import NumPyMinimumEigensolverFactory
+import numpy as np
+import logging
+from typing import Dict, List, Optional
+
+class QuantumChemistrySimulator:
+    def __init__(self):
+        self.setup_logging()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def create_molecule(self, 
+                       geometry: List[str],
+                       charge: int = 0,
+                       multiplicity: int = 1) -> PySCFDriver:
+        """Create molecular driver for simulation."""
+        try:
+            molecule = Molecule(
+                geometry=geometry,
+                charge=charge,
+                multiplicity=multiplicity
+            )
+            
+            driver = PySCFDriver.from_molecule(
+                molecule,
+                basis='sto3g',
+                method='rhf'
+            )
+            
+            logging.info(f"Created driver for molecule")
+            return driver
+            
+        except Exception as e:
+            logging.error(f"Driver creation failed: {str(e)}")
+            raise
+            
+    def prepare_problem(self, 
+                       driver: PySCFDriver,
+                       freeze_core: bool = True) -> ElectronicStructureProblem:
+        """Prepare quantum chemistry problem."""
+        try:
+            # Generate problem from driver
+            problem = driver.run()
+            
+            if freeze_core:
+                # Transform problem to freeze core orbitals
+                transformer = FreezeCoreTransformer()
+                problem = transformer.transform(problem)
+                
+            logging.info("Problem preparation completed")
+            return problem
+            
+        except Exception as e:
+            logging.error(f"Problem preparation failed: {str(e)}")
+            raise
+            
+    def solve_ground_state(self, 
+                          problem: ElectronicStructureProblem) -> Dict:
+        """Solve for ground state energy."""
+        try:
+            # Create solver
+            solver = GroundStateEigensolver(
+                NumPyMinimumEigensolverFactory()
+            )
+            
+            # Solve problem
+            result = solver.solve(problem)
+            
+            # Extract results
+            energy = float(result.total_energies[0].real)
+            dipole = result.dipole_moment
+            
+            results = {
+                'energy': energy,
+                'dipole_moment': {
+                    'x': float(dipole[0].real),
+                    'y': float(dipole[1].real),
+                    'z': float(dipole[2].real),
+                    'total': float(np.linalg.norm(dipole).real)
+                },
+                'num_particles': result.num_particles,
+                'spin': result.spin
+            }
+            
+            logging.info(f"Ground state solved: E = {energy:.6f} Hartree")
+            return results
+            
+        except Exception as e:
+            logging.error(f"Ground state solving failed: {str(e)}")
+            raise
+            
+    def analyze_results(self, results: Dict) -> Dict:
+        """Analyze simulation results."""
+        try:
+            # Convert energy to other units
+            energy_hartree = results['energy']
+            
+            analysis = {
+                'energy': {
+                    'hartree': energy_hartree,
+                    'ev': energy_hartree * 27.211386,
+                    'kcal_mol': energy_hartree * 627.509
+                },
+                'dipole_moment': results['dipole_moment'],
+                'electronic_properties': {
+                    'num_electrons': results['num_particles'],
+                    'spin': results['spin']
+                }
+            }
+            
+            return analysis
+            
+        except Exception as e:
+            logging.error(f"Results analysis failed: {str(e)}")
+            raise
+            
+def run_chemistry_simulation():
+    # Initialize simulator
+    simulator = QuantumChemistrySimulator()
+    
+    # Define water molecule geometry
+    geometry = [
+        'H 0.0 0.0 0.0',
+        'O 0.0 0.0 0.9584',
+        'H 0.0 0.9584 0.0'
+    ]
+    
+    # Create molecule driver
+    driver = simulator.create_molecule(geometry)
+    
+    # Prepare problem
+    problem = simulator.prepare_problem(driver)
+    
+    # Solve ground state
+    results = simulator.solve_ground_state(problem)
+    
+    # Analyze results
+    analysis = simulator.analyze_results(results)
+    
+    print("\nQuantum Chemistry Simulation Results:")
+    print("Energy:")
+    print(f"  Hartree: {analysis['energy']['hartree']:.6f}")
+    print(f"  eV: {analysis['energy']['ev']:.6f}")
+    print(f"  kcal/mol: {analysis['energy']['kcal_mol']:.6f}")
+    print("\nDipole Moment (Debye):")
+    print(f"  Total: {analysis['dipole_moment']['total']:.4f}")
+    print(f"  x: {analysis['dipole_moment']['x']:.4f}")
+    print(f"  y: {analysis['dipole_moment']['y']:.4f}")
+    print(f"  z: {analysis['dipole_moment']['z']:.4f}")
+    print("\nElectronic Properties:")
+    print(f"  Number of Electrons: {analysis['electronic_properties']['num_electrons']}")
+    print(f"  Spin: {analysis['electronic_properties']['spin']}")
+    
+    return analysis
+
+if __name__ == "__main__":
+    analysis = run_chemistry_simulation()`,
+                explanation: "This example implements quantum chemistry simulation using Qiskit Nature, demonstrating molecular electronic structure calculations, ground state solving, and property analysis."
+            }
+        ],
+        roadmap: [
+            {
+                title: "1. Quantum Mathematics",
+                description: "Master mathematical foundations of quantum computing",
+                topics: [
+                    "Linear Algebra and Matrix Operations",
+                    "Complex Vector Spaces",
+                    "Tensor Products and Hilbert Spaces",
+                    "Quantum Operators and Measurements",
+                    "Probability Theory in Quantum Mechanics",
+                    "Unitary Transformations",
+                    "Quantum Information Theory"
+                ]
+            },
+            {
+                title: "2. Quantum Mechanics",
+                description: "Learn fundamental quantum mechanics concepts",
+                topics: [
+                    "Quantum States and Wavefunctions",
+                    "Superposition Principle",
+                    "Quantum Entanglement",
+                    "Quantum Measurement Theory",
+                    "Quantum Evolution and Dynamics",
+                    "Density Matrices",
+                    "Quantum Decoherence"
+                ]
+            },
+            {
+                title: "3. Quantum Circuits",
+                description: "Study quantum circuit design and implementation",
+                topics: [
+                    "Qubits and Quantum Gates",
+                    "Universal Gate Sets",
+                    "Circuit Construction Principles",
+                    "Quantum State Preparation",
+                    "Measurement Techniques",
+                    "Circuit Optimization",
+                    "Quantum Circuit Simulation"
+                ]
+            },
+            {
+                title: "4. Quantum Algorithms",
+                description: "Master key quantum algorithms and their applications",
+                topics: [
+                    "Quantum Fourier Transform",
+                    "Grover's Algorithm",
+                    "Shor's Algorithm",
+                    "Quantum Phase Estimation",
+                    "Amplitude Amplification",
+                    "Quantum Walks",
+                    "Variational Quantum Algorithms"
+                ]
+            },
+            {
+                title: "5. Quantum Programming",
+                description: "Learn quantum software development",
+                topics: [
+                    "Qiskit Framework",
+                    "Q# and Other Languages",
+                    "Quantum Circuit Libraries",
+                    "Error Mitigation Techniques",
+                    "Quantum Debug and Testing",
+                    "Performance Optimization",
+                    "Cloud Quantum Computing"
+                ]
+            },
+            {
+                title: "6. Quantum Applications",
+                description: "Explore practical quantum computing applications",
+                topics: [
+                    "Quantum Machine Learning",
+                    "Quantum Chemistry Simulation",
+                    "Quantum Optimization",
+                    "Quantum Cryptography",
+                    "Quantum Finance",
+                    "Quantum Error Correction",
+                    "Quantum Communication"
+                ]
+            },
+            {
+                title: "7. Advanced Topics",
+                description: "Study advanced quantum computing concepts",
+                topics: [
+                    "Quantum Complexity Theory",
+                    "Topological Quantum Computing",
+                    "Adiabatic Quantum Computing",
+                    "Quantum Annealing",
+                    "Quantum Control Theory",
+                    "Quantum Hardware Architectures",
+                    "Quantum Fault Tolerance"
+                ]
+            }
+        ],
+        resources: {
+            documentation: [
+                {
+                    title: "Qiskit Documentation",
+                    url: "https://qiskit.org/documentation/",
+                    description: "Comprehensive guide to Qiskit framework",
+                    type: "Framework Documentation"
+                },
+                {
+                    title: "Microsoft Q# Documentation",
+                    url: "https://docs.microsoft.com/quantum/",
+                    description: "Q# quantum programming language guide",
+                    type: "Language Documentation"
+                },
+                {
+                    title: "Cirq Documentation",
+                    url: "https://quantumai.google/cirq",
+                    description: "Google's Cirq framework documentation",
+                    type: "Framework Documentation"
+                },
+                {
+                    title: "IBM Quantum Learning",
+                    url: "https://quantum-computing.ibm.com/learn",
+                    description: "IBM's quantum computing resources",
+                    type: "Educational Platform"
+                },
+                {
+                    title: "Amazon Braket Documentation",
+                    url: "https://docs.aws.amazon.com/braket/",
+                    description: "AWS quantum computing service docs",
+                    type: "Platform Documentation"
+                }
+            ],
+            tutorials: [
+                {
+                    title: "Qiskit Textbook",
+                    url: "https://qiskit.org/textbook/",
+                    description: "Interactive quantum computing textbook",
+                    type: "Online Course"
+                },
+                {
+                    title: "Microsoft Quantum Katas",
+                    url: "https://github.com/microsoft/QuantumKatas",
+                    description: "Self-paced quantum programming tutorials",
+                    type: "Interactive Tutorials"
+                },
+                {
+                    title: "Quantum Machine Learning Course",
+                    url: "https://www.edx.org/course/quantum-machine-learning",
+                    description: "edX course on quantum ML",
+                    type: "Online Course"
+                },
+                {
+                    title: "Google Quantum Computing Playground",
+                    url: "https://quantumplayground.net/",
+                    description: "Interactive quantum simulator",
+                    type: "Learning Platform"
+                },
+                {
+                    title: "IBM Quantum Challenge",
+                    url: "https://quantum-computing.ibm.com/challenges",
+                    description: "Hands-on quantum programming challenges",
+                    type: "Practice Platform"
+                }
+            ],
+            videos: [
+                {
+                    title: "MIT Quantum Computing Course",
+                    url: "https://ocw.mit.edu/courses/physics/8-371x-quantum-information-science-i/",
+                    description: "MIT's quantum information science lectures",
+                    platform: "OCW"
+                },
+                {
+                    title: "Quantum Computing for Computer Scientists",
+                    url: "https://www.youtube.com/watch?v=F_Riqjdh2oM",
+                    description: "Microsoft Research quantum lectures",
+                    platform: "YouTube"
+                },
+                {
+                    title: "Qiskit Seminar Series",
+                    url: "https://www.youtube.com/c/qiskit",
+                    description: "Technical talks on quantum computing",
+                    platform: "YouTube"
+                },
+                {
+                    title: "QuTech Academy",
+                    url: "https://www.youtube.com/c/QuTechAcademy",
+                    description: "Quantum technology educational videos",
+                    platform: "YouTube"
+                },
+                {
+                    title: "Quantum Computing Explained",
+                    url: "https://www.youtube.com/c/AndrewDotnielsen",
+                    description: "Accessible quantum computing concepts",
+                    platform: "YouTube"
+                }
+            ],
+            books: [
+                {
+                    title: "Quantum Computation and Quantum Information",
+                    author: "Michael A. Nielsen, Isaac L. Chuang",
+                    description: "Comprehensive quantum computing textbook",
+                    level: "Advanced"
+                },
+                {
+                    title: "Programming Quantum Computers",
+                    author: "Eric R. Johnston, Nic Harrigan, Mercedes Gimeno-Segovia",
+                    description: "Practical quantum programming guide",
+                    level: "Intermediate"
+                },
+                {
+                    title: "Quantum Computing: An Applied Approach",
+                    author: "Jack D. Hidary",
+                    description: "Practical quantum computing applications",
+                    level: "Intermediate"
+                },
+                {
+                    title: "Learn Quantum Computing with Python and Q#",
+                    author: "Sarah Kaiser, Christopher Granade",
+                    description: "Hands-on quantum programming",
+                    level: "Beginner"
+                },
+                {
+                    title: "Quantum Computing for Everyone",
+                    author: "Chris Bernhardt",
+                    description: "Accessible introduction to quantum computing",
+                    level: "Beginner"
+                }
+            ],
+            tools: [
+                {
+                    title: "Qiskit",
+                    url: "https://qiskit.org/",
+                    description: "IBM's quantum computing framework",
+                    type: "Framework",
+                    category: "Essential"
+                },
+                {
+                    title: "Q#",
+                    url: "https://azure.microsoft.com/quantum",
+                    description: "Microsoft's quantum language",
+                    type: "Programming Language",
+                    category: "Essential"
+                },
+                {
+                    title: "Cirq",
+                    url: "https://quantumai.google/cirq",
+                    description: "Google's quantum framework",
+                    type: "Framework",
+                    category: "Essential"
+                },
+                {
+                    title: "PennyLane",
+                    url: "https://pennylane.ai/",
+                    description: "Quantum machine learning framework",
+                    type: "Framework",
+                    category: "Essential"
+                },
+                {
+                    title: "ProjectQ",
+                    url: "https://projectq.ch/",
+                    description: "ETH Zurich's quantum framework",
+                    type: "Framework",
+                    category: "Essential"
+                }
+            ],
+            communities: [
+                {
+                    title: "Quantum Computing Stack Exchange",
+                    url: "https://quantumcomputing.stackexchange.com/",
+                    description: "Q&A platform for quantum computing",
+                    type: "Q&A Forum"
+                },
+                {
+                    title: "Qiskit Slack",
+                    url: "https://qiskit.org/slack",
+                    description: "Qiskit community discussions",
+                    type: "Chat Platform"
+                },
+                {
+                    title: "r/QuantumComputing",
+                    url: "https://www.reddit.com/r/QuantumComputing/",
+                    description: "Reddit quantum computing community",
+                    type: "Forum"
+                },
+                {
+                    title: "Quantum Open Source Foundation",
+                    url: "https://qosf.org/",
+                    description: "Open source quantum projects",
+                    type: "Organization"
+                },
+                {
+                    title: "Quantum Computing Report",
+                    url: "https://quantumcomputingreport.com/",
+                    description: "News and analysis in quantum computing",
+                    type: "News Platform"
+                }
+            ],
+            podcasts: [
+                {
+                    title: "Quantum Computing Now",
+                    url: "https://quantumcomputingnow.com/",
+                    description: "Weekly quantum computing updates",
+                    platform: "Podcast"
+                },
+                {
+                    title: "The Quantum Daily Podcast",
+                    url: "https://thequantumdaily.com/podcast/",
+                    description: "Quantum technology news and interviews",
+                    platform: "Podcast"
+                },
+                {
+                    title: "Quantum Computing Inc Podcast",
+                    url: "https://www.quantumcomputinginc.com/podcast/",
+                    description: "Industry perspectives on quantum computing",
+                    platform: "Podcast"
+                },
+                {
+                    title: "Q-Hub Podcast",
+                    url: "https://www.q-hub.co.uk/podcast",
+                    description: "Academic quantum computing discussions",
+                    platform: "Podcast"
+                }
+            ],
+            blogs: [
+                {
+                    title: "Quantum Frontiers",
+                    url: "https://quantumfrontiers.com/",
+                    description: "Research insights in quantum computing",
+                    type: "Research Blog"
+                },
+                {
+                    title: "Microsoft Quantum Blog",
+                    url: "https://cloudblogs.microsoft.com/quantum/",
+                    description: "Microsoft's quantum computing updates",
+                    type: "Company Blog"
+                },
+                {
+                    title: "IBM Quantum Blog",
+                    url: "https://research.ibm.com/blog/quantum",
+                    description: "IBM Research quantum developments",
+                    type: "Research Blog"
+                },
+                {
+                    title: "Quantum Computing Report",
+                    url: "https://quantumcomputingreport.com/blog/",
+                    description: "Industry analysis and news",
+                    type: "News Blog"
+                }
+            ]
+        },
+        practice: {
+            beginnerExercises: [
+                {
+                    title: "Basic Quantum State Manipulation",
+                    difficulty: "Easy",
+                    description: "Create a program to demonstrate basic quantum state preparation and measurement.",
+                    hints: [
+                        "Use Qiskit's QuantumCircuit",
+                        "Implement Hadamard gates",
+                        "Add measurement operations",
+                        "Visualize results with histograms"
+                    ],
+                    solution: {
+                        code: `from qiskit import QuantumCircuit, Aer, execute
+    from qiskit.visualization import plot_histogram
+    import numpy as np
+    import logging
+    from typing import Dict, Optional
+    
+    class QuantumStateDemo:
+        def __init__(self):
+            self.simulator = Aer.get_backend('qasm_simulator')
+            self.setup_logging()
+            
+        def setup_logging(self):
+            logging.basicConfig(
+                level=logging.INFO,
+                format='%(asctime)s - %(levelname)s - %(message)s'
+            )
+            
+        def create_superposition(self, num_qubits: int = 2) -> QuantumCircuit:
+            """Create quantum circuit with superposition states."""
+            try:
+                # Create circuit
+                circuit = QuantumCircuit(num_qubits, num_qubits)
+                
+                # Apply Hadamard gates to create superposition
+                for qubit in range(num_qubits):
+                    circuit.h(qubit)
+                    
+                # Add measurements
+                circuit.measure_all()
+                
+                logging.info(f"Created {num_qubits}-qubit superposition circuit")
+                return circuit
+                
+            except Exception as e:
+                logging.error(f"Circuit creation failed: {str(e)}")
+                raise
+                
+        def run_circuit(self, circuit: QuantumCircuit, 
+                       shots: int = 1000) -> Dict:
+            """Execute quantum circuit and return results."""
+            try:
+                # Execute circuit
+                job = execute(circuit, self.simulator, shots=shots)
+                result = job.result()
+                
+                # Get counts
+                counts = result.get_counts(circuit)
+                
+                logging.info(f"Circuit executed with {shots} shots")
+                return counts
+                
+            except Exception as e:
+                logging.error(f"Circuit execution failed: {str(e)}")
+                raise
+                
+        def analyze_results(self, counts: Dict) -> Dict:
+            """Analyze measurement results."""
+            try:
+                total_shots = sum(counts.values())
+                probabilities = {
+                    state: count/total_shots 
+                    for state, count in counts.items()
+                }
+                
+                # Calculate expected vs actual probabilities
+                num_qubits = len(list(counts.keys())[0])
+                expected_prob = 1 / (2 ** num_qubits)
+                
+                analysis = {
+                    'total_measurements': total_shots,
+                    'state_probabilities': probabilities,
+                    'expected_probability': expected_prob,
+                    'max_deviation': max([
+                        abs(p - expected_prob) 
+                        for p in probabilities.values()
+                    ])
+                }
+                
+                return analysis
+                
+            except Exception as e:
+                logging.error(f"Analysis failed: {str(e)}")
+                raise
+                
+        def create_bell_state(self) -> QuantumCircuit:
+            """Create Bell state (maximally entangled state)."""
+            try:
+                # Create circuit
+                circuit = QuantumCircuit(2, 2)
+                
+                # Create Bell state
+                circuit.h(0)  # Hadamard on first qubit
+                circuit.cx(0, 1)  # CNOT with first qubit as control
+                
+                # Add measurements
+                circuit.measure_all()
+                
+                logging.info("Created Bell state circuit")
+                return circuit
+                
+            except Exception as e:
+                logging.error(f"Bell state creation failed: {str(e)}")
+                raise
+    
+    def run_quantum_demo():
+        # Initialize demo
+        demo = QuantumStateDemo()
+        
+        print("1. Superposition State Demo:")
+        # Create and run superposition circuit
+        circuit = demo.create_superposition(2)
+        print("\nCircuit:")
+        print(circuit)
+        
+        counts = demo.run_circuit(circuit)
+        analysis = demo.analyze_results(counts)
+        
+        print("\nMeasurement Results:")
+        print(f"Total measurements: {analysis['total_measurements']}")
+        print("\nState probabilities:")
+        for state, prob in analysis['state_probabilities'].items():
+            print(f"  |{state}⟩: {prob:.4f}")
+        print(f"\nExpected probability: {analysis['expected_probability']:.4f}")
+        print(f"Maximum deviation: {analysis['max_deviation']:.4f}")
+        
+        print("\n2. Bell State Demo:")
+        # Create and run Bell state circuit
+        bell_circuit = demo.create_bell_state()
+        print("\nCircuit:")
+        print(bell_circuit)
+        
+        bell_counts = demo.run_circuit(bell_circuit)
+        bell_analysis = demo.analyze_results(bell_counts)
+        
+        print("\nBell State Measurements:")
+        print("\nState probabilities:")
+        for state, prob in bell_analysis['state_probabilities'].items():
+            print(f"  |{state}⟩: {prob:.4f}")
+        
+        return {
+            'superposition': analysis,
+            'bell_state': bell_analysis
+        }
+    
+    if __name__ == "__main__":
+        results = run_quantum_demo()`,
+                        explanation: "This exercise demonstrates fundamental quantum computing concepts including superposition and entanglement, with comprehensive result analysis and visualization."
+                    }
+                },
+                {
+                    title: "Quantum Random Number Generator",
+                    difficulty: "Easy",
+                    description: "Implement a quantum random number generator using quantum superposition.",
+                    hints: [
+                        "Use Hadamard gates for randomness",
+                        "Implement multiple qubits for range",
+                        "Add result validation",
+                        "Include statistical analysis"
+                    ],
+                    solution: {
+                        code: `from qiskit import QuantumCircuit, Aer, execute
+    import numpy as np
+    from typing import List, Dict, Optional
+    import logging
+    from collections import Counter
+    
+    class QuantumRandomGenerator:
+        def __init__(self):
+            self.simulator = Aer.get_backend('qasm_simulator')
+            self.setup_logging()
+            
+        def setup_logging(self):
+            logging.basicConfig(
+                level=logging.INFO,
+                format='%(asctime)s - %(levelname)s - %(message)s'
+            )
+            
+        def create_random_circuit(self, num_qubits: int) -> QuantumCircuit:
+            """Create quantum circuit for random number generation."""
+            try:
+                # Create circuit
+                circuit = QuantumCircuit(num_qubits, num_qubits)
+                
+                # Apply Hadamard gates to all qubits
+                circuit.h(range(num_qubits))
+                
+                # Measure all qubits
+                circuit.measure_all()
+                
+                logging.info(f"Created {num_qubits}-qubit random circuit")
+                return circuit
+                
+            except Exception as e:
+                logging.error(f"Circuit creation failed: {str(e)}")
+                raise
+                
+        def binary_to_decimal(self, binary_str: str) -> int:
+            """Convert binary string to decimal number."""
+            return int(binary_str, 2)
+            
+        def generate_random_numbers(self, num_bits: int, 
+                                  num_samples: int) -> List[int]:
+            """Generate list of random numbers."""
+            try:
+                circuit = self.create_random_circuit(num_bits)
+                
+                # Execute circuit multiple times
+                job = execute(
+                    circuit,
+                    self.simulator,
+                    shots=num_samples
+                )
+                result = job.result()
+                counts = result.get_counts(circuit)
+                
+                # Convert measurements to numbers
+                numbers = []
+                for bitstring, count in counts.items():
+                    number = self.binary_to_decimal(bitstring)
+                    numbers.extend([number] * count)
+                    
+                logging.info(
+                    f"Generated {num_samples} random numbers "
+                    f"in range [0, {2**num_bits - 1}]"
+                )
+                return numbers
+                
+            except Exception as e:
+                logging.error(f"Random number generation failed: {str(e)}")
+                raise
+                
+        def analyze_distribution(self, numbers: List[int], 
+                               num_bits: int) -> Dict:
+            """Analyze the distribution of generated numbers."""
+            try:
+                # Calculate statistics
+                numbers_array = np.array(numbers)
+                
+                analysis = {
+                    'mean': np.mean(numbers_array),
+                    'std': np.std(numbers_array),
+                    'min': np.min(numbers_array),
+                    'max': np.max(numbers_array),
+                    'histogram': Counter(numbers_array),
+                    'theoretical_mean': (2**num_bits - 1) / 2,
+                    'theoretical_std': np.sqrt(
+                        ((2**num_bits)**2 - 1) / 12
+                    )
+                }
+                
+                # Chi-square test for uniformity
+                observed = np.zeros(2**num_bits)
+                for num, count in analysis['histogram'].items():
+                    observed[num] = count
+                    
+                expected = len(numbers) / (2**num_bits)
+                chi_square = np.sum(
+                    (observed - expected)**2 / expected
+                )
+                
+                analysis['chi_square_statistic'] = chi_square
+                
+                return analysis
+                
+            except Exception as e:
+                logging.error(f"Distribution analysis failed: {str(e)}")
+                raise
+                
+        def validate_randomness(self, numbers: List[int], 
+                              analysis: Dict) -> Dict:
+            """Perform basic randomness validation tests."""
+            try:
+                # Calculate metrics
+                numbers_array = np.array(numbers)
+                theoretical_mean = analysis['theoretical_mean']
+                theoretical_std = analysis['theoretical_std']
+                
+                validation = {
+                    'mean_within_bounds': abs(
+                        np.mean(numbers_array) - theoretical_mean
+                    ) < theoretical_std,
+                    'distribution_uniform': analysis['chi_square_statistic'] < 
+                                        len(set(numbers)) * 0.05,
+                    'no_obvious_patterns': self._check_patterns(numbers)
+                }
+                
+                validation['overall_quality'] = all(validation.values())
+                
+                return validation
+                
+            except Exception as e:
+                logging.error(f"Randomness validation failed: {str(e)}")
+                raise
+                
+        def _check_patterns(self, numbers: List[int]) -> bool:
+            """Check for obvious patterns in the sequence."""
+            # Check for repeating subsequences
+            seq_str = ''.join(map(str, numbers))
+            for length in range(2, len(seq_str)//2):
+                for i in range(len(seq_str) - 2*length):
+                    if seq_str[i:i+length] == seq_str[i+length:i+2*length]:
+                        return False
+            return True
+    
+    def run_qrng_demo():
+        # Initialize generator
+        qrng = QuantumRandomGenerator()
+        
+        # Generate random numbers
+        num_bits = 4  # Generate numbers from 0 to 15
+        num_samples = 1000
+        
+        print(f"Generating {num_samples} random numbers "
+              f"using {num_bits} qubits...")
+        
+        numbers = qrng.generate_random_numbers(num_bits, num_samples)
+        
+        # Analyze results
+        analysis = qrng.analyze_distribution(numbers, num_bits)
+        validation = qrng.validate_randomness(numbers, analysis)
+        
+        print("\nResults Analysis:")
+        print(f"Mean: {analysis['mean']:.2f} "
+              f"(Expected: {analysis['theoretical_mean']:.2f})")
+        print(f"Standard Deviation: {analysis['std']:.2f} "
+              f"(Expected: {analysis['theoretical_std']:.2f})")
+        print(f"Range: [{analysis['min']}, {analysis['max']}]")
+        
+        print("\nDistribution Test:")
+        print(f"Chi-square statistic: {analysis['chi_square_statistic']:.2f}")
+        
+        print("\nRandomness Validation:")
+        for test, result in validation.items():
+            print(f"{test}: {'Pass' if result else 'Fail'}")
+        
+        return {
+            'numbers': numbers,
+            'analysis': analysis,
+            'validation': validation
+        }
+    
+    if __name__ == "__main__":
+        results = run_qrng_demo()`,
+                        explanation: "This exercise implements a quantum random number generator using superposition states, including comprehensive statistical analysis and randomness validation."
+                    }
+                }
+            ],
+            intermediateExercises: [
+                {
+                    title: "Quantum Phase Estimation",
+                    difficulty: "Medium",
+                    description: "Implement quantum phase estimation algorithm to find eigenvalues of unitary operators.",
+                    hints: [
+                        "Use quantum Fourier transform",
+                        "Implement controlled unitary operations",
+                        "Add phase kickback",
+                        "Include error analysis"
+                    ],
+                    solution: {
+                        code: `from qiskit import QuantumCircuit, QuantumRegister
+    from qiskit import ClassicalRegister, Aer, execute
+    import numpy as np
+    from typing import Tuple, Dict, Optional
+    import logging
+    
+    class QuantumPhaseEstimation:
+        def __init__(self):
+            self.simulator = Aer.get_backend('qasm_simulator')
+            self.setup_logging()
+            
+        def setup_logging(self):
+            logging.basicConfig(
+                level=logging.INFO,
+                format='%(asctime)s - %(levelname)s - %(message)s'
+            )
+            
+        def create_qpe_circuit(self, precision_qubits: int, 
+                              unitary_circuit: QuantumCircuit) -> QuantumCircuit:
+            """Create quantum phase estimation circuit."""
+            try:
+                # Create registers
+                counting_register = QuantumRegister(precision_qubits, 'count')
+                eigenstate_register = QuantumRegister(
+                    unitary_circuit.num_qubits, 
+                    'state'
+                )
+                classical_register = ClassicalRegister(precision_qubits, 'c')
+                
+                # Create circuit
+                circuit = QuantumCircuit(
+                    counting_register, 
+                    eigenstate_register, 
+                    classical_register
+                )
+                
+                # Initialize counting qubits in superposition
+                for qubit in range(precision_qubits):
+                    circuit.h(counting_register[qubit])
+                
+                # Apply controlled unitary operations
+                for i in range(precision_qubits):
+                    for _ in range(2**i):
+                        circuit.append(
+                            unitary_circuit.control(),
+                            [counting_register[i]] + 
+                            list(range(
+                                precision_qubits,
+                                precision_qubits + unitary_circuit.num_qubits
+                            ))
+                        )
+                
+                # Apply inverse QFT
+                circuit.append(
+                    self._create_inverse_qft(precision_qubits),
+                    range(precision_qubits)
+                )
+                
+                # Measure counting qubits
+                circuit.measure(
+                    counting_register,
+                    classical_register
+                )
+                
+                logging.info(
+                    f"Created QPE circuit with {precision_qubits} "
+                    "precision qubits"
+                )
+                return circuit
+                
+            except Exception as e:
+                logging.error(f"Circuit creation failed: {str(e)}")
+                raise
+                
+        def _create_inverse_qft(self, num_qubits: int) -> QuantumCircuit:
+            """Create inverse quantum Fourier transform circuit."""
+            def _create_inverse_qft(self, num_qubits: int) -> QuantumCircuit:
+        """Create inverse quantum Fourier transform circuit."""
+        try:
+            circuit = QuantumCircuit(num_qubits)
+            
+            for qubit in range(num_qubits//2):
+                circuit.swap(qubit, num_qubits-qubit-1)
+                
+            for j in range(num_qubits):
+                for m in range(j):
+                    circuit.cp(
+                        -2*np.pi/float(2**(j-m+1)),
+                        m, j
+                    )
+                circuit.h(j)
+                
+            return circuit
+            
+        except Exception as e:
+            logging.error(f"Inverse QFT creation failed: {str(e)}")
+            raise
+            
+    def estimate_phase(self, unitary_circuit: QuantumCircuit,
+                      precision_qubits: int,
+                      shots: int = 1000) -> Dict:
+        """Perform quantum phase estimation."""
+        try:
+            # Create and execute circuit
+            qpe_circuit = self.create_qpe_circuit(
+                precision_qubits,
+                unitary_circuit
+            )
+            
+            job = execute(qpe_circuit, self.simulator, shots=shots)
+            result = job.result()
+            counts = result.get_counts(qpe_circuit)
+            
+            # Process results
+            phases = {}
+            total_shots = sum(counts.values())
+            
+            for bitstring, count in counts.items():
+                # Convert measurement to phase
+                measured_value = int(bitstring, 2)
+                phase = measured_value / (2**precision_qubits)
+                phase_str = f"{phase:.{precision_qubits}f}"
+                
+                if phase_str in phases:
+                    phases[phase_str] += count
+                else:
+                    phases[phase_str] = count
+                    
+            # Calculate estimated phase and confidence
+            max_count_phase = max(phases.items(), key=lambda x: x[1])
+            estimated_phase = float(max_count_phase[0])
+            confidence = max_count_phase[1] / total_shots
+            
+            results = {
+                'estimated_phase': estimated_phase,
+                'confidence': confidence,
+                'phase_distribution': {
+                    phase: count/total_shots 
+                    for phase, count in phases.items()
+                },
+                'precision_qubits': precision_qubits,
+                'total_measurements': total_shots
+            }
+            
+            logging.info(
+                f"Estimated phase: {estimated_phase:.6f} "
+                f"with {confidence*100:.2f}% confidence"
+            )
+            return results
+            
+        except Exception as e:
+            logging.error(f"Phase estimation failed: {str(e)}")
+            raise
+            
+    def analyze_accuracy(self, results: Dict, 
+                        true_phase: float) -> Dict:
+        """Analyze accuracy of phase estimation."""
+        try:
+            estimated_phase = results['estimated_phase']
+            
+            analysis = {
+                'absolute_error': abs(true_phase - estimated_phase),
+                'relative_error': abs(
+                    (true_phase - estimated_phase) / true_phase
+                ) if true_phase != 0 else float('inf'),
+                'theoretical_precision': 1 / (2**results['precision_qubits']),
+                'confidence': results['confidence']
+            }
+            
+            # Check if error is within theoretical bounds
+            analysis['within_theoretical_bounds'] = (
+                analysis['absolute_error'] <= 
+                analysis['theoretical_precision']
+            )
+            
+            return analysis
+            
+        except Exception as e:
+            logging.error(f"Accuracy analysis failed: {str(e)}")
+            raise
+
+def create_test_unitary(phase: float) -> QuantumCircuit:
+    """Create a test unitary operator with known phase."""
+    circuit = QuantumCircuit(1)
+    circuit.p(2 * np.pi * phase, 0)
+    return circuit
+
+def run_qpe_demo():
+    # Initialize QPE
+    qpe = QuantumPhaseEstimation()
+    
+    # Test parameters
+    true_phase = 0.25  # π/2 phase
+    precision_qubits = 6
+    
+    print(f"Running QPE for phase {true_phase} "
+          f"with {precision_qubits} precision qubits...")
+    
+    # Create test unitary
+    unitary = create_test_unitary(true_phase)
+    
+    # Perform phase estimation
+    results = qpe.estimate_phase(
+        unitary,
+        precision_qubits,
+        shots=1000
+    )
+    
+    # Analyze results
+    analysis = qpe.analyze_accuracy(results, true_phase)
+    
+    print("\nResults:")
+    print(f"Estimated Phase: {results['estimated_phase']:.6f}")
+    print(f"True Phase: {true_phase}")
+    print(f"Confidence: {results['confidence']*100:.2f}%")
+    
+    print("\nAccuracy Analysis:")
+    print(f"Absolute Error: {analysis['absolute_error']:.6f}")
+    print(f"Relative Error: {analysis['relative_error']*100:.2f}%")
+    print(f"Theoretical Precision: {analysis['theoretical_precision']:.6f}")
+    print(f"Within Theoretical Bounds: "
+          f"{'Yes' if analysis['within_theoretical_bounds'] else 'No'}")
+    
+    return {
+        'estimation': results,
+        'analysis': analysis
+    }
+
+if __name__ == "__main__":
+    results = run_qpe_demo()`,
+                    explanation: "This intermediate exercise implements the quantum phase estimation algorithm, including inverse quantum Fourier transform, controlled operations, and comprehensive error analysis."
+                }
+            },
+            {
+                title: "Variational Quantum Eigensolver",
+                difficulty: "Medium",
+                description: "Implement a simple VQE algorithm for finding ground state energies.",
+                hints: [
+                    "Create parameterized quantum circuits",
+                    "Implement cost function",
+                    "Use classical optimizer",
+                    "Add convergence analysis"
+                ],
+                solution: {
+                    code: `from qiskit import QuantumCircuit, Aer, execute
+from qiskit.opflow import PauliOp, PauliSumOp
+from scipy.optimize import minimize
+import numpy as np
+from typing import List, Dict, Callable, Optional
+import logging
+
+class VariationalQuantumEigensolver:
+    def __init__(self):
+        self.simulator = Aer.get_backend('statevector_simulator')
+        self.setup_logging()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def create_ansatz(self, num_qubits: int, 
+                     depth: int) -> Callable:
+        """Create parameterized quantum circuit ansatz."""
+        def circuit_builder(parameters: np.ndarray) -> QuantumCircuit:
+            circuit = QuantumCircuit(num_qubits)
+            
+            param_idx = 0
+            for d in range(depth):
+                # Single qubit rotations
+                for q in range(num_qubits):
+                    circuit.rx(parameters[param_idx], q)
+                    param_idx += 1
+                    circuit.rz(parameters[param_idx], q)
+                    param_idx += 1
+                    
+                # Entangling layers
+                for q in range(num_qubits-1):
+                    circuit.cnot(q, q+1)
+                    
+            return circuit
+            
+        return circuit_builder
+        
+    def create_hamiltonian(self, 
+                          pauli_strings: List[str],
+                          coefficients: List[float]) -> PauliSumOp:
+        """Create Hamiltonian operator from Pauli strings."""
+        try:
+            hamiltonian = sum(
+                coeff * PauliOp.from_list([(pauli, 1.0)])
+                for pauli, coeff in zip(pauli_strings, coefficients)
+            )
+            return hamiltonian
+            
+        except Exception as e:
+            logging.error(f"Hamiltonian creation failed: {str(e)}")
+            raise
+            
+    def compute_expectation(self, circuit: QuantumCircuit,
+                          hamiltonian: PauliSumOp) -> float:
+        """Compute expectation value of Hamiltonian."""
+        try:
+            # Execute circuit
+            job = execute(circuit, self.simulator)
+            statevector = job.result().get_statevector()
+            
+            # Compute expectation value
+            expectation = 0.0
+            for pauli, coeff in hamiltonian.to_list():
+                pauli_mat = PauliOp.from_list([(pauli, 1.0)])
+                expectation += coeff * np.real(
+                    np.vdot(statevector, 
+                           pauli_mat.eval(statevector))
+                )
+                
+            return expectation
+            
+        except Exception as e:
+            logging.error(f"Expectation computation failed: {str(e)}")
+            raise
+            
+    def optimize(self, ansatz: Callable,
+                hamiltonian: PauliSumOp,
+                initial_params: np.ndarray,
+                max_iter: int = 100) -> Dict:
+        """Perform VQE optimization."""
+        try:
+            # Define objective function
+            def objective(parameters: np.ndarray) -> float:
+                circuit = ansatz(parameters)
+                return self.compute_expectation(circuit, hamiltonian)
+                
+            # Optimization history
+            history = {
+                'energies': [],
+                'parameters': []
+            }
+            
+            # Callback to store optimization history
+            def callback(xk):
+                energy = objective(xk)
+                history['energies'].append(energy)
+                history['parameters'].append(xk.copy())
+                logging.info(f"Energy at iteration {len(history['energies'])}: "
+                           f"{energy:.6f}")
+                
+            # Perform optimization
+            result = minimize(
+                objective,
+                initial_params,
+                method='COBYLA',
+                options={'maxiter': max_iter},
+                callback=callback
+            )
+            
+            # Compute final results
+            final_energy = objective(result.x)
+            results = {
+                'optimal_energy': final_energy,
+                'optimal_parameters': result.x,
+                'convergence': result.success,
+                'num_iterations': result.nfev,
+                'history': history
+            }
+            
+            logging.info(f"VQE optimization completed: "
+                        f"E = {final_energy:.6f}")
+            return results
+            
+        except Exception as e:
+            logging.error(f"VQE optimization failed: {str(e)}")
+            raise
+            
+    def analyze_convergence(self, history: Dict) -> Dict:
+        """Analyze optimization convergence."""
+        try:
+            energies = np.array(history['energies'])
+            
+            analysis = {
+                'initial_energy': energies[0],
+                'final_energy': energies[-1],
+                'energy_change': abs(energies[-1] - energies[0]),
+                'energy_variance': np.var(energies[-10:])
+                    if len(energies) >= 10 else None,
+                'converged': len(energies) >= 2 and
+                            abs(energies[-1] - energies[-2]) < 1e-6
+            }
+            
+            return analysis
+            
+        except Exception as e:
+            logging.error(f"Convergence analysis failed: {str(e)}")
+            raise
+
+def run_vqe_demo():
+    # Initialize VQE
+    vqe = VariationalQuantumEigensolver()
+    
+    # Define simple Hamiltonian (XX + ZZ)
+    pauli_strings = ['XX', 'ZZ']
+    coefficients = [1.0, 1.0]
+    
+    print("Creating Hamiltonian and ansatz circuit...")
+    
+    # Create Hamiltonian
+    hamiltonian = vqe.create_hamiltonian(
+        pauli_strings,
+        coefficients
+    )
+    
+    # Create ansatz
+    num_qubits = 2
+    depth = 2
+    num_parameters = num_qubits * 2 * depth
+    ansatz = vqe.create_ansatz(num_qubits, depth)
+    
+    # Initial parameters
+    initial_params = np.random.random(num_parameters)
+    
+    print("\nRunning VQE optimization...")
+    
+    # Run VQE
+    results = vqe.optimize(
+        ansatz,
+        hamiltonian,
+        initial_params
+    )
+    
+    # Analyze convergence
+    analysis = vqe.analyze_convergence(results['history'])
+    
+    print("\nResults:")
+    print(f"Optimal Energy: {results['optimal_energy']:.6f}")
+    print(f"Number of Iterations: {results['num_iterations']}")
+    print(f"Convergence: {'Yes' if results['convergence'] else 'No'}")
+    
+    print("\nConvergence Analysis:")
+    print(f"Initial Energy: {analysis['initial_energy']:.6f}")
+    print(f"Final Energy: {analysis['final_energy']:.6f}")
+    print(f"Energy Change: {analysis['energy_change']:.6f}")
+    if analysis['energy_variance'] is not None:
+        print(f"Final Energy Variance: {analysis['energy_variance']:.6f}")
+    print(f"Converged: {'Yes' if analysis['converged'] else 'No'}")
+    
+    return {
+        'optimization': results,
+        'convergence': analysis
+    }
+
+if __name__ == "__main__":
+    results = run_vqe_demo()`,
+                    explanation: "This intermediate exercise implements the Variational Quantum Eigensolver algorithm, including parameterized quantum circuits, Hamiltonian expectation value computation, and classical optimization."
+                }
+            }
+        ],
+        advancedExercises: [
+            {
+                title: "Quantum Error Correction",
+                difficulty: "Hard",
+                description: "Implement a quantum error correction code with syndrome measurement and error recovery.",
+                hints: [
+                    "Implement encoding circuit",
+                    "Add syndrome measurements",
+                    "Include error recovery operations",
+                    "Analyze error rates"
+                ],
+                solution: {
+                    code: `from qiskit import QuantumCircuit, QuantumRegister
+from qiskit import ClassicalRegister, Aer, execute
+import numpy as np
+from typing import Dict, List, Tuple, Optional
+import logging
+from dataclasses import dataclass
+
+@dataclass
+class ErrorConfig:
+    bit_flip_prob: float
+    phase_flip_prob: float
+    measurement_error_prob: float
+
+class QuantumErrorCorrection:
+    def __init__(self):
+        self.simulator = Aer.get_backend('qasm_simulator')
+        self.setup_logging()
+        
+    def setup_logging(self):
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s'
+        )
+        
+    def create_encoding_circuit(self) -> QuantumCircuit:
+        """Create encoding circuit for 5-qubit code."""
+        try:
+            # Create registers
+            data = QuantumRegister(1, 'data')
+            ancilla = QuantumRegister(4, 'ancilla')
+            syndrome = ClassicalRegister(4, 'syndrome')
+            output = ClassicalRegister(1, 'output')
+            
+            circuit = QuantumCircuit(data, ancilla, syndrome, output)
+            
+            # Encode logical state
+            circuit.h(data[0])
+            
+            # Create entangled state for 5-qubit code
+            circuit.h(ancilla[0])
+            circuit.cx(ancilla[0], ancilla[1])
+            circuit.cx(ancilla[1], ancilla[2])
+            circuit.cx(ancilla[2], ancilla[3])
+            
+            # Encode data qubit
+            circuit.cx(data[0], ancilla[0])
+            circuit.cx(data[0], ancilla[2])
+            circuit.cx(data[0], ancilla[3])
+            circuit.h(data[0])
+            
+            return circuit
+            
+        except Exception as e:
+            logging.error(f"Encoding circuit creation failed: {str(e)}")
+            raise
+            
+    def add_error_detection(self, circuit: QuantumCircuit) -> QuantumCircuit:
+        """Add syndrome measurement circuit."""
+        try:
+            # Add stabilizer measurements
+            # X-type stabilizers
+            circuit.h([0, 1, 2, 3])
+            circuit.barrier()
+            
+            # First stabilizer
+            circuit.cx(0, 1)
+            circuit.cx(1, 2)
+            
+            # Second stabilizer
+            circuit.cx(1, 2)
+            circuit.cx(2, 3)
+            
+            # Third stabilizer
+            circuit.cx(2, 3)
+            circuit.cx(3, 4)
+            
+            # Fourth stabilizer
+            circuit.cx(3, 4)
+            circuit.cx(4, 0)
+            
+            circuit.barrier()
+            circuit.h([0, 1, 2, 3])
+            
+            # Measure syndromes
+            circuit.measure(range(4), range(4))
+            
+            return circuit
+            
+        except Exception as e:
+            logging.error(f"Error detection circuit failed: {str(e)}")
+            raise
+            
+    def add_error_correction(self, circuit: QuantumCircuit, 
+                           syndrome: str) -> QuantumCircuit:
+        """Add error correction based on syndrome measurement."""
+        try:
+            # Correction lookup table
+            corrections = {
+                '0000': [],  # No error
+                '0001': [4],  # Single qubit error on 4
+                '0010': [3],  # Single qubit error on 3
+                '0011': [3, 4],  # Two qubit error
+                '0100': [2],  # Single qubit error on 2
+                '0101': [2, 4],
+                '0110': [2, 3],
+                '0111': [2, 3, 4],
+                '1000': [1],  # Single qubit error on 1
+                '1001': [1, 4],
+                '1010': [1, 3],
+                '1011': [1, 3, 4],
+                '1100': [1, 2],
+                '1101': [1, 2, 4],
+                '1110': [1, 2, 3],
+                '1111': [1, 2, 3, 4]
+            }
+            
+            # Apply corrections
+            for qubit in corrections.get(syndrome, []):
+                circuit.x(qubit)
+                
+            return circuit
+            
+        except Exception as e:
+            logging.error(f"Error correction failed: {str(e)}")
+            raise
+            
+    def simulate_errors(self, circuit: QuantumCircuit, 
+                       config: ErrorConfig) -> QuantumCircuit:
+        """Add noise to the circuit based on error configuration."""
+        try:
+            num_qubits = sum(qr.size for qr in circuit.qregs)
+            
+            # Add bit flip errors
+            for qubit in range(num_qubits):
+                if np.random.random() < config.bit_flip_prob:
+                    circuit.x(qubit)
+                    
+            # Add phase flip errors
+            for qubit in range(num_qubits):
+                if np.random.random() < config.phase_flip_prob:
+                    circuit.z(qubit)
+                    
+            return circuit
+            
+        except Exception as e:
+            logging.error(f"Error simulation failed: {str(e)}")
+            raise
+            
+    def run_error_correction(self, initial_state: complex,
+                           config: ErrorConfig,
+                           shots: int = 1000) -> Dict:
+        """Run complete error correction protocol."""
+        try:
+            results = {
+                'success_rate': 0.0,
+                'error_distribution': {},
+                'syndrome_statistics': {},
+                'fidelity': 0.0
+            }
+            
+            successful_shots = 0
+            syndrome_counts = {}
+            final_states = []
+            
+            for _ in range(shots):
+                # Create and encode circuit
+                circuit = self.create_encoding_circuit()
+                
+                # Initialize with given state
+                circuit.initialize([1-initial_state, initial_state], 0)
+                
+                # Add simulated errors
+                circuit = self.simulate_errors(circuit, config)
+                
+                # Add error detection
+                circuit = self.add_error_detection(circuit)
+                
+                # Execute circuit
+                job = execute(circuit, self.simulator, shots=1)
+                counts = job.result().get_counts()
+                
+                # Process results
+                for measurement, count in counts.items():
+                    syndrome = measurement[:-1]  # Remove output bit
+                    output = measurement[-1]
+                    
+                    # Update syndrome statistics
+                    syndrome_counts[syndrome] = \
+                        syndrome_counts.get(syndrome, 0) + count
+                    
+                    # Apply error correction
+                    corrected_circuit = self.add_error_correction(
+                        circuit.copy(),
+                        syndrome
+                    )
+                    
+                    # Measure corrected state
+                    corrected_job = execute(
+                        corrected_circuit,
+                        self.simulator,
+                        shots=1
+                    )
+                    corrected_state = corrected_job.result().get_statevector()
+                    final_states.append(corrected_state)
+                    
+                    # Check if correction was successful
+                    if abs(corrected_state[1] - initial_state) < 1e-3:
+                        successful_shots += count
+                        
+            # Calculate results
+            results['success_rate'] = successful_shots / shots
+            results['syndrome_statistics'] = {
+                syndrome: count/shots 
+                for syndrome, count in syndrome_counts.items()
+            }
+            
+            # Calculate average fidelity
+            fidelities = [
+                abs(np.vdot([1-initial_state, initial_state], state))**2
+                for state in final_states
+            ]
+            results['fidelity'] = np.mean(fidelities)
+            
+            logging.info(f"Error correction completed with "
+                        f"{results['success_rate']*100:.2f}% success rate")
+            return results
+            
+        except Exception as e:
+            logging.error(f"Error correction protocol failed: {str(e)}")
+            raise
+            
+    def analyze_performance(self, results: Dict) -> Dict:
+        """Analyze error correction performance."""
+        try:
+            analysis = {
+                'success_rate': results['success_rate'],
+                'average_fidelity': results['fidelity'],
+                'syndrome_entropy': self._calculate_entropy(
+                    results['syndrome_statistics']
+                ),
+                'error_detection_rate': sum(
+                    count for syndrome, count 
+                    in results['syndrome_statistics'].items()
+                    if syndrome != '0000'
+                )
+            }
+            
+            # Calculate error correction effectiveness
+            analysis['correction_effectiveness'] = \
+                analysis['success_rate'] / \
+                (analysis['error_detection_rate'] + 1e-10)
+                
+            return analysis
+            
+        except Exception as e:
+            logging.error(f"Performance analysis failed: {str(e)}")
+            raise
+            
+    def _calculate_entropy(self, probabilities: Dict) -> float:
+        """Calculate Shannon entropy of syndrome distribution."""
+        return -sum(
+            p * np.log2(p)
+            for p in probabilities.values()
+            if p > 0
+        )
+
+def run_qec_demo():
+    # Initialize QEC
+    qec = QuantumErrorCorrection()
+    
+    # Error configuration
+    config = ErrorConfig(
+        bit_flip_prob=0.1,
+        phase_flip_prob=0.1,
+        measurement_error_prob=0.05
+    )
+    
+    print("Running quantum error correction simulation...")
+    
+    # Run error correction protocol
+    initial_state = 0.7 + 0.3j  # Test state
+    results = qec.run_error_correction(
+        initial_state,
+        config,
+        shots=1000
+    )
+    
+    # Analyze performance
+    analysis = qec.analyze_performance(results)
+    
+    print("\nResults:")
+    print(f"Success Rate: {analysis['success_rate']*100:.2f}%")
+    print(f"Average Fidelity: {analysis['average_fidelity']:.4f}")
+    print(f"Error Detection Rate: "
+          f"{analysis['error_detection_rate']*100:.2f}%")
+    print(f"Correction Effectiveness: "
+          f"{analysis['correction_effectiveness']:.4f}")
+    print(f"Syndrome Entropy: {analysis['syndrome_entropy']:.4f}")
+    
+    print("\nSyndrome Statistics:")
+    for syndrome, prob in results['syndrome_statistics'].items():
+        print(f"  {syndrome}: {prob*100:.2f}%")
+    
+    return {
+        'results': results,
+        'analysis': analysis
+    }
+
+if __name__ == "__main__":
+    results = run_qec_demo()`,
+                    explanation: "This advanced exercise implements a 5-qubit quantum error correction code with syndrome measurement, error recovery, and performance analysis. It includes realistic error simulation and comprehensive analysis of the error correction effectiveness."
+                }
+            }
+        ]
+    }
+}
+}
+
 
 ];
 

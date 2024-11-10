@@ -17,7 +17,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 // Solution Dialog Component
 const SolutionDialog = ({ solution }) => {
     if (!solution) return null;
-    
+
     return (
         <Dialog>
             <DialogTrigger asChild>
@@ -54,8 +54,8 @@ const ExerciseCard = ({ exercise }) => (
             <h3 className="text-xl font-semibold text-blue-600">
                 {exercise.title}
             </h3>
-            <Badge 
-                variant="outline" 
+            <Badge
+                variant="outline"
                 className={`
                     ${exercise.difficulty === 'Easy' ? 'bg-green-50 text-green-700' : ''}
                     ${exercise.difficulty === 'Medium' ? 'bg-yellow-50 text-yellow-700' : ''}
@@ -100,25 +100,25 @@ function ResourceDetail() {
         return null;
     }
 
-   // Define learning track types
-const isCppTrack = resource.id === 4;
-const isDSATrack = resource.id === 5;
-const isCompetitiveProgrammingTrack = resource.id === 6;
+    // Define learning track types
+    const isCppTrack = resource.id === 4;
+    const isDSATrack = resource.id === 5;
+    const isCompetitiveProgrammingTrack = resource.id === 6;
 
-// Get appropriate content based on track type
-const getTrackContent = () => {
-    if (!resource) return null;
-    return resource.content || null;
-};
+    // Get appropriate content based on track type
+    const getTrackContent = () => {
+        if (!resource) return null;
+        return resource.content || null;
+    };
 
-const getTrackInfo = () => {
-    if (!resource) return null;
-    return resource.trackInfo || null;
-};
+    const getTrackInfo = () => {
+        if (!resource) return null;
+        return resource.trackInfo || null;
+    };
 
-const content = getTrackContent();
-const trackInfo = getTrackInfo();
-const isLearningTrack = content !== null; // Single declaration of isLearningTrack
+    const content = getTrackContent();
+    const trackInfo = getTrackInfo();
+    const isLearningTrack = content !== null; // Single declaration of isLearningTrack
 
     return (
         <section className="bg-gray-50 text-black min-h-screen">
@@ -134,7 +134,7 @@ const isLearningTrack = content !== null; // Single declaration of isLearningTra
             <div className="max-w-screen-lg mx-auto p-8">
                 {isLearningTrack && content ? (
                     <Tabs defaultValue="introduction" className="w-full">
-                        <TabsList className="grid w-full grid-cols-5 mb-8">
+                        <TabsList className="grid grid-cols-3 md:grid-cols-5 gap-4 md:mb-12  mb-8 h-[auto]">
                             <TabsTrigger value="introduction">Introduction</TabsTrigger>
                             <TabsTrigger value="examples">Examples</TabsTrigger>
                             <TabsTrigger value="roadmap">Roadmap</TabsTrigger>
@@ -142,56 +142,56 @@ const isLearningTrack = content !== null; // Single declaration of isLearningTra
                             <TabsTrigger value="practice">Practice</TabsTrigger>
                         </TabsList>
 
-                      {/* Introduction Tab */}
-<TabsContent value="introduction">
-    <Card>
-        <CardHeader>
-            <CardTitle>{resource.title}</CardTitle>
-        </CardHeader>
-        <CardContent>
-            <div className="space-y-6">
-                <p className="text-gray-700 text-lg leading-relaxed">
-                    {resource.extendedContent}
-                </p>
-                {trackInfo?.prerequisites && (
-                    <div className="mt-6">
-                        <h3 className="text-xl font-semibold mb-3">Prerequisites</h3>
-                        <ul className="list-disc pl-5 space-y-2">
-                            {trackInfo.prerequisites.map((prereq, index) => (
-                                <li key={index} className="text-gray-600">{prereq}</li>
-                            ))}
-                        </ul>
-                    </div>
-                )}
-                {trackInfo?.outcomes && (
-                    <div className="mt-6">
-                        <h3 className="text-xl font-semibold mb-3">Learning Outcomes</h3>
-                        <ul className="list-disc pl-5 space-y-2">
-                            {trackInfo.outcomes.map((outcome, index) => (
-                                <li key={index} className="text-gray-600">{outcome}</li>
-                            ))}
-                        </ul>
-                    </div>
-                )}
-                {trackInfo?.sections && (
-                    <div className="mt-6">
-                        <h3 className="text-xl font-semibold mb-3">Course Sections</h3>
-                        <div className="space-y-4">
-                            {trackInfo.sections.map((section, index) => (
-                                <div key={index} className="bg-gray-50 p-4 rounded-lg">
-                                    <h4 className="font-semibold text-blue-600 mb-2">
-                                        {section.title}
-                                    </h4>
-                                    <p className="text-gray-600">{section.content}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                )}
-            </div>
-        </CardContent>
-    </Card>
-</TabsContent>
+                        {/* Introduction Tab */}
+                        <TabsContent value="introduction">
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle>{resource.title}</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="space-y-6">
+                                        <p className="text-gray-700 text-lg leading-relaxed">
+                                            {resource.extendedContent}
+                                        </p>
+                                        {trackInfo?.prerequisites && (
+                                            <div className="mt-6">
+                                                <h3 className="text-xl font-semibold mb-3">Prerequisites</h3>
+                                                <ul className="list-disc pl-5 space-y-2">
+                                                    {trackInfo.prerequisites.map((prereq, index) => (
+                                                        <li key={index} className="text-gray-600">{prereq}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
+                                        {trackInfo?.outcomes && (
+                                            <div className="mt-6">
+                                                <h3 className="text-xl font-semibold mb-3">Learning Outcomes</h3>
+                                                <ul className="list-disc pl-5 space-y-2">
+                                                    {trackInfo.outcomes.map((outcome, index) => (
+                                                        <li key={index} className="text-gray-600">{outcome}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
+                                        {trackInfo?.sections && (
+                                            <div className="mt-6">
+                                                <h3 className="text-xl font-semibold mb-3">Course Sections</h3>
+                                                <div className="space-y-4">
+                                                    {trackInfo.sections.map((section, index) => (
+                                                        <div key={index} className="bg-gray-50 p-4 rounded-lg">
+                                                            <h4 className="font-semibold text-blue-600 mb-2">
+                                                                {section.title}
+                                                            </h4>
+                                                            <p className="text-gray-600">{section.content}</p>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        </TabsContent>
 
                         {/* Examples Tab */}
                         <TabsContent value="examples">
@@ -227,12 +227,12 @@ const isLearningTrack = content !== null; // Single declaration of isLearningTra
                                             <p className="text-gray-600 mb-6">{section.description}</p>
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                                 {section.topics.map((topic, topicIndex) => (
-                                                    <div 
+                                                    <div
                                                         key={topicIndex}
                                                         className="flex items-center space-x-2 bg-gray-50 p-3 rounded-lg border border-gray-100"
                                                     >
-                                                        <Badge 
-                                                            variant="outline" 
+                                                        <Badge
+                                                            variant="outline"
                                                             className="bg-blue-50 min-w-[24px] text-center"
                                                         >
                                                             {topicIndex + 1}
@@ -247,141 +247,141 @@ const isLearningTrack = content !== null; // Single declaration of isLearningTra
                             </div>
                         </TabsContent>
 
-                       {/* Resources Tab */}
-<TabsContent value="resources">
-    <div className="space-y-8">
-        {content?.resources ? (
-            Object.entries(content.resources).map(([category, items]) => (
-                <Card key={category}>
-                    <CardHeader>
-                        <CardTitle className="text-2xl font-bold">
-                            {category.charAt(0).toUpperCase() + category.slice(1)}
-                        </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <div className="grid gap-4">
-                            {items.map((item, index) => (
-                                <div key={index} className="flex flex-col p-4 bg-gray-50 rounded-lg">
-                                    <div className="flex justify-between items-start mb-2">
-                                        <h3 className="text-lg font-semibold text-blue-600">
-                                            {item.title}
-                                        </h3>
-                                        <Badge variant="outline">
-                                            {item.type || item.platform || item.level}
-                                        </Badge>
-                                    </div>
-                                    <p className="text-gray-600 mb-2">
-                                        {item.description}
-                                    </p>
-                                    {item.url && (
-                                        <a 
-                                            href={item.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-blue-500 hover:underline"
-                                        >
-                                            Visit Resource →
-                                        </a>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-                    </CardContent>
-                </Card>
-            ))
-        ) : (
-            <Card>
-                <CardHeader>
-                    <CardTitle>Resources</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-gray-600">No resources available at this time.</p>
-                </CardContent>
-            </Card>
-        )}
-    </div>
-</TabsContent>
+                        {/* Resources Tab */}
+                        <TabsContent value="resources">
+                            <div className="space-y-8">
+                                {content?.resources ? (
+                                    Object.entries(content.resources).map(([category, items]) => (
+                                        <Card key={category}>
+                                            <CardHeader>
+                                                <CardTitle className="text-2xl font-bold">
+                                                    {category.charAt(0).toUpperCase() + category.slice(1)}
+                                                </CardTitle>
+                                            </CardHeader>
+                                            <CardContent>
+                                                <div className="grid gap-4">
+                                                    {items.map((item, index) => (
+                                                        <div key={index} className="flex flex-col p-4 bg-gray-50 rounded-lg">
+                                                            <div className="flex justify-between items-start mb-2">
+                                                                <h3 className="text-lg font-semibold text-blue-600">
+                                                                    {item.title}
+                                                                </h3>
+                                                                <Badge variant="outline">
+                                                                    {item.type || item.platform || item.level}
+                                                                </Badge>
+                                                            </div>
+                                                            <p className="text-gray-600 mb-2">
+                                                                {item.description}
+                                                            </p>
+                                                            {item.url && (
+                                                                <a
+                                                                    href={item.url}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    className="text-blue-500 hover:underline"
+                                                                >
+                                                                    Visit Resource →
+                                                                </a>
+                                                            )}
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </CardContent>
+                                        </Card>
+                                    ))
+                                ) : (
+                                    <Card>
+                                        <CardHeader>
+                                            <CardTitle>Resources</CardTitle>
+                                        </CardHeader>
+                                        <CardContent>
+                                            <p className="text-gray-600">No resources available at this time.</p>
+                                        </CardContent>
+                                    </Card>
+                                )}
+                            </div>
+                        </TabsContent>
 
                         {/* Practice Tab */}
-<TabsContent value="practice">
-    <div className="space-y-8">
-        {content?.practice ? (
-            <>
-                {/* Beginner Exercises */}
-                {content.practice.beginnerExercises && (
-                    <Card>
-                        <CardHeader>
-                            <CardTitle className="text-2xl font-bold flex items-center gap-2">
-                                Beginner Exercises
-                                <Badge variant="outline" className="bg-green-50 text-green-700">
-                                    Easy
-                                </Badge>
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="grid gap-6">
-                                {content.practice.beginnerExercises.map((exercise, index) => (
-                                    <ExerciseCard key={index} exercise={exercise} />
-                                ))}
-                            </div>
-                        </CardContent>
-                    </Card>
-                )}
+                        <TabsContent value="practice">
+                            <div className="space-y-8">
+                                {content?.practice ? (
+                                    <>
+                                        {/* Beginner Exercises */}
+                                        {content.practice.beginnerExercises && (
+                                            <Card>
+                                                <CardHeader>
+                                                    <CardTitle className="text-2xl font-bold flex items-center gap-2">
+                                                        Beginner Exercises
+                                                        <Badge variant="outline" className="bg-green-50 text-green-700">
+                                                            Easy
+                                                        </Badge>
+                                                    </CardTitle>
+                                                </CardHeader>
+                                                <CardContent>
+                                                    <div className="grid gap-6">
+                                                        {content.practice.beginnerExercises.map((exercise, index) => (
+                                                            <ExerciseCard key={index} exercise={exercise} />
+                                                        ))}
+                                                    </div>
+                                                </CardContent>
+                                            </Card>
+                                        )}
 
-                {/* Intermediate Exercises */}
-                {content.practice.intermediateExercises && (
-                    <Card>
-                        <CardHeader>
-                            <CardTitle className="text-2xl font-bold flex items-center gap-2">
-                                Intermediate Exercises
-                                <Badge variant="outline" className="bg-yellow-50 text-yellow-700">
-                                    Medium
-                                </Badge>
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="grid gap-6">
-                                {content.practice.intermediateExercises.map((exercise, index) => (
-                                    <ExerciseCard key={index} exercise={exercise} />
-                                ))}
-                            </div>
-                        </CardContent>
-                    </Card>
-                )}
+                                        {/* Intermediate Exercises */}
+                                        {content.practice.intermediateExercises && (
+                                            <Card>
+                                                <CardHeader>
+                                                    <CardTitle className="text-2xl font-bold flex items-center gap-2">
+                                                        Intermediate Exercises
+                                                        <Badge variant="outline" className="bg-yellow-50 text-yellow-700">
+                                                            Medium
+                                                        </Badge>
+                                                    </CardTitle>
+                                                </CardHeader>
+                                                <CardContent>
+                                                    <div className="grid gap-6">
+                                                        {content.practice.intermediateExercises.map((exercise, index) => (
+                                                            <ExerciseCard key={index} exercise={exercise} />
+                                                        ))}
+                                                    </div>
+                                                </CardContent>
+                                            </Card>
+                                        )}
 
-                {/* Advanced Exercises */}
-                {content.practice.advancedExercises && (
-                    <Card>
-                        <CardHeader>
-                            <CardTitle className="text-2xl font-bold flex items-center gap-2">
-                                Advanced Exercises
-                                <Badge variant="outline" className="bg-red-50 text-red-700">
-                                    Hard
-                                </Badge>
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="grid gap-6">
-                                {content.practice.advancedExercises.map((exercise, index) => (
-                                    <ExerciseCard key={index} exercise={exercise} />
-                                ))}
+                                        {/* Advanced Exercises */}
+                                        {content.practice.advancedExercises && (
+                                            <Card>
+                                                <CardHeader>
+                                                    <CardTitle className="text-2xl font-bold flex items-center gap-2">
+                                                        Advanced Exercises
+                                                        <Badge variant="outline" className="bg-red-50 text-red-700">
+                                                            Hard
+                                                        </Badge>
+                                                    </CardTitle>
+                                                </CardHeader>
+                                                <CardContent>
+                                                    <div className="grid gap-6">
+                                                        {content.practice.advancedExercises.map((exercise, index) => (
+                                                            <ExerciseCard key={index} exercise={exercise} />
+                                                        ))}
+                                                    </div>
+                                                </CardContent>
+                                            </Card>
+                                        )}
+                                    </>
+                                ) : (
+                                    <Card>
+                                        <CardHeader>
+                                            <CardTitle>Practice Exercises</CardTitle>
+                                        </CardHeader>
+                                        <CardContent>
+                                            <p className="text-gray-600">No practice exercises available at this time.</p>
+                                        </CardContent>
+                                    </Card>
+                                )}
                             </div>
-                        </CardContent>
-                    </Card>
-                )}
-            </>
-        ) : (
-            <Card>
-                <CardHeader>
-                    <CardTitle>Practice Exercises</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-gray-600">No practice exercises available at this time.</p>
-                </CardContent>
-            </Card>
-        )}
-    </div>
-</TabsContent>
+                        </TabsContent>
                     </Tabs>
                 ) : (
                     <Card>

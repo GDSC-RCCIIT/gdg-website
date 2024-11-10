@@ -1,11 +1,37 @@
 "use client";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Card, Typography, Box, Chip } from '@mui/material';
-import blogs from '../Blogs';
 
 const SingleBlogPage = ({ params }) => {
     const { id } = params;
-    const blog = blogs.find((blog) => blog.id.toString() === id);
+    const [blog, setBlog] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchBlog = async () => {
+            try {
+                const response = await fetch(`http://localhost:5000/blogs/${id}`);
+                const data = await response.json();
+                setBlog(data);
+                setLoading(false);
+            } catch (error) {
+                console.error("Error fetching blog:", error);
+                setLoading(false);
+            }
+        };
+
+        fetchBlog();
+    }, [id]);
+
+    if (loading) {
+        return (
+            <Container>
+                <Typography variant="h4" gutterBottom>
+                    Loading...
+                </Typography>
+            </Container>
+        );
+    }
 
     if (!blog) {
         return (
