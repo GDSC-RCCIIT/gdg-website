@@ -48359,5 +48359,11 @@
         { "title": "SAP on Google Cloud: High availability", "description": "Architect SAP systems in Google Cloud for high availability." }
       ]
     }
+  ],
+  "reports": [
+    { "title": "Google Cloud NGFW Enterprise Certified Secure Test Report", "description": "Read Miercom's test results on Google Cloud Next Generation Firewall Enterprise." },
+    { "title": "Google Cloud NGFW Enterprise CyberRisk Validation Report", "description": "Read SecureIQlab's test results on Google Cloud Next Generation Firewall Enterprise." },
+    { "title": "Google is a Leader in The Forrester Wave™: AI Foundation Models for Language, Q2 2024", "description": "Access your complimentary copy of the report to learn why Google was named a Leader." },
+    { "title": "Google is a Leader in the 2024 Gartner® Magic Quadrant™ for Cloud AI Developer Services (CAIDS)", "description": "Access your complimentary copy of the report to learn why Google was named a Leader." }
   ]
 }
