@@ -23194,7 +23194,304 @@ if __name__ == "__main__":
             }
         ]
     }
-}
+},
+{
+        id: 21,
+        title: "Python Development",
+        description: "To learn Python, follow this roadmap",
+        extendedContent: `
+            This roadmap covers everything aspiring Python developers need to know. 
+            You'll start by learning the basics of Python syntax and structure, including variable types and control flow. 
+            Following that, you'll explore important libraries and frameworks that enhance Python's capabilities.
+
+            After getting comfortable with the basics, we'll dive into web development with Flask and Django, data analysis with Pandas, and machine learning with libraries such as scikit-learn and TensorFlow. 
+            
+            Advanced topics cover object-oriented programming, exception handling, asynchronous programming, and testing frameworks. 
+            By the end of this roadmap, you'll be equipped to build various types of applications, ranging from web apps to data analysis scripts and machine learning models.
+        `,
+        icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083...",
+        trackInfo: {
+            prerequisites: [
+                "Basic computer skills and familiarity with programming concepts",
+                "Understanding of how software development works",
+                "A text editor or IDE (VS Code, PyCharm recommended)",
+                "Problem-solving aptitude"
+            ],
+            outcomes: [
+                "Master Python syntax and core programming concepts",
+                "Build web applications using Flask or Django",
+                "Analyze data using Pandas and NumPy",
+                "Implement machine learning algorithms",
+                "Understand and apply object-oriented programming principles",
+                "Write unit tests and documentation for your code",
+                "Deploy applications to the cloud"
+            ],
+            sections: [
+                {
+                    title: "Python Fundamentals",
+                    content: "Get familiar with the core concepts of Python: variables, data types, control flow, functions, and file I/O. Learn about Python-specific features like list comprehensions and decorators."
+                },
+                {
+                    title: "Web Development with Python",
+                    content: "Explore web frameworks such as Flask and Django, learn about REST APIs, and understand how to work with databases using SQLAlchemy or Django ORM."
+                },
+                {
+                    title: "Data Analysis and Visualization",
+                    content: "Utilize libraries like Pandas and Matplotlib for data manipulation and visualization. Understand dataframes, series, and how to perform data cleaning and analysis."
+                },
+                {
+                    title: "Machine Learning with Python",
+                    content: "Get an introduction to machine learning concepts using libraries like scikit-learn and TensorFlow. Implement algorithms and models for data prediction and analysis."
+                },
+                {
+                    title: "Advanced Python Concepts",
+                    content: "Dive into advanced topics such as concurrency with asyncio, memory management, testing with pytest, and best practices for writing clean, maintainable code."
+                }
+            ]
+        },
+        content: {
+            examples: [
+                {
+                    title: "Simple Calculator",
+                    code: `def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y == 0:
+        return "Error! Division by zero."
+    return x / y
+
+if __name__ == "__main__":
+    print("Select operation:")
+    print("1.Add")
+    print("2.Subtract")
+    print("3.Multiply")
+    print("4.Divide")
+
+    choice = input("Enter choice (1/2/3/4): ")
+
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
+
+    if choice == '1':
+        print(f"{num1} + {num2} = {add(num1, num2)}")
+    elif choice == '2':
+        print(f"{num1} - {num2} = {subtract(num1, num2)}")
+    elif choice == '3':
+        print(f"{num1} * {num2} = {multiply(num1, num2)}")
+    elif choice == '4':
+        print(f"{num1} / {num2} = {divide(num1, num2)}")
+    else:
+        print("Invalid Input")`,
+                    explanation: "A simple calculator application in Python that performs addition, subtraction, multiplication, and division operations based on user input."
+                },
+                {
+                    title: "Web Scraping with Beautiful Soup",
+                    code: `import requests
+from bs4 import BeautifulSoup
+
+URL = 'https://example.com'
+page = requests.get(URL)
+
+soup = BeautifulSoup(page.content, 'html.parser')
+results = soup.find_all('h2', class_='title')
+
+for result in results:
+    print(result.text)`,
+                    explanation: "A web scraping example using Python's requests and Beautiful Soup libraries to scrape and display titles from a web page."
+                },
+                {
+                    title: "Flask Web Application",
+                    code: `from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return 'Welcome to My Python Web App!'
+
+if __name__ == '__main__':
+    app.run(debug=True)`,
+                    explanation: "A basic Flask web application that defines a single route and returns a welcome message when accessed."
+                }
+            ],
+
+            roadmap: [
+                {
+                    title: "1. Python Basics",
+                    description: "Understand the core syntax and structures of Python.",
+                    topics: [
+                        "Variables, data types, and operators",
+                        "Control flow (if, loops)",
+                        "Functions and modules",
+                        "Error handling with try/except",
+                        "Input and output operations"
+                    ]
+                },
+                {
+                    title: "2. Object-Oriented Programming",
+                    description: "Learn principles of OOP and how to implement them in Python.",
+                    topics: [
+                        "Classes and objects",
+                        "Inheritance and polymorphism",
+                        "Encapsulation and abstraction",
+                        "Magic methods and operator overloading"
+                    ]
+                },
+                {
+                    title: "3. Web Development",
+                    description: "Build web applications and APIs using Python frameworks.",
+                    topics: [
+                        "Setting up Flask or Django",
+                        "Routing and views",
+                        "Template rendering",
+                        "Working with databases (SQLAlchemy/Django ORM)",
+                        "Building RESTful APIs"
+                    ]
+                },
+                {
+                    title: "4. Data Handling and Analysis",
+                    description: "Manipulate and analyze data using Python libraries.",
+                    topics: [
+                        "Using Pandas for data analysis",
+                        "Data cleaning and transformation",
+                        "Basic data visualization with Matplotlib and Seaborn",
+                        "Introduction to NumPy for numerical computations"
+                    ]
+                },
+                {
+                    title: "5. Machine Learning and Deployment",
+                    description: "Implement ML algorithms and deploy applications.",
+                    topics: [
+                        "Understanding machine learning concepts",
+                        "Using scikit-learn for model building",
+                        "Model evaluation and validation techniques",
+                        "Deployment options using Flask or FastAPI"
+                    ]
+                }
+            ],
+            resources: {
+                documentation: [
+                    {
+                        title: "Python Official Documentation",
+                        url: "https://docs.python.org/3/",
+                        description: "The official Python documentation covering all aspects of the language.",
+                        type: "Official Documentation"
+                    },
+                    {
+                        title: "Flask Documentation",
+                        url: "https://flask.palletsprojects.com/",
+                        description: "Official Flask documentation that includes tutorials and API references.",
+                        type: "Framework Documentation"
+                    },
+                    {
+                        title: "Pandas Documentation",
+                        url: "https://pandas.pydata.org/docs/",
+                        description: "Comprehensive documentation for the Pandas library, covering all its features.",
+                        type: "Library Documentation"
+                    },
+                    {
+                        title: "Real Python",
+                        url: "https://realpython.com/",
+                        description: "In-depth tutorials and articles on Python programming.",
+                        type: "Learning Platform"
+                    }
+                ],
+                tutorials: [
+                    {
+                        title: "Codecademy Python Course",
+                        url: "https://www.codecademy.com/learn/learn-python-3",
+                        description: "Interactive Python tutorials covering the fundamentals.",
+                        type: "Interactive Course"
+                    },
+                    {
+                        title: "Coursera: Python for Everybody",
+                        url: "https://www.coursera.org/specializations/python",
+                        description: "A series of courses on Python programming for beginners.",
+                        type: "Online Course"
+                    },
+                    {
+                        title: "The Python Challenge",
+                        url: "http://www.pythonchallenge.com/",
+                        description: "A collection of challenging puzzles that can be solved using Python.",
+                        type: "Practice Course"
+                    },
+                    {
+                        title: "edX: Introduction to Computer Science and Programming Using Python",
+                        url: "https://www.edx.org/course/introduction-to-computer-science-and-programming-using-python",
+                        description: "An introduction to computer science as a tool to solve real-world analytical problems.",
+                        type: "Online Course"
+                    }
+                ],
+                videos: [
+                    {
+                        title: "Corey Schafer",
+                        url: "https://www.youtube.com/user/schafer5",
+                        description: "Practical Python tutorials covering various topics.",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Sentdex",
+                        url: "https://www.youtube.com/user/sentdex",
+                        description: "Python programming tutorials focusing on machine learning and web development.",
+                        platform: "YouTube"
+                    },
+                    {
+                        title: "Tech With Tim",
+                        url: "https://www.youtube.com/c/TechWithTim",
+                        description: "Python coding tutorials and project ideas.",
+                        platform: "YouTube"
+                    }
+                ],
+                books: [
+                    {
+                        title: "Automate the Boring Stuff with Python",
+                        author: "Al Sweigart",
+                        description: "A practical introduction to Python with an emphasis on automation.",
+                        level: "Beginner"
+                    },
+                    {
+                        title: "Python Crash Course",
+                        author: "Eric Matthes",
+                        description: "A hands-on introduction to programming with Python.",
+                        level: "Beginner"
+                    },
+                    {
+                        title: "Fluent Python",
+                        author: "Luciano Ramalho",
+                        description: "A deep dive into Python, focusing on its features and best practices.",
+                        level: "Intermediate"
+                    }
+                ],
+                practice: [
+                    {
+                        title: "LeetCode",
+                        url: "https://leetcode.com/",
+                        description: "Programming challenges to improve your coding skills.",
+                        type: "Challenge Platform"
+                    },
+                    {
+                        title: "HackerRank",
+                        url: "https://www.hackerrank.com/domains/tutorials/10-days-of-python",
+                        description: "Python practice challenges for all skill levels.",
+                        type: "Challenge Platform"
+                    },
+                    {
+                        title: "Codewars",
+                        url: "https://www.codewars.com/",
+                        description: "Practice coding through fun challenges and community-created problems.",
+                        type: "Challenge Platform"
+                    }
+                ]
+            }
+        }
+    }
 }
 
 
