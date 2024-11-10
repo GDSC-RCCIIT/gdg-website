@@ -1,36 +1,22 @@
 "use client"
-import React from 'react';
-
-const whitepapers = [
-    {
-        category: "Featured Whitepapers",
-        items: [
-            { title: "Boston Consulting Group: Any company can become a resilient data champion", description: "Insights from 700 global business leaders reveal the secrets to data maturity." },
-            { title: "Deliver software securely", description: "Learn industry standards and best practices to secure every stage in your software supply chain." },
-            { title: "Evaluate your cloud migration options", description: "Devise your migration strategy that empowers both the business and IT." },
-            { title: "Understand the principles of cost optimization", description: "Discover five ways to reduce overall cloud spend with a cost optimization strategy." },
-            { title: "Designing Cloud Teams", description: "How to Build a Better Cloud Center of Excellence." },
-        ],
-    },
-    {
-        category: "AI and ML",
-        items: [
-            { title: "A Platform Approach to Scaling Generative AI in the Enterprise", description: "Explore why AI platforms, not just models, are important for scaling generative AI for enterprises." },
-            { title: "Enabling Generative AI Value: Creating An Evaluation Framework for Your Organization", description: "Explore how to develop a framework to evaluate generative AI beyond basic task metrics." },
-            { title: "Selecting the right model Customization and Augmentation techniques", description: "Use RAG, fine-tuning, prompt engineering, and other techniques to improve performance." },
-        ],
-    },
-    {
-        category: "Cloud Basics",
-        items: [
-            { title: "Google’s guide to innovation", description: "Learn how Google developed a work culture that fosters creative thinking." },
-            { title: "Increasing business value with better IT operations: A guide to SRE", description: "Learn what SRE is and how it can improve IT operations." },
-            { title: "SAP on Google Cloud: High availability", description: "Architect SAP systems in Google Cloud for high availability." },
-        ],
-    },
-];
+import React, { useState, useEffect } from 'react';
 
 const WhitepapersPage = () => {
+    const [whitepapers, setWhitepapers] = useState([]);
+
+    useEffect(() => {
+        const fetchWhitepapers = async () => {
+            try {
+                const response = await fetch('http://localhost:5000/whitepapers');
+                const data = await response.json();
+                setWhitepapers(data);
+            } catch (error) {
+                console.error("Error fetching whitepapers:", error);
+            }
+        };
+
+        fetchWhitepapers();
+    }, []);
     return (
         <div className="bg-gray-50 min-h-screen p-6">
             {/* Header Section */}
