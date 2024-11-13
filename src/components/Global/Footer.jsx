@@ -60,7 +60,7 @@ const Footer = () => {
             </div>
             <div className="flex flex-col">
               <span className="text-3xl font-bold bg-gradient-to-r from-blue-600 via-blue-500 to-green-500 bg-clip-text text-transparent">
-                GDSC
+                GDGC
               </span>
               <span className="text-lg font-medium text-gray-600">RCCIIT</span>
             </div>
@@ -95,7 +95,7 @@ const Footer = () => {
     <div className="mt-16 pt-8 border-t border-gray-200">
       <div className="flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-sm text-gray-600 text-center md:text-left">
-          © {new Date().getFullYear()} Google Developer Student Club - RCCIIT. All Rights Reserved.
+          © {new Date().getFullYear()} Google Developer Group on Campus - RCCIIT. All Rights Reserved.
         </p>
         <div className="flex items-center gap-2">
           <span className="text-sm text-gray-500">Made with</span>

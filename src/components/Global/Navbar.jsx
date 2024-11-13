@@ -70,7 +70,7 @@ const LogoSection = ({ closeAll }) => (
         <Image src={Logo} className="rounded-lg" alt="GDSC RCCIIT Logo" layout="fill" objectFit="contain" />
       </div>
       <div className="flex flex-col">
-        <span className="text-base sm:text-lg font-bold text-gray-900 whitespace-nowrap">GDSC RCCIIT</span>
+        <span className="text-base sm:text-lg font-bold text-gray-900 whitespace-nowrap">GDG RCCIIT</span>
         <span className="hidden sm:block text-xs text-gray-600 whitespace-nowrap">Kolkata, West Bengal</span>
       </div>
     </Link>
@@ -85,7 +85,7 @@ const CenterNavigation = ({ openDropdown, handleDropdownToggle, closeAll }) => (
       { href: '/Hackathon', label: 'Hackathons' },
       { href: '/Events', label: 'Events' }
     ]} closeDropdown={closeAll} />
-    <Link href="/About" className="nav-link">About GDSC</Link>
+    <Link href="/About" className="nav-link">About GDGC</Link>
     <NavItem type="dropdown" label="Resources & FAQ" isOpen={openDropdown === 'resources'} onToggle={() => handleDropdownToggle('resources')} items={[
       { href: '/TechToolkits', label: 'Tech Toolkits Hub' },
       { href: '/TeamsGallery', label: 'Teams & Gallery' },
@@ -106,7 +106,7 @@ const AuthButton = () => (
   <div className="hidden lg:flex items-center">
     <Link href="/SignUp">
       <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200">
-        Join GDSC
+        Join GDG
       </button>
     </Link>
   </div>

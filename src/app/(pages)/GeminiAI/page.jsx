@@ -9,21 +9,25 @@ import { motion } from 'framer-motion';
 
 export default function GeminiAI() {
     const [userInput, setUserInput] = useState('');
-    const [chatHistory, setChatHistory] = useState(() => {
+    const [chatHistory, setChatHistory] = useState([]);
+    const chatContainerRef = useRef(null);
+
+    useEffect(() => {
+        // Check for local storage availability to initialize chat history
         if (typeof window !== 'undefined') {
             const savedHistory = localStorage.getItem('chatHistory');
-            return savedHistory ? JSON.parse(savedHistory) : [];
+            if (savedHistory) {
+                setChatHistory(JSON.parse(savedHistory));
+            }
         }
-        return [];
-    });
-    const chatContainerRef = useRef(null);
+    }, []);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
             localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
-        }
-        if (chatContainerRef.current) {
-            chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+            if (chatContainerRef.current) {
+                chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+            }
         }
     }, [chatHistory]);
 
@@ -95,7 +99,9 @@ export default function GeminiAI() {
 
     const handleClearChat = () => {
         setChatHistory([]);
-        localStorage.removeItem('chatHistory');
+        if (typeof window !== 'undefined') {
+            localStorage.removeItem('chatHistory');
+        }
     };
 
     return (
@@ -104,14 +110,14 @@ export default function GeminiAI() {
                 <Paper elevation={3} style={{ padding: '1.5rem', borderRadius: '8px' }}>
                     <motion.h1
                         className="m-2 text-5xl text-center font-extrabold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
-                        initial={{ y: -20, opacity: 0 }} // Animation for the header
+                        initial={{ y: -20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.5 }}
                     >
                         Gemini AI Chat
                     </motion.h1>
                     <motion.div
-                        initial={{ opacity: 0 }} // Animation for the chat box
+                        initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
@@ -130,9 +136,9 @@ export default function GeminiAI() {
                                 {chatHistory.map((msg, index) => (
                                     <motion.div
                                         key={index}
-                                        initial={{ opacity: 0 }} // Animation for each message
+                                        initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
-                                        transition={{ duration: 0.3, delay: index * 0.1 }} // Stagger the appearance of messages
+                                        transition={{ duration: 0.3, delay: index * 0.1 }}
                                         style={{ marginBottom: '0.5rem' }}
                                     >
                                         <ListItem
@@ -168,30 +174,20 @@ export default function GeminiAI() {
                     </motion.div>
                     <Divider />
                     <Stack direction="row" spacing={2} style={{ marginTop: '1rem' }}>
-                        {/* <motion.div
-                            initial={{ opacity: 0 }} // Animation for the input field
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.5, delay: 0.4 }} // Slight delay for the input field
-                        > */}
-                            <TextField
-                                fullWidth
-                                variant="outlined"
-                                value={userInput}
-                                onChange={(e) => setUserInput(e.target.value)}
-                                placeholder="Type a message..."
-                                style={{ backgroundColor: 'white', borderRadius: '4px' }}
-                            />
-                        {/* </motion.div> */}
-                        {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}> */}
-                            <Button type="submit" variant="contained" color="primary" endIcon={<SendIcon />} onClick={handleSubmit}>
-                                Send
-                            </Button>
-                        {/* </motion.div> */}
-                        {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}> */}
-                            <Button variant="outlined" color="secondary" onClick={handleClearChat}>
-                                Clear
-                            </Button>
-                        {/* </motion.div> */}
+                        <TextField
+                            fullWidth
+                            variant="outlined"
+                            value={userInput}
+                            onChange={(e) => setUserInput(e.target.value)}
+                            placeholder="Type a message..."
+                            style={{ backgroundColor: 'white', borderRadius: '4px' }}
+                        />
+                        <Button type="submit" variant="contained" color="primary" endIcon={<SendIcon />} onClick={handleSubmit}>
+                            Send
+                        </Button>
+                        <Button variant="outlined" color="secondary" onClick={handleClearChat}>
+                            Clear
+                        </Button>
                     </Stack>
                 </Paper>
             </motion.div>

@@ -22,7 +22,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "GDG-RCIIT Website",
+  title: "GDG-RCCIIT",
   description: "Welcome to the GDG-RCIIT Website",
 };
 

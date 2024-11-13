@@ -147,7 +147,7 @@ export function NavigationMenu() {
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >
-                      About GDSC
+                      About GDG
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -261,7 +261,7 @@ export function NavigationMenu() {
                       <NavigationMenuLink
                         className={navigationMenuTriggerStyle()}
                       >
-                        About GDSC
+                        About GDG
                       </NavigationMenuLink>
                     </Link>
                   </NavigationMenuItem>

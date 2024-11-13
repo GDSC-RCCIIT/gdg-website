@@ -50,12 +50,12 @@ const GDSCLanding = () => {
   return (
     <div className="bg-gray-900 text-white overflow-hidden">
       {loading ? (
-        <CldVideoPlayer
+        <video
         width="1920"
         height="1080"
-        src="RCCIIT/oul30dt9gccawqgjvlar"   //The path of the video must be set mandatorily in the cloudinary.
+        src="loading.mp4"  // Update the path to your .mp4 file
         className='min-h-screen w-full h-auto'
-        autoplay
+        autoPlay
         muted
         controls={false}
       />
@@ -111,7 +111,7 @@ const GDSCLanding = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
               >
-                The Google Developer Student Club at RCCIIT is a university-based community group powered by Google Developers.
+                The Google Developer Student Club at RCCIIT is a college-based community group powered by Google Developers.
               </motion.p>
               
               <motion.div
